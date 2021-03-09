@@ -1,0 +1,30 @@
+version: "1.1"
+
+on:
+  push:
+    branches:
+      - develop
+
+stages:
+  - stage:
+      - git-checkout:
+
+  - stage:
+      - js:
+          params:
+            workdir: ${git-checkout}
+            container_type: spa
+            build_cmd: npm run build
+            dest_dir: dest
+
+  - stage:
+      - release:
+          params:
+            dice_yml: ${git-checkout}/dice.yml
+            image:
+              doc: ${js:OUTPUT:image}
+
+  - stage:
+      - dice:
+          params:
+            release_id_path: ${release}

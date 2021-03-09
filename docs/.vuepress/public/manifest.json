@@ -1,0 +1,15 @@
+{
+  "name": "Dice Docs",
+  "short_name": "DiceDoc",
+  "icons": [
+    {
+      "src": "/icons/android-chrome-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#5d48df"
+}

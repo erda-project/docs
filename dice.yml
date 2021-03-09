@@ -1,0 +1,23 @@
+version: "2.0"
+services:
+  doc:
+    resources:
+      cpu: 0.1
+      mem: 128
+    deployments:
+      replicas: 1
+    expose:
+      - 80
+    ports:
+      - 80
+    health_check:
+      http:
+        port: 80
+        path: "/"
+        duration: 30
+addons:
+  mesh:
+    plan: "service-mesh:basic"
+    options:
+      version: "1.0.0"
+envs: {}
