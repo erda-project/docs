@@ -14,10 +14,6 @@ services:
       http:
         port: 80
         path: "/"
-        duration: 30
-addons:
-  mesh:
-    plan: "service-mesh:basic"
-    options:
-      version: "1.0.0"
+        duration: 300
+addons: {}
 envs: {}

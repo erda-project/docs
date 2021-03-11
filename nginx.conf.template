@@ -1,7 +1,7 @@
 server {
     listen 80;
     server_name localhost;
-    root /usr/share/nginx/html;
+    root /usr/share/nginx/html/dest;
 
     # compression
     gzip on;
@@ -19,4 +19,9 @@ server {
         expires 30d;
     }
 
+    location / {
+        root   /usr/share/nginx/html/dest; # 静态网页资源放置的文件夹（服务器上的位置）
+        try_files $uri $uri/  /index.html;
+        index  index.html index.htm;
+    }
 }
