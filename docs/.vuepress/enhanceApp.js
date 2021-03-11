@@ -59,8 +59,7 @@ export default ({
       });
        // 根据 anchor 字段对相同内容进行过滤显示
       const latestManualSuggestions = manualSuggestions.reduce(function(arr, current) {
-          hash[current.anchor] ? '' : hash[current.anchor] = true && arr.push(current);
-          return arr
+        return hash[current.anchor] ? arr : arr.concat(current);
       }, [])
       // 2、若内容为 [CHANGELOG/FAQ] 则不过滤内容
       const unManualSuggestions = suggestions.filter(({ url }) => !url.includes('manual'))
