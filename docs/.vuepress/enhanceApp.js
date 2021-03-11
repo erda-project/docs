@@ -48,9 +48,9 @@ export default ({
         // https://dice-docs.app.terminus.io/changeLog.html#_3-19
         // https://doc.app.terminus.io/3.21/manual/support/diagnostics.html#%E6%8F%90%E9%97%AE%E4%B9%8B%E5%89%8D
 
-        const PROTOCOL_LENGTH = 7 // https:// 的长度
-        const version1 = a.url.slice(PROTOCOL_LENGTH + 1).split('/')[1].split('.');
-        const version2 = b.url.slice(PROTOCOL_LENGTH + 1).split('/')[1].split('.');
+        const PROTOCOL_LENGTH = 8 // https:// 的长度
+        const version1 = a.url.slice(PROTOCOL_LENGTH).split('/')[1].split('.');
+        const version2 = b.url.slice(PROTOCOL_LENGTH).split('/')[1].split('.');
         const [versionInteger1, versionDecimal1] = version1;
         const [versionInteger2, versionDecimal2] = version2;
         return versionInteger2 === versionInteger1
