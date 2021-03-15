@@ -57,10 +57,15 @@ export default ({
           ? versionDecimal2 - versionDecimal1
           : versionInteger2 - versionInteger1;
       });
+
        // 根据 anchor 字段对相同内容进行过滤显示
-      const latestManualSuggestions = manualSuggestions.reduce(function(arr, current) {
-        return hash[current.anchor] ? arr : arr.concat(current);
-      }, [])
+      const latestManualSuggestions = manualSuggestions.filter((item) => {
+        if (!hash[item.anchor]) {
+          hash[item.anchor] = true;
+          return true;
+        } 
+      })
+
       // 2、若内容为 [CHANGELOG/FAQ] 则不过滤内容
       const unManualSuggestions = suggestions.filter(({ url }) => !url.includes('manual'))
       return unManualSuggestions.concat(latestManualSuggestions)
