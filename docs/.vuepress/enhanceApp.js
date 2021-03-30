@@ -26,7 +26,8 @@ export default ({
     router.beforeEach((to, from, next) => {
       const [, ver, ...rest] = to.path.split('/');
       if (ver === 'latest') {
-        next([, vers[0], ...rest].join('/'))
+        // next([, vers[0], ...rest].join('/'))
+        window.location.href = window.location.origin+[, vers[0], ...rest].join('/')
       } else {
         next();
       }
@@ -38,7 +39,7 @@ export default ({
       // 一、在[使用手册]页面搜索时：[使用手册] 当前页面 url 路径包含版本号。若内容为[使用手册]，则在本版本搜索内容；若内容为 [CHANGELOG/FAQ] 则不过滤内容
       if(type === 'manual') {
         return suggestions.filter(({ url }) => url.includes('manual') && url.includes(version) || !url.includes('manual'));
-      } 
+      }
       // 二、在[CHANGELOG/FAQ]页面搜索时：[CHANGELOG/FAQ]当前页面 url 路径不包含版本号
       // 1、搜索内容为[使用手册]时，筛选出有结果的最新版本
       const manualSuggestions = suggestions.filter(({ url }) => url.includes('manual') && vers.filter((ver) => url.includes(ver)));
@@ -63,7 +64,7 @@ export default ({
         if (!hash[item.anchor]) {
           hash[item.anchor] = true;
           return true;
-        } 
+        }
       })
 
       // 2、若内容为 [CHANGELOG/FAQ] 则不过滤内容
