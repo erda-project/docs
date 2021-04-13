@@ -21,6 +21,7 @@ module.exports = ctx => ({
     ['link', { rel: 'icon', href: `/favicon.ico` }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#5d48df' }],
+    ['meta', { property: 'og:image', content: '/favicon.ico' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: "stylesheet", href: '//at.alicdn.com/t/font_1893647_d3gl9b04e4b.css' }],
