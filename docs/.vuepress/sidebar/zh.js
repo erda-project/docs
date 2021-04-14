@@ -695,7 +695,7 @@ module.exports = {
         'microservice/dubbo',
         'microservice/use-apm-monitor-app.md',
         'microservice/tracing.md',
-        'microservice/dashboard-quickstart.md',
+        'microservice/dashboard.md',
       ]
     },
     {
