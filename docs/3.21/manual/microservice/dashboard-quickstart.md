@@ -16,7 +16,7 @@
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/5c4db078-cd81-4543-8d26-c499a684b3f9.png)
 
-### <br>进入图表编辑器页面
+### 进入图表编辑器页面
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/d59814a3-5d12-4598-8c50-9fafcf42d1a9.png)
 
 左侧通用项目可以输入图表的名称，简介等
