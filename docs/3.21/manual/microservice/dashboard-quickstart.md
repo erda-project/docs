@@ -1,7 +1,18 @@
-# Dashboard 
+# 数据大盘系统-Quickstart
 
-## Quick start 
-<br>微服务治理->运维大盘->新建运维大盘->编辑模式->新增图表->选择图表类型--柱状图
+## 创建你的第一个大盘
+
+### 平台页面入口：
+
+> 微服务治理平台->运维大盘
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/8b61c388-ba97-4635-8363-bec846d91160.png)
+
+点击新建运维大盘，进入编辑模式
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/dbd301b5-d84a-4588-a8c1-a9091bb0f4dc.png)
+
+点击右上角的+号，可以选择你的图表类型，这里我们先选择柱状图
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/5c4db078-cd81-4543-8d26-c499a684b3f9.png)
 
@@ -11,6 +22,7 @@
 左侧通用项目可以输入图表的名称，简介等
 
 ### 数据源配置
+
 指标分组——指标的数据源 选择HTTP请求-所有HTTP请求
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/e310d890-4eee-4626-8365-2bcb65e8922d.png)
 
@@ -24,6 +36,6 @@
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/2c96024e-65bf-4b44-a90c-5053eacf35ac.png)
 
-输入大盘名称和描述后，点击保存，即可保存到列表上了，随时点进查看
+输入大盘名称和描述后，点击保存，即可保存到列表上了，随时查看
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/dc7bb892-228e-4e5b-9c04-81a7965ca452.png)
 
