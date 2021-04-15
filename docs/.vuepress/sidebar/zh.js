@@ -694,7 +694,9 @@ module.exports = {
         'microservice/spring-cloud',
         'microservice/dubbo',
         'microservice/use-apm-monitor-app.md',
-        'microservice/tracing.md'
+        'microservice/tracing.md',
+        'microservice/dashboard.md',
+        'microservice/dashboard-advanced.md'
       ]
     },
     {
