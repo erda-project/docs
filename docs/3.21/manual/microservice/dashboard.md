@@ -27,7 +27,7 @@
 
 ### 1.进入运维大盘
 
-> 微服务治理平台->运维大盘
+微服务治理平台->运维大盘
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/8b61c388-ba97-4635-8363-bec846d91160.png)
 
