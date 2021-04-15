@@ -85,14 +85,6 @@
 
 ## 概念
 
-### 基础指标
-* 机器<br>
-* 平台资源<br>
-* 项目资源<br>
-* 云产品<br>
-* 日志指标<br>
-* 其他指标
-
 ### 应用指标
 * Java<br>
   内存、GC、线程、类加载器
@@ -247,7 +239,7 @@ LIMIT 100;
 表达式支持基本的四则运算，支持一些内置的处理函数。
 
 ### 图表中的表达式配置
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/a0981037-b473-4248-8b7c-8723c8ae1c75.png)![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/b2541315-58d9-4abd-9450-8ce222c11c6b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/01faa71a-131e-46b5-b4bc-31f4cfc442e6.png)![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/eccaca70-6226-4569-b570-17a30229e70b.png)
 #### 过滤表达式
 字符串类型的字段支持：<br>
 * 等于，=<br>
