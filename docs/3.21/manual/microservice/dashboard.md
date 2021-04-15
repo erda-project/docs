@@ -45,7 +45,7 @@
 
 #### 指标分组(FROM)
 指标的数据源,也就是指标的类别，分为多级指标，一级指标是指标类别概览，二级指标是对一级指标的二次处理或细分，如慢HTTP请求。 选择HTTP请求-所有HTTP请求。
-
+ 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/e310d890-4eee-4626-8365-2bcb65e8922d.png)
 
 #### 维度(GROUP BY)
