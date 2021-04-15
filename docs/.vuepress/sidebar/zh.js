@@ -696,6 +696,7 @@ module.exports = {
         'microservice/use-apm-monitor-app.md',
         'microservice/tracing.md',
         'microservice/dashboard.md',
+        'microservice/dashboard-advanced.md'
       ]
     },
     {
