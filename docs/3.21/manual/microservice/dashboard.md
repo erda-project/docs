@@ -269,4 +269,4 @@ LIMIT 100;
 (进阶)2. 需要确认是field1是否大于field2，是则显示result1，否则显示result2，
 if(gt(field1,field2),result1,result2)，与三元表达式相同。
 
-更多自定义函数可见《大盘系统进阶（指标查询语言）》。
+更多自定义函数可见[《大盘系统进阶（指标查询语言）》](dashboard-advanced.md) 。
