@@ -100,7 +100,7 @@ GROUP BY [表达式, ...]
 ORDER BY [表达式 DESC, ....]
 LIMIT 限制数据量;
 ```
-
+例如：
 ```SQL
 SELECT 
     field1::field,
@@ -116,3 +116,33 @@ LIMIT 100;
 其中，除了 SELECT 和 FROM，其他部分都是可选的。
 
 表达式支持基本的四则运算，支持一些内置的处理函数。
+
+### 图表中的表达式配置
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/a0981037-b473-4248-8b7c-8723c8ae1c75.png)![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/b2541315-58d9-4abd-9450-8ce222c11c6b.png)
+#### 过滤表达式
+字符串类型的字段支持：<br>
+等于，=<br>
+不等于，!=<br>
+正则表达式，=~<br>
+数值类型的字段支持：<br>
+大于，><br>
+大于等于，>=<br>
+小于，<<br>
+小于等于，<=<br>
+
+几个需要过滤表达式的例子：
+1、特别复杂的 AND OR 关系过滤条件组合，可以使用表达式，比如：<br>(tag1='value1' OR tag2='value2') AND (field1>=0 OR field2<100)<br>
+2、多字段判断，比如 tag1=tag2+'subfix' AND field1<field2<br>
+3、搭配一些常量函数，比如 field1 < max_int64() AND field2<now()
+
+
+#### 查询字段自定义函数（4.0）
+
+在查询的字段中可以添加一些自定义函数，以便特殊情况下使用，如：
+
+1.需要将不同的数值映射成不同的文字，map(field1::field,1,'result1',2,'result2'),这样field1:field为2的时候就会转化成result2
+
+(进阶)2. 需要确认是field1是否大于field2，是则显示result1，否则显示result2，
+if(gt(field1,field2),result1,result2)
+
+更多自定义函数可见指标查询语言
