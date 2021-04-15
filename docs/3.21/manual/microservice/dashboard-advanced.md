@@ -36,7 +36,6 @@ LIMIT 100;
 * interval(unit), 根据指定的单位，返回时间间隔，不符合限定单位返回error
  unit type:string
  unit:"ns"、"us"、"µs"、"μs"、"ms"、"s"、"m"、"h"、"day"
- <br>
 * now(), 返回当前时间戳，单位为纳秒
 * now_sec(), 返回当前时间戳，单位为秒
 * now_ms(), 返回当前时间戳，单位为纳秒
