@@ -9,6 +9,7 @@
 * 可视化效果耗时耗力，毫无扩展性。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/4b0e4ff0-c157-417d-8c12-431ba10967de.png)
+
 大盘系统就是用来解决这一问题，前端和后端的底层实现都能够统一用一种方式来实现，并且能够提供给用户自定义图表页面的功能。
 
 使用大盘后，您的收益：
@@ -26,7 +27,7 @@
 
 ### 1.进入运维大盘
 
-> 微服务治理平台->运维大盘
+微服务治理平台->运维大盘
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/8b61c388-ba97-4635-8363-bec846d91160.png)
 
@@ -44,26 +45,32 @@
 
 #### 指标分组(FROM)
 指标的数据源,也就是指标的类别，分为多级指标，一级指标是指标类别概览，二级指标是对一级指标的二次处理或细分，如慢HTTP请求。 选择HTTP请求-所有HTTP请求。
+ 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/e310d890-4eee-4626-8365-2bcb65e8922d.png)
 
 #### 维度(GROUP BY)
 依据选定条件或者字段分组,选择1小时为间隔代表聚合每个小时的数据，便于分析，也可选择时间格式，即时间栏和数据详情的时间格式选择添加指标-时间，点击添加好的标签下的时间配置进入，如图所示：
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/ccfb3328-faf5-484c-b6b4-35994ce867aa.png)
 
 点击添加好的标签，选择字段配置，可设定自定义别名
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/8e7196e0-bff4-4154-93b0-1130da7c966c.png)
 
 #### 值(SELECT)
 指标下的数据，也就是字段，可多选，添加请求次数与请求耗时平均值。添加后点击生成的标签，可对字段进行聚合操作，或设置别名
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/01fed331-8656-47bc-ba53-1ea72f0f473a.png)
 
 #### 结果筛选器(WHERE)
 可对字段进行条件过滤，包含常用的比较运算符，也可选择自定义函数表达式。
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/3d49d4f9-d4d3-4fb9-98c5-1fc51ae8d4db.png)
 
 #### 结果排序(ORDER BY)
 
 对查询的字段进行排序，如果查询的字段为聚合方式，那排序的字段也要选择对应的聚合方式。
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/1e28b4a3-294d-4e1a-a20f-c2df4f9f65b9.png)
 
 #### 结果截取(LIMIT)
@@ -71,16 +78,20 @@
 
 #### 固定图表时间范围
 限定数据产生的时间范围，选择本周即可显示可用的预览图，如需自定义实现范围，可不填，由大盘全局时间范围控制。
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/6fdbadf0-dc57-490b-814a-866153ec2cc6.png)
 
 ### 5.保存与调整
 右下角确认保存返回大盘编辑器，查看大盘预览，鼠标悬浮到柱状图上，可以显示详细信息：
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/2c96024e-65bf-4b44-a90c-5053eacf35ac.png)
+
 点击标题可查看更多图表操作，点击导出图片即可生成报表图片以便分享与沟通，亦可全屏查看实现盯盘效果，如需调整图表大小与形状，还可选取右上角拖拽与拉伸图表。
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/548a9e4f-6ad0-4668-a616-9ac9ccb9e0d5.png)
 
 输入大盘名称和描述后，点击保存，即可保存，随时查看。
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/dc7bb892-228e-4e5b-9c04-81a7965ca452.png)
 
 ## 概念
@@ -141,6 +152,7 @@
 
 * 表格<br>
 • 可用自定义表达式配置，满足更多复杂查询。
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/0f8175bc-6177-44a1-be1c-38188dfe56ea.png)
 
 ### 聚合方式
