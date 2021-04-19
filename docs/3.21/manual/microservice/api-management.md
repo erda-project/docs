@@ -16,12 +16,12 @@ API 设计中心输出的文档完全符合 OAS3 协议标准，任何时候都�
 
 Erda API 设计中心将 API 文档托管到代码仓库中，这一设计使得接口描述和接口实现紧密地绑定到一起。
 ```text
-// API 文档保存到 .dice/apidocs 目录下
+// API 文档保存到 .erda/apidocs 目录下
 // 非侵入式目录, 不影响仓库目录主要结构
 // 如果应用下有多个微服务, 文档按服务名命名
 
 root_from_repo
-    ├── .dice
+    ├── .erda
     │   ├── apidocs
     │   │   ├── {micro_service_a}.yaml
     │   │   ├── {micro_service_b}.yaml
@@ -139,11 +139,11 @@ Body 通常是 Object 类型，其编写方式与定义数据类型类似。
 ### API 设计 FAQ
 #### 我的文档保存到了哪里？
 
-如正文所述，文档被保存到了 `.dice/apidocs/{文档名}.yaml` 。
+如正文所述，文档被保存到了 `.erda/apidocs/{文档名}.yaml` 。
 
 #### 我有文档，如何迁移到 Erda API 设计中心来？
 
-可以将文档保存到代码目录 `.dice/apidocs` 的目录下，然后提交到仓库的某个分支，推送到 Erda 仓库。
+可以将文档保存到代码目录 `.erda/apidocs` 的目录下，然后提交到仓库的某个分支，推送到 Erda 仓库。
 就可以在 API 设计中心查看并编辑文档了。
 
 建议一旦将文档迁移到本平台，以后就继续在本平台进行维护。
@@ -155,7 +155,7 @@ Body 通常是 Object 类型，其编写方式与定义数据类型类似。
 
 建议在本平台继续维护 API 文档。
 
-要导出 API 文档，可以 pull 该文档对应分支的代码，打开 `.dice/apidocs` 目录即可查看文档。
+要导出 API 文档，可以 pull 该文档对应分支的代码，打开 `.erda/apidocs` 目录即可查看文档。
 也可以先将文档发布到集市，再从集市导出。
 
 #### 如何导入数据库表模型字段？
@@ -164,7 +164,7 @@ Body 通常是 Object 类型，其编写方式与定义数据类型类似。
 目录结构如下：
 ```text
 root_from_repo
-    ├── .dice
+    ├── .erda
     │   ├── apidocs
     │   │   ├── {micro_service_a}.yaml
     │   │   ├── {micro_service_b}.yaml

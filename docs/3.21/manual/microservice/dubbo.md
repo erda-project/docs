@@ -52,21 +52,21 @@ Windows 系统：双击文件 startup.cmd
 ```
 
 3. 开发 Dubbo 服务提供者，Dubbo 中服务都是以接口的形式提供的。
-  - 在 src/main/java 路径下创建一个 package： io.terminus.dice.trial.demo.hellodubbo
-  - 在 io.terminus.dice.trial.demo.hellodubbo 下创建一个接口（interface)：EchoService，里面包含一个 echo 方法。
+  - 在 src/main/java 路径下创建一个 package： io.terminus.erda.trial.demo.hellodubbo
+  - 在 io.terminus.erda.trial.demo.hellodubbo 下创建一个接口（interface)：EchoService，里面包含一个 echo 方法。
 
 ```java
-package io.terminus.dice.trial.demo.hellodubbo;
+package io.terminus.erda.trial.demo.hellodubbo;
 
 public interface EchoService {
     String echo(String name);
 }
 ```
 
-  - 在 io.terminus.dice.trial.demo.hellodubbo 下创建一个类 EchoServiceImpl ，实现此接口。
+  - 在 io.terminus.erda.trial.demo.hellodubbo 下创建一个类 EchoServiceImpl ，实现此接口。
 
 ```java
-package io.terminus.dice.trial.demo.hellodubbo;
+package io.terminus.erda.trial.demo.hellodubbo;
 
 import org.apache.dubbo.config.annotation.Service;;
 
@@ -117,7 +117,7 @@ dubbo:
   registry:
     address: nacos://${NACOS_ADDRESS:127.0.0.1:8848}?namespace=${NACOS_TENANT_ID:}
   scan:
-    base-packages: io.terminus.dice.trial.demo.hellodubbo
+    base-packages: io.terminus.erda.trial.demo.hellodubbo
 ```
 
 
@@ -134,7 +134,7 @@ dubbo:
 5. 开发并启动 Spring Boot 入口类 DubboProvider。
 
 ```java
-package io.terminus.dice.trial.demo.hellodubbo;
+package io.terminus.erda.trial.demo.hellodubbo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -147,7 +147,7 @@ public class DubboProvider {
 }
 ```
 
-6. 登录 Nacos 控制台 http://127.0.0.1:8848，在左侧导航栏中单击服务列表 ，查看提供者列表。可以看到服务提供者里已经包含了io.terminus.dice.trial.demo.hellodubbo.EchoService，且可以查询该服务的服务分组和提供者 IP。
+6. 登录 Nacos 控制台 http://127.0.0.1:8848，在左侧导航栏中单击服务列表 ，查看提供者列表。可以看到服务提供者里已经包含了io.terminus.erda.trial.demo.hellodubbo.EchoService，且可以查询该服务的服务分组和提供者 IP。
 
 #### 创建服务消费者
 
@@ -182,11 +182,11 @@ public class DubboProvider {
 
 
 3. 开发 Dubbo 消费者
-  - 在 src/main/java 路径下创建 package：io.terminus.dice.trial.demo.hellodubbo
-  - 在 io.terminus.dice.trial.demo.hellodubbo 下创建一个接口（interface)：EchoService，里面包含一个 echo 方法。
+  - 在 src/main/java 路径下创建 package：io.terminus.erda.trial.demo.hellodubbo
+  - 在 io.terminus.erda.trial.demo.hellodubbo 下创建一个接口（interface)：EchoService，里面包含一个 echo 方法。
 
 ```java
-package io.terminus.dice.trial.demo.hellodubbo;
+package io.terminus.erda.trial.demo.hellodubbo;
 
 public interface EchoService {
     String echo(String name);
@@ -196,7 +196,7 @@ public interface EchoService {
   - 开发 Dubbo 服务调用。例如需要在 Controller 中调用一次远程 Dubbo 服务，开发的代码如下所示。
 
 ```java
-package io.terminus.dice.trial.demo.hellodubbo;
+package io.terminus.erda.trial.demo.hellodubbo;
 
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -263,7 +263,7 @@ dubbo:
 
 
 ```java
-package io.terminus.dice.trial.demo.hellodubbo;
+package io.terminus.erda.trial.demo.hellodubbo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -276,7 +276,7 @@ public class DubboConsumer {
 }
 ```
 
-6. 登录 Nacos 控制台 http://127.0.0.1:8848，在左侧导航栏中单击服务列表，再在服务列表页面单击调用者列表页签，查看调用者列表。可以看到包含了 io.terminus.dice.trial.demo.hellodubbo.EchoService，且可以查看该服务的服务分组和调用者 IP。
+6. 登录 Nacos 控制台 http://127.0.0.1:8848，在左侧导航栏中单击服务列表，再在服务列表页面单击调用者列表页签，查看调用者列表。可以看到包含了 io.terminus.erda.trial.demo.hellodubbo.EchoService，且可以查看该服务的服务分组和调用者 IP。
 
 #### 结果验证
 
@@ -288,9 +288,9 @@ true
 
 
 
-## 将应用部署到 dice
+## 将应用部署到 erda
 
-将应用部署到 dice，注意 Dice 会注入下面两份 application.yml 中的变量
+将应用部署到 erda，注意 Erda 会注入下面两份 application.yml 中的变量
 
 ```yaml
 spring:
@@ -303,7 +303,7 @@ dubbo:
   registry:
     address: nacos://${NACOS_ADDRESS:127.0.0.1:8848}?namespace=${NACOS_TENANT_ID:}
   scan:
-    base-packages: io.terminus.dice.trial.demo.hellodubbo
+    base-packages: io.terminus.erda.trial.demo.hellodubbo
 ```
 
 
@@ -321,7 +321,7 @@ dubbo:
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2020/04/22/13796bbd-8871-446a-a06f-606f1fceb536.png)
 
-这样，服务部署成功后，Dice 会自动注入两个环境变量：
+这样，服务部署成功后，Erda 会自动注入两个环境变量：
 * NACOS_ADDRESS
 * NACOS_TENANT_ID
 

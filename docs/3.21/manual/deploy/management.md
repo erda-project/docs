@@ -224,7 +224,7 @@ services:
     deployments:
       replicas: 2
       labels:
-        GROUP: dice
+        GROUP: erda
     ports:
       - port: 9093
         expose: false

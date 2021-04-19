@@ -109,11 +109,11 @@ pipeline.yml 是描述一个从代码编译构建到应用部署的流水线的�
 
 4 个 stage 分别可用如下 Action 来执行：
 
-1. [git-checkout](https://dice.terminus.io/market/action/git-checkout)
+1. [git-checkout](https://www.erda.cloud/market/action/git-checkout)
 2. [android](TODO)
 3. [ios](TODO)
-4. [release](https://dice.terminus.io/market/action/release)
-5. [mobile-publish](https://dice.terminus.io/market/action/mobile-publish)
+4. [release](https://www.erda.cloud/market/action/release)
+5. [mobile-publish](https://www.erda.cloud/market/action/mobile-publish)
 
 :::tip
 

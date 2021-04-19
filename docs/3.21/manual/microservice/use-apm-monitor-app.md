@@ -170,7 +170,7 @@ APM 全称 Application Performance Management & Monitoring，通过探针采集�
       }
     </script>
     ```
-    2. 在 nginx.conf 中添加 /ta 请求处理，来返回ta.js的配置。环境变量在 Dice 中会默认注入
+    2. 在 nginx.conf 中添加 /ta 请求处理，来返回ta.js的配置。环境变量在 Erda 中会默认注入
     ```bash
         set $taEnabled ${TERMINUS_TA_ENABLE};
         set $taUrl ${TERMINUS_TA_URL};
@@ -187,7 +187,7 @@ APM 全称 Application Performance Management & Monitoring，通过探针采集�
     ```
 
 * 前后端不分离 SpringMVC 页面
-    1. 添加 Config 类读取 ta.js 环境变量，环境变量在 Dice 中会默认注入
+    1. 添加 Config 类读取 ta.js 环境变量，环境变量在 Erda 中会默认注入
     ```java
     @Component
     @Data
@@ -355,7 +355,7 @@ APM 全称 Application Performance Management & Monitoring，通过探针采集�
 
 ## 后端指标监控
 
-在 Dice 平台上，通过内置的 JavaAgent 来自动获取 Java 服务的性能指标，包括 JVM 指标、接口的请求速度、响应时间等。
+在 Erda 平台上，通过内置的 JavaAgent 来自动获取 Java 服务的性能指标，包括 JVM 指标、接口的请求速度、响应时间等。
 
 但在一些场景下，开发团队和客户想要关注业务指标的状态，比如调用第三方短信的成功率、订单数量等。基于此需求，我们提供了监控的 monitor_sdk ，以便业务开发可以订阅需要的业务指标。
 
@@ -364,7 +364,7 @@ APM 全称 Application Performance Management & Monitoring，通过探针采集�
 在应用的 pom 文件中添加:
 ```xml
 <dependency>
-	<groupId>io.terminus.dice</groupId>
+	<groupId>io.terminus.erda</groupId>
 	<artifactId>monitor_sdk</artifactId>
 	<version>1.0.0</version>
 </dependency>
@@ -417,7 +417,7 @@ counter.add(2, new String[]{"1002","电子书"});
 ```
 
 ##### Config
-SDK 提供了 Config API 允许在业务服务中获取当前环境的配置，如当前请求的 request-id 、在 Dice 环境中的服务名称 serviceName 。
+SDK 提供了 Config API 允许在业务服务中获取当前环境的配置，如当前请求的 request-id 、在 Erda 环境中的服务名称 serviceName 。
 ```java
 Config config = ConfigManager.getConfig();
 String requestId = config.getRequestId();

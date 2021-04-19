@@ -148,11 +148,11 @@ OR
 
 [阿里云 API 网关](https://help.aliyun.com/document_detail/29466.html?spm=a2c4g.11174283.6.544.7be17d24LH5p2m)提供了丰富的 API 管理能力。
 
-不过无法和部署在 VPC 内的 K8S 集群打通服务发现，无法实现微服务网关的功能。而 Dice API 网关正好可以补足这一点，如下图所示：
+不过无法和部署在 VPC 内的 K8S 集群打通服务发现，无法实现微服务网关的功能。而 Erda API 网关正好可以补足这一点，如下图所示：
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2020/07/16/ac0806f8-33a6-4a49-a588-06111042b0ee.png)
 
-对于 API 网关的方案选型，无需在阿里云 API 网关和 Dice API 网关之间二选一，按照如下步骤，Dice API 网关可以自动实现和阿里云 API 网关的对接：
+对于 API 网关的方案选型，无需在阿里云 API 网关和 Erda API 网关之间二选一，按照如下步骤，Erda API 网关可以自动实现和阿里云 API 网关的对接：
 
 ### 1、绑定企业的阿里云账号
 

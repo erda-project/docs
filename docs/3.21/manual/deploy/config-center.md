@@ -56,7 +56,7 @@ Spring-Boot 2.1.x版本
 获取配置的方式可以使用 @Value 或者 @ConfigurationProperties
 
 ```java
-package io.terminus.dice.trial.demo.helloconfigcenter.controller;
+package io.terminus.erda.trial.demo.helloconfigcenter.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

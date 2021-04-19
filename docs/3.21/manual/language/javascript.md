@@ -1,11 +1,11 @@
 # JavaScript
 
-DICE 通过统一的任务插件机制支撑不同的构建能力，利用这一机制，DICE 提供了开箱即用的 JavaScript 构建插件。
+Erda 通过统一的任务插件机制支撑不同的构建能力，利用这一机制，Erda 提供了开箱即用的 JavaScript 构建插件。
 只需要在 `pipeline.yml` 中配置几个参数即可使用该插件。
 
 根据运行时容器类型进行分类，可以分为：
 
-- [Herd](https://docs.terminus.io/herd/) DICE 提供的 Node.js 运行时
+- [Herd](https://docs.terminus.io/herd/) Erda 提供的 Node.js 运行时
 - [Single-Page Application（SPA）](https://en.wikipedia.org/wiki/Single-page_application) 使用 Nginx 作为容器运行时
 
 ## Node.js 版本
@@ -48,7 +48,7 @@ DICE 通过统一的任务插件机制支撑不同的构建能力，利用这一
 用户自定义。推荐使用 `npm run build`，并在 `package.json` 中提供 `build` 脚本。
 
 ::: tip
-通过回答这些问题，可以帮助理解在 DICE 上构建 JavaScript 应用所必要填写的配置，以及 DICE 是如何执行 JavaScript 打包过程的
+通过回答这些问题，可以帮助理解在 Erda 上构建 JavaScript 应用所必要填写的配置，以及 Erda 是如何执行 JavaScript 打包过程的
 :::
 
 JavaScript 构建分为两部分:
@@ -111,7 +111,7 @@ stages:
 
 应用需要在编译目录提供一个 Nginx 配置模板文件，文件名为固定的 `nginx.conf.template`。
 
-该模板文件可以使用环境变量，DICE 在运行时会动态替换环境变量的值，随后启动 Nginx。
+该模板文件可以使用环境变量，Erda 在运行时会动态替换环境变量的值，随后启动 Nginx。
 
 模板文件参考如下：
 
@@ -132,7 +132,7 @@ server {
 
     client_max_body_size 0;
 
-    set $OPENAPI_ADDR ${API_ADDR}; # 需要在 dice.yml 的 envs 字段或 Dice 平台的应用设置-部署变量中配置变量名 API_ADDR
+    set $OPENAPI_ADDR ${API_ADDR}; # 需要在 dice.yml 的 envs 字段或 Erda 平台的应用设置-部署变量中配置变量名 API_ADDR
     location /api {
         proxy_pass              $OPENAPI_ADDR;
         proxy_set_header        X-Real-IP $remote_addr;
@@ -165,7 +165,7 @@ stages:
 
 使用 `npm ci` 相比 `npm install` 加速打包。
 
-后续会在 DICE 集群内提供企业级 npm 代理仓库，用于缓存 npm package 并加速打包。
+后续会在 Erda 集群内提供企业级 npm 代理仓库，用于缓存 npm package 并加速打包。
 
 ### caches 加速
 
@@ -202,7 +202,7 @@ stages:
 
 无侵入式监控。
 
-插件在制作镜像时，会自动安装对应 DICE 版本的 `@terminus/spot-agent@~${DICE_VERSION}`。
+插件在制作镜像时，会自动安装对应 Erda 版本的 `@terminus/spot-agent@~${ERDA_VERSION}`。
 
 ### SPA 接入监控
 
@@ -256,7 +256,7 @@ require('@terminus/spot-agent').start()
 RUN bootjs=$(node -p "require('./package.json').scripts.start" | \
     sed -n -e 's/^.*herd //p') && \
     bootjs=${bootjs:-'Pampasfile-default.js'} && echo ${bootjs} && \
-    npm i @terminus/spot-agent@~${DICE_VERSION} -g && \
+    npm i @terminus/spot-agent@~${ERDA_VERSION} -g && \
     npm link @terminus/spot-agent && \
 	spot install -r herd -s ${bootjs} || exit -1;
 ```
