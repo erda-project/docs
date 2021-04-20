@@ -288,9 +288,9 @@ true
 
 
 
-## 将应用部署到 erda
+## 将应用部署到 Erda
 
-将应用部署到 erda，注意 Erda 会注入下面两份 application.yml 中的变量
+将应用部署到 Erda，注意 Erda 会注入下面两份 application.yml 中的变量
 
 ```yaml
 spring:
