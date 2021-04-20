@@ -39,7 +39,7 @@ tftp, sendmail, ypbind, kshell, lpd, printer, ident, time, ntalk, bootps, charge
 设置系统登录后，连接超时时间是10分钟，即10分钟内没有任何操作，服务器主动断开 SSH 连接，增强安全性。
 
 ## 日志记录
-通过脚本代码实现记录所有用户的登录操作日志，防止出现安全事件后无据可查，ERDA 优化了服务器的的history显示，为所有操作都增加了用户和时间的显示，具体优化脚本如下：
+通过脚本代码实现记录所有用户的登录操作日志，防止出现安全事件后无据可查，Erda 优化了服务器的的history显示，为所有操作都增加了用户和时间的显示，具体优化脚本如下：
 ```bash
  USER=`whoami`
  USER_IP=`who -u am i 2>/dev/null| awk '{print $NF}'|sed -e 's/[()]//g'`

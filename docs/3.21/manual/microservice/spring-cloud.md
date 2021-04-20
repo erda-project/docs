@@ -303,9 +303,9 @@ curl http://127.0.0.1:18082/echo-feign/feign-rest
 
 - Windows 系统，在浏览器中输入 http://127.0.0.1:18082/echo-rest/rest-rest 和 http://127.0.0.1:18082/echo-feign/feign-rest。
 
-## 将应用部署到 erda
+## 将应用部署到 Erda
 
-要将应用部署到 erda，注意如下配置中的环境变量会被自动注入
+要将应用部署到 Erda，注意如下配置中的环境变量会被自动注入
 
 ```yaml
 spring:
