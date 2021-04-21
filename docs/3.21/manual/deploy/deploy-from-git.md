@@ -4,7 +4,7 @@
 
 :::tip 注意
 
-假设新建项目名为：dice-test，新建应用名为：java-demo。下文中的 git 仓库地址将会涉及到这两个名字。
+假设新建项目名为：erda-test，新建应用名为：java-demo。下文中的 git 仓库地址将会涉及到这两个名字。
 
 :::
 
@@ -14,7 +14,7 @@
 
 :::tip 注意
 
-Dice 平台可以部署运行任意语言、任意框架开发的代码，并不局限于 Java、SprintBoot 等。
+Erda 平台可以部署运行任意语言、任意框架开发的代码，并不局限于 Java、SprintBoot 等。
 
 :::
 
@@ -33,9 +33,9 @@ git clone https://github.com/bzdgn/docker-spring-boot-java-web-service-example.g
 > DevOps 平台 -> 项目 -> 应用 -> 代码仓库 -> 代码浏览 -> 仓库地址
 
 ```bash
-git remote add dice http://dice.dev.terminus.io/wb/dice-test/java-demo
-git push -u dice --all
-git push -u dice --tags
+git remote add erda http://dice.dev.terminus.io/wb/erda-test/java-demo
+git push -u erda --all
+git push -u erda --tags
 ```
 
 完成代码推送后，即可在代码仓库中查看代码信息。
@@ -57,10 +57,10 @@ pipeline.yml 描述一个从代码编译构建到应用部署的流水线的配�
 
 4 个 stage 分别可用如下 Action 来执行：
 
-1. [git-checkout](https://dice.terminus.io/market/action/git-checkout)
-2. [java](https://dice.terminus.io/market/action/java)
-3. [release](https://dice.terminus.io/market/action/release)
-4. [dice](https://dice.terminus.io/market/action/dice)
+1. [git-checkout](https://www.erda.cloud/market/action/git-checkout)
+2. [java](https://www.erda.cloud/market/action/java)
+3. [release](https://www.erda.cloud/market/action/release)
+4. [dice](https://www.erda.cloud/market/action/dice)
 
 :::tip
 
@@ -130,7 +130,7 @@ services:
 ```bash
 git add .
 git commit -m "add pipeline.yml and dice.yml"
-git push dice feature/demo
+git push erda feature/demo
 ```
 
 :::tip 注意

@@ -17,7 +17,7 @@
 ```
 Pod(java-demo-7dcc646768-8wvqm)重启次数过多(418次)，请及时检查程序日志或健康检查配置
 程序日志入口：部署中心 -> 本次服务部署环境 -> 服务详情 -> 选择已停止  -> 查看最新的容器日志
-健康检查配置入口：代码仓库 -> dice.yml -> health_check 的配置内容
+健康检查配置入口：代码仓库 -> erda.yml -> health_check 的配置内容
 ```
 解决方法:
 - 检查健康检查配置, 如 diceyml 中 port 配置与实际服务不匹配
@@ -39,7 +39,7 @@ Pod(java-demo-6b47f48fbf-nzwcd), PodScheduled failed: 0/8 nodes are available: 3
 部署日志信息如下:
 ```
 Pod未就绪(java-demo-7dcc646768-8wvqm), 请确认健康检查或镜像是否存在
-健康检查配置入口：代码仓库 -> dice.yml -> health_check 的配置内容
+健康检查配置入口：代码仓库 -> erda.yml -> health_check 的配置内容
 
 Pod(java-demo-7dcc646768-8wvqm), ContainerNotReady: containers with unready status: [java-demo]
 ```
@@ -53,7 +53,7 @@ Pod(java-demo-7dcc646768-8wvqm), ContainerNotReady: containers with unready stat
 自定义 addon 不存在, addon 的详细信息如下
 addon 类型: custom, 
 addon name: XXXXXX. 
-如果已创建, 请检查 Dice.yml 文件中 addonName 是否未匹配
+如果已创建, 请检查 Erda.yml 文件中 addonName 是否未匹配
 ```
 解决方法:
 - 在 扩展服务 中先创建相应的自定义addon
@@ -64,15 +64,15 @@ addon name: XXXXXX.
 ``` 
 调度失败，失败原因：没有匹配的节点能部署, 请检查节点标签是否正确
 
-没有匹配的节点能部署, java-demo: exist: [dice/location-xxx dice/org-terminus dice/workspace-dev dice/stateless-service], not-exist: [dice/locked]
+没有匹配的节点能部署, java-demo: exist: [erda/location-xxx erda/org-terminus erda/workspace-dev erda/stateless-service], not-exist: [erda/locked]
 ```
 
 解决方法:
 - 这样的提示说明没有一个节点的标签符合该服务的要求, 即: 
 
-  节点上需要 [dice/location-xxx dice/org-terminus dice/workspace-dev dice/stateless-service]
+  节点上需要 [erda/location-xxx erda/org-terminus erda/workspace-dev erda/stateless-service]
   
-  节点上不能有 [dice/locked]
+  节点上不能有 [erda/locked]
 
 ### addon 部署超时
 部署日志信息如下:

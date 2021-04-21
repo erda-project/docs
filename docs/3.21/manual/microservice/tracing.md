@@ -42,7 +42,7 @@ A                      --- Span4 --
 
 ```pom
 <dependency>
-  <groupId>io.terminus.dice</groupId>
+  <groupId>io.terminus.erda</groupId>
   <artifactId>monitor_sdk</artifactId>
   <version>1.0.0</version>
 </dependency>

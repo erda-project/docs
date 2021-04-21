@@ -2,7 +2,7 @@
 
 ## 概述
 
-dice.yml 文件采用 Yaml 语法编写，是一个微服务应用部署的描述文件，由服务基本信息和服务编排关系两部分组成，具体包含了微服务的 Docker 镜像、资源需求（CPU 和 Memory 等）、微服务之间的依赖关系、环境变量以及 AddOn 等信息。一个复杂的微服务应用只要编写了一个有效的 dice.yml 描述文件，就能够被 Dice 一键部署和编排，拉起整个微服务应用。
+dice.yml 文件采用 Yaml 语法编写，是一个微服务应用部署的描述文件，由服务基本信息和服务编排关系两部分组成，具体包含了微服务的 Docker 镜像、资源需求（CPU 和 Memory 等）、微服务之间的依赖关系、环境变量以及 AddOn 等信息。一个复杂的微服务应用只要编写了一个有效的 dice.yml 描述文件，就能够被 Erda 一键部署和编排，拉起整个微服务应用。
 
 完整例子位于文档尾部。
 
@@ -43,7 +43,7 @@ envs 定义环境变量，envs 分全局定义和 service 内定义两种，此�
 ```yaml
 envs:
   Debug: true
-  Host: dice.terminus.io
+  Host: erda.terminus.io
   Key: value
 ```
 
@@ -65,7 +65,7 @@ services:
     deployments:
       replicas: 2
       labels:
-        GROUP: dice
+        GROUP: erda
     ports:
       - port: 9093
     envs:

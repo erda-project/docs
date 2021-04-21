@@ -8,7 +8,7 @@
 
 基于 Docker Image 部署和源码部署一样，都需要编写 dice.yml 和 pipeline.yml 两个文件（镜像名会直接填写到 dice.yml 文件中），所以平台仍然会提供一个 Git 仓库用于存放两个 yaml 文件。
 
-假设新建项目名为：dice-test，新建应用名为：image-demo。下文中的 git 仓库地址将会涉及到这两个名字。
+假设新建项目名为：erda-test，新建应用名为：image-demo。下文中的 git 仓库地址将会涉及到这两个名字。
 
 :::
 
@@ -30,9 +30,9 @@ nginx:latest
 
 3 个 stage 分别可用如下 Action 来执行：
 
-1. [git-checkout](https://dice.terminus.io/market/action/git-checkout)
-2. [release](https://dice.terminus.io/market/action/release)
-3. [dice](https://dice.terminus.io/market/action/dice)
+1. [git-checkout](https://www.erda.cloud/market/action/git-checkout)
+2. [release](https://www.erda.cloud/market/action/release)
+3. [dice](https://www.erda.cloud/market/action/dice)
 
 可直接复制下面的内容作为 pipeline.yml 使用。
 
@@ -85,7 +85,7 @@ services:
 ```bash
 git add .
 git commit -m "add pipeline.yml and dice.yml"
-git push dice feature/demo
+git push erda feature/demo
 ```
 
 :::tip 注意

@@ -47,7 +47,7 @@ spring:
     password: ${MYSQL_PASSWORD:}
 ```
 
-每款开箱即用扩展服务均有其特色的环境变量配置，详细可进入：[扩展服务名录](https://dice.terminus.io/market/addon)，参看每款扩展服务的配置，以 mysql 为例： [MYSQL](https://dice.terminus.io/market/addon/mysql)
+每款开箱即用扩展服务均有其特色的环境变量配置，详细可进入：[扩展服务名录](https://www.erda.cloud/market/addon)，参看每款扩展服务的配置，以 mysql 为例： [MYSQL](https://www.erda.cloud/market/addon/mysql)
 
 可在扩展服务详情页面查看使用介绍，红框位置描述了这款扩展服务提供的配置清单：
 

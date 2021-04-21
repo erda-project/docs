@@ -221,7 +221,7 @@ alias 是 Action 的别名，Action 之间可以通过 alias 来进行引用，�
 
 Action 的参数，主要用来定义 Action 的行为。
 
-每个 Action 的参数都不一样，具体 Action 的参数信息请参考 [扩展市场](https://dice.terminus.io/market/pipeline) 里具体内容。
+每个 Action 的参数都不一样，具体 Action 的参数信息请参考 [扩展市场](https://www.erda.cloud/market/pipeline) 里具体内容。
 
 #### version
 
@@ -241,7 +241,7 @@ Action 的版本。
 
 custom-script Action 运行时的镜像。
 
-默认使用的镜像可以在 [扩展市场-自定义脚本 Action](https://dice.terminus.io/market/Action/custom-script) 里看到。
+默认使用的镜像可以在 [扩展市场-自定义脚本 Action](https://www.erda.cloud/market/Action/custom-script) 里看到。
 
 #### commands
 

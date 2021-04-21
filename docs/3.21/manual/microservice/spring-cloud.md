@@ -65,19 +65,19 @@ Windows 系统：双击运行 startup.cmd
 注意：Spring Cloud Edgware 版本的生命周期已结束，不推荐使用这个版本开发应用
 :::
 
-3. 在 src/main/java 下创建 package: io.terminus.dice.trial.demo.hellospringcloud
+3. 在 src/main/java 下创建 package: io.terminus.erda.trial.demo.hellospringcloud
 
-在 package: io.terminus.dice.trial.demo.hellospringcloud 中创建服务提供者的启动类 ProviderApplication，并添加如下代码。其中 @EnableDiscoveryClient 注解表明此应用需开启服务注册与发现功能。
+在 package: io.terminus.erda.trial.demo.hellospringcloud 中创建服务提供者的启动类 ProviderApplication，并添加如下代码。其中 @EnableDiscoveryClient 注解表明此应用需开启服务注册与发现功能。
 
 ```java
-package io.terminus.dice.trial.demo.hellospringcloud;
+package io.terminus.erda.trial.demo.hellospringcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
- * @author dice
+ * @author erda
  */
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -89,10 +89,10 @@ public class ProviderApplication {
 }
 ```
 
-在 package: io.terminus.dice.trial.demo.hellospringcloud 中创建 EchoController，指定 URL mapping 为 {/echo/{String}}，指定 HTTP 方法为 GET，方法参数从 URL 路径中获得，回显收到的参数。
+在 package: io.terminus.erda.trial.demo.hellospringcloud 中创建 EchoController，指定 URL mapping 为 {/echo/{String}}，指定 HTTP 方法为 GET，方法参数从 URL 路径中获得，回显收到的参数。
 
 ```java
-package io.terminus.dice.trial.demo.hellospringcloud;
+package io.terminus.erda.trial.demo.hellospringcloud;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -100,7 +100,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author dice
+ * @author erda
  */
 @RestController
 public class EchoController {
@@ -176,13 +176,13 @@ spring:
 
 ```
 
-3. 在 src/main/java 下创建 package: io.terminus.dice.trial.demo.hellospringcloud
-4. 在 package: io.terminus.dice.trial.demo.hellospringcloud 中配置 RestTemplate 和 FeignClient。
+3. 在 src/main/java 下创建 package: io.terminus.erda.trial.demo.hellospringcloud
+4. 在 package: io.terminus.erda.trial.demo.hellospringcloud 中配置 RestTemplate 和 FeignClient。
 
-在 package: io.terminus.dice.trial.demo.hellospringcloud 中创建一个接口类 EchoService ，添加 @FeignClient 注解，并配置对应的 HTTP URL 地址及 HTTP 方法。
+在 package: io.terminus.erda.trial.demo.hellospringcloud 中创建一个接口类 EchoService ，添加 @FeignClient 注解，并配置对应的 HTTP URL 地址及 HTTP 方法。
 
 ```java
-package io.terminus.dice.trial.demo.hellospringcloud;
+package io.terminus.erda.trial.demo.hellospringcloud;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -190,7 +190,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * @author dice
+ * @author erda
  */
 @FeignClient(name = "service-provider")
 public interface EchoService {
@@ -199,10 +199,10 @@ public interface EchoService {
 }
 ```
 
-在 package: io.terminus.dice.trial.demo.hellospringcloud 中创建启动类 ConsumerApplication 并添加相关配置。使用 @EnableDiscoveryClient 注解启用服务注册与发现；使用 @EnableFeignClients 注解激活 FeignClient；添加 @LoadBalanced 注解将 RestTemplate 与服务发现集成。
+在 package: io.terminus.erda.trial.demo.hellospringcloud 中创建启动类 ConsumerApplication 并添加相关配置。使用 @EnableDiscoveryClient 注解启用服务注册与发现；使用 @EnableFeignClients 注解激活 FeignClient；添加 @LoadBalanced 注解将 RestTemplate 与服务发现集成。
 
 ```java
-package io.terminus.dice.trial.demo.hellospringcloud;
+package io.terminus.erda.trial.demo.hellospringcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -213,7 +213,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @author dice
+ * @author erda
  */
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -232,11 +232,11 @@ public class ConsumerApplication {
 }
 ```
 
-5. 在 package: io.terminus.dice.trial.demo.hellospringcloud 中创建类 TestController 以演示和验证服务发现功能。
+5. 在 package: io.terminus.erda.trial.demo.hellospringcloud 中创建类 TestController 以演示和验证服务发现功能。
 
 
 ```java
-package io.terminus.dice.trial.demo.hellospringcloud;
+package io.terminus.erda.trial.demo.hellospringcloud;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -303,9 +303,9 @@ curl http://127.0.0.1:18082/echo-feign/feign-rest
 
 - Windows 系统，在浏览器中输入 http://127.0.0.1:18082/echo-rest/rest-rest 和 http://127.0.0.1:18082/echo-feign/feign-rest。
 
-## 将应用部署到dice
+## 将应用部署到 Erda
 
-要将应用部署到 dice，注意如下配置中的环境变量会被自动注入
+要将应用部署到 Erda，注意如下配置中的环境变量会被自动注入
 
 ```yaml
 spring:
@@ -331,7 +331,7 @@ spring:
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2020/04/22/bf9558f7-9b9c-4649-9a88-db8d29784f5a.png)
 
-服务部署成功后，Dice 会自动注入两个环境变量：
+服务部署成功后，Erda 会自动注入两个环境变量：
 
 * NACOS_ADDRESS
 * NACOS_TENANT_ID

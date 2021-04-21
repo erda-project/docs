@@ -3,7 +3,7 @@
 
 ## 使用场景
 
-用户可以在 DICE 上开启两种不同场景下的 HTTPS ：
+用户可以在 Erda 上开启两种不同场景下的 HTTPS ：
 - 单一应用的 HTTPS 防护（比如支付，控制台等业务）
 - 整站的 HTTPS 防护
 
@@ -71,7 +71,7 @@ HTTPS 证书按照域名类型可以分为通配符域名，单域名，多域�
 
 ## 单一应用的 HTTPS 防护
 
-1. Dice 平台通过 kubernets 的 secret 来管理 HTTPS 证书，登录到 master 节点，根据准备好的证书创建 secret。
+1. Erda 平台通过 kubernets 的 secret 来管理 HTTPS 证书，登录到 master 节点，根据准备好的证书创建 secret。
 
 ```bash
 $  kubectl create secret tls secret-https --key tls.key --cert tls.crt
@@ -110,7 +110,7 @@ spec:
 ```bash
 kubectl create secret tls secret-https --key tls.key --cert tls.crt -n kube-system
 ```
-3. Dice 平台采用 [Nginx](http://nginx.org/) 作为整个集群的入口并且默认会开启所有域名的 TLS 端口，因此可以在 Nginx 处配置统一的证书以及 HTTP 转 HTTPS 规则。
+3. Erda 平台采用 [Nginx](http://nginx.org/) 作为整个集群的入口并且默认会开启所有域名的 TLS 端口，因此可以在 Nginx 处配置统一的证书以及 HTTP 转 HTTPS 规则。
 
 在 Nginx 的启动参数中配置默认证书：
 
