@@ -38,10 +38,10 @@ module.exports = ctx => ({
     smoothScroll: true,
     nav: require('./nav/zh'),
     sidebar: require('./sidebar/zh'),
-    algolia: {
-      apiKey: '75ceab77c4536a615806be21b7e3b39c',
-      indexName: 'Erda'
-    }
+    // algolia: {
+    //   apiKey: '75ceab77c4536a615806be21b7e3b39c',
+    //   indexName: 'Erda'
+    // }
     // locales: {
     //   '/': {
     //     label: '简体中文',
@@ -65,6 +65,11 @@ module.exports = ctx => ({
     // sidebarDepth: 0,
   },
   plugins: [
+    ['@vuepress/search',
+      {
+        searchMaxSuggestions: 10,
+      },
+    ],
     ['@vuepress/back-to-top', true],
     ['vuepress-plugin-code-copy', {
       // selector: String,
