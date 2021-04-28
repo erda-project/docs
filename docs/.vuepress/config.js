@@ -3,7 +3,7 @@
 module.exports = ctx => ({
   dest: `dest`,
   lang: 'zh-CN',
-  title: "",
+  title: "Erda Docs",
   description: "学习在 Erda 平台上构建、部署、管理应用",
   // locales: {
   //   '/en': {
