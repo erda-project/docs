@@ -27,7 +27,9 @@ export default ({
       const [, ver, ...rest] = to.path.split('/');
       if (ver === 'latest') {
         // next([, vers[0], ...rest].join('/'))
-        window.location.href = window.location.origin+[, vers[0], ...rest].join('/')
+        window.location.href = window.location.origin + [, vers[0], ...rest].join('/')
+      } else if (ver === '') {
+        window.location.href = `${window.location.origin}/${vers[0]}/manual`
       } else {
         next();
       }
@@ -59,7 +61,7 @@ export default ({
           : versionInteger2 - versionInteger1;
       });
 
-       // 根据 anchor 字段对相同内容进行过滤显示
+      // 根据 anchor 字段对相同内容进行过滤显示
       const latestManualSuggestions = manualSuggestions.filter((item) => {
         if (!hash[item.anchor]) {
           hash[item.anchor] = true;
