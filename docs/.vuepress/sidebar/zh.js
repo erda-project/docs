@@ -802,7 +802,7 @@ module.exports = {
       ]
     }
   ],
-  '/3.21/manual/': [
+  '/1.0/manual/': [
     '',
     'platform-design',
     {
