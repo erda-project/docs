@@ -17,6 +17,8 @@ LIMIT 100;
 默认 GROUP BY 中的字段为 tag, 可以省略 ::tag 后缀。<br>
 默认 ORDER BY 中的字段为 field, 可以省略 ::field 后缀。<br>
 
+>自定义函数目前以查询关键字与自定义类型区分。
+
 ## SELECT
 ### 聚合函数
 * max(field), 求 field  的最大值
@@ -26,9 +28,9 @@ LIMIT 100;
 * sum(field), 求 field  的总和
 * count(field|tag), 求存在 field 或 tag 的数据条数
 * distinct(field|tag), 求 field 或 tag 的去重数
-* percentiles(field,percent) , 求 field 的分位数
-	 field type : float/int
-	 percent type : float/int
+* percentiles(field,percent) , 求 field 的分位数<br>
+	 field type : float/int<br>
+	 percent type : float/int<br>
 	 percent range : 0<=percent<=100
 * etc.
 
@@ -81,14 +83,23 @@ LIMIT 100;
 
 * etc.
 
-### 其他函数
-* if(cond, true_expression, false_exprission), 等价于 cond ? true_expression : false_exprission
-* include(key, value1, value2...), 等价于 key IN (value1, value2), 返回 boolean
+### 关系运算函数
 * eq(value1, value2), 等价于 value1 == value2，返回boolean
+* neq(value1, value2), 等价于 value1 != value2，返回boolean
 * gt(value1, value2), 等价于 value1 > value2，返回boolean
 * gte(value1, value2), 等价于 value1 >= value2，返回boolean
 * lt(value1, value2), 等价于 value1 < value2，返回boolean
 * lte(value1, value2), 等价于 value1 <= value2，返回boolean
+
+### 条件运算函数
+* if(cond, true_expression, false_exprission), 等价于 cond ? true_expression : false_exprission
+
+### 逻辑运算函数
+* andf(bool1,bool2,bool3) 与运算函数，等价于 bool1 && bool2 && bool3 ，返回bool
+* orf(bool1,bool2,bool3) 或运算函数，等价于 bool1 || bool2 || bool3 ，返回bool
+
+### 其他函数
+* include(key, value1, value2...), 等价于 key IN (value1, value2), 返回 boolean
 * max_value(value1, value2), 返回两个值中的最大值
 * min_value(value1, value2), 返回两个值中的最小值
 * substring(string, start, end) 字符串切片，取下标start-end的值，默认值“”
@@ -104,10 +115,10 @@ LIMIT 100;
 * trim_space(str) 删除字符串的空白符，返回string
 * trim_prefix(str, prefix)
 * trim_suffix(str, suffix)
-* map(value,k,v...)根据value值转换为k对应的v
-		value type : int64、uint64、float64、bool、string、time.Time、time.Duration
-		k type : int64、uint64、float64、bool、string、time.Time、time.Duration
-		v type : interface{}
+* map(value,k,v...)根据value值转换为k对应的v<br>
+		value type : int64、uint64、float64、bool、string、time.Time、time.Duration<br>
+		k type : int64、uint64、float64、bool、string、time.Time、time.Duration<br>
+		v type : interface{}<br>
 		example:
 ```sql
 			SELECT map(health_status::field, 0,'健康',1,'警告',2,'部分故障',3,'严重故障')
