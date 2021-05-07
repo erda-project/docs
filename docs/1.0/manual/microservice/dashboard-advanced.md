@@ -35,8 +35,8 @@ LIMIT 100;
 * etc.
 
 ### 常量函数
-* interval(unit), 根据指定的单位，返回时间间隔，不符合限定单位返回error
- unit type:string
+* interval(unit), 根据指定的单位，返回时间间隔，不符合限定单位返回error<br>
+ unit type:string<br>
  unit:"ns"、"us"、"µs"、"μs"、"ms"、"s"、"m"、"h"、"day"
 * now(), 返回当前时间戳，单位为纳秒
 * now_sec(), 返回当前时间戳，单位为秒
@@ -61,25 +61,20 @@ LIMIT 100;
 * etc.
 
 ### 类型转换
-* int(value) 将value转化为int64，不符合限定类型返回error
+* int(value) 将value转化为int64，不符合限定类型返回error<br>
 	   value type:bool、int、uint、float、string、time.Duration、time.Time
-	   <br>
   
-* bool(value) 将value转化为bool，不符合限定类型返回error
+* bool(value) 将value转化为bool，不符合限定类型返回error<br>
        value type:bool、int、uint、float、string、time.Duration、time.Time
-	   <br>
 	   
-* float(value) 将value转化为float，不符合限定类型返回error
+* float(value) 将value转化为float，不符合限定类型返回error<br>
        value type:bool、int、uint、float、string、time.Duration、time.Time
-	   <br>
 	   
-* string(value) 将value转化为string，转换失败返回错误
+* string(value) 将value转化为string，转换失败返回错误<br>
        value type:interface{}
-	   <br>
 	   
-* duration(value) 将value转化为time.Duration，不符合限定类型返回error
+* duration(value) 将value转化为time.Duration，不符合限定类型返回error<br>
        value type:bool、int、uint、float、string、time.Duration
-	   <br>
 
 * etc.
 
@@ -97,6 +92,9 @@ LIMIT 100;
 ### 逻辑运算函数
 * andf(bool1,bool2,bool3) 与运算函数，等价于 bool1 && bool2 && bool3 ，返回bool
 * orf(bool1,bool2,bool3) 或运算函数，等价于 bool1 || bool2 || bool3 ，返回bool
+
+example:
+> andf(eq(field1,field2),neq(field2,field3))
 
 ### 其他函数
 * include(key, value1, value2...), 等价于 key IN (value1, value2), 返回 boolean
