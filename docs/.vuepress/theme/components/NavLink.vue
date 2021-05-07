@@ -4,7 +4,8 @@
   </RouterLink>
   <a v-else :href="link" class="nav-link external" :target="target" :rel="rel" @focusout="focusoutAction">
     {{ item.text }}
-    <OutboundLink v-if="isBlankTarget" />
+  <!-- 外部跳转链接图标，为保持导航栏一致，暂时注释 -->
+  <!-- <OutboundLink v-if="isBlankTarget" /> -->
   </a>
 </template>
 
