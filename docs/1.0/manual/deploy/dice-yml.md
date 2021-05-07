@@ -60,7 +60,6 @@ services:
   serviceA:
     resources:
       cpu: 0.1
-      max_cpu: 0.5
       mem: 256
     deployments:
       replicas: 2
