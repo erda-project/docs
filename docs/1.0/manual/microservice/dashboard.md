@@ -7,6 +7,7 @@
 * 需求总是有偏差，反复改动且不尽人意。
 * 展示在不同设备之间无法做到统一，视觉效果不一致。
 * 可视化效果耗时耗力，毫无扩展性。
+* 无法应对频繁的需求变化。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/4b0e4ff0-c157-417d-8c12-431ba10967de.png)
 
@@ -93,6 +94,28 @@
 输入大盘名称和描述后，点击保存，即可保存，随时查看。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/14/dc7bb892-228e-4e5b-9c04-81a7965ca452.png)
+
+### 内置大盘
+
+系统提供了一些内置表盘，如服务分析-事务分析下的图表。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/05/07/c51dced9-e21e-46c5-b849-41a0eb11aa69.png)
+
+拖拽与拉伸时间轴可即时调整当前图表展示的时间范围与数据粒度。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/05/07/2ccaa617-e35b-41ca-88e1-6ef6999ae582.png)
+
+其使用方法也是类似的，若想对某一图表操作，只需点开图表右上方。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/05/07/f66d0043-5afe-46b5-8f91-1cef28f14c04.png)
+
+全屏查看：使当前图表铺满可显示区域，可在线条较为复杂，需要对其分析的时候使用。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/05/07/8879098f-aeef-42e3-901b-7b913c5c2817.png)
+
+导出图片：若想把当前某一时间段图表分享给他人，或是生成可视化报表，拖动到合适的时间轴，点击导出即可生成图片以供下载。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/05/07/e6c08a01-67df-4d0e-a8c0-fb0149873c74.png)
 
 ## 概念
 
