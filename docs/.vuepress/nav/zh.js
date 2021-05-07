@@ -5,6 +5,10 @@ const vers = [
 
 module.exports = [
   {
+    text: '官网',
+    link: `https://www.erda.cloud/`,
+  },
+  {
     text: '使用手册',
     link: `/{version}/manual/`,
   },
