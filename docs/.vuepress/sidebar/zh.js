@@ -67,7 +67,9 @@ module.exports = {
         'microservice/spring-cloud',
         'microservice/dubbo',
         'microservice/use-apm-monitor-app.md',
-        'microservice/tracing.md'
+        'microservice/tracing.md',
+        'microservice/dashboard.md',
+        'microservice/dashboard-advanced.md'
       ]
     },
     {
@@ -222,7 +224,9 @@ module.exports = {
         'microservice/spring-cloud',
         'microservice/dubbo',
         'microservice/use-apm-monitor-app.md',
-        'microservice/tracing.md'
+        'microservice/tracing.md',
+        'microservice/dashboard.md',
+        'microservice/dashboard-advanced.md'
       ]
     },
     {
@@ -378,7 +382,9 @@ module.exports = {
         'microservice/spring-cloud',
         'microservice/dubbo',
         'microservice/use-apm-monitor-app.md',
-        'microservice/tracing.md'
+        'microservice/tracing.md',
+        'microservice/dashboard.md',
+        'microservice/dashboard-advanced.md'
       ]
     },
     {
@@ -534,7 +540,9 @@ module.exports = {
         'microservice/spring-cloud',
         'microservice/dubbo',
         'microservice/use-apm-monitor-app.md',
-        'microservice/tracing.md'
+        'microservice/tracing.md',
+        'microservice/dashboard.md',
+        'microservice/dashboard-advanced.md'
       ]
     },
     {
@@ -694,7 +702,9 @@ module.exports = {
         'microservice/spring-cloud',
         'microservice/dubbo',
         'microservice/use-apm-monitor-app.md',
-        'microservice/tracing.md'
+        'microservice/tracing.md',
+        'microservice/dashboard.md',
+        'microservice/dashboard-advanced.md'
       ]
     },
     {
@@ -792,7 +802,7 @@ module.exports = {
       ]
     }
   ],
-  '/3.21/manual/': [
+  '/1.0/manual/': [
     '',
     'platform-design',
     {
@@ -857,7 +867,9 @@ module.exports = {
         'microservice/spring-cloud',
         'microservice/dubbo',
         'microservice/use-apm-monitor-app.md',
-        'microservice/tracing.md'
+        'microservice/tracing.md',
+        'microservice/dashboard.md',
+        'microservice/dashboard-advanced.md'
       ]
     },
     {

@@ -3,7 +3,7 @@
 module.exports = ctx => ({
   dest: `dest`,
   lang: 'zh-CN',
-  title: "",
+  title: "Erda Docs",
   description: "学习在 Erda 平台上构建、部署、管理应用",
   // locales: {
   //   '/en': {
@@ -21,6 +21,7 @@ module.exports = ctx => ({
     ['link', { rel: 'icon', href: `/favicon.ico` }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#5d48df' }],
+    ['meta', { property: 'og:image', content: '/favicon.ico' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: "stylesheet", href: '//at.alicdn.com/t/font_1893647_d3gl9b04e4b.css' }],
@@ -37,10 +38,10 @@ module.exports = ctx => ({
     smoothScroll: true,
     nav: require('./nav/zh'),
     sidebar: require('./sidebar/zh'),
-    algolia: {
-      apiKey: '75ceab77c4536a615806be21b7e3b39c',
-      indexName: 'Erda'
-    }
+    // algolia: {
+    //   apiKey: '75ceab77c4536a615806be21b7e3b39c',
+    //   indexName: 'Erda'
+    // }
     // locales: {
     //   '/': {
     //     label: '简体中文',
@@ -64,6 +65,11 @@ module.exports = ctx => ({
     // sidebarDepth: 0,
   },
   plugins: [
+    ['@vuepress/search',
+      {
+        searchMaxSuggestions: 10,
+      },
+    ],
     ['@vuepress/back-to-top', true],
     ['vuepress-plugin-code-copy', {
       // selector: String,

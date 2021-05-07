@@ -1,30 +1,39 @@
 version: "1.1"
-
-on:
-  push:
-    branches:
-      - develop
-
+"on": {}
 stages:
   - stage:
       - git-checkout:
-
+          alias: git-checkout
+          description: 代码仓库克隆
+          version: "1.0"
   - stage:
-      - js:
+      - js-build:
+          alias: js-build
+          description: 针对 nodejs 工程的编译打包任务
+          version: "1.0"
           params:
+            build_cmd:
+              - npm i
+              - npm run build
             workdir: ${git-checkout}
-            container_type: spa
-            build_cmd: npm run build
-            dest_dir: dest
-
+          caches:
+            - path: ${git-checkout}/node_modules
   - stage:
       - release:
+          alias: release
+          description: 用于打包完成时，向dicehub 提交完整可部署的dice.yml。用户若没在pipeline.yml里定义该action，CI会自动在pipeline.yml里插入该action
           params:
             dice_yml: ${git-checkout}/dice.yml
-            image:
-              doc: ${js:OUTPUT:image}
-
+            services:
+              doc:
+                cmd: sed -i "s^server_name .*^^g" /etc/nginx/conf.d/nginx.conf.template && envsubst "`printf '$%s' $(bash -c "compgen -e")`" < /etc/nginx/conf.d/nginx.conf.template > /etc/nginx/conf.d/default.conf && /usr/local/openresty/bin/openresty -g 'daemon off;'
+                copys:
+                  - ${js-build}/dest:/usr/share/nginx/html/
+                  - ${js-build}/nginx.conf.template:/etc/nginx/conf.d/
+                image: registry.cn-hangzhou.aliyuncs.com/dice-third-party/terminus-nginx:0.2
   - stage:
       - dice:
+          alias: dice
+          description: 用于 Erda 平台部署应用服务
           params:
-            release_id_path: ${release}
+            release_id: ${release:OUTPUT:releaseID}
