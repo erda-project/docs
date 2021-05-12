@@ -312,6 +312,39 @@ loop_interval = min(interval_sec * (decline_ratio)^N, decline_limit_sec)
 其中 N 为循环次数，从 0 开始计数。
 ```
 
+#### caches
+
+caches 缓存
+
+[actions-caches](../actions/#用户手册)
+
+#### if
+
+Action 条件执行
+
+```yaml
+- stage:
+  - custom-script:
+      alias: script1
+      version: "1.0"
+      commands:
+        - echo 1
+        - echo "image=123" >> $METAFILE # 输出出参给下个任务使用
+      if: ${{ 1==1 }}
+
+- stage:
+  - custom-script:
+      alias: script2
+      version: "1.0"
+      commands:
+        - echo 1
+      if: ${{ ${{ outputs.script1.image }}==123 && ${{ outputs.script1.image }}==123 }}
+```
+
+使用 ${{ xxx }}，中间 xxx 输入数学表达式(注意xxx前后有空格)，可以使用前置任务出参作为执行条件
+
+目前 pipeline 执行的时候假如没有加入条件执行，那么当一个任务失败，下面的任务就会自动失败，而当下面的任务加上了条件执行，条件成立的话还是会继续执行
+
 ##### 内置表达式
 
 - task_status: 可选值 Success / Failed (注意大小写)
