@@ -12,14 +12,14 @@ module.exports = [
     text: '使用手册',
     link: `/{version}/manual/`,
   },
-  {
-    text: 'CHANGELOG',
-    link: '/changeLog'
-  },
-  {
-    text: 'FAQ',
-    link: '/faq'
-  },
+  // {
+  //   text: 'CHANGELOG',
+  //   link: '/changeLog'
+  // },
+  // {
+  //   text: 'FAQ',
+  //   link: '/faq'
+  // },
   {
     text: '版本',
     ariaLabel: '版本',
