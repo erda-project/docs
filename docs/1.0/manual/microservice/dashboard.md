@@ -127,6 +127,14 @@
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/05/07/e6c08a01-67df-4d0e-a8c0-fb0149873c74.png)
 
+按需加载
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/05/14/2f8ef82c-42fe-47ec-ac0c-69235d5d2f7f.png)
+
+若线条过于繁多，影响分析，可点击上方按钮，隐藏部分曲线。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/05/14/40d9e19e-84a2-4a02-a3a6-6fc9afae2da8.png)
+
 ## 概念
 
 ### 应用指标
