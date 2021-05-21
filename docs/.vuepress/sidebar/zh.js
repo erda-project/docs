@@ -887,6 +887,16 @@ module.exports = {
       ]
     },
     {
+      title: '边缘计算',
+      collapsable: true,
+      children: [
+        'edge/prepare',
+        'edge/site-management',
+        'edge/configset-management',
+        'edge/deploy-application',
+      ]
+    },
+    {
       title: '运维管理',
       collapsable: true,
       children: [
