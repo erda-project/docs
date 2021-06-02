@@ -2,7 +2,7 @@
 
 
 
-![image-20210527222358750](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/06/02/193a19e8-2d5d-4a09-aa6d-2a2d73fcae38.png)
+![平台设计](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/06/02/193a19e8-2d5d-4a09-aa6d-2a2d73fcae38.png)
 
 ## 租户（组织）
 
@@ -28,7 +28,7 @@
 
 点击邀请按钮后会生成类似以下链接
 
-![image-20210527221303401](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/06/02/abe77472-a5bb-458e-bc6d-718842b1b94a.png)
+![加入组织邀请](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/06/02/abe77472-a5bb-458e-bc6d-718842b1b94a.png)
 
 注意：链接的有效期只有24小时，24小时之后会自动失效
 
