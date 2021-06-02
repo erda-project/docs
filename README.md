@@ -134,7 +134,7 @@ footer: Copyright © 2012-present terminus
 3. 定期把 develop 分支 merge 到 master 分支, 进行升级
 
 ### 编写规范
-1. 截图使用 Mac 14 寸小屏非全屏(Shift + Command + 4 + 空格 + 单击) ，统一使用【terminus】(test005)账号，注意隐藏书签(Shift + Command + B)、关闭无关 Tab 页、项目图片请选择比较正式的terminus图片，项目或应用描述请填写比较正式的描述信息。
+1. 截图使用 Mac 14 寸小屏非全屏(Shift + Command + 4 + 空格 + 单击) ，注意隐藏书签(Shift + Command + B)、关闭无关 Tab 页、项目图片请选择比较正式的terminus图片，项目或应用描述请填写比较正式的描述信息。
 2. 截图使用内部 Uploader 服务上传至 OSS。
 3. 中英文混排，英文前后必须有空格。
 4. **不要使用类似`<project>`这样用尖括号包裹的占位符，如果需要使用请用代码块包裹起来**
