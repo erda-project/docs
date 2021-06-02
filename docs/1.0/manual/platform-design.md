@@ -2,7 +2,7 @@
 
 
 
-![示意图](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2020/06/09/dbfa6328-9c94-4087-85e2-51567b4426c6.png)
+![示意图](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2020/06/09/dbfa6328-9c94-4087-85e2-51567b4426c6.png)
 ## 租户（企业）
 平台采用多租户架构设计，平台层面的所有资源对象全部关联上租户 ID，实现严格的租户隔离。一个租户推荐设置为一个企业。
 
@@ -61,7 +61,7 @@ Runtime 就是一个应用部署后，所有服务的集合，也可以称为应
 容器就是 Linux Container，也是 docker 容器。一个服务进程一般运行在一个容器内，一个容器也称为服务的一个实例。为了高可用，服务通常会运行多个实例。
 
 ## 角色和权限
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2020/06/21/5dbfb177-6804-4b08-b3ef-9a3928dbb746.jpeg)
+![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2020/06/21/5dbfb177-6804-4b08-b3ef-9a3928dbb746.jpeg)
 
 企业内的任何一个成员用户，都至少拥有一个角色，也可以同时拥有多个角色，不同的角色对应了不同的权限。
 
