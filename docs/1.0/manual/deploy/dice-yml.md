@@ -382,7 +382,7 @@ values:
   staging: {}
   production:
     cpu: 2
-    request_mem: 1024
+    mem: 1024
 
 # 全局环境并不是必须的
 envs:
@@ -405,7 +405,7 @@ services:
       - 127.0.0.1 www.terminus.io
     resources:
       cpu: ${cpu:1}   # 在开发环境和测试环境 cpu=0.5; 在预发环境 cpu=1; 在生产环境, cpu=2
-      mem: ${cpu:256} # 在生产环境, mem=1.24; 在其他环境, mem=256, 即默认值
+      mem: ${mem:256} # 在生产环境, mem=1.24; 在其他环境, mem=256, 即默认值
       disk: 100
 	  network:
 	    mode: container
