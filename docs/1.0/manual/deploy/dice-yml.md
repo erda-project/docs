@@ -10,21 +10,18 @@ dice.yml 文件采用 Yaml 语法编写，是一个微服务应用部署的描�
 
 ```yaml
 version: 2.0
-envs:
 
-services:
+values:
+  development: {}
+  test: {}
+  staging: {}
+  production: {}
+  
+envs: {}
 
-addons:
+services: {}
 
-environments:
-  development:
-
-  test:
-
-  staging:
-
-  production:
-
+addons: {}
 ```
 
 dice.yml 文件全局结构定义有 5 项全局配置，分别如下：
@@ -35,30 +32,38 @@ version 的值目前定义为 2.0，只需要配置为：`version: 2.0` 即可�
 
 ### values
 
-values 用以设置不同环境中的变量，以便在一份 dice.yml 中维护各个环境下的配置。
+values 用以设置不同环境中的变量，以便在一份 dice.yml 中维护各个环境下的配置。它的格式为:
 
-如下示例中，用 "log_dir" 配置应用的日志目录，在 development 和 test 环境中，它的值为 /usr/log, 在 staging 环境没有配置此变量,
-production 环境中它的值为 /app/log, 在其他地方引用这个参数时只需用 `${log_dir:/my/default/path}` 即可，
-其中 /my/default/path 是该环境下没有配置此变量时采用的默认值。
-这样，在 development 和 test 环境部署应用时，日志目录为 /usr/log；
-在 staging 环境部署时，日志目录为默认值 /my/default/path；
-在 production 环境，日志目录为 /app/log 。
+```yaml
+values:
+  workspace:
+    key: value
+```
+
+引用 values 中的变量的方式为 `${key: default_value}`。
+
+示例：
 
 ```yaml
 values:
   development:
-    log_dir: /usr/log
+    request_cpu: 0.5
   test:
-    log_dir: /usr/log
+    request_cpu: 0.5
   staging: {}
   production:
-    log_dir: /app/log
+    request_cpu: 2
 
 services:
   serviceA:
-    binds:
-      - ${log_dir:/my/default/path}:/my/app/log/dir
+    resources:
+      cpu: ${request_cpu:1}
 ```
+
+以上示例中，用 "request_cpu" 配置服务在不同环境下所需的 cpu 值。
+services.serviceA.resources.cpu 的值 ${request_cpu:1} 引用了这个变量，那么部署到 development 和 test 环境时，cpu 的值为 0.5；
+部署到 staging 环境时，cpu 的值为默认值 1；部署到 production 环境时，cpu 的值为 2。
+
 ### envs
 
 envs 定义环境变量，envs 分全局定义和 service 内定义两种，此处展示的全局结构为全局定义，通过 envs 配置全局定义的环境变量将被应用到所有的 services 里。全局环境变量和 service 内环境变量重复的时候，以 service 内环境变量为准，也就是 service 内环境变量可以覆盖全局环境变量。
@@ -121,26 +126,6 @@ addons:
     plan: zookeeper:basic
 ```
 
-### environments
-
-environments 主要是设置应用在每个部署环境中所用的环境配置参数，平台内置有 4 个部署环境，分别是：development、test、staging 和 production。通过 environments 配置可以定制 4 个环境的配置项，做到 4 个环境按需配置。环境配置参数有最高的优先使用权，当 services、addons 内的配置和环境配置冲突的时候，优先使用环境配置。
-
-例子：
-
-```yaml
-environments:
-  development:
-    ...
-  test:
-    # 测试环境针对 serviceA 做一些特殊的配置
-    serviceA:
-      ...
-  staging:
-    ...
-  production:
-    ...
-```
-
 ## 配置项
 
 dice.yml 内置了一套配置项用来定义整个微服务应用，它们是编写 dice.yml 的基础。 配置项分为全局配置项、service 配置项、addon 配置项。
@@ -148,12 +133,16 @@ dice.yml 内置了一套配置项用来定义整个微服务应用，它们是�
 ### 全局配置项
 
 - version
+- values 
 - envs
 - services
 - addons
-- environments
 
 上文已详细介绍。
+
+### values 配置项
+
+values 配置项即 development, test, staging 以及 production 四个 workspace 名称，分别表示开发环境，测试环境，预发环境和生产环境。
 
 ### service 配置项
 
@@ -384,6 +373,17 @@ options:
 ```yaml
 version: 2.0
 
+# values 并不是必须的, 但如果你要为某些参数在不同环境下配置不同的值, 它将很有用
+values:
+  development:
+    request_cpu: 0.5
+  test:
+    request_cpu: 0.5
+  staging: {}
+  production:
+    request_cpu: 2
+    request_mem: 1024
+
 # 全局环境并不是必须的
 envs:
   DEBUG: true
@@ -404,8 +404,8 @@ services:
     hosts:
       - 127.0.0.1 www.terminus.io
     resources:
-      cpu: 1
-      mem: 256
+      cpu: ${request_cpu:1}   # 在开发环境和测试环境 cpu=0.5; 在预发环境 cpu=1; 在生产环境, cpu=2
+      mem: ${request_cpu:256} # 在生产环境, mem=1.24; 在其他环境, mem=256, 即默认值
       disk: 100
 	  network:
 	    mode: container
@@ -442,51 +442,4 @@ addons:
       create_dbs: blog,blog2
   zk:
     plan: zookeeper:professional
-
-environments:
-  # 开发环境的特殊配置
-  development:
-    envs:
-      APP_NAME: pampas-blog-dev
-    addons:
-      mysql-blog-dev:
-        plan: mysql:basic
-        options:
-          create_dbs: blog,blog_dev
-      redis-blog-dev:
-        plan: redis:basic
-
-      zk-blog-dev:
-        plan: zookeeper:basic
-
-      monitor-blog-dev:
-        plan: monitor:professional
-  # 测试环境的特殊配置
-  test:
-    envs:
-      APP_NAME: pampas-blog-test
-    addons:
-      mysql-blog-test:
-        plan: mysql:basic
-        options:
-          create_dbs: blog,blog_test
-
-      redis-blog-test:
-        plan: redis:basic
-
-      zk-blog-test:
-        plan: zookeeper:basic
-
-      monitor-blog-test:
-        plan: monitor:professional
-
-  # 预发环境的特殊配置
-  staging:
-    envs:
-      SPRING_PROFILES_ACTIVE: pre
-
-  # 生产环境的特殊配置
-  production:
-    envs:
-      APP_NAME: pampas-blog
 ```
