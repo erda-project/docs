@@ -33,7 +33,32 @@ dice.yml 文件全局结构定义有 5 项全局配置，分别如下：
 
 version 的值目前定义为 2.0，只需要配置为：`version: 2.0` 即可。
 
+### values
 
+values 用以设置不同环境中的变量，以便在一份 dice.yml 中维护各个环境下的配置。
+
+如下示例中，用 "log_dir" 配置应用的日志目录，在 development 和 test 环境中，它的值为 /usr/log, 在 staging 环境没有配置此变量,
+production 环境中它的值为 /app/log, 在其他地方引用这个参数时只需用 `${log_dir:/my/default/path}` 即可，
+其中 /my/default/path 是该环境下没有配置此变量时采用的默认值。
+这样，在 development 和 test 环境部署应用时，日志目录为 /usr/log；
+在 staging 环境部署时，日志目录为默认值 /my/default/path；
+在 production 环境，日志目录为 /app/log 。
+
+```yaml
+values:
+  development:
+    log_dir: /usr/log
+  test:
+    log_dir: /usr/log
+  staging: {}
+  production:
+    log_dir: /app/log
+
+services:
+  serviceA:
+    binds:
+      - ${log_dir:/my/default/path}:/my/app/log/dir
+```
 ### envs
 
 envs 定义环境变量，envs 分全局定义和 service 内定义两种，此处展示的全局结构为全局定义，通过 envs 配置全局定义的环境变量将被应用到所有的 services 里。全局环境变量和 service 内环境变量重复的时候，以 service 内环境变量为准，也就是 service 内环境变量可以覆盖全局环境变量。
