@@ -47,21 +47,21 @@ values:
 ```yaml
 values:
   development:
-    request_cpu: 0.5
+    cpu: 0.5
   test:
-    request_cpu: 0.5
+    cpu: 0.5
   staging: {}
   production:
-    request_cpu: 2
+    cpu: 2
 
 services:
   serviceA:
     resources:
-      cpu: ${request_cpu:1}
+      cpu: ${cpu:1}
 ```
 
-以上示例中，用 "request_cpu" 配置服务在不同环境下所需的 cpu 值。
-services.serviceA.resources.cpu 的值 ${request_cpu:1} 引用了这个变量，那么部署到 development 和 test 环境时，cpu 的值为 0.5；
+以上示例中，用 "cpu" 配置服务在不同环境下所需的 cpu 值。
+services.serviceA.resources.cpu 的值 ${cpu:1} 引用了这个变量，那么部署到 development 和 test 环境时，cpu 的值为 0.5；
 部署到 staging 环境时，cpu 的值为默认值 1；部署到 production 环境时，cpu 的值为 2。
 
 ### envs
@@ -376,12 +376,12 @@ version: 2.0
 # values 并不是必须的, 但如果你要为某些参数在不同环境下配置不同的值, 它将很有用
 values:
   development:
-    request_cpu: 0.5
+    cpu: 0.5
   test:
-    request_cpu: 0.5
+    cpu: 0.5
   staging: {}
   production:
-    request_cpu: 2
+    cpu: 2
     request_mem: 1024
 
 # 全局环境并不是必须的
@@ -404,8 +404,8 @@ services:
     hosts:
       - 127.0.0.1 www.terminus.io
     resources:
-      cpu: ${request_cpu:1}   # 在开发环境和测试环境 cpu=0.5; 在预发环境 cpu=1; 在生产环境, cpu=2
-      mem: ${request_cpu:256} # 在生产环境, mem=1.24; 在其他环境, mem=256, 即默认值
+      cpu: ${cpu:1}   # 在开发环境和测试环境 cpu=0.5; 在预发环境 cpu=1; 在生产环境, cpu=2
+      mem: ${cpu:256} # 在生产环境, mem=1.24; 在其他环境, mem=256, 即默认值
       disk: 100
 	  network:
 	    mode: container

@@ -278,7 +278,7 @@ stages:
   - stage:
       - dice:
           alias: dice
-          description: 用于 dice 平台部署应用服务
+          description: 用于部署应用服务
           params:
             release_id: ${release-java-demo:OUTPUT:releaseID}
   - stage:
@@ -366,7 +366,7 @@ API 的使用者可以在 API 集市列表页或 API 资源详情页对 API 资�
 
 API 访问管理人员可以从访问管理后台跳转到 API 策略页，为 API 开启安全策略和业务策略。
 
-#### 配置 SLA
+### 配置 SLA
 SLA（service-level agreement），即服务级别协议。
 API 访问管理人员可以添加若干 SLA 规则，用以限制客户端的访问级别。
 SLA 类别中至少有一条默认的 "无限制 SLA"。
