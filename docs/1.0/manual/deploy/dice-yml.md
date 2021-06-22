@@ -10,21 +10,18 @@ dice.yml 文件采用 Yaml 语法编写，是一个微服务应用部署的描�
 
 ```yaml
 version: 2.0
-envs:
 
-services:
+values:
+  development: {}
+  test: {}
+  staging: {}
+  production: {}
+  
+envs: {}
 
-addons:
+services: {}
 
-environments:
-  development:
-
-  test:
-
-  staging:
-
-  production:
-
+addons: {}
 ```
 
 dice.yml 文件全局结构定义有 5 项全局配置，分别如下：
@@ -33,6 +30,39 @@ dice.yml 文件全局结构定义有 5 项全局配置，分别如下：
 
 version 的值目前定义为 2.0，只需要配置为：`version: 2.0` 即可。
 
+### values
+
+values 用以设置不同环境中的变量，以便在一份 dice.yml 中维护各个环境下的配置。它的格式为:
+
+```yaml
+values:
+  workspace:
+    key: value
+```
+
+引用 values 中的变量的方式为 `${key: default_value}`。
+
+示例：
+
+```yaml
+values:
+  development:
+    cpu: 0.5
+  test:
+    cpu: 0.5
+  staging: {}
+  production:
+    cpu: 2
+
+services:
+  serviceA:
+    resources:
+      cpu: ${cpu:1}
+```
+
+以上示例中，用 "cpu" 配置服务在不同环境下所需的 cpu 值。
+services.serviceA.resources.cpu 的值 ${cpu:1} 引用了这个变量，那么部署到 development 和 test 环境时，cpu 的值为 0.5；
+部署到 staging 环境时，cpu 的值为默认值 1；部署到 production 环境时，cpu 的值为 2。
 
 ### envs
 
@@ -96,26 +126,6 @@ addons:
     plan: zookeeper:basic
 ```
 
-### environments
-
-environments 主要是设置应用在每个部署环境中所用的环境配置参数，平台内置有 4 个部署环境，分别是：development、test、staging 和 production。通过 environments 配置可以定制 4 个环境的配置项，做到 4 个环境按需配置。环境配置参数有最高的优先使用权，当 services、addons 内的配置和环境配置冲突的时候，优先使用环境配置。
-
-例子：
-
-```yaml
-environments:
-  development:
-    ...
-  test:
-    # 测试环境针对 serviceA 做一些特殊的配置
-    serviceA:
-      ...
-  staging:
-    ...
-  production:
-    ...
-```
-
 ## 配置项
 
 dice.yml 内置了一套配置项用来定义整个微服务应用，它们是编写 dice.yml 的基础。 配置项分为全局配置项、service 配置项、addon 配置项。
@@ -123,12 +133,16 @@ dice.yml 内置了一套配置项用来定义整个微服务应用，它们是�
 ### 全局配置项
 
 - version
+- values 
 - envs
 - services
 - addons
-- environments
 
 上文已详细介绍。
+
+### values 配置项
+
+values 配置项即 development, test, staging 以及 production 四个 workspace 名称，分别表示开发环境，测试环境，预发环境和生产环境。
 
 ### service 配置项
 
@@ -359,6 +373,17 @@ options:
 ```yaml
 version: 2.0
 
+# values 并不是必须的, 但如果你要为某些参数在不同环境下配置不同的值, 它将很有用
+values:
+  development:
+    cpu: 0.5
+  test:
+    cpu: 0.5
+  staging: {}
+  production:
+    cpu: 2
+    mem: 1024
+
 # 全局环境并不是必须的
 envs:
   DEBUG: true
@@ -379,8 +404,8 @@ services:
     hosts:
       - 127.0.0.1 www.terminus.io
     resources:
-      cpu: 1
-      mem: 256
+      cpu: ${cpu:1}   # 在开发环境和测试环境 cpu=0.5; 在预发环境 cpu=1; 在生产环境, cpu=2
+      mem: ${mem:256} # 在生产环境, mem=1.24; 在其他环境, mem=256, 即默认值
       disk: 100
 	  network:
 	    mode: container
@@ -417,51 +442,4 @@ addons:
       create_dbs: blog,blog2
   zk:
     plan: zookeeper:professional
-
-environments:
-  # 开发环境的特殊配置
-  development:
-    envs:
-      APP_NAME: pampas-blog-dev
-    addons:
-      mysql-blog-dev:
-        plan: mysql:basic
-        options:
-          create_dbs: blog,blog_dev
-      redis-blog-dev:
-        plan: redis:basic
-
-      zk-blog-dev:
-        plan: zookeeper:basic
-
-      monitor-blog-dev:
-        plan: monitor:professional
-  # 测试环境的特殊配置
-  test:
-    envs:
-      APP_NAME: pampas-blog-test
-    addons:
-      mysql-blog-test:
-        plan: mysql:basic
-        options:
-          create_dbs: blog,blog_test
-
-      redis-blog-test:
-        plan: redis:basic
-
-      zk-blog-test:
-        plan: zookeeper:basic
-
-      monitor-blog-test:
-        plan: monitor:professional
-
-  # 预发环境的特殊配置
-  staging:
-    envs:
-      SPRING_PROFILES_ACTIVE: pre
-
-  # 生产环境的特殊配置
-  production:
-    envs:
-      APP_NAME: pampas-blog
 ```

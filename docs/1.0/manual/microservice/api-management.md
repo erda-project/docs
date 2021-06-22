@@ -247,19 +247,48 @@ API 集市的入口在 DevOps 平台 -> API 管理 -> API 集市。
 | runtime_id |  runtime_id 值，eg:${dice:OUTPUT:runtimeID}              | 是       |
 | service_name |  服务名称，需要和 dice.yml 中的一致              | 是       |
 
-
-
-example：
+示例：
 
 ```yaml
-- stage:
-  - publish-api-asset:
-      params:
-        display_name: 测试
-        asset_id: test
-        spec_path: ${git-checkout}/swagger.json
-        runtime_id: ${dice:OUTPUT:runtimeID}
-        service_name: test-service
+version: "1.1"
+stages:
+  - stage:
+      - git-checkout:
+          alias: java-demo
+          description: 代码仓库克隆
+  - stage:
+      - java:
+          alias: build-java-demo
+          description: 针对 java 工程的编译打包任务，产出可运行镜像
+          version: "1.0"
+          params:
+            build_type: maven
+            container_type: spring-boot
+            jdk_version: "11"
+            target: ./target/docker-java-app-example.jar
+            workdir: ${java-demo}
+  - stage:
+      - release:
+          alias: release-java-demo
+          description: 用于打包完成时，向dicehub 提交完整可部署的dice.yml。
+          params:
+            dice_yml: ${java-demo}/dice.yml
+            image:
+              java-demo: ${build-java-demo:OUTPUT:image}
+  - stage:
+      - dice:
+          alias: dice
+          description: 用于部署应用服务
+          params:
+            release_id: ${release-java-demo:OUTPUT:releaseID}
+  - stage:
+    - publish-api-asset:
+        params:
+          display_name: 测试                     # API 资源名称
+          asset_id: test                        # API 资源 ID 
+          spec_path: ${java-demo}/swagger.json  # API 文档所在的路径
+          runtime_id: ${dice:OUTPUT:runtimeID}  # 用于将 API 资源与实例关联起来
+          service_name: test-service            # 服务名称, 与 dice.yml 中一致
 ```
 
 #### 方法三： 在 API 设计中发布文档到集市
@@ -291,9 +320,9 @@ API 集市资源与项目和应用关联后，自动获得项目和应用的权�
 还可以将不同版本的文档关联到服务实例。注意这种关联是 minor 级别的关系，即一个 minor 版本关联到一个实例，
 表明该 minor 下的文档是对该服务实例的接口的描述。后文中的 "访问管理" 会依赖此关联关系。
 
-### 访问管理
+## 访问管理
 
-#### 创建访问管理条目
+### 创建访问管理条目
 
 访问管理的入口在 DevOps 平台 -> API 管理 -> 访问管理。
 进入页面可以查看到访问管理列表。
@@ -320,7 +349,7 @@ API 集市资源与项目和应用关联后，自动获得项目和应用的权�
 
 在访问管理详情页，可以重新编辑其基本信息、删除该条目、查看流量概览等。
 
-#### 访问申请与审批
+### 访问申请与审批
 
 API 的使用者可以在 API 集市列表页或 API 资源详情页对 API 资源提出申请调用。
 
@@ -333,14 +362,14 @@ API 的使用者可以在 API 集市列表页或 API 资源详情页对 API 资�
 
 ![审批调用申请](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/502f1894-93b7-4676-8dba-77a04cf05aa7.png)
 
-#### 配置 API 策略
+### 配置 API 策略
 
 API 访问管理人员可以从访问管理后台跳转到 API 策略页，为 API 开启安全策略和业务策略。
 
-#### 配置 SAL
+### 配置 SLA
 SLA（service-level agreement），即服务级别协议。
 API 访问管理人员可以添加若干 SLA 规则，用以限制客户端的访问级别。
-SLA 类别中至少有一条默认的 "无限制 SAL"。
+SLA 类别中至少有一条默认的 "无限制 SLA"。
 
 ### 访问 API
 
@@ -354,3 +383,52 @@ SLA 类别中至少有一条默认的 "无限制 SAL"。
 ![对接口进行调用测试](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/04/15/8fbeefff-cb63-43f9-89bf-c7a787e1ddea.png)
 
 用户开发自己的应用程序时，可以用这个客户端 ID 和密钥访问服务。
+
+
+## 功能列表
+
+|功能|二级功能|描述|
+|---|---|---|
+|API 设计|-|在友好的交互界面，编写具有专业水平的 API 文档。|
+|       |API 文档设计稿托管|API 文档设计稿托管在仓库中，其工作流完全符合 gitflow。|
+|       |在交互设计页面设计 API 文档|通过友好的交互页面，用户可以自引导地编写基于 OAS 协议的 API 文档。|
+|       |编写 API 概况|在 API 概况中编写文档名称、版本、描述等基本信息。|
+|       |编写数据类型|在数据类型中编写复杂的数据类型，以便在其他地方引用。|
+|       |编写接口文档|在 API 列表编写接口文档，接口路径和方法共同确定一个接口。|
+|       |引用数据类型|在设计接口的 Body 时可以引用此前设计过的数据类型，并且这些类型是可以嵌套的。|
+|       |导入数据模型|导入托管在仓库中的数据库表模型。|
+|       |发布文档到集市|将设计好的 API 文档设计稿发布到集市，以便归档、查看和管理。|
+|API 集市|-|发布、查看 API 文档及调用测试|
+|       |API 资源列表|查看权限范围内的或公开的 API 资源列表|
+|       |新建 API 资源|导入 OAS 协议的 API 文档，发布成 API 资源|
+|       |为 API 资源添加版本|导入 OAS 协议的 API 文档到已有的 API 资源，发布成 API 资源的新版本|
+|       |API 详情|API 文档 UI 界面，以友好直观的方式渲染 API 文档。可以任意切换 API 版本。|
+|       |API 管理页|查看和修改 API 资源的基本信息；将 API 与项目、应用、实例关联；管理 API 的版本|
+|       |编辑 API 资源基本信息|编辑 API 名称、描述、图标等基本信息|
+|       |删除 API 资源|删除 API 资源及其所有版本。|
+|       |公开或私有化 API 资源|公开 API 资源是指让组织下所有用户都可以查看 API 资源，私有化是指仅允许用户相关权限的用户查看文档。|
+|       |关联项目和应用|关联项目和应用，表示文档描述的是该应用的接口。API 资源自动获取项目和应用的权限设置。|
+|       |关联应用实例|关联应用实例，表示文档描述的是该实例的服务能力。关联后可能通过文档的测试调用能力调用实例接口。|
+|       |导出文档|导出指定版本、格式和协议版本的文档文件，支持的格式：OAS3/2-JSON/YAML。|
+|       |删除指定版本|将指定的版本从 API 资源从删除。|
+|       |标记版本为弃用及其通知|弃用版本时，订阅了该版本的用户会收到通知。|
+|       |申请调用 API|申请调用某个版本的 API，这条申请会流转到访问管理，管理人员会对其进行审批。|
+|       |新建客户端|申请调用 API 时可以创建一个客户端，它将是调用方调用 API 的凭证。|
+|       |测试调用 API|认证客户端后可以打开一个接口测试界面，编写参数后即可向 API 绑定的真实实例发起调用。|
+|访问管理|-|访问管理组织了 API 资源、服务以及网关的关系。从 API 的角度对服务调用进行授权、鉴权、流控、监控等。|
+|       |访问管理列表|查看进行了访问管理的 API 资源。从这里也可以编辑、删除访问管理条目。|
+|       |新建访问管理|将 API 资源、服务、网关的关系组织起来，接下来可以从 API 的角度对服务授权、鉴权、流控、监控等。|
+|       |访问管理基础信息|查看访问管理条目的基础信息，如引用的 API、资源版本、入口域名、鉴权和授权方式、关联的项目及环境等。|
+|       |访问管理流量概览|通过图表查看访问管理条目的调用量、调用客户端占比、调用延时等信息。|
+|       |客户端管理|通过客户端管理当前 API 的申请调用情况，并对其审批（同意、拒绝、撤销、删除等），设置 SLA。|
+|       |申请调用的通知|客户端管理中的审批和设置 SLA 操作，都会通知申请人。|
+|       |客户端管理审计|简单的客户端审计功能，记录申请方和审批方的操作记录。|
+|       |客户端流量审计|审计客户端流量，如请求量、错误量、延时、总流量、响应码分布、错误分类等。|
+|       |SLA 管理|管理 SLA，用以限定客户端调用量。|
+|       |API 策略|跳转到 API 网关流量入口管理，在此处设置 IP 拦截、服务负载保护、跨站防护等安全策略以及业务策略。|
+|我的访问|-|调用方视角的客户端管理。客户端 ID 及其密钥是调用方调用服务的凭证。|
+|       |客户端列表|查看调用方的客户端，在此可以重置客户端密钥、删除客户端等。|
+|       |已授权 API 列表|查看不同状态（已通过、待审批、已拒绝）下的申请调用了的 API 资源列表。|
+|       |申请更换 SLA|在已授权 API 列表可以申请更换 SLA。|
+|       |客户端流量审计|审计客户端流量，如请求量、错误量、延时、总流量、响应码分布、错误分类等。|
+|从流水线发布文档到集市|-|用户可以从流水线将 API 文档发布到集市。|
