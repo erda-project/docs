@@ -153,15 +153,15 @@ module.exports = {
         'support/diagnostics'
       ]
     },
-    {
-      title: '平台安装',
-      collapsable: true,
-      children: [
-        'install/deployment-architecture',
-        'install/env-requirements',
-        'install/env-check'
-      ]
-    }
+    // {
+    //   title: '平台安装',
+    //   collapsable: true,
+    //   children: [
+    //     'install/deployment-architecture',
+    //     'install/env-requirements',
+    //     'install/env-check'
+    //   ]
+    // }
   ],
   '/3.17/manual/': [
     '',
@@ -311,15 +311,15 @@ module.exports = {
         'support/diagnostics'
       ]
     },
-    {
-      title: '平台安装',
-      collapsable: true,
-      children: [
-        'install/deployment-architecture',
-        'install/env-requirements',
-        'install/env-check'
-      ]
-    }
+    // {
+    //   title: '平台安装',
+    //   collapsable: true,
+    //   children: [
+    //     'install/deployment-architecture',
+    //     'install/env-requirements',
+    //     'install/env-check'
+    //   ]
+    // }
   ],
   '/3.18/manual/': [
     '',
@@ -469,15 +469,15 @@ module.exports = {
         'support/diagnostics'
       ]
     },
-    {
-      title: '平台安装',
-      collapsable: true,
-      children: [
-        'install/deployment-architecture',
-        'install/env-requirements',
-        'install/env-check'
-      ]
-    }
+    // {
+    //   title: '平台安装',
+    //   collapsable: true,
+    //   children: [
+    //     'install/deployment-architecture',
+    //     'install/env-requirements',
+    //     'install/env-check'
+    //   ]
+    // }
   ],
   '/3.19/manual/': [
     '',
@@ -629,15 +629,15 @@ module.exports = {
         'support/cicd'
       ]
     },
-    {
-      title: '平台安装',
-      collapsable: true,
-      children: [
-        'install/deployment-architecture',
-        'install/env-requirements',
-        'install/env-check'
-      ]
-    }
+    // {
+    //   title: '平台安装',
+    //   collapsable: true,
+    //   children: [
+    //     'install/deployment-architecture',
+    //     'install/env-requirements',
+    //     'install/env-check'
+    //   ]
+    // }
   ],
   '/3.20/manual/': [
     '',
@@ -792,15 +792,15 @@ module.exports = {
         'support/container-info-debug'
       ]
     },
-    {
-      title: '平台安装',
-      collapsable: true,
-      children: [
-        'install/deployment-architecture',
-        'install/env-requirements',
-        'install/env-check'
-      ]
-    }
+    // {
+    //   title: '平台安装',
+    //   collapsable: true,
+    //   children: [
+    //     'install/deployment-architecture',
+    //     'install/env-requirements',
+    //     'install/env-check'
+    //   ]
+    // }
   ],
   '/1.0/manual/': [
     '',
@@ -966,14 +966,14 @@ module.exports = {
         'support/cicd'
       ]
     },
-    {
-      title: '平台安装',
-      collapsable: true,
-      children: [
-        'install/deployment-architecture',
-        'install/env-requirements',
-        'install/env-check'
-      ]
-    }
+    // {
+    //   title: '平台安装',
+    //   collapsable: true,
+    //   children: [
+    //     'install/deployment-architecture',
+    //     'install/env-requirements',
+    //     'install/env-check'
+    //   ]
+    // }
   ],
 }
