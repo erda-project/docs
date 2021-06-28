@@ -1,6 +1,6 @@
 {
   "name": "erda-docs",
-  "version": "3.21.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Erda official docs",
   "keywords": [
@@ -22,6 +22,7 @@
     "@vuepress/plugin-back-to-top": "1.8.2",
     "@vuepress/plugin-medium-zoom": "1.8.2",
     "@vuepress/plugin-pwa": "1.8.2",
+    "@vuepress/plugin-search": "^1.8.2",
     "babel-runtime": "^6.26.0",
     "core-js": "^3.9.1",
     "docsearch.js": "^2.6.3",

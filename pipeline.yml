@@ -34,6 +34,6 @@ stages:
   - stage:
       - dice:
           alias: dice
-          description: 用于 dice 平台部署应用服务
+          description: 用于 Erda 平台部署应用服务
           params:
             release_id: ${release:OUTPUT:releaseID}
