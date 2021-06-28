@@ -126,6 +126,10 @@ module.exports = {
         'msp/custom-alarm',
         'msp/alarm-history',
         'msp/dashboard',
+        'msp/log-analysis',
+        'msp/api-gateway',
+        'msp/registry',
+        'msp/config-center',
         'msp/addon-info',
       ]
     },
@@ -137,6 +141,13 @@ module.exports = {
         'ecp/application',
         'ecp/resource',
         'ecp/config-set',
+      ]
+    },
+    {
+      title: '快数据平台',
+      collapsable: true,
+      children: [
+        'fdp/intro',
       ]
     },
     {
