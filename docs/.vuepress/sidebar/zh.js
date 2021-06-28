@@ -41,7 +41,7 @@ module.exports = {
       ]
     },
     {
-      title: '多云管理',
+      title: '多云管理平台',
       collapsable: true,
       children: [
         'cmp/intro',
@@ -61,7 +61,7 @@ module.exports = {
       ]
     },
     {
-      title: 'DevOps',
+      title: 'DevOps 平台',
       collapsable: true,
       children: [
         'dop/intro',
@@ -113,7 +113,7 @@ module.exports = {
       ]
     },
     {
-      title: '微服务治理',
+      title: '微服务治理平台',
       collapsable: true,
       children: [
         'msp/intro',
@@ -132,7 +132,7 @@ module.exports = {
       ]
     },
     {
-      title: '边缘计算',
+      title: '边缘计算平台',
       collapsable: true,
       children: [
         'ecp/intro',
