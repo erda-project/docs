@@ -6,906 +6,164 @@ const { fs, path } = require('@vuepress/shared-utils')
 //   .sort()
 
 module.exports = {
-  '/3.16/manual/': [
-    '',
-    'platform-design',
-    {
-      title: '协作',
-      collapsable: true,
-      children: [
-        'agile/agile-info',
-        'agile/best-practices'
-      ]
-    },
-    {
-      title: '部署和管理',
-      collapsable: true,
-      children: [
-        'deploy/deploy-from-git',
-        'deploy/deploy-from-image',
-        'deploy/config',
-        'deploy/config-center',
-        'deploy/management',
-        'deploy/metrics_logs.md',
-        'deploy/rollback',
-        'deploy/pipeline',
-        'deploy/dice-yml',
-        'deploy/branch-rule',
-        'deploy/db-migration'
-      ]
-    },
-    {
-      title: '测试',
-      collapsable: true,
-      children: [
-        'test/interface-test',
-        'test/function-test'
-      ]
-    },
-    //    {
-    //      title: '持续集成',
-    //      collapsable: true,
-    //      children: [
-    //        'ci/merge-request',
-    //        'ci/triggers',
-    //        'ci/auto-deploy',
-    //        'ci/rollout',
-    //        'ci/best-practices'
-    //      ]
-    //    },
-    {
-      title: '微服务',
-      collapsable: true,
-      children: [
-        'microservice/api-gateway',
-        'microservice/api-gateway-advanced1',
-        'microservice/api-gateway-advanced2',
-        'microservice/api-gateway-statuscode',
-        'microservice/api-gateway-benchmark',
-        'microservice/sign-auth',
-        'microservice/api-management',
-        'microservice/spring-cloud',
-        'microservice/dubbo',
-        'microservice/use-apm-monitor-app.md',
-        'microservice/tracing.md',
-        'microservice/dashboard.md',
-        'microservice/dashboard-advanced.md'
-      ]
-    },
-    {
-      title: '移动开发',
-      collapsable: true,
-      children: [
-        'mobileapp/basic',
-        'mobileapp/framework',
-        'mobileapp/local-environment',
-        'mobileapp/howto-dev',
-        'mobileapp/management',
-        'mobileapp/certificates',
-        'mobileapp/libraries',
-        'mobileapp/ios-ci'
-      ]
-    },
-    {
-      title: '运维管理',
-      collapsable: true,
-      children: [
-        'o_m/create-cluster',
-        'o_m/resource-scale',
-        'o_m/node-labels',
-        'o_m/alert-config.md',
-        'o_m/custom-metrics.md'
-      ]
-    },
-    {
-      title: '命令行工具',
-      collapsable: true,
-      children: [
-        'cli/deploy-by-code',
-        'cli/explain-args'
-      ]
-    },
-    {
-      title: '开发语言',
-      collapsable: true,
-      children: [
-        'language/java',
-        'language/php',
-        'language/python',
-        'language/nodejs',
-      ]
-    },
-    {
-      title: '安全',
-      collapsable: true,
-      children: [
-        'safe/identity-management',
-        'safe/isolation',
-        'safe/enable-https',
-        'safe/api-security',
-        'safe/operator-system-security',
-        'safe/docker-security',
-        'safe/kubernets-security',
-        'safe/public-cloud-security',
-        'safe/private-cloud-security',
-      ]
-    },
-    {
-      title: 'Add-ons',
-      collapsable: true,
-      children: [
-        'addons/',
-        'addons/design'
-      ]
-    },
-    {
-      title: 'Actions',
-      collapsable: true,
-      children: [
-        'actions/',
-        'actions/runner'
-      ]
-    },
-    {
-      title: '问题排查和服务支持',
-      collapsable: true,
-      children: [
-        'support/diagnostics'
-      ]
-    },
-    // {
-    //   title: '平台安装',
-    //   collapsable: true,
-    //   children: [
-    //     'install/deployment-architecture',
-    //     'install/env-requirements',
-    //     'install/env-check'
-    //   ]
-    // }
-  ],
-  '/3.17/manual/': [
-    '',
-    'platform-design',
-    {
-      title: '协作',
-      collapsable: true,
-      children: [
-        'agile/agile-info',
-        'agile/best-practices'
-      ]
-    },
-    {
-      title: '部署和管理',
-      collapsable: true,
-      children: [
-        'deploy/deploy-from-git',
-        'deploy/deploy-from-image',
-        'deploy/config',
-        'deploy/config-center',
-        'deploy/management',
-        'deploy/metrics_logs.md',
-        'deploy/rollback',
-        'deploy/pipeline',
-        'deploy/dice-yml',
-        'deploy/branch-rule',
-        'deploy/db-migration'
-      ]
-    },
-    {
-      title: '测试',
-      collapsable: true,
-      children: [
-        'test/interface-test',
-        'test/function-test'
-      ]
-    },
-    //    {
-    //      title: '持续集成',
-    //      collapsable: true,
-    //      children: [
-    //        'ci/merge-request',
-    //        'ci/triggers',
-    //        'ci/auto-deploy',
-    //        'ci/rollout',
-    //        'ci/best-practices'
-    //      ]
-    //    },
-    {
-      title: '微服务',
-      collapsable: true,
-      children: [
-        'microservice/api-gateway',
-        'microservice/api-gateway-advanced1',
-        'microservice/api-gateway-advanced2',
-        'microservice/api-gateway-statuscode',
-        'microservice/api-gateway-benchmark',
-        'microservice/sign-auth',
-        'microservice/api-management',
-        'microservice/spring-cloud',
-        'microservice/dubbo',
-        'microservice/use-apm-monitor-app.md',
-        'microservice/tracing.md',
-        'microservice/dashboard.md',
-        'microservice/dashboard-advanced.md'
-      ]
-    },
-    {
-      title: '移动开发',
-      collapsable: true,
-      children: [
-        'mobileapp/basic',
-        'mobileapp/framework',
-        'mobileapp/local-environment',
-        'mobileapp/howto-dev',
-        'mobileapp/management',
-        'mobileapp/certificates',
-        'mobileapp/libraries',
-        'mobileapp/ios-ci'
-      ]
-    },
-    {
-      title: '运维管理',
-      collapsable: true,
-      children: [
-        'o_m/create-cluster',
-        'o_m/resource-scale',
-        'o_m/node-labels',
-        'o_m/alert-config.md',
-        'o_m/custom-metrics.md',
-        'o_m/logs.md'
-      ]
-    },
-    {
-      title: '命令行工具',
-      collapsable: true,
-      children: [
-        'cli/deploy-by-code',
-        'cli/explain-args'
-      ]
-    },
-    {
-      title: '开发语言',
-      collapsable: true,
-      children: [
-        'language/java',
-        'language/php',
-        'language/python',
-        'language/nodejs',
-      ]
-    },
-    {
-      title: '安全',
-      collapsable: true,
-      children: [
-        'safe/identity-management',
-        'safe/isolation',
-        'safe/enable-https',
-        'safe/api-security',
-        'safe/operator-system-security',
-        'safe/docker-security',
-        'safe/kubernets-security',
-        'safe/public-cloud-security',
-        'safe/private-cloud-security',
-      ]
-    },
-    {
-      title: 'Add-ons',
-      collapsable: true,
-      children: [
-        'addons/',
-        'addons/design'
-      ]
-    },
-    {
-      title: 'Actions',
-      collapsable: true,
-      children: [
-        'actions/',
-        'actions/runner'
-      ]
-    },
-    {
-      title: '问题排查和服务支持',
-      collapsable: true,
-      children: [
-        'support/diagnostics'
-      ]
-    },
-    // {
-    //   title: '平台安装',
-    //   collapsable: true,
-    //   children: [
-    //     'install/deployment-architecture',
-    //     'install/env-requirements',
-    //     'install/env-check'
-    //   ]
-    // }
-  ],
-  '/3.18/manual/': [
-    '',
-    'platform-design',
-    {
-      title: '协作',
-      collapsable: true,
-      children: [
-        'agile/agile-info',
-        'agile/best-practices'
-      ]
-    },
-    {
-      title: '部署和管理',
-      collapsable: true,
-      children: [
-        'deploy/deploy-from-git',
-        'deploy/deploy-from-image',
-        'deploy/config',
-        'deploy/config-center',
-        'deploy/management',
-        'deploy/metrics_logs.md',
-        'deploy/rollback',
-        'deploy/pipeline',
-        'deploy/dice-yml',
-        'deploy/branch-rule',
-        'deploy/db-migration'
-      ]
-    },
-    {
-      title: '测试',
-      collapsable: true,
-      children: [
-        'test/interface-test',
-        'test/function-test'
-      ]
-    },
-    //    {
-    //      title: '持续集成',
-    //      collapsable: true,
-    //      children: [
-    //        'ci/merge-request',
-    //        'ci/triggers',
-    //        'ci/auto-deploy',
-    //        'ci/rollout',
-    //        'ci/best-practices'
-    //      ]
-    //    },
-    {
-      title: '微服务',
-      collapsable: true,
-      children: [
-        'microservice/api-gateway',
-        'microservice/api-gateway-advanced1',
-        'microservice/api-gateway-advanced2',
-        'microservice/api-gateway-statuscode',
-        'microservice/api-gateway-benchmark',
-        'microservice/sign-auth',
-        'microservice/api-management',
-        'microservice/spring-cloud',
-        'microservice/dubbo',
-        'microservice/use-apm-monitor-app.md',
-        'microservice/tracing.md',
-        'microservice/dashboard.md',
-        'microservice/dashboard-advanced.md'
-      ]
-    },
-    {
-      title: '移动开发',
-      collapsable: true,
-      children: [
-        'mobileapp/basic',
-        'mobileapp/framework',
-        'mobileapp/local-environment',
-        'mobileapp/howto-dev',
-        'mobileapp/management',
-        'mobileapp/certificates',
-        'mobileapp/libraries',
-        'mobileapp/ios-ci'
-      ]
-    },
-    {
-      title: '运维管理',
-      collapsable: true,
-      children: [
-        'o_m/create-cluster',
-        'o_m/resource-scale',
-        'o_m/node-labels',
-        'o_m/alert-config.md',
-        'o_m/custom-metrics.md',
-        'o_m/logs.md'
-      ]
-    },
-    {
-      title: '命令行工具',
-      collapsable: true,
-      children: [
-        'cli/deploy-by-code',
-        'cli/explain-args'
-      ]
-    },
-    {
-      title: '开发语言',
-      collapsable: true,
-      children: [
-        'language/java',
-        'language/javascript',
-        'language/php',
-        'language/python',
-      ]
-    },
-    {
-      title: '安全',
-      collapsable: true,
-      children: [
-        'safe/identity-management',
-        'safe/isolation',
-        'safe/enable-https',
-        'safe/api-security',
-        'safe/operator-system-security',
-        'safe/docker-security',
-        'safe/kubernets-security',
-        'safe/public-cloud-security',
-        'safe/private-cloud-security',
-      ]
-    },
-    {
-      title: 'Add-ons',
-      collapsable: true,
-      children: [
-        'addons/',
-        'addons/design'
-      ]
-    },
-    {
-      title: 'Actions',
-      collapsable: true,
-      children: [
-        'actions/',
-        'actions/runner'
-      ]
-    },
-    {
-      title: '问题排查和服务支持',
-      collapsable: true,
-      children: [
-        'support/diagnostics'
-      ]
-    },
-    // {
-    //   title: '平台安装',
-    //   collapsable: true,
-    //   children: [
-    //     'install/deployment-architecture',
-    //     'install/env-requirements',
-    //     'install/env-check'
-    //   ]
-    // }
-  ],
-  '/3.19/manual/': [
-    '',
-    'platform-design',
-    {
-      title: '协作',
-      collapsable: true,
-      children: [
-        'agile/agile-info',
-        'agile/best-practices'
-      ]
-    },
-    {
-      title: '部署和管理',
-      collapsable: true,
-      children: [
-        'deploy/deploy-from-git',
-        'deploy/deploy-from-image',
-        'deploy/config',
-        'deploy/config-center',
-        'deploy/management',
-        'deploy/metrics_logs.md',
-        'deploy/rollback',
-        'deploy/pipeline',
-        'deploy/dice-yml',
-        'deploy/branch-rule',
-        'deploy/db-migration'
-      ]
-    },
-    {
-      title: '测试',
-      collapsable: true,
-      children: [
-        'test/interface-test',
-        'test/function-test'
-      ]
-    },
-    //    {
-    //      title: '持续集成',
-    //      collapsable: true,
-    //      children: [
-    //        'ci/merge-request',
-    //        'ci/triggers',
-    //        'ci/auto-deploy',
-    //        'ci/rollout',
-    //        'ci/best-practices'
-    //      ]
-    //    },
-    {
-      title: '微服务',
-      collapsable: true,
-      children: [
-        'microservice/api-gateway',
-        'microservice/api-gateway-advanced1',
-        'microservice/api-gateway-advanced2',
-        'microservice/api-gateway-statuscode',
-        'microservice/api-gateway-benchmark',
-        'microservice/sign-auth',
-        'microservice/api-management',
-        'microservice/spring-cloud',
-        'microservice/dubbo',
-        'microservice/use-apm-monitor-app.md',
-        'microservice/tracing.md',
-        'microservice/dashboard.md',
-        'microservice/dashboard-advanced.md'
-      ]
-    },
-    {
-      title: '移动开发',
-      collapsable: true,
-      children: [
-        'mobileapp/basic',
-        'mobileapp/framework',
-        'mobileapp/local-environment',
-        'mobileapp/howto-dev',
-        'mobileapp/management',
-        'mobileapp/certificates',
-        'mobileapp/libraries',
-        'mobileapp/ios-ci'
-      ]
-    },
-    {
-      title: '运维管理',
-      collapsable: true,
-      children: [
-        'o_m/create-cluster',
-        'o_m/resource-scale',
-        'o_m/node-labels',
-        'o_m/alert-config.md',
-        'o_m/custom-metrics.md',
-        'o_m/logs.md'
-      ]
-    },
-    {
-      title: '命令行工具',
-      collapsable: true,
-      children: [
-        'cli/deploy-by-code',
-        'cli/explain-args'
-      ]
-    },
-    {
-      title: '开发语言',
-      collapsable: true,
-      children: [
-        'language/java',
-        'language/javascript',
-        'language/php',
-        'language/python',
-      ]
-    },
-    {
-      title: '安全',
-      collapsable: true,
-      children: [
-        'safe/identity-management',
-        'safe/isolation',
-        'safe/enable-https',
-        'safe/api-security',
-        'safe/operator-system-security',
-        'safe/docker-security',
-        'safe/kubernets-security',
-        'safe/public-cloud-security',
-        'safe/private-cloud-security',
-      ]
-    },
-    {
-      title: 'Add-ons',
-      collapsable: true,
-      children: [
-        'addons/design',
-        'addons/out-of-the-box',
-        'addons/custom'
-      ]
-    },
-    {
-      title: 'Actions',
-      collapsable: true,
-      children: [
-        'actions/',
-        'actions/runner'
-      ]
-    },
-    {
-      title: '问题排查和服务支持',
-      collapsable: true,
-      children: [
-        'support/diagnostics',
-        'support/cicd'
-      ]
-    },
-    // {
-    //   title: '平台安装',
-    //   collapsable: true,
-    //   children: [
-    //     'install/deployment-architecture',
-    //     'install/env-requirements',
-    //     'install/env-check'
-    //   ]
-    // }
-  ],
-  '/3.20/manual/': [
-    '',
-    'platform-design',
-    {
-      title: '协作',
-      collapsable: true,
-      children: [
-        'agile/agile-info',
-        'agile/best-practices'
-      ]
-    },
-    {
-      title: '部署和管理',
-      collapsable: true,
-      children: [
-        'deploy/deploy-from-git',
-        'deploy/deploy-from-image',
-        'deploy/config',
-        'deploy/config-center',
-        'deploy/management',
-        'deploy/metrics_logs.md',
-        'deploy/pipeline',
-        'deploy/dice-yml',
-        'deploy/branch-rule',
-        'deploy/db-migration',
-        'deploy/resource-management'
-      ]
-    },
-    {
-      title: '测试',
-      collapsable: true,
-      children: [
-        'test/interface-test',
-        'test/function-test',
-        'test/auto-test',
-        'test/code-quality'
-      ]
-    },
-    //    {
-    //      title: '持续集成',
-    //      collapsable: true,
-    //      children: [
-    //        'ci/merge-request',
-    //        'ci/triggers',
-    //        'ci/auto-deploy',
-    //        'ci/rollout',
-    //        'ci/best-practices'
-    //      ]
-    //    },
-    {
-      title: '微服务',
-      collapsable: true,
-      children: [
-        'microservice/api-gateway',
-        'microservice/api-gateway-advanced1',
-        'microservice/api-gateway-advanced2',
-        'microservice/api-gateway-statuscode',
-        'microservice/api-gateway-benchmark',
-        'microservice/sign-auth',
-        'microservice/api-management',
-        'microservice/spring-cloud',
-        'microservice/dubbo',
-        'microservice/use-apm-monitor-app.md',
-        'microservice/tracing.md',
-        'microservice/dashboard.md',
-        'microservice/dashboard-advanced.md'
-      ]
-    },
-    {
-      title: '移动开发',
-      collapsable: true,
-      children: [
-        'mobileapp/basic',
-        'mobileapp/framework',
-        'mobileapp/local-environment',
-        'mobileapp/howto-dev',
-        'mobileapp/management',
-        'mobileapp/certificates',
-        'mobileapp/libraries',
-        'mobileapp/ios-ci'
-      ]
-    },
-    {
-      title: '运维管理',
-      collapsable: true,
-      children: [
-        'o_m/create-cluster',
-        'o_m/resource-scale',
-        'o_m/node-labels',
-        'o_m/alert-config.md',
-        'o_m/custom-metrics.md',
-        'o_m/logs.md'
-      ]
-    },
-    {
-      title: '命令行工具',
-      collapsable: true,
-      children: [
-        'cli/deploy-by-code',
-        'cli/explain-args'
-      ]
-    },
-    {
-      title: '开发语言',
-      collapsable: true,
-      children: [
-        'language/java',
-        'language/javascript',
-        'language/php',
-        'language/python',
-      ]
-    },
-    {
-      title: '安全',
-      collapsable: true,
-      children: [
-        'safe/identity-management',
-        'safe/isolation',
-        'safe/enable-https',
-        'safe/api-security',
-        'safe/operator-system-security',
-        'safe/docker-security',
-        'safe/kubernets-security',
-        'safe/public-cloud-security',
-        'safe/private-cloud-security',
-      ]
-    },
-    {
-      title: 'Add-ons',
-      collapsable: true,
-      children: [
-        'addons/design',
-        'addons/out-of-the-box',
-        'addons/custom'
-      ]
-    },
-    {
-      title: 'Actions',
-      collapsable: true,
-      children: [
-        'actions/',
-        'actions/runner'
-      ]
-    },
-    {
-      title: '问题排查和服务支持',
-      collapsable: true,
-      children: [
-        'support/diagnostics',
-        'support/cicd',
-        'support/container-info-debug'
-      ]
-    },
-    // {
-    //   title: '平台安装',
-    //   collapsable: true,
-    //   children: [
-    //     'install/deployment-architecture',
-    //     'install/env-requirements',
-    //     'install/env-check'
-    //   ]
-    // }
-  ],
   '/1.0/manual/': [
-    '',
-    'platform-design',
+    // '',
     {
-      title: '协作',
+      title: '关于 Erda',
       collapsable: true,
       children: [
-        'agile/agile-info',
-        'agile/best-practices'
+        'about/intro',
+        'about/why-erda'
       ]
     },
     {
-      title: '部署和管理',
+      title: '快速入门',
       collapsable: true,
       children: [
-        'deploy/deploy-from-git',
-        'deploy/deploy-from-image',
-        'deploy/config',
-        'deploy/config-center',
-        'deploy/management',
-        'deploy/metrics_logs.md',
-        'deploy/pipeline',
-        'deploy/dice-yml',
-        'deploy/branch-rule',
-        'deploy/db-migration',
-        'deploy/resource-management'
+        'quick-start/premise',
+        'quick-start/create-org',
+        'quick-start/create-project',
+        'quick-start/create-application',
+        'quick-start/agile-cooperation',
+        'quick-start/agile-dev',
+        'quick-start/auto-test',
+        'quick-start/microservice',
+        'quick-start/edge-publish',
       ]
     },
     {
-      title: '测试',
+      title: '部署配置',
       collapsable: true,
       children: [
-        'test/function-test',
-        // 'test/auto-test',
-        'test/auto-test-getting-started',
-        'test/interface-test',
-        'test/code-quality'
-      ]
-    },
-    //    {
-    //      title: '持续集成',
-    //      collapsable: true,
-    //      children: [
-    //        'ci/merge-request',
-    //        'ci/triggers',
-    //        'ci/auto-deploy',
-    //        'ci/rollout',
-    //        'ci/best-practices'
-    //      ]
-    //    },
-    {
-      title: '微服务',
-      collapsable: true,
-      children: [
-        'microservice/service-mesh',
-        'microservice/api-gateway',
-        'microservice/api-gateway-advanced1',
-        'microservice/api-gateway-advanced2',
-        'microservice/api-gateway-statuscode',
-        'microservice/api-gateway-benchmark',
-        'microservice/sign-auth',
-        'microservice/api-management',
-        'microservice/spring-cloud',
-        'microservice/dubbo',
-        'microservice/use-apm-monitor-app.md',
-        'microservice/tracing.md',
-        'microservice/dashboard.md',
-        'microservice/dashboard-advanced.md'
+        'install/requirement',
+        'install/step-by-step',
+        'install/upgrade'
       ]
     },
     {
-      title: '移动开发',
+      title: '多云管理',
       collapsable: true,
       children: [
-        'mobileapp/basic',
-        'mobileapp/framework',
-        'mobileapp/local-environment',
-        'mobileapp/howto-dev',
-        'mobileapp/management',
-        'mobileapp/certificates',
-        'mobileapp/libraries',
-        'mobileapp/ios-ci'
+        'cmp/intro',
+        'cmp/cluster-overview',
+        'cmp/cluster-management',
+        'cmp/cloud-resource',
+        'cmp/domain-management',
+        'cmp/service-list',
+        'cmp/addon-list',
+        'cmp/job-list',
+        'cmp/dashboard',
+        'cmp/report',
+        'cmp/alarm-statistics',
+        'cmp/alarm-list',
+        'cmp/alarm-strategy',
+        'cmp/alarm-custom',
+      ]
+    },
+    {
+      title: 'DevOps',
+      collapsable: true,
+      children: [
+        'dop/intro',
+        'dop/workBench/my-project',
+        'dop/workBench/my-application',
+        'dop/workBench/api-market',
+        'dop/workBench/endpoint-management',
+        'dop/workBench/my-endpoint',
+        'dop/workBench/addon',
+        'dop/workBench/my-approvement',
+        'dop/workBench/my-request-approve',
+        'dop/workBench/public-project',
+        {
+          title: '项目',
+          collapsable: true,
+          children: [
+            'dop/project/application-list',
+            'dop/project/issues',
+            'dop/project/test-case',
+            'dop/project/data-bank',
+            'dop/project/test-plan',
+            'dop/project/params-config',
+            'dop/project/dashboard',
+            'dop/project/addon',
+            'dop/project/resource',
+            'dop/project/ticket',
+            'dop/project/setting',
+          ]
+        },
+        {
+          title: '应用',
+          collapsable: true,
+          children: [
+            'dop/application/code',
+            'dop/application/commit',
+            'dop/application/branch',
+            'dop/application/merge',
+            'dop/application/pipeline',
+            'dop/application/apim',
+            'dop/application/deploy',
+            'dop/application/runtime',
+            'dop/application/test-quality',
+            'dop/application/test-issues',
+            'dop/application/test-result',
+            'dop/application/release',
+            'dop/application/setting',
+          ]
+        },
+      ]
+    },
+    {
+      title: '微服务治理',
+      collapsable: true,
+      children: [
+        'msp/intro',
+        'msp/topology',
+        'msp/monitor-service',
+        'msp/monitor-browser',
+        'msp/monitor-mobile',
+        'msp/error-analysis',
+        'msp/trace',
+        'msp/service-status',
+        'msp/alarm',
+        'msp/custom-alarm',
+        'msp/alarm-history',
+        'msp/dashboard',
+        'msp/addon-info',
       ]
     },
     {
       title: '边缘计算',
       collapsable: true,
       children: [
-        'edge/prepare',
-        'edge/site-management',
-        'edge/configset-management',
-        'edge/deploy-application',
+        'ecp/intro',
+        'ecp/application',
+        'ecp/resource',
+        'ecp/config-set',
       ]
     },
     {
-      title: '运维管理',
+      title: '管理中心',
       collapsable: true,
       children: [
-        'o_m/create-cluster',
-        'o_m/resource-scale',
-        'o_m/node-labels',
-        'o_m/alert-config.md',
-        'o_m/custom-metrics.md',
-        'o_m/logs.md'
+        'org-center/intro',
+        'org-center/project',
+        'org-center/certificate',
+        'org-center/approve',
+        'org-center/announcement',
+        'org-center/audit',
+        'org-center/setting',
+      ]
+    },
+    {
+      title: '平台后台',
+      collapsable: true,
+      children: [
+        'admin/intro',
+        'admin/org',
+        'admin/user',
+        'admin/audit',
+        'admin/config',
+        'admin/cluster',
       ]
     },
     {
@@ -916,56 +174,56 @@ module.exports = {
         'cli/explain-args'
       ]
     },
-    {
-      title: '开发语言',
-      collapsable: true,
-      children: [
-        'language/java',
-        'language/javascript',
-        'language/php',
-        'language/python',
-      ]
-    },
-    {
-      title: '安全',
-      collapsable: true,
-      children: [
-        'safe/identity-management',
-        'safe/isolation',
-        'safe/enable-https',
-        'safe/api-security',
-        'safe/operator-system-security',
-        'safe/docker-security',
-        'safe/kubernets-security',
-        'safe/public-cloud-security',
-        'safe/private-cloud-security',
-      ]
-    },
-    {
-      title: 'Add-ons',
-      collapsable: true,
-      children: [
-        'addons/design',
-        'addons/out-of-the-box',
-        'addons/custom'
-      ]
-    },
-    {
-      title: 'Actions',
-      collapsable: true,
-      children: [
-        'actions/',
-        'actions/runner'
-      ]
-    },
-    {
-      title: '问题排查和服务支持',
-      collapsable: true,
-      children: [
-        'support/diagnostics',
-        'support/cicd'
-      ]
-    },
+    // {
+    //   title: '开发语言',
+    //   collapsable: true,
+    //   children: [
+    //     'language/java',
+    //     'language/javascript',
+    //     'language/php',
+    //     'language/python',
+    //   ]
+    // },
+    // {
+    //   title: '安全',
+    //   collapsable: true,
+    //   children: [
+    //     'safe/identity-management',
+    //     'safe/isolation',
+    //     'safe/enable-https',
+    //     'safe/api-security',
+    //     'safe/operator-system-security',
+    //     'safe/docker-security',
+    //     'safe/kubernets-security',
+    //     'safe/public-cloud-security',
+    //     'safe/private-cloud-security',
+    //   ]
+    // },
+    // {
+    //   title: 'Add-ons',
+    //   collapsable: true,
+    //   children: [
+    //     'addons/design',
+    //     'addons/out-of-the-box',
+    //     'addons/custom'
+    //   ]
+    // },
+    // {
+    //   title: 'Actions',
+    //   collapsable: true,
+    //   children: [
+    //     'actions/',
+    //     'actions/runner'
+    //   ]
+    // },
+    // {
+    //   title: '问题排查和服务支持',
+    //   collapsable: true,
+    //   children: [
+    //     'support/diagnostics',
+    //     'support/cicd'
+    //   ]
+    // },
     // {
     //   title: '平台安装',
     //   collapsable: true,

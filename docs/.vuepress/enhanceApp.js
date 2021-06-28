@@ -29,7 +29,7 @@ export default ({
         // next([, vers[0], ...rest].join('/'))
         window.location.href = window.location.origin + [, vers[0], ...rest].join('/')
       } else if (ver === '') {
-        window.location.href = `${window.location.origin}/${vers[0]}/manual`
+        window.location.href = `${window.location.origin}/${vers[0]}/manual/about/intro.html`
       } else {
         next();
       }
