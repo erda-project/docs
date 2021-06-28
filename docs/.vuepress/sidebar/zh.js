@@ -65,17 +65,8 @@ module.exports = {
       collapsable: true,
       children: [
         'dop/intro',
-        'dop/workBench/my-project',
-        'dop/workBench/my-application',
-        'dop/workBench/api-market',
-        'dop/workBench/endpoint-management',
-        'dop/workBench/my-endpoint',
-        'dop/workBench/addon',
-        'dop/workBench/my-approvement',
-        'dop/workBench/my-request-approve',
-        'dop/workBench/public-project',
         {
-          title: '项目',
+          title: '我的项目',
           collapsable: true,
           children: [
             'dop/project/application-list',
@@ -92,7 +83,7 @@ module.exports = {
           ]
         },
         {
-          title: '应用',
+          title: '我的应用',
           collapsable: true,
           children: [
             'dop/application/code',
@@ -110,6 +101,13 @@ module.exports = {
             'dop/application/setting',
           ]
         },
+        'dop/workBench/api-market',
+        'dop/workBench/endpoint-management',
+        'dop/workBench/my-endpoint',
+        'dop/workBench/addon',
+        'dop/workBench/my-approvement',
+        'dop/workBench/my-request-approve',
+        'dop/workBench/public-project',
       ]
     },
     {
@@ -174,6 +172,7 @@ module.exports = {
         'cli/explain-args'
       ]
     },
+    'glossary'
     // {
     //   title: '开发语言',
     //   collapsable: true,
