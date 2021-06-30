@@ -1,5 +1,5 @@
 <template>
-  <section class="side-anchor">
+  <section :class="['side-anchor', hover ? '':'out']" @mouseover="hover = true" @mouseleave="hover = false">
     <ul v-show="list.length > 0">
       <li v-for="(item, index) in list" :key="index" :style="{ 'padding-left': item.prefix }">
         <a :href="item.href" :class="['side-anchor-link', { 'active': index === activeIndex }]">
@@ -19,6 +19,7 @@ export default {
       title: "",
       activeIndex: 0,
       list: [],
+      hover: true,
     };
   },
 
@@ -76,6 +77,9 @@ export default {
     this.title = this.$page.title;
     window.onload = this.getAnchorList;
     window.onscroll = debounce(this.freshAnchor);
+    setTimeout(() => {
+        this.hover=false
+    }, 2000);
   },
 
   watch: {
@@ -103,6 +107,12 @@ export default {
   transition: max-height 0.25s;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  transition: opacity 0.3s ease-out;
+}
+
+.side-anchor.out {
+  opacity: 0.3;
+  transition: opacity 5s ease-out;
 }
 
 .side-anchor ul {
