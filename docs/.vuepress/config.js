@@ -62,8 +62,9 @@ module.exports = ctx => ({
     //   //   sidebar: require('./sidebar/en'),
     //   // }
     // },
-    // sidebarDepth: 0,
+    sidebarDepth: 0,
   },
+  globalUIComponents: ['SideAnchor'],
   plugins: [
     ['@vuepress/search',
       {
