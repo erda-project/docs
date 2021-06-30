@@ -1,5 +1,4 @@
 version: "1.1"
-"on": {}
 stages:
   - stage:
       - git-checkout:
@@ -16,6 +15,9 @@ stages:
               - npm i
               - npm run build
             workdir: ${git-checkout}
+          resources:
+            cpu: 0.5
+            mem: 1024
           caches:
             - path: ${git-checkout}/node_modules
   - stage:
@@ -34,6 +36,6 @@ stages:
   - stage:
       - dice:
           alias: dice
-          description: 用于 Erda 平台部署应用服务
+          description: 用于 dice 平台部署应用服务
           params:
             release_id: ${release:OUTPUT:releaseID}
