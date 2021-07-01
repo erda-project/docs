@@ -66,6 +66,14 @@ module.exports = {
       children: [
         'dop/intro',
         {
+          title: '测试管理',
+          collapsable: true,
+          children: [
+            'dop/testManagement/function-test',
+            'dop/testManagement/auto-test-getting-started',
+          ]
+        },
+        {
           title: '我的项目',
           collapsable: true,
           children: [
