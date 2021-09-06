@@ -106,6 +106,14 @@ footer: Copyright © 2012-present terminus
 ---
 ```
 
+### 注意事项
+不要在文档中直接写 {{ }}, 除非用 ``` 代码块包裹，否则应使用以下任意一种方式：
+```
+<code v-text="'{{ ... }}'"/>
+<code v-pre>{{ ... }}</code>
+{{'{\{ ... }\}'}}
+```
+
 ### 其他
 支持类型：
 * table
@@ -115,7 +123,7 @@ footer: Copyright © 2012-present terminus
 ```
 * [Emoji](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json)
 * 提示区块，有tip|warning|danger|details四种类型
-```text
+```
 ::: tip 这是提示标题
 这是一个提示
 :::

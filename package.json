@@ -13,24 +13,31 @@
   "scripts": {
     "build": "vuepress build docs",
     "dev": "vuepress dev docs",
+    "serve": "serve dest",
+    "lint:style": "stylelint src/*.{vue,css,styl} --custom-syntax stylelint-plugin-stylus/custom-syntax",
     "lint-md": "yarn lint-md:style && yarn lint-md:wording",
     "lint-md:style": "remark --quiet --frail .",
     "lint-md:wording": "textlint ./docs/**/*.md"
   },
   "devDependencies": {
-    "@textlint-rule/textlint-rule-no-unmatched-pair": "^1.0.7",
+    "@textlint-rule/textlint-rule-no-unmatched-pair": "^1.0.8",
     "@vuepress/plugin-back-to-top": "1.8.2",
+    "@vuepress/plugin-blog": "^1.9.4",
     "@vuepress/plugin-medium-zoom": "1.8.2",
     "@vuepress/plugin-pwa": "1.8.2",
     "@vuepress/plugin-search": "^1.8.2",
     "babel-runtime": "^6.26.0",
-    "core-js": "^3.9.1",
+    "core-js": "^3.15.1",
+    "dayjs": "^1.10.6",
     "docsearch.js": "^2.6.3",
     "remark-cli": "^9.0.0",
     "remark-lint": "^8.0.0",
     "remark-preset-lint-consistent": "^4.0.0",
     "remark-preset-lint-recommended": "^5.0.0",
-    "textlint": "^11.8.2",
+    "remove-markdown": "^0.3.0",
+    "serve": "^12.0.0",
+    "stylelint-plugin-stylus": "^0.11.0",
+    "textlint": "^12.0.0",
     "textlint-filter-rule-comments": "^1.2.2",
     "textlint-rule-apostrophe": "^2.0.0",
     "textlint-rule-common-misspellings": "^1.0.1",
@@ -38,11 +45,15 @@
     "textlint-rule-en-capitalization": "^2.0.3",
     "textlint-rule-stop-words": "^2.0.9",
     "textlint-rule-terminology": "^2.1.5",
-    "textlint-rule-write-good": "^1.6.2",
+    "textlint-rule-write-good": "^2.0.0",
     "vue-toasted": "^1.1.28",
     "vuepress": "1.8.2",
     "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-flowchart": "^1.4.3",
-    "watchpack": "^2.1.1"
+    "vuepress-plugin-img-lazy": "^1.0.4",
+    "watchpack": "^2.2.0"
+  },
+  "dependencies": {
+    "vue-carousel": "^0.18.0"
   }
 }

@@ -1,5 +1,9 @@
 version: "1.1"
-"on": {}
+cron: 0 0 0 * * ?
+cron_compensator:
+  enable: false
+  latest_first: true
+  stop_if_latter_executed: true
 stages:
   - stage:
       - git-checkout:
@@ -16,6 +20,9 @@ stages:
               - npm i
               - npm run build
             workdir: ${git-checkout}
+          resources:
+            cpu: 1
+            mem: 2048
           caches:
             - path: ${git-checkout}/node_modules
   - stage:

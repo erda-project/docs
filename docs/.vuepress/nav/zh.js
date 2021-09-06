@@ -1,17 +1,13 @@
-// 新版本放前面，内容均在该文档仓库中
-const vers = [
-  '1.0'
-];
 
 module.exports = [
   {
     text: '官网',
     link: `https://www.erda.cloud/`,
   },
-  {
-    text: '使用手册',
-    link: `/{version}/manual/`,
-  },
+  // {
+  //   text: '使用手册',
+  //   link: `/{version}/manual/`,
+  // },
   // {
   //   text: 'CHANGELOG',
   //   link: '/changeLog'
@@ -23,13 +19,25 @@ module.exports = [
   {
     text: '版本',
     ariaLabel: '版本',
-    items: vers.map(ver => (
+    items: [
       {
-        text: `v${ver}`,
-        link: `/${ver}/manual/`,
-        version: ver,
-      }
-    ))
+        text: 'v1.2',
+        link: '/1.2/manual/about/intro.html',
+        version: 1.2,
+      },
+      {
+        text: 'v1.1',
+        link: '/1.1/manual/',
+        forceToIndex: true,
+        version: 1.1,
+      },
+      {
+        text: 'v1.0',
+        link: '/1.0/manual/',
+        forceToIndex: true,
+        version: 1.0,
+      },
+    ]
   },
   // {
   //   text: '了解更多',

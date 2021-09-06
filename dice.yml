@@ -1,9 +1,9 @@
-version: "2.0"
+version: '2.0'
 services:
   doc:
     resources:
       cpu: 0.1
-      mem: 512
+      mem: 256
     deployments:
       replicas: 1
     expose:
@@ -13,7 +13,7 @@ services:
     health_check:
       http:
         port: 80
-        path: "/"
+        path: /
         duration: 300
 addons: {}
 envs: {}

@@ -1,18 +1,11 @@
 <template>
   <div class="homepage-links">
-    <div class="col" v-for="group in list">
-      <div class="group-header">
-        <h3>{{group.title}}</h3>
-      </div>
-      <ul class="list-icons">
-        <li v-for="item in group.children">
-          <i aria-label="icon: doc" class="iconfont dice-doc"></i>
-          <RouterLink :to="item.link">
-            {{ item.text }}
-          </RouterLink>
-        </li>
-      </ul>
-    </div>
+    <router-link class="home-link" to="/latest/manual/" exact>
+      <div class="entry">使用手册</div>
+    </router-link>
+    <router-link class="home-link" to="/blog/post" exact>
+      <div class="entry">博客</div>
+    </router-link>
   </div>
 </template>
 
@@ -21,93 +14,22 @@ export default {
   name: "HomeLink",
 
   mounted() {
-    console.log("this.$site:", this.$site);
     const groupMap = {};
     this.$site.pages
-      .filter(p => p.path.startsWith("/manual"))
-      .map(p => {
+      .filter((p) => p.path.startsWith("/manual"))
+      .map((p) => {
         const [, , group, article] = p.path.split("/");
         groupMap[group] = groupMap[group] || [];
         groupMap[group].push(p);
       });
-    const groups = Object.keys(groupMap).map(k => {
+    const groups = Object.keys(groupMap).map((k) => {
       return {
         title: groupMap[k][0].title,
-        children: groupMap[k]
+        children: groupMap[k],
       };
     });
-    console.log("groupMap:", groups);
   },
 
-  data() {
-    return {
-      list: [
-        {
-          title: "分组1",
-          children: [
-            {
-              text: "介绍",
-              link: "/manual/production-intro"
-            },
-            {
-              text: "文章2",
-              link: "./1212"
-            },
-            {
-              text: "文章3",
-              link: "./1212"
-            },
-            {
-              text: "文章4",
-              link: "./1212"
-            }
-          ]
-        },
-        {
-          title: "分组2",
-          children: [
-            {
-              text: "文章6",
-              link: "./1212"
-            },
-            {
-              text: "文章6",
-              link: "./1212"
-            },
-            {
-              text: "文章6",
-              link: "./1212"
-            },
-            {
-              text: "文章6",
-              link: "./1212"
-            }
-          ]
-        },
-        {
-          title: "分组3",
-          children: [
-            {
-              text: "文章6",
-              link: "./1212"
-            },
-            {
-              text: "文章6",
-              link: "./1212"
-            },
-            {
-              text: "文章6",
-              link: "./1212"
-            },
-            {
-              text: "文章6",
-              link: "./1212"
-            }
-          ]
-        }
-      ]
-    };
-  }
 };
 </script>
 
@@ -117,48 +39,26 @@ export default {
   max-width: 880px;
   margin: 0px auto;
   display: flex;
+  justify-content: space-around;
+  font-family: PingFangSC-Regular, serif;
 
-  .col {
-    flex: 1;
-  }
-
-  .group-header {
-    border-bottom: 1px solid #dedede;
-    padding-bottom: 1em;
-
-    h3 {
-      margin-top: 0;
-      margin-bottom: 0;
-      color: #444;
-      font-size: 18px;
-      font-weight: 700;
-    }
-  }
-
-  ul {
-    padding: 0 14px 0 0;
-
-    li {
-      width: 100%;
-      font-size: 14px;
-      margin: 0;
-      display: inline-block;
-      max-width: 100%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-  }
-
-  .fake-link {
-    color: #5d48df;
+  .entry {
+    width: 20rem;
+    height: 12rem;
+    border: 1px solid #efefef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9687bb;
+    font-size: 28px;
     cursor: pointer;
-  }
-}
+    transition: all 0.1s ease-out;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 
-@media (max-width: $MQMobile) {
-  .homepage-links {
-    flex-direction: column;
+    &:hover {
+      color: $activeColor;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    }
   }
 }
 </style>
