@@ -14,7 +14,7 @@
 1. 执行以下命令：
 
    ```shell
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/erda-project/erda/master/quick-start/quick-start.sh)"
+   /bin/bash -c "$(curl -fsSL https://static.erda.cloud/quick-start/quick-start.sh)"
    ```
 
 2. 访问 [*http://erda.local*](http://erda.local) 快速体验 Erda。
