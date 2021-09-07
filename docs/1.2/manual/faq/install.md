@@ -5,30 +5,36 @@
 1. 请您首先确认 `erda-init-image` 日志，是否存在无法连接 MySQL 等情况，如果存在，请排查集群到 MySQL 网络是否可达。
 2. 初始化任务中如果出现 `Table xxx already exists` 错误，可能是由于您在 Erda 安装过程中出现过初始化任务中断的行为， 请检查数据库并清理残留数据，重新进行安装。
 
+## 基于 Helm 部署 Erda，每个节点挂载 NFS 是否是强制的？
+
+若您希望将 Kubernetes 节点用于执行流水线任务，则节点挂载 NFS 是强制的，具体请参见 [准备工作](../install/helm-install/premise.md#准备工作)。
+
+您可以通过 [标签设置](../cmp/guide/cluster/cluster-node-labels.md) 控制 Erda 的节点调度。
+
 ## 完成 Erda 安装后，集群总览中未显示已添加的集群该如何处理？
 
 :::tip 提示
 此处已添加的集群是指导入 Erda 所在的 Kubernetes 集群。
 :::
 
-正常情况下，导入集群后 3 分钟左右即可在 **集群总览** 页面查看机器的数据列表，若数据为空，可从以下两个方面依次排查: 
+正常情况下，导入集群后 3 分钟左右即可在 **集群总览** 页面查看机器的数据列表，若数据为空，可从以下两个方面依次排查:
 
 1. 进入 **管理中心 > 组织设置 > 组织信息** 查看组织标识, 例如此处的标识为 `erda`。
 
    ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/27/53f03992-8eee-4f2c-a3b0-0a23df3cb22c.png)
-   
+
    随后在 Kubernetes 节点中确认 `dice/org-<企业标识>=true` 标签是否正确。
 
    ```shell
    kubectl get no --show-labels | grep org
    ```
-   
+
 4. 确认标签存在后，请进入 **多云管理 > 资源管理 > 集群管理**，确认导入的 **集群标识** 是否与 Erda 安装时指定的 `erda.clusterName` 一致。若不一致，您需要下线该集群，并重新添加。
 5. 经前两步排查，若仍无数据显示，请排查 `erda-telegraf` 组件日志。
 
 ## 访问 Erda 会强制跳转 HTTPS 该如何处理？
 
-Erda 默认配置的是 HTTP，如果开启 HTTPS 请参考 [Erda 如何配置 HTTPS](install.md#Erda-如何配置-https)。
+Erda 默认配置的是 HTTP，如果开启 HTTPS 请参考 [Erda 如何配置 HTTPS](install.md#erda-如何配置-https)。
 
 以社区 `ingress-nginx` 为例，默认情况下会强制跳转 HTTPS，您可以修改 `ingress-nginx` 配置来禁用：
 
@@ -55,7 +61,7 @@ Erda 可以安装时配置 `erda.clusterConfig.protocol` 来开启 `https`，详
 ## Erda 安装完成访问 404 该如何处理？
 
 1. 请先确认是否按照 [安装要求](../install/helm-install/premise.md#安装要求) 部署 `Ingress Controller`, 以 `Ingress-Nginx` 为例。
-2. 查看 `Ingress-Controller` 日志，报错提示如下: 
+2. 查看 `Ingress-Controller` 日志，报错提示如下:
 ```shell
 "ingress does not contain a valid IngressClass"
 ```
@@ -67,9 +73,11 @@ Erda 可以安装时配置 `erda.clusterConfig.protocol` 来开启 `https`，详
 
 ## 导入集群后，创建项目时可分配资源为 0 该如何处理？
 
-1. 请您先确认导入的集群是否在集群总览中显示，如果未显示请参考 [集群总览中未显示已添加的集群该如何处理](install.md#完成-erda-安装后-集群总览中未显示已添加的集群该如何处理)
-2. 集群总览显示该集群后，您需要确认是否进行了 [节点标签](../cmp/guide/cluster/cluster-node-labels.md) 设置。 
-标签可以通过 **多云管理平台 > 集群总览 > 设置标签** 来进行设置或查看。
+Erda 通过节点标签来采集调度节点的可用资源，标签未正确设置, 会导致项目可用资源为 0，您可以通过如下步骤进行排查：
+
+1. 请您先确认导入的集群是否在集群总览中显示，如果未显示请参考 [集群总览中未显示已添加的集群该如何处理](install.md#完成-erda-安装后-集群总览中未显示已添加的集群该如何处理) 。
+2. 为了保证应用的正常构建发布，环境标签 (`workspace-*`)、`stateless-service`、`pack-job` 是必需的。其余标签您可以参考 [节点标签](../cmp/guide/cluster/cluster-node-labels.md) 按需设置。
+   标签可以通过 **多云管理平台 > 集群总览 > 设置标签** 来进行设置或查看。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/09/03/1edc80d0-4dec-4da2-ab5d-0bb6985f1cb1.png)
 
@@ -126,3 +134,10 @@ Error: ValidatingWebhookConfiguration.admissionregistration.k8s.io "elastic-webh
 ## 开源版本是否只支持 Kubernetes 1.16 - 1.20、Centos 7.4+？
 
 以上版本已经过验证，其他环境暂未覆盖。后续将陆续覆盖其他常见环境，敬请期待。
+
+## Erda 是否支持纳管 Openshift、Rancher 等集群？
+
+当前 Erda 暂未对 Openshift、Rancher 等 Kubernetes 发行版进行适配测试，后续计划对常见的 Kubernetes 发行版及云厂商基于
+Kubernetes 的容器编排服务进行适配，敬请期待。
+
+如果您已在以上环境中进行过验证，[欢迎参与到 Erda 的贡献中](https://github.com/erda-project/erda/blob/master/CONTRIBUTING.md)。
