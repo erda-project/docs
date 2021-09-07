@@ -7,9 +7,9 @@
 
 ## 基于 Helm 部署 Erda，每个节点挂载 NFS 是否是强制的？
 
-如果您的 Kubernetes 节点希望用于执行流水线任务，节点挂载 NFS 是强制的，您可以参考 [准备工作](../install/helm-install/premise.md#准备工作)。
+若您希望将 Kubernetes 节点用于执行流水线任务，则节点挂载 NFS 是强制的，具体请参见 [准备工作](../install/helm-install/premise.md#准备工作)。
 
-您可以通过 [标签设置](../cmp/guide/cluster/cluster-node-labels.md) 来控制 Erda 的节点调度。
+您可以通过 [标签设置](../cmp/guide/cluster/cluster-node-labels.md) 控制 Erda 的节点调度。
 
 ## 完成 Erda 安装后，集群总览中未显示已添加的集群该如何处理？
 
@@ -34,7 +34,7 @@
 
 ## 访问 Erda 会强制跳转 HTTPS 该如何处理？
 
-Erda 默认配置的是 HTTP，如果开启 HTTPS 请参考 [Erda 如何配置 HTTPS](install.md#Erda-如何配置-https)。
+Erda 默认配置的是 HTTP，如果开启 HTTPS 请参考 [Erda 如何配置 HTTPS](install.md#erda-如何配置-https)。
 
 以社区 `ingress-nginx` 为例，默认情况下会强制跳转 HTTPS，您可以修改 `ingress-nginx` 配置来禁用：
 
@@ -133,9 +133,9 @@ Error: ValidatingWebhookConfiguration.admissionregistration.k8s.io "elastic-webh
 
 以上版本已经过验证，其他环境暂未覆盖。后续将陆续覆盖其他常见环境，敬请期待。
 
-## Erda 是否支持纳管 Openshift、Rancher 等集群
+## Erda 是否支持纳管 Openshift、Rancher 等集群？
 
-当前 Erda 并没有对 Openshift、Rancher 等 Kubernetes 发行版进行适配测试，后续我们会对常见的一些 Kubernetes 发行版及云厂商基于
+当前 Erda 暂未对 Openshift、Rancher 等 Kubernetes 发行版进行适配测试，后续计划对常见的 Kubernetes 发行版及云厂商基于
 Kubernetes 的容器编排服务进行适配，敬请期待。
 
-如果您有在以上环境中进行过验证，[欢迎参与到 Erda 的贡献中](https://github.com/erda-project/erda/blob/master/CONTRIBUTING.md)。
+如果您已在以上环境中进行过验证，[欢迎参与到 Erda 的贡献中](https://github.com/erda-project/erda/blob/master/CONTRIBUTING.md)。
