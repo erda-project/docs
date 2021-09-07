@@ -73,8 +73,10 @@ Erda 可以安装时配置 `erda.clusterConfig.protocol` 来开启 `https`，详
 
 ## 导入集群后，创建项目时可分配资源为 0 该如何处理？
 
-1. 请您先确认导入的集群是否在集群总览中显示，如果未显示请参考 [集群总览中未显示已添加的集群该如何处理](install.md#完成-erda-安装后-集群总览中未显示已添加的集群该如何处理)
-2. 集群总览显示该集群后，您需要确认是否进行了 [节点标签](../cmp/guide/cluster/cluster-node-labels.md) 设置。
+Erda 通过节点标签来采集调度节点的可用资源，标签未正确设置, 会导致项目可用资源为 0，您可以通过如下步骤进行排查：
+
+1. 请您先确认导入的集群是否在集群总览中显示，如果未显示请参考 [集群总览中未显示已添加的集群该如何处理](install.md#完成-erda-安装后-集群总览中未显示已添加的集群该如何处理) 。
+2. 为了保证应用的正常构建发布，环境标签 (`workspace-*`)、`stateless-service`、`pack-job` 是必需的。其余标签您可以参考 [节点标签](../cmp/guide/cluster/cluster-node-labels.md) 按需设置。
    标签可以通过 **多云管理平台 > 集群总览 > 设置标签** 来进行设置或查看。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/09/03/1edc80d0-4dec-4da2-ab5d-0bb6985f1cb1.png)
