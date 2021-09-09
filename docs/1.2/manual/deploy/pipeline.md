@@ -312,6 +312,41 @@ loop_interval = min(interval_sec * (decline_ratio)^N, decline_limit_sec)
 其中 N 为循环次数，从 0 开始计数。
 ```
 
+例子
+
+*循环 10000 次，每次循环间隔 10 秒*
+```yaml
+loop:
+  break: 'false' == 'true'
+  strategy:
+     max_times: 10000        
+     interval_sec: 10 
+```
+
+*当前任务如果执行失败重试*
+```yaml
+loop:
+  break: task_status == 'Success'
+  strategy:
+     max_times: 10000
+```
+
+*某个任务或当前任务的出参 xxx 不为 401 时候重试*
+```yaml
+loop:
+  break: '${{ outputs.任务的alias.xxx }}' == '401'
+  strategy:
+     max_times: 10000
+```
+
+*多条件组合判断*
+```yaml
+loop:
+  break: '1' == '2' && '1' == '3' || '1' == '3' || '${{ outputs.任务的alias.xxx }}' == '401'
+  strategy:
+     max_times: 10000
+```
+
 #### caches
 
 caches 缓存
