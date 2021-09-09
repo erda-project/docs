@@ -17,7 +17,11 @@
     * [Consumer：消费内部接口对外提供服务](https://github.com/erda-project/tutorials/tree/master/microservice/springcloud/consumer)
 
 ## 安装配置
-安装配置相关内容，请参见 [安装文档](../install/helm-install.html)。
+
+Erda 提供了多种快速安装的方式：
+
+- [基于 Docker Compose 快速安装](../install/docker-install.md) : 仅适用于不具备 Kubernetes 条件的情况下，在本地快速体验 Erda 的场景。
+- [基于 Helm 在 Kubernetes 上最小化安装](../install/helm-install/helm-install-demo.md)：适用于在 Kubernetes 集群上最小化安装 Erda。
 
 您也可以选择 [*erda.cloud*](https://www.erda.cloud/)，注册个人账号后即可使用。
 

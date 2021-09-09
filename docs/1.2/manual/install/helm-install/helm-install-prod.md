@@ -2,7 +2,9 @@
 
 ## 准备工作
 
-1. 高可用安装适用于生产环境，Erda 的核心组件及重要依赖均采用多副本方案部署，该安装方式将提供适用于生产的默认配置，但是请注意以下几点:
+1. 请确保现有 Kubernetes 集群满足 [先决条件](premise.md)。
+
+2. 高可用安装适用于生产环境，Erda 的核心组件及重要依赖均采用多副本方案部署，该安装方式将提供适用于生产的默认配置，但是请注意以下几点:
 
    - MySQL 不支持高可用，建议您接入自己的 MySQL 或云服务商 RDS 以保证稳定性，具体请参见 [如何接入已有中间件](high-availability.md#如何接入已有中间件)。
 
@@ -10,7 +12,7 @@
 
    - 默认已提供 Erda 及依赖的配置参数，您可以根据实际部署情况修改，具体请参见 [高可用部署可配置参数](high-availability.md#高可用部署可配置参数)。
 
-2. 添加 Erda Helm Chart 仓库，并更新。
+3. 添加 Erda Helm Chart 仓库，并更新。
 
 ```shell
 helm repo add erda https://charts.erda.cloud/erda

@@ -2,9 +2,11 @@
 
 ## 准备工作
 
-1. 最小化安装，Erda组件将全部以单副本方案部署，不建议生产使用，生产环境部署请参考 [基于 Helm 高可用安装 Erda](helm-install-prod.md)。
+1. 请确保现有 Kubernetes 集群满足 [先决条件](premise.md)。
 
-2. 添加 Erda Helm Chart 仓库，并更新。
+2. 最小化安装，Erda组件将全部以单副本方案部署，不建议生产使用，生产环境部署请参考 [基于 Helm 高可用安装 Erda](helm-install-prod.md)。
+
+3. 添加 Erda Helm Chart 仓库，并更新。
 
 ```shell
 helm repo add erda https://charts.erda.cloud/erda
@@ -47,7 +49,7 @@ helm install erda erda/erda --set erda.clusterName="erda-demo" -n erda-system --
   ```
 
 - 验证 Erda 依赖
-    
+
   ```shell
   $ kubectl get statefulset -n erda-system
   NAME                       READY   AGE
