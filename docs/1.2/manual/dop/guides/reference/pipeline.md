@@ -701,3 +701,104 @@ GITTAR_COMMIT
 GITTAR_MESSAGE
 GITTAR_REPO
  ```
+
+## 流水线表达式语法
+
+### ${{ random.key }}
+
+用法式例
+ ```yaml
+version: "1.1"
+stages:
+  - stage:
+      - custom-script:
+          alias: custom-script
+          description: 运行自定义命令
+          version: "1.0"
+          commands:
+            - echo ${{ random.integer }}
+
+ ```
+
+### ${{ outputs.alias.val }}
+
+可以使用前置任务出参作为执行条件
+
+```yaml
+- stage:
+  - custom-script:
+      alias: script1
+      version: "1.0"
+      commands:
+        - echo 1
+        - echo "image=123" >> $METAFILE # 输出出参给下个任务使用
+- stage:
+  - custom-script:
+      alias: script2
+      version: "1.0"
+      commands:
+        - echo ${{ outputs.script1.image }}
+```
+
+### ${{ params.val }}
+
+在 yaml 底下设置参数
+```yaml
+version: "1.1"
+stages:
+  - stage:
+      - custom-script:
+          alias: custom-script
+          description: 运行自定义命令
+          version: "1.0"
+          commands:
+            - echo ${{ params.xxx }}
+params:
+  - name: xxx
+    required: true
+    default: 111
+    type: int
+```
+### ${{ dirs.alias }}
+
+获取之前 action 的信息
+```yaml
+version: "1.1"
+stages:
+  - stage:
+      - git-checkout:
+          alias: git-checkout
+          description: 代码仓库克隆
+          version: "1.0"
+          params:
+            branch: ((gittar.branch))
+            depth: 1
+            password: ((gittar.password))
+            uri: ((gittar.repo))
+            username: ((gittar.username))
+  - stage:
+      - custom-script:
+          alias: custom-script
+          description: 运行自定义命令
+          version: "1.0"
+          commands:
+            - echo ${{ dirs.git-checkout }}
+```
+
+### ${{ configs.val }}
+获取相关的流水线配置
+```yaml
+version: "1.1"
+stages:
+  - stage:
+      - custom-script:
+          alias: custom-script
+          description: 运行自定义命令
+          version: "1.0"
+          commands:
+            - echo ${{ configs.dice.org.id }}
+```
+
+### ${{ Globals.val }}
+
+TODO
