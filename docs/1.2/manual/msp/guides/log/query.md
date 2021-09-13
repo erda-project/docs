@@ -15,27 +15,27 @@
 ### 内容筛选方式
 基于内容的搜索为全文搜索模式，支持操作符 `AND` 和 `OR`，同时支持使用 `()` 分组，具体如下：
 
-- 搜索包含关键词 _quick_ 的日志：
+- 搜索包含关键词 quick 的日志：
   
   `quick`
 
 
-- 搜索精确匹配 _John Smith_ 的日志：
+- 搜索精确匹配 John Smith 的日志：
   
   `"John Smith"`
 
 
-- 搜索包含关键词 _quick_ 或 _brown_ 的日志：
+- 搜索包含关键词 quick 或 brown 的日志：
   
   `quick OR brown`
 
 
-- 搜索包含关键词 _quick_ 且同时 包含 _brown_ 的日志：
+- 搜索包含关键词 quick 且同时包含 brown 的日志：
   
   `quick AND brown`
 
 
-- 搜索包含关键词 _John Smith_ 且同时包含 _quick_ 或 _brown_ 任意一个关键词的日志：
+- 搜索包含关键词 John Smith 且同时包含 quick 或 brown 任意一个关键词的日志：
 
   `"John Smith" AND (quick OR brown)`
 
