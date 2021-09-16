@@ -377,7 +377,7 @@ Action 条件执行
       if: ${{ ${{ outputs.script1.image }}==123 && ${{ outputs.script1.image }}==123 }}
 ```
 
-使用 ```${{ xxx }}```，中间 xxx 输入数学表达式(注意xxx前后有空格)，可以使用前置任务出参作为执行条件
+使用<code v-pre>${{ xxx }}</code>，中间 xxx 输入数学表达式(注意xxx前后有空格)，可以使用前置任务出参作为执行条件
 
 目前 pipeline 执行的时候假如没有加入条件执行，那么当一个任务失败，下面的任务就会自动失败，而当下面的任务加上了条件执行，条件成立的话还是会继续执行
 
@@ -704,7 +704,7 @@ GITTAR_REPO
 
 ## 流水线表达式语法
 
-### ```${{ random.key }}```
+### <code v-pre>${{ random.key }}</code>
 
 用法式例
  ```yaml
@@ -720,7 +720,7 @@ stages:
 
  ```
 
-### ```${{ outputs.alias.val }}```
+### <code v-pre>${{ outputs.alias.val }}</code>
 
 可以使用前置任务出参作为执行条件
 
@@ -740,7 +740,7 @@ stages:
         - echo ${{ outputs.script1.image }}
 ```
 
-### ```${{ params.val }}```
+### <code v-pre>${{ params.val }}</code>
 
 在 yaml 底下设置参数
 ```yaml
@@ -759,7 +759,7 @@ params:
     default: 111
     type: int
 ```
-### ```${{ dirs.alias }}```
+### <code v-pre>${{ dirs.alias }}</code>
 
 获取之前 action 的信息
 ```yaml
@@ -785,7 +785,7 @@ stages:
             - echo ${{ dirs.git-checkout }}
 ```
 
-### ```${{ configs.val }}```
+### <code v-pre>${{ configs.val }}</code>
 获取相关的流水线配置
 ```yaml
 version: "1.1"
@@ -799,6 +799,6 @@ stages:
             - echo ${{ configs.dice.org.id }}
 ```
 
-### ```${{ Globals.val }}```
+### <code v-pre>${{ Globals.val }}</code>
 
 TODO
