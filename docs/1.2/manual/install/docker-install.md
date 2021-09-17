@@ -33,3 +33,9 @@
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/ab68de5a-d013-40d0-9336-a9364da3525e.png)
 
 
+### 2. 在 CenOS 环境下执行安装脚本时报错 "invalid IP address in add-host: "host-gateway"
+
+**问题原因**：docker 版本过低，`host-gateway` 特性要求 docker 版本在 `20.10.0+`
+
+**解决方法**：升级 docker，执行命令 `sudo yum install docker-ce docker-ce-cli containerd.io`
+
