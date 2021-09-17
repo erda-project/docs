@@ -128,6 +128,7 @@ module.exports = {
           collapsable: true,
           children: [
             'dop/best-practices/microservice-springcloud',
+            'dop/best-practices/api-drive-develop',
             'dop/best-practices/autotest',
             'dop/best-practices/manual-test'
           ]
