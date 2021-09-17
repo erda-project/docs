@@ -35,6 +35,6 @@
 
 ### 2. 在 CenOS 环境下执行安装脚本时报错 `invalid IP address in add-host: "host-gateway"`
 
-**问题原因**：docker 版本过低，`host-gateway` 特性要求 docker 版本在 `20.10.0+`
+**问题原因**：Docker 版本过低，`host-gateway` 特性要求 Docker 版本在 20.10.0 及以上
 
-**解决方法**：升级 docker，执行命令 `sudo yum install docker-ce docker-ce-cli containerd.io`
+**解决方法**：升级 Docker，执行命令 `sudo yum install docker-ce docker-ce-cli containerd.io`
