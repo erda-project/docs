@@ -21,6 +21,11 @@ module.exports = [
     ariaLabel: '版本',
     items: [
       {
+        text: 'v1.3',
+        link: '/1.3/manual/about/intro.html',
+        version: 1.3,
+      },
+      {
         text: 'v1.2',
         link: '/1.2/manual/about/intro.html',
         version: 1.2,
