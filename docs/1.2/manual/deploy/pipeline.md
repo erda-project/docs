@@ -376,9 +376,35 @@ Action 条件执行
       if: ${{ ${{ outputs.script1.image }}==123 && ${{ outputs.script1.image }}==123 }}
 ```
 
-使用 ${{ xxx }}，中间 xxx 输入数学表达式(注意xxx前后有空格)，可以使用前置任务出参作为执行条件
+**请注意**
+
+- 使用 ${{ xxx }}，中间 xxx 输入数学表达式(注意xxx前后有空格)，可以使用前置任务出参作为执行条件
+
+- 在`if`条件中，最外层的`${{ xxx }}`是不能缺少的。 如：`if: ${{ outputs.script1.image }}==123` 这样的配置是不合法的
+
+- 如果发生字符串对比，如：`if: ${{ ${{ outputs.script1.image }}=='OK' }}` 这样的配置是不合法的，因为`${{ xxx }}`是一个字面量结果，不会带有类型信息。 请在表达式外添加引号： `if: ${{ '${{ outputs.script1.image }}'=='OK' }}`
 
 目前 pipeline 执行的时候假如没有加入条件执行，那么当一个任务失败，下面的任务就会自动失败，而当下面的任务加上了条件执行，条件成立的话还是会继续执行
+
+如何输出出参给下面的任务使用
+
+1. 添加command `echo "image=123" >> $METAFILE`
+
+2. 在很多情况下，出参是来自我们自定义的脚本结果的，此时可以在脚本中进行输出，以js为例：
+
+```javascript
+  const fs = require('fs');
+  const { EOL } = require('os');
+
+  const image = 123; // calculated by script
+
+  fs.appendFile(process.env.METAFILE, `image=${image}${EOL}`, (err) => {
+    if (err) {
+      console.error('err', err);
+    }
+    console.log(`emit image=${image} to METAFILE`);
+  });
+```
 
 ##### 内置表达式
 
