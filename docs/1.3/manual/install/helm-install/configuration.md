@@ -1,12 +1,12 @@
-# 配置及访问 Erda
+# 配置及访问
 
 完成 Erda 安装后，您需要进行一些简单的配置。
 
 ## 配置域名
 
-如果已有真实的泛域名，您需要进行域名配置，将该域名的访问流量导入 Kubernetes 集群的 Ingress Controller，从而能够正常访问集群中配置的 Ingress 域名。
+若已有真实的泛域名，您需要进行域名配置，将该域名的访问流量导入 Kubernetes 集群的 Ingress Controller，从而能够正常访问集群中配置的 Ingress 域名。
 
-如果没有真实的泛域名，您需要在浏览器所在的机器上将下列 URL 写入 `etc/hosts` 文件，并将示例 IP 替换为该 Kubernetes 集群的 Ingress Controller 入口 IP。
+若无真实的泛域名，您需要在浏览器所在的机器上将下列 URL 写入 `etc/hosts` 文件，并将示例 IP 替换为该 Kubernetes 集群的 Ingress Controller 入口 IP。
 
 例如，Kubernetes 集群的 Ingress Controller 入口 IP 为 10.0.0.1，泛域名（ERDA_GENERIC_DOMAIN 变量中设置）为 *erda.io*，则需写入 `/etc/hosts` 文件的信息如下：
 
@@ -40,8 +40,8 @@
       ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/16/42d94b90-76fe-4280-823e-c93841f50f40.png)
 
         * 根据界面提示完成配置，例如集群标识为 erda-demo，泛域名为 *erda.io*，并选择认证方式为 **Kubeconfig**。
-        
-      ::: warning 注意
+      
+      ::: tip 提示
       集群标识及泛域名需与安装时指定的配置保持一致，否则您将无法进行其他操作。
       :::
    
