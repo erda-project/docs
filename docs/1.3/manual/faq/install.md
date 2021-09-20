@@ -163,6 +163,7 @@ Kubernetes 的容器编排服务进行适配，敬请期待。
 
 您可以参考 [卸载 Erda](../install/helm-install/uninstall.md) 对残留数据进行清理，清理完成后重新执行安装操作。
 
+
 ## 19. 使用 Docker Compose 启动 Erda，组件容器报错 `dial tcp x.x.x.x:3306: connect: connection refused` 该如何处理？
 
 `3306` 为 MySQL 端口，该错误提示表示无法连接至 MySQL。
@@ -172,3 +173,4 @@ Kubernetes 的容器编排服务进行适配，敬请期待。
 - 若 MySQL 正常运行，需找到对应的组件，尝试 `docker rm ${container-id}` 后使用 `docker-compose up -d` 重新拉起该组件。
 
 目前出现该问题的多为 Windows 用户，因此极有可能是 Docker Compose 在 Windows 系统下的 depends-on 存在问题，具体原因仍在排查中。
+
