@@ -378,11 +378,11 @@ Action 条件执行
 
 **请注意**
 
-- 使用 ${{ xxx }}，中间 xxx 输入数学表达式(注意xxx前后有空格)，可以使用前置任务出参作为执行条件
+- 使用 <code v-pre>${{ xxx }}</code>，中间 xxx 输入数学表达式(注意xxx前后有空格)，可以使用前置任务出参作为执行条件
 
-- 在`if`条件中，最外层的`${{ xxx }}`是不能缺少的。 如：`if: ${{ outputs.script1.image }}==123` 这样的配置是不合法的
+- 在`if`条件中，最外层的<code v-pre>${{ xxx }}</code>是不能缺少的。 如：<code v-pre>if: ${{ outputs.script1.image }}==123</code> 这样的配置是不合法的
 
-- 如果发生字符串对比，如：`if: ${{ ${{ outputs.script1.image }}=='OK' }}` 这样的配置是不合法的，因为`${{ xxx }}`是一个字面量结果，不会带有类型信息。 请在表达式外添加引号： `if: ${{ '${{ outputs.script1.image }}'=='OK' }}`
+- 如果发生字符串对比，如：<code v-pre>if: ${{ ${{ outputs.script1.image }}=='OK' }}</code> 这样的配置是不合法的，因为<code v-pre>${{ xxx }}</code>是一个字面量结果，不会带有类型信息。 请在表达式外添加引号： <code v-pre>if: ${{ '${{ outputs.script1.image }}'=='OK' }}</code>
 
 目前 pipeline 执行的时候假如没有加入条件执行，那么当一个任务失败，下面的任务就会自动失败，而当下面的任务加上了条件执行，条件成立的话还是会继续执行
 
@@ -654,5 +654,4 @@ stages:
 ![界面配置](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2019/08/01/aa6bd69c-eb5a-47c2-832c-addaa891f33c.png)
 
 :::
-
 
