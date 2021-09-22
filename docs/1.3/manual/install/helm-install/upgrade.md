@@ -1,6 +1,6 @@
-# 版本升级
+# 升级
 
-## 基于 Helm Chart 升级
+本文将为您介绍如何基于 Helm Chart 升级版本。
 
 ::: tip 提示
 
@@ -31,22 +31,22 @@ v1.0.x 版本不支持升级。
 
 ::: tip 提示
 
-- 您需要提供 Erda 所部署的 Namespace，比如 erda-system。 
-- 您可以通过 `--version` 参数升级至指定版本的 Erda，未指定默认升级至最新版本。
+- 您需要提供 Erda 所部署的 Namespace，例如 erda-system。 
+- 您可以通过 `--version` 参数升级至指定版本的 Erda，未指定则默认升级至最新版本。
 
 :::
 
-- 使用指定私有化配置文件升级 Erda, 比如 `custom_values.yaml`。
+- 使用指定私有化配置文件升级 Erda，例如 `custom_values.yaml`。
 
-```shell
-helm upgrade erda erda/erda -f custom_values.yaml -n erda-system
-```
+  ```shell
+  helm upgrade erda erda/erda -f custom_values.yaml -n erda-system
+  ```
 
 - 使用私有化配置参数升级 Erda，建议通过 [私有配置文件的方式](high-availability.md#如何保存私有化配置) 管理配置。
 
-```shell
-helm upgrade erda erda/erda --set param1=value1,param2=value2.... -n erda-system
-```
+  ```shell
+  helm upgrade erda erda/erda --set param1=value1,param2=value2.... -n erda-system
+  ```
 
 ### 升级验证
 

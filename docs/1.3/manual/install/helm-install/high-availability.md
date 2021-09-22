@@ -1,10 +1,10 @@
 # 高可用配置说明
 
 使用 Erda 的 Helm Chart 包部署 Erda 时，可通过全局参数 global.size 实现不同的部署模式：
-* 设置 global.size 为 `demo`，则 Erda 各组件将以极简方式（低资源配置、单实例副本）部署，适用于试用环境部署。
-* 设置 global.size 为 `prod`，则 Erda 的核心组件将以高可用方式（高资源配置、多实例副本）部署，适用于生产环境部署。
+* 设置 global.size 为 `demo`，则 Erda 各组件将以极简方式（低资源配置、单实例副本）部署，适用于试用环境。
+* 设置 global.size 为 `prod`，则 Erda 的核心组件将以高可用方式（高资源配置、多实例副本）部署，适用于生产环境。
 
-本文将为您介绍 Erda 生产部署相关的配置说明。
+本文将为您介绍 Erda 生产部署（即高可用部署）相关的配置说明。
 
 ## 高可用部署可配置参数
 
@@ -13,10 +13,10 @@ Erda Helm Chart 中的 [values.yaml](https://github.com/erda-project/erda-releas
 | 参数 | 描述 | 默认值 |
 |-----|:---|:----|
 |**Global**|  |  |
-| global.size | 表示部署模式（支持 `demo` 和 `prod` 两种），高可用部署设置为 `prod` | / |
+| global.size | 表示部署模式（支持 `demo` 和 `prod`），高可用部署设置为 `prod` | - |
 | global.image.repository | 设置镜像仓库地址，对于无法访问外网的用户，需修改该配置为内网私有仓库，并在部署前将 Erda 部署所需的镜像上传至该私有仓库中 | "registry.erda.cloud/erda" |
 | global.image.imagePullPolicy | 设置镜像拉取策略 | "IfNotPresent" |
-| global.image.imagePullSecrets | 若不是从用户私有仓库拉取镜像则无需设置，否则需要设置为访问用户私有镜像仓库的 secrets | / |
+| global.image.imagePullSecrets | 若非从用户私有仓库拉取镜像则无需设置，否则需设置为访问用户私有镜像仓库的 secrets | - |
 | global.domain | Erda 当前集群绑定的泛域名 | "erda.io" |
 | **Cassandra** |  |  |
 | cassandra.capacity | 设置 Cassandra 单节点存储容量，可根据实际集群及业务量规模进行缩放 | "1000Gi" |
@@ -69,7 +69,7 @@ Erda Helm Chart 中的 [values.yaml](https://github.com/erda-project/erda-releas
 | redis.redisFailover.redis.resources.requests.cpu | 设置 Redis Pod 的 CPU 资源请求值 | "150m" |
 | redis.redisFailover.redis.resources.requests.memory | 设置 Redis Pod 的 Memory 资源请求值 | "1Gi" |
 | redis.redisFailover.redis.resources.limits.cpu | 设置 Redis Pod 的 CPU 资源限制值 | "300m" |
-| redis.redisFailover.redis.resources.limits.memory | 设置 Redis Pod 的 CPU 资源限制值 | "2Gi" |
+| redis.redisFailover.redis.resources.limits.memory | 设置 Redis Pod 的 Memory 资源限制值 | "2Gi" |
 | redis.redisFailover.sentinel.replicas | 设置 Redis Sentinel 副本数量 | 3 |
 | **Registry** |  |  |
 | registry.storageClassName | 设置存储卷对应的 Kubernetes StorageClass 对象 | "dice-local-volume" |
@@ -78,9 +78,9 @@ Erda Helm Chart 中的 [values.yaml](https://github.com/erda-project/erda-releas
 | registry.resources.requests.memory | 设置 Registry 实例 Pod 的 Memory 资源请求值 | "512Mi" |
 | registry.resources.limits.cpu | 设置 Registry 实例 Pod 的 CPU 资源限制值 | "1" |
 | registry.resources.limits.memory | 设置 Registry 实例 Pod 的 Memory 资源限制值 | "1Gi" |
-| registry.networkMode | 如果值为 "host" 则设置 Registry 容器网络模式为 host 模式 |  |
-| registry.custom.nodeName | Registry 采用 host 模式部署的节点名，此时 Registry 会部署在该节点，并且容器网络模式为 host 模式 |  |
-| registry.custom.nodeIP | Registry 采用 host 模式部署时节点的 IP 地址 |  |
+| registry.networkMode | 若值为 "host" 则设置 Registry 容器网络模式为 host 模式 | - |
+| registry.custom.nodeName | Registry 采用 host 模式部署的节点名，此时 Registry 将部署在该节点，并且容器网络模式为 host 模式 | - |
+| registry.custom.nodeIP | Registry 采用 host 模式部署时节点的 IP 地址 | - |
 | **Sonar** |  |  |
 | sonar.resources.requests.cpu | 设置 Sonar 实例 Pod 的 CPU 资源请求值 | "750m" |
 | sonar.resources.requests.memory | 设置 Sonar 实例 Pod 的 Memory 资源请求值 | "1536Mi" |
@@ -250,7 +250,7 @@ Erda Helm Chart 中的 [values.yaml](https://github.com/erda-project/erda-releas
 
 ## 核心数据存储组件配置参数
 
-针对不同节点规模的集群，高可用配置中对于 Cassandra、Elasticsearch、Kafka 等存储组件的参数配置可参考下表：
+针对不同节点规模的集群，高可用配置中对于 Cassandra、Elasticsearch、Kafka 等存储组件的参数配置可参考如下：
 
 | 集群规模 | 0～50 节点 | 50～100 节点 | 100～200 节点 | 200～300 节点 | 300+ 节点 |
 |:---|:----|:----|:----|:----|:----|
@@ -302,7 +302,7 @@ mysql:
 ```
 增加以上配置后，Erda 部署过程中便无需部署 MySQL 组件，Erda 组件可直接使用用户提供的 MySQL 数据库。
 
-具体参数信息如下：
+具体参数说明如下：
 
 | 参数 | 描述 |
 |:----|:---|
@@ -315,7 +315,7 @@ mysql:
 
 ## 如何保存私有化配置
 
-使用 `values.yaml` 文件中的参数配置部署 Helm Chart 包是最简单的部署方式，但仍可能存在无法满足用户需求的情况。此时，用户可选择以下方式来调整参数配置：
+使用 `values.yaml` 文件中的参数配置部署 Helm Chart 包是最简单的部署方式，但仍可能存在无法满足用户需求的情况。此时，用户可通过以下方式调整参数配置：
 * **方式一（推荐）**：将需要修改的参数写入自定义的 `values.yaml` 文件中，执行 Helm 安装/升级时，使用 `-f` 指定该文件。
 * **方式二**：执行 Helm 安装/升级 时，使用 `--set` 参数设置参数值。但 `--set` 选项无法持久化配置，可能导致升级操作与安装操作的参数设置不一致。
 * **方式三**：修改 Helm Chart 包中 `values.yaml` 文件的参数值。但在参数量庞大的情况下，难以快速确定参数是否需要更改、参数是否已经更改等问题。
