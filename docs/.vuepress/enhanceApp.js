@@ -6,9 +6,9 @@ export default ({
   isServer // is this enhancement applied in server-rendering or client
 }) => {
   if (!isServer) {
-    // import('vue-toasted' /* webpackChunkName: "notification" */).then((module) => {
-    //   Vue.use(module.default)
-    // })
+    import('vue-notification' /* webpackChunkName: "notification" */).then((module) => {
+      Vue.use(module.default);
+    })
 
     // 页面加载后自动滚动到hash位置
     const hash = document.location.hash;
