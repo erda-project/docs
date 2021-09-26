@@ -24,7 +24,6 @@
         <slot name="page-bottom" />
       </template>
     </Page>
-    <notifications group="global-notify" class="global-notify" />
   </div>
 </template>
 
@@ -34,6 +33,7 @@ import Navbar from "@theme/components/Navbar.vue";
 import Page from "@theme/components/Page.vue";
 import Sidebar from "@theme/components/Sidebar.vue";
 import SideAnchor from "@theme/components/SideAnchor.vue";
+import "vue-toastification/dist/index.css";
 import { resolveSidebarItems, versionRE } from "../util";
 
 export default {
@@ -111,13 +111,12 @@ export default {
       !window.location.pathname.startsWith(`/${vers[0].version}`);
     if (showNotify) {
       setTimeout(() => {
-        this.$notify({
-          group: "global-notify",
-          title: "提示",
-          text: "您当前查看的不是最新版本",
-          duration: -1,
+        this.$toast("您当前查看的不是最新版本", {
+          position: "top-right",
+          timeout: 5000,
+          icon: true,
         });
-      }, 2000);
+      }, 1000);
     }
   },
 
