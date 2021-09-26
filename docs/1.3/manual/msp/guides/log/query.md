@@ -1,6 +1,6 @@
 # 日志查询
 
-完成日志分析部署后，部署在业务集群中的 `filebeat` 组件将采集日志并上报至 `monitor-collector`，最终存储在 `elasticsearch`。您可以进入 **微服务治理平台 > 日志分析 > 日志查询** 查看。
+完成日志分析部署后，部署在业务集群中的 `filebeat` 组件将采集日志并上报至 `monitor-collector`，最终存储在 `elasticsearch`。您可以进入 **微服务治理平台 > 项目列表 > 选择项目 > 日志分析 > 日志查询** 查看。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/84fd032e-2c77-4708-b90a-0df6af429448.png)
 

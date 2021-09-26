@@ -28,7 +28,7 @@
 
 ### 1.进入运维大盘
 
-进入 **微服务治理平台 > 应用监控 > 运维大盘**。
+进入 **微服务治理平台 > 项目列表 > 选择项目 > 查询分析 > 仪表盘**。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/0ac6dc12-8795-4a1c-9522-a134ec8dc3b4.png)
 

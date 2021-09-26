@@ -25,8 +25,8 @@ cors:
 
 具体操作路径如下：
 
-- 全局策略：进入 **微服务治理平台 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情 > 全局策略 > 业务策略 > 跨域访问**。
-- 具体 API 策略：进入 **微服务治理平台 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情** 后选择对应的 API，点击 **策略 > 业务策略 > 跨域访问**。
+- 全局策略：进入 **微服务治理平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情 > 全局策略 > 业务策略 > 跨域访问**。
+- 具体 API 策略：进入 **微服务治理平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情** 后选择对应的 API，点击 **策略 > 业务策略 > 跨域访问**。
 
 ::: tip 提示
 
@@ -72,13 +72,13 @@ policies:
 
    ```bash
    set $methodandorigin $request_method$http_origin;
-
+   
    if ($http_origin ~* 'https?://.*\.example\.com$') {
        more_set_headers 'Access-Control-Allow-Origin: $http_origin';
        more_set_headers 'Access-Control-Allow-Methods: GET, PUT, POST, DELETE, PATCH, OPTIONS';
        more_set_headers 'Access-Control-Allow-Credentials: true';
    }
-
+   
    if ($methodandorigin ~* '^OPTIONS-https?://.*\.example\.com$') {
        more_set_headers 'Access-Control-Allow-Origin: $http_origin';
        more_set_headers 'Access-Control-Allow-Methods: GET, PUT, POST, DELETE, PATCH, OPTIONS';
