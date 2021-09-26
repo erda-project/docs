@@ -108,7 +108,7 @@ services:
 
 ### addons
 
-addons 是指在应用内能够被所有微服务依赖使用的基础服务，也可以称为微服务的插件服务。 addons 包括但不限于 MySQL、Kafka、ElasticSearch、Redis 等基础软件服务，用户自己研发的微服务也可以沉淀成 addon ，按照定义规则发布的到服务市场，详情请参考 [Addon](../addons/design.md) 介绍。
+addons 是指在应用内能够被所有微服务依赖使用的基础服务，也可以称为微服务的插件服务。 addons 包括但不限于 MySQL、Kafka、ElasticSearch、Redis 等基础软件服务，用户自己研发的微服务也可以沉淀成 addon ，按照定义规则发布的到服务市场。
 
 例子：
 
