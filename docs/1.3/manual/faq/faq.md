@@ -2,7 +2,7 @@
 
 ## 如何对服务进行扩缩容？
 
-扩缩容服务无需调整 `erda.yml`，直接在部署中心操作即可。
+扩缩容服务无需调整 `erda.yml`，直接在部署中心操作即可。具体请参见 [扩缩容](../dop/guides/deploy/management.html#扩缩容)。
 
 1. 进入 **DevOps 平台 > 我的应用 > 部署中心**，选择 **服务扩容**。
 
@@ -22,7 +22,7 @@
 
 ## 如何查看错误日志？
 
-1. 进入 **DevOps 平台 > 我的应用 > 部署中心**，点击容器日志，此时显示的是标准输出（stdout）日志。
+1. 进入 **DevOps 平台 > 我的应用 > 部署中心**，点击容器日志，此时显示的是标准输出（stdout）日志。具体请参见 [服务日志](../dop/guides/deploy/metrics_logs.html#服务日志)。
 
    ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/f89f3bb7-ae07-4411-86ee-0e8a62933313.png)
 
