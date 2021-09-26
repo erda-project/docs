@@ -24,7 +24,7 @@
         <slot name="page-bottom" />
       </template>
     </Page>
-
+    <notifications group="global-notify" class="global-notify" />
   </div>
 </template>
 
@@ -34,7 +34,7 @@ import Navbar from "@theme/components/Navbar.vue";
 import Page from "@theme/components/Page.vue";
 import Sidebar from "@theme/components/Sidebar.vue";
 import SideAnchor from "@theme/components/SideAnchor.vue";
-import { resolveSidebarItems } from "../util";
+import { resolveSidebarItems, versionRE } from "../util";
 
 export default {
   name: "Layout",
@@ -98,13 +98,28 @@ export default {
         userPageClass,
       ];
     },
-
   },
 
   mounted() {
     this.$router.afterEach(() => {
       this.isSidebarOpen = false;
     });
+    console.log("this.:", this.$site);
+    const vers = this.$themeConfig.nav.find((nav) => nav.text === "版本").items;
+    const isUnderVersion = versionRE.test(window.location.pathname);
+    const showNotify =
+      isUnderVersion &&
+      !window.location.pathname.startsWith(`/${vers[0].version}`);
+    if (showNotify) {
+      setTimeout(() => {
+        this.$notify({
+          group: "global-notify",
+          title: "提示",
+          text: "您当前查看的不是最新版本",
+          duration: -1,
+        });
+      }, 2000);
+    }
   },
 
   methods: {
