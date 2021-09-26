@@ -6,7 +6,7 @@
 
 此处以 Redis 1s 慢请求为例。
 
-进入 **微服务治理平台 > 应用监控 > 主动监控**，添加主动监控。
+进入 **微服务治理平台 > 项目列表 > 选择项目 > 应用监控 > 主动监控**，添加主动监控。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/fc8fe6e5-3e66-4a9f-b8ac-797892bb0ba0.png)
 
