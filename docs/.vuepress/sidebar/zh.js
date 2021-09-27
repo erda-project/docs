@@ -6,6 +6,7 @@ const { getVers, getContentByVer } = require('../get-ver');
 //   .map(filename => 'official/' + filename.slice(0, -3))
 //   .sort()
 
+
 // const context = requireContext(path.resolve(__dirname, './vers'), false, /\.js$/);
 // const versLimit = 3;
 // const getLast3Vers = () => {
