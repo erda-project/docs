@@ -1,10 +1,15 @@
-# 节点标签设置
+# 节点标签说明
 
 Erda 支持通过标签对机器进行分类，以满足不同的调度需求。
 
 ## 支持宿主机基于环境隔离
 
-Erda 为项目内置了 4 套环境，并对应设计了 4 个环境标签：workspace-dev、workspace-test、workspace-staging、workspace-prod。
+Erda 为项目内置了 4 套环境，并对应设计了 4 个环境标签：
+
+- 开发环境：`dice/workspace-dev=true`
+- 测试环境：`dice/workspace-test=true`
+- 预发环境：`dice/workspace-staging=true`
+- 生产环境：`dice/workspace-prod=true`
 
 宿主机可设置其中一个或多个标签，以表明该机器能够调度对应环境的应用，同时还可通过该标签实现宿主机环境级别的隔离。
 
@@ -16,7 +21,7 @@ Erda 为项目内置了 4 套环境，并对应设计了 4 个环境标签：wor
 
 ## 设置宿主机可运行的服务
 
-Erda 设计了两类服务标签：service-stateless、service-stateful，分别用于调度无状态服务和有状态服务。
+Erda 设计了两类服务标签：`dice/service-stateless=true`、`dice/service-stateful=true`，分别用于调度无状态服务和有状态服务。
 
 * 无状态服务对应部署中心的 Runtime 服务，因此对运行项目应用的宿主机，均需设置 service-stateless 标签。
 
@@ -26,23 +31,16 @@ Erda 设计了两类服务标签：service-stateless、service-stateful，分别
 
 Erda 通过流水线支撑各类场景的任务编排，同样也为这些场景设置了不同的标签。
 
-- CI/CD 任务，用于支撑项目开发、部署，对应标签为 pack-job。
-- 大数据计算任务，对应标签为 bigdata-job。
-- 平台运维任务，例如添加机器、升级集群等，对应标签为 job。
-
-::: tip 提示
-
-不同场景可对应设置不同的标签。项目开发过程中，请注意务必设置 pack-job 标签，否则项目应用将无法打包部署。
-
-:::
+- CI/CD 任务，用于支撑项目开发、部署，对应标签为 `dice/job=true`。
+- 大数据计算任务，对应标签为 `dice/bigdata-job=true`。
 
 ## 指定宿主机运行特定的应用
 
 Erda 设计了自定义标签 location-xx，以支持用户将指定的应用运行到指定节点。
 
-例如，如需将 datastore 的应用运行到指定宿主机，则具体步骤如下：
+例如，如需将 example 的应用运行到指定宿主机，则具体步骤如下：
 
-1. 为指定的宿主机设置自定义标签 location-datastore。
+1. 为指定的宿主机设置自定义标签 `dice/location-example=true`。
 
 2. 设置应用的 `erda.yml`，配置 `deployments` 字段如下：
 
@@ -50,43 +48,25 @@ Erda 设计了自定义标签 location-xx，以支持用户将指定的应用运
    deployments:
          replicas: 2
          selectors:
-           location: "datastore"
+           location: "example"
    ```
 
-3. 若机器为该应用独占，则还需为宿主机设置 location 标签。
+3. 若机器为该应用独占，则还需为宿主机设置 `dice/location=true` 标签。
 
 ## 其他应用场景
 
-- Erda 平台标签，用于指定运行平台服务，标签名为 platform。
-- 集群服务标签，用于指定运行 Erda 平台微服务组件，例如 API 网关、配置中心和注册中心，标签名 location-cluster-service。如需独占服务，则还需设置 location 标签。
-- 机器异常，需锁定机器不再调度新的服务，标签名为 locked。
-
-::: tip 提示
-
-当前若手动下线宿主机，需在下线前为宿主机设置 offline 标签，用于监控系统联动。
-
-:::
+- Erda 平台标签，用于指定运行平台服务，标签为 `dice/platform=true`。
+- 集群服务标签，用于指定运行 Erda 平台微服务组件，例如配置中心和注册中心，标签为 `dice/location-cluster-service=true`。
 
 ## 标签汇总
 
-- **pack-job**：打包任务标签，可运行打包任务。
-- **job**：短时任务标签，非打包任务。
-- **service-stateless**：无状态服务标签，可用于部署 Runtime 服务。
-- **service-stateful**：有状态服务标签，可用于部署 Addon 服务。
-- **workspace-xxx**：环境标签，包括 workspace-dev，workspace-test，workspace-staging，workspace-prod，分别对应 Erda 部署的四个环境。
-- **location-cluster-service**：集群服务标签，用于调度集群共用的服务组件，例如 API 网关、注册中心等。
-- **location-xx**：自定义标签，支持用户将指定的应用运行到指定节点。
-- **location**：独占标签，设置该标签的节点仅能运行 location-cluster-service 和 location-xx 对应的应用。
-- **locked**：锁定标签，锁定机器避免被调度。
-- **offline**：节点下线标签。
-- **platform**：平台组件标签，运行 Erda 平台组件。
+- `dice/job=true`：用于调度流水线任务
+- `dice/bigdata-job=true`：用于调度大数据任务
+- `dice/service-stateless=true`：用于调度无状态服务标签，可用于部署 Runtime 服务
+- `dice/service-stateful=true`：用于调度有状态服务标签，可用于部署 Addon 服务
+- `dice/workspace-xxx=true`：用于调度到指定环境，包括 workspace-dev，workspace-test，workspace-staging，workspace-prod，分别对应 Erda 部署的四个环境
+- `dice/location-cluster-service=true`：用于调度集群共用的服务组件，例如注册中心
+- `dice/location-xxx=true`：自定义标签，支持用户将指定的应用运行到指定节点
+- `dice/location=true`：独占标签，设置该标签的节点仅能运行 location-xxx 对应的应用
+- `dice/platform=true`：用于调度 Erda 平台组件
 
-::: tip 提示
-
-您可以通过以下两种方式设置标签：
-
-* 进入 **多云管理平台 > 集群总览 > 机器列表**，选择机器后点击 **设置标签**。
-
-* 添加机器时直接配置所需标签。
-
-:::

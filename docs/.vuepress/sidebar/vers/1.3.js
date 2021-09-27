@@ -39,19 +39,21 @@ module.exports = [
     title: '多云管理',
     collapsable: true,
     children: [
-      'cmp/example',
+      {
+        title: '场景示例',
+        collapsable: true,
+        children: [
+          'cmp/examples/set-labels',          
+          'cmp/examples/check-env',
+          'cmp/examples/check-workload',
+        ]
+      },
       'cmp/concept',
       {
         title: '最佳实践',
         collapsable: true,
         children: [
-          {
-            title: '运维告警',
-            collapsable: true,
-            children: [
-              'cmp/practice/alert/alert-config',
-            ],
-          }
+          'cmp/practice/alert-config',
         ]
       },
       {
@@ -63,17 +65,18 @@ module.exports = [
             title: '资源管理',
             collapsable: true,
             children: [
+              'cmp/guide/cluster/k8s-dashboard',              
               'cmp/guide/cluster/management',
               'cmp/guide/cluster/autoscaling',
               'cmp/guide/cluster/cluster-node-labels',
             ]
           },
-          'cmp/guide/dashboard',
-          'cmp/guide/report',
           {
             title: '运维告警',
             collapsable: true,
             children: [
+              'cmp/guide/alert/dashboard',
+              'cmp/guide/alert/report',
               'cmp/guide/alert/alarm-statistics',
               'cmp/guide/alert/alarm-strategy',
               'cmp/guide/alert/alarm-list',
