@@ -8,7 +8,7 @@
 
 基于 Docker Image 部署同样需要编写 pipeline.yml 和 erda.yml（镜像名称将直接写入 erda.yml 文件中），因此平台仍将提供 Git 仓库用于存放两个 yaml 文件。
 
-假设新建项目名为 erda-test，新建应用名为 java-demo。下文 Git 仓库地址将涉及这两个名字。
+假设新建项目名为 erda-test，新建应用名为 java-demo。下文 Git 仓库地址将涉及这两个名称。
 
 :::
 
@@ -110,10 +110,12 @@ git push erda feature/demo
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/8d4a963d-14f6-45a3-a132-fc5987d9e78d.png)
 
-## 注意事项
+::: tip 提示
 
 * 由于 Docker Image 部署采用的镜像可由用户随意指定，部分三方镜像未针对集群环境进行调优，可能产生运行不稳定的情况。
 
 * 由于三方镜像缺少监控组件，部分监控能力缺失。若需完整的监控能力，需主动安装监控组件。
 
 * 三方镜像需注意正确设置时区，否则将导致日志顺序错乱等问题。
+
+:::
