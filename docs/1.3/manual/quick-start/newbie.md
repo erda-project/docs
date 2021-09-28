@@ -11,23 +11,23 @@
 
    下文将以 Java 程序作为案例，了解 Java 的基本概念将有助于您快速上手。
 
-3. 本文将已如下两个微服务代码为案例，可提前获取
+3. 本文将以如下两则微服务代码作为案例，请提前获取便于后续使用。
 
     * [Provider：提供内部接口服务](https://github.com/erda-project/tutorials/tree/master/microservice/springcloud/provider)
     * [Consumer：消费内部接口对外提供服务](https://github.com/erda-project/tutorials/tree/master/microservice/springcloud/consumer)
 
 ## 安装配置
 
-Erda 提供了多种快速安装的方式：
+Erda 提供多种快速安装的方式：
 
-- [基于 Docker Compose 快速安装](../install/docker-install.md) : 仅适用于不具备 Kubernetes 条件的情况下，在本地快速体验 Erda 的场景。
-- [基于 Helm 在 Kubernetes 上最小化安装](../install/helm-install/helm-install-demo.md)：适用于在 Kubernetes 集群上最小化安装 Erda。
+- [基于 Docker Compose 部署](../install/docker-install.md) : 仅适用于不具备 Kubernetes 条件的情况下，在本地快速体验 Erda 的场景。
+- [基于 Helm 最小化安装](../install/helm-install/helm-install-demo.md)：适用于在 Kubernetes 集群上最小化安装 Erda 的场景。
 
 您也可以选择 [*erda.cloud*](https://www.erda.cloud/)，注册个人账号后即可使用。
 
 ## 准备环境
 :::tip 提示
-如果您已经加入了项目，可跳过本章节。
+若您已加入项目，可跳过本章节。
 :::
 
 ### 加入组织
@@ -91,11 +91,11 @@ Erda 提供了多种快速安装的方式：
 
 软件研发是一项多人分工、协作的经营活动。当团队人数增长至一定规模时，口头协作已无法满足工作需求，此时便需要借助系统或工具来解决问题。
 
-如果您是一位个人开发者，同样建议您阅读本章节内容。协同工具不仅能够解决团队扩充带来的沟通问题，还能够帮助开发者有效记录和管理个人的工作。
+若您是一位个人开发者，同样建议您阅读本章节内容。协同工具不仅能够解决团队扩充带来的沟通问题，还能够帮助开发者有效记录和管理个人的工作。
 
 针对该案例，您需要完成以下操作：
 
-1. 分析和抽象客户需求，进入 **DevOps > 项目协同 > 需求 > 新建需求**，将需求录入协同。
+1. 分析和抽象客户需求，进入 **DevOps 平台 > 项目协同 > 需求 > 新建需求**，将需求录入协同。
 
    ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/3bbfefc3-83f1-487f-8533-625aeeb9b4ac.png)
 
@@ -136,11 +136,11 @@ Erda 提供了多种快速安装的方式：
 
 针对该设计，您需要完成以下操作：
 
-1. 进入 **DevOps > 应用列表 > 新建应用**， 创建两个应用。关于应用的更多信息，请参见 [应用管理](../dop/guides/deploy/management.html)。
+1. 进入 **DevOps 平台 > 应用列表 > 新建应用**， 创建两个应用。关于应用的更多信息，请参见 [应用管理](../dop/guides/deploy/management.html)。
 
    ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/2baf5bfc-ec6d-479e-840d-bb7c6d117103.png)
 
-2. 完成代码推送后，创建 pipeline.yml。pipeline.yml 是用于描述 CI/CD 自动化过程的文件，具体请参见 [Pipeline](../dop/guides/reference/pipeline.html)。
+2. 完成代码推送后，创建 pipeline.yml。pipeline.yml 是用于描述 CI/CD 自动化过程的文件，具体请参见 [pipeline.yml](../dop/guides/reference/pipeline.html)。
 
    * 首先完成 CI 部分：
 
@@ -185,7 +185,7 @@ Erda 提供了多种快速安装的方式：
 
      ```yaml
      version: 1.1
-
+  
      stages:
        - stage:
            - git-checkout:
@@ -217,7 +217,7 @@ Erda 提供了多种快速安装的方式：
                  release_id: ${release:OUTPUT:releaseID}
      ```
 
-     由上可见新增了 release 和 deploy 两个步骤，并且出现了新文件 erda.yml。有关 erda.yml 更多信息，请参见 [erda.yml](../dop/guides/reference/erda-yaml.html)。
+     由上可见新增了 release 和 deploy 两个步骤，并且出现了新文件 erda.yml。关于 erda.yml 更多信息，请参见 [erda.yml](../dop/guides/reference/erda-yaml.html)。
 
      将文件补充完整后提交代码。
 
@@ -260,11 +260,11 @@ Erda 提供了多种快速安装的方式：
 
      通过 pipeline.yml 示例可以发现，镜像是在 CI 过程中编译而成的：通过 Buildpack 将代码编译打包为 Docker 镜像，经 Release 将镜像自动塞入 erda.yml，并基于生成后的 erda.yml 完成部署。
 
-3. 待流水线执行完成后，即可在部署中心查看已发布的实例，运维管理相关的操作（例如重启、回滚、查看日志等），请参见 [应用管理](../dop/guides/deploy/management.html)。
+3. 待流水线执行完成后，即可在部署中心查看已发布的实例。运维管理相关的操作（例如重启、回滚、查看日志等），请参见 [应用管理](../dop/guides/deploy/management.html)。
 
 ### 质量保障
 
-质量保障涉及研发过程中的所有环节，例如前期的代码审查，集成时的自动化测试、人工探索和回归测试等。本案例将以自动化测试为例展开介绍，更多测试相关内容，请参见 [质量保障和测试](../dop/guides/qa-and-testing/sonar-report.html)。
+质量保障涉及研发过程中的所有环节，例如前期的代码审查，集成时的自动化测试、人工探索和回归测试等。本文将以自动化测试为例展开介绍，更多测试相关内容，请参见 [质量保障和测试](../dop/guides/qa-and-testing/sonar-report.html)。
 
 在本案例中，假设已完成功能设计如下：
 1. 文章列表
@@ -281,32 +281,34 @@ Erda 提供了多种快速安装的方式：
 
    ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/bb971b58-7c9e-4979-afb1-60b828967550.png)
 
-3. 在场景中添加步骤进行场景编排，每个步骤为具体的接口调用，通过配置接口参数以及断言推进自动化的实现。
+3. 在场景中添加步骤进行场景编排，所添加的每个步骤为具体的接口调用，通过配置接口参数以及断言推进自动化的实现。
 
    ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/38a6d071-30ab-4ddc-84ae-6a8ba4df40c0.png)
 
-软件上线后，可通过全链路追踪、日志分析、告警等功能及时发现问题或故障，并辅助定位原因。具体请参见 [微服务治理场景示例](../msp/examples/apm/service-dashboard.html)，本文仅对主要功能以及使用场景进行简单的阐述和引导。
+软件上线后，可通过全链路追踪、日志分析、告警等功能及时发现问题或故障，并辅助定位原因。具体请参见 [微服务治理场景示例](../msp/examples/apm/service-dashboard.html)，本文仅针对主要功能以及使用场景进行简单的阐述和引导。
 
-进入微服务治理的首页，立即能看到整个项目的全局拓扑：
+进入微服务治理平台，即可查看整个项目的全局拓扑。
 
 :::tip 提示
-进入微服务治理首页有两个途径：
 
-1. 左上角九宫格切换至“微服务治理平台”，然后搜索项目进入即可。
-2. 在应用部署详情中点击 “monitor” addon 即可进入。
+您可通过以下方式进入微服务治理页面：
+
+1. 点击左上角九宫格，选择 **微服务治理平台**，随后搜索项目进入。
+2. 在应用部署详情中点击 **应用监控** 插件进入。
+
 :::
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/01b0bf8a-070f-4a6e-b6c4-57688cb4b20e.png)
 
-通过全局拓扑，是上线后的日常运维工作的入口，通过拓扑图可以方便的看到项目内部流量的走向以及负载情况，并且点击红色的错误率能够快速跳转至链路追踪列表，快速定位到问题核心。
+全局拓扑可作为项目上线后日常运维工作的入口。通过拓扑图能够清晰查看项目内部的流量走向及负载情况，点击红色的错误率即可快速跳转至链路追踪列表，迅速定位问题。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/b3d8bee4-aede-4b7f-a52d-8832956646a9.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/09/28/dd313204-e551-4ff9-a77e-8471b2518434.png)
 
-通过错误分析能够快速看到堆栈异常，并向上追溯到错误的来源
+通过错误分析可快速明确堆栈异常，并向上追溯至错误的来源。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/a0b6155b-e74a-45ff-bafe-413b27b91dfa.png)
 
-每个节点表示的是每个微服务，点击节点可以看到每个微服务的详情，通过详细分析可进一步查看更详细的微服务数据：
+每个节点即代表一个微服务，点击节点了解该微服务详情，通过详细分析可进一步查看该微服务的具体数据。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/979ad75e-a5f1-45ca-b67b-69997df65013.png)
 
