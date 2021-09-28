@@ -17,7 +17,7 @@ v1.0.x 版本不支持升级。
   
 - 准备私有化配置参数或文件
   - 升级前需准备好 Erda Helm Chart 的私有化配置，可以是通过 `--set` 设置的参数或私有化配置文件。
-  - 关于参数相关内容，请参见 [开始安装](helm-install-demo.md#开始安装)。
+  - 关于参数相关内容，请参见 [安装操作](helm-install-demo.md#安装操作)。
   - 关于私有化配置文件相关内容，请参见 [如何保存私有化配置](high-availability.md#如何保存私有化配置)。
   
 - 更新 Erda Helm Chart 仓库
