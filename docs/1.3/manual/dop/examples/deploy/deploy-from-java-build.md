@@ -125,23 +125,23 @@ stages:
               release_id: ${release:OUTPUT:releaseID}
 ```
 
-## 说明事项
+具体参数说明如下：
 
-### Java-Build 构建 JAR 包
+**Java-Build 构建 JAR 包**
 
-* `params:build_cmd`：可声明各类构建命令或前置执行部分安装命令。
+* `params:build_cmd`：声明各类构建命令或前置执行部分安装命令。
 * `params:jdk_version`：声明使用具体版本的 JDK 构建，目前仅支持 8 和 11。
 * `params:workdir`：声明构建命令在具体目录下执行。
 * `java-build`：本意在于使用户自定义构建命令，从而达到高度定制化，最终产出 JAR 包。  
 
-### Release 配合使用
+**Release 配合使用**
 
-* `params:services`：可声明多个服务的构建过程，类似 `dockerfile` 文件的声明。
+* `params:services`：声明多个服务的构建过程，类似 `dockerfile` 文件的声明。
 * `params:services[]:dice_yaml中的服务名称`：对应 `erda.yml` 中 `services` 服务名称，若有多个即声明多个
 * `params:services[]:dice_yaml中的服务名称:image`：等于 `dockerfile` 中的 `FROM image`，用户可声明自己的运行环境。
 * `params:services[]:dice_yaml中的服务名称:copys[]`：等于 `dockerfile` 中的 `copy`，用户可将文件拷贝至自己的运行环境。
 * `params:services[]:dice_yaml中的服务名称:cmd`：等于 `dockerfile` 中的 `cmd`，用户可声明自己的服务启动命令。
-* `release`：本意在于使用户无需在项目根目录下写 `dockerfile` 文件，通过 `pipeline.yml` 文件完成高度定制化构建的需求。   
+* `release`：本意在于使用户无需在项目根目录下编写 `dockerfile` 文件，通过 `pipeline.yml` 文件完成高度定制化构建的需求。   
 
 ::: tip 提示
 `${java-build:OUTPUT:buildPath}` 即 `java-build` 构建的路径。

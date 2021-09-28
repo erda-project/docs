@@ -4,7 +4,7 @@
 
 :::tip 提示
 
-假设新建项目名为 base-project，新建应用名为 go-web。下文 Git 仓库地址将涉及这两个名字。
+假设新建项目名为 base-project，新建应用名为 go-web。下文 Git 仓库地址将涉及这两个名称。
 
 :::
 
@@ -85,7 +85,7 @@ pipeline.yml 是描述从代码编译构建到应用部署的流水线配置文�
 3. [Release](https://www.erda.cloud/market/action/release)
 4. [Erda](https://www.erda.cloud/market/action/dice)
 
-该示例工程对应的 pipeline.yml 参考如下，更多信息请参见 [Pipeline](../../guides/reference/pipeline.html)。
+该示例工程对应的 pipeline.yml 参考如下，更多信息请参见 [pipeline.yml](../../guides/reference/pipeline.html)。
 
 ```yml
 version: "1.1"

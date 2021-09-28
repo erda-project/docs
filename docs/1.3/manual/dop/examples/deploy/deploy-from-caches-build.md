@@ -1,6 +1,6 @@
 # 使用缓存加速构建
 
-### Java 缓存
+## Java 缓存
 ```yaml
 - stage:
   - java:
@@ -27,7 +27,7 @@
           workdir: ${git-checkout}
 ```
 
-### JS 缓存
+## JS 缓存
 
 ```yaml
 version: "1.1"
@@ -65,11 +65,11 @@ stages:
           container_type: spa
 ```
 
-### 其他语言缓存
+## 其他语言缓存
 
 `caches` 为数组对象，可定义多个 `path` 和 `key`。 
 
-* `caches[]:path`：指定目录进行缓存，后续构建会将该缓存文件放回原目录，`path` 只能是绝对路径（以 ``/`` 开头），或在 `erda` 中构建路径 `${}`（同样为绝对路径）。
+* `caches[]:path`：指定目录进行缓存，后续构建会将该缓存文件放回原目录，`path` 只能为绝对路径（以 ``/`` 开头），或在 `erda` 中构建路径 `${}`（同样为绝对路径）。
 * `caches[]:key`：未指定 `key` 时，系统将自动生成。当缓存发生冲突时，用户需自定义 `key`，且必须以 <code v-pre>{{basePath}}</code> 开头，以 <code v-pre>{{endPath}}</code> 结尾，中间名称可自定义。    
 
 因默认缓存是以 `/appId/projectId/hash(path)` 地址存储在 `nfs` 上，因此同一项目中的同一应用可能会发生冲突。
