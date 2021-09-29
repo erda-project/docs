@@ -45,7 +45,7 @@
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/24903e4d-edc9-44a3-9ddc-deca00fd2520.png)
 
 ### 开发实现
-前后端开发工程师在完成具体开发工作后，将代码合入主干分支，通过  CI/CD 将主干分支部署至测试环境。
+前后端开发工程师在完成具体开发工作后，将代码合入主干分支，通过 CI/CD 将主干分支部署至测试环境。
 
 ## 提测
 
