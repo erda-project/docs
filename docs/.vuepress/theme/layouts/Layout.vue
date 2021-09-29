@@ -24,7 +24,6 @@
         <slot name="page-bottom" />
       </template>
     </Page>
-
   </div>
 </template>
 
@@ -34,7 +33,8 @@ import Navbar from "@theme/components/Navbar.vue";
 import Page from "@theme/components/Page.vue";
 import Sidebar from "@theme/components/Sidebar.vue";
 import SideAnchor from "@theme/components/SideAnchor.vue";
-import { resolveSidebarItems } from "../util";
+import "vue-toastification/dist/index.css";
+import { resolveSidebarItems, versionRE } from "../util";
 
 export default {
   name: "Layout",
@@ -98,13 +98,26 @@ export default {
         userPageClass,
       ];
     },
-
   },
 
   mounted() {
     this.$router.afterEach(() => {
       this.isSidebarOpen = false;
     });
+    const vers = this.$themeConfig.nav.find((nav) => nav.text === "版本").items;
+    const isUnderVersion = versionRE.test(window.location.pathname);
+    const showNotify =
+      isUnderVersion &&
+      !window.location.pathname.startsWith(`/${vers[0].version}`);
+    if (showNotify) {
+      setTimeout(() => {
+        this.$toast("您当前查看的不是最新版本", {
+          position: "top-right",
+          timeout: 5000,
+          icon: true,
+        });
+      }, 1000);
+    }
   },
 
   methods: {

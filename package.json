@@ -11,8 +11,8 @@
   ],
   "author": "Erda-team",
   "scripts": {
-    "build": "vuepress build docs",
-    "dev": "vuepress dev docs",
+    "build": "node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs",
+    "dev": "node --max_old_space_size=4096 ./node_modules/vuepress/cli.js dev docs",
     "serve": "serve dest",
     "lint:style": "stylelint src/*.{vue,css,styl} --custom-syntax stylelint-plugin-stylus/custom-syntax",
     "lint-md": "yarn lint-md:style && yarn lint-md:wording",
@@ -35,6 +35,7 @@
     "remark-preset-lint-consistent": "^4.0.0",
     "remark-preset-lint-recommended": "^5.0.0",
     "remove-markdown": "^0.3.0",
+    "require-context": "^1.1.0",
     "serve": "^12.0.0",
     "stylelint-plugin-stylus": "^0.11.0",
     "textlint": "^12.0.0",
@@ -54,6 +55,7 @@
     "watchpack": "^2.2.0"
   },
   "dependencies": {
-    "vue-carousel": "^0.18.0"
+    "vue-carousel": "^0.18.0",
+    "vue-toastification": "^1.7.11"
   }
 }

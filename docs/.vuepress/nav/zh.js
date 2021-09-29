@@ -1,3 +1,20 @@
+const { getVers } = require('../get-ver');
+
+const verItems = getVers().map(ver => {
+  if (ver <= 1.1) {
+    return {
+      text: `v${ver}`,
+      link: `/${ver}/manual/`,
+      forceToIndex: true,
+      version: ver,
+    }
+  }
+  return {
+    text: `v${ver}`,
+    link: `/${ver}/manual/about/intro.html`,
+    version: ver,
+  }
+})
 
 module.exports = [
   {
@@ -19,25 +36,7 @@ module.exports = [
   {
     text: '版本',
     ariaLabel: '版本',
-    items: [
-      {
-        text: 'v1.2',
-        link: '/1.2/manual/about/intro.html',
-        version: 1.2,
-      },
-      {
-        text: 'v1.1',
-        link: '/1.1/manual/',
-        forceToIndex: true,
-        version: 1.1,
-      },
-      {
-        text: 'v1.0',
-        link: '/1.0/manual/',
-        forceToIndex: true,
-        version: 1.0,
-      },
-    ]
+    items: verItems,
   },
   // {
   //   text: '了解更多',
