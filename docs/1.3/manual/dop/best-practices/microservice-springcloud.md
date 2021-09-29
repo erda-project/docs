@@ -275,7 +275,7 @@ git push -u erda --tags
 1. 基于 Spring Boot 开发框架创建应用。
 2. 关联 Erda Git 远程仓库并推送代码。
 
-### CICD 流水线
+### CI/CD 流水线
 
 下文以 echo-service 应用为例编排流水线，可供 echo-web 应用参考。
 
