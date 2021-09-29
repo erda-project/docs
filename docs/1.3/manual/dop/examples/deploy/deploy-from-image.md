@@ -6,7 +6,7 @@
 
 :::tip 提示
 
-基于 Docker Image 部署同样需要编写 pipeline.yml 和 erda.yml（镜像名称将直接写入 erda.yml 文件中），因此平台仍将提供 Git 仓库用于存放两个 yaml 文件。
+基于 Docker Image 部署同样需要编写 pipeline.yml 和 erda.yml（镜像名称将直接写入 erda.yml 文件中），因此平台仍将提供 Git 仓库用于存放两个 YAML 文件。
 
 假设新建项目名为 erda-test，新建应用名为 java-demo。下文 Git 仓库地址将涉及这两个名称。
 
@@ -24,7 +24,7 @@ nginx:latest
 
 基于 Docker Image 部署采用 pipeline 触发自动部署，可简单设置 3 个 Stage 如下：
 
-1. 从 Git 仓库拉取两个 yaml 文件。
+1. 从 Git 仓库拉取两个 YAML 文件。
 2. 通过 erda.yml 生成版本产物。
 3. 基于版本产物完成部署。
 
@@ -80,7 +80,7 @@ services:
 
 #### 提交文件
 
-将新增的两个 yaml 文件提交至平台的代码仓库。
+将新增的两个 YAML 文件提交至平台的代码仓库。
 
 ```bash
 git add .
