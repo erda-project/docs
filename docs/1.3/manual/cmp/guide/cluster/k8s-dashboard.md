@@ -98,7 +98,7 @@ Pod 详情页面展示了该 Pod 的命名空间、存活时间、Pod IP、所�
 
 相关事件列举该 Pod 发生的所有 Event。
 
-在资源监控中，可以从 Pod CPU 使用率、Pod 内存使用率、Pod 磁盘读写字节数以及 Pod 网络首发字节数等指标查看该 Pod 的历史运行状况。
+在资源监控中，可以从 Pod CPU 使用率、Pod 内存使用率、Pod 磁盘读写字节数以及 Pod 网络收发字节数等指标查看该 Pod 的历史运行状况。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/09/30/4920c6fe-70cc-4741-8b97-091faccf80f1.png)
 
