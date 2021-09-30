@@ -20,6 +20,7 @@ module.exports = [
           "install/helm-install/helm-install-demo",
           "install/helm-install/helm-install-prod",
           'install/helm-install/high-availability',
+          'install/helm-install/comp-schedule',
           'install/helm-install/configuration',
           'install/helm-install/upgrade',
           'install/helm-install/uninstall'
