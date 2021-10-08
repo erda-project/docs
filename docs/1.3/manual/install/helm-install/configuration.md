@@ -35,7 +35,7 @@
 
       ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/16/42d94b90-76fe-4280-823e-c93841f50f40.png)
 
-        * 根据界面提示完成配置，例如集群标识为 *local-cluster*，泛域名为 *erda.io*，并选择认证方式为 **Kubeconfig**。
+        * 根据界面提示完成配置，例如集群标识为 local-cluster，泛域名为 *erda.io*，并选择认证方式为 **Kubeconfig**。
       
       ::: tip 提示
       集群标识及泛域名需与安装时指定的配置保持一致，否则您将无法进行其他操作。
