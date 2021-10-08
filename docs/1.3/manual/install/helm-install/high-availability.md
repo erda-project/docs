@@ -94,7 +94,7 @@ Erda Helm Chart 中的 [values.yaml](https://github.com/erda-project/erda-releas
 | volume-provisioner.resources.limits.cpu | 设置 volume-provisioner 实例 Pod 的 CPU 资源限制值 | "100m" |
 | volume-provisioner.resources.limits.memory | 设置 volume-provisioner 实例 Pod 的 Memory 资源限制值 | "256Mi" |
 | **Erda** |  |  |
-| erda.clusterName | Erda 所在 Kubernetes 集群的标识 | "erda" |
+| erda.clusterName | Erda 所在 Kubernetes 集群的标识 | "local-cluster" |
 | erda.operator.resources.requests.cpu | 设置 erda-operator 实例 Pod 的 CPU 资源请求值 | "10m" |
 | erda.operator.resources.requests.memory | 设置 erda-operator 实例 Pod 的 Memory 资源请求值  | "10Mi" |
 | erda.operator.resources.limits.cpu | 设置 erda-operator 实例 Pod 的 CPU 资源限制值 | "100m" |
@@ -195,6 +195,14 @@ Erda Helm Chart 中的 [values.yaml](https://github.com/erda-project/erda-releas
 | erda.component.analyzerMetricsTask.resources.mem | erda analyzerMetricsTask 组件实例 Pod 的 Memory 资源请求值 | "128Mi" |
 | erda.component.analyzerMetricsTask.resources.max_cpu | erda analyzerMetricsTask 组件实例 Pod 的 CPU 资源限制值 | "1" |
 | erda.component.analyzerMetricsTask.resources.max_mem | erda analyzerMetricsTask 组件实例 Pod 的 Memory 资源限制值 | "2048Mi" |
+| erda.component.analyzerTracing.resources.cpu | erda analyzerTracing 组件实例 Pod 的 CPU 资源请求值 | "100m" |
+| erda.component.analyzerTracing.resources.mem | erda analyzerTracing 组件实例 Pod 的 Memory 资源请求值 | "128Mi" |
+| erda.component.analyzerTracing.resources.max_cpu | erda analyzerTracing 组件实例 Pod 的 CPU 资源限制值 | "500m" |
+| erda.component.analyzerTracing.resources.max_mem | erda analyzerTracing 组件实例 Pod 的 Memory 资源限制值 | "1024Mi" |
+| erda.component.analyzerTracingTask.resources.cpu | erda analyzerTracingTask 组件实例 Pod 的 CPU 资源请求值 | "100m" |
+| erda.component.analyzerTracingTask.resources.mem | erda analyzerTracingTask 组件实例 Pod 的 Memory 资源请求值 | "128Mi" |
+| erda.component.analyzerTracingTask.resources.max_cpu | erda analyzerTracingTask 组件实例 Pod 的 CPU 资源限制值 | "1" |
+| erda.component.analyzerTracingTask.resources.max_mem | erda analyzerTracingTask 组件实例 Pod 的 Memory 资源限制值 | "2048Mi" |
 | erda.component.actionRunnerScheduler.resources.cpu | erda actionRunnerScheduler 组件实例 Pod 的 CPU 资源请求值 | "100m" |
 | erda.component.actionRunnerScheduler.resources.mem | erda actionRunnerScheduler 组件实例 Pod 的 Memory 资源请求值 | "128Mi" |
 | erda.component.actionRunnerScheduler.resources.max_cpu | erda actionRunnerScheduler 组件实例 Pod 的 CPU 资源限制值 | "300m" |
@@ -227,6 +235,7 @@ Erda Helm Chart 中的 [values.yaml](https://github.com/erda-project/erda-releas
 | erda.component.gittar.resources.mem | erda gittar 组件实例 Pod 的 Memory 资源请求值 | "128Mi" |
 | erda.component.gittar.resources.max_cpu | erda gittar 组件实例 Pod 的 CPU 资源限制值 | "1" |
 | erda.component.gittar.resources.max_mem | erda gittar 组件实例 Pod 的 Memory 资源限制值 | "1536Mi" |
+| erda.component.pipeline.replicas | erda pipeline 组件副本数 | 2 |
 | erda.component.pipeline.resources.cpu | erda pipeline 组件实例 Pod 的 CPU 资源请求值 | "100m" |
 | erda.component.pipeline.resources.mem | erda pipeline 组件实例 Pod 的 Memory 资源请求值 | "128Mi" |
 | erda.component.pipeline.resources.max_cpu | erda pipeline 组件实例 Pod 的 CPU 资源限制值 | "1" |

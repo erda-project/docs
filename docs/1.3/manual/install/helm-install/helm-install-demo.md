@@ -18,12 +18,12 @@
 执行如下命令将 Erda 安装至 Namespace `erda-system` ，并等待所有 Erda 组件准备就绪。
 
 ```shell
-helm install erda erda/erda --set erda.clusterName="erda-demo" -n erda-system --create-namespace
+helm install erda erda/erda -n erda-system --create-namespace
 ```
 
 ::: tip 提示
 
-- 安装时需指定 Erda 集群名称，例如 erda-demo。
+- 您可在安装时通过 `--set erda.clusterName` 指定 Erda 所在集群的标识，默认为 local-cluster。
 - Erda 访问入口默认为 *erda.io*，您可以通过 `--set global.domain` 指定。
 - 若您在 Kubernetes 节点无法直接访问 Kubernetes 内部域名（例如 *kubernetes.default.svc.cluster.local*），安装 Erda 时需指定 Node 以 hostNetwork 安装 Registry，并指定 `--set registry.custom.nodeIP="",registry.custom.nodeName=""` ，否则流水线功能不可用。
 - 您可以通过 `--version` 参数安装指定版本的 Erda，未指定则默认安装最新版本。

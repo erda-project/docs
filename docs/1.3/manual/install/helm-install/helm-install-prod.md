@@ -11,6 +11,8 @@
    - 建议您妥善保存私有化配置，以便后续升级维护，具体请参见 [如何保存私有化配置](high-availability.md#如何保存私有化配置)。
 
    - 该模式默认提供 Erda 及依赖的配置参数，您可以根据实际部署情况修改，具体请参见 [高可用部署可配置参数](high-availability.md#高可用部署可配置参数)。
+   
+   - 若您希望合理划分 Erda 组件及依赖组件的节点，请参见 [高可用组件分类调度](comp-schedule.md)。
 
 3. 添加 Erda Helm Chart 仓库并更新。
 
@@ -31,7 +33,7 @@ global:
   domain: "erda.io"
 
 erda:
-  clusterName: "erda-prod"
+  clusterName: "local-cluster"
 
 mysql:
   enbaled: false

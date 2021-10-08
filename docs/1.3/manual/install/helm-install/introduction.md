@@ -14,4 +14,4 @@ Master [集群](../../quick-start/premise.md#集群) 是部署在 Kubernetes 场
 
 ### Worker 集群
 
-Erda 能够以容器集群的方式纳管用户计算资源，例如 Kubernetes、EDAS 等。受纳管的集群即为 Work 集群，主要用于执行构建任务、发布应用、隔离环境等。该集群部署了 Erda 监控、集群 Agent、Registry 等组件及依赖。
+Erda 能够以容器集群的方式纳管用户计算资源，例如 Kubernetes、EDAS 等。受纳管的集群即为 Worker 集群，主要用于执行构建任务、发布应用、隔离环境等。该集群部署了 Erda 监控、集群 Agent、Registry 等组件及依赖。
