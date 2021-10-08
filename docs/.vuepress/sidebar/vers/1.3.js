@@ -475,12 +475,12 @@ module.exports = [
         collapsable: true,
         children: [
           {
-            title: '快速开始',
+            title: '快速入门',
             collapsable: true,
             children: [
-              ['eco-tools/kubeprober/guides/introduction', 'Kubeprober 简介'],
+              ['eco-tools/kubeprober/guides/introduction', '概述'],
               ['eco-tools/kubeprober/guides/install', '快速安装'],
-              ['eco-tools/kubeprober/guides/first_prober', '编写第一个 prober'],
+              ['eco-tools/kubeprober/guides/first_prober', '编写第一个 Prober'],
             ]
           },
           {
@@ -502,13 +502,6 @@ module.exports = [
               ['eco-tools/kubeprober/best-practices/custom_prober', '自定义 Prober'],
               ['eco-tools/kubeprober/best-practices/alert', '告警'],
               ['eco-tools/kubeprober/best-practices/command_tools', '使用命令行工具'],
-            ]
-          },
-          {
-            title: '常见问题',
-            collapsable: true,
-            children: [
-              ['eco-tools/kubeprober/faq/faq', '常见问题'],
             ]
           },
         ]
