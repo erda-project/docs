@@ -1,19 +1,16 @@
 # 自定义 Prober
 
-前文已将讲解了如何 [编写一个简单的Prober](../guides/first_prober.md)，以及 [Prober CRD](../concepts/prober_crd.md) 基本概念。此外 kubeprober 还有一些已经编写好的 Prober 可供开发者直接使用，它们位于目录
-[probers](https://github.com/erda-project/kubeprober/tree/master/probers) 下。
+前文已为您介绍如何 [编写第一个 Prober](../guides/first_prober.md) 以及 [Prober CRD](../concepts/prober_crd.md) 的基本概念，Kubeprober 也提供了现成的 Prober 供开发者直接使用（位于目录 [probers](https://github.com/erda-project/kubeprober/tree/master/probers) 下）。除此之外，开发者还可以根据自身需要，开发自定义 Prober。
 
-## 自定义 Prober 编写
-开发者除了使用当前已有的 Prober 外，还可以根据需求，开发自定义 Prober。
+Kubeprober 结合实际开发过程，对于 Prober 的编写、打包总结了如下经验：
 
-在实际的开发过程中，kubeprober 对于 prober 的编写、打包总结了一些最佳实践:
-- 一个 prober 支持将多个执行探测的二进制文件打包到一个容器镜像中的，这样可以通过一个 pod 运行原本需要多个 pod 运行的探测任务，节省了很多资源和容器调度时间。
-- kubeprober 当前主要支持 golang、 shell 编写 prober 探测集
-- 同一个 prober 镜像中的每个二进制探测任务可能需要各自的自定义配置，为了避免将所有的配置放在一起，导致混乱，kubeprober 支持为每个二进制探测任务分别指定自定义配置。
+- 一个 Prober 支持将多个执行探测的二进制文件打包至一个容器镜像中，从而通过一个 Pod 运行原本需要多个 Pod 运行的探测任务，节省大量资源和容器调度时间。
+- Kubeprober 当前支持通过 Golang 和 Shell 编写 Prober 探测集。
+- 同一个 Prober 镜像中的每个二进制探测任务可能需要各自的自定义配置。为避免所有配置放置一处造成混乱，Kubeprober 支持为每个二进制探测任务分别指定自定义配置。
 
-下面以具体示例 [probers/demo-example](https://github.com/erda-project/kubeprober/tree/master/probers/demo-example) 讲解自定义 prober 编写:
+下文将以 [probers/demo-example](https://github.com/erda-project/kubeprober/tree/master/probers/demo-example) 为例，介绍如何编写自定义 Prober。
 
-### Prober 目录结构：
+## 目录结构
 ```
 probers/
     # 探测集 demo-example
@@ -29,7 +26,7 @@ probers/
             main.sh
 ```
 
-### 镜像打包
+## 镜像打包
 ```
 # 进入到 probers 目录
 cd probers
@@ -50,10 +47,10 @@ demo-checker1:
 demo-checker2:
     main
 ```
-这样就可以将多个可执行探测任务（demo-checker1, demo-checker2）打包到一个镜像中去了
+由此即可将多个可执行探测任务（demo-checker1 和 demo-checker2）打包至一个镜像中。
 
-### 自定义Prober
-上述 Prober（demo-example）镜像打包好后，即可编写对应的 prober.yaml，如下：
+## 自定义编写
+完成上述 Prober（demo-example）镜像打包后，即可编写对应的 prober.yaml，示例如下：
 ```
 apiVersion: kubeprober.erda.cloud/v1
 kind: Probe
