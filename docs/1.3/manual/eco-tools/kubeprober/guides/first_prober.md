@@ -1,14 +1,14 @@
-# 编写使用第一个 Prober
+# 编写第一个 Prober
 
-Prober探测集主要包含具体的探测逻辑以及探测结果的上报，下面将通过一个简单的demo讲述Prober的使用与开发方法。
+Prober 探测集主要包含具体的探测逻辑以及探测结果的上报，下文将通过一个简单的 Demo 介绍 Prober 的使用与开发方法。
 
-## 一个简单的Prober
+## Prober 示例
 
-如下展示了一个简单的Prober，其 spec 主要包含两部分：policy 和 template。
+如下为一个简单的 Prober 示例，其 Spec 主要包含两部分内容：Policy 和 Template。
 
-policy 用于定义 prober 的运行方式，是运行一次，还是周期运行；如果未定义 policy，则将以 job 方式运行该 prober, 如果定义了policy，则将以 cronjob 的方式运行该 prober。
+* Policy 用于定义 Prober 的运行方式，单次运行或周期运行。若未定义 Policy，则将以 Job 方式运行该 Prober；若定义了 Policy，则将以 Cronjob 的方式运行该 Prober。
 
-template 其实就是 podSpec, 用于描述具体的运行负载 pod，具体的探测上报逻辑以镜像的方式保存在 pod image 中。
+* Template 即 PodSpec，用于描述具体的运行负载 Pod，其探测上报逻辑以镜像的方式保存于 Pod Image 中。
 
 ```
 # prober-demo-example.yaml
@@ -35,9 +35,7 @@ spec:
     restartPolicy: Never
 ```
 
-## 运行并查看探测结果
-
-在运行该 Prober 前，需要先 [安装 prober-agent](../best-practices/standalone_kubeprober.md) 。然后运行该 Prober 执行具体的探测逻辑并上报探测结果，如下：
+运行该 Prober 前，需先 [安装 prober-agent](../best-practices/standalone_kubeprober.md) 。随后运行该 Prober 执行具体的探测逻辑并上报探测结果，示例体如下：
 
 ```
 ## 运行上文中的 prober-demo-example.yaml，去掉 policy, 以 job 的方式运行一次
@@ -80,14 +78,13 @@ status:
   status: ERROR
 ```
 
-## 编写一个简单的 Prober
+## Prober 编写
 
-上面通过一个已有的 Prober 讲述了 Prober 的基本使用方法，下面将通过一个具体的例子讲解如何编写一个简单的 Prober。
+上文通过一个已有的 Prober 介绍基本使用方法，下文将通过具体案例介绍如何编写一个简单的 Prober。
 
-Prober主要包含具体的探测逻辑以及探测结果的上报，其中探测逻辑需要开发者根据具体需求实现，而结果的上报，则只需要调用已有的状态上报接口即可。
-该接口将会自动获取注入到该 prober pod 的状态上报地址（默认是prober-agent）,然后上报状态。
+Prober 主要包含具体的探测逻辑以及探测结果的上报，其中探测逻辑需要开发者根据具体需求实现，而结果的上报则调用已有的状态上报接口即可。该接口将自动获取注入到该 Prober Pod 的状态上报地址（默认为 prober-agent），随后上报状态。
 
-### golang 编写的 Prober
+### 通过 Golang 编写
 ```golang
 
 package main
@@ -126,7 +123,7 @@ func main() {
 
 ```
 
-### shell 编写的 Prober
+### 通过 Shell 编写
 
 ```shell
 #!/bin/bash
@@ -147,6 +144,7 @@ checker2_item1_check
 checker2_item2_check
 ```
 
-使用该 shell prober 需要使用 prober 基础镜像 `kubeprober/probe-base:v0.1.2`, 该镜像中包含上报接口程序 `report-status`
+该 Shell Prober 需使用 Prober 基础镜像 `kubeprober/probe-base:v0.1.2`，镜像中包含上报接口程序 `report-status`。
 
-上述这些 pober demo 打包到镜像并执行，即可执行探测逻辑并上报探测结果。
+将上述 Prober Demo 打包到镜像并执行，即可执行探测逻辑并上报探测结果。
+
