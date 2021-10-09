@@ -36,7 +36,7 @@ spec:
 APP=probe-master make deploy
 ```
 ## 安装 Agent
-Agent 端包含 probe-agent 与 probe-tunnel 组件，probe-tunnel 通过 Websocket 与 probe-master 建立连接，提供从 probe-master 到被管理集群的控制通道，即 probe-agent 管理诊断项的生命周期，包括创建、执行、删除等。 
+Agent 端包含 probe-agent 与 probe-tunnel 组件，probe-tunnel 通过 WebSocket 与 probe-master 建立连接，提供从 probe-master 到被管理集群的控制通道，即 probe-agent 管理诊断项的生命周期，包括创建、执行、删除等。 
 
 由于 Kubernetes 本身没有集群名的概念，因此 Agent 端中加入该项，结合上文提及的 Secret-key，需在 Agent 端配置 Master 地址、 集群名、Secret-key 等内容。
 
@@ -114,7 +114,7 @@ kubectl apply -f probe.yaml
 ```
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/08/2ac2c3fb-d011-48c8-aee4-7321f763f297.png)
 ### 关联集群
-通过 kuebctl label 关联 Probe 和 Cluster，例如将 K8s 的 Probe 关联至 erda-cloud 集群。
+通过 kubectl label 关联 Probe 和 Cluster，例如将 K8s 的 Probe 关联至 erda-cloud 集群。
 
 ```shell script
 kubectl label cluster erda-cloud probe/k8s=true
