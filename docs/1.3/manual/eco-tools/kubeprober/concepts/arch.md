@@ -15,7 +15,7 @@ Kubeprober 各组件介绍如下：
 运行于受纳管集群上的 Operator，以维护两个 CRD：一个是 Probe，与 probe-master 完全一致，probe-agent 按照 Probe 的定义执行该集群的诊断项，另一个是 ProbeStatus，用于记录每个 Probe 的诊断结果，用户可在受纳管集群中通过 kubectl get probestatus 查看本集群的诊断结果。
 
 ### probe-tunnel
-运行于受纳管集群上的组件，通过 Websocket 与 probe-master 建立连接，提供从 probe-master 到受纳管集群的 Kubernetes API 管理通道，可用于 probe-master 下发 Probe 至受纳管集群以及查询受纳管集群的诊断结果。
+运行于受纳管集群上的组件，通过 WebSocket 与 probe-master 建立连接，提供从 probe-master 到受纳管集群的 Kubernetes API 管理通道，可用于 probe-master 下发 Probe 至受纳管集群以及查询受纳管集群的诊断结果。
 
 ### nsenter
 通过 DaemonSet 部署在各节点，其本质为使用 nsenter 进入 1 号 Namespace 的 Pod， 提供节点级别的诊断用户通道，可在 Probe 中通过 kubectl exec 进入 nsenter 的容器，等同于在 Node 上执行指令，从而诊断操作系统级别的问题。
