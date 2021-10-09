@@ -1,7 +1,7 @@
 # 快速安装
 
 Kubeprober 基于 Master/Agent 架构管理海量的 Kubernetes 集群诊断问题，通常选择一个集群部署 Master， 其余集群部署 Agent，Master 和 Agent 均作为 Controller 运行在 Kubernetes 中。安装前请确认您已部署 Kubernetes 集群，并且可通过 kubectl 访问。  
-* 本文将以 Kind 为例，介绍如何安装 Kuberprober 及其简单的使用操作。  
+* 本文将以 Kind 为例，介绍如何安装 Kubeprober 及其简单的使用操作。  
 * 生产环境的部署方式可参考本文操作。
 * 部署前请克隆 [Kubeprober](https://github.com/erda-project/kubeprober) 的代码仓库或者下载 Release 包。
 
@@ -77,7 +77,7 @@ spec:
 APP=probe-master make deploy
 ```
 ## 安装 Agent
-Agent 端包含 probe-agent 与 probe-tunnel 组件，probe-tunnel 通过 Websocket 与 probe-master 建立连接，提供从 probe-master 到被管理集群的控制通道，即 probe-agent 管理诊断项的生命周期，包括创建、执行、删除等。 
+Agent 端包含 probe-agent 与 probe-tunnel 组件，probe-tunnel 通过 WebSocket 与 probe-master 建立连接，提供从 probe-master 到被管理集群的控制通道，即 probe-agent 管理诊断项的生命周期，包括创建、执行、删除等。 
 
 由于 Kubernetes 本身没有集群名的概念，因此 Agent 端中加入该项，结合上文提及的 Secret-key，需在 Agent 端配置 Master 地址、 集群名、Secret-key 等内容。
 
@@ -151,7 +151,7 @@ kubectl apply -f probe.yaml
 ```
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/08/cb1cc9e9-2cbe-41a1-bce0-92ada89de12c.png)
 ### 关联集群
-通过 kuebctl label 关联 Probe 和 Cluster，例如将 K8s 的 Probe 关联至 Moon 集群。
+通过 kubectl label 关联 Probe 和 Cluster，例如将 K8s 的 Probe 关联至 Moon 集群。
 ```shell script
 kubectl label cluster moon probe/k8s=true
 ```
@@ -159,7 +159,7 @@ kubectl label cluster moon probe/k8s=true
 ### 查看诊断结果
 通过 kubectl probe 指令查看特定集群的诊断结果。  
 
-运行 kuebctl probe 指令需获取 probe-master 地址。由于本文以 Kind 为例进行部署，因此可创建一个 Ingress 将 probe-master 暴露出来。
+运行 kubectl probe 指令需获取 probe-master 地址。由于本文以 Kind 为例进行部署，因此可创建一个 Ingress 将 probe-master 暴露出来。
 
 ```yaml
 apiVersion: extensions/v1beta1
