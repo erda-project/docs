@@ -37,7 +37,7 @@ cluster2         v1.16.4            6           kubeprober       []        0/0  
 * `TOTAL/ERROR` 表示总诊断项/失败的诊断项数目。
 
 ### Prober 模版
-中心集群在 Defalut Namespace 中生成 Prober 模版，由于 prober-agent 仅监听其所在 Namespace（非  Default）的 Prober，因此生成的模版 Prober 将不受调协。
+中心集群在 Default Namespace 中生成 Prober 模版，由于 prober-agent 仅监听其所在 Namespace（非  Default）的 Prober，因此生成的模版 Prober 将不受调协。
 
 ```cassandraql
 # prober 模版
