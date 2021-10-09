@@ -35,7 +35,7 @@ spec:
     restartPolicy: Never
 ```
 
-运行该 Prober 前，需先 [安装 prober-agent](../best-practices/standalone_kubeprober.md) 。随后运行该 Prober 执行具体的探测逻辑并上报探测结果，示例体如下：
+运行该 Prober 前，需先 [安装 prober-agent](../best-practices/standalone_kubeprober.md) 。随后运行该 Prober 执行具体的探测逻辑并上报探测结果，示例如下：
 
 ```
 ## 运行上文中的 prober-demo-example.yaml，去掉 policy, 以 job 的方式运行一次
