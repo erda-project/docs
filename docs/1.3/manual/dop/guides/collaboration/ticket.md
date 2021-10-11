@@ -6,11 +6,11 @@
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/59f10b50-246e-4286-a029-a1b0847fda19.png)
 
-点击右上角 **新建工单**，根据界面提示输入工单名称、工单详情、处理人、优先级、复杂度、截止日期、标签以及自定义字段等信息。
+点击右上角 **新建工单**，根据界面提示输入工单名称、详情、处理人、优先级、复杂度、截止日期、标签以及自定义字段等信息。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/12e71834-0add-43d7-b883-b834832bba45.png)
 
-工单列表支持通过多种筛选条件过滤，例如标题、状态、优先级、严重程度以及提交人等。
+工单列表支持多种筛选条件，例如标题、状态、优先级、严重程度以及提交人等。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/6b81ff4b-ee4d-41f3-89e4-7a58cc67c127.png)
 
