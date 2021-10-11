@@ -16,7 +16,7 @@
 
 ## 迭代
 
-进入 **DevOps 平台 > 我的项目 > 项目协同 > 迭代**，您可以在此进行管理迭代，包括新建和归档迭代。
+进入 **DevOps 平台 > 我的项目 > 项目协同 > 迭代**，您可以在此管理迭代，包括新建和归档迭代。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/9c66fb2c-c1ca-48aa-9198-8b18900d9f4e.png)
 
