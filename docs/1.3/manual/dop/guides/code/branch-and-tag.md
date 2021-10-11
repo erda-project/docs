@@ -48,7 +48,7 @@
 
 内置代码仓库支持标签管理，在标签管理页可下载源代码压缩包。
 
-进入 **DevOps 平台 > 我的应用 > 选择应用 > 应用设置 > 代码仓库 > 分支管理**。
+进入 **DevOps 平台 > 我的应用 > 选择应用 > 代码仓库 > 分支管理**。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/b8b34de9-b50d-4bae-b7bf-d515ba579701.png)
 
