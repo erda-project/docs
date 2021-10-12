@@ -13,15 +13,12 @@
 用户故事通常以如下格式表达：
 
 * **英文**
-
   As a < Role >, I want to < Activity >, so that < Business Value >.
 
 * **中文**
-
   作为一个 < 角色 >，我想要 < 活动 >，以便于 < 商业价值 >。
 
 * **示例**
-
   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/0efb02a1-a851-4888-ae36-0e1df0f6bb51.png)
 
 进入 **DevOps 平台 > 我的项目 > 项目协同 > 需求**。
@@ -29,7 +26,6 @@
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/7e250b2a-2521-4b6d-8ddf-45aeea41bd97.png)
 
 1. 由产品经理设计、评审、创建需求，随后指派给开发工程师。
-
 2. 开发工程师将需求拆解为若干个任务完成，待测试工程师测试、验收过后，将需求状态变更为已完成。
 
 需求支持以下五种添加方式：
@@ -55,30 +51,23 @@
 
 ## 任务
 
-任务通常由开发工程师将需求拆分为若干个功能点，每个功能点对应一个任务。
+开发工程师将需求拆分为若干个功能点，每个功能点对应一个任务。
 
 进入 **DevOps 平台 > 我的项目 > 项目协同 > 任务**。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/deefa090-c0d0-41f5-baec-89bdc400d529.png)
 
 1. 开发工程师将需求拆解为若干个任务。
-
 2. 完成任务的过程中，测试工程师将创建测试用例。
-
 3. 测试工程师对任务功能点进行测试。
-
 4. 验收通过后更改任务状态为已完成。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/2126bfc9-b333-4483-a194-1146ad9448cd.png)
 
-* 任务开发过程中，测试工程师（QA）将进行测试相关工作的准备。关于测试更多信息，请参见 [功能测试](../qa-and-testing/function-test.md) 和 [自动化测试](../qa-and-testing/auto-test-getting-started.md)。
-
+* 任务开发过程中，测试工程师将进行测试相关工作的准备。关于测试更多信息，请参见 [功能测试](../qa-and-testing/function-test.md) 和 [自动化测试](../qa-and-testing/auto-test-getting-started.md)。
 * 根据迭代需求和任务看板，进行每日站立会议。单次会议控制在 15 分钟左右，需人人发言。
-
 * 任务管理和需求管理一样，在基本信息维护管理的同时，还可关联代码仓库的合并请求（Merge Request）。
-
 * 任务预计工作量指完成整个任务所需工作量的预估，单位可以是人天、人时，相关单位会自动进行转换，例如 7 人天将自动转换为 1 人周。
-
   实际工作量根据当天实际情况输入后，系统将自动计算该任务剩余工作量，帮助任务处理者及时判断剩余工作量，便于后续的合理投入和安排。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/5240638e-cd02-4bbd-b25c-bb187e39d291.png)
