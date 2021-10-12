@@ -1,8 +1,8 @@
 # Prober CRD
-Prober CRD 在 kubeprober 中描述探测集，用于执行具体的探测任务，并上报探测状态。
+[Prober CRD](https://github.com/erda-project/kubeprober/blob/master/apis/v1/probe_types.go) 在 Kubeprober 中描述探测集，用于执行具体的探测任务并上报探测状态。
 
-## 主要结构
-[Prober CRD](https://github.com/erda-project/kubeprober/blob/master/apis/v1/probe_types.go) 的主要定义都包含在 spec 字段中，如下:
+其主要定义均包含在 Spec 字段中，结构示意如下：
+
 ```
 // ProbeSpec defines the desired state of Probe
 type ProbeSpec struct {
@@ -22,18 +22,16 @@ type Config struct {
 	Env  []apiv1.EnvVar `json:"env,omitempty"`
 }
 ```
-其中，policy 和 template 在 [编写第一个 Prober](../guides/first_prober.md) 中已经简单描述过。
+## Policy
+即运行策略。若未定义，则 Prober 将以 Job 形式仅运行一次；若已定义，则将以 Cronjob 形式，根据指定的时间间隔（默认单位为分钟）周期性运行。
 
-### 运行策略 policy
-如果未定义，则 prober 将会以 job 的形式，只运行一次；如果定义，则将以 cronjob 的形式，按照指定的时间间隔（默认单位：分钟）周期性运行。
+## Template
+即模板定义。定义 PodSpec，用于描述 Prober 运行时的负载 Pod。
 
-### 模版定义 template
-由 Prober CRD 的定义可以看出，template 就是定义 podSpec, 用于描述 prober 运行时负载 pod。
+## Configs
+即自定义配置。在 Kubeprober 中，一个 Prober 实际支持将多个执行探测的二进制文件打包至一个容器镜像中，通过一个 Pod 运行原本需要多个 Pod 的探测任务，节省大量资源和容器调度时间。
 
-### 自定义配置 configs
-在 kubeprober 中，一个 prober 实际上是支持将多个执行探测的二进制文件打包到一个容器镜像中的，这样可以通过一个 pod 运行原本需要多个 pod 运行的探测任务，节省了很多资源和容器调度时间。
-
-而每个二进制探测任务可能需要各自的自定义配置，为了避免将所有的配置放在一起，导致混乱，kubeprober 支持为每个二进制探测任务分别指定自定义配置。
+每个二进制探测任务可能需要各自的自定义配置。为避免所有配置放置一处造成混乱，Kubeprober 支持为每一个二进制探测任务分别指定自定义配置。
 
 ```
 apiVersion: kubeprober.erda.cloud/v1
@@ -68,5 +66,4 @@ spec:
         - name: CHECKER2_ENV2
           value: "CHECKER2_VAL2"
 ```
-
 

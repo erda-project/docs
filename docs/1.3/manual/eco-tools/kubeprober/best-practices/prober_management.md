@@ -1,12 +1,11 @@
 # Prober 管理
-Prober 是一个诊断项（checker）集合，通常会将一组或某一场景下的诊断项编排到一个 Prober 镜像中，然后按照用户定义的执行策略，单次或周期性的
-执行诊断探测任务。
+Prober 是一个诊断项（Checker）集合，通常将一组或某一场景下的诊断项编排至一个 Prober 镜像中，随后根据用户定义的执行策略，单次或周期性执行诊断探测任务。
 
-kubeprober 当前主要支持 golang、shell 编写的 prober，prober 位于目录 [probers](https://github.com/erda-project/kubeprober/tree/master/probers) 下。
+当前 Kubeprober 支持通过 Golang、Shell 编写 Prober，其位于目录 [probers](https://github.com/erda-project/kubeprober/tree/master/probers) 下。
 
 
 ## 已有的 Prober
-kubeprober 当前已有的 prober 列表如下：
+Kubeprober 已有的 Prober 列表如下：
 ```
 probers/
     # prober 示例
@@ -18,30 +17,28 @@ probers/
     # addon 层探测集
     addon
 ```
-用户可以直接使用或修改后使用这些已有的探测集，另外用户也可以根据实际需求开发 [自定义Prober](./custom_prober.md)
+您可直接使用已有的探测集，或根据需要修改、编写 [自定义Prober](./custom_prober.md)。
 
 ## 单集群 Prober 管理
-单集群情况下，只需要将 prober 创建到 prober-agent 所在 namespace，即可被 prober-agent 调协，生成具体的探测pod，执行探测任务并
-上报探测结果。
+单集群情况下，仅需在 prober-agent 所在 Namespace 下创建 Prober，即可由 prober-agent 调协，生成具体的探测 Pod，执行探测任务并上报探测结果。
 
-此处，最小化安装只需 prober-agent 即可，可参考 [单集群使用 Kubeprober](./standalone_kubeprober.md)
-prober的使用可参考 [编写使用第一个 Prober](../guides/first_prober.md)
+此处，最小化安装使用 prober-agent 即可，具体请参见 [单集群使用 Kubeprober](./standalone_kubeprober.md)。Prober 的使用方法请参见 [编写第一个 Prober](../guides/first_prober.md)。
 
 ## 多集群 Prober 管理
-多集群情况下，需要在中心集群部署 prober-master, 被纳管的集群需要安装 prober-agent 实现集群上报注册，这些就实现了 [kubeprober 多集群的管理](muti_cluster_kubeprober.md)。
-那么在多集群情况下，prober 是如何管理的呢？
+多集群情况下，需在中心集群部署 prober-master，受纳管集群需安装 prober-agent 实现集群上报注册，由此实现 [多集群使用 Kubeprober](muti_cluster_kubeprober.md)。Prober 的管理方式如下：
+
 ```cassandraql
 [root@node-0001 ~]# kubectl get cluster
 NAME             VERSION            NODECOUNT   PROBENAMESPACE   PROBE     TOTAL/ERROR   HEARTBEATTIME         AGE
 cluster1         v1.13.5            32          kubeprober       []        0/0           2021-09-01 17:59:23   17d
 cluster2         v1.16.4            6           kubeprober       []        0/0           2021-09-01 17:59:08   17d
 ```
-`PROBE` 表示下发到该集群的诊断集；
-`TOTAL/ERROR` 表示 总诊断项/失败的诊断项数目；
+* `PROBE` 表示下发至该集群的诊断集。
+* `TOTAL/ERROR` 表示总诊断项/失败的诊断项数目。
 
 ### Prober 模版
-首先在中心集群中，会在 defalut namespace 生成 prober 模版，这和我们前面讲述的 prober 是一样的。因为 prober-agent 只会监听其所在
-namespace (非 default) 的 prober，所以这些模版 prober 将不会被调协。
+中心集群在 Default Namespace 中生成 Prober 模版，由于 prober-agent 仅监听其所在 Namespace（非  Default）的 Prober，因此生成的模版 Prober 将不受调协。
+
 ```cassandraql
 # prober 模版
 [root@node-0001 ~]# kubectl get probe
@@ -52,7 +49,8 @@ node    30            kubeprober/probe-node:v0.1.0    8d
 ```
 
 ### Prober 下发
-kubeprober 通过 label 方式实现 prober 的下发，给纳管的集群添加对应的 prober 标签即可实现 prober 的下发。
+Kubeprober 通过标签实现 Prober 的下发，为纳管集群添加对应的 Prober 标签即可。
+
 ```cassandraql
 # 给纳管的集群添加 prober 标签 probe/${PROBER_TEMPLATE_NAME}=true
 [root@node-0001 ~]# kubectl label cluster cluster1 probe/k8s=true
@@ -66,7 +64,7 @@ cluster2         v1.16.4            6           kubeprober       [k8s]        56
 ```
 
 ### 诊断结果查看
-可以通过 `kubectl probe status -c ${CLUSTER_NAME}` 查看指定集群的详细诊断结果，如下： 
+通过 `kubectl probe status -c ${CLUSTER_NAME}` 可查看指定集群的详细诊断结果：
 ```cassandraql
 [root@node-0001 ~]# kubectl probe status -c cluster1
 PROBER  CHECKER                                         STATUS  MESSAGE                                         LASTRUN

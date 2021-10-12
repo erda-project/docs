@@ -1,4 +1,4 @@
-# 简介
+# 概述
 
 ## 什么是 Kubeprober
 
@@ -25,11 +25,11 @@ Kubeprober 是一款针对大规模 Kubernetes 集群设计的诊断工具，用
 
 ![](https://static.erda.cloud/images/kc-cn.gif)
 
-## 概念
+## 核心概念
 
 ### Cluster
 
-区别于 Kubernetes 集群实体，Kubeprober 中的 Cluster 是指被诊断集群对象，通过每个 Kuberntes 集群实体中部署的 probe-agent 组件上报信息，保存于管理集群的 CRD 中，信息包括集群名称、Kubernetes 版本、节点数量、 关联的 Probe、Probe 诊断结果概览、心跳时间等内容。
+区别于 Kubernetes 集群实体，Kubeprober 中的 Cluster 是指被诊断集群对象，通过每个 Kubernetes 集群实体中部署的 probe-agent 组件上报信息，保存于管理集群的 CRD 中，信息包括集群名称、Kubernetes 版本、节点数量、 关联的 Probe、Probe 诊断结果概览、心跳时间等内容。
 
 ### Probe
 
@@ -37,4 +37,4 @@ Probe 是一个诊断项（Checker）集合，通常将一组或一个场景下�
 
 ### Checker
 
-诊断项的最小执行单元，被集成到 Probe 的镜像中，其诊断结果可通过 CLI 工具展示。Checker 使用 Kubeprober 提供的 SDK 将诊断结果上报至 Kubeprober，当前 SDK 仅支持 Shell 及 Golang。
+诊断项的最小执行单元，被集成至 Probe 的镜像中，其诊断结果可通过 CLI 工具展示。Checker 使用 Kubeprober 提供的 SDK 将诊断结果上报至 Kubeprober，当前 SDK 仅支持 Shell 及 Golang。
