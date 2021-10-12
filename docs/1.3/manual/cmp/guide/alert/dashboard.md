@@ -1,6 +1,6 @@
 # 运维大盘
 
-目前几乎所有监控产品均支持大盘功能，常见的开源大盘工具有 [Grafana](https://grafana.com/)、[Kinaba](https://www.elastic.co/cn/kibana/)。Erda 的大盘功能同样十分强大，能够让您自定义选择如何呈现自己的数据，包括但不限于监控数据。
+当前绝大多数监控产品均支持大盘功能，常见的开源大盘工具有 [Grafana](https://grafana.com/)、[Kinaba](https://www.elastic.co/cn/kibana/)。Erda 的大盘功能同样十分强大，能够让您自定义选择如何呈现自己的数据，包括但不限于监控数据。
 
 ## 新建大盘
 
@@ -58,11 +58,11 @@
 
 ### 调整图表
 
-若您不满意默认的图表大小，可以通过拖拽的方式重新调整。
+若您不满意默认的图表大小，可通过拖拽的方式重新调整。
 
 ### 保存图表
 
-点击右上角保存图表保存大图。
+点击右上角保存图表和大图。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/dda55ba1-7a65-41dc-a9e0-96a15f40f73b.png)
 

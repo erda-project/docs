@@ -1,4 +1,4 @@
-# 节点标签说明
+# 节点标签
 
 Erda 支持通过标签对机器进行分类，以满足不同的调度需求。
 
@@ -64,7 +64,7 @@ Erda 设计了自定义标签 location-xx，以支持用户将指定的应用运
 - `dice/bigdata-job=true`：用于调度大数据任务
 - `dice/service-stateless=true`：用于调度无状态服务标签，可用于部署 Runtime 服务
 - `dice/service-stateful=true`：用于调度有状态服务标签，可用于部署 Addon 服务
-- `dice/workspace-xxx=true`：用于调度到指定环境，包括 workspace-dev，workspace-test，workspace-staging，workspace-prod，分别对应 Erda 部署的四个环境
+- `dice/workspace-xxx=true`：用于调度至指定环境，包括 workspace-dev、workspace-test、workspace-staging、workspace-prod，分别对应 Erda 部署的四个环境
 - `dice/location-cluster-service=true`：用于调度集群共用的服务组件，例如注册中心
 - `dice/location-xxx=true`：自定义标签，支持用户将指定的应用运行到指定节点
 - `dice/location=true`：独占标签，设置该标签的节点仅能运行 location-xxx 对应的应用
