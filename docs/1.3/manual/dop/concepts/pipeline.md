@@ -2,11 +2,11 @@
 
 Erda Pipeline 是由端点自研、用 Go 编写的一款企业级流水线服务。自研流水线的原因在于：
 
-- 时至今日，开源社区暂无事实上的流水线标准。
+- 时至今日，开源社区尚无事实上的流水线标准。
 - K8s、DC/OS 等 Job 实现偏弱，以及上下文传递等缺失，无法满足实际业务需求。
 - 自研能更快地响应业务需求，进行定制化开发。
 
-作为基础服务，Pipeline 在 Erda 内部支撑了 CI/CD、快数据平台、自动化测试平台、SRE 运维链路等产品化场景。本文将从以下几个方面为您介绍 Pipeline。
+作为基础服务，Pipeline 在 Erda 内部支撑了 CI/CD、快数据平台、自动化测试平台、SRE 运维链路等产品化场景。本文将从以下几个方面展开介绍。
 
 ## Pipeline 由来
 Pipeline 的由来需从应用构建开始说起。Pipeline 的前身是 Packer 和 CI。
@@ -17,7 +17,7 @@ Pipeline 的由来需从应用构建开始说起。Pipeline 的前身是 Packer 
 Erda 最初是端点内部使用的 PaaS 平台。自 2017 年开始，Erda 已管理公司所有的研发项目。项目下各个应用均无法脱离 “代码 > 编译 > 镜像制作 > 部署”的标准流程。Packer 便由此诞生，成为专门负责打包的组件。用户需提供 Dockerfile，学习成本相对较高。
 
 ### CI
-随着 CI/CD（持续集成、持续交付）概念的深入人心，平台推出了 Packer 的升级版 CI 。同时，基础设施即代码（IaC）的理念也在此得到了实践：通过 erda.yaml 1.0 语法同时声明应用的微服务架构和构建过程。
+随着 CI/CD（持续集成、持续交付）概念的深入人心，平台推出了 Packer 的升级版 CI 。同时，基础设施即代码（IaC）的理念也在此得到了实践，通过 erda.yaml 1.0 语法同时声明应用的微服务架构和构建过程。
 
 在用户体验上，平台不再直接暴露 Dockerfile，而是将最佳实践以 BuildPack 大礼包的方式提供给使用者。使用者无需声明应用的开发语言和构建方式，即可通过 BuildPack 的自动探测和识别，完成 CI/CD 流程。
 
@@ -41,8 +41,8 @@ Pipeline 拥有众多灵活、强大的功能，例如：
 - 支持工作流优先队列，优先级可实时调整，保证高优先级流水线优先执行。
 - 多维度的重试机制，支持断点重试、全流程重试。
 - 定时流水线，同时提供强大的定时补偿功能。
-- 动态配置，支持 **值** 和 **文件** 两种类型，均支持加密存储，确保数据安全性。
-- 上下文传递，后置任务可以引用前置任务的 **值** 和 **文件**。
+- 动态配置，支持值和文件两种类型，均支持加密存储，确保数据安全性。
+- 上下文传递，后置任务可引用前置任务的值和文件。
 - 开放的 OpenAPI 接口，便于第三方系统快速接入。
 
 ## Pipeline 架构
@@ -75,11 +75,11 @@ Pipeline 支持 UI、OPENAPI、CLI 等多种交互方式，同时支持水平扩
 ## 如何推进流水线
 在引擎侧，pipeline.yaml 被解析为 DAG（Directed Acyclic Graph，有向无环图）结构后被推进。
 
-换言之，引擎并不认识、也不关心 pipeline.yaml 语法，用户侧完全可以提供多种多样的语法便于不同用户使用，只需最终可转换成 Pipeline 简单封装过的 [DAG 结构](https://github.com/erda-project/erda/blob/master/pkg/dag/dag.go#L27)。
+换言之，引擎并不认识、也不关心 pipeline.yaml 语法，用户侧完全可以提供多种多样的语法便于不同用户使用，只需最终能转换成 Pipeline 简单封装过的 [DAG 结构](https://github.com/erda-project/erda/blob/master/pkg/dag/dag.go#L27) 即可。
 
 Pipeline 级别由推进器 [Reconciler](https://github.com/erda-project/erda/blob/master/modules/pipeline/pipengine/reconciler/define.go#L44) 根据 DAG 计算出当前可被推进的任务，各任务异步执行推进逻辑。
 
-任务的推进则由 [TaskFramework](https://github.com/erda-project/erda/blob/master/modules/pipeline/pipengine/reconciler/taskrun/framework.go#L37) 处理，并抽象出 `prepare -> create -> start -> queue -> wait` 标准步骤。当任一任务推进完毕时，将再次递归调用 reconcile 方法以重复上述流程，直至流程整体执行完毕。
+任务的推进则由 [TaskFramework](https://github.com/erda-project/erda/blob/master/modules/pipeline/pipengine/reconciler/taskrun/framework.go#L37) 处理，并抽象出 prepare > create > start > queue > wait 标准步骤。当任一任务推进完毕时，将再次递归调用 reconcile 方法以重复上述流程，直至流程整体执行完毕。
 
 Reconciler 中 [通过 DAG 计算可调度任务代码如下](https://github.com/erda-project/erda/blob/master/modules/pipeline/pipengine/reconciler/scheduable.go#L27)：
 
@@ -111,7 +111,7 @@ func (r *Reconciler) getSchedulableTasks(p *spec.Pipeline, tasks []*spec.Pipelin
 ```
 
 ## ActionExecutor 插件机制
-上文提到，由流水线提供灵活、一致的流程编排能力，其前提是单个任务的执行已经被很好的抽象。
+上文提到，由流水线提供灵活、一致的流程编排能力，其前提是单个任务的执行已经被很好地抽象。
 
 在 Pipeline 中，平台对一个任务执行的抽象是 ActionExecutor：
 
@@ -145,7 +145,7 @@ type ActionExecutor interface {
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/71b5b9dd-b11e-4fbf-85fe-1aa66cb27bcf.png)
 
 ## 用户接入层 pipeline.yaml
-[pipeline.yaml](./guides/cicd-pipeline/pipeline-yml-config.html) 是 IaC 的实践，平台通过 YAML 格式描述流水线定义，基于 Stage 语法简化编排复杂度。
+[pipeline.yaml](../guides/cicd-pipeline/pipeline-yml-config.html) 是 IaC 的实践，平台通过 YAML 格式描述流水线定义，基于 Stage 语法简化编排复杂度。
 
 示例如下：
 
