@@ -28,19 +28,18 @@
 1. 在 Kubernetes 集群中执行如下操作（如已具备则无需执行）：
 
     * 确认 Master 节点的 `~/.kube/` 路径下有 kubeconfig 文件，并且可以使用 `kubectl` 访问集群。
-
     * 确认 Master 节点下已安装 Helm（以 3.5.2 版本为例）。
 
       ```shell
       # 下载 Helm 安装包
       wget https://get.helm.sh/helm-v3.5.2-linux-amd64.tar.gz
-   
+      
       # 解压安装包
       tar -xvf helm-v3.5.2-linux-amd64.tar.gz
-   
+      
       # 安装 Helm 3，在解压后的目录 linux-amd64 中找到 Helm 二进制文件，然后将其移至所需的目标位置
       mv linux-amd64/helm /usr/local/bin/helm
-   
+      
       # Erda Chart 包直接在本地解压文件中，无需添加 Repo， Helm 添加 Repo 等操作请参考官方文档
       ```
 
