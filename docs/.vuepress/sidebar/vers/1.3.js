@@ -193,7 +193,7 @@ module.exports = [
             ]
           },
           {
-            title: 'CI/CD Pipeline',
+            title: 'CI/CD 流水线',
             collapsable: true,
             children: [
               'dop/guides/cicd-pipeline/pipeline-yml-config',
