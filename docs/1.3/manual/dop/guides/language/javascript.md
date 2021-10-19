@@ -2,9 +2,7 @@
 
 Erda 通过统一的任务插件机制支撑不同的构建能力，并利用这一机制提供开箱即用的 JavaScript 构建插件。
 
-您只需在 `pipeline.yml` 中配置部分参数即可使用该插件。
-
-根据运行时容器的类型可分为：
+您只需在 pipeline.yml 中配置部分参数即可使用该插件。根据运行时容器的类型可分为：
 
 - Herd：使用 Erda 提供的 Node.js 运行
 - Single-Page Application（SPA）：使用 Nginx 作为容器运行
@@ -29,23 +27,19 @@ npm ci 需在应用目录下提供 package.json 和  package-lock.json 两个文
 使用该插件构建镜像时，需明确以下几点：
 
 - 打包工具是什么？
-
-  平台不限制打包工具，Webpack、Roolup 等工具均可。
+  平台不限制打包工具，Webpack、Rollup 等工具均可。
 
 - 在哪个路径执行打包工具？
-
   代码根目录，即 `package.json` 所在目录。
 
 - 依赖下载命令
-
   `npm ci`
 
 - 打包命令
-
   用户自定义。推荐使用 `npm run build`，并在 `package.json` 中提供 `build` 脚本。
 
 ::: tip 提示
-通过回答这些问题，可以帮助您理解在 Erda 上构建 JavaScript 应用时需填写的配置，以及 Erda 是如何执行 JavaScript 打包过程的。
+明确以上问题，有助于您更好地理解在 Erda 上构建 JavaScript 应用时需填写的配置，以及 Erda 如何执行 JavaScript。
 :::
 
 JavaScript 构建分为两部分：
@@ -53,7 +47,7 @@ JavaScript 构建分为两部分：
 - 通过指明的打包方式和上下文参数，将源代码编译为打包产物。
 - 按照指明的运行环境和版本，选择基础镜像，将构建产物制作成运行镜像。
 
-在平台上打包需配置 `pipeline.yml` 文件，示例如下：
+pipeline.yml 示例如下：
 
 ```yaml{10,11,12,13,14}
 version: 1.1
@@ -74,11 +68,9 @@ stages:
 
 ### Herd
 
-* 依赖：`npm ci`
-
-* 编译：`npm run build`，编译后，编译目录下的所有文件都将被放入镜像中
-
-* 运行：`npm run start`，可使用编译后的所有文件
+* **依赖**：`npm ci`
+* **编译**：`npm run build`，编译后，编译目录下的所有文件都将被放入镜像中
+* **运行**：`npm run start`，可使用编译后的所有文件
 
 pipeline.yml 示例如下：
 
@@ -100,15 +92,11 @@ stages:
 
 ### SPA
 
-* 依赖：`npm ci`
+* **依赖**：`npm ci`
+* **编译**：`npm run build`，编译后，编译目录下的 public 文件夹（可在 params 中通过 `dest_dir` 调整）将被放入镜像中
+* **运行**：启动 Nginx
 
-* 编译：`npm run build`，编译后，编译目录下的 public 文件夹（可在 params 中使用 `dest_dir` 调整）将被放入镜像中
-
-* 运行：启动 Nginx
-
-应用需在编译目录下提供一个 Nginx 配置模板文件，文件名为固定的 `nginx.conf.template`。
-
-该模板文件可使用环境变量，Erda 在运行时将动态替换环境变量的值，随后启动 Nginx。
+应用需在编译目录下提供一个 Nginx 配置模板文件，文件名为固定的 `nginx.conf.template`。该模板文件可使用环境变量，Erda 在运行时将动态替换环境变量的值，随后启动 Nginx。
 
 模板文件参考如下：
 
@@ -175,9 +163,9 @@ caches 加速：
       container_type: spa
 ```
 
-`${git-checkout}/node_modules` ${git-checkout} 是项目下，node_modules 则是 npm 构建后生成的包路径，缓存后下一次将会加速。
+`${git-checkout}/node_modules`：${git-checkout} 为项目路径，node_modules 则是 npm 构建后生成的包路径，缓存后下一次将会加速。
 
-## 运行容器选择
+## 选择运行容器
 
 - Herd
 - SPA
@@ -185,7 +173,7 @@ caches 加速：
 
 ## 接入平台监控
 
-通过接入监控，可统计页面加载性能、报错以及用户相关信息，更好地了解性能、质量问题和分析用户。
+通过接入监控，可统计页面加载性能、报错和用户相关信息，更好地了解性能、质量问题和分析用户。
 
 ### Herd 接入监控
 
@@ -193,9 +181,7 @@ caches 加速：
 
 ### SPA 接入监控
 
-SPA 暂不支持无侵入式浏览器监控接入，需手动接入。
-
-接入方式如下：
+SPA 暂不支持无侵入式浏览器监控接入，需手动接入。接入方式如下：
 
 - 在模板页的 head 中添加 `ta.js`。
 
@@ -223,19 +209,19 @@ SPA 暂不支持无侵入式浏览器监控接入，需手动接入。
     }
   ```
 
-### NodeJs 接入监控
+### Node.js 接入监控
 - 在项目目录安装 spot-agent 依赖。
 
   ```
   ## npm config set registry https://registry.npm.terminus.io
   npm i @terminus/spot-agent@~3.20
   ```
-- 在 Node 应用的启动类中（通常为 index.js）第一行添加 Agent 的启动代码。
+- 在 Node 应用的启动类（通常为 index.js）第一行添加 Agent 的启动代码。
 
   ```
   require('@terminus/spot-agent').start()
   ```
-### 自定义镜像接入
+### 自定义镜像接入监控
 
 - Herd：在 `Dockerfile` 中增加以下步骤：
 
