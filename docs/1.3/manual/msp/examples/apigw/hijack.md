@@ -49,5 +49,5 @@ addons:
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/20/af7399cd-9dd8-485f-92a7-8518ee597dcd.png)
 
-绑定域名已生成对应流量入口。点击 **详情** 进入即可对域名 *www.erda.cloud* 和 *about.erda.cloud* 进行流量管理。
+绑定域名已生成对应流量入口。点击 **详情** 后即可对域名 *www.erda.cloud* 和 *about.erda.cloud* 进行流量管理。
 
