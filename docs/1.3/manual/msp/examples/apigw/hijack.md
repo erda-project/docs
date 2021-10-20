@@ -1,27 +1,18 @@
 # 平滑接管应用域名流量
 
-Erda 支持在部署详情中，为当前应用的指定服务直接绑定一个域名，这种方式可以快速地将互联网流量接入一个指定服务。
+Erda 支持在部署详情中为当前应用的指定服务直接绑定域名。这种方式能够快速将互联网流量接入指定服务，但无法管控域名下的流量，实现精细化路由配置、API 策略管理等 API 网关功能，例如无法将域名下的指定路径转发给另一个服务，也无法对 API 设置流量限制策略。
 
-但这种方式下，无法管控域名下的流量，实现精细化路由配置、API 策略管理等 API 网关的功能。
+在此场景下，如需使用 API 网关的此类功能，只需为应用添加 API 网关扩展服务，即可自动为该应用绑定的域名生成对应的 [流量入口](../../concepts/apigw/core.md#流量入口-endpoint)。通过为该流量入口配置路由和策略实现对域名流量的管理。具体操作步骤请见下文。
 
-比如无法将域名下的指定路径转发给另一个服务，也无法对 API 设置流量限制策略。
+## 初始状态
 
-在这种场景下，想要使用 API 网关的这些功能，只需通过给应用添加 API 网关扩展服务，就会自动为该应用绑定的域名，生成对应的[流量入口](../../guides/apigw/core.md#流量入口-endpoint).
+如下图所示，为应用服务绑定两个域名，*www.erda.cloud* 和 *about.erda.cloud*，并通过 API 网关管理域名流量。
 
-通过对该流量入口进行路由和策略的配置，就可以实现对域名流量的管理了。上述操作步骤具体如下：
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/20/8914df26-aeb7-4999-95c7-0808e658be81.png)
 
-## 示例初始状态
+## 第一步：通过 yaml 配置文件为应用添加 API 网关扩展服务
 
-如下例所示，给应用里的一个服务绑定了两个域名：`www.erda.cloud` 和 `about.erda.cloud`
-
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/20/0ce1892b-5395-40c2-ae2f-8f76beb0eb77.png)
-
-现在希望能通过 API 网关来管理对这两个域名的流量
-
-
-## 第一步：通过 yaml 配置文件给应用添加 API 网关扩展服务
-
-注意 yaml 配置文件中的最后一段 addons 配置，即为该应用添加了 API 网关扩展服务
+yaml 配置文件中的 addons 配置，即是为该应用添加 API 网关扩展服务。
 
 ```yaml
 version: 2
@@ -48,15 +39,15 @@ addons:
     plan: "api-gateway:basic"
 ```
 
-配置好后，通过流水线触发该服务重新构建和部署，部署成功后，可以在部署详情页面看到如下 API 网关扩展服务卡片
+完成配置后，通过流水线重新构建和部署该服务。部署成功后即可在部署详情页查看 API 网关扩展服务如下：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/20/fa094979-8e48-4a0a-a497-28dfcc2396bc.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/20/cea2eb01-4773-4287-b5f3-14a144898578.png)
 
-## 第二步：找到域名对应的流量入口，进行流量管理
+## 第二步：找到域名对应流量入口进行流量管理
 
-先点击 API 网关扩展服务卡片，进入微服务平台 > 再点击 API 网关下流量入口管理 Tab
+点击该 API 网关扩展服务进入 **微服务平台 > API 网关 > 流量入口管理**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/20/a0421dd1-15e1-4734-a9da-5ee4a877ae9a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/20/af7399cd-9dd8-485f-92a7-8518ee597dcd.png)
 
-在流量入口列表里可以看到，已经为之前绑定在应用上的域名，生成了一个流量入口，点击详情进入即可管理 `www.erda.cloud` 和 `about.erda.cloud` 这两个域名的流量了。
+绑定域名已生成对应流量入口。点击 **详情** 进入即可对域名 *www.erda.cloud* 和 *about.erda.cloud* 进行流量管理。
 
