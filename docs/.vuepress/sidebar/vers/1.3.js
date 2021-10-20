@@ -271,6 +271,8 @@ module.exports = [
             collapsable: true,
             children: [
               'msp/examples/apigw/config',
+              'msp/examples/apigw/hijack',
+              'msp/examples/apigw/timeout',
               'msp/examples/apigw/rate-limit',
               'msp/examples/apigw/custom-header',
               'msp/examples/apigw/access-limit',
