@@ -48,7 +48,7 @@ Pipeline 拥有众多灵活、强大的功能，例如：
 ## Pipeline 架构
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/3d1e0115-0ec2-47b2-beb0-519405845859.png)
 
-Pipeline 支持 UI、OPENAPI、CLI 等多种交互方式，同时支持水平扩展，保证高可用，并可将其划分为服务层、核心层和引擎层。
+Pipeline 支持 UI、OpenAPI、CLI 等多种交互方式，同时支持水平扩展，保证高可用，并可将其划分为服务层、核心层和引擎层。
 
 ### 服务层
 - yaml parser 解析流程定义文件，支持灵活的变量语法，例如上下文值引用 <code v-pre>${{ outputs.preTaskName.key }}</code>，配置管理引用 <code v-pre>${{ configs.key }}</code> 等。
