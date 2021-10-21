@@ -27,7 +27,7 @@ Erda 最初是端点内部使用的 PaaS 平台。自 2017 年开始，Erda 已�
 在设计之初，平台还做了以下改进：
 
 - 对外：通过清晰易用的 pipeline.yaml 语法，降低使用者的上手成本。
-- 对内：抽象出任务定义，配合 ActionExecutor Plugin Mechenism（任务执行器插件机制），便于对接各个单任务执行平台，譬如 DC/OS Metronome、K8s Job、Flink/Spark Job 等。
+- 对内：抽象出任务定义，配合 ActionExecutor Plugin Mechanism（任务执行器插件机制），便于对接各个单任务执行平台，譬如 DC/OS Metronome、K8s Job、Flink/Spark Job 等。
 - 由 Pipeline 提供一致、强大的流程编排能力。
 
 ## Pipeline 特性
