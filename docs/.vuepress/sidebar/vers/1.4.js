@@ -102,6 +102,7 @@ module.exports = [
           'dop/examples/deploy/deploy-from-go-build',
           'dop/examples/deploy/deploy-from-java-build',
           'dop/examples/deploy/deploy-from-caches-build',
+          'dop/examples/deploy/e2e-code-coverage',
           'dop/examples/deploy/nexus',
           ['dop/examples/deploy/manage-mirror', '如何管理镜像'],
         ]
