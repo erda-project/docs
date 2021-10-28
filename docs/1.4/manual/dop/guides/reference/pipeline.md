@@ -267,7 +267,23 @@ commands:
 
 Action 执行的超时时间。超过该时间，平台会强制停止 Action 的执行。
 
-默认为 2 小时。
+timeout 单位为秒, 系统默认的 timeout 为 3600（1小时）
+
+::: details YAML 示例
+
+```yaml
+version: "1.1"
+stages:
+  - stage:
+      - custom-script:
+          alias: 自定义shell脚本
+          version: "1.0"
+          commands:
+            - sleep 60s
+          timeout: 50
+```
+
+:::
 
 #### resources
 
