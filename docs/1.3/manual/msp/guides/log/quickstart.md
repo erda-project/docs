@@ -46,5 +46,5 @@
 
 完成部署后，应用容器的日志将被收集并写入日志分析的 `elasticsearch` 中，您可进入 **微服务治理平台 > 日志分析 > 日志查询** 查看。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/1b02f752-a542-4dfe-b7c7-c212449a8a0c.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/26/e6a8564b-e25f-4a21-97aa-57469941e7c3.png)
 
