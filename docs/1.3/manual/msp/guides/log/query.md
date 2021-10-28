@@ -126,7 +126,7 @@
 
 ### 快速选择查询关键词
 
-当鼠标hover到列表中某条日志的标签和内容时，可以点击快速的添加到查询条件。
+当鼠标悬停在列表中某条日志的标签和内容时，可以点击快速的添加到查询条件。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/26/79f2b3df-fda9-40e9-8ddd-6a633e17119f.png)
 
