@@ -8,7 +8,7 @@
 
 若无真实的泛域名，您需要在浏览器所在的机器上将下列 URL 写入 `etc/hosts` 文件，并将示例 IP 替换为该 Kubernetes 集群的 Ingress Controller 入口 IP。
 
-例如，Kubernetes 集群的 Ingress Controller 入口 IP 为 10.0.0.1，泛域名（ERDA_GENERIC_DOMAIN 变量中设置）为 *erda.io*，则需写入 `/etc/hosts` 文件的信息如下：
+例如，Kubernetes 集群的 Ingress Controller 入口 IP 为 10.0.0.1，泛域名为 *erda.io*，则需写入 `/etc/hosts` 文件的信息如下：
 
 ```shell
 10.0.0.1 erda.io
