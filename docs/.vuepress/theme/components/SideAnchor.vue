@@ -126,6 +126,7 @@ export default {
 
 .side-anchor ul li {
   padding: 2px 0;
+  margin-bottom: 0.5rem;
 }
 
 ul .side-anchor-link {
