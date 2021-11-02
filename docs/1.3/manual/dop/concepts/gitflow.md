@@ -7,45 +7,45 @@ Gitflow 即 Git 工作流，有助于持续软件开发和实施 DevOps 实践�
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/02/63182c72-d730-4690-8d09-bc1d8959a137.png)
 
 Gitflow 完整工作流程如下：
-1. develop 分支从 master 分支切出。
-2. release 分支从 develop 分支切出。
-3. feature 分支从 develop 分支切出。
-4. 当 feature 分支完成时，合并至 develop 分支。
-5. 当 release 分支完成时，合并至 develop 分支和 master 分支。
-6. 若 master 检测到问题，则会从 master 分支切出 hotfix 分支。
-7. 当 hotfix 分支完成时，合并至 develop 分支和 master 分支。
+1. Develop 分支从 Master 分支切出。
+2. Release 分支从 Develop 分支切出。
+3. Feature 分支从 Develop 分支切出。
+4. 当 Feature 分支完成时，合并至 Develop 分支。
+5. 当 Release 分支完成时，合并至 Develop 分支和 Master 分支。
+6. 若 Master 分支检测到问题，则会从 Master 分支切出 Hotfix 分支。
+7. 当 Hotfix 分支完成时，合并至 Develop 分支和 Master 分支。
 
-## develop/master 分支
+## Develop/Master 分支
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/02/5ba6cca2-d6ac-42b0-839a-22550cc963ee.png)
 
-标准的 Gitflow 使用两个分支记录项目的演进历史。其中 master 分支记录正式发布记录，develop 记录演进历程。develop 分支和各个 feature 分支进行交互：feature 分支不断集成到 develop 分支，develop 分支则不断切出分支作为新的 feature 分支基线。
+标准的 Gitflow 使用两个分支记录项目的演进历史。其中 Master 分支记录正式发布记录，Develop 记录演进历程。Develop 分支和各个 Feature 分支进行交互：Feature 分支不断集成至到 Develop 分支，Develop 分支则不断切出分支作为新的 Feature 分支基线。
 
-master 分支可通过 tag 标记版本，并以 tag 为节点发布至生产环境。
+Master 分支可通过 Tag 标记版本，并以 Tag 为节点发布至生产环境。
 
-## feature 分支
+## Feature 分支
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/02/b7400cec-f674-4814-9821-d8574ab4591d.png)
 
-任何 feature 理应有一个自己的 feature 分支，不同 feature 不能混用同一分支。
+任一 Feature 均应有一个对应的 Feature 分支，不同 Feature 不可混用同一分支。
 
-feature 分支需以最新的 develop 分支为基线，完成开发后，再合并回 develop 分支中。feature 分支不会与 master 分支产生关联。
+Feature 分支需以最新的 Develop 分支为基线，完成开发后，再合并回 Develop 分支中。Feature 分支不会与 Master 分支产生关联。
 
-## release 分支
+## Release 分支
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/02/7d73a92b-a5f4-4687-86e2-b16456ab8235.png)
 
-当 develop 分支中集成了一定量的 feature 或预定的发布日期临近时，即可考虑发版了。发版是从 develop 分支切出一个 release 分支，同时表示本 release 周期已结束，并开启了下一个 release 周期。此后所有新的 feature 都不会体现在这个已 release 的分支上，只会集成至 develop 并最终切到下一个 release 分支。
+当 Develop 分支中已集成一定量的 Feature 或预定的发布日期临近时，即可考虑发版。发版是从 Develop 分支切出一个 Release 分支，同时表示本 Release 周期已结束，并开启下一个 Release 周期。此后所有新 Feature 均不会体现在此 Release 分支上，将集成至 Develop 分支并最终切到下一个 Release 分支。
 
-release 分支上的修改仅限于缺陷修复、自动化工具生成的文档等，不允许出现新的 feature。
+Release 分支上的修改仅限于缺陷修复、自动化工具生成的文档等，不允许出现新的 Feature。
 
-对于 release 分支上的缺陷修复，应切出新的分支进行问题修复并验证，之后再合并回该 release 和 develop 分支。
+对于 Release 分支上的缺陷修复，应切出新的分支进行问题修复并验证，之后再合并回该 Release 分支和 Develop 分支。
 
-release 分支可以合并到 master 分支并打上对应 tag 。
+Release 分支可合并至 Master 分支并打上对应 Tag 。
 
-## hotfix 分支
+## Hotfix 分支
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/02/ce4125be-7826-4fd0-987b-d5db9a51c705.png)
 
-hotfix 分支用以快速修复生产上的问题。当生产线上出现问题并定位后，从对应 tag 的 master 分支切出 hotfix 分支，解决问题并验证后，hotfix 分支需合并回 master 和 develop 分支，并在 master 分支上 tag 。
+Hotfix 分支用以快速修复生产上的问题。当生产线上出现问题并定位后，从对应 Tag 的 Master 分支切出 Hotfix 分支，解决问题并验证后，Hotfix 分支需合并回 Master 分支和 Develop 分支，并在 Master 分支上打上 Tag 。
 

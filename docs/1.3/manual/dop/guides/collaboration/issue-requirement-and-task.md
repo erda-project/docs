@@ -14,11 +14,12 @@
 
 * **英文**
   As a < Role >, I want to < Activity >, so that < Business Value >.
-
+  
 * **中文**
   作为一个 < 角色 >，我想要 < 活动 >，以便于 < 商业价值 >。
-
+  
 * **示例**
+  
   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/0efb02a1-a851-4888-ae36-0e1df0f6bb51.png)
 
 进入 **DevOps 平台 > 我的项目 > 项目协同 > 需求**。
