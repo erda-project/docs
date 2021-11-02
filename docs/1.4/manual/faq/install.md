@@ -174,3 +174,44 @@ Kubernetes 的容器编排服务进行适配，敬请期待。
 
 目前出现该问题的多为 Windows 用户，因此极有可能是 Docker Compose 在 Windows 系统下的 depends-on 存在问题，具体原因仍在排查中。
 
+## 20. Ingress Controller 部署完成后访问 Erda 404，如何处理？
+
+该问题说明请求未按照 Erda 配置的 Ingress 规则访问到对应的后端服务，需要排查 ingress-controller 的日志，确认请求异常的原因。
+
+### 常见错误
+
+1. nginx-ingress-controller 常见错误 "ingress does not contain a valid IngressClass" 导致 ingress 规则不生效：
+
+Erda 当前版本并不需要关注 ingressClass，所以需要增加参数跳过，通过如下命令获取部署的 nginx-ingress-controller，可能是 daemonset 或者 deployment 方式部署。
+
+```shell
+kubectl get ds / deploy --all-namespaces | grep nginx
+```
+
+增加启动参数
+
+```shell
+ args:
+   - /nginx-ingress-controller
+   ...
+   - --watch-ingress-without-class=true # 增加该参数
+```
+
+再次访问平台即可。
+
+## 21. Erda 组件正常，首次访问提示 "请求错误" 如何处理？
+
+首先请确认 Erda 组件是否是 Running 的状态，可以通过如下命令查看，以部署在 erda-system 下为例：
+
+```shell
+kubectl get erda erda -n erda-system
+```
+
+确认 Erda 组件正常后，请确认您配置的 DNS 解析规则，以泛域名为 `erda.io`，您需要配置如下解析规则：
+
+```shell
+*.erda.io A记录解析到 LB 地址, 比如 10.0.0.1
+erda.io A记录解析到 LB 地址, 10.0.0.1
+```
+
+使用 `erda.io` 访问平台即可，以 `xxx.erda.io` 访问平台进行组织创建均会出现该问题。
