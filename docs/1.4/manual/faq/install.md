@@ -216,9 +216,9 @@ erda.io A记录解析到 LB 地址, 10.0.0.1
 
 使用 `erda.io` 访问平台即可，以 `xxx.erda.io` 访问平台进行组织创建均会出现该问题。
 
-## 20. 使用 Docker Compose 部署 erda, 安装好以后，访问服务502, 排查方式
+## 22. 使用 Docker Compose 部署 Erda，完成安装后访问服务 502 怎么办？
 
-使用 docker ps | grep openapi，拿到镜像的id, 通过镜像 id 去查看 openapi 容器的日志
+使用 docker ps | grep openapi，获取镜像 ID，通过镜像 ID 查看 OpenAPI 容器的日志。
 
-如果 openapi 有报错日志 `level=error msg="fail to run provider openapi: dial tcp xx.xx.xx.xx:6379: connect: connection refused"` ，然后一直重启，这时候可以去看下 erda-redis 这个容器是否拉起，
-redis 如果跑不起来，可以看下原因，大概率是网络导致镜像拉不下来，端口冲突，或者挂载的本地文件有问题，把 docker-compose 文件下载下来，针对 redis 修改 docker-compose yml 文件，然后 docker-compose down 和 up 对组件重启
+若 OpenAPI 有报错日志 `level=error msg="fail to run provider openapi: dial tcp xx.xx.xx.xx:6379: connect: connection refused"` ，随后持续重启，此时可查看 erda-redis 容器是否拉起。
+若 redis 无法运行，大概率为网络问题导致镜像无法拉取，端口冲突，或挂载的本地文件存在问题。下载 docker-compose 文件，针对 redis 修改 docker-compose yml 文件，随后运行 docker-compose down 和 up 重启组件。
