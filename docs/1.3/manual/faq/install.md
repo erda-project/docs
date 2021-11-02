@@ -176,7 +176,7 @@ Kubernetes 的容器编排服务进行适配，敬请期待。
 
 ## 20. Ingress Controller 部署完成后访问 Erda 404，如何处理？
 
-该问题代表请求并没有按照 Erda 配置的 Ingress 规则访问到对应的后端服务，需要排查 ingress-controller 的日志，确认请求异常的原因。
+该问题说明请求未按照 Erda 配置的 Ingress 规则访问到对应的后端服务，需要排查 ingress-controller 的日志，确认请求异常的原因。
 
 ### 常见错误
 
@@ -201,7 +201,7 @@ kubectl get ds / deploy --all-namespaces | grep nginx
 
 ## 21. Erda 组件正常，首次访问提示 "请求错误" 如何处理？
 
-首先请确认 Erda 组件是否是 Running 的状态，可以通过如下命令查看, 以部署在 erda-system 下为例：
+首先请确认 Erda 组件是否是 Running 的状态，可以通过如下命令查看，以部署在 erda-system 下为例：
 
 ```shell
 kubectl get erda erda -n erda-system
