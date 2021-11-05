@@ -6,10 +6,12 @@
 
 进入 **DevOps > 我的应用 > 选择应用 > 应用设置 > 流水线 > 变量配置 > 选择环境**。
 
-点击 **增加变量**， 选择类型为 **文件** 并开启加密，上传 settings.xml，变量名称定义为 `MAVEN_SETTING_FILE`。
+点击 **增加变量**， 选择类型为 **文件** 并开启加密，上传 settings.xml(下方有注意事项)，变量名称定义为 `MAVEN_SETTING_FILE`。
 
 ::: warning 警告
 因文件内含有密码等敏感信息，配置必须开启加密。
+
+平台为了防止 XXE 攻击，所以不允许 .xml 文件上传。xml 文件可以变更为 settings_xml 文件(linux 不区分文件类型)
 :::
 
 settings.xml 示例如下：
