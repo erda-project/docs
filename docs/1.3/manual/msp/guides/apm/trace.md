@@ -35,18 +35,3 @@ A                      --- Span4 --
 * 服务 A 发起一个 RPC 请求调用服务 B 会生成一个 Span 2，其父 Span 为 Span 1。
 * 服务 B 收到服务 A 的 RPC 请求后生成 Span 3，其父 Span 为 Span 2。 两者的开始/结束时间差即网络耗时。
 * 服务 A 收到 RPC 响应后发起 DB 调用会再生成一个 Span 4，其父 Span 为 Span 1，其兄弟 Span 为 Span 2，Span 4 与 Span 2 为平级关系。
-
-此外，使用 SDK 可在代码中获取当前链路的 requestId。
-
-```pom
-<dependency>
-  <groupId>io.terminus.erda</groupId>
-  <artifactId>monitor_sdk</artifactId>
-  <version>1.0.0</version>
-</dependency>
-```
-
-```java
-Config config = ConfigManager.getConfig();
-String requestId = config.getRequestId();
-```
