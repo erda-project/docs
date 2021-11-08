@@ -44,7 +44,7 @@ module.exports = [
         title: '场景示例',
         collapsable: true,
         children: [
-          'cmp/examples/set-labels',          
+          'cmp/examples/set-labels',
           'cmp/examples/check-env',
           'cmp/examples/check-workload',
         ]
@@ -66,7 +66,7 @@ module.exports = [
             title: '资源管理',
             collapsable: true,
             children: [
-              'cmp/guide/cluster/k8s-dashboard',              
+              'cmp/guide/cluster/k8s-dashboard',
               'cmp/guide/cluster/management',
               'cmp/guide/cluster/autoscaling',
               'cmp/guide/cluster/cluster-node-labels',
@@ -212,6 +212,7 @@ module.exports = [
               'dop/guides/qa-and-testing/unit-test',
               'dop/guides/qa-and-testing/auto-test-getting-started',
               'dop/guides/qa-and-testing/testing-in-cicd-pipeline',
+              'dop/guides/qa-and-testing/e2e-code-coverage',
               'dop/guides/qa-and-testing/function-test',
             ]
           },
