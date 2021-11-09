@@ -373,7 +373,7 @@ module.exports = [
               'msp/guides/apm/browser-monitor',
               'msp/guides/apm/browser-monitor-config',
               'msp/guides/apm/trace',
-              'msp/guides/apm/status',
+              'msp/guides/apm/checker',
               'msp/guides/apm/alert-config',
               'msp/guides/apm/alert-history',
               'msp/guides/apm/alert-index',
