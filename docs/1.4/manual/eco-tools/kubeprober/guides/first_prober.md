@@ -7,7 +7,6 @@ Prober 探测集主要包含具体的探测逻辑以及探测结果的上报，�
 如下为一个简单的 Prober 示例，其 Spec 主要包含两部分内容：Policy 和 Template。
 
 * Policy 用于定义 Prober 的运行方式，单次运行或周期运行。若未定义 Policy，则将以 Job 方式运行该 Prober；若定义了 Policy，则将以 Cronjob 的方式运行该 Prober。
-
 * Template 即 PodSpec，用于描述具体的运行负载 Pod，其探测上报逻辑以镜像的方式保存于 Pod Image 中。
 
 ```
