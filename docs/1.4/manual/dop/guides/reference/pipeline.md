@@ -294,6 +294,27 @@ Action 运行资源。
 - cpu
 - mem (单位为 MB)
 
+流水线引擎在执行的时候会根据三个维度的cpu大小来设定cpu的limits值
+
+- 设定的 CPU 核数较小
+
+
+  这时 pipeline 自动将用户设定的值乘以一个超卖比（默认超卖比为2），如果得到值仍然小于 action 本身默认的值，pipeline 会将 CPU 的值设定为 action 本身的值。
+
+
+- 设定的 CPU 核数适中
+
+
+  仍然将设定的 CPU  大小乘以超卖比，如果得到的值大于 action 默认的值且没有超过 pipeline 默认的最大 CPU 值，将以该值作为 action 执行的时候的 CPU limits 值，因为通常情况下资源的 CPU 都是空闲的。
+
+
+- 设定的 CPU 过大
+
+
+  如果请求的 CPU 资源过大，pipeline 会自动将 action 的 CPU limits 值设定为默认的最大值（目前默认最大值为2）。
+
+mem 的 limits 值不会进行超卖的处理，因为内存通常在服务器上是一种比较紧俏的资源，其大小将自动取用户设定的值与默认值中两个较小的值。
+
 ::: details YAML 示例
 
 ``` yaml
@@ -810,6 +831,26 @@ stages:
           commands:
             - echo ${{ configs.dice.org.id }}
 ```
+
+### <code v-pre>${{ base64-decode.xxx }}</code>
+
+base64 解码参数
+
+如果参数本身是一个 base64 加密过的一段内容，可以直接用base64-decode表达式将内容解码。
+
+```yaml
+version: "1.1"
+stages:
+  - stage:
+      - custom-script:
+          alias: custom-script
+          description: 运行自定义命令
+          version: "1.0"
+          commands:
+            - echo ${{ base64-decode.aGVsbG8gd29ybGQh }}
+```
+
+如果参数的值本身包含占位符，但是在执行流水线时并不想被替换掉，也可以先将内容进行 base64 加密一下，再用`base64-decode`进行解码。
 
 ### <code v-pre>${{ Globals.val }}</code>
 

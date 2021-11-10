@@ -106,7 +106,7 @@ allprojects {
 }
 ```
 
-## 推送 JAR 包到私服
+## 推送 JAR 包至私服
 
 ### 上传 maven settings.xml
 
@@ -191,13 +191,12 @@ on:
 
 ::: tip 提示
 
-maven 401 错误即账号密码错误。
-
-maven 405 错误可能为私服地址错误，部分私服地址是无法推送的，例如 public。
+* maven 401 错误即账号密码错误。
+* maven 405 错误可能为私服地址错误，部分私服地址是无法推送的，例如 public。
 
 :::
 
-## 推送 JAR 包到私服（Gradle）
+## 推送 JAR 包至私服（Gradle）
 
 ### 配置 Nexus 私服密码
 
@@ -267,25 +266,20 @@ on:
       - develop # 持续集成
 ```
 
-### 注意点
-
 ::: tip 提示
 
-maven 401 错误即账号密码错误。
-
-maven 405 错误可能为私服地址错误，部分私服地址是无法推送的，例如 public。
+* maven 401 错误即账号密码错误。
+* maven 405 错误可能为私服地址错误，部分私服地址是无法推送的，例如 public。
 
 :::
 
 ## 接入平台日志
 
-平台仅采集输出至控制台（console）的日志，因此需应用程序将日志导入控制台。
+平台仅采集输出至控制台（Console）的日志，因此需应用程序将日志导入控制台。
 
 ::: warning 警告
 请勿将日志写入磁盘文件，这可能导致性能下降或者磁盘资源耗尽等严重问题。
 :::
-
-### Logback 配置
 
 通过 Logback 配置，将日志输出至控制台：
 
@@ -303,7 +297,7 @@ maven 405 错误可能为私服地址错误，部分私服地址是无法推送�
 </configuration>
 ```
 
-若采用平台提供的运行容器，平台将自动关闭 `RollingFileAppender` 等非 `ConsoleAppender` 的 appender，以确保日志无法写入磁盘。请确保以配置 `ConsoleAppender`，否则将无法查看日志。
+若采用平台提供的运行容器，平台将自动关闭 `RollingFileAppender` 等非 `ConsoleAppender` 的 appender，以确保日志无法写入磁盘。请确保已配置 `ConsoleAppender`，否则将无法查看日志。
 
 ## 构建打包
 
@@ -367,15 +361,15 @@ stages:
 
 ### Arthas
 
-如使用平台提供的运行容器，则已安装 Arthas。其安装路径为 /arthas-boot.jar，可在根目录通过 java -jar arthas-boot.jar 启动。
+若使用平台提供的运行容器，则已安装 Arthas。其安装路径为 /arthas-boot.jar，可在根目录通过 `java -jar arthas-boot.jar` 启动。
 
-有关 Arthas 更多信息，请参见 [Arthas 用户文档](https://alibaba.github.io/arthas/)。
+关于 Arthas 更多信息，请参见 [Arthas 用户文档](https://alibaba.github.io/arthas/)。
 
 ### Greys
 
 若使用平台提供的运行容器，则已安装 Greys。
 
-有关 Greys 更多信息，请参见 [Greys 文档](https://github.com/oldmanpushcart/greys-anatomy)。
+关于 Greys 更多信息，请参见 [Greys 文档](https://github.com/oldmanpushcart/greys-anatomy)。
 
 ## 远程调试&热更新
 
@@ -383,13 +377,13 @@ stages:
 
 为开启远程调试，需进入 **DevOps > 我的应用 > 选择应用 > 应用设置 > 流水线 > 变量配置**，添加 JAVA_OPTS 变量配置如下：
 
-JDK 9 or later:
+JDK 9 及以上：
 
 ```bash
 JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
 ```
 
-JDK 5 - 8:
+JDK 5～8：
 
 ```bash
 JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
@@ -397,10 +391,10 @@ JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
 
 此外，如需使用本地 IDE 进行连接，请进入 **DevOps 平台 > 我的应用 > 选择应用 > 部署中心 > 部署总览 > 容器列表** 中找到需调试的容器 IP，在 IDE 新建 Remote 配置如下：
 
-JDK 9 or later:
+JDK 9 及以上：
 
 ![](//terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/b72accdc-3e6f-4053-bc18-a4b48e1007bd.png)
 
-JDK 5 - 8:
+JDK 5～8：
 
 ![](//terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/26/6d2cc57d-6c7e-4627-baf9-960ff9aa3c6c.png)

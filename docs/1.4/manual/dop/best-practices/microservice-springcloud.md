@@ -21,7 +21,7 @@
 
 首先创建一个微服务项目名为 bestpractice（分配 4 核 CPU 和 8 GB 内存），并创建微服务应用 echo-web 和 echo-service（应用类型为 **业务应用**，仓库选择 **使用内部仓库**）。
 
-echo-web 模拟业务聚合层，对内调用 echo-service 完成服务功能，对外通过 Erda 的 API 网关提供  Open API，其功能包括：
+echo-web 模拟业务聚合层，对内调用 echo-service 完成服务功能，对外通过 Erda 的 API 网关提供 Open API，其功能包括：
 
 * 提供 /api/content API 调用 echo-service 实现对 content 资源的增删改查。
 * 提供 /api/error API 调用 echo-service 制造异常。
@@ -118,9 +118,8 @@ ContentResponse: 参数名称 “ContentResponse”, 类型 “Object”, 其参
 
   ::: tip 提示
 
-  发布后的 API 文档默认为 **私有**，仅关联项目应用下的成员可查看。
-
-  若为企业级 Open API，可设置为 **共有**，便于组织下所有用户查看。
+  * 发布后的 API 文档默认为 **私有**，仅关联项目应用下的成员可查看。
+  * 若为企业级 Open API，可设置为 **共有**，便于组织下所有用户查看。
 
   :::
 
@@ -128,7 +127,7 @@ ContentResponse: 参数名称 “ContentResponse”, 类型 “Object”, 其参
 
 ### echo service 应用
 
-#### 基于 Spring Boot  开发框架创建应用
+#### 基于 Spring Boot 开发框架创建应用
 
 使用 IDEA 创建 Maven 项目（Java 1.8）并配置 Spring Boot 框架，目录结构如下：
 
@@ -215,7 +214,7 @@ ContentResponse: 参数名称 “ContentResponse”, 类型 “Object”, 其参
 
 ::: tip 提示
 
-pom.xml 中 build 部分使用 spring-boot-maven-plugin 构建 fat jar，并会在后继制品中作为可执行的 jar 文件使用。
+pom.xml 中 build 部分使用 spring-boot-maven-plugin 构建 Fat JAR，并会在后续制品中作为可执行的 JAR 文件使用。
 
 :::
 
@@ -305,7 +304,7 @@ git push -u erda --tags
 
 ::: tip 提示
 
-pipeline.yml 中用于替换 jar 包的名称需与 echo-service 应用 pom.xml 的 build.finalName 保持一致，用于替换 erda.yml 中的服务名需与 erda.yml 保持一致。
+pipeline.yml 中用于替换 JAR 包的名称需与 echo-service 应用 pom.xml 的 build.finalName 保持一致，用于替换 erda.yml 中的服务名需与 erda.yml 保持一致。
 
 :::
 
@@ -512,7 +511,7 @@ class Content {
 
 #### erda.yml
 
-编辑 echo-web 和 echo-service 两个应用的 erda.yml，增加 Add On 注册中心。
+编辑 echo-web 和 echo-service 两个应用的 erda.yml，增加 Addon 注册中心。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/9df5f745-1823-4efb-b41a-72c74a11e03f.png)
 
@@ -533,7 +532,6 @@ echo-service 和 echo-web 已分别完成服务的注册和发现。
 进入 **DevOps 平台 > API 管理 > API 集市**，点击 **echo 应用 API** 的 **管理** 选项。
 
 * **关联关系**：选择项目名称为 bestpractice，应用名称为 echo-web。
-
 * **版本管理**：选择服务名称为 echo-web，部署分支未 feature/echo-web，关联实例为 echo-web-xxx.svc.cluster.local:8080。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/a90828cf-21b3-4b95-a5cc-f55d8d8390dc.png)
@@ -541,7 +539,6 @@ echo-service 和 echo-web 已分别完成服务的注册和发现。
 ::: tip 提示
 
 * 应用下可包含多个服务，本示例中应用名称与服务名称均为 echo-web，仅是一种同名的情况。
-
 * 关联实例是一个 VIP 域名地址（Kubernetes Service 域名地址），由于服务可部署多个 Pod 实例，Erda 通过 Kubernetes 的 Service 实现对多个 Pod 的负载分配。
 
 :::
@@ -555,7 +552,6 @@ echo-service 和 echo-web 已分别完成服务的注册和发现。
 ::: tip 提示
 
 * **绑定域名** 需绑定已解析到 Erda 平台的公网入口 IP 方可从公网访问服务。
-
 * 若尚未创建 API 网关，请根据提示先行创建 API 网关。
 
 :::
@@ -612,7 +608,7 @@ public class ErrorController {
 
 其中注解 @RefreshScope 和 @Value 实现配置 echo.slowtime 热加载。
 
-在 erda.yml 的 Add On 部分增加配置中心：
+在 erda.yml 的 Addon 部分增加配置中心：
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/ef7d7eea-0545-406c-879b-521e48021d08.png)
 
@@ -699,4 +695,4 @@ class EchoError {
 
 更多相关信息，请参见 [服务分析](../../msp/guides/apm/service-analysis.html)。
 
-至此，您已通过一个 echo 微服务项目实践了 Erda 上的 Spring Cloud 开发。整个过程涉及到微服务组件（注册中心、配置中心）的使用、CI/CD工作流、API 设计和测试、服务异常观测等，本文中仅点到为止，详细使用请参见各平台的使用指南。
+至此，您已通过一个 echo 微服务项目实践了 Erda 上的 Spring Cloud 开发。整个过程涉及到微服务组件（注册中心、配置中心）的使用、CI/CD 工作流、API 设计和测试、服务异常观测等，本文中仅点到为止，详细使用请参见各平台的使用指南。

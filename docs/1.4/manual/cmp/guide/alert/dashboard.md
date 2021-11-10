@@ -25,31 +25,24 @@
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/10d94739-fa65-4b4f-9443-b4393a55052b.png)
 
 * **图表类型**
-
   目前大盘支持折线图、面积图等八种图表类型。此处以折线图为例。
 
 * **指标分组**
-
   平台对大量指标进行了分组，您可以直接选择合适的指标或输入文字搜索。此处以项目资源下的实例资源为例。
 
 * **维度**
-
   可理解为分组，类似于 SQL 中的 `GROUP BY`，对于监控指标一般选择时间和容器 ID。
 
 * **值**
-
   具体指标并配置聚合方法，类似于 SQL中 的 `SELECT avg(cpu_usage_percent)`。此处以 CPU 使用率的平均值为例。
 
 * **结果排序**
-
-   类似于 SQL 中的 `ORDER BY`。
+  类似于 SQL 中的 `ORDER BY`。
 
 * **结果截取**
-
   类似于 SQL 中的 `LIMIT`。
 
 * **固定图表时间范围**
-
   指定后图表的时间范围为固定，不会随整体时间范围变化而变化，一般不作指定。
 
 完成配置后，得到图表如下：
@@ -73,4 +66,3 @@
 您可以调整时间范围，查看任意时间段的数据。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/ddc92183-dfb9-4348-be93-fcc71d88ef7e.png)
-

@@ -151,9 +151,9 @@ Erda 组件高可用分类调度部署的主要目标是实现如下调度结果
    helm install erda erda/erda --set global.domain="erda.io",global.size="prod",erda.clusterName="local-cluster",elasticsearch.StorageClassName="sc1",cacassandra.StorageClassName="sc2",kafka.StorageClassName="sc3" -n erda-system --create-namespace
    ```
 
-### 通过 RAID0 或 LVM 配置底层存储
+### 通过 RAID 0 或 LVM 配置底层存储
 
-将底层多个物理磁盘构建为单个逻辑设备（RAID0 或者 LVM），通过逻辑设备的条带化功能提升 IO 带宽/性能，减少 IO 竞争。
+将底层多个物理磁盘构建为单个逻辑设备（RAID 0 或者 LVM），通过逻辑设备的条带化功能提升 IO 带宽/性能，减少 IO 竞争。
 
 
 ### 使用高性能存储
