@@ -23,7 +23,7 @@
 若需求为：
 
 - 仅允许 10.1.0.0/16 来源的内网 IP 访问。
-- 请求链路上将经过其他七层负载均衡设备 ，无法直接使用对端 IP ，需根据请求头中的 [`X-Forwarded-For`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-For) 获取真实 IP。
+- 请求链路上将经过其他七层负载均衡设备，无法直接使用对端 IP，需根据请求头中的 [`X-Forwarded-For`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-For) 获取真实 IP。
 
 则配置示意如下：
 
@@ -34,7 +34,6 @@
 若需求为：
 
 * 限制每个 IP 访问时最多建立 20 条并发连接。
-
 * 每个 IP 的请求速率不超过 100 次/秒。
 
 则配置示意如下：
