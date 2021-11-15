@@ -4,18 +4,18 @@
 
 具体操作路径如下：
 
-- 全局策略：进入 **微服务治理平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情 > 全局策略 > 业务策略 > 自定义 nginx 配置**。
-- 具体 API 策略：进入 **微服务治理平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情** 后选择对应的 API，点击 **策略 > 业务策略 > 自定义 nginx 配置**。
+- 全局策略：进入 **微服务治理平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情 > 全局策略 > 业务策略 > 自定义 Nginx 配置**。
+- 具体 API 策略：进入 **微服务治理平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情** 后选择对应的 API，点击 **策略 > 业务策略 > 自定义 Nginx 配置**。
 
-## 自定义 nginx 配置是什么
+## 自定义 Nginx 配置是什么
 
-此处配置的 nginx 原生配置片段，将转化为 API 对应的 nginx location 区块内的配置。
+此处配置的 Nginx 原生配置片段，将转化为 API 对应的 Nginx Location 区块内的配置。
 
-配置需严格按照 nginx 的语法操作（例如每行结束有 `;`），且无法配置 `location / {}` 字样的路由块，仅支持 `context` 中包含 `location` 的指令配置。
+配置需严格按照 Nginx 的语法操作（例如每行结束有 `;`），且无法配置 `location / {}` 字样的路由块，仅支持 `context` 中包含 `location` 的指令配置。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/12/43f380df-2961-4ba6-a8e3-a32c5c893bd3.png)
 
-更多 nginx 配置项信息，请参见 [Nginx 配置指令列表](https://nginx.org/en/docs/dirindex.html)。
+更多 Nginx 配置项信息，请参见 [Nginx 配置指令列表](https://nginx.org/en/docs/dirindex.html)。
 
 ## 配置示例
 
