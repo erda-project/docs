@@ -2,7 +2,7 @@
 
 ## erda.yml 配置
 
-您可以通过 `erda.yml` 配置削峰填谷的限流，具体请参见 [使用 erda.yml 管理配置](./config.md)。
+您可以通过 erda.yml 配置削峰填谷的限流，具体请参见 [使用 erda.yml 管理配置](./config.md)。
 
 ```yaml
       policies:
@@ -17,7 +17,7 @@
           deny_content: "server is busy"
 ```
 
-各配置字段的详细说明，请参见 [服务负载保护](../../guides/apigw/policy.md#服务负载保护)
+各配置字段的详细说明，请参见 [服务负载保护](../../guides/apigw/policy.md#服务负载保护)。
 
 ## 流量入口 API 策略设置
 
@@ -30,7 +30,7 @@
 
 ::: tip 提示
 
-如果您已通过 `erda.yml` 完成了配置，前者将覆盖此处配置。
+如果您已通过 erda.yml 完成了配置，前者将覆盖此处配置。
 
 :::
 
@@ -40,7 +40,7 @@
 
 - 限制流量入口下所有 API 的最大接收请求速率为 100 次/秒。
 - 当超过 100 次/秒时，通过增加延迟的方式对请求进行削峰填谷，且延迟不超过 500 毫秒。
-- 如削峰填谷后仍超过 100 次/秒，则超出部分的请求返回 429 状态码，HTTP 应答体设置为 “System is busy, please try it later.”。
+- 若削峰填谷后仍超过 100 次/秒，则超出部分的请求返回 429 状态码，HTTP 应答体设置为 “System is busy, please try it later.”。
 
 则配置示意如下：
 
