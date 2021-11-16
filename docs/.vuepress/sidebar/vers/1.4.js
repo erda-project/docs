@@ -147,6 +147,7 @@ module.exports = [
               'dop/guides/collaboration/statistics',
               'dop/guides/collaboration/label',
               'dop/guides/collaboration/notification',
+              'dop/guides/collaboration/issue-dashboard',
             ]
           },
           {
