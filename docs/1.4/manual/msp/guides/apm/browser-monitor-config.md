@@ -1,6 +1,6 @@
-# 浏览器监控接入
+# 前端监控接入
 
-## SPA（Single Page Application）
+## SPA (Single Page Application)
 
 1. 在框架页（通常为 index.html）的 `head` 中添加 TA.js 的激活代码。
 
@@ -50,7 +50,7 @@
        private String terminusKey;
    }
    ```
-2. 添加 `Controller` 返回 TA.js 的配置
+2. 添加 `Controller` 返回 TA.js 的配置。
 
    ```java
    @Slf4j
