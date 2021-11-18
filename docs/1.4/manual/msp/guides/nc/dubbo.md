@@ -14,16 +14,16 @@
   2. 进入 `nacos/bin` 目录，启动 Nacos Server。
 
 :::tip 提示
-Linux/Unix/Mac 系统：sh startup.sh -m standalone
+* Linux/Unix/Mac 系统：sh startup.sh -m standalone
+* Windows 系统：双击文件 startup.cmd
 
-Windows 系统：双击文件 startup.cmd
 :::
 
 ### 创建服务提供者
 
-1. 创建命名为 spring-boot-dubbo-provider 的 Maven 工程。
+1. 创建名为 spring-boot-dubbo-provider 的 Maven 工程。
 
-2. 在 `pom.xml` 文件中添加依赖，此处以 Spring Boot 2.1.6.RELEASE 为例。
+2. 在 pom.xml 文件中添加依赖，此处以 Spring Boot 2.1.6.RELEASE 为例。
 
    ```xml
        <dependencyManagement>
@@ -55,7 +55,7 @@ Windows 系统：双击文件 startup.cmd
 
    * 在 `src/main/java` 路径下创建 `package: io.terminus.erda.trial.demo.hellodubbo`。
 
-   * 在 `io.terminus.erda.trial.demo.hellodubbo` 下创建一个接口（interface） EchoService，其中包含一个 echo 方法。
+   * 在 `io.terminus.erda.trial.demo.hellodubbo` 下创建一个接口（interface）EchoService，其中包含一个 echo 方法。
 
      ```java
      package io.terminus.erda.trial.demo.hellodubbo;
@@ -69,43 +69,43 @@ Windows 系统：双击文件 startup.cmd
 
      ```java
      package io.terminus.erda.trial.demo.hellodubbo;
-
+     
      import org.apache.dubbo.config.annotation.Service;;
 
 
      import java.util.concurrent.TimeUnit;
-
+    
      @Service
      public class EchoServiceImpl implements EchoService {
-
+    
          public String echo(String name) {
              long start = System.currentTimeMillis();
-
+    
              try {
                  TimeUnit.SECONDS.sleep(1);
              } catch (InterruptedException e) {
              }
-
+    
              long end = System.currentTimeMillis();
              return "\r\n\t" + start + " Provider received." +
                      "\r\n\t\tProvider processed after sleep 1 second! Echo String: \"" + name + "\"" +
                      "\r\n\t" + end + " Provider Return";
-
+    
          }
      }
      ```
-
+    
      :::tip 提示
-
+    
      此处的 Service 注解是 Dubbo 提供的一个注解类，类的全名称为 org.apache.dubbo.config.annotation.Service。
-
+    
      :::
 
 4. 配置 Dubbo 服务。
 
-   * 在 `src/main/resources` 路径下创建 `application.properties` 或 `application.yaml` 文件并打开。
+   * 在 `src/main/resources` 路径下创建 application.properties 或 application.yml 文件并打开。
 
-   * 在 `application.properties` 或 `application.yaml` 中添加如下配置：
+   * 在 application.properties 或 application.yml 中添加如下配置：
 
      ```yaml
      spring:
@@ -122,10 +122,10 @@ Windows 系统：双击文件 startup.cmd
      ```
 
      :::tip 提示
-
+   
      - 以上配置无默认值，必须提供具体配置。
      - `dubbo.registry.address` 的值前缀必须以 `nacos://` 开头，其后 IP 地址和端口为 Nacos Server 地址。代码示例中为本地地址，若将 Nacos Server 部署在其它机器上，请修改为实际的 IP 地址。
-     - `dubbo.scan.base-packages` 的值需在代码中暴露外部调用，由多个带 `@Service` 注解的类所在的包时用逗号分隔。
+     - `dubbo.scan.base-packages` 的值需在代码中暴露外部调用，有多个带 `@Service` 注解的类所在的包时用逗号分隔。
 
      :::
 
@@ -150,9 +150,9 @@ Windows 系统：双击文件 startup.cmd
 
 ### 创建服务消费者
 
-1. 创建命名为 spring-boot-dubbo-consumer 的 Maven 工程。
+1. 创建名为 spring-boot-dubbo-consumer 的 Maven 工程。
 
-2. 在 `pom.xml` 文件中添加依赖，此处以 Spring Boot 2.1.6.RELEASE 为例。
+2. 在 pom.xml 文件中添加依赖，此处以 Spring Boot 2.1.6.RELEASE 为例。
 
    ```xml
        <dependencyManagement>
@@ -166,7 +166,7 @@ Windows 系统：双击文件 startup.cmd
                </dependency>
            </dependencies>
        </dependencyManagement>
-
+   
        <dependencies>
            <dependency>
                <groupId>org.springframework.boot</groupId>
@@ -199,23 +199,23 @@ Windows 系统：双击文件 startup.cmd
 
      ```java
      package io.terminus.erda.trial.demo.hellodubbo;
-
+      
      import org.apache.dubbo.config.annotation.Reference;
      import org.springframework.web.bind.annotation.PathVariable;
      import org.springframework.web.bind.annotation.RequestMapping;
      import org.springframework.web.bind.annotation.RequestMethod;
      import org.springframework.web.bind.annotation.RestController;
-
+      
      @RestController
      public class DemoConsumerController {
          @Reference
          private EchoService demoService;
-
+      
          @RequestMapping(value = "/ping", method = RequestMethod.GET)
          public Boolean ping() {
              try {
                  String pong = demoService.echo("ping");
-
+      
                  System.out.println("Service returned: " + pong);
                  return pong.contains("ping");
              } catch (Throwable t) {
@@ -226,9 +226,9 @@ Windows 系统：双击文件 startup.cmd
          @RequestMapping(value = "/consumer-echo/{str}", method = RequestMethod.GET)
          public String feign1(@PathVariable String str) {
              long start = System.currentTimeMillis();
-
+      
              String result = demoService.echo(str);
-
+      
              long end = System.currentTimeMillis();
              return "" + start + " Consumer received." +
                      "\t" + result +
@@ -243,7 +243,7 @@ Windows 系统：双击文件 startup.cmd
 
      :::
 
-4. 在 `application.properties` 或 `application.yaml` 配置文件中新增以下配置：
+4. 在 application.properties 或 application.yml 配置文件中新增以下配置：
 
    ```yaml
    spring:
@@ -257,7 +257,6 @@ Windows 系统：双击文件 startup.cmd
    :::tip 提示
 
    * 以上配置无默认值，必须提供具体配置。
-
    * `dubbo.registry.address` 的值前缀必须以 `nacos://` 开头，其后 IP 地址和端口为 Nacos Server 地址。代码示例中为本地地址，若将 Nacos Server 部署在其它机器上，请修改为实际的 IP 地址。
 
    :::
@@ -290,7 +289,7 @@ true
 
 ## 部署应用至 Erda
 
-部署应用至 Erda 时，需注意 Erda 将注入以下 `application.yml` 中的变量：
+部署应用至 Erda 时，需注意 Erda 将注入以下 application.yml 中的变量：
 
 ```yaml
 spring:
@@ -317,7 +316,7 @@ dubbo:
 ```
 
 
-修改 `erda.yml`，添加注册中心 v2.0 的依赖。
+修改 erda.yml，添加注册中心 v2.0 的依赖。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/9adda3d8-fde7-4ae7-b483-f148323dae48.png)
 
