@@ -10,9 +10,9 @@ Erda 支持在部署详情中为当前应用的指定服务直接绑定域名。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/20/8914df26-aeb7-4999-95c7-0808e658be81.png)
 
-## 第一步：通过 yaml 配置文件为应用添加 API 网关扩展服务
+## 第一步：通过 YAML 配置文件为应用添加 API 网关扩展服务
 
-yaml 配置文件中的 addons 配置，即是为该应用添加 API 网关扩展服务。
+YAML 配置文件中的 Addons 配置，即为该应用添加 API 网关扩展服务。
 
 ```yaml
 version: 2
@@ -49,5 +49,5 @@ addons:
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/20/af7399cd-9dd8-485f-92a7-8518ee597dcd.png)
 
-绑定域名已生成对应流量入口。点击 **详情** 后即可对域名 *www.erda.cloud* 和 *about.erda.cloud* 进行流量管理。
+绑定域名已生成对应的流量入口。点击 **详情** 后即可对域名 *www.erda.cloud* 和 *about.erda.cloud* 进行流量管理。
 

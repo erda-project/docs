@@ -2,7 +2,7 @@
 
 ## erda.yml 配置
 
-您可以通过 `erda.yml` 配置跨域访问限制，具体请参见 [使用 erda.yml 管理配置](./config.md)。
+您可以通过 erda.yml 配置跨域访问限制，具体请参见 [使用 erda.yml 管理配置](./config.md)。
 
 ```yaml
 policies:
@@ -25,12 +25,12 @@ cors:
 
 具体操作路径如下：
 
-- 全局策略：进入 **微服务治理平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情 > 全局策略 > 业务策略 > 跨域访问**。
-- 具体 API 策略：进入 **微服务治理平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情** 后选择对应的 API，点击 **策略 > 业务策略 > 跨域访问**。
+- 全局策略：进入 **微服务平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情 > 全局策略 > 业务策略 > 跨域访问**。
+- 具体 API 策略：进入 **微服务平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情** 后选择对应的 API，点击 **策略 > 业务策略 > 跨域访问**。
 
 ::: tip 提示
 
-如果您已通过 `erda.yml` 完成了配置，前者将覆盖此处配置。
+如果您已通过 erda.yml 完成了配置，前者将覆盖此处配置。
 
 :::
 
@@ -45,7 +45,7 @@ cors:
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/17/736f1b9e-1d6d-41a1-9d88-69d69fa8958b.png)
 
-若使用 `erda.yml` 配置，则配置信息如下：
+若使用 erda.yml 配置，则配置信息如下：
 
 ```yaml
 policies:
@@ -58,17 +58,17 @@ policies:
 
 ### 示例二
 
-若需求为仅允许域名符合 \*_.example.com_ 的站点访问，可调用任意方法，可携带 Cookie，则需先关闭跨域访问策略，再通过 [自定义 nginx 配置](../../guides/apigw/policy.md#自定义-nginx-配置) 实现。
+若需求为仅允许域名符合 \*_.example.com_ 的站点访问，可调用任意方法，可携带 Cookie，则需先关闭跨域访问策略，再通过 [自定义 Nginx 配置](../../guides/apigw/policy.md#自定义-nginx-配置) 实现。
 
 1. 关闭跨域访问策略。
 
    ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/17/69e128ce-ce19-400c-90d7-a32ea27d5b75.png)
 
-2. 开启 nginx 自定义配置.
+2. 开启 Nginx 自定义配置。
 
    ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/17/42c11947-3d3f-4a44-8b0e-f67a123e115a.png)
 
-3. nginx 配置示意如下：
+3. Nginx 配置示意如下：
 
    ```bash
    set $methodandorigin $request_method$http_origin;

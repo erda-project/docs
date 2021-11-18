@@ -1,6 +1,6 @@
 # 使用 erda.yml 管理配置
 
-通过 `erda.yml` 为服务指定 `endpoints` 即可实现微服务网关功能，将一个域名的不同路径转发给相同项目和环境下的不同服务。
+通过 erda.yml 为服务指定 Endpoints 即可实现微服务网关功能，将一个域名的不同路径转发给相同项目和环境下的不同服务。
 
 具体示例如下：
 
@@ -35,28 +35,22 @@ services:
       backend_path: /api
 ```
 
-`endpoints` 由以下属性组成：
+Endpoints 由以下属性组成：
 
 * **domain**（必填）：
-
   域名，可填写完整域名，也可仅填写最后一级域名（平台会基于集群泛域名自动补全）。
 
 * **path**（选填）：
-
   域名路径，域名下基于 URL 前缀匹配到当前路径的请求都将转发给该服务，未填写时默认为 `/`。URL 前缀会根据路径长度匹配，路径精确度越高，则优先级越高。
 
 * **backend_path**（选填）：
-
   转发给服务的路径，可理解为将 `path` 部分匹配到的 URL 路径抹除后，剩余部分拼接在 `backend_path` 上转发给服务，未填写时默认和 `path` 一致。
 
 * **policies**（选填）：
-
   当前支持跨域策略和限流策略。
 
   * 跨域策略：关于跨域相关信息，请参见 [跨域资源共享](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)。
-
     以允许跨域应答头 `Access-Control-Allow-Origin` 为例，`allow_origins ` 配置的值将作为这个应答头的值。当值为 `any` 时，则直接获取请求头的 `Orgin` 字段作为值。
-
     `Access-Control-Allow-Methods`、`Access-Control-Allow-Headers` 等同理。
 
     ```yaml
