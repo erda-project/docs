@@ -11,7 +11,6 @@
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/d3277e55-a36d-4369-8133-a282be4cb9d9.png)
 
 * **Trace**：一次调用的完整记录，由多个 Span 组成。
-
 * **Span**：一次调用中的某个节点或步骤，类似于一层堆栈信息。Span 之间存在父子或并列关系以表明 Span 在整个调用中的生命周期。
 
   :::tip 提示
