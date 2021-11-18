@@ -1,6 +1,5 @@
-# 运维大盘
+# 仪表盘
 
-## 背景
 在可配置大盘还没诞生时，每个需要展示数据的页面都需要定制化开发，但需求经常会变化，但这样就带来了沟通的成本与时间的损耗，显而易见这样的方式并不灵活，想要随时定制图表的话就无法满足了。
 
 在此之前创建可视化图表/大盘的时候，可能会有以下几个问题：
@@ -20,36 +19,39 @@
 * 解决沟通准确性与时间成本问题，拥有了自身的选择权。
 * 复杂查询亦可通过表达式解决，无需定制。
 
-## 前言
-有一定SQL基础可以帮您更快上手。
+:::tip 提示
 
-## 引导
+具备 SQL 基础可帮助您快速上手。
+
+:::
+
+## 操作
 运维大盘是大盘系统的一部分，也称为仪表盘，可以为运维人员与开发人员快速搭配出大盘以监控各种资源的实时情况以供排查分析使用。
 
-### 1.进入运维大盘
+### 进入仪表盘
 
-进入 **微服务治理平台 > 项目列表 > 选择项目 > 查询分析 > 仪表盘**。
+进入 **微服务平台 > 项目列表 > 选择项目 > 查询分析 > 仪表盘**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/0ac6dc12-8795-4a1c-9522-a134ec8dc3b4.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/bd483be6-8232-407e-ace5-9440c0288f94.png)
 
-### 2.进入大盘编辑器页面
-点击新建运维大盘，进入编辑模式，点击右上+号，选择[图表类型](#图表类型)为柱状图。
+### 编辑仪表盘
+点击新建运维大盘，进入编辑模式，点击右上 **+** 号，选择 [图表类型](#图表类型) 为柱状图。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/a827f423-4d79-4216-a6c5-745b9027500b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/be026bcd-9e03-4304-9dc4-285e1a083f41.png)
 
-### 3.进入图表编辑器页面
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/c159cb48-3435-4971-84ec-09db89d71eed.png)
+### 编辑图表
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/bca7731c-4fc9-4352-9dcf-8ab3e222ec89.png)
 
-左侧通用项目可以输入图表的名称，简介等。
+左侧通用项目可以输入图表的名称、简介等。
 
-### 4.数据源配置
+### 配置数据源
 
-#### 指标分组(FROM)
+#### 指标分组（FROM）
 指标的数据源,也就是指标的类别，分为多级指标，一级指标是指标类别概览，二级指标是对一级指标的二次处理或细分，如慢HTTP请求。 选择HTTP请求-所有HTTP请求。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/baa7e22f-26c9-4b80-ba5b-0bce90a915a3.png)
 
-#### 维度(GROUP BY)
+#### 维度（GROUP BY）
 依据选定条件或者字段分组,选择1小时为间隔代表聚合每个小时的数据，便于分析，也可选择时间格式，即时间栏和数据详情的时间格式选择添加指标-时间，点击添加好的标签下的时间配置进入，如图所示：
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/af84b498-0a38-489e-819e-b6746d5ac862.png)
@@ -58,7 +60,7 @@
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/a38ff092-8628-4aa4-9888-155f8137878a.png)
 
-#### 值(SELECT)
+#### 值（SELECT）
 指标下的数据，也就是字段，可多选，添加请求次数与请求耗时平均值。添加后点击生成的标签，可对字段进行聚合操作，或设置别名。具体请参见 [应用指标 ](#应用指标)。
 
 :::tip 提示
@@ -66,56 +68,46 @@
 如果您不确定多个值是否为一种单位，建议一个图表一个值，单位不一致可能会导致图表无法正常显示。
 
 :::
-
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/f4c091b5-f65b-42b4-b167-cb776db10326.png)
 
-#### 结果筛选器(WHERE)
+#### 结果筛选器（WHERE）
 可对字段进行条件过滤，包含常用的比较运算符，也可选择自定义函数表达式。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/4f9b8c10-1ffc-4415-8396-eede2bfe5528.png)
 
-#### 结果排序(ORDER BY)
+#### 结果排序（ORDER BY）
 
 对查询的字段进行排序，如果查询的字段为聚合方式，那排序的字段也要选择对应的聚合方式。
-
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/7b61fef0-55d2-492f-9097-a5308340770f.png)
 
-#### 结果截取(LIMIT)
+#### 结果截取（LIMIT）
 截取查询结果的数据条数，如果查询带有排序则按排序顺序截取,若不填则显示所有查询结果。
 
 #### 固定图表时间范围
 限定数据产生的时间范围，不受全局时间范围自定义配置影响。
-
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/a1726c7e-931b-44d8-be8c-14e859bf7d53.png)
-
 如需自定义时间范围，可不填，由大盘全局时间范围控制，也就是如下全局时间范围自定义配置。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/3456aca0-01f5-4b15-b744-e4f37573802b.png)
 
-### 5.保存与调整
+### 保存与调整
 右下角确认保存返回大盘编辑器，查看大盘预览，鼠标悬浮到柱状图上，可以显示详细信息：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/7db380cc-6d9b-4640-9f8c-a59d0d046d6e.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/5f9fb0f5-981c-45fa-ad99-2320e0a07026.png)
 
 点击标题可查看更多图表操作，点击导出图片即可生成报表图片以便分享与沟通，亦可全屏查看实现盯盘效果。
 
 如需调整图表大小与形状，还可选取右上角拖拽与拉伸图表。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/b9b99284-db67-4863-9efd-0047af1d5ef6.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/510aff12-0a8a-44df-97f4-9abb720a389f.png)
 
 输入大盘名称和描述后，点击保存，即可保存，随时查看。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/511a6105-ae21-402b-bbdf-f2eec0a54d5c.png)
-
-### 面板
+### 查看面板
 
 系统提供了一些内置面板，如服务分析-事务分析下的图表。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/1b5561be-4b96-4319-8897-1472ec4a389e.png)
-
-拖拽与拉伸时间轴可即时调整当前图表展示的时间范围与数据粒度。
-
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/769bbca0-436c-4fcc-a686-178d643a48f4.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/c0945407-8f70-4b3f-8d2f-072b0097334a.png)
 
 其使用方法也是类似的，若想对某一图表操作，只需点开图表右上方。
 
@@ -193,7 +185,6 @@
 
 * 表格<br>
 • 可用自定义表达式配置，满足更多复杂查询。
-
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/3be51d68-9678-4b7e-952d-1b67d3c26b4e.png)
 
 ### 聚合方式
@@ -244,6 +235,7 @@
 #### 计数值
 统计数据本身的条数，一条数据代表一次统计量，可以用这种聚合。
 比如：
+
 * 一条数据代表一次告警信息，那么用计数值来统计总数量。
 * 一条数据代表一次用户的操作，也可以用计数值。
 
@@ -259,7 +251,7 @@
 * 每个容器都有多条数据，每个容器都有唯一的ID，可以统计不同容器ID的数量，即容器ID去重复后的数量，来代表容器的数据。
 * 类似的，根据用户ID，统计不同用户ID的数量，代表用户数。
 
-### (进阶)表达式
+### 表达式
 配置表达式是在表单配置无法满足的情况下，退而求其次的一种方式。<br>
 配置表达式意味着需要对数据的字段和类型有一定的了解。
 
@@ -292,7 +284,7 @@ LIMIT 100;
 
 表达式支持基本的四则运算，支持一些内置的处理函数。
 
-### 图表中的表达式配置
+### 表达式配置
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/e1378d3a-63b9-4686-904a-360ae2510d71.png)![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/8e5df1e4-4715-433f-a6c1-23ed7e4d2c19.png)
 #### 过滤表达式
 字符串类型的字段支持：

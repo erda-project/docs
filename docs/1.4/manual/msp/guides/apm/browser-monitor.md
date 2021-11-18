@@ -1,13 +1,13 @@
-# 浏览器监控
+# 前端监控
 
-进入 **微服务治理平台 > 项目列表 > 选择项目 > 应用监控 > 前端监控**，可查看浏览器监控的整体情况。平台默认展示一小时内的变化数据，您可点击时间选框自定义时间段。
+进入 **微服务平台 > 项目列表 > 选择项目 > 应用监控 > 前端监控**，可查看前端监控的整体情况。平台默认展示一小时内的变化数据，您可点击时间选框自定义时间段。
 
 
 ## 总览
 
-总览页展示浏览器的性能概况。
+总览页展示前端的性能概况。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/43554357-a91a-48e0-9525-98959c90d189.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/6865d2a4-ff7d-4f93-bf7c-4b54b97f27ed.png)
 
 ## 访问域名
 
@@ -15,7 +15,7 @@
 
 访问域名页即根据应用的域名维度区分性能数据，包括加载性能趋势、响应时间趋势、吞吐量与慢加载等。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/5d02c6c6-d56c-4931-92bc-9f08835707f8.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/7697d5e9-a5ea-4921-876f-8dea184cfd0e.png)
 
 * **白屏时间**：从准备加载页面到浏览器开始显示内容的时间。
 * **首屏时间**：指用户看到第一屏（即整个网页顶部大小为当前窗口的区域）显示完整的时间。
@@ -28,13 +28,13 @@
 
 在左侧选择对应访问请求后，可查看该请求的性能趋势等信息。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/3416685e-98ef-4098-8b3e-68e503516bd1.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/368a97c9-77cc-4b37-bb8b-2d44d9e83b3a.png)
 
 ## 定位分析
 
 定位分析页提供用户体验 Apdex、整页加载完成、白屏时间等多维度的数据对比，同时提供操作系统、设备、浏览器等多维度的数据统计，用于多方位的浏览性能分析。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/4193b621-6d57-4ee6-b387-821e7d9db3a4.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/122b7398-b918-4575-af1c-8f41fdc94a1a.png)
 
 * **用户体验 Apdex**：Apdex 是用户对应用性能满意度的量化值。
 * **整页加载完成**：Page Load Time，指页面完成整个加载过程的时间。
@@ -50,13 +50,13 @@ Ajax 接口页从 Ajax 维度，展示每条 Ajax 请求的平均响应时间、
 
 在左侧选择对应 Ajax 请求后，可查看该请求的性能趋势等信息。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/608c175b-6be8-467b-ab01-12b1cb981aa4.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/739422b8-bdf3-4ecf-abd9-2e3a7f5477ca.png)
 
 ## 脚本错误
 
 脚本错误页从多维度展示 JavaScript 执行过程中的错误信息。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/0acca38c-ee2f-4875-82c7-eed55e29fc49.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/d785c045-9cfb-4e6e-9a09-7f202a851c24.png)
 
 * **错误信息**：具体的错误信息，在左侧选择对应错误信息后，可查看该错误信息的详情。
 * **出错页面**：错误产生的请求页面。
@@ -65,7 +65,7 @@ Ajax 接口页从 Ajax 维度，展示每条 Ajax 请求的平均响应时间、
 
 浏览器性能页展示不同浏览器的性能指标，指标类型与 Ajax 接口相似。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/800c67f1-f42e-4b0c-9c17-d3da1abff93c.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/4a09ced7-1721-4796-a3c3-b2368d2361f5.png)
 
 ## 摘要
 
@@ -73,7 +73,7 @@ Ajax 接口页从 Ajax 维度，展示每条 Ajax 请求的平均响应时间、
 
 在左侧选择对应维度信息后，可查看该维度信息的页面请求过程详情。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/b65ab53f-951e-493b-9130-0c6c5e7e1ada.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/d0b2aa35-6ab5-4eec-aeb1-949be19206af.png)
 
 ## 地理
 
@@ -81,4 +81,4 @@ Ajax 接口页从 Ajax 维度，展示每条 Ajax 请求的平均响应时间、
 
 在左侧选择对应地理信息，可查看该地区的具体访问性能指标。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/0622965c-c707-48cb-9bba-d90b0191f87e.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/110248ae-15b0-4780-aa4e-3652a58a8cbe.png)

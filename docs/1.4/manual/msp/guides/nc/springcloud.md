@@ -13,18 +13,18 @@
   2. 进入 `nacos/bin` 目录，启动 Nacos Server。
 
 :::tip 提示
-Linux/Unix/Mac 系统：sh startup.sh -m standalone
+* Linux/Unix/Mac 系统：sh startup.sh -m standalone
+* Windows 系统：双击运行 startup.cmd
 
-Windows 系统：双击运行 startup.cmd
 :::
 
 
 ### 创建服务提供者
 在本地创建服务提供者应用工程，添加依赖，开启服务注册与发现功能，并将注册中心指定为 Nacos Server。
 
-1. 创建命名为 nacos-service-provider 的 Maven 工程。
+1. 创建名为 nacos-service-provider 的 Maven 工程。
 
-2. 在 `pom.xml` 文件中添加依赖，此处以 Spring Boot 2.1.4.RELEASE 和 Spring Cloud Greenwich.SR1 为例：
+2. 在 pom.xml 文件中添加依赖，此处以 Spring Boot 2.1.4.RELEASE 和 Spring Cloud Greenwich.SR1 为例：
 
    ```xml
        <parent>
@@ -33,7 +33,7 @@ Windows 系统：双击运行 startup.cmd
            <version>2.1.4.RELEASE</version>
            <relativePath/>
        </parent>
-
+   
        <dependencies>
            <dependency>
                <groupId>com.alibaba.cloud</groupId>
@@ -45,7 +45,7 @@ Windows 系统：双击运行 startup.cmd
                <artifactId>spring-boot-starter-web</artifactId>
            </dependency>
        </dependencies>
-
+   
        <dependencyManagement>
            <dependencies>
                <dependency>
@@ -144,9 +144,9 @@ Windows 系统：双击运行 startup.cmd
   8. 在左侧导航栏选择 **服务管理 > 服务列表**，列表中已包含 service-provider，且可在详情中查看具体信息。
 
 ### 创建服务消费者
-1. 创建命名为 nacos-service-consumer 的 Maven 工程。
+1. 创建名为 nacos-service-consumer 的 Maven 工程。
 
-2. 在 `pom.xml` 中添加依赖。
+2. 在 pom.xml 中添加依赖。
 
    ```xml
        <parent>
@@ -155,7 +155,7 @@ Windows 系统：双击运行 startup.cmd
            <version>2.1.4.RELEASE</version>
            <relativePath/>
        </parent>
-
+   
        <dependencies>
            <dependency>
                <groupId>com.alibaba.cloud</groupId>
@@ -171,7 +171,7 @@ Windows 系统：双击运行 startup.cmd
                <artifactId>spring-cloud-starter-openfeign</artifactId>
            </dependency>
        </dependencies>
-
+   
        <dependencyManagement>
            <dependencies>
                <dependency>
@@ -284,7 +284,7 @@ Windows 系统：双击运行 startup.cmd
 
    }
 
-6. 在 `src/main/resources` 路径下创建文件 `application.yml`，并添加如下配置，指定 Nacos Server 的地址。
+6. 在 `src/main/resources` 路径下创建文件 application.yml，并添加如下配置，指定 Nacos Server 的地址。
 
    ```yaml
    spring:
@@ -345,7 +345,7 @@ spring:
         namespace: ${NACOS_TENANT_ID:}
 ```
 
-修改 `erda.yml`，添加注册中心 v2.0 的依赖。
+修改 erda.yml，添加注册中心 v2.0 的依赖。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/9adda3d8-fde7-4ae7-b483-f148323dae48.png)
 
