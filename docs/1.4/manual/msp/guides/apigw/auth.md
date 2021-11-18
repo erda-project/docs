@@ -149,7 +149,7 @@ Authorization: hmac appkey="wsK8t77fvAAs3i7878NSkC0j95ib3oVu", algorithm="hmac-s
   signature=base64(<signed_string>)
   ```
 
-  若 App Secret 为 `qdWre3pJxitNm9NOBRH3EpWeVYepnt3f`，可得到签名值为 `FiPTWoayUGvlaAk6HbnxEzlXo0JO2HhiDGEwsR4yKPo=`
+  若 App Secret 为 `qdWre3pJxitNm9NOBRH3EpWeVYepnt3f`，可得到签名值为 `FiPTWoayUGvlaAk6HbnxEzlXo0JO2HhiDGEwsR4yKPo=`。
 
   使用 Unix 命令生成签名：
 
@@ -262,7 +262,7 @@ f97efc239eef4eafe69bfe41438740199d939e2e123c4c5a6b5d0b5e58d295a2818d6444c5c7b9e5
 
 1. Content-Type 为 `application/x-www-form-urlencoded`
 
-   此时与 URL 参数签名的方式一致，只是将参数放至 Body 里面。
+   此时与 URL 参数签名的方式一致，仅需将参数放至 Body 里面。
 
    请求限制：
 
