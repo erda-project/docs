@@ -216,6 +216,7 @@ module.exports = [
               'dop/guides/qa-and-testing/testing-in-cicd-pipeline',
               'dop/guides/qa-and-testing/e2e-code-coverage',
               'dop/guides/qa-and-testing/function-test',
+              'dop/guides/qa-and-testing/project-test-report',
             ]
           },
           {
