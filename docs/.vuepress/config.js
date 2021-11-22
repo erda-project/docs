@@ -1,5 +1,6 @@
 // const { fs, path } = require('@vuepress/shared-utils')
 const removeMd = require('remove-markdown')
+const { enPrefix } = require('./util');
 
 module.exports = ctx => ({
   dest: `dest`,
@@ -7,18 +8,18 @@ module.exports = ctx => ({
   title: "Erda Docs",
   description: "学习在 Erda 平台上构建、部署、管理应用",
   shouldPrefetch: () => false, // prevent too many request in first page
-  // locales: {
-  //   '/en': {
-  //     lang: 'en-US',
-  //     title: 'Erda',
-  //     description: 'Strong platform, rich market, make the technology more stable, and make the application more focused'
-  //   },
-  //   '/': {
-  //     lang: 'zh-CN',
-  //     title: "Erda",
-  //     description: "学习在 Erda 平台上构建、部署、管理应用",
-  //   }
-  // },
+  locales: {
+    [`${enPrefix}/`]: {
+      lang: 'en-US',
+      title: 'Erda',
+      description: 'Start to learn, deploy and operate your applications on Erda'
+    },
+    '/': {
+      lang: 'zh-CN',
+      title: "Erda",
+      description: "学习在 Erda 平台上构建、部署、管理应用",
+    }
+  },
   head: [
     ['link', { rel: 'icon', href: `/favicon.ico` }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
@@ -75,15 +76,15 @@ module.exports = ctx => ({
         nav: require('./nav/zh'),
         sidebar: require('./sidebar/zh'),
       },
-      // '/en/': {
-      //   label: 'English',
-      //   selectText: 'Languages',
-      //   ariaLabel: 'Select language',
-      //   editLinkText: 'Edit this page on GitHub',
-      //   lastUpdated: 'Last Updated',
-      //   nav: require('./nav/en'),
-      //   sidebar: require('./sidebar/en'),
-      // }
+      [`${enPrefix}/`]: {
+        label: 'English',
+        selectText: 'Languages',
+        ariaLabel: 'Select language',
+        editLinkText: 'Edit this page on GitHub',
+        lastUpdated: 'Last Updated',
+        nav: require('./nav/en'),
+        sidebar: require('./sidebar/en'),
+      }
     },
     sidebarDepth: 0,
   },

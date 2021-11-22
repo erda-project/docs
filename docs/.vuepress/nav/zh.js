@@ -1,4 +1,4 @@
-const { getVers } = require('../get-ver');
+const { getVers } = require('../util');
 
 const verItems = getVers().map(ver => {
   if (ver <= 1.1) {
