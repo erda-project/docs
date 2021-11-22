@@ -53,17 +53,17 @@ Use "erda-cli [command] --help" for more information about a command.
 
 ### 登录
 
-CLI 的多数子命令需在登陆后执行，有少数命令无需登录也能执行，例如 `migrate` 相关命令。
+CLI 的多数子命令需在登陆后执行，有少数命令无需登录也可执行，例如 `migrate` 相关命令。
 
-登录相关参数
+登录相关参数如下：
 
-1. `--host` 指定需要登录的 Erda 平台地址，若不指定且在代码目录则通过 `git remote get-url origin`  获取平台地址。
-2. `-u`, `--username ` 指定登录用户名。
-3. `-p`, `--password` 指定登录密码。
+1. `--host` 指定需要登录的 Erda 平台地址，若未指定且在代码目录则通过 `git remote get-url origin` 获取平台地址。
+2. `-u`，`--username ` 指定登录用户名。
+3. `-p`，`--password` 指定登录密码。
 
 ::: tip 提示
 
-登录成功后会保存 Session，Session 过期则需重新登录。
+登录成功后将保存 Session，Session 过期则需重新登录。
 
 :::
 
@@ -84,9 +84,8 @@ DockerImage:
 
 ::: tip 提示
 
-注意需要在 Erda 上先创建应用并编写 pipeline.yml 和 erda.yml。
-
-1.5 版本开始将不推荐使用。
+* 请先在 Erda 上创建应用并编写 pipeline.yml 和 erda.yml。
+* 1.5 以及上版本不推荐使用。
 
 :::
 
@@ -101,7 +100,7 @@ $ erda-cli build --host=https://erda.cloud -u 'YourName' -p 'YourPassword'
 
 ::: tip 提示
 
-1.5 版本开始将不推荐使用。
+1.5 以及上版本不推荐使用。
 
 :::
 
@@ -115,7 +114,7 @@ PIPELINEID   TASKID     TASKNAME   TASKSTATUS   STARTEDAT
 
 ### erda-cli ext
 
-您可以通过 `ext` 命令罗列 Erda 上所有的 extension。
+您可以通过 `ext` 命令罗列 Erda 上所有的 Extension。
 
 ```shell
 erda-cli ext --host=https://erda.cloud -u 'YourName' -p 'YourPassword'
@@ -128,14 +127,14 @@ kafka                         addon    message                   true     2021-1
 
 ### erda-cli ext pull
 
-您可以通过 `ext pull` 命令获取 Erda 上的 extension。
+您可以通过 `ext pull` 命令获取 Erda 上的 Extension。
 
 ```shell
 $ erda-cli ext pull --host=https://erda.cloud -u 'YourName' -p 'YourPassword' git-checkout@1.0 -o git-checkout
 ✔ extension pull success
 ```
 
-参数说明：
+参数说明如下：
 
 ```
 Flags:
@@ -144,14 +143,14 @@ Flags:
 
 ### erda-cli ext push
 
-您可以通过 `ext push` 命令更新 Erda 上的 extension。需要使用平台管理员账号权限进行该操作。
+您可以通过 `ext push` 命令更新 Erda 上的 Extension。该操作需由平台管理员执行。
 
 ```shell
 $ erda-cli ext push --host=https://erda.cloud -u 'YourName' -p 'YourPassword' -d git-checkout
 ✔ extension git-checkout push success
 ```
 
-参数说明：
+参数说明如下：
 
 ```shell
 Flags:
