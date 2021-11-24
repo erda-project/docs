@@ -718,7 +718,7 @@ GITTAR_REPO
 
 ### <code v-pre>${{ random.key }}</code>
 
-随机表达式占位符，用户填入对应的随机表达式，流水线运行的时候会随机的生成数据来替换 `${{ random.integer }}` 占位符
+随机表达式占位符，用户填入对应的随机表达式，流水线运行的时候会随机的生成数据来替换 <code v-pre>${{ random.integer }}</code> 占位符
 
 随机参数支持的类型如下：
 
@@ -779,7 +779,7 @@ $METAFILE 是一个文件, 写入到这个文件是固定写法
 
 ### <code v-pre>${{ params.val }}</code>
 
-流水线运行入参，在 yaml 文件中在 params 字段下填写多个输入框的定义，用户在运行流水线的时候就会弹出定义的输入框，输入框填入的值就会替换掉 `${{ params.key }}` 占位符
+流水线运行入参，在 yaml 文件中在 params 字段下填写多个输入框的定义，用户在运行流水线的时候就会弹出定义的输入框，输入框填入的值就会替换掉 <code v-pre>${{ params.key }}</code> 占位符
 
 ```yaml
 version: "1.1"
@@ -807,7 +807,7 @@ stages:
 
 ### <code v-pre>${{ dirs.alias }}</code>
 
-每个 action 都会有个工作目录, 可以使用 `${{ dirs.xxx }}` 占位符进入和获取 action 的工作目录文件和地址
+每个 action 都会有个工作目录, 可以使用 <code v-pre>${{ dirs.xxx }}</code> 占位符进入和获取 action 的工作目录文件和地址
 
 ```yaml
 version: "1.1"
@@ -828,7 +828,7 @@ stages:
             - ls # 打印目录下的文件
 ```
 
-action 之间文件传递，每个任务只有在自己的工作目录下创建的文件才能被其他任务使用，否则产生的文件将会被丢弃，`$WORKDIR` 或者 `${{ dirs.xxx }}` 都可以获取当前任务的工作目录
+action 之间文件传递，每个任务只有在自己的工作目录下创建的文件才能被其他任务使用，否则产生的文件将会被丢弃，`$WORKDIR` 或者 <code v-pre>${{ dirs.xxx }}</code> 都可以获取当前任务的工作目录
 
 ```yaml
 version: "1.1"
