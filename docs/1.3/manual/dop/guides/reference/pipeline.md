@@ -718,8 +718,30 @@ GITTAR_REPO
 
 ### <code v-pre>${{ random.key }}</code>
 
-用法式例
- ```yaml
+随机表达式占位符，用户填入对应的随机表达式，流水线运行的时候会随机的生成数据来替换 `${{ random.integer }}` 占位符
+
+随机参数支持的类型如下：
+
+integer: 整型，如: 100
+string: 所有字符串，如: Abc
+float: 浮点型，如: 13.14
+boolean: 布尔型，如: true/false
+upper: 大写字母，如: ABC
+lower: 小写字母，如: abc
+mobile: 11位手机号，如: 18888888888
+digital_letters: 数字和大小写字母，如: Abc123
+letters: 大小写字母，如: Abc
+character: 单个字符，如: a
+timestamp: 当前时间戳格式：1586917254，单位是s
+timestamp_hour: 1小时前时间戳格式：1583317290，单位是s
+timestamp_ns: 当前时间戳ns格式：1586917325230422166，单位是ns
+timestamp_ns_hour: 1小时前时间戳格式：1586913750801408626，单位是ns
+date：当前日期、格式：2020-01-01
+date_day：1天前日期、格式：2020-01-01
+datetime：当前时间、格式：2020-01-01 15:04:05
+datetime_hour：1小时前时间、格式：2020-01-01 14:04:05
+
+```yaml
 version: "1.1"
 stages:
   - stage:
@@ -730,50 +752,63 @@ stages:
           commands:
             - echo ${{ random.integer }}
 
- ```
+```
 
 ### <code v-pre>${{ outputs.alias.val }}</code>
 
-可以使用前置任务出参作为执行条件
+前置任务输出值，后面的任务使用占位符获取该值
 
 ```yaml
 - stage:
   - custom-script:
-      alias: script1
+      alias: action1
       version: "1.0"
       commands:
-        - echo 1
-        - echo "image=123" >> $METAFILE # 输出出参给下个任务使用
+        - echo "key=value" >> $METAFILE # 输出 key 值为 value 给下个任务使用
 - stage:
   - custom-script:
-      alias: script2
+      alias: action2
       version: "1.0"
       commands:
-        - echo ${{ outputs.script1.image }}
+        - echo ${{ outputs.action1.key }} # 使用上面任务的输出值(key对应的value)
 ```
+
+说明:
+
+$METAFILE 是一个文件, 写入到这个文件是固定写法
 
 ### <code v-pre>${{ params.val }}</code>
 
-在 yaml 底下设置参数
+流水线运行入参，在 yaml 文件中在 params 字段下填写多个输入框的定义，用户在运行流水线的时候就会弹出定义的输入框，输入框填入的值就会替换掉 `${{ params.key }}` 占位符
+
 ```yaml
 version: "1.1"
+
+params:
+  - name: key1 # 定义输入框的 key
+    required: true # 是否必填
+    default: 111 # 没有输入值给的默认值
+    type: int # 定义输入框的类型
+  - name: key2
+    required: true
+    default: 111 
+    type: string
+
 stages:
   - stage:
       - custom-script:
-          alias: custom-script
+          alias: action1
           description: 运行自定义命令
           version: "1.0"
           commands:
-            - echo ${{ params.xxx }}
-params:
-  - name: xxx
-    required: true
-    default: 111
-    type: int
+            - echo ${{ params.key1 }} # 替换 key1 输入框填的值
+            - echo ${{ params.key2 }} # 替换 key2 输入框填的值
 ```
+
 ### <code v-pre>${{ dirs.alias }}</code>
 
-获取之前 action 的信息
+每个 action 都会有个工作目录, 可以使用 `${{ dirs.xxx }}` 占位符进入和获取 action 的工作目录文件和地址
+
 ```yaml
 version: "1.1"
 stages:
@@ -782,23 +817,61 @@ stages:
           alias: git-checkout
           description: 代码仓库克隆
           version: "1.0"
-          params:
-            branch: ((gittar.branch))
-            depth: 1
-            password: ((gittar.password))
-            uri: ((gittar.repo))
-            username: ((gittar.username))
   - stage:
       - custom-script:
           alias: custom-script
           description: 运行自定义命令
           version: "1.0"
           commands:
-            - echo ${{ dirs.git-checkout }}
+            - echo ${{ dirs.git-checkout }} # 打印任务工作目录的地址
+            - cd ${{ dirs.git-checkout }} # 进入任务的工作目录
+            - ls # 打印目录下的文件
 ```
 
+action 之间文件传递，每个任务只有在自己的工作目录下创建的文件才能被其他任务使用，否则产生的文件将会被丢弃，`$WORKDIR` 或者 `${{ dirs.xxx }}` 都可以获取当前任务的工作目录
+
+```yaml
+version: "1.1"
+stages:
+  - stage:
+      - git-checkout:
+          alias: git
+          description: 代码仓库克隆
+          version: "1.0"
+  - stage:
+      - custom-script:
+          alias: script1
+          description: 运行自定义命令
+          version: "1.0"
+          commands:
+            - cd ${{ dirs.git }}
+            - touch test.txt # 在 action git 的工作目录下创建 test.txt 文件
+            - touch test1.txt # 在 action git 的工作目录下创建 test1.txt 文件
+            - cp test1.txt $WORKDIR # 将 action git 工作目录下的 test1.txt 文件拷贝到当前 action(script1) 的工作目录
+  - stage:
+      - custom-script:
+          alias: script2
+          description: 运行自定义命令
+          version: "1.0"
+          commands:
+            - cd ${{ dirs.git }} # 进入 action git 的工作目录
+            - ls # action script1 创建的 test.txt,test1.txt 文件不会存在
+            - cd ${{ dirs.script1 }} # 进入 action script1 的工作目录
+            - ls # test1.txt 文件可以看到，test.txt 文件丢失, 因为只有 test1.txt 文件拷贝到了 script1 的工作目录
+```
+
+::: tip 
+如果使用共享目录的方案，并行任务由于执行完成顺序的不确定性，当 Stage 完成时，共享目录里最终看到的是当前 Stage 里最后一个完成的任务的改动。
+:::
+
 ### <code v-pre>${{ configs.val }}</code>
-获取相关的流水线配置
+
+获取平台流水线配置
+
+进入 **DevOps > 我的应用 > 选择应用 > 应用设置 > 流水线 > 变量配置 > 选择环境**。
+
+点击 **增加变量**，变量名称定义为 `TEST_CONFIG_KEY` 值为 `xxx`
+
 ```yaml
 version: "1.1"
 stages:
@@ -808,9 +881,5 @@ stages:
           description: 运行自定义命令
           version: "1.0"
           commands:
-            - echo ${{ configs.dice.org.id }}
+            - echo ${{ configs.TEST_CONFIG_KEY }}
 ```
-
-### <code v-pre>${{ Globals.val }}</code>
-
-TODO
