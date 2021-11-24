@@ -5,7 +5,7 @@ const full = {};
 
 getVers().forEach(ver => {
   console.log('include version:', ver);
-  full[`${enPrefix}/${ver}/manual/`] = getContentByVer(ver);
+  full[`${enPrefix}/${ver}/manual/`] = getContentByVer(`${ver}-en`);
 })
 
 
