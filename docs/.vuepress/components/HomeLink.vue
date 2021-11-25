@@ -1,6 +1,6 @@
 <template>
   <div class="homepage-links">
-    <router-link class="home-link" to="/latest/manual/" exact>
+    <router-link class="home-link" :to="$localePath+'/latest/manual/'" exact>
       <div class="entry">使用手册</div>
     </router-link>
     <router-link class="home-link" to="/blog/post" exact>

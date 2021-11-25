@@ -32,7 +32,7 @@ export default {
 
   data() {
     return {
-      pathname: "/",
+      pathname: this.$localePath,
     };
   },
 
@@ -45,7 +45,7 @@ export default {
         this.pathname = args[2];
       };
     }
-    this.pathname = window && window.location.pathname;
+    this.pathname = window && window.location.pathname.replace('/en', '');
   },
 
   computed: {

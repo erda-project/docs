@@ -4,9 +4,9 @@ const { getVers, getContentByVer, enPrefix } = require('../util');
 const full = {};
 
 getVers().forEach(ver => {
-  console.log('include version:', ver);
   full[`${enPrefix}/${ver}/manual/`] = getContentByVer(`${ver}-en`);
 })
 
+console.log('english full path:', full);
 
 module.exports = full;

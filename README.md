@@ -151,3 +151,4 @@ footer: Copyright © 2012-present terminus
 注意，目前只会保留最近三个版本的文档
 1. 复制一份旧版本目录并改名（比如复制1.2目录 -> 1.3目录）
 2. `.vuepress/sidebar/vers` 目录下增加新版的左侧菜单配置
+3. 移动旧版本目录到 `archive` 目录下，避免影响打包速度，因为 vuepress 会扫描 `docs` 目录下所有文件
