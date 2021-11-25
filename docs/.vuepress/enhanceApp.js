@@ -37,7 +37,8 @@ export default ({
         // next([, vers[0], ...rest].join('/'))
         window.location.href = window.location.origin + [, lang, vers[0], ...rest].join('/')
       } else if (ver === '') {
-        window.location.href = `${window.location.origin}/${lang}/${vers[0]}/manual/about/intro.html`
+        // return to chinese version if version is empty
+        window.location.href = `${window.location.origin}/${vers[0]}/manual/about/intro.html`
       } else {
         next();
       }
