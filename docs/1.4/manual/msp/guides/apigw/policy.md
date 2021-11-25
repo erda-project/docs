@@ -169,14 +169,14 @@ proxy_set_header hello world;
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2019/08/30/f8d7b58e-ca94-44dd-97b2-f07e4a5334c9.jpg)
 
-跨站防护开启后，会在用户登录成功时种下 CSRF Token，同时配合前端改造，对所有请求均带上 CSRF Token。网关收到请求后会对 CSRF Tokenn 进行校验，确认属于当前用户后，才会将请求正常转发给后端。具体示意如下：
+跨站防护开启后，会在用户登录成功时种下 CSRF Token，同时配合前端改造，对所有请求均带上 CSRF Token。网关收到请求后会对 CSRF Token 进行校验，确认属于当前用户后，才会将请求正常转发给后端。具体示意如下：
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2019/08/30/bb252336-b2cf-44d4-89be-92581ccd2d52.jpg)
 
 | 配置项                 | 含义                                                         |
 | :--------------------- | :----------------------------------------------------------- |
 | 鉴别用户的 Cookie 名称 | 用于生成 CSRF Token，未携带该 Cookie 则不会进行 CSRF 校验，后端识别该 Cookie 过期时需配合前端进行清除，避免缺失 CSRF Token 导致登录报错 |
-| 关闭校验的 HTTP 方法 | 对于这类请求方法，将跳过 CSRF 校验，但仍会种下 CSRF-Token 的 Cookie |
+| 关闭校验的 HTTP 方法 | 对于这类请求方法，将跳过 CSRF 校验，但仍会种下 CSRF Token 的 Cookie |
 | Token 名称       | 网关将生成的 CSRF Token 设置在该名称的 Cookie 里，前端需从 Cookie 中获取 CSRF Token，带在同名请求头里发起请求 |
 | Token Cookie 的生效域名 | 如未填写，则仅针对发起请求的域名种下 CSRF Token 的 Cookie |
 | Cookie 开启 Secure 属性 | 开启 Secure 后，所有 HTTP 请求均无法通过 CSRF 校验    |
