@@ -27,12 +27,17 @@ export default ({
     const vers = nav[nav.length - 1].items.filter(v => v.version).map(v => v.version);
     // latest 路径自动转向 最新版本
     router.beforeEach((to, from, next) => {
-      const [, ver, ...rest] = to.path.split('/');
+      let [, ver, ...rest] = to.path.split('/');
+      let lang = '';
+      if (ver === 'en') {
+        lang = 'en';
+        ver = rest.shift();
+      }
       if (ver === 'latest') {
         // next([, vers[0], ...rest].join('/'))
-        window.location.href = window.location.origin + [, vers[0], ...rest].join('/')
+        window.location.href = window.location.origin + [, lang, vers[0], ...rest].join('/')
       } else if (ver === '') {
-        window.location.href = `${window.location.origin}/${vers[0]}/manual/about/intro.html`
+        window.location.href = `${window.location.origin}/${lang}/${vers[0]}/manual/about/intro.html`
       } else {
         next();
       }

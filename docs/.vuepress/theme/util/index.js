@@ -2,7 +2,7 @@ export const hashRE = /#.*$/
 export const extRE = /\.(md|html)$/
 export const endingSlashRE = /\/$/
 export const outboundRE = /^[a-z]+:/i
-export const versionRE = /^\/\d{1,2}\.\d{1,2}/
+export const versionRE = /^(\/en)?\/\d{1,2}\.\d{1,2}/
 
 export function normalize (path) {
   return decodeURI(path)
@@ -29,14 +29,14 @@ export function isTel (path) {
   return /^tel:/.test(path)
 }
 
-export function replaceVersion (pathname, newVer, fallback) {
-  if (versionRE.test(pathname)) {
-    const [empty, currentVer, ...rest] = pathname.split("/");
-    const targetLink = [empty, newVer, ...rest].join("/");
-    return targetLink;
-  }
-  return fallback || '/';
-}
+// export function replaceVersion (pathname, newVer, fallback) {
+//   if (versionRE.test(pathname)) {
+//     const [empty, currentVer, ...rest] = pathname.split("/");
+//     const targetLink = [empty, newVer, ...rest].join("/");
+//     return targetLink;
+//   }
+//   return fallback || '/';
+// }
 
 export function ensureExt (path) {
   if (isExternal(path)) {

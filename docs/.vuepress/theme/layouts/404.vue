@@ -18,12 +18,12 @@ import { versionRE } from "../util";
 export default {
   data() {
     return {
-      home: "/"
+      home: this.$localePath,
     };
   },
 
   mounted() {
-    const [empty, ver] = window ? window.location.pathname.split("/") : [];
+    const [empty, ver] = window ? window.location.pathname.split(this.$localePath + "/") : [];
     const vers = this.$themeConfig.nav.find(nav => nav.text === "版本").items;
     this.home = versionRE.test(ver) ? ver : vers[0].link;
   },

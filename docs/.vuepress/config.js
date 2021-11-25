@@ -1,6 +1,8 @@
 // const { fs, path } = require('@vuepress/shared-utils')
 const removeMd = require('remove-markdown')
 const { enPrefix } = require('./util');
+const dayjs = require('dayjs');
+const locale = require('dayjs/locale/es');
 
 module.exports = ctx => ({
   dest: `dest`,
@@ -92,7 +94,7 @@ module.exports = ctx => ({
   plugins: [
     ['@vuepress/search',
       {
-        test: '^/1.',
+        test: ['^/1\.', '^/en/'],
         searchMaxSuggestions: 10,
       },
     ],
@@ -153,7 +155,10 @@ module.exports = ctx => ({
         //   clientSecret: 'Your clientSecret',
         // },
         sitemap: {
-          hostname: 'https://erda-docs.app.terminus.io/'
+          hostname: 'https://erda-docs.app.terminus.io/',
+          dateFormatter: val => {
+            return new Date(val).toLocaleDateString();
+          }
         },
       },
     ],

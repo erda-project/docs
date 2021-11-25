@@ -108,10 +108,10 @@ export default {
     const isUnderVersion = versionRE.test(window.location.pathname);
     const showNotify =
       isUnderVersion &&
-      !window.location.pathname.startsWith(`/${vers[0].version}`);
+      !window.location.pathname.startsWith(`${this.$localePath}${vers[0].version}`);
     if (showNotify) {
       setTimeout(() => {
-        this.$toast("您当前查看的不是最新版本", {
+        this.$toast(this.$localePath === '/en/' ? "You are not viewing the latest version" :"您当前查看的不是最新版本", {
           position: "top-right",
           timeout: 5000,
           icon: true,
