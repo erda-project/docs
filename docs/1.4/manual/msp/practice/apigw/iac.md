@@ -135,7 +135,7 @@ services:
       backend_path: /api
 ```
 
-ACL 的配置和 User 类似，此处不再赘述。同时可发现，ACl 和 User 的 Endpoints 域名是一致的，仅是域名下的 API 前缀不同，由此实现跨应用和服务的域名统一，基于 API 路由至不同应用 Repo 内的不同服务模块。
+ACL 的配置和 User 类似，此处不再赘述。同时可发现，ACL 和 User 的 Endpoints 域名是一致的，仅是域名下的 API 前缀不同，由此实现跨应用和服务的域名统一，基于 API 路由至不同应用 Repo 内的不同服务模块。
 
 ## Resource
 
