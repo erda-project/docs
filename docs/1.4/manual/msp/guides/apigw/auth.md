@@ -365,7 +365,7 @@ f97efc239eef4eafe69bfe41438740199d939e2e123c4c5a6b5d0b5e58d295a2818d6444c5c7b9e5
   /api?appKey=foobar&name=dadu&abc=123&apiTimestamp=1581565619&sign=61cabbc719e5edff3021ab5047bd3c5981e6348066d0416254dd529241a7135d57498dac56d2400139bc1040c5759d1c0798f1673913c537d10769c149879edd
   ```
 
-  基于 Body 签名的方式类似，`apiTimestamp` 需带在 Body 的 Json 结构体中，例如：
+  基于 Body 签名的方式类似，`apiTimestamp` 需带在 Body 的 JSON 结构体中，例如：
 
   ```bash
   POST --header 'Content-Type: application/json'

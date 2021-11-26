@@ -214,7 +214,7 @@
    在 `package: io.terminus.erda.trial.demo.hellospringcloud` 中创建启动类 `ConsumerApplication` 并添加相关配置。
 
    * 使用 `@EnableDiscoveryClient` 注解启用服务注册与发现。
-   * 使用 `@EnableFeignClients` 注解激活 `FeignClient`.
+   * 使用 `@EnableFeignClients` 注解激活 `FeignClient`。
    * 添加 `@LoadBalanced` 注解将 `RestTemplate` 与服务发现集成。
 
    ```java
