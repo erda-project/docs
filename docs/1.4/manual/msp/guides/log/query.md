@@ -80,7 +80,7 @@
 2021-08-09 10:27:57.704 DEBUG [apm-demo-api,bc3d8ffa-5388-4c76-861b-f121955c2dec,tag1=value1,tag2=value2] - [qtp1590404373-19] org.eclipse.jetty.io.ManagedSelector    : content
 ```
 
-如上所示，正则表达式的 `ext_info` 分组将匹配出 `apm-demo-api`、`bc3d8ffa-5388-4c76-861b-f121955c2dec`、`tag1=value1`、`tag2=value2`，其中 `tag1=value1`、`tag2=value2` 部分即为允许业务插入自定义标签的位置。 前两项目前作为保留字段，专用于 Trace 信息的插入，如示例中的 `bc3d8ffa-5388-4c76-861b-f121955c2dec` 即为当前日志所对应的请求 ID。
+如上所示，正则表达式的 `ext_info` 分组将匹配出 `apm-demo-api`、`bc3d8ffa-5388-4c76-861b-f121955c2dec`、`tag1=value1`、`tag2=value2`，其中 `tag1=value1`、`tag2=value2` 部分即为允许业务插入自定义标签的位置。前两项目前作为保留字段，专用于 Trace 信息的插入，如示例中的 `bc3d8ffa-5388-4c76-861b-f121955c2dec` 即为当前日志所对应的请求 ID。
 
 若为 Java 或 Node.js 应用，可通过平台提供的对应 Agent，自动注入 Trace 信息，当前主要为请求 ID：
 
@@ -128,4 +128,34 @@
 - **添加到查询**：将选中的关键词追加至查询输入框。
 - **新建查询**：将选中的关键词作为查询条件替换查询输入框中的内容。
 
-若希望保留当前的查询条件和结果，可点击右侧图标打开新页面。
+如需保留当前的查询条件和结果，可点击右侧图标打开新页面。
+
+## 上下文浏览
+
+假设某个应用在执行某段逻辑时出现异常，通过关键词查询可找出关键的异常堆栈日志，但关于该段逻辑的请求上下文参数信息位于先前的日志，此时便需要查看当前异常日志之前的日志。上下文浏览功能即为此类场景而设计。
+
+如图所示，每条日志均有对应的上下文浏览入口。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/25/38b6b33c-1d07-401b-9147-9148663ebac4.png)
+
+点击弹出上下文浏览页面。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/25/5e908902-ea49-4f64-a94f-b9a12eb519d6.png)
+
+上下文浏览页面顶部默认展示 `application_name`、`service_name`、`pod_name` 三个过滤标签，表示默认浏览同一个 K8s Pod 层面某条关键日志前后的日志，列表中标记为 0 的日志即方才点击的关键日志。在该页面您还可以进行自定义显示字段、自定义高亮内容等操作。
+
+## 实时 Tail
+
+实时 Tail 的功能类似于 `tail -f ｜ grep` 指令，用于查看某条日志后是否再次出现符合筛选条件的日志。
+
+如图所示，每条日志均有对应的实时 Tail 入口。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/25/d3feef83-88ea-4f90-9892-a9dbe524cf66.png)
+
+点击弹出实时 Tail 页面。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/25/eb8d9c3b-ae05-4cf8-a5e6-c33e1679f54f.png)
+
+实时 Tail 页面支持灵活的输入条件，可输入查询语句，点击右侧的 **开始** 按钮即可自动刷新，重新加载符合条件的日志。
+
+
