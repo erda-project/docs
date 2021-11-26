@@ -1,33 +1,33 @@
 module.exports = [
   {
-    title: 'About Erda',
+    title: 'Overview',
     collapsable: true,
     children: [
       'about/intro'
     ]
   },
-  // {
-  //   title: '安装配置',
-  //   collapsable: true,
-  //   children: [
-  //     'install/docker-install',
-  //     {
-  //       title: '基于 Helm 部署',
-  //       collapsable: true,
-  //       children: [
-  //         'install/helm-install/introduction',
-  //         "install/helm-install/premise",
-  //         "install/helm-install/helm-install-demo",
-  //         "install/helm-install/helm-install-prod",
-  //         'install/helm-install/high-availability',
-  //         'install/helm-install/comp-schedule',
-  //         'install/helm-install/configuration',
-  //         'install/helm-install/upgrade',
-  //         'install/helm-install/uninstall'
-  //       ]
-  //     },
-  //   ]
-  // },
+  {
+    title: 'Install',
+    collapsable: true,
+    children: [
+      'install/docker-install',
+      {
+        title: 'Deploy via Helm',
+        collapsable: true,
+        children: [
+          'install/helm-install/introduction',
+          "install/helm-install/premise",
+          "install/helm-install/helm-install-demo",
+          "install/helm-install/helm-install-prod",
+          'install/helm-install/high-availability',
+          'install/helm-install/comp-schedule',
+          // 'install/helm-install/configuration',
+          'install/helm-install/upgrade',
+          'install/helm-install/uninstall'
+        ]
+      },
+    ]
+  },
   // {
   //   title: '快速入门',
   //   collapsable: true,
