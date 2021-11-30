@@ -443,14 +443,14 @@ module.exports = [
         title: '场景示例',
         collapsable: true,
         children: [
-          ['fdp/example/integration', '数据集成'],
-          ['fdp/example/develop', '数据开发'],
-          ['fdp/example/service', '数据服务'],
-          ['fdp/example/om', '任务运维'],
+          ['fdp/example/integration', '多渠道数据集成'],
+          ['fdp/example/develop', '低代码数据计算'],
+          ['fdp/example/service', '统一化数据服务'],
+          ['fdp/example/om', '高效任务监控运维'],
         ]
       },
       'fdp/concept',
-      ['fdp/best-practice', '最佳实践'],
+      ['fdp/best-practice', '基于数据平台的标签群组构建'],
       {
         title: '使用指南',
         collapsable: true,
@@ -462,6 +462,12 @@ module.exports = [
           ['fdp/guide/source-data', '源数据管理'],
           ['fdp/guide/data-develop', '数据开发'],
           ['fdp/guide/workflow', '工作流管理'],
+          ['fdp/guide/data-standard', '数据标准管理'],
+          ['fdp/guide/notification-manage', '通知管理'],
+          ['fdp/guide/configure-manage', '配置管理'],
+          ['fdp/guide/data-service', '数据服务'],
+          ['fdp/guide/data-permission', '数据权限'],
+          ['fdp/guide/algorithm-model', '算法模型'],
         ]
       },
     ]

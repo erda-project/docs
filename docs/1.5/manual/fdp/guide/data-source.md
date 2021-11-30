@@ -54,6 +54,12 @@ FDP 根据数据源来读取数据所在位置。
 
 成功后保存则可在数据源管理中看到配置好的数据源。
 
+4. 自动探知：对于mysql类型的数据源，可自动探知模型，不需要手动建模型
+
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/29/7e834f8a-429e-43df-992b-942bfb42aae0.png)
+
+   勾选模型后，点击保存，会自动建对于的模型。
+
 ### Kafka 的导出数据源配置
 
 基础的配置如下：
@@ -121,3 +127,19 @@ tableMax 代表结束的后缀。
 对数据源名称，分类，类型，数据源标示等一个或多个填写后进行搜索
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/52daefbf-6a00-4214-8e8b-f2d5de9c5582.png)
+
+## 数据源一键同步
+
+若数据源连接信息有变更，在数据源页面，可进行工作流一键同步。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/29/77c5f8aa-d9b3-4725-b6d4-03d4e32d0a0a.png)
+
+操作后，可通过历史同步记录查看同步状态。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/29/08aba45d-772f-47f6-8691-92becda65abc.png)
+
+## 数据源导入导出
+
+对数据源可进行批量导入导出，方便操作。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/29/f39c0bb1-a143-4725-9632-d001c2fa8d7d.png)
