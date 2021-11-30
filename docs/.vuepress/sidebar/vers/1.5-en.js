@@ -28,66 +28,66 @@ module.exports = [
       },
     ]
   },
-  // {
-  //   title: '快速入门',
-  //   collapsable: true,
-  //   children: [
-  //     'quick-start/premise',
-  //     'quick-start/newbie'
-  //   ]
-  // },
-  // {
-  //   title: '多云管理',
-  //   collapsable: true,
-  //   children: [
-  //     {
-  //       title: '场景示例',
-  //       collapsable: true,
-  //       children: [
-  //         'cmp/examples/set-labels',
-  //         'cmp/examples/check-env',
-  //         'cmp/examples/check-workload',
-  //       ]
-  //     },
-  //     'cmp/concept',
-  //     {
-  //       title: '最佳实践',
-  //       collapsable: true,
-  //       children: [
-  //         'cmp/practice/alert-config',
-  //       ]
-  //     },
-  //     {
-  //       title: '使用指南',
-  //       collapsable: true,
-  //       children: [
-  //         'cmp/guide/cluster-overview',
-  //         {
-  //           title: '资源管理',
-  //           collapsable: true,
-  //           children: [
-  //             'cmp/guide/cluster/k8s-dashboard',
-  //             'cmp/guide/cluster/management',
-  //             'cmp/guide/cluster/autoscaling',
-  //             'cmp/guide/cluster/cluster-node-labels',
-  //           ]
-  //         },
-  //         {
-  //           title: '运维告警',
-  //           collapsable: true,
-  //           children: [
-  //             'cmp/guide/alert/dashboard',
-  //             'cmp/guide/alert/report',
-  //             'cmp/guide/alert/alarm-statistics',
-  //             'cmp/guide/alert/alarm-strategy',
-  //             'cmp/guide/alert/alarm-list',
-  //             'cmp/guide/alert/alarm-custom',
-  //           ]
-  //         },
-  //       ]
-  //     },
-  //   ]
-  // },
+  {
+    title: 'Quick Start',
+    collapsable: true,
+    children: [
+      'quick-start/premise',
+      // 'quick-start/newbie'
+    ]
+  },
+  {
+    title: 'Cloud Management',
+    collapsable: true,
+    children: [
+      {
+        title: 'Examples',
+        collapsable: true,
+        children: [
+          'cmp/examples/set-labels',
+          // 'cmp/examples/check-env',
+          // 'cmp/examples/check-workload',
+        ]
+      },
+      'cmp/concept',
+      {
+        title: 'Best Practices',
+        collapsable: true,
+        children: [
+          'cmp/practice/alert-config',
+        ]
+      },
+      {
+        title: 'Guides',
+        collapsable: true,
+        children: [
+          // 'cmp/guide/cluster-overview',
+          {
+            title: 'Resource Management',
+            collapsable: true,
+            children: [
+              // 'cmp/guide/cluster/k8s-dashboard',
+              'cmp/guide/cluster/management',
+              // 'cmp/guide/cluster/autoscaling',
+              'cmp/guide/cluster/cluster-node-labels',
+            ]
+          },
+          {
+            title: ' O&M Alarms',
+            collapsable: true,
+            children: [
+              // 'cmp/guide/alert/dashboard',
+              // 'cmp/guide/alert/report',
+              // 'cmp/guide/alert/alarm-statistics',
+              'cmp/guide/alert/alarm-strategy',
+              // 'cmp/guide/alert/alarm-list',
+              // 'cmp/guide/alert/alarm-custom',
+            ]
+          },
+        ]
+      },
+    ]
+  },
   // {
   //   title: 'DevOps',
   //   collapsable: true,
