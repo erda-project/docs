@@ -462,12 +462,12 @@ module.exports = [
           ['fdp/guide/source-data', '源数据管理'],
           ['fdp/guide/data-develop', '数据开发'],
           ['fdp/guide/workflow', '工作流管理'],
-          ['fdp/guide/data-standard', '数据标准管理'],
-          ['fdp/guide/notification-manage', '通知管理'],
-          ['fdp/guide/configure-manage', '配置管理'],
-          ['fdp/guide/data-service', '数据服务'],
-          ['fdp/guide/data-permission', '数据权限'],
-          ['fdp/guide/algorithm-model', '算法模型'],
+          // ['fdp/guide/data-standard', '数据标准管理'],
+          // ['fdp/guide/notification-manage', '通知管理'],
+          // ['fdp/guide/configure-manage', '配置管理'],
+          // ['fdp/guide/data-service', '数据服务'],
+          // ['fdp/guide/data-permission', '数据权限'],
+          // ['fdp/guide/algorithm-model', '算法模型'],
         ]
       },
     ]
