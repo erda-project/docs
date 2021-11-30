@@ -37,11 +37,11 @@ module.exports = [
     ]
   },
   {
-    title: '多云管理',
+    title: 'Cloud Management',
     collapsable: true,
     children: [
       {
-        title: '场景示例',
+        title: 'Examples',
         collapsable: true,
         children: [
           'cmp/examples/set-labels',
@@ -51,19 +51,19 @@ module.exports = [
       },
       'cmp/concept',
       {
-        title: '最佳实践',
+        title: 'Best Practices',
         collapsable: true,
         children: [
           'cmp/practice/alert-config',
         ]
       },
       {
-        title: '使用指南',
+        title: 'Guides',
         collapsable: true,
         children: [
           // 'cmp/guide/cluster-overview',
           {
-            title: '资源管理',
+            title: 'Resource Management',
             collapsable: true,
             children: [
               // 'cmp/guide/cluster/k8s-dashboard',
@@ -73,7 +73,7 @@ module.exports = [
             ]
           },
           {
-            title: '运维告警',
+            title: ' O&M Alarms',
             collapsable: true,
             children: [
               // 'cmp/guide/alert/dashboard',
