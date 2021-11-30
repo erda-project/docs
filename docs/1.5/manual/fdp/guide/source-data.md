@@ -34,8 +34,6 @@
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/9e85f508-8605-4092-b9ce-9bf6bf056d22.png)
 
-
-
 点击确定创建完成后，展示框最上方会显示刚才创建的数据模型。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/740eee3f-bb6b-4360-acd7-3a4168f0bd99.png)
