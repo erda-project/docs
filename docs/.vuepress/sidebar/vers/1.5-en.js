@@ -33,7 +33,7 @@ module.exports = [
     collapsable: true,
     children: [
       'quick-start/premise',
-      // 'quick-start/newbie'
+      'quick-start/newbie'
     ]
   },
   {
