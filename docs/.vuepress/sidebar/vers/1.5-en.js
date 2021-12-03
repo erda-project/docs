@@ -45,7 +45,7 @@ module.exports = [
         collapsable: true,
         children: [
           'cmp/examples/set-labels',
-          // 'cmp/examples/check-env',
+          'cmp/examples/check-env',
           // 'cmp/examples/check-workload',
         ]
       },
@@ -77,11 +77,11 @@ module.exports = [
             collapsable: true,
             children: [
               // 'cmp/guide/alert/dashboard',
-              // 'cmp/guide/alert/report',
-              // 'cmp/guide/alert/alarm-statistics',
+              'cmp/guide/alert/report',
+              'cmp/guide/alert/alarm-statistics',
               'cmp/guide/alert/alarm-strategy',
               // 'cmp/guide/alert/alarm-list',
-              // 'cmp/guide/alert/alarm-custom',
+              'cmp/guide/alert/alarm-custom',
             ]
           },
         ]
