@@ -1,16 +1,16 @@
-# 通过 CI/CD Pipeline 一键部署
+# 通过 CI/CD 流水线一键部署
 
 着手源码部署前，请确认已完成 [项目和应用创建](../../../quick-start/newbie.html#加入项目)。
 
 :::tip 提示
 
-假设新建项目名为 erda-test，新建应用名为 java-demo。下文 Git 仓库地址将涉及这两个名字。
+假设新建项目名为 erda-test，新建应用名为 java-demo。下文 Git 仓库地址将涉及这两个名称。
 
 :::
 
 ## 准备示范代码
 
-示范代码是一个基于 Spring Boot Web Service 的简单 Web 服务，代码托管于 [Github](https://github.com/bzdgn/docker-spring-boot-java-web-service-example.git)。
+示范代码是一个基于 Spring Boot Web Service 的简单 Web 服务，代码托管于 [GitHub](https://github.com/bzdgn/docker-spring-boot-java-web-service-example.git)。
 
 :::tip 提示
 
@@ -68,7 +68,7 @@ pipeline.yml 是描述从代码编译构建到应用部署的流水线配置文�
 
 :::
 
-该示例工程对应的 pipeline.yml 参考如下，更多信息请参见 [Pipeline](../guides/reference/pipeline.html)。
+该示例工程对应的 pipeline.yml 参考如下，更多信息请参见 [pipeline.yml](../guides/reference/pipeline.html)。
 
 ```yaml
 version: 1.1
@@ -127,7 +127,7 @@ services:
 
 ### 提交文件
 
-将新增的两个 yaml 文件提交至平台的代码仓库。
+将新增的两个 YAML 文件提交至平台的代码仓库。
 
 ```bash
 git add .
