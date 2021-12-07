@@ -1,12 +1,10 @@
 # erda.yml
 
-## 概述
+erda.yml 文件采用 YAML 语法编写，是一个微服务应用部署的描述文件，由服务基本信息和服务编排关系两部分组成，包含微服务的 Docker 镜像、资源需求（CPU 和 Memory 等）、微服务之间的依赖关系、环境变量以及 Addon 等信息。
 
-erda.yml 文件采用 Yaml 语法编写，是一个微服务应用部署的描述文件，由服务基本信息和服务编排关系两部分组成，具体包含了微服务的 Docker 镜像、资源需求（CPU 和 Memory 等）、微服务之间的依赖关系、环境变量以及 AddOn 等信息。一个复杂的微服务应用只要编写了一个有效的 erda.yml 描述文件，就能够被 Erda 一键部署和编排，拉起整个微服务应用。
+一个复杂的微服务应用仅需编写一个有效的 erda.yml 描述文件，即可由 Erda 一键部署和编排。
 
-完整例子位于文档尾部。
-
-## erda.yml 文件全局结构
+## 全局结构
 
 ```yaml
 version: 2.0
@@ -24,15 +22,15 @@ services: {}
 addons: {}
 ```
 
-erda.yml 文件全局结构定义有 5 项全局配置，分别如下：
+erda.yml 文件的全局结构定义了 5 项全局配置，具体说明如下。
 
 ### version
 
-version 的值目前定义为 2.0，只需要配置为：`version: 2.0` 即可。
+version 的值目前定义为 2.0，仅需配置为 `version: 2.0` 即可。
 
 ### values
 
-values 用以设置不同环境中的变量，以便在一份 erda.yml 中维护各个环境下的配置。它的格式为:
+values 用于设置不同环境中的变量，从而在一份 erda.yml 文件中维护各个环境下的配置，其格式为：
 
 ```yaml
 values:
@@ -40,9 +38,9 @@ values:
     key: value
 ```
 
-引用 values 中的变量的方式为 `${key: default_value}`。
+引用 values  的变量方式为 `${key: default_value}`。
 
-示例：
+示例如下：
 
 ```yaml
 values:
@@ -60,15 +58,17 @@ services:
       cpu: ${cpu:1}
 ```
 
-以上示例中，用 "cpu" 配置服务在不同环境下所需的 cpu 值。
-services.serviceA.resources.cpu 的值 ${cpu:1} 引用了这个变量，那么部署到 development 和 test 环境时，cpu 的值为 0.5；
-部署到 staging 环境时，cpu 的值为默认值 1；部署到 production 环境时，cpu 的值为 2。
+以上示例中，通过 `cpu` 配置服务在不同环境下所需的 CPU 值。
+
+services.serviceA.resources.cpu 的值 ${cpu:1} 引用了该变量，则部署至开发环境和测试环境时，CPU 的值为 0.5；部署至预发环境时，CPU 为默认值 1；部署至生产环境时，CPU 的值为 2。
 
 ### envs
 
-envs 定义环境变量，envs 分全局定义和 service 内定义两种，此处展示的全局结构为全局定义，通过 envs 配置全局定义的环境变量将被应用到所有的 services 里。全局环境变量和 service 内环境变量重复的时候，以 service 内环境变量为准，也就是 service 内环境变量可以覆盖全局环境变量。
+envs 定义环境变量，分为全局定义和 service 内定义，此处展示的全局结构为全局定义，通过 envs 配置全局定义的环境变量将应用至所有 services。
 
-例子：
+若全局环境变量和 service 内环境变量重复，则以 service 内环境变量为准，即 service 内环境变量可覆盖全局环境变量。
+
+示例如下：
 
 ```yaml
 envs:
@@ -80,9 +80,9 @@ envs:
 
 ### services
 
-services 定义具体的一组 service 集合，为整个应用需要被编排部署的所有服务，具体的内容包含微服务名、resources、deployments、 ports、 envs。
+services 定义一组具体的 service 集合，即整个应用需编排部署的所有服务，包含微服务名、resources、deployments、ports 和 envs。
 
-例子：
+示例如下：
 
 ```yaml
 services:
@@ -108,9 +108,9 @@ services:
 
 ### addons
 
-addons 是指在应用内能够被所有微服务依赖使用的基础服务，也可以称为微服务的插件服务。 addons 包括但不限于 MySQL、Kafka、ElasticSearch、Redis 等基础软件服务，用户自己研发的微服务也可以沉淀成 addon ，按照定义规则发布的到服务市场。
+addons 指在应用内能够被所有微服务依赖使用的基础服务，也被称为微服务的插件服务。addons 包括但不限于 MySQL、Kafka、Elasticsearch、Redis 等基础软件服务，用户自行研发的微服务也可沉淀为 addon，根据定义的规则发布至服务市场。
 
-例子：
+示例如下：
 
 ```yaml
 addons:
@@ -128,7 +128,7 @@ addons:
 
 ## 配置项
 
-erda.yml 内置了一套配置项用来定义整个微服务应用，它们是编写 erda.yml 的基础。 配置项分为全局配置项、service 配置项、addon 配置项。
+erda.yml 内置一套配置项用于定义整个微服务应用，这些配置项是编写 erda.yml 的基础。配置项分为全局配置项、service 配置项、addon 配置项。
 
 ### 全局配置项
 
@@ -138,38 +138,38 @@ erda.yml 内置了一套配置项用来定义整个微服务应用，它们是�
 - services
 - addons
 
-上文已详细介绍。
+具体请参见 [全局结构](#全局结构)。
 
 ### values 配置项
 
-values 配置项即 development, test, staging 以及 production 四个 workspace 名称，分别表示开发环境，测试环境，预发环境和生产环境。
+values 配置项即 development、testing、staging 以及 production 四个 workspace 名称，分别代表开发环境、测试环境、预发环境和生产环境。
 
 ### service 配置项
 
-service 配置项顾名思义是对微服务部署具体内容配置。
+service 配置项即微服务部署具体内容配置。
 
 #### image
-> 配置 service 的 docker 镜像名字，默认值为空。这个配置字段不是必须的，采用 CI 部署的时候，可以不填写此字段，未填写的情况下直接会用服务名来获取镜像。
+配置 service 的 Docker 镜像名称，默认为空。该配置字段为选填项，采用 CI 部署时若未填写，将直接通过服务名获取镜像。
 
-例子：
+示例如下：
 
 ```yaml
 image: nginx:latest
 ```
 
 #### cmd
-> 配置 service 的启动命令，默认值为空。如果不配置 cmd，将启动 docker image 中定义的进程
+配置 service 的启动命令，默认为空。若未配置 cmd，将启动 docker image 中定义的进程。
 
-例子：
+示例如下：
 
 ```yaml
 cmd: echo hello && npm run start
 ```
 
 #### ports
-> 配置 service 监听的端口，可以有多个, 对于需要被暴露给外部用户访问的端口, expose 设置为 true，当不指定 expose 时，如果需要暴露外部使用，默认取第一个端口
+配置 service 监听的端口，可设置多个端口。对于需暴露给外部用户访问的端口，设置 expose 为 true。若未指定 expose，如需暴露外部使用，则默认取第一个端口。
 
-例子：
+示例如下：
 
 ```yaml
 ports:
@@ -180,9 +180,9 @@ ports:
 ```
 
 #### envs
-> 配置 service 的环境变量，和全局的 envs 定义的环境变量重复的时候会覆盖全局配置，优先使用 service 内配置
+配置 service 的环境变量。若与全局 envs 定义的环境变量重复时将覆盖全局配置，优先使用 service 内配置。
 
-例子：
+示例如下：
 
 ```yaml
 envs:
@@ -191,9 +191,9 @@ envs:
 ```
 
 #### hosts
-> 配置 service 的 `/etc/hosts` 绑定
+配置 service 的 `/etc/hosts` 绑定。
 
-例子：
+示例如下：
 
 ```yaml
 hosts:
@@ -202,17 +202,17 @@ hosts:
 ```
 
 #### resources
-> 配置 service 所需要的资源，资源包括 cpu、内存和磁盘，resources 包含如下子配置项：
->
-> cpu: 配置 cpu 核数，可以是小数，不足一个核；必配选项，没有默认值。
->
-> mem: 配置内存数，单位是 M；必配选项
->
-> disk：配置磁盘大小数，单位是 M
->
-> network: 容器网络配置, 可选配置, `mode` 可配置为 `overlay` 或 `host`， 默认为 `overlay`
+配置 service 所需要的资源，包括 CPU、内存和磁盘。resources 包含如下子配置项：
 
-例子：
+* **cpu**：配置 CPU 核数，不足一核时可配置为小数，必填项，无默认值。
+
+* **mem**：配置内存大小，单位为 MB，必填项。
+
+* **disk**：配置磁盘大小，单位为 MB。
+
+* **network**：配置容器网络，选填项，`mode` 可配置为 `overlay` 或 `host`， 默认为 `overlay`。
+
+示例如下：
 
 ```yaml
 resources:
@@ -224,13 +224,13 @@ resources:
 ```
 
 #### capabilities
-> 配置 service 的 linux capabilities, `man 7 capabilities` 查看全部可用的 linux capabilities。
->
-> cap_add: 添加 capability
->
-> cap_drop: 删除 capability
+配置 service 的 linux capabilities，`man 7 capabilities` 可查看全部可用的 linux capabilities。
 
-例子：
+* **cap_add**：添加 capability。
+
+* **cap_drop**：删除 capability。
+
+示例如下：
 
 ```yaml
 cap_add:
@@ -242,14 +242,13 @@ cap_drop:
 ```
 
 #### deployments
-> 配置 service 的部署策略，目前支持配置实例数、labels 等，所以有如下配置项：
->
-> mode: 部署模式可以指定为 `global` 或 `replicated` 两种，`global` 表示每个集群节点部署一个容器实例，`replicated` 表示部署指定数量的容器实例，与 replicas 选项配合使用，默认为：`replicated`。
->
-> replicas: 定义服务需要部署几个实例；mode 需要为 `replicated` 时才有意义，如果是 `global` 时不需要配置此值。
->
+配置 service 的部署策略，当前支持配置实例数、labels 等，可配置项如下：
 
-例子1：
+* **mode**：部署模式可指定为 `global` 或 `replicated`。`global` 表示每个集群节点部署一个容器实例，`replicated` 表示部署指定数量的容器实例，与 replicas 选项配合使用，默认为 `replicated`。
+
+* **replicas**：定义服务需部署的实例数量，仅在 mode 为 `replicated` 时配置，若 mode 为 `global` 则无需配置。
+
+示例一：
 
 ```yaml
 deployments:
@@ -257,7 +256,7 @@ deployments:
   replicas: 2
 ```
 
-例子2：
+示例二：
 
 ```yaml
 deployments:
@@ -266,9 +265,9 @@ deployments:
 
 
 #### depends_on
-> 配置 service 的部署依赖服务
+配置 service 的部署依赖服务。
 
-例子：
+示例如下：
 
 ```yaml
 # 例子表示此服务依赖于 serviceB 和 serviceC 两个服务
@@ -278,11 +277,12 @@ depends_on:
 ```
 
 #### volumes
-> volumes 为容器目录提供持久化存储功能，可以同时指定多个配置。
-> storage: 当前只支持 nfs。
-> path: 指定容器内部挂载路径，需要使用绝对路径。
+volumes 为容器目录提供持久化存储功能，可同时指定多个配置。
 
-例子：
+* **storage**：当前仅支持 NFS。
+* **path**：指定容器内部挂载路径，需使用绝对路径。
+
+示例如下：
 
 ```yaml
 volumes:
@@ -291,11 +291,11 @@ volumes:
 ```
 
 #### health_check
-> health_check 配置 service 的健康检查机制，健康检查有两种接口供使用，分别是 http 和 command，配置 health_check 的时候只能二选一，不能同时使用 http 和 command。
+配置 service 的健康检查机制。健康检查有两种接口可供使用，分别是 HTTP 和 Command。配置 health_check 时只可选择其一，两者无法同时使用。
 
-http 健康检查就是向一个 http 接口发送 GET 请求，通过响应的状态是否为 200 来判断服务的健康情况。
+HTTP 健康检查即向一个 HTTP 接口发送 GET 请求，通过查看响应的状态码是否为 200 来判断服务的健康状态。
 
-例子和说明：
+示例如下：
 
 ```yaml
 health_check:
@@ -308,9 +308,9 @@ health_check:
     duration: 120
 ```
 
-command 健康检查是运行一个指定的命令，通过命令执行的退出码是否为 0 来判断服务的健康情况。
+Command 健康检查即运行一个指定命令，通过查看命令执行的退出码是否为 0 来判断服务的健康状态。
 
-例子和说明：
+示例如下：
 
 ```yaml
 health_check:
@@ -323,9 +323,9 @@ health_check:
 
 ### addon 配置项
 
-addon 配置项是一个具体的 addon 对象描述，具体包含了 addon 的类型、规格以及附加参数等信息。
+addon 配置项用于描述一个具体的 addon 对象，包含 addon 的类型、规格以及附加参数等信息。
 
-例子：
+示例如下：
 
 ```yaml
 addons:
@@ -339,16 +339,16 @@ addons:
 
 #### 名称
 
-平台通过名称来做共享策略，用户自定义名称后，在相同项目环境下，通过该名称可以自动共享Add-on。需要注意的是，在平台的开发、测试两个环境中，该名称会被自动忽略，直接修改为Add-on本身的名称。
+平台通过名称实现共享策略。用户自定义名称后，在相同项目环境下，可通过该名称自动共享 addon。但在开发和测试环境中，该名称将被自动忽略，直接修改为 addon 自身的名称。
 
 #### plan
-> plan 为描述 addon 的类型和规范，格式如下：
->
-> plan: {addon类型}:{规格}
->
-> 可选规格：根据具体的 addon 决定，一般有（ basic、professional、ultimate ）
+plan 用于描述 addon 的类型和规范，格式如下：
 
-例子：
+plan：{addon类型}:{规格}
+
+其规格由具体的 addon 决定，通常有 basic、professional 和 ultimate 三类。
+
+示例如下：
 
 ```yaml
 # 这是一个 basic 规格的 mysql addon
@@ -356,9 +356,9 @@ plan: mysql:basic
 ```
 
 #### options
-> options 定义 addon 的附加参数
+options 定义 addon 的附加参数。
 
-例子：
+示例如下：
 
 ```yaml
 options:
@@ -366,9 +366,7 @@ options:
   create_dbs: blog,blog2
 ```
 
-
-
-## 一个完整例子
+## 示例
 
 ```yaml
 version: 2.0

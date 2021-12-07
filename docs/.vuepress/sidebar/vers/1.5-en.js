@@ -88,37 +88,37 @@ module.exports = [
       },
     ]
   },
-  // {
-  //   title: 'DevOps',
-  //   collapsable: true,
-  //   children: [
-  //     {
-  //       title: '场景示例',
-  //       collapsable: true,
-  //       children: [
-  //         ['dop/examples/project-management', '业务项目管理'],
-  //         'dop/examples/deploy/deploy-from-git',
-  //         'dop/examples/deploy/deploy-from-image',
-  //         'dop/examples/deploy/deploy-from-go-build',
-  //         'dop/examples/deploy/deploy-from-java-build',
-  //         'dop/examples/deploy/deploy-from-caches-build',
-  //         'dop/examples/deploy/nexus',
-  //         ['dop/examples/deploy/manage-mirror', '如何管理镜像'],
-  //         'dop/examples/deploy/e2e-code-coverage',
-  //       ]
-  //     },
-  //     {
-  //       title: '设计理念',
-  //       collapsable: true,
-  //       children: [
-  //         ['dop/concepts/agile-info', '高效协同'],
-  //         ['dop/concepts/iac', 'IaC'],
-  //         ['dop/concepts/pipeline', 'pipeline.yml'],
-  //         ['dop/concepts/erda-yaml', 'erda.yml'],
-  //         // ['dop/concepts/artifact', '制品'],
-  //         ['dop/concepts/gitflow', 'Gitflow'],
-  //       ]
-  //     },
+  {
+    title: 'DevOps',
+    collapsable: true,
+    children: [
+      {
+        title: 'Examples',
+        collapsable: true,
+        children: [
+          // ['dop/examples/project-management', '业务项目管理'],
+          'dop/examples/deploy/deploy-from-git',
+          'dop/examples/deploy/deploy-from-image',
+          'dop/examples/deploy/deploy-from-go-build',
+          'dop/examples/deploy/deploy-from-java-build',
+          'dop/examples/deploy/deploy-from-caches-build',
+          'dop/examples/deploy/nexus',
+          'dop/examples/deploy/manage-mirror',
+          // 'dop/examples/deploy/e2e-code-coverage',
+        ]
+      },
+      {
+        title: 'Concepts',
+        collapsable: true,
+        children: [
+          // ['dop/concepts/agile-info', '高效协同'],
+          ['dop/concepts/iac', 'IaC'],
+          // ['dop/concepts/pipeline', 'pipeline.yml'],
+          ['dop/concepts/erda-yaml', 'erda.yml'],
+          // ['dop/concepts/artifact', '制品'],
+          ['dop/concepts/gitflow', 'Gitflow'],
+        ]
+      },
   //     {
   //       title: '最佳实践',
   //       collapsable: true,
@@ -242,8 +242,8 @@ module.exports = [
   //         },
   //       ]
   //     },
-  //   ]
-  // },
+    ]
+  },
   // {
   //   title: '微服务治理',
   //   collapsable: true,

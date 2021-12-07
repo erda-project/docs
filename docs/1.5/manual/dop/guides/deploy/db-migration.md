@@ -1,10 +1,11 @@
-### Erda MySQL Migration
-Erda MySQL 数据库迁移工具
+# 数据库迁移
+Erda MySQL Migration 为数据库迁移工具。
 
-#### 功能
-该 Action 用于将代码仓库中的 SQLs 脚本更新到数据库中。
-用户需要将用于 migration 的 SQLs 脚本提交到某个目录，并按模块进行分门别类。
-如指定 `.erda/migrations` 目录为存放脚本的目录，那么目录结构为
+## 功能介绍
+该 Action 用于将代码仓库中的 SQL 脚本更新至数据库。用户需将用于 Migration 的 SQL 脚本提交至某个目录，并按模块进行分门别类。
+
+若指定 `.erda/migrations` 目录为存放脚本的目录，则目录结构为：
+
 ```text
 repo-root:.
 ├── .erda
@@ -21,28 +22,27 @@ repo-root:.
 ├── other_directories
 └── dice.yml
 ```
-其中 module_1 和 module_2 是用户定义的业务模块名，可以自定义。
-module 目录下存放 SQLs 脚本。
+其中 module_1 和 module_2 是用户定义的业务模块名，可自定义。module 目录下存放 SQL 脚本。
 
-Erda MySQL Migration Action 会读取所有脚本，将安装到数据库中。
+Erda MySQL Migration Action 将读取所有脚本，并安装至数据库中。
 
-#### 参数说明
-- workdir: 工作目录, 对应仓库根目录, 默认为 ${git-checkout}
-- migrationdir: SQLs 脚本存放目录, 如上文提到的 `.erda/migrations`
-- database: 库名, 即 MySQL schema 名称
-- mysqllint: 是否要对即将安装的脚本进行规约检查
-- lint_config: 进行规约检查时的规约配置文件, 如果不填则使用默认配置
-- modules: 要执行 migrate 的模块列表, 如果不填则执行 migrationdir 目录下的所有模块
+## 参数说明
+- **workdir**：工作目录，对应仓库根目录，默认为 ${git-checkout}。
+- **migrationdir**：SQL 脚本存放目录，例如上文提及的 `.erda/migrations`。
+- **database**：库名，即 MySQL Schema 名称。
+- **mysqllint**：是否对即将安装的脚本进行规约检查。
+- **lint_config**：规约配置文件，若未填写则使用默认配置。
+- **modules**：执行 migrate 的模块列表，若未填写则执行 migrationdir 目录下的所有模块。
 
-#### 注意事项
-- 该 Action 连接的是 MySQL Addon, 如果 runtime 下没有 MySQL Addon, 会执行失败。
-- 如果第一次使用该 Action 之前, 数据库中已经存在业务表了, 要将这部分业务表结构和初始化数据整理成基线 SQL 脚本并在脚本首行标记`# MIGRATION_BASE`。
-- 指定的 `database` 如果不存在，该 Action 会自动创建。
-- Action 执行模块内的 SQLs 脚本时，首先执行所有的标记了`# MIGRATION_BASE`的基线脚本，基线脚本有多个时，按字符序执行；然后执行其他脚本，其他脚本也是按字符序执行。所以为脚本命名时，务必注意按一定的字符序。建议命名方式为`日期+数字序号+feature描述`。脚本文件名后缀应当为`.sql`。
-- Action 对脚本是增量执行的：每次执行前，都会比对执行记录，只执行上次执行后增量的脚本。执行过的脚本不应当修改内容或重命名，不然 Action 就比对不出哪些被执行过了。Action 的比对方式是在数据库中新增一个执行记录表`schema_migration_history`，将执行过的文件都记录下来，请不要删除改表。
-- 该 Action 只允许执行 DDL(数据定义语言) 和 DML(数据操作语言)，不支持 TCL(事务控制语言) 和 DCL(数据控制语言)，所以该 Action 不允许脚本中存在事务控制、授权等操作。
+## 注意事项
+- 该 Action 连接 MySQL Addon，若 Runtime 下无 MySQL Addon，则执行失败。
+- 若初次使用该 Action 前，数据库中已存在业务表，需将该部分业务表结构和初始化数据整理为基线 SQL 脚本并在脚本首行标记 `# MIGRATION_BASE`。
+- 若指定的 `database` 不存在，该 Action 将自动创建。
+- Action 执行模块内的 SQL 脚本时，将优先执行标记 `# MIGRATION_BASE` 的基线脚本，存在多个基线脚本时，按字符排序执行。随后执行其他脚本，同样以字符排序执行。因此为脚本命名时，建议命名方式为“日期 + 数字序号 + feature 描述”。脚本文件名后缀应为 `.sql`。
+- Action 增量执行脚本。执行前将对比执行记录，仅执行前次执行后增量的脚本。已执行的脚本不可修改内容或重命名，否则 Action 将无法比对。Action 将在数据库中新增一个执行记录表 `schema_migration_history`，记录已执行的文件，由此进行对比，请勿删除该表。
+- 该 Action 仅允许执行 DDL（数据定义语言） 和 DML（数据操作语言），不支持 TCL（事务控制语言）和 DCL（数据控制语言），因此该 Action 不允许脚本中存在事务控制、授权等操作。
 
-#### 示例配置文件
+## 示例
 ```yaml
 allowed_ddl:    # allowed_ddl 表示是否允许在 migration 中执行该类型的 DDL
     create_database_stmt: false
