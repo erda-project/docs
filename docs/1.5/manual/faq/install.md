@@ -51,7 +51,7 @@
 
 ## 6. 访问 Erda 会强制跳转 HTTPS 怎么办？
 
-Erda 默认配置的是 HTTP，如需开启 HTTPS，请参见 [Erda 如何配置 HTTPS](install.md#erda-如何配置-https？)。
+Erda 默认配置的是 HTTP，如需开启 HTTPS，请参见 [Erda 如何配置 HTTPS](install.md#erda-如何配置-https)。
 
 以社区 `ingress-nginx` 为例，默认情况下将强制跳转 HTTPS，您可以修改 `ingress-nginx` 配置以禁用：
 
@@ -93,7 +93,7 @@ data:
 
 Erda 通过节点标签来采集调度节点的可用资源，未正确设置标签将导致项目可用资源为 0。您可以通过如下步骤进行排查：
 
-1. 请确认导入的集群是否在集群总览中显示，如未显示请参见 [集群总览中未显示已添加的集群怎么办](install.md#完成-erda-安装后-集群总览中未显示已添加的集群怎么办？) 。
+1. 请确认导入的集群是否在集群总览中显示，如未显示请参见 [集群总览中未显示已添加的集群怎么办](install.md#完成-erda-安装后-集群总览中未显示已添加的集群怎么办) 。
 2. 为保证应用的正常构建发布，环境标签（`workspace-*`）、`stateless-service`、`pack-job` 是必需的。其余标签可参见 [节点标签](../cmp/guide/cluster/cluster-node-labels.md) 按需设置。您可以通过 **多云管理平台 > 集群总览 > 设置标签** 设置或查看标签。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/02/4f801c18-c0df-40b9-bb32-9f80af63f1b2.png)
