@@ -71,7 +71,7 @@ pipeline.yml 是描述从代码编译构建到应用部署的流水线配置文�
 该示例工程对应的 pipeline.yml 参考如下，更多信息请参见 [pipeline.yml](../guides/reference/pipeline.html)。
 
 ```yaml
-version: 1.1
+version: "1.1"
 stages:
 - stage:
   - git-checkout:

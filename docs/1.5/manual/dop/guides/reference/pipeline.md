@@ -45,7 +45,7 @@ pipeline.yml 的字段详细说明如下：
 
 version 表示 pipeline.yml 的版本号。目前最新版本为 1.1。
 
-只需要配置为：`version: 1.1` 即可。
+只需要配置为：`version: "1.1"` 即可。
 
 ### envs
 
@@ -472,7 +472,7 @@ stages:
 ::: details YAML 示例
 
 ``` yaml
-version: 1.1
+version: "1.1"
 
 # 定时配置
 cron: 0 */10 * * * ?
@@ -529,7 +529,7 @@ stages:
   - release:
       # 指定 Action 版本，Action 可以拥有多个历史版本
       # 若不指定，则使用平台当前的稳定版
-      version: 1.0
+      version: "1.0"
       params:
         dice_yml: ${git-checkout}/dice.yml # dice.yml 文件路径
         replacement_images: # 通过 ${backend}/${frontend} 引用打包结果

@@ -13,7 +13,7 @@
 * 以代码方式添加日志分析 Addon
 
   ```yaml
-  version: 2.0
+  version: "2.0"
   envs: {}
   services:
     foobar:

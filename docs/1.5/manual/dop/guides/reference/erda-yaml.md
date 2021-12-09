@@ -7,7 +7,7 @@ erda.yml 文件采用 YAML 语法编写，是一个微服务应用部署的描�
 ## 全局结构
 
 ```yaml
-version: 2.0
+version: "2.0"
 
 values:
   development: {}
@@ -26,7 +26,7 @@ erda.yml 文件的全局结构定义了 5 项全局配置，具体说明如下�
 
 ### version
 
-version 的值目前定义为 2.0，仅需配置为 `version: 2.0` 即可。
+version 的值目前定义为 2.0，仅需配置为 `version: "2.0"` 即可。
 
 ### values
 
@@ -369,7 +369,7 @@ options:
 ## 示例
 
 ```yaml
-version: 2.0
+version: "2.0"
 
 # values 并不是必须的, 但如果你要为某些参数在不同环境下配置不同的值, 它将很有用
 values:

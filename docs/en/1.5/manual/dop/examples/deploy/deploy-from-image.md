@@ -37,7 +37,7 @@ The three stages can be executed as the following actions:
 An example of pipeline.yml is as follows:
 
 ```yaml
-version: '1.1'
+version: "1.1"
 
 stages:
 - stage:

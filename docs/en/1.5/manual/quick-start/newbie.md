@@ -145,7 +145,7 @@ For this design, complete the following steps:
    * Complete the CI part:
 
       ```yaml
-      version: 1.1
+      version: "1.1"
 
       stages:
         - stage:
@@ -184,7 +184,7 @@ For this design, complete the following steps:
    * Complete the CD part:
 
       ```yaml
-      version: 1.1
+      version: "1.1"
    
       stages:
         - stage:

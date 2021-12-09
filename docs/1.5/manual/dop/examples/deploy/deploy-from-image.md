@@ -36,7 +36,7 @@ nginx:latest
  pipeline.yml 示例如下：
 
 ```yaml
-version: '1.1'
+version: "1.1"
 
 stages:
 - stage:

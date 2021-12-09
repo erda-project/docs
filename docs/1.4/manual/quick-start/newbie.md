@@ -145,7 +145,7 @@ Erda 提供多种快速安装的方式：
    * 首先完成 CI 部分：
 
      ```yaml
-     version: 1.1
+     version: "1.1"
 
      stages:
        - stage:
@@ -184,7 +184,7 @@ Erda 提供多种快速安装的方式：
    * 完成 CD 部分：
 
      ```yaml
-     version: 1.1
+     version: "1.1"
   
      stages:
        - stage:

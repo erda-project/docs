@@ -13,7 +13,7 @@
 文本方式添加：
 
 ```yaml
-version: 2.0
+version: "2.0"
 envs: {}
 services:
   foobar:
@@ -39,7 +39,7 @@ addons:
 举例如下
 
 ```yaml
-version: 2.0
+version: "2.0"
 envs: {}
 services:
   foobar:
@@ -66,7 +66,7 @@ addons:
 想要基于 istio 的 mTLS 开启业务层无感知的透明加密传输，只需在 dice.yml 中添加以下配置
 
 ```yaml
-version: 2.0
+version: "2.0"
 envs: {}
 services:
   foobar:

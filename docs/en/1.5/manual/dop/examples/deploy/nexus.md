@@ -55,7 +55,7 @@ Add the following configuration to pom of the corresponding project, otherwise i
 `MAVEN_SETTING_FILE` is the variable name configured above.
 
 ```yaml
-version: '1.1'
+version: "1.1"
 
 stages:
 - stage:
@@ -131,7 +131,7 @@ publishing{
 ### Configure Pipeline to Upload JAR Package
 
 ```yaml
-version: '1.1'
+version: "1.1"
 
 stages:
 - stage:
