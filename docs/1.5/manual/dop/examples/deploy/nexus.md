@@ -57,7 +57,7 @@ settings.xml 示例如下：
 `MAVEN_SETTING_FILE` 即上文配置的变量名称。
 
 ```yaml
-version: '1.1'
+version: "1.1"
 
 stages:
 - stage:
@@ -134,7 +134,7 @@ publishing{
 ### 配置流水线实现 JAR 包上传
 
 ```yaml
-version: '1.1'
+version: "1.1"
 
 stages:
 - stage:

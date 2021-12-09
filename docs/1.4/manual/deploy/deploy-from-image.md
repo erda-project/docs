@@ -37,7 +37,7 @@ nginx:latest
 可直接复制下面的内容作为 pipeline.yml 使用。
 
 ```yaml
-version: '1.1'
+version: "1.1"
 
 stages:
 - stage:

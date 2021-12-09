@@ -59,7 +59,7 @@ JavaScript 构建分为两部分:
 在平台上打包需要配置 `pipeline.yml` 文件，示例如下：
 
 ```yaml{10,11,12,13,14}
-version: 1.1
+version: "1.1"
 
 stages:
 - stage:
@@ -86,7 +86,7 @@ stages:
 **pipeline.yml** 示例：
 
 ```yaml{10,11,12}
-version: 1.1
+version: "1.1"
 
 stages:
 - stage:
@@ -144,7 +144,7 @@ server {
 **pipeline.yml** 示例：
 
 ``` yaml{10,11,12}
-version: 1.1
+version: "1.1"
 
 stages:
 - stage:

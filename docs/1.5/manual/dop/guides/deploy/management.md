@@ -60,7 +60,7 @@
 具体示例如下：
 
 ```yaml
-version: 2.0
+version: "2.0"
 services:
   user-center:
     ports:

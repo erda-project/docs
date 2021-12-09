@@ -174,7 +174,7 @@ settings.xml 样例
 - MAVEN_SETTING_FILE 就是上面配置的名称
 
 ```yaml
-version: '1.1'
+version: "1.1"
 
 stages:
 - stage:
@@ -253,7 +253,7 @@ publishing{
 ### 配置流水线实现 jar 包上传
 
 ```yaml
-version: '1.1'
+version: "1.1"
 
 stages:
 - stage:
@@ -351,7 +351,7 @@ Java 构建分为两部分:
 
 **pipeline.yml**
 ```yaml{10,14}
-version: '1.1'
+version: "1.1"
 
 stages:
 - stage:

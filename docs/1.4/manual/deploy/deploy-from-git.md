@@ -71,7 +71,7 @@ pipeline.yml 描述一个从代码编译构建到应用部署的流水线的配�
 该示例工程的完整 pipeline.yml，更多功能可以参考 [pipeline.yml 规范](./pipeline.md)。
 
 ```yaml
-version: 1.1
+version: "1.1"
 stages:
 - stage:
   - git-checkout:

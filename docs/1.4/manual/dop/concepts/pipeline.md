@@ -150,7 +150,7 @@ type ActionExecutor interface {
 示例如下：
 
 ```yaml
-version: 1.1
+version: "1.1"
 
 cron: 0 */10 * * * ?
 

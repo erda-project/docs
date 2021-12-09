@@ -58,7 +58,7 @@ User、ACL、Resource 应用 Repo 对应的 erda.yml 示例如下（省略服务
 ## User
 
 ```yaml
-version: 2.0
+version: "2.0"
 values:
   development:
     biz-domain: dev-biz.*
@@ -104,7 +104,7 @@ services:
 ## ACL
 
 ```yaml
-version: 2.0
+version: "2.0"
 values:
   development:
     biz-domain: dev-biz.*
@@ -140,7 +140,7 @@ ACL 的配置和 User 类似，此处不再赘述。同时可发现，ACL 和 Us
 ## Resource
 
 ```yaml
-version: 2.0
+version: "2.0"
 values:
   development:
     biz-domain: dev-biz.*

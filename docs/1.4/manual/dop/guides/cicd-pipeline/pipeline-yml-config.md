@@ -47,7 +47,7 @@ stages
 一个 Stages 下包含多个 Stage，因此在编辑流水线文本时，需把 Stage 当作数组而不是对象。同理 Stage 下包含多个 Action。
 
 ### 配置 Version
-Version 表示 pipeline.yml 的版本号。目前最新版本为 1.1，则配置为 `version: 1.1` 即可。
+Version 表示 pipeline.yml 的版本号。目前最新版本为 1.1，则配置为 `version: "1.1"` 即可。
 
 初始化 pipeline.yml：
 

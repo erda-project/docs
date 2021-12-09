@@ -3,7 +3,7 @@
 ## Maven 构建
 
 ```yaml
-version: 1.1
+version: "1.1"
 stages:
     - stage:
         - git-checkout:
@@ -44,7 +44,7 @@ stages:
 
 ## Gradle 构建
 ```yaml
-version: 1.1
+version: "1.1"
 stages:
     - stage:
         - git-checkout:

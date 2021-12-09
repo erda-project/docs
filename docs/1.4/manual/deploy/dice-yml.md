@@ -9,7 +9,7 @@ dice.yml 文件采用 Yaml 语法编写，是一个微服务应用部署的描�
 ## dice.yml 文件全局结构
 
 ```yaml
-version: 2.0
+version: "2.0"
 
 values:
   development: {}
@@ -28,7 +28,7 @@ dice.yml 文件全局结构定义有 5 项全局配置，分别如下：
 
 ### version
 
-version 的值目前定义为 2.0，只需要配置为：`version: 2.0` 即可。
+version 的值目前定义为 2.0，只需要配置为：`version: "2.0"` 即可。
 
 ### values
 
@@ -371,7 +371,7 @@ options:
 ## 一个完整例子
 
 ```yaml
-version: 2.0
+version: "2.0"
 
 # values 并不是必须的, 但如果你要为某些参数在不同环境下配置不同的值, 它将很有用
 values:
