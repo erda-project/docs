@@ -1,4 +1,4 @@
-# 流水线配置（图形界面）
+# 流水线配置（图形）
 
 手写流水线可能存在语法错误或上手比较困难。平台提供可视化图形编辑，通过图形界面交互快速配置流水线，更直观地呈现整个流水线流程。
 
@@ -8,9 +8,9 @@
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/edcab80d-ad2f-4012-b18e-4e26d41817a3.png)
 
 ## 添加节点
-添加节点前，请参见 [pipeline.yml](../reference/pipeline) 了解流水线基本构成元素。
+添加节点前，请参见 [pipeline.yml](../reference/pipeline.md) 了解流水线基本构成元素。
 
-流水线由多个阶段（Stage）构成的，各阶段可同时进行多个 Action。您可根据需求选择串行节点或并行节点，点击 **+** 即可选择丰富的制品。
+流水线由多个阶段（Stage）构成，各阶段可同时进行多个 Action。您可根据需求选择串行节点或并行节点，点击 **+** 即可选择丰富的制品。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/d8007636-b61a-42b3-9739-65c5d00f6c2f.png)
 
