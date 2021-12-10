@@ -1,115 +1,285 @@
-# 命令行工具
+# Erda CLI 命令
 
-CLI 是 Erda 为开发者提供的命令行工具，您可以通过该工具在终端设备上轻松构建 Erda 应用。
+## 命令说明
 
-## 下载安装
+### 全局参数
 
-### macOS
+`--interactive` 布尔类型，指定 CLI 是否采用交互式，默认值为 `true`。
 
-```bash
-wget -O /usr/local/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/mac/erda-1.4 && chmod +x /usr/local/bin/erda-cli
+`--remote` 字符串类型，指定 CLI 用于获取 Erda 代码仓库的 remote 名称，默认值 `origin`。在未指定 Erda 地址的情况下，如果 CLI 的工作目录是 Erda 应用的代码仓库，则会根据 remote 名称获取 git 地址并解析出组织（org）、项目（project）、应用（application） 信息。
+
+`--host` 字符串类型，指定 CLI 访问的 Erda 地址。CLI 本质上是访问了 Erda 的 openapi 地址，所有如果设置的是 https://erda.cloud，CLI 会转换成访问 https://openapi.erda.cloud。
+
+全部参数说明如下：
+
+```shell
+Global Flags:
+      --host string       Erda host to visit (e.g. https://erda.cloud)
+      --interactive       if true, interactive with user (default true)
+  -p, --password string   Erda password to authenticate
+  -r, --remote string     the remote for Erda repo (default "origin")
+  -u, --username string   Erda username to authenticate
+  -V, --verbose           if true, enable verbose mode
 ```
 
-### Linux
+### 分页展示
 
-```bash
-wget -O /usr/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/linux/erda-1.4 && chmod +x /usr/bin/erda-cli
+
+
+### 使用管道
+
+
+
+## 命令详情
+
+### erda-cli addon
+
+### erda-cli addon create
+
+### erda-cli addon delete
+
+### erda-cli addon inspect
+
+### erda-cli application create
+
+### erda-cli application delete
+
+### erda-cli application inspect
+
+### erda-cli application member
+
+### erda-cli application open
+
+### erda-cli config
+
+您可以通过 `config ` 命令获取当前配置文件内容。
+
+```shell
+$ erda-cli config
+version: "1.0"
+platforms:
+    - name: erda
+      server: https://openapi.erda.cloud
+      org_info:
+        id: 100046
+        name: trial
+        desc: 客户试用 Trial
+contexts:
+    - name: erda
+      platform_name: erda
+current_context: erda
 ```
 
-## 使用操作
+### erda-cli config current-context
 
-完成安装后，您可以通过 `erda-cli help` 命令列出所有可用的 Erda Command，再通过子命令的 `help` 信息查看详细用法。
+您可以通过 `config current-context` 命令获取当前上下文。
 
-```bash
-$ erda-cli help
+```shell
+$ erda-cli config current-context
+erda
+```
 
-    _/_/_/_/       _/_/_/        _/_/_/          _/_/
-   _/             _/    _/      _/    _/      _/    _/
-  _/_/_/         _/_/_/        _/    _/      _/_/_/_/
- _/             _/    _/      _/    _/      _/    _/
-_/_/_/_/       _/    _/      _/_/_/        _/    _/
+参数说明如下：
 
-Usage:
-  erda-cli [command]
-
-Available Commands:
-  build       Create an pipeline and run it
-  completion  generate the autocompletion script for the specified shell
-  ext         Extensions operation sets,including search, pull, push, retag
-  help        Help about any command
-  migrate     Erda MySQL Migrate
-  status      Show build status
-  version     Show dice version info
-
+```
 Flags:
-  -h, --help              help for erda-cli
-      --host string       dice host to visit, format: <org>.<wildcard domain>, eg: https://terminus-org.app.terminus.io
-  -p, --password string   dice password to authenticate
-  -u, --username string   dice username to authenticate
-  -V, --verbose           enable verbose mode
-
-Use "erda-cli [command] --help" for more information about a command.
+  -h, --help         help for current-context
+      --no-headers   if true, don't print headers (default print headers)
 ```
 
-### 登录
+### erda-cli config delete-context
 
-CLI 的多数子命令需在登陆后执行，有少数命令无需登录也可执行，例如 `migrate` 相关命令。
+### erda-cli config delete-platform
 
-登录相关参数如下：
+### erda-cli config get-contexts
 
-1. `--host` 指定需要登录的 Erda 平台地址，若未指定且在代码目录则通过 `git remote get-url origin` 获取平台地址。
-2. `-u`，`--username ` 指定登录用户名。
-3. `-p`，`--password` 指定登录密码。
-
-::: tip 提示
-
-登录成功后将保存 Session，Session 过期则需重新登录。
-
-:::
-
-### erda-cli version
-
-```bash
-$ erda-cli version
-Version: 1.4
-BuildTime: 2021-11-17 01:01:59
-GoVersion: go version go1.15.15 linux/amd64
-CommitID: 02583bd49fc57841bdcb05b02486e27dd868cf00
-DockerImage:
-```
-
-### erda-cli build
-
-您可以通过 `build` 命令构建 Erda 上的应用。
-
-::: tip 提示
-
-* 请先在 Erda 上创建应用并编写 pipeline.yml 和 erda.yml。
-* 1.5 以及上版本不推荐使用。
-
-:::
+您可以通过 `config get-contexts` 命令列出上下文
 
 ```shell
-$ erda-cli build --host=https://erda.cloud -u 'YourName' -p 'YourPassword'
-✔ building for branch: feature/echo-web, pipelineID: 12639533, you can view building status via `erda-cli status -i <pipelineID>`
+$ erda-cli config get-contexts
+CURRENT   NAME   PLATFORM
+*         erda   erda
 ```
 
-### erda-cli status
-
-您可以通过 `status` 命令构建 Erda 上的应用。
-
-::: tip 提示
-
-1.5 以及上版本不推荐使用。
-
-:::
+参数说明如下：
 
 ```shell
-$ erda-cli status -i 12639533
-pipeline progress (currentStage/totalStages): 4/4
+Flags:
+  -h, --help         help for current-context
+      --no-headers   if true, don't print headers (default print headers)
+```
 
-PIPELINEID   TASKID     TASKNAME   TASKSTATUS   STARTEDAT
-12639533     10169335   dice       Running      2021-11-22 13:38:46
+### erda-cli config get-platforms
+
+您可以通过 `config get-platforms` 命令列出平台信息。
+
+```shell
+$ erda-cli config get-platforms
+NAME   SERVER                       ORGINFO(ID/NAME/DESC)
+erda   https://openapi.erda.cloud   100046/trial/客户试用 Trial
+```
+
+参数说明如下：
+
+```shell
+Flags:
+  -h, --help         help for current-context
+      --no-headers   if true, don't print headers (default print headers)
+```
+
+### erda-cli config set-context
+
+您可以通过 `config set-context` 命令设置上下文信息。
+
+```shell
+$ erda-cli config set-context erda --platform=erda
+✔ Context "erda" set.
+```
+
+参数说明如下：
+
+```shell
+Flags:
+  -h, --help              help for set-context
+      --platform string   the name of platform
+```
+
+### erda-cli config set-platform
+
+您可以通过 `config set-platform` 命令设置平台信息。
+
+```shell
+$ erda-cli config set-platform erda --server=https://openapi.erda.cloud --org=trial
+✔ Platform "erda" set.
+```
+
+参数说明如下：
+
+```shell
+Flags:
+  -h, --help            help for set-platform
+      --org string      an org under the platform
+      --server string   the http endpoint for openapi of platform (default "https://openapi.erda.cloud")
+```
+
+### erda-cli config use-context
+
+您可以通过 `config use-context` 命令使用上下文。
+
+```shell
+$ erda-cli config use-context erda
+✔ Use context "erda".
+```
+
+### erda-cli erda
+
+您可以通过 `erda` 命令列出本地代码仓库中的 erda.yml 文件。
+
+```shell
+$ erda-cli erda
+BRANCH   ERDAYML
+master   /tmp/example/.erda/erda.yml
+```
+
+参数说明如下：
+
+```shell
+Flags:
+  -h, --help         help for erda
+      --no-headers   if true, don't print headers (default print headers)
+```
+
+### erda-cli erda init
+
+您可以通过 `erda init` 命令初始化 erda.yml 文件。
+
+```shell
+$ erda-cli erda init
+✔ Init .erda/erda.yml success.
+```
+
+::: warning 警告
+
+当前该命令仅支持对基于 spring boot 框架的单体应用生成 erda.yml 文件
+
+::: 
+
+参数说明如下：
+
+```
+Flags:
+  -c, --cpu float    the quota of CPU for service (default 0.5)
+  -h, --help         help for init
+  -m, --memory int   the quota of Memory for service (default 1024)
+```
+
+### erda-cli erda check
+
+您可以使用 `erda check` 命令检查 erda.yml 的格式，如果有异常会显示错误信息。
+
+```shell
+$ erda-cli erda check
+✔ Check /tmp/example/.erda/erda.yml OK.
+```
+
+参数说明如下：
+
+```shell
+Flags:
+  -f, --file string   specify the path of erda.yml file, default: .erda/erda.yml
+  -h, --help          help for check
+```
+
+### erda-cli erda parse
+
+您可以使用 `erda parse` 命令解析 erda.yml。
+
+```shell
+$ erda-cli erda parse --test
+environments:
+  development: null
+  production: null
+  staging: null
+  test: null
+meta: null
+services:
+  docker-java-app-example:
+    cmd: ""
+    deployments:
+      policies: shuffle
+      replicas: 1
+    health_check:
+      exec: {}
+      http: {}
+    image: ""
+    image_password: ""
+    image_username: ""
+    ports:
+    - port: 8080
+    resources:
+      cpu: 0.5
+      disk: 0
+      max_cpu: 0
+      max_mem: 0
+      mem: 1024
+      network:
+        mode: container
+    traffic_security: {}
+version: "2.0"
+```
+
+ 参数说明如下：
+
+```
+Flags:
+      --dev             if true, parse the erda.yml file in development environment
+  -f, --file string     specify the path of erda.yml file, default: .erda/erda.yml
+  -h, --help            help for parse
+  -o, --output string   output format, one of yaml|json (default "yaml")
+      --prod            if true, parse the erda.yml in production environment
+      --staging         if true, parse the erda.yml file in staging environment
+  -s, --str string      provide the content of erda.yml as a string
+      --test            if true, parse the erda.yml file in test environment
 ```
 
 ### erda-cli ext
@@ -196,4 +366,448 @@ Flags:
       --skip-mig                [Migrate] skip doing pre-migration and real migration
       --skip-pre-mig            [Migrate] skip doing pre-migration
       --skip-sandbox            [Migrate] skip doing migration in sandbox
+```
+
+### erda-cli org
+
+您可以使用 `erda-cli org` 命令列车自己所在的所有组织。
+
+```shell
+$ erda-cli org
+ORGID    NAME         DESCRIPTION
+100060   erda         Erda 开源组织
+100046   trial        Trial 企业
+```
+
+ 参数说明如下：
+
+```shell
+Flags:
+  -h, --help            help for org
+      --no-headers      if true, don't print headers (default print headers)
+      --page-size int   the number of page size (default 10)
+```
+
+### erda-cli org inspect
+
+您可以使用 `erda-cli org inspect` 命令查看一个组织的详细信息（json 格式）。 
+
+```shell
+$ erda-cli org inspect --org=trial
+{
+  "auditMessage": {
+    "messageEN": "",
+    "messageZH": ""
+  },
+  "blockoutConfig": {
+    "blockDev": false,
+    "blockProd": false,
+    "blockStage": false,
+    "blockTest": false
+  },
+  "config": {
+    "auditInterval": 0,
+    "enableMS": false,
+    "enablePersonalMessageEmail": false,
+    "smsKeyID": "",
+    "smsKeySecret": "",
+    "smsMonitorTemplateCode": "",
+    "smsSignName": "",
+    "smtpHost": "",
+    "smtpIsSSL": false,
+    "smtpPassword": "",
+    "smtpPort": 0,
+    "smtpUser": "",
+    "vmsKeyID": "",
+    "vmsKeySecret": "",
+    "vmsMonitorCalledShowNumber": "",
+    "vmsMonitorTtsCode": ""
+  },
+  "createdAt": "2019-11-07T19:08:37+08:00",
+  "creator": "55",
+  "desc": "客户试用 Trial 企业",
+  "displayName": "试用",
+  "domain": "erda.cloud",
+  "enableReleaseCrossCluster": false,
+  "id": 100046,
+  "isPublic": false,
+  "locale": "zh-CN",
+  "logo": "",
+  "name": "trial",
+  "openFdp": true,
+  "operation": "",
+  "publisherId": 0,
+  "selected": false,
+  "status": "",
+  "type": "ENTERPRISE",
+  "updatedAt": "2020-08-13T10:35:35+08:00",
+  "version": 0
+}
+```
+
+ 参数说明如下：
+
+ ```shell
+ Flags:
+   -h, --help          help for inspect
+       --org string    the name of an organization
+       --org-id uint   the id of an organization
+ ```
+
+### erda-cli org member
+
+您可以使用 `erda-cli org member` 命令列出该组织下的成员。
+
+```shell
+$ erda-cli org member
+NICK        NAME             EMAIL                      MOBILE        ROLES
+徐峰        136-706166651    x*f@highzap.com            139****9258   Dev
+徐伟        13-32924571      xw2****8@alibaba-inc.com   158****2501   Manager
+巫昌宏      巫昌宏           *@b.com                    189****3839   Dev
+yk-leex     1761078643628    <nil>                      176****6900   Dev
+五月        126924566938     <nil>                      156****2300   Dev
+leo         17436902426      mab******4@gmail.com       <nil>         Dev
+Cai         792109634082     <nil>                      177****4463   Dev
+勿忘心安~   1371174656027    <nil>                      178****6113   Dev
+rlag        186-1484399479   <nil>                      138****9691   Dev
+<nil>       1551662291413    <nil>                      178****3836   Dev
+```
+
+ 参数说明如下：
+
+```shell
+Flags:
+  -h, --help            help for member
+      --no-headers      if true, don't print headers (default print headers)
+      --org string      the name of an organization
+      --org-id uint     the id of an organization
+      --page-size int   the number of page size (default 10)
+      --roles strings   roles to list
+```
+
+### erda-cli org open
+
+您可以使用 `erda-cli org open` 命令在浏览器中打开组织的 Erda 页面。 
+
+```shell
+$ erda-cli org open --org=trial
+✔ Open trial in browser.
+```
+
+ 参数说明如下：
+
+```shell
+Flags:
+  -h, --help          help for open
+      --org string    the name of an organization
+      --org-id uint   the id of an organization
+```
+
+### erda-cli org switch
+
+您可以使用 `erda-cli org switch` 命令切换 CLI 运行上下文中的当前组织。
+
+```
+$ erda-cli org switch terminus
+  Before : trial          (100046)
+✔ Current: terminus       (2)
+```
+
+注意，切换成功会同时持久化在 ~/.erda.d/config 配置文件中，此后如果不指定组织（org）参数，默认都会使用该组织。 
+
+### erda-cli pipeline
+
+### erda-cli pipeline init
+
+### erda-cli pipeline check
+
+### erda-cli pipeline run
+
+### erda-cli pipeline status
+
+### erda-cli project
+
+您可以使用 `erda-cli org project` 命令列出您所参与的项目。
+
+```shell
+$ erda-cli project
+PROJECTID   NAME                         DISPLAYNAME             DESCRIPTION
+420         gaia-app-mix                 Gaia-App-mix            项目描述：BBC & OMS 融合功能验证，及 BBC 的压测环境；
+385         gaia-app                     Gaia-App-Source         项目描述：Gaia应用
+327         99RanchMarket                美*大*                <nil>
+841         terminus-shejijiaohuyouhua   Terminus_设计交互优化   <nil>
+241         T-Product                    Gaia                    Gaia 新商业软件套件
+615         gaia-app-store               Gaia-App-Store          项目描述：谢顿四期的产品研发
+56          Ragnarok                     Dice回归测试            erda 回归测试
+190         T-Project                    Trantor                 <nil>
+393         ysmy-digital                 源**语数字化项目      项目负责人：张* / *旭
+388         gaia-app-runtime             Gaia-App-Oms            负责人：孙*
+```
+
+ 参数说明如下：
+
+```shell
+Flags:
+  -h, --help            help for project
+      --no-headers      if true, don't print headers (default print headers)
+      --org string      the name of an organization
+      --org-id uint     the id of an organization
+      --page-size int   the number of page size (default 10)
+```
+
+### erda-cli project clear
+
+您可以通过 `project clear` 命令清理项目。
+
+```shell
+$ erda-cli project clear --project-id=599
+✔ Project clear success.
+```
+
+默认情况下 `project clear` 仅删除项目中的 runtimes 和 Erda 启动的 addons。可以通过指定 `--delete-custom-addons=true` 删除第三方 addons。可以通过指定 `--delete-apps=true` 删除所有的应用。
+
+参数说明如下：
+
+```shell
+Flags:
+      --delete-apps            if true, delete all applications
+      --delete-custom-addons   if true, delete all custom addons
+  -h, --help                   help for clear
+      --org string             the name of an organization
+      --org-id uint            the id of an organization
+      --project string         the name of a project
+      --project-id uint        the id of a project
+      --wait-addon int         minutes to wait addons deleted (default 3)
+      --wait-runtime int       minutes to wait runtimes deleted (default 3)
+      --workspace string       the env workspace of a project, if set only clear runtimes and addons in the specific workspace
+```
+
+### erda-cli project delete
+
+### erda-cli project inspect
+
+您可以通过 `project inspect` 命令查看项目详情。
+
+```shell
+$ erda-cli project inspect --project=bestpractice
+{
+  "CanManage": false,
+  "activeTime": "2021-12-10 18:11:02",
+  "blockStatus": "",
+  "canUnblock": null,
+  "clusterConfig": {
+    "DEV": "terminus-captain",
+    "PROD": "terminus-captain",
+    "STAGING": "terminus-captain",
+    "TEST": "terminus-captain"
+  },
+  "cpuAddonUsed": 0,
+  "cpuQuota": 6,
+  "cpuServiceUsed": 0,
+  "createdAt": "2021-08-13T13:45:30+08:00",
+  "creator": "19",
+  "ddHook": "",
+  "desc": "最佳实践项目",
+  "displayName": "bestpractice",
+  "id": 599,
+  "isPublic": false,
+  "joined": true,
+  "logo": "",
+  "memAddonUsed": 0,
+  "memQuota": 16,
+  "memServiceUsed": 0,
+  "name": "bestpractice",
+  "orgId": 100046,
+  "owners": [
+    "19"
+  ],
+  "resourceConfig": {
+    "DEV": {
+      "clusterName": "terminus-captain",
+      "cpuAvailable": 248.12900000000008,
+      "cpuQuota": 2,
+      "cpuRequest": 0,
+      "cpuRequestByAddon": 0,
+      "cpuRequestByAddonRate": 0,
+      "cpuRequestByService": 0,
+      "cpuRequestByServiceRate": 0,
+      "cpuRequestRate": 0,
+      "memAvailable": 937.8409999999999,
+      "memQuota": 8,
+      "memRequest": 0,
+      "memRequestByAddon": 0,
+      "memRequestByAddonRate": 0,
+      "memRequestByService": 0,
+      "memRequestByServiceRate": 0,
+      "memRequestRate": 0,
+      "tips": ""
+    },
+    "PROD": {
+      "clusterName": "terminus-captain",
+      "cpuAvailable": 108.66,
+      "cpuQuota": 2,
+      "cpuRequest": 0,
+      "cpuRequestByAddon": 0,
+      "cpuRequestByAddonRate": 0,
+      "cpuRequestByService": 0,
+      "cpuRequestByServiceRate": 0,
+      "cpuRequestRate": 0,
+      "memAvailable": 340.111,
+      "memQuota": 4,
+      "memRequest": 0,
+      "memRequestByAddon": 0,
+      "memRequestByAddonRate": 0,
+      "memRequestByService": 0,
+      "memRequestByServiceRate": 0,
+      "memRequestRate": 0,
+      "tips": ""
+    },
+    "STAGING": {
+      "clusterName": "terminus-captain",
+      "cpuAvailable": 111.08999999999999,
+      "cpuQuota": 2,
+      "cpuRequest": 0,
+      "cpuRequestByAddon": 0,
+      "cpuRequestByAddonRate": 0,
+      "cpuRequestByService": 0,
+      "cpuRequestByServiceRate": 0,
+      "cpuRequestRate": 0,
+      "memAvailable": 365.2179999999999,
+      "memQuota": 4,
+      "memRequest": 0,
+      "memRequestByAddon": 0,
+      "memRequestByAddonRate": 0,
+      "memRequestByService": 0,
+      "memRequestByServiceRate": 0,
+      "memRequestRate": 0,
+      "tips": ""
+    },
+    "TEST": {
+      "clusterName": "terminus-captain",
+      "cpuAvailable": 251.36900000000009,
+      "cpuQuota": 0,
+      "cpuRequest": 0,
+      "cpuRequestByAddon": 0,
+      "cpuRequestByAddonRate": 0,
+      "cpuRequestByService": 0,
+      "cpuRequestByServiceRate": 0,
+      "cpuRequestRate": 0,
+      "memAvailable": 940.2189999999998,
+      "memQuota": 0,
+      "memRequest": 0,
+      "memRequestByAddon": 0,
+      "memRequestByAddonRate": 0,
+      "memRequestByService": 0,
+      "memRequestByServiceRate": 0,
+      "memRequestRate": 0,
+      "tips": ""
+    }
+  },
+  "rollbackConfig": {
+    "DEV": 5,
+    "PROD": 5,
+    "STAGING": 5,
+    "TEST": 5
+  },
+  "stats": {
+    "countApplications": 7,
+    "countMembers": 0,
+    "doneBugCount": 0,
+    "doneBugPercent": 0,
+    "planningIterationsCount": 0,
+    "planningManHourCount": 0,
+    "runningIterationsCount": 0,
+    "totalApplicationsCount": 0,
+    "totalBugCount": 0,
+    "totalIterationsCount": 0,
+    "totalManHourCount": 0,
+    "totalMembersCount": 0,
+    "usedManHourCount": 0
+  },
+  "type": "",
+  "updatedAt": "2021-12-10T18:11:02+08:00"
+}
+```
+
+ 参数说明如下：
+
+```shell
+Flags:
+  -h, --help              help for inspect
+      --org string        the name of an organization
+      --org-id uint       the id of an organization
+      --project string    the name of a project
+      --project-id uint   the id of a project
+```
+
+
+
+### erda-cli project load
+
+
+
+### erda-cli project member
+
+您可以通过 `` 列出项目中的成员。
+
+```shell
+$ erda-cli project member --project=bestpractice
+NICK      NAME            EMAIL                          MOBILE        ROLES
+陈忠润    u931393614340   zho********r@alibaba-inc.com   159****5411   Lead
+刘浩杨    terminus10370   lhy*****4@alibaba-inc.com      185****5501   Lead
+陈建锋    jferic          che**f@terminus.io             186****9827   Owner
+Support   support         <nil>                          <nil>         Lead
+```
+
+ 参数说明如下：
+
+```shell
+Flags:
+  -h, --help              help for member
+      --no-headers        if true, don't print headers (default print headers)
+      --org string        the name of an organization
+      --org-id uint       the id of an organization
+      --page-size int     the number of page size (default 10)
+      --project string    the name of a project
+      --project-id uint   the id of a project
+      --roles strings     roles to list
+```
+
+### erda-cli project open
+
+```shell
+$ erda-cli project open --project=bestpractice
+✔ Open bestpractice in browser.
+```
+
+ 参数说明如下：
+
+```shell
+Flags:
+  -h, --help              help for open
+      --org string        the name of an organization
+      --org-id uint       the id of an organization
+      --project string    the name of a project
+      --project-id uint   the id of a project
+```
+
+### erda-cli release
+
+### erda-cli release inspect
+
+### erda-cli release open
+
+### erda-cli service
+
+### erda-cli version
+
+获取 erda-cli 的版本信息：
+
+```shell
+$ erda-cli version
+Version: 1.4
+BuildTime: 2021-11-17 01:01:59
+GoVersion: go version go1.15.15 linux/amd64
+CommitID: 02583bd49fc57841bdcb05b02486e27dd868cf00
+DockerImage:
 ```
