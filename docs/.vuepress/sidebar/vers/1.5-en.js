@@ -129,26 +129,26 @@ module.exports = [
   //         'dop/best-practices/manual-test'
   //       ]
   //     },
-  //     {
-  //       title: '使用指南',
-  //       collapsable: true,
-  //       children: [
-  //         {
-  //           title: '协同',
-  //           collapsable: true,
-  //           children: [
-  //             'dop/guides/collaboration/milestone',
-  //             'dop/guides/collaboration/backlog-and-iteration',
-  //             'dop/guides/collaboration/issue',
-  //             'dop/guides/collaboration/issue-requirement-and-task',
-  //             'dop/guides/collaboration/issue-bug',
-  //             'dop/guides/collaboration/issue-dashboard',
-  //             'dop/guides/collaboration/issue-customize-and-workflow',
-  //             'dop/guides/collaboration/ticket',
-  //             'dop/guides/collaboration/label',
-  //             'dop/guides/collaboration/notification',
-  //           ]
-  //         },
+      {
+        title: 'Guides',
+        collapsable: true,
+        children: [
+          {
+            title: 'Collaboration',
+            collapsable: true,
+            children: [
+              'dop/guides/collaboration/milestone',
+              'dop/guides/collaboration/backlog-and-iteration',
+              // 'dop/guides/collaboration/issue',
+              // 'dop/guides/collaboration/issue-requirement-and-task',
+              'dop/guides/collaboration/issue-bug',
+              // 'dop/guides/collaboration/issue-dashboard',
+              'dop/guides/collaboration/issue-customize-and-workflow',
+              'dop/guides/collaboration/ticket',
+              'dop/guides/collaboration/label',
+              'dop/guides/collaboration/notification',
+            ]
+          },
   //         {
   //           title: '代码',
   //           collapsable: true,
@@ -165,34 +165,34 @@ module.exports = [
   //             'dop/guides/api/api-design',
   //           ]
   //         },
-  //         {
-  //           title: '开发语言',
-  //           collapsable: true,
-  //           children: [
-  //             'dop/guides/language/java',
-  //             'dop/guides/language/javascript',
-  //             'dop/guides/language/php',
-  //             'dop/guides/language/go',
-  //           ]
-  //         },
-  //         {
-  //           title: '部署和管理',
-  //           collapsable: true,
-  //           children: [
-  //             'dop/guides/deploy/artifact-and-build',
-  //             'dop/guides/deploy/deploy-from-artifact',
-  //             'dop/guides/deploy/addon-out-of-box',
-  //             'dop/guides/deploy/addon-custom',
-  //             'dop/guides/deploy/deploy-by-cicd-pipeline',
-  //             'dop/guides/deploy/config',
-  //             'dop/guides/deploy/config-center',
-  //             'dop/guides/deploy/db-migration',
-  //             'dop/guides/deploy/management',
-  //             'dop/guides/deploy/metrics_logs',
-  //             'dop/guides/deploy/resource-management',
-  //             'dop/guides/deploy/block-deploy',
-  //           ]
-  //         },
+          {
+            title: 'Language',
+            collapsable: true,
+            children: [
+              'dop/guides/language/java',
+              // 'dop/guides/language/javascript',
+              'dop/guides/language/php',
+              'dop/guides/language/go',
+            ]
+          },
+          {
+            title: 'Deployment',
+            collapsable: true,
+            children: [
+              'dop/guides/deploy/artifact-and-build',
+              'dop/guides/deploy/deploy-from-artifact',
+              // 'dop/guides/deploy/addon-out-of-box',
+              // 'dop/guides/deploy/addon-custom',
+              'dop/guides/deploy/deploy-by-cicd-pipeline',
+              // 'dop/guides/deploy/config',
+              // 'dop/guides/deploy/config-center',
+              // 'dop/guides/deploy/db-migration',
+              // 'dop/guides/deploy/management',
+              // 'dop/guides/deploy/metrics_logs',
+              'dop/guides/deploy/resource-management',
+              // 'dop/guides/deploy/block-deploy',
+            ]
+          },
   //         {
   //           title: 'CI/CD 流水线',
   //           collapsable: true,
@@ -218,20 +218,20 @@ module.exports = [
   //             'dop/guides/qa-and-testing/project-test-report',
   //           ]
   //         },
-  //         {
-  //           title: '移动开发',
-  //           collapsable: true,
-  //           children: [
-  //             'dop/guides/mobileapp/basic',
-  //             'dop/guides/mobileapp/framework',
-  //             'dop/guides/mobileapp/local-environment',
-  //             'dop/guides/mobileapp/howto-dev',
-  //             // 'dop/guides/mobileapp/management',
-  //             // 'dop/guides/mobileapp/certificates',
-  //             // 'dop/guides/mobileapp/libraries',
-  //             // 'dop/guides/mobileapp/ios-ci'
-  //           ]
-  //         },
+          {
+            title: 'Mobile Application',
+            collapsable: true,
+            children: [
+              'dop/guides/mobileapp/basic',
+              // 'dop/guides/mobileapp/framework',
+              // 'dop/guides/mobileapp/local-environment',
+              // 'dop/guides/mobileapp/howto-dev',
+              // 'dop/guides/mobileapp/management',
+              // 'dop/guides/mobileapp/certificates',
+              // 'dop/guides/mobileapp/libraries',
+              // 'dop/guides/mobileapp/ios-ci'
+            ]
+          },
   //         {
   //           title: '参考',
   //           collapsable: true,
@@ -240,8 +240,8 @@ module.exports = [
   //             ['dop/guides/reference/erda-yaml', 'erda.yml 参考'],
   //           ]
   //         },
-  //       ]
-  //     },
+        ]
+      },
     ]
   },
   // {
@@ -472,13 +472,13 @@ module.exports = [
   //     },
   //   ]
   // },
-  // {
-  //   title: '命令行工具',
-  //   collapsable: true,
-  //   children: [
-  //     'cli/explain-args'
-  //   ]
-  // },
+  {
+    title: 'CLI',
+    collapsable: true,
+    children: [
+      'cli/explain-args'
+    ]
+  },
   // {
   //   title: '生态工具',
   //   collapsable: true,
