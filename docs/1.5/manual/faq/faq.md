@@ -72,7 +72,7 @@ addons:
 
    ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/36df5992-764a-464c-9caf-481b1bf321f8.png)
 
-::: tip
+::: tip 提示
 
 若在 SLB 等外部负载均衡设备上，已配置 80 端口强制 HTTPS 跳转，则 Erda 上的跳转功能无效。
 

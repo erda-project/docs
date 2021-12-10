@@ -1,0 +1,4 @@
+# Overview
+With the rapid development of the mobile Internet, pure native development can no longer meet the needs of business that grows rapidly. The cross-end solution can not only cope with fast iterative business needs, but also improve the code reuse rate and reduce development costs, thus becoming the first choice of many companies.
+
+[React Native](https://github.com/facebook/react-native) is a cross-platform mobile application development framework open sourced by Facebook in April 2015, and is a derivative of Facebook’s earlier open source UI framework React in the native mobile application platform, currently supporting iOS and Android platforms. React Native uses JavaScript language and HTML-like JSX and CSS to develop mobile applications, and developers familiar with web front-end development can quickly get started with a little time spent learning.
