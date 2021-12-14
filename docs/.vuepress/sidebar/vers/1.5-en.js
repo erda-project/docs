@@ -244,23 +244,23 @@ module.exports = [
       },
     ]
   },
-  // {
-  //   title: '微服务治理',
-  //   collapsable: true,
-  //   children: [
-  //     {
-  //       title: '场景示例',
-  //       collapsable: true,
-  //       children: [
-  //         {
-  //           title: '应用监控',
-  //           collapsable: true,
-  //           children: [
-  //             'msp/examples/apm/service-dashboard',
-  //             'msp/examples/apm/exception-alert',
-  //             'msp/examples/apm/status-alert',
-  //           ],
-  //         },
+  {
+    title: '微服务治理',
+    collapsable: true,
+    children: [
+      {
+        title: '场景示例',
+        collapsable: true,
+        children: [
+          {
+            title: '应用监控',
+            collapsable: true,
+            children: [
+              // 'msp/examples/apm/service-dashboard',
+              'msp/examples/apm/exception-alert',
+              'msp/examples/apm/status-alert',
+            ],
+          },
   //         {
   //           title: '日志分析',
   //           collapsable: true,
@@ -270,22 +270,22 @@ module.exports = [
   //             // 'msp/examples/log/log-dashboard',
   //           ],
   //         },
-  //         {
-  //           title: 'API 网关',
-  //           collapsable: true,
-  //           children: [
-  //             'msp/examples/apigw/config',
-  //             'msp/examples/apigw/hijack',
-  //             'msp/examples/apigw/timeout',
-  //             'msp/examples/apigw/rate-limit',
-  //             'msp/examples/apigw/custom-header',
-  //             'msp/examples/apigw/access-limit',
-  //             'msp/examples/apigw/cors',
-  //             'msp/examples/apigw/openapi',
-  //           ],
-  //         },
-  //       ]
-  //     },
+          {
+            title: 'API 网关',
+            collapsable: true,
+            children: [
+              // 'msp/examples/apigw/config',
+              // 'msp/examples/apigw/hijack',
+              'msp/examples/apigw/timeout',
+              // 'msp/examples/apigw/rate-limit',
+              'msp/examples/apigw/custom-header',
+              'msp/examples/apigw/access-limit',
+              // 'msp/examples/apigw/cors',
+              // 'msp/examples/apigw/openapi',
+            ],
+          },
+        ]
+      },
   //     {
   //       title: '设计理念',
   //       collapsable: true,
@@ -317,18 +317,18 @@ module.exports = [
   //         },
   //       ]
   //     },
-  //     {
-  //       title: '最佳实践',
-  //       collapsable: true,
-  //       children: [
-  //         {
-  //           title: '应用监控',
-  //           collapsable: true,
-  //           children: [
-  //             'msp/practice/apm/service-alert',
-  //             'msp/practice/apm/pressure-test-dashboard',
-  //           ],
-  //         },
+      {
+        title: '最佳实践',
+        collapsable: true,
+        children: [
+          {
+            title: '应用监控',
+            collapsable: true,
+            children: [
+              'msp/practice/apm/service-alert',
+              // 'msp/practice/apm/pressure-test-dashboard',
+            ],
+          },
   //         {
   //           title: '日志分析',
   //           collapsable: true,
@@ -336,28 +336,28 @@ module.exports = [
   //             'msp/practice/log/log-to-diagnose-business-exception',
   //           ],
   //         },
-  //         {
-  //           title: 'API 网关',
-  //           collapsable: true,
-  //           children: [
-  //             'msp/practice/apigw/iac',
-  //             'msp/practice/apigw/apim',
-  //           ],
-  //         },
-  //         {
-  //           title: '注册中心&配置中心',
-  //           collapsable: true,
-  //           children: [
-  //             'msp/practice/nc/mse',
-  //           ],
-  //         },
-  //       ]
-  //     },
-  //     {
-  //       title: '使用指南',
-  //       collapsable: true,
-  //       children: [
-  //         ['msp/guides/platform/msp-project', '创建项目'],
+          {
+            title: 'API 网关',
+            collapsable: true,
+            children: [
+              'msp/practice/apigw/iac',
+              // 'msp/practice/apigw/apim',
+            ],
+          },
+          {
+            title: '注册中心&配置中心',
+            collapsable: true,
+            children: [
+              'msp/practice/nc/mse',
+            ],
+          },
+        ]
+      },
+      {
+        title: '使用指南',
+        collapsable: true,
+        children: [
+          ['msp/guides/platform/msp-project', '创建项目'],
   //         ['msp/guides/platform/msp-overview', '平台总览'],
   //         ['msp/guides/platform/msp-project-list', '项目列表'],
   //         'msp/guides/apm/topology',
@@ -394,16 +394,16 @@ module.exports = [
   //             'msp/guides/log/rules',
   //           ]
   //         },
-  //         {
-  //           title: 'API 网关',
-  //           collapsable: true,
-  //           children: [
-  //             'msp/guides/apigw/policy',
-  //             'msp/guides/apigw/auth',
-  //             'msp/guides/apigw/bench',
-  //             'msp/guides/apigw/status',
-  //           ]
-  //         },
+          {
+            title: 'API 网关',
+            collapsable: true,
+            children: [
+              // 'msp/guides/apigw/policy',
+              // 'msp/guides/apigw/auth',
+              'msp/guides/apigw/bench',
+              'msp/guides/apigw/status',
+            ]
+          },
   //         {
   //           title: '注册中心&配置中心',
   //           collapsable: true,
@@ -413,10 +413,10 @@ module.exports = [
   //             'msp/guides/nc/spring',
   //           ]
   //         },
-  //       ]
-  //     },
-  //   ]
-  // },
+        ]
+      },
+    ]
+  },
   // {
   //   title: '边缘计算',
   //   collapsable: true,
