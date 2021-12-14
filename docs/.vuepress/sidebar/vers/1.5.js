@@ -290,31 +290,9 @@ module.exports = [
         title: '设计理念',
         collapsable: true,
         children: [
-          {
-            title: '应用监控',
-            collapsable: true,
-            children: [
-              'msp/concepts/apm/observability',
-              'msp/concepts/apm/arch',
-              'msp/concepts/apm/concept',
-            ],
-          },
-          {
-            title: 'API 网关',
-            collapsable: true,
-            children: [
-              'msp/concepts/apigw/arch',
-              'msp/concepts/apigw/core',
-            ],
-          },
-          {
-            title: '注册中心&配置中心',
-            collapsable: true,
-            children: [
-              'msp/concepts/nc/arch',
-              'msp/concepts/nc/core',
-            ],
-          },
+          'msp/concepts/apm',
+          'msp/concepts/apigw',
+          'msp/concepts/nc',
         ]
       },
       {
