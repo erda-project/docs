@@ -245,15 +245,15 @@ module.exports = [
     ]
   },
   {
-    title: '微服务治理',
+    title: 'Microservice',
     collapsable: true,
     children: [
       {
-        title: '场景示例',
+        title: 'Examples',
         collapsable: true,
         children: [
           {
-            title: '应用监控',
+            title: 'Application Monitoring',
             collapsable: true,
             children: [
               // 'msp/examples/apm/service-dashboard',
@@ -271,7 +271,7 @@ module.exports = [
   //           ],
   //         },
           {
-            title: 'API 网关',
+            title: 'API Gateway',
             collapsable: true,
             children: [
               // 'msp/examples/apigw/config',
@@ -318,11 +318,11 @@ module.exports = [
   //       ]
   //     },
       {
-        title: '最佳实践',
+        title: 'Best Practices',
         collapsable: true,
         children: [
           {
-            title: '应用监控',
+            title: 'Application Monitoring',
             collapsable: true,
             children: [
               'msp/practice/apm/service-alert',
@@ -337,7 +337,7 @@ module.exports = [
   //           ],
   //         },
           {
-            title: 'API 网关',
+            title: 'API Gateway',
             collapsable: true,
             children: [
               'msp/practice/apigw/iac',
@@ -345,7 +345,7 @@ module.exports = [
             ],
           },
           {
-            title: '注册中心&配置中心',
+            title: 'Registration Center & Configuration Center',
             collapsable: true,
             children: [
               'msp/practice/nc/mse',
@@ -354,10 +354,10 @@ module.exports = [
         ]
       },
       {
-        title: '使用指南',
+        title: 'Guides',
         collapsable: true,
         children: [
-          ['msp/guides/platform/msp-project', '创建项目'],
+          ['msp/guides/platform/msp-project', 'Add Projects'],
   //         ['msp/guides/platform/msp-overview', '平台总览'],
   //         ['msp/guides/platform/msp-project-list', '项目列表'],
   //         'msp/guides/apm/topology',
@@ -395,7 +395,7 @@ module.exports = [
   //           ]
   //         },
           {
-            title: 'API 网关',
+            title: 'API Gateway',
             collapsable: true,
             children: [
               // 'msp/guides/apigw/policy',
