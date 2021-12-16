@@ -8,7 +8,7 @@
 
 Erda API 设计中心将 API 文档托管于代码仓库中，这一设计将接口描述与接口实现紧密地绑定在一起。
 
-```json
+```text
 // API 文档保存到 .erda/apidocs 目录下
 // 非侵入式目录, 不影响仓库目录主要结构
 // 如果应用下有多个微服务, 文档按服务名命名
@@ -74,6 +74,45 @@ root_from_repo
 在左侧目录栏中选择 **数据类型**，根据提示添加数据类型，并填写参数名称、类型、描述等基本信息。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/bec6fe96-237a-4073-b616-69eda187120c.png)
+
+#### 导入定义的库表字段
+在编辑数据结构时，可以导入定义在 `.erda/migrations` 目录中的库表的字段。如：
+```text
+root_from_repo
+    ├── .erda
+    │   ├── apidocs
+    │   ├── migrations
+    │   │   ├── micro_service_a
+    │   │   │   ├── 2021-01-01-some-feature-1.sql
+    │   │   │   └── 2021-01-02-some-feature-2.sql
+    │   │   └── micro_service_b
+    │   │       └── 2021-01-02-other-feature.sql
+    │   │
+    │   └── pipelines
+    │
+    ├── other_files
+    └── other_dirs
+```
+在以上目录结构中，`module_a/2021-01-01-some-feature-1.sql`, `module_a/2021-01-02-some-feature-2.sql` 中定义了如下库表结构:
+> micro_service_a/2021-01-01-some-feature-1.sql
+```sql
+CREATE TABLE t1 (
+    id BIGINT PRIMARY KEY,
+    created_at DATETIME,
+    updated_at DATETIME,
+    name VARCHAR(64) NOT NULL 
+);
+```
+> micro_service_a/2021-01-02-some-feature-2.sql
+```sql
+ALTER TABLE t1
+ADD COLUMN age INT NOT NULL ;
+```
+在 API 设计中编辑数据结构时，点击 "导入参数" 就可以直接引用库表字段了。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/13/7b8328b0-4a4a-47ba-82c3-246d472daa60.png)
+
+注意：设计 API 文档引用库表字段时，只能引用与文档名同名的模块下的库表字段。
 
 ### 定义接口
 
