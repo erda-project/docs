@@ -120,7 +120,7 @@ module.exports = [
         ]
       },
   //     {
-  //       title: '最佳实践',
+  //       title: 'Best Practices',
   //       collapsable: true,
   //       children: [
   //         'dop/best-practices/microservice-springcloud',
@@ -150,7 +150,7 @@ module.exports = [
             ]
           },
   //         {
-  //           title: '代码',
+  //           title: 'Code',
   //           collapsable: true,
   //           children: [
   //             'dop/guides/code/code-hosting',
@@ -194,7 +194,7 @@ module.exports = [
             ]
           },
   //         {
-  //           title: 'CI/CD 流水线',
+  //           title: 'CI/CD Pipeline',
   //           collapsable: true,
   //           children: [
   //             'dop/guides/cicd-pipeline/pipeline-yml-config',
@@ -204,7 +204,7 @@ module.exports = [
   //           ]
   //         },
   //         {
-  //           title: '质量保障和测试',
+  //           title: 'Quality Assurance and Testing',
   //           collapsable: true,
   //           children: [
   //             'dop/guides/qa-and-testing/sonar-report',
@@ -233,7 +233,7 @@ module.exports = [
             ]
           },
   //         {
-  //           title: '参考',
+  //           title: 'Reference',
   //           collapsable: true,
   //           children: [
   //             ['dop/guides/reference/pipeline', 'pipeline.yml 参考'],
@@ -262,7 +262,7 @@ module.exports = [
             ],
           },
   //         {
-  //           title: '日志分析',
+  //           title: 'Log Analysis',
   //           collapsable: true,
   //           children: [
   //             'msp/examples/log/java-log-rule',
@@ -287,11 +287,11 @@ module.exports = [
         ]
       },
   //     {
-  //       title: '设计理念',
+  //       title: 'Concepts',
   //       collapsable: true,
   //       children: [
   //         {
-  //           title: '应用监控',
+  //           title: 'Application Monotoring',
   //           collapsable: true,
   //           children: [
   //             'msp/concepts/apm/observability',
@@ -300,7 +300,7 @@ module.exports = [
   //           ],
   //         },
   //         {
-  //           title: 'API 网关',
+  //           title: 'API Gateway',
   //           collapsable: true,
   //           children: [
   //             'msp/concepts/apigw/arch',
@@ -308,7 +308,7 @@ module.exports = [
   //           ],
   //         },
   //         {
-  //           title: '注册中心&配置中心',
+  //           title: 'Registration Center & Configuration Center',
   //           collapsable: true,
   //           children: [
   //             'msp/concepts/nc/arch',
@@ -330,7 +330,7 @@ module.exports = [
             ],
           },
   //         {
-  //           title: '日志分析',
+  //           title: 'Log Analysis',
   //           collapsable: true,
   //           children: [
   //             'msp/practice/log/log-to-diagnose-business-exception',
@@ -369,7 +369,7 @@ module.exports = [
   //         //     ]
   //         // },
   //         {
-  //           title: '应用监控',
+  //           title: 'Application Monitoring',
   //           collapsable: true,
   //           children: [
   //             'msp/guides/apm/service-analysis',
@@ -386,7 +386,7 @@ module.exports = [
   //           ]
   //         },
   //         {
-  //           title: '日志分析',
+  //           title: 'Log Analysis',
   //           collapsable: true,
   //           children: [
   //             'msp/guides/log/quickstart',
@@ -405,7 +405,7 @@ module.exports = [
             ]
           },
   //         {
-  //           title: '注册中心&配置中心',
+  //           title: 'Registration Center & Configuration Center',
   //           collapsable: true,
   //           children: [
   //             'msp/guides/nc/dubbo',
@@ -418,14 +418,14 @@ module.exports = [
     ]
   },
   // {
-  //   title: '边缘计算',
+  //   title: 'Edge Computing',
   //   collapsable: true,
   //   children: [
   //     'ecp/example',
   //     'ecp/concept',
   //     'ecp/best-practice',
   //     {
-  //       title: '使用指南',
+  //       title: 'Guides',
   //       collapsable: true,
   //       children: [
   //         ['ecp/resource', '资源管理'],
@@ -436,11 +436,11 @@ module.exports = [
   //   ]
   // },
   {
-    title: '快数据',
+    title: 'Fast Data',
     collapsable: true,
     children: [
   //     {
-  //       title: '场景示例',
+  //       title: 'Examples',
   //       collapsable: true,
   //       children: [
   //         'fdp/example/integration',
@@ -450,7 +450,7 @@ module.exports = [
   //       ]
   //     },
       'fdp/concept',
-  //     ['fdp/best-practice', '最佳实践'],
+  //     ['fdp/best-practice', 'Best Practices'],
       {
         title: 'Guides',
         collapsable: true,
@@ -522,7 +522,7 @@ module.exports = [
     ]
   },
   // {
-  //   title: '常见问题',
+  //   title: 'FAQ',
   //   collapsable: true,
   //   children: [
   //     'faq/faq',
