@@ -435,10 +435,10 @@ module.exports = [
   //     },
   //   ]
   // },
-  // {
-  //   title: '快数据',
-  //   collapsable: true,
-  //   children: [
+  {
+    title: '快数据',
+    collapsable: true,
+    children: [
   //     {
   //       title: '场景示例',
   //       collapsable: true,
@@ -449,29 +449,29 @@ module.exports = [
   //         'fdp/example/om',
   //       ]
   //     },
-  //     'fdp/concept',
+      'fdp/concept',
   //     ['fdp/best-practice', '最佳实践'],
-  //     {
-  //       title: '使用指南',
-  //       collapsable: true,
-  //       children: [
-  //         'fdp/guide/work-space',
-  //         'fdp/guide/data-map',
-  //         'fdp/guide/data-om',
-  //         'fdp/guide/data-source',
-  //         'fdp/guide/source-data',
-  //         'fdp/guide/data-develop',
-  //         'fdp/guide/workflow',
-  //         'fdp/guide/data-standard',
-  //         'fdp/guide/notification-manage',
-  //         'fdp/guide/configure-manage',
-  //         'fdp/guide/data-service',
-  //         'fdp/guide/data-permission',
-  //         'fdp/guide/algorithm-model',
-  //       ]
-  //     },
-  //   ]
-  // },
+      {
+        title: 'Guides',
+        collapsable: true,
+        children: [
+          'fdp/guide/work-space',
+          'fdp/guide/data-map',
+          'fdp/guide/data-om',
+          // 'fdp/guide/data-source',
+          // 'fdp/guide/source-data',
+          // 'fdp/guide/data-develop',
+          // 'fdp/guide/workflow',
+          // 'fdp/guide/data-standard',
+          'fdp/guide/notification-manage',
+          'fdp/guide/configure-manage',
+          'fdp/guide/data-service',
+          // 'fdp/guide/data-permission',
+          'fdp/guide/algorithm-model',
+        ]
+      },
+    ]
+  },
   {
     title: 'CLI',
     collapsable: true,
@@ -479,48 +479,48 @@ module.exports = [
       'cli/explain-args'
     ]
   },
-  // {
-  //   title: '生态工具',
-  //   collapsable: true,
-  //   children: [
-  //     {
-  //       title: 'Kubeprober',
-  //       collapsable: true,
-  //       children: [
-  //         {
-  //           title: '快速入门',
-  //           collapsable: true,
-  //           children: [
-  //             ['eco-tools/kubeprober/guides/introduction', '概述'],
-  //             ['eco-tools/kubeprober/guides/install', '快速安装'],
-  //             ['eco-tools/kubeprober/guides/first_prober', '编写第一个 Prober'],
-  //           ]
-  //         },
-  //         {
-  //           title: '设计理念',
-  //           collapsable: true,
-  //           children: [
-  //             ['eco-tools/kubeprober/concepts/arch', '系统架构'],
-  //             ['eco-tools/kubeprober/concepts/cluster_crd', 'Cluster CRD'],
-  //             ['eco-tools/kubeprober/concepts/prober_crd', 'Prober CRD'],
-  //           ]
-  //         },
-  //         {
-  //           title: '使用指南',
-  //           collapsable: true,
-  //           children: [
-  //             ['eco-tools/kubeprober/best-practices/standalone_kubeprober', '单集群使用 Kubeprober'],
-  //             ['eco-tools/kubeprober/best-practices/muti_cluster_kubeprober', '多集群使用 Kuberprober'],
-  //             ['eco-tools/kubeprober/best-practices/prober_management', 'Prober 管理'],
-  //             ['eco-tools/kubeprober/best-practices/custom_prober', '自定义 Prober'],
-  //             ['eco-tools/kubeprober/best-practices/alert', '告警'],
-  //             ['eco-tools/kubeprober/best-practices/command_tools', '使用命令行工具'],
-  //           ]
-  //         },
-  //       ]
-  //     },
-  //   ]
-  // },
+  {
+    title: 'Ecosystem Tools',
+    collapsable: true,
+    children: [
+      {
+        title: 'Kubeprober',
+        collapsable: true,
+        children: [
+          {
+            title: 'Quick Start',
+            collapsable: true,
+            children: [
+              ['eco-tools/kubeprober/guides/introduction', 'Overview'],
+              ['eco-tools/kubeprober/guides/install', 'Quick Installation'],
+              // ['eco-tools/kubeprober/guides/first_prober', '编写第一个 Prober'],
+            ]
+          },
+          {
+            title: 'Concepts',
+            collapsable: true,
+            children: [
+              // ['eco-tools/kubeprober/concepts/arch', '系统架构'],
+              ['eco-tools/kubeprober/concepts/cluster_crd', 'Cluster CRD'],
+              ['eco-tools/kubeprober/concepts/prober_crd', 'Prober CRD'],
+            ]
+          },
+          {
+            title: 'Guides',
+            collapsable: true,
+            children: [
+              ['eco-tools/kubeprober/best-practices/standalone_kubeprober', 'Kubeprober for a Single Cluster'],
+              ['eco-tools/kubeprober/best-practices/muti_cluster_kubeprober', 'Kubeprober for Multiple Clusters'],
+              // ['eco-tools/kubeprober/best-practices/prober_management', 'Prober 管理'],
+              // ['eco-tools/kubeprober/best-practices/custom_prober', '自定义 Prober'],
+              // ['eco-tools/kubeprober/best-practices/alert', '告警'],
+              ['eco-tools/kubeprober/best-practices/command_tools', 'Command Line Tools'],
+            ]
+          },
+        ]
+      },
+    ]
+  },
   // {
   //   title: '常见问题',
   //   collapsable: true,

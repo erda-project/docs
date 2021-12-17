@@ -488,7 +488,7 @@ module.exports = [
             collapsable: true,
             children: [
               ['eco-tools/kubeprober/best-practices/standalone_kubeprober', '单集群使用 Kubeprober'],
-              ['eco-tools/kubeprober/best-practices/muti_cluster_kubeprober', '多集群使用 Kuberprober'],
+              ['eco-tools/kubeprober/best-practices/muti_cluster_kubeprober', '多集群使用 Kubeprober'],
               ['eco-tools/kubeprober/best-practices/prober_management', 'Prober 管理'],
               ['eco-tools/kubeprober/best-practices/custom_prober', '自定义 Prober'],
               ['eco-tools/kubeprober/best-practices/alert', '告警'],

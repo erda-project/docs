@@ -1,20 +1,16 @@
 # 数据源管理
 
-## 概述
-
-### 数据源作用
+## 数据源作用
 
 平台将根据数据源读取数据所在位置。
 
-### 数据源类型
+## 数据源类型
 
 数据源分为内部（INTERNAL）和外部（EXTERNAL）两类。
 
-#### 内部数据源
+### 内部数据源
 
-当前支持 MySQL，主要针对企业内部系统。
-
-在创建内部数据模型时，需选择内部数据源，在此数据源上创建数据模型。
+当前支持 MySQL，主要针对企业内部系统。在创建内部数据模型时，需选择内部数据源。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/d931b9c8-eacd-47c9-9723-6a52bfa4e151.png)
 
@@ -22,7 +18,7 @@
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/7285b034-2620-4897-aff6-823475b26ebd.png)
 
-#### 外部数据源
+### 外部数据源
 
 外部数据源除支持 MySQL 外，还支持 Oracle、Db2、CUSTOM、HANA、PostgreSQL、Kafka、ODPS 等类型，主要针对外部客户所提供的数据。
 
@@ -38,7 +34,7 @@
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/6ea6492d-8d23-4294-a313-d66c001148af.png)
 
-* **测试连接**：点击确认数据源是否连通。若测试失败，请检查用户名或密码以及其他相关配置。
+* **测试连接**：点击确认数据源是否连通。若测试失败，请检查用户名或密码以及其他相关配置是否正确。
 
   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/4c7a6ddb-40ab-4907-9ffc-6b4bb38b1509.png)
 
@@ -78,9 +74,7 @@
 
 ### 同一数据源下多个前缀相同的 MySQL 表（分库分表）
 
-使用场景限制：同一个数据库下，有多张表，多张表表名均为 ABC_数字 。
-
-格式：1.ABC相同（ABC中可以包含下划线）；2.数字连续。
+适用于同一数据库下有多张名称为 “ABC_数字” 的表的场景。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/96254e39-f0c0-4c6a-bccd-661a1db1c0db.png)
 
@@ -94,17 +88,17 @@
 
 * **tableMax**：代表结束的后缀。
 
-对于这种数据源，在配置数据模型时，只需配置一个数据模型即可，模型名为上文提到的 ABC 部分，不需要加后面的数字部分。在配置数据集成节点且运行后，上述所有表中的数据会集成到同一张表中。
+对于此类数据源，仅需配置一个数据模型即可，模型名称为上文提及的 ABC 部分，无需添加数字。完成数据集成节点配置且运行后，上述所有表的数据将集成至同一表中。
 
 ## 数据源查询
 
-平台支持根据数据源名称、分类、类型、数据源标签等条件筛选数据源。
+平台支持根据数据源名称、分类、类型、标签等条件筛选数据源。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/52daefbf-6a00-4214-8e8b-f2d5de9c5582.png)
 
 ## 数据源一键同步
 
-若数据源连接信息发生变化，在数据源页面，可进行工作流一键同步。
+若数据源连接信息发生变化，可在数据源详情页面一键同步工作流。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/29/77c5f8aa-d9b3-4725-b6d4-03d4e32d0a0a.png)
 
@@ -114,6 +108,6 @@
 
 ## 数据源导入导出
 
-平台支持批量导出导出数据源，操作便捷。
+平台支持批量导入导出数据源，快速便捷。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/29/f39c0bb1-a143-4725-9632-d001c2fa8d7d.png)
