@@ -1,7 +1,7 @@
 # Cluster CRD
-Cluster CRD 在 Kubeprober 中描述集群对象，用于管理海量集群信息以及查看集群的诊断信息。
+Cluster CRD describes cluster objects in Kubeprober, to manage massive cluster data and view cluster diagnostic information.
 
-## 主要结构
+## Structure
 ```go
 type ClusterSpec struct {
 	K8sVersion    string        `json:"k8sVersion,omitempty"`
@@ -50,13 +50,13 @@ type Cluster struct {
 
 ```
 
-## 配置信息
-配置信息包含 K8sVersion、ClusterConfig 和 ExtraInfo， 其中 K8sVersion 与 ClusterConfig 信息由 probe-agent 上报，将 K8s 的版本信息、连接 ApiServer 所需 Token 或者密钥对信息写入 Cluster 资源的 Spec 中。  
+## Configuration
+The configuration information includes K8sVersion, ClusterConfig and ExtraInfo. The probe-agent reports information of K8sVersion and ClusterConfig, and writes the version of K8s, token required for connection to APIServer and key pairs into the spec of the cluster.
 ### ClusterConfig
-ClusterConfig 用于存储 probe-agent 从受纳管集群中采集的 K8s 信息，包括 api-server 内网地址、认证所需 Token、CA、Cert、Key 以及 probe-agent 所在的 namespace。上报的 ApiServer 认证信息所具备的 RBAC 权限由部署在受纳管集群的 kuberprober ns 下的 kubeprober ServiceAcount 权限决定，如需更多权限，可修改对应的 ClusterRole。
+ClusterConfig is used to store the K8s information collected by the probe-agent from the managed cluster, including the api-server intranet address, the token required for authentication, CA, cert, key and the namespace where the probe-agent is located. The RBAC permissions of the reported ApiServer authentication information are determined by the kubeprober ServiceAcount deployed under the kuberprober ns of the managed cluster. Modify the corresponding ClusterRole for more permissions.
 
-### ExtraInfo  
-ExtraInfo 用于存储每个集群的特性化配置，也可理解为环境变量，通过增加、修改或删除 Cluster 资源中的 ExtraInfo 环境变量，probe-master 将最新变量同步至对应集群名为 extra-config 的 ConfigMap 中，随后即可在对应 Probe 诊断程序中使用变量，示例如下：
+### ExtraInfo
+ExtraInfo is used to store the characteristic configuration of each cluster. By adding, modifying or deleting the ExtraInfo environment variable in the cluster, the probe-master will synchronizes the latest variable to the ConfigMap named extra-config, then the variables can be used in the corresponding probe diagnosis. An example is as follows:
 ```yaml
   extraInfo:
   - name: LOGIN_USER
@@ -64,5 +64,5 @@ ExtraInfo 用于存储每个集群的特性化配置，也可理解为环境变�
   - name: LOGIN_PASSWORD
     value: "xxxxxxxxxxx"
 ```
-## 状态信息
-Cluster 的 Status 用于存储集群的诊断状态数据，包括节点数量、该集群关联的 Probe 列表、所有 Checker 的诊断结果数据（以总数/Error 数量呈现），以及 OnceProbeList 一次性诊断历史记录。
+## Status
+The status of cluster is used to store the diagnostic data, including the number of nodes, the probe list associated with the cluster, the diagnosis results of all checkers (presented as total number/error) and the OnceProbeList.
