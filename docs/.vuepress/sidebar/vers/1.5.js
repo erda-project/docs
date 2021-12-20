@@ -476,6 +476,8 @@ module.exports = [
     title: '命令行工具',
     collapsable: true,
     children: [
+      'cli/install',
+      'cli/usage',
       'cli/explain-args'
     ]
   },

@@ -7,13 +7,13 @@ CLI 是 Erda 为开发者提供的命令行工具，您可以通过该工具在�
 ### macOS
 
 ```bash
-wget -O /usr/local/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/mac/erda-1.5 && chmod +x /usr/local/bin/erda-cli
+wget -O /usr/local/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/mac/erda-cli-alpha && chmod +x /usr/local/bin/erda-cli
 ```
 
 ### Linux
 
 ```bash
-wget -O /usr/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/linux/erda-1.5 && chmod +x /usr/bin/erda-cli
+wget -O /usr/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/linux/erda-cli-alpha && chmod +x /usr/bin/erda-cli
 ```
 
 ## 安装验证
@@ -124,5 +124,16 @@ delete   -- delete application
 inspect  -- inspect application
 member   -- display members of the application
 open     -- open the application page in browser
-```
 
+$ erda-cli application create --[tab]
+--description  -- description of the application
+--host         -- Erda host to visit (e.g. https://erda.cloud)
+--interactive  -- if true, interactive with user
+--mode         -- application type, available values：LIBRARY, SERVICE, BIGDATA, PROJECT_SERVICE
+--name         -- the name of an application
+--password     -- Erda password to authenticate
+--project-id   -- the id of a project
+--remote       -- the remote for Erda repo
+--username     -- Erda username to authenticate
+--verbose      -- if true, enable verbose mode
+```

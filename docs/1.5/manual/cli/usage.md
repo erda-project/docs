@@ -156,7 +156,7 @@ To https://erda.cloud/trial/dop/bestpractice/example
 $ erda-cli pipeline run --remote erda
 ✔ run pipeline: .dice/pipelines/pipeline.yml for branch: master, pipelineID: 12814099, you can view building status via `erda-cli pipeline status -i 12814099`
 
-$ erda-cli pipeline status -i 12814099 --remote erda
+$ erda-cli pipeline view -i 12814099 --remote erda
 pipeline progress (currentStage/totalStages): 4/4
 
 PIPELINEID   TASKID     TASKNAME   TASKSTATUS   STARTEDAT
@@ -174,3 +174,4 @@ t=bestpractice
 ```
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/10/5e031465-4945-45bf-a516-1276ee76a2e2.png)
+
