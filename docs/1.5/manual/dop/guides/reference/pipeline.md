@@ -930,7 +930,7 @@ stages:
 每个 Action 可以输出一组 Meta 表示执行过程中的一些信息，比如拉取的代码版本、制作好的镜像名等。
 通过这些 Meta 可以很方便地在界面上看到 Action 的关键信息，当鼠标移动到节点上时，会展示如下图所示的界面：
 
-![Action Meta 展示](//terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/20/92f1872d-dce9-43ae-9017-4489865b76f5.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/20/228b6f5e-94b1-4b50-b365-b7665cf9c7ae.png)
 
 后续 Action 可以通过 [<code v-pre>${{ outputs.alias.val }}</code>](#outputs-alias-val) 获取并使用 Meta 信息。
 
@@ -981,8 +981,8 @@ $ echo action meta: expr=a=b=c=d
 # value: dd d
 $ echo action meta:c = dd d
 ```
-
-![结果如图所示](//terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/20/aaf27c46-190a-4ddc-87dd-8dbfe1652610.png)
+结果如图所示:
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/20/4410f1e2-7ff8-483a-aa26-e491c940d81f.png)
 
 ##### 输出日志到 METAFILE 文件
 
@@ -992,7 +992,7 @@ $ echo action meta:c = dd d
 
 ###### 日志行
 
-每行格式为 `k=v`，每行解析规则见 [日志行解析规则5-7条](#解析规则)
+每行格式为 `k=v`，每行解析规则见 [日志行解析规则](#解析规则) 5-7条。
 
 ###### JSON 格式
 
@@ -1012,5 +1012,5 @@ $ echo action meta:c = dd d
     ]
 }
 ```
-
-![结果如图所示](//terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/20/f83dccda-253c-446a-9360-4d19f88a9299.png)
+结果如图所示:
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/20/6f41c1d1-8153-47b8-a62e-9ef420e4b470.png)
