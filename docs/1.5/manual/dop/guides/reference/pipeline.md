@@ -925,4 +925,92 @@ stages:
 
 如果参数的值本身包含占位符，但是在执行流水线时并不想被替换掉，也可以先将内容进行 base64 加密一下，再用`base64-decode`进行解码。
 
+### Action 输出 Meta
 
+每个 Action 可以输出一组 Meta 表示执行过程中的一些信息，比如拉取的代码版本、制作好的镜像名等。
+通过这些 Meta 可以很方便地在界面上看到 Action 的关键信息，当鼠标移动到节点上时，会展示如下图所示的界面：
+
+![Action Meta 展示](//terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/20/92f1872d-dce9-43ae-9017-4489865b76f5.png)
+
+后续 Action 可以通过 [<code v-pre>${{ outputs.alias.val }}</code>](#outputs-alias-val) 获取并使用 Meta 信息。
+
+#### Action 如何生成 Meta
+
+Action 目前有以下几种生成方式，Action 开发者和使用者均可以使用。
+
+##### 输出日志到 STDOUT/STDERR
+
+这是最简单的一种方式。用户只需要将 Meta 按指定格式输出到标准输出(STDOUT) 或标准错误(STDERR)。
+平台会拦截这些日志，解析出 Meta 信息。
+
+格式：
+```
+action meta: key=value
+```
+
+###### 解析规则
+
+1. 获取日志行 `rawLine`
+2. 删除 `rawLine` 前后的空格，得到 `polishedLine`
+3. `polishedLine` 必须包含前缀 `action meta:`；否则忽略该日志行
+4. `polishedLine` 删除前缀 `action meta:`，得到 `KV`
+5. 以第一个 `=` 作为分隔符，将 `KV` 分隔为两部分；如果没有 `=`，则忽略该日志行
+6. 得到 `K` 和 `V`
+7. 删除 `K` 和 `V` 前后的空格，得到 `polishedK` 和 `polishedV`，即为最终的一个 Meta 信息
+
+###### 注意
+
+- 输出日志时注意 value 不要换行，否则只能拿到换行前的 value；因为日志行是按行处理的
+
+###### 示例
+
+```bash
+# key: image
+# value: alpine:3.12
+$ echo action meta: image=alpine:3.12
+
+# key: tag
+# value: 3.12
+$ echo action meta: tag=3.12
+
+# key: expr
+# value: a=b=c=d
+$ echo action meta: expr=a=b=c=d
+
+# key: c
+# value: dd d
+$ echo action meta:c = dd d
+```
+
+![结果如图所示](//terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/20/aaf27c46-190a-4ddc-87dd-8dbfe1652610.png)
+
+##### 输出日志到 METAFILE 文件
+
+使用者可以通过环境变量 `METAFILE` 获取到 Meta 文件的完整路径，将内容写入到该文件中即可。
+
+文件内容支持以下两种格式:
+
+###### 日志行
+
+每行格式为 `k=v`，每行解析规则见 [日志行解析规则5-7条](#解析规则)
+
+###### JSON 格式
+
+这种格式的优势是支持 value 换行
+
+```json
+{
+    "metadata":[
+        {
+            "name":"k1",
+            "value":"v1"
+        },
+        {
+            "name":"k2",
+            "value":"line1\nline2\nline3"
+        }
+    ]
+}
+```
+
+![结果如图所示](//terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/20/f83dccda-253c-446a-9360-4d19f88a9299.png)
