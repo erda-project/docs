@@ -25,7 +25,7 @@
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/a793c421-3a59-4055-967c-828f5b1f7d1b.png)
 
-上图实例已添加两个自定义门禁指标：
+上图示例已添加两个自定义门禁指标：
 
 - Bug 数量小于 5 个。
 - 代码注释总行数大于 100 行。
