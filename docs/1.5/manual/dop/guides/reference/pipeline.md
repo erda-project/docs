@@ -982,6 +982,7 @@ $ echo action meta: expr=a=b=c=d
 $ echo action meta:c = dd d
 ```
 结果如图所示:
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/20/4410f1e2-7ff8-483a-aa26-e491c940d81f.png)
 
 ##### 输出日志到 METAFILE 文件
@@ -1013,4 +1014,5 @@ $ echo action meta:c = dd d
 }
 ```
 结果如图所示:
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/20/6f41c1d1-8153-47b8-a62e-9ef420e4b470.png)

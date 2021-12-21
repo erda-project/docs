@@ -78,6 +78,7 @@
 #### 结果排序（ORDER BY）
 
 对查询的字段进行排序，如果查询的字段为聚合方式，那排序的字段也要选择对应的聚合方式。
+
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/7b61fef0-55d2-492f-9097-a5308340770f.png)
 
 #### 结果截取（LIMIT）
@@ -85,7 +86,9 @@
 
 #### 固定图表时间范围
 限定数据产生的时间范围，不受全局时间范围自定义配置影响。
+
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/a1726c7e-931b-44d8-be8c-14e859bf7d53.png)
+
 如需自定义时间范围，可不填，由大盘全局时间范围控制，也就是如下全局时间范围自定义配置。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/3456aca0-01f5-4b15-b744-e4f37573802b.png)
@@ -184,8 +187,9 @@
 • 关注指标的分布情况，如不同省份的响应延迟时间。
 
 * 表格<br>
-• 可用自定义表达式配置，满足更多复杂查询。
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/3be51d68-9678-4b7e-952d-1b67d3c26b4e.png)
+  • 可用自定义表达式配置，满足更多复杂查询。
+
+  ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/3be51d68-9678-4b7e-952d-1b67d3c26b4e.png)
 
 ### 聚合方式
 不同的类型，有不同的聚合可以选择。

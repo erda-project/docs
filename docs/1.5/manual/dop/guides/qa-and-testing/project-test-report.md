@@ -12,6 +12,7 @@
 
 ## 查看测试报告
 进入 **DevOps 平台 > 项目 > 测试管理 > 测试报告** 可查看生成的测试报告记录，支持根据迭代或名称进行筛选。
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/19/886da321-3da9-4015-900e-31a2b938e6b2.png)
 
 ## 下载测试报告
