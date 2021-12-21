@@ -101,7 +101,7 @@
 ### 编辑导出节点
 
 1. 选择需导出的数据模型。
-2. 选择数据源（EXTERAL 类型）。
+2. 选择数据源（EXTERNAL 类型）。
 3. 选择该数据源下的数据模型（需提前创建，且导出的字段名、数量和顺序需保持一致）。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/b1e9886e-6c1d-46be-a0cf-5cf61db6d9ed.png)
@@ -176,7 +176,7 @@ One ID 的生成结果可在 **数据集成 > 即席查询** 中查询。
 
 ## Python 执行
 
-您可通过 Pathon 进行机器学习，并通过日志查看运行结果。
+您可通过 Python 进行机器学习，并通过日志查看运行结果。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/07929184-88bf-4181-b6c2-945ac9429aaf.png)
 
