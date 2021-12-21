@@ -84,6 +84,7 @@
 Maven 的 setting.xml 配置用于连接 Nexus 下载 source.jar。
 
 启动执行后，sourcecov addon 将根据应用的 JAR 包下载对应的 source.jar。完成 source.jar 下载方可在 JaCoCo 覆盖率文件中查看代码行数的覆盖率图。
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/09/ab43b556-e912-48ee-9d17-3bb4ca2f3605.png)
 
 ### 趋势图

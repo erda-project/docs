@@ -123,7 +123,9 @@ kubectl label cluster erda-cloud probe/k8s=true
 ### 查看诊断结果
 通过 kubectl probe 指令查看特定集群的诊断结果。  
 
-创建 kubectl probe 所需配置文件，若无则 kubectl probe 自动将 ws://probe-master.kubeprober.svc.cluster.local:8088/clusterdialer 作为 Master 地址，其他情况下可自行修改该配置文件。 
+创建 kubectl probe 所需配置文件。
+
+若无则 kubectl probe 自动将 ws://probe-master.kubeprober.svc.cluster.local:8088/clusterdialer 作为 Master 地址，其他情况下可自行修改该配置文件。 
 
 ```shell script
 vi ~/.kubeprober/config

@@ -17,6 +17,7 @@
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/29/072d3369-8b9e-4976-9333-e4f37731bc72.png)
 
 进入 **数据治理 > 质量规则**，点击 **新增规则**，输入规则名称、规则内容并选择规则类型。
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/29/f8824f87-1e3f-4fee-a5e0-7ef232ac853d.png)
 
 ## 队列管理

@@ -35,6 +35,7 @@ export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Hom
 - **adb 配置及 Android SDK 下载**
 
   打开 Android studio 查看 android sdk  配置路径。
+
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/ac41ba7d-d92a-4a94-9e10-5cb5742a4c11.png)
 
 
@@ -144,9 +145,11 @@ ruby 版本需要 2.2.0 以上
 
 #### 2. node 配置
 官网下载 12.10.* 版本进行安装。[下载链接](https://nodejs.org/download/release/v12.10.0/)
+
 ![](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/114906/1592203354082-ca647b98-3d75-4834-99e6-013e471e0c3b.png)根据系统选择对应的版本。
 
 安装后通过命令行检查是否安装成功
+
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/59621266-f812-4f04-b3ab-6edb8d20c884.png)
 
 
