@@ -521,12 +521,12 @@ module.exports = [
       },
     ]
   },
-  // {
-  //   title: 'FAQ',
-  //   collapsable: true,
-  //   children: [
-  //     'faq/faq',
-  //     'faq/install',
-  //   ]
-  // },
+  {
+    title: 'FAQ',
+    collapsable: true,
+    children: [
+      'faq/faq',
+      'faq/install',
+    ]
+  },
 ]
