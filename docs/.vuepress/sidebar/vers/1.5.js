@@ -143,6 +143,7 @@ module.exports = [
               'dop/guides/collaboration/issue-requirement-and-task',
               'dop/guides/collaboration/issue-bug',
               'dop/guides/collaboration/issue-dashboard',
+              'dop/guides/collaboration/issue-gantt-chart',
               'dop/guides/collaboration/issue-customize-and-workflow',
               'dop/guides/collaboration/ticket',
               'dop/guides/collaboration/label',
