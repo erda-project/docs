@@ -360,6 +360,9 @@ module.exports = [
               'msp/guides/apm/alert-history',
               'msp/guides/apm/alert-index',
               'msp/guides/apm/alert-custom',
+              'msp/guides/apm/alert-filter-rule',
+              'msp/guides/apm/alert-level-groups',
+              'msp/guides/apm/alert-notify-channel',
               'msp/guides/apm/dashboard',
               'msp/guides/apm/dashboard-advanced',
             ]
