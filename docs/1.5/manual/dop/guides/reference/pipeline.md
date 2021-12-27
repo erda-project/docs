@@ -1,41 +1,39 @@
 # 流水线
 
-流水线 (Pipeline) 是平台自研的工作流引擎，覆盖平台所有的流水线相关任务，为平台提供了强大及灵活的任务编排执行能力和动态配置能力等，具体包含 DevOps 平台中的 CI/CD 、快速数据平台中的流式计算、运维 Ops 和监控报表等。
+流水线（Pipeline）是平台自研的工作流引擎，覆盖平台所有的流水线相关任务，为平台提供强大及灵活的任务编排执行能力和动态配置能力等，具体包含 DevOps 平台的 CI/CD、快数据平台的流式计算、运维 Ops 和监控报表等。
 
 ## 功能清单
 
-- 配置即代码，通过 [YAML 文件 (pipeline.yml)](#格式规范) 描述流水线定义，基于 [Stage (阶段)](#stage) 语法简化编排复杂度
-- 可视化编辑，通过图形界面交互快速配置流水线
-- 支持任务串行或并行执行策略
-- [定时流水线](#定时流水线)，同时提供强大的定时补偿功能
-- [动态配置](#动态配置)，通过动态配置满足实现同一流水线满足不同场景需求，配置类型包含：**值** 和 **文件**，配置内容均支持加密存储，确保数据安全性。
+- 配置即代码，通过 [YAML 文件（pipeline.yml）](#格式规范) 描述流水线定义，基于 [Stage（阶段）](#stage) 语法简化编排复杂度。
+- 可视化编辑，通过图形界面交互快速配置流水线。
+- 支持任务串行或并行执行策略。
+- [定时流水线](#定时流水线)，同时提供强大的定时补偿功能。
+- [动态配置](#动态配置)，通过动态配置满足实现同一流水线满足不同场景需求，配置类型包含值和文件，配置内容均支持加密存储，确保数据安全性。
 - 多维度重试机制和中止处理。支持从失败节点开始重试；支持全流程重试；运行中可以取消中止。
-- 超时配置 (任务级别)
-- 归档策略可配置 (流水线级别)
-- 任务分为短任务和长任务，任务之间可传递上下文（可传递内容包含：值和文件）
-- 扩展市场，平台预置丰富的 Action 满足大部分场景的同时，能够帮助用户沉淀自己的 Action
-- 内置丰富的制品仓库，满足主流框架的编译构建需要，主要包含: Docker 镜像、Maven JARs、NPM Packages 等
-- 对外开放 OpenAPI 接口，方便第三方系统快速接入使用
-- Event 事件订阅，提供流水线级别和任务级别事件消息订阅
+- 超时配置（任务级别）。
+- 归档策略可配置（流水线级别）。
+- 任务分为短任务和长任务，任务之间可传递上下文（可传递内容包含：值和文件）。
+- 扩展市场，平台预置丰富的 Action 满足大部分场景的同时，能够帮助用户沉淀自己的 Action。
+- 内置丰富的制品仓库，满足主流框架的编译构建需要，主要包含：Docker 镜像、Maven JARs、NPM Packages 等。
+- 对外开放 OpenAPI 接口，方便第三方系统快速接入使用。
+- Event 事件订阅，提供流水线级别和任务级别事件消息订阅。
 
-## 如何编写 pipeline.yml 文件
+## 基本元素
 
-### 基本构成元素
-
-#### Action
+### Action
 
 Action 是流水线的最小执行单元，表示一个 **任务** 或 **动作**。
 
 一条流水线包含若干个 Action。
 
-#### Stage
+### Stage
 
 Stage 表示一个 **阶段**。
 
 一条流水线由若干个 Stage 构成，多个 Stage 之间串行顺序执行；
 一个 Stage 由若干个 Action 构成，多个 Action 之间并行执行。
 
-### 格式规范
+## 格式规范
 
 pipeline.yml 是一个 [YAML](https://yaml.org/spec/1.2/spec.html) 格式的文件，描述了任务编排的全流程。
 
@@ -118,7 +116,7 @@ envs:
 - false (默认) 跟随 latest_first 进行策略
 - true  在 latest_first 策略之上就只跑一次最新的记录
 
-##### 策略调度说明
+**策略调度说明**
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/10f541ea-fb31-4c45-a5aa-19b370b4dbdf.png)
 如图，策略目前只关心几个点
@@ -133,7 +131,7 @@ envs:
 
 
 
-##### 支持策略配置如下
+**支持策略配置如下**
 
 - 执行补偿，只跑最新的记录
 
@@ -252,7 +250,7 @@ custom-script Action 运行时的镜像。
 
 用户声明的命令列表。
 
-::: details YAML 示例
+YAML 示例
 
 ``` yaml
 commands:
@@ -260,8 +258,6 @@ commands:
 - cat /etc/hosts
 - sleep 10
 ```
-
-:::
 
 #### timeout
 
@@ -350,7 +346,7 @@ loop_interval = min(interval_sec * (decline_ratio)^N, decline_limit_sec)
 
 例子
 
-*循环 10000 次，每次循环间隔 10 秒*
+循环 10000 次，每次循环间隔 10 秒
 ```yaml
 loop:
   break: 'false' == 'true'
@@ -359,7 +355,7 @@ loop:
      interval_sec: 10 
 ```
 
-*当前任务如果执行失败重试*
+当前任务如果执行失败重试
 ```yaml
 loop:
   break: task_status == 'Success'
@@ -375,7 +371,7 @@ loop:
      max_times: 10000
 ```
 
-*多条件组合判断*
+多条件组合判断
 ```yaml
 loop:
   break: '1' == '2' && '1' == '3' || '1' == '3' || '${{ outputs.任务的alias.xxx }}' == '401'
@@ -414,11 +410,11 @@ Action 条件执行
 
 目前 pipeline 执行的时候假如没有加入条件执行，那么当一个任务失败，下面的任务就会自动失败，而当下面的任务加上了条件执行，条件成立的话还是会继续执行
 
-##### 内置表达式
+**内置表达式**
 
 - task_status: 可选值 Success / Failed (注意大小写)
 
-##### 配置失败重试
+**配置失败重试**
 
 ``` text
 loop:
@@ -442,7 +438,7 @@ loop:
 
 因此在 buildpack Action 中可以使用类似 ${git-chekcout} 的语法来引用指定 git-checkout Action 命名空间里的代码仓库。
 
-::: details YAML 示例
+YAML 示例
 
 ``` yaml
 ...
@@ -465,11 +461,9 @@ stages:
           - ${repo2} # 引用代码仓库2的代码
 ```
 
-:::
+### 示例
 
-### CI/CD 的一个例子
-
-::: details YAML 示例
+YAML 示例
 
 ``` yaml
 version: "1.1"
@@ -542,8 +536,6 @@ stages:
         release_id_path: ${release}
 ```
 
-:::
-
 ## 定时流水线
 
 定时流水线是指按照预先配置的执行计划，定时触发并执行的流水线。
@@ -559,7 +551,7 @@ stages:
 
 由于 `cron` 语法无法描述从某个时间点开始的周期任务，因此在 **REST API** `POST /api/pipelines` 的请求参数中增加了 `cronStartFrom` 参数，用于指定周期任务的开始时间点。
 
-#### 定时流水线的补偿
+定时流水线的补偿
 
 具体策略配置见规范 [cron_compensator 部分](#cron-compensator)。
 
@@ -609,7 +601,7 @@ DevOps 平台中流水线配置入口位于：
 
 > DevOps 平台 -> 我的应用 -> 应用 A -> 应用设置 -> 流水线 -> 变量配置
 
-#### 某个参数的值需要动态设置
+### 某个参数的值需要动态设置
 
 示例：buildpack-Action 里打包需要感知环境，不同的环境使用不同的 profile 进行构建。
 
@@ -642,7 +634,7 @@ maven.profile = prod
 
 :::
 
-#### 某个参数的值不应该明文写在文件中
+### 某个参数的值不应该明文写在文件中
 
 例如：git-checkout Action 拉取一个需要鉴权的 git repo 时，需要用到 username 和 password。
 
@@ -664,7 +656,7 @@ stages:
 
 :::
 
-#### 流水线内置环境变量
+### 流水线内置环境变量
 
 流水线中在运行中含有以下环境变量
 
@@ -743,20 +735,20 @@ GITTAR_REPO
 
 随机参数支持的类型如下：
 
-integer: 整型，如: 100    
-string: 所有字符串，如: Abc    
-float: 浮点型，如: 13.14    
-boolean: 布尔型，如: true/false    
-upper: 大写字母，如: ABC    
-lower: 小写字母，如: abc    
-mobile: 11位手机号，如: 18888888888   
-digital_letters: 数字和大小写字母，如: Abc123   
-letters: 大小写字母，如: Abc   
-character: 单个字符，如: a   
-timestamp: 当前时间戳格式：1586917254，单位是s   
-timestamp_hour: 1小时前时间戳格式：1583317290，单位是s   
-timestamp_ns: 当前时间戳ns格式：1586917325230422166，单位是ns   
-timestamp_ns_hour: 1小时前时间戳格式：1586913750801408626，单位是ns   
+integer：整型，例如 100    
+string：所有字符串，例如 Abc    
+float：浮点型，例如 13.14    
+boolean：布尔型，例如 true/false    
+upper：大写字母，例如 ABC    
+lower：小写字母，例如 abc    
+mobile：11位手机号，例如 18888888888   
+digital_letters：数字和大小写字母，例如 Abc123   
+letters：大小写字母，例如 Abc   
+character：单个字符，例如 a   
+timestamp：当前时间戳格式：1586917254，单位是 s   
+timestamp_hour：1小时前时间戳格式：1583317290，单位是 s   
+timestamp_ns：当前时间戳ns格式：1586917325230422166，单位是 ns   
+timestamp_ns_hour：1小时前时间戳格式：1586913750801408626，单位是 ns   
 date：当前日期、格式：2020-01-01   
 date_day：1天前日期、格式：2020-01-01   
 datetime：当前时间、格式：2020-01-01 15:04:05   
@@ -925,7 +917,7 @@ stages:
 
 如果参数的值本身包含占位符，但是在执行流水线时并不想被替换掉，也可以先将内容进行 base64 加密一下，再用`base64-decode`进行解码。
 
-### Action 输出 Meta
+## Action 输出 Meta
 
 每个 Action 可以输出一组 Meta 表示执行过程中的一些信息，比如拉取的代码版本、制作好的镜像名等。
 通过这些 Meta 可以很方便地在界面上看到 Action 的关键信息，当鼠标移动到节点上时，会展示如下图所示的界面：
@@ -934,11 +926,11 @@ stages:
 
 后续 Action 可以通过 [<code v-pre>${{ outputs.alias.val }}</code>](#outputs-alias-val) 获取并使用 Meta 信息。
 
-#### Action 如何生成 Meta
+Action 如何生成 Meta
 
 Action 目前有以下几种生成方式，Action 开发者和使用者均可以使用。
 
-##### 输出日志到 STDOUT/STDERR
+### 输出日志到 STDOUT/STDERR
 
 这是最简单的一种方式。用户只需要将 Meta 按指定格式输出到标准输出(STDOUT) 或标准错误(STDERR)。
 平台会拦截这些日志，解析出 Meta 信息。
@@ -948,7 +940,7 @@ Action 目前有以下几种生成方式，Action 开发者和使用者均可以
 action meta: key=value
 ```
 
-###### 解析规则
+#### 解析规则
 
 1. 获取日志行 `rawLine`
 2. 删除 `rawLine` 前后的空格，得到 `polishedLine`
@@ -958,11 +950,11 @@ action meta: key=value
 6. 得到 `K` 和 `V`
 7. 删除 `K` 和 `V` 前后的空格，得到 `polishedK` 和 `polishedV`，即为最终的一个 Meta 信息
 
-###### 注意
+注意
 
 - 输出日志时注意 value 不要换行，否则只能拿到换行前的 value；因为日志行是按行处理的
 
-###### 示例
+#### 示例
 
 ```bash
 # key: image
@@ -985,17 +977,17 @@ $ echo action meta:c = dd d
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/20/4410f1e2-7ff8-483a-aa26-e491c940d81f.png)
 
-##### 输出日志到 METAFILE 文件
+### 输出日志到 METAFILE 文件
 
 使用者可以通过环境变量 `METAFILE` 获取到 Meta 文件的完整路径，将内容写入到该文件中即可。
 
 文件内容支持以下两种格式:
 
-###### 日志行
+#### 日志行
 
 每行格式为 `k=v`，每行解析规则见 [日志行解析规则](#解析规则) 5-7条。
 
-###### JSON 格式
+#### JSON 格式
 
 这种格式的优势是支持 value 换行
 
