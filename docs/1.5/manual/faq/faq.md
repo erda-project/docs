@@ -122,3 +122,8 @@ pipeline.yml 中的配置如下:
       container_type: spring-boot # 运行 target（如 jar）所需的容器类型，比如这里我们打包的结果是 spring-boot 的 fat jar，故使用 spring-boot container
       #container_version: v1.8.0.181 # 可选: v1.8.0.181, v11.0.6, 默认 v1.8.0.181
 ```
+
+## 11. 创建流水线却提示缺少参数`ClusterName`？
+这个提示说明项目当前环境没有对应的集群可供使用，集群是流水线执行的必要条件，可以到项目配额里给当前的环境指定一个集群
+
+* 进入 **DevOps 平台 > 项目 > 项目设置 > 项目信息 > 编辑 > 集群设置
