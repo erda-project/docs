@@ -417,13 +417,13 @@ module.exports = [
       },
     ]
   },
-  // {
-  //   title: 'Edge Computing',
-  //   collapsable: true,
-  //   children: [
-  //     'ecp/example',
-  //     'ecp/concept',
-  //     'ecp/best-practice',
+  {
+    title: 'Edge Computing',
+    collapsable: true,
+    children: [
+      'ecp/example',
+      'ecp/concept',
+      'ecp/best-practice',
   //     {
   //       title: 'Guides',
   //       collapsable: true,
@@ -433,8 +433,8 @@ module.exports = [
   //         ['ecp/application', '应用管理'],
   //       ]
   //     },
-  //   ]
-  // },
+    ]
+  },
   {
     title: 'Fast Data',
     collapsable: true,
