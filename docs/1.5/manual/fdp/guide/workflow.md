@@ -198,6 +198,6 @@ One ID 的生成结果可在 **数据集成 > 即席查询** 中查询。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/057fdd8d-a0ed-4ce1-a777-80e5366058a7.png)
 
-如需导入工作流，点击 **批量导入 > 上传** 后，在本地选择后缀为  .worflow 的文件即可。
+如需导入工作流，点击 **批量导入 > 上传** 后，在本地选择后缀为 .worflow 的文件即可。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/c8dd11b0-0520-485f-bcca-80d66ab49289.png)
