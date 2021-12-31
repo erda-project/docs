@@ -351,6 +351,7 @@ module.exports = [
             title: '应用监控',
             collapsable: true,
             children: [
+              'msp/guides/apm/service-list',
               'msp/guides/apm/service-analysis',
               'msp/guides/apm/browser-monitor',
               'msp/guides/apm/browser-monitor-config',
