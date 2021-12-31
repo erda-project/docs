@@ -5,20 +5,24 @@
 ## 节点类型
 
 若系统基于微服务治理平台中的 API 网关转发流量，拓扑图将展示 API 网关节点如下：
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/a017e07d-798f-4e33-9675-0a491ef41a7f.png)
+
+<img src="http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/a017e07d-798f-4e33-9675-0a491ef41a7f.png" style="zoom:80" />
 
 平台可自动识别 HTTP 和 RPC 请求，并标注为服务节点如下：
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/0902d2d5-e8bf-438f-bfdb-fc3aa76fa78b.png)
+
+<img src="http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/0902d2d5-e8bf-438f-bfdb-fc3aa76fa78b.png" style="zoom:80" />
 
 平台可自动识别服务调用的中间件，并标注为中间件节点，当前支持 MySQL、Redis、RocketMQ、Elasticsearch 等。
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/891ff8cb-1ac9-4970-b11c-54afc4eb6d1f.png)
+
+<img src="http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/891ff8cb-1ac9-4970-b11c-54afc4eb6d1f.png" style="zoom:80" />
 
 平台可自动识别服务调用的外部 HTTP 请求，并标注为外部事务节点如下：
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/6784de08-c803-4996-bc8b-b570340ce878.png)
+
+<img src="http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/6784de08-c803-4996-bc8b-b570340ce878.png" style="zoom:80" />
 
 服务节点直观展示错误调用情况，红色部分代表错误调用的占比。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/09dd07af-d7a3-445a-ae87-edcf31511d2e.png)
+<img src="http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/09dd07af-d7a3-445a-ae87-edcf31511d2e.png" style="zoom:80" />
 
 ## 拓扑概览和分析
 
