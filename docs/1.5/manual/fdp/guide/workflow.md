@@ -191,3 +191,13 @@ One ID 的生成结果可在 **数据集成 > 即席查询** 中查询。
 您可进入 **数据集成 > 工作流管理** 查看工作流明细。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/73269ce5-2b22-4926-8713-2e1efe32a0c9.png)
+
+## 工作流导入导出
+
+如需导出工作流，勾选工作流目录或工作流后，点击 **批量导出**。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/057fdd8d-a0ed-4ce1-a777-80e5366058a7.png)
+
+如需导入工作流，点击 **批量导入 > 上传** 后，在本地选择后缀为  .worflow 的文件即可。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/c8dd11b0-0520-485f-bcca-80d66ab49289.png)
