@@ -1,26 +1,35 @@
-#服务列表
+# 服务列表
 
-##简介
-用户进入微服务平台的项目默认进入服务总览中的服务列表页，展示的是当前环境下所有的接入服务，以及该服务最近一小时内的关键请求指标。
+进入微服务平台，选择项目后将默认进入服务总览的服务列表，此处展示当前环境下所有接入服务，以及该服务近一小时内的关键请求指标。
 
-##服务查看
-进入服务列表页后用户可以到当前环境下的高流量服务排行、低流量服务排行、慢响应服务排行和不健康服务排行，用户点击其中任意一个服务都会进入到服务监控页。如图所示:  
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/30/8add7e2a-f16d-46a4-90ac-5f63fb579a5d.png)
-在服务列表页用户还可以查看到全部服务、不健康服务和无流量服务，这些服务都以列表的形式展示，每一列都可以看到服务的名称及其对应的吞吐量、延迟和错误率，鼠标悬停在上面可以看到具体的数据。如图所示:
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/30/595aea76-90b8-4f8b-b3a3-4947f834343f.png)
+## 服务查看
 
-##服务监控
-用户点击具体的服务即可进入到服务监控页，在该页面中可以看到该服务的拓扑图、服务请求概览图、服务调用分析的排行。如图所示:  
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/30/0b577058-33af-48d4-9872-e3a475c2f75c.png)
+在服务列表页，您可查看当前环境下的高流量服务排行、低流量服务排行、慢响应服务排行和不健康服务排行，点击其中任一服务可进入服务监控页。
 
-在服务拓扑中可以看到节点间的相互调用关系、平均吞吐量、平均响应时间、请求错误率和服务实例数。在服务请求概览中可以看到该服务的吞吐量、平均响应时间、HTTP状态和请求错误率。如图所示:  
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/30/a1ab99f0-6654-4c5a-8271-502918b03bef.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/b320a4e3-dc30-45fe-a63e-80688577ed92.png)
 
-在服务调用分析中可以看到高吞吐量接口、慢响应接口、错误接口、外部接口调用、慢响应sql和异常类型。如图所示:  
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/30/44d50fb5-18a4-451d-a060-2f20e46c9125.png)
+您还可以查看当前环境下的全部服务、不健康服务和无流量服务。服务以列表形式呈现，展示其名称、吞吐量、延迟和错误率，将鼠标悬停于对应服务可查看具体数据。
 
-点击事务分析的tab，可以看到服务的事务详情，包括HTTP事务、RPC事务、缓存和数据库事务等。如图所示:  
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/30/801506d1-f66a-4d57-ade5-854fa9399c53.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/a42397dc-5b21-44b9-bc06-0062fa3aca7b.png)
+
+## 服务监控
+
+点击具体服务后可进入对应服务监控页，在此查看该服务的拓扑图、服务请求概览和服务调用分析排行。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/e5c500bb-af1c-441a-81e8-c0bfa38b98a8.png)
+
+服务拓扑展示节点间的调用关系、平均吞吐量、平均响应时间、请求错误率和服务实例数。服务请求概览展示该服务的吞吐量、平均响应时间、HTTP 状态和请求错误率。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/4c7c2ad2-6c25-4696-9cc1-c44de92a4ffe.png)
+
+服务调用分析展示服务的高吞吐量接口、慢响应接口、错误接口、外部接口调用、慢响应 SQL 和异常类型的 Top 5 排行。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/1ea6d3b3-8860-4be4-808e-1b24f3796cbf.png)
+
+点击事务分析页签，可查看服务的事务详情，包括 HTTP 事务、RPC 事务、缓存和数据库事务等，
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/68926e08-726a-4abc-b56d-4a8906c67075.png)
+
 * **HTTP 事务**：每个事务接口在选择时间段内的平均响应时间、调用次数等信息。
 * **服务请求**：选择时间段内每分钟被请求的事务接口与趋势。
 * **请求延迟**：选择时间段内事务接口的平均响应时间与趋势。
