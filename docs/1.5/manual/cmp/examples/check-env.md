@@ -4,7 +4,7 @@
 
 根据服务具体的部署环境，可精确查看对应环境的资源分配情况。如下图所示，选择通过生产环境标签筛选节点后，即展示生产环境中全部 CPU、内存、Pod 的资源分配情况。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/06/c261176b-70d2-4b5b-8381-7e32ced52b8c.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/06/e522c888-44a1-41e8-bed3-b73dc82124d2.png)
 
 ::: tip 提示
 
