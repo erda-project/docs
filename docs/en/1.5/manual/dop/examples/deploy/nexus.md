@@ -9,7 +9,10 @@ Go to **DevOps Platform > Applications > Select Application > Settings > Pipelin
 Click **Add Variable**, select the type as **File** and enable encryption, then upload settings.xml and define the variable name as `MAVEN_SETTING_FILE`.
 
 ::: warning Warning
-Encryption is required as the file includes sensitive information such as passwords.
+
+* Encryption is required as the file includes sensitive information such as passwords.
+* To avoid XXE attacks, the platform prohibits uploading XML files. XML files can be changed to settings_xml files (Linux system does not distinguish file types).
+
 :::
 
 An example of settings.xml is as follows:

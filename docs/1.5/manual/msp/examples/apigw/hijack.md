@@ -15,7 +15,7 @@ Erda 支持在部署详情中为当前应用的指定服务直接绑定域名。
 YAML 配置文件中的 Addons 配置，即为该应用添加 API 网关扩展服务。
 
 ```yaml
-version: 2
+version: "2.0"
 values:
   production:
     instance_num: 2
