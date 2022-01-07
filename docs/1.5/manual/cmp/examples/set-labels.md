@@ -20,7 +20,7 @@ Erda 将部署环境分为四类：
 
 在多云管理平台中，您可以为节点设置对应的环境标签，从而允许 Erda 将对应环境的部署调度至该节点上。如下图所示，在分类中选择环境标签后，选择对应环境即可。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/06/51c2d85f-9b6b-4cca-99e4-a8b404aca8b7.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/07/26e12fe8-9a09-4cd1-ac2e-34976315786a.png)
 
 一个节点可同时设置四个环境的标签，以此表明该机器由四个环境的服务部署共用。
 
@@ -37,7 +37,7 @@ Erda 将部署环境分为四类：
 
 您可在多云管理平台中，为节点设置对应的任务标签，以控制流水线任务的调度。如下图所示，在分类中选择任务标签后，再选择具体任务类型即可。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/06/df7a47a6-dd7f-4736-aeaa-a34264ef4d9d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/07/357b7995-a682-41da-a35f-c7f6a17db944.png)
 
 ::: tip 提示
 
