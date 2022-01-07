@@ -71,7 +71,7 @@ In addition, stage does not have a one-to-one relationship with action but one-t
 An example of pipeline.yml for this project is as follows. For more information, see [pipeline.yml](../guides/reference/pipeline.html).
 
 ```yaml
-version: 1.1
+version: "1.1"
 stages:
 - stage:
   - git-checkout:

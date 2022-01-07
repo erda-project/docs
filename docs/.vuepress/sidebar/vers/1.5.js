@@ -237,8 +237,8 @@ module.exports = [
             title: '参考',
             collapsable: true,
             children: [
-              ['dop/guides/reference/pipeline', 'pipeline.yml 参考'],
-              ['dop/guides/reference/erda-yaml', 'erda.yml 参考'],
+              ['dop/guides/reference/pipeline', 'pipeline.yml'],
+              ['dop/guides/reference/erda-yaml', 'erda.yml'],
             ]
           },
         ]

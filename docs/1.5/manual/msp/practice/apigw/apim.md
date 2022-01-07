@@ -1,4 +1,4 @@
-# 接入 API 全生命周期管理
+# API 全生命周期管理
 
 
 ## API 设计
@@ -76,6 +76,53 @@ root_from_repo
 在左侧目录栏中选择 **数据类型**，根据提示添加数据类型，并填写参数名称、类型、描述等基本信息。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/bec6fe96-237a-4073-b616-69eda187120c.png)
+
+编辑数据结构时，可导入 `.erda/migrations` 目录中定义的库表字段，示例如下：
+
+```text
+root_from_repo
+    ├── .erda
+    │   ├── apidocs
+    │   ├── migrations
+    │   │   ├── micro_service_a
+    │   │   │   ├── 2021-01-01-some-feature-1.sql
+    │   │   │   └── 2021-01-02-some-feature-2.sql
+    │   │   └── micro_service_b
+    │   │       └── 2021-01-02-other-feature.sql
+    │   │
+    │   └── pipelines
+    │
+    ├── other_files
+    └── other_dirs
+```
+
+在以上目录结构中，`module_a/2021-01-01-some-feature-1.sql` 和 `module_a/2021-01-02-some-feature-2.sql` 定义了如下库表结构：
+
+* micro_service_a/2021-01-01-some-feature-1.sql
+
+```sql
+CREATE TABLE t1 (
+    id BIGINT PRIMARY KEY,
+    created_at DATETIME,
+    updated_at DATETIME,
+    name VARCHAR(64) NOT NULL 
+);
+```
+
+* micro_service_a/2021-01-02-some-feature-2.sql
+
+```sql
+ALTER TABLE t1
+ADD COLUMN age INT NOT NULL ;
+```
+
+编辑数据结构时，点击 **导入参数** 即可直接引用库表字段。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/07/3fb4a0b0-6df2-4d39-8c26-fd438cf0e6cd.png)
+
+:::tip 提示
+设计 API 文档时引用库表字段，仅可引用与文档同名模块下的库表字段。
+:::
 
 #### 定义接口
 

@@ -161,7 +161,7 @@ Add the following configuration to pom.xml of the corresponding project, otherwi
 MAVEN_SETTING_FILE is the name configured above.
 
 ```yaml
-version: '1.1'
+version: "1.1"
 
 stages:
 - stage:
@@ -238,7 +238,7 @@ publishing{
 ### Configure Pipeline to Upload JAR Package
 
 ```yaml
-version: '1.1'
+version: "1.1"
 
 stages:
 - stage:
@@ -316,7 +316,7 @@ Since the `fat jar` is an all-in-one JAR package, it can run by `java -jar app.j
 An example of pipeline.yml is as follows:
 
 ```yaml{10,14}
-version: '1.1'
+version: "1.1"
 
 stages:
 - stage:

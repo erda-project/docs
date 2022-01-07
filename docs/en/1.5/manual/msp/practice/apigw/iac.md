@@ -58,7 +58,7 @@ Examples of erda.yml for application repositories of user, ACL and resource are 
 ## User
 
 ```yaml
-version: 2.0
+version: "2.0"
 values:
   development:
     biz-domain: dev-biz.*
@@ -104,7 +104,7 @@ Take the above as an example. The `path` is `/api/user` and the `backend_path` i
 ## ACL
 
 ```yaml
-version: 2.0
+version: "2.0"
 values:
   development:
     biz-domain: dev-biz.*
@@ -140,7 +140,7 @@ The configuration of ACL is similar to that of user. At the same time, it can be
 ## Resource
 
 ```yaml
-version: 2.0
+version: "2.0"
 values:
   development:
     biz-domain: dev-biz.*
