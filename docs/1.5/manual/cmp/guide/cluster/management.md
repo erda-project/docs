@@ -18,7 +18,7 @@ Erda 支持一键创建以下三种类型的集群：
 * 阿里云容器服务集群（专有版）
 * 自建集群
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/cc8f9172-ebe5-43b2-8938-b370aa334540.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/853eab96-d0be-4e83-b52d-b1ca8e70dda7.png)
 
 若添加阿里云容器服务集群，您需在创建集群前，进入 **多云管理平台 > 资源管理 > 云资源管理 > 云账户** 添加阿里云账号（包含阿里云容器服务相关权限），以便后台购买阿里云容器服务集群及创建环境。
 
@@ -42,7 +42,7 @@ Erda 提供三种导入自建 Kubernetes 集群的方式：
 
 请进入 **多云管理平台 > 资源管理 > 集群管理 > 添加集群 > Kubernetes（导入已创建的 Erda Kubernetes 集群）** 操作。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/26a4bc8e-1dbf-4613-bdfe-d2723c51a3b2.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/fb618855-d003-4776-814f-aa9637aa96cd.png)
 
 * **KubeConfig 和 Service Account**：适用于集群有开放 API Server 端口的场景。
 * **Cluster Agent**：适用于集群无开放 API Server 端口的场景。

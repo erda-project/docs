@@ -25,32 +25,32 @@
 
 2. 根据平台引导快速创建一个属于您的 [组织](../../quick-start/premise.md#组织)。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/16/227b6df6-2613-4c01-9952-b91d770b0468.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/7da51780-8666-4a69-a268-64c56249227d.png)
 
 3. 完成组织创建后，您需要导入集群资源并设置节点标签。
 
     * 导入 Erda 平台所在的 Kubernetes 集群。
 
-        * 进入 **多云管理平台 > 资源管理 > 集群管理**，选择 **导入已创建的 Erda Kubernetes 集群**。
+        * 进入 **多云管理平台 > 集群资源 > 集群**，选择 **导入已创建的 Erda Kubernetes 集群**。
 
-      ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/16/42d94b90-76fe-4280-823e-c93841f50f40.png)
+      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/4f57b526-94e5-41b4-a9d0-280aaf22ecda.png)
 
-        * 根据界面提示完成配置，例如集群标识为 local-cluster，泛域名为 *erda.io*，并选择认证方式为 **Kubeconfig**。
+        * 根据界面提示完成配置，例如集群标识为 erda-demo，泛域名为 *erda.io*，并选择认证方式为 **Kubeconfig**。
       
       ::: tip 提示
       集群标识及泛域名需与安装时指定的配置保持一致，否则您将无法进行其他操作。
       :::
-   
-      ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/16/f27b8a4b-89dd-41a7-ac3d-88e3f49bf302.png)
+    
+      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/7af87dea-fdf2-4db3-a0aa-a18c9811f107.png)
 
-        * 完成集群导入后，可在 **集群管理** 页面查看当前集群状态，在 **集群总览** 页面查看当前集群的监控信息。
+        * 完成集群导入后，可在 **集群** 页面查看当前集群状态，在 **集群总览** 页面查看当前集群的监控信息。
 
-      ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/16/3a90a6ae-8b5e-4262-83f6-05815f99b75f.png)
+      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/0cd39cc1-553b-4233-b1e0-efe809a71ea5.png)
 
     * 设置节点标签，用于 Erda 的节点标签调度，具体请参见 [节点标签设置](../../cmp/guide/cluster/cluster-node-labels.md)。
 
-      ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/16/aeb9e652-3419-443c-98e0-a553032a450a.png)
+      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/64523916-eb3e-43c7-9209-c154fc2030ee.png)
 
-4. 根据引导创建第一个项目， [开始您的 Erda 之旅](../../quick-start/newbie.md)。
+4. 根据引导创建第一个项目，[开始您的 Erda 之旅](../../quick-start/newbie.md)。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/16/be1e15fc-6ecb-439d-a35c-68efed40bef3.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/da0c002a-6f25-4167-aa1c-a7d00a4b8fd5.png)

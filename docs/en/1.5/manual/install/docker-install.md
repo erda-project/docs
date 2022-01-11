@@ -11,7 +11,7 @@ This installation method is only suitable for trial environment where you can ge
 
 ## Install via Script
 
-1. Run the following commands:
+1. Run the following command:
 
    ```shell
    /bin/bash -c "$(curl -fsSL https://static.erda.cloud/quick-start/quick-start.sh)"
