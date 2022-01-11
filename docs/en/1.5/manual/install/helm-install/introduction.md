@@ -2,7 +2,7 @@
 
 ## Deploy Mode
 
-When deploy via Helm, you can choose either minimal mode or high-availability mode.
+When deploying via Helm, you can choose either minimal mode or high-availability mode.
 
 * [Minimal Mode](helm-install-demo.md): Deploy Erda components in the minimalist way (low-resource configuration and single-instance copy), which is suitable for trial environment.
 * [High-Availability Mode](helm-install-prod.md): Deploy Erda core components and dependencies in a high-availability way (high-resource configuration and multi-instance copy), which is suitable for production environment.
