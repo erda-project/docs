@@ -2,31 +2,29 @@
 
 集群总览相当于飞机的总控台，您可通过该界面查看组织中集群、机器的运行状况，也可对机器设置标签或执行下线。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/68418182-73a7-4a14-9e49-648c1941c353.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/4741baa2-e841-4f8f-b586-a94574dbb489.png)
 
 * **分组**
 
   默认情况下，机器将按照集群维度进行分组，您也可以自行选择以内存或 CPU 核数分组。
 
-  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/e6735c05-1c42-4302-b8ea-322fc2b268a0.png)
+  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/0ad4d05b-be67-42ea-b91b-c5a493ab0c3b.png)
 
 * **过滤**
 
   平台提供多种过滤条件，便于您快速找到目标机器。在 **过滤** 中选择对应条件或直接输入文本信息，即可实现搜索。
 
-  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/634c8a6e-76ea-4ed9-b366-180e845908c9.png)
+  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/7d4ee126-f505-4d4c-883e-51cbfe061c24.png)
 
 * **着色**
 
   平台支持根据不同条件对机器进行着色。例如，若您希望一览所有机器的系统负载情况，可在 **着色** 中选择 **系统负载**。
 
-  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/d081bc04-d44b-441c-8bee-f2e80be0fc2b.png)
-
-## 机器状态
+  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/ad20cf9e-3aa0-4db6-ac7e-3fdf830fce98.png)
 
 您可以在此查看所有机器的各项信息。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/494c3a75-3430-4a60-a54f-6469b131fb85.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/e046146b-6484-46f2-a20a-578876982414.png)
 
 * **机器列表**：展示各机器的基本信息。
   * IP：当前机器 IP，点击进入机器概览界面。
@@ -39,13 +37,10 @@
   * 操作：可对机器设置标签或执行下线。
 
 * **机器告警**：展示所有机器的告警情况。
-* **资源统计**：统计所有机器的资源状况。
-* **服务列表**：展示当前所有机器上运行的服务。
-* **任务列表**：展示当前所有机器上运行的任务。
 
 您也可以点击机器 IP，查看单个机器的具体信息。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/51403646-69c1-49fd-98c3-7684fbe9e210.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/41d358a3-43cc-45ff-bf0e-f52f073d070f.png)
 
 * **机器概览**：以多图表形式展示特定时间段内机器的运行状况。
   * CPU 使用率：CPU 使用率走势图。
