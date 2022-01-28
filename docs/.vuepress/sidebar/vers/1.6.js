@@ -337,8 +337,8 @@ module.exports = [
         collapsable: true,
         children: [
           ['msp/guides/platform/msp-project', '创建项目'],
-          ['msp/guides/platform/msp-overview', '平台总览'],
-          ['msp/guides/platform/msp-project-list', '项目列表'],
+          // ['msp/guides/platform/msp-overview', '平台总览'],
+          // ['msp/guides/platform/msp-project-list', '项目列表'],
           'msp/guides/apm/topology',
           // {
           //     title: '微服务环境',
