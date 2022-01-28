@@ -25,8 +25,8 @@ cors:
 
 具体操作路径如下：
 
-- 全局策略：进入 **微服务平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情 > 全局策略 > 业务策略 > 跨域访问**。
-- 具体 API 策略：进入 **微服务平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情** 后选择对应的 API，点击 **策略 > 业务策略 > 跨域访问**。
+- 全局策略：进入 **微服务治理平台 > 选择项目 > 服务治理 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情 > 全局策略 > 业务策略 > 跨域访问**。
+- 具体 API 策略：进入 **微服务治理平台 > 选择项目 > 服务治理 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情** 后选择对应的 API，点击 **策略 > 业务策略 > 跨域访问**。
 
 ::: tip 提示
 
@@ -43,7 +43,7 @@ cors:
 
 则配置示意如下：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/17/736f1b9e-1d6d-41a1-9d88-69d69fa8958b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/c7004b82-9a5d-4081-8ad4-202d32771901.png)
 
 若使用 erda.yml 配置，则配置信息如下：
 
@@ -62,11 +62,11 @@ policies:
 
 1. 关闭跨域访问策略。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/17/69e128ce-ce19-400c-90d7-a32ea27d5b75.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/aba80c8f-9b71-4ff0-90ad-3cafaad5cd01.png)
 
 2. 开启 Nginx 自定义配置。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/17/42c11947-3d3f-4a44-8b0e-f67a123e115a.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/b8c975d4-04e5-4525-8ad6-a55cc0842d2a.png)
 
 3. Nginx 配置示意如下：
 

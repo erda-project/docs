@@ -21,32 +21,34 @@ For example, if the Ingress controller IP of Kubernetes cluster is 10.0.0.1, and
 
 1. Through the configured domain name, access Erda, register and log in.
 
-2. Follow the guide to create an [Organization](../../quick-start/premise.md#组织).
+2. Follow the guide to create an [Organization](../../quick-start/premise.md#Organization).
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/b642bd0d-81d1-4dd7-967f-c58109248cd7.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/947e1f4d-7451-4992-9396-1d6b8b8ba17c.png)
 
 3. After organization creation, import clusters and set node labels.
 
    * Import the Kubernetes cluster where Erda is deployed.
-   
-      * Go to **Cloud Management > Resource Management > Clusters** and choose **Import an existing Erda Kubernetes cluster**.
 
-      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/8f01958f-4128-4734-9ac1-18464c9bf44a.png)
+      * Go to **Cloud Management > Cluster Resource > Clusters** and choose **Import an existing Erda Kubernetes cluster**.
 
-      * Complete the configuration, for example, set cluster identifier as local-cluster, domain name as *erda.io*, and authentication method as **Kubeconfig**.
+      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/6924abc5-eb8f-42c8-943f-879c21bb69c0.png)
 
+      * Complete cluster configuration. For example, set cluster identifier as local-cluster, domain name as *erda.io*, and authentication method as **Kubeconfig**.
+
+      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/9f0e0280-3f84-48ba-9610-ceb4c104b444.png)
+      
       ::: tip Tips
-   The cluster identifier and domain name must be consistent with the configuration specified during installation, otherwise Erda functions may be unavailable.
+The cluster identifier and domain name must be consistent with the configuration specified during installation, otherwise Erda functions may be unavailable.
       :::
 
-      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/89fb7043-aee3-4a4e-860c-a58b72d5082d.png)
-   
       * After cluster importing, you can view cluster status on the **Clusters** page, and view monitoring information on the **Cluster Overview** page.
+
+      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/bf1c9ada-3b0d-48ae-9e60-0953a9b4b845.png)
 
    * Set node tags for scheduling. For details, see [Node Tags](../../cmp/guide/cluster/cluster-node-labels.md).
 
-      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/b9f6bf04-cc6b-4831-99bf-903210f45e57.png)
+      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/3d19003f-c65f-4098-ba14-49df5ebf35ef.png)
 
 4. Create your first project according to the guide and [start your journey of Erda](../../quick-start/newbie.md).
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/1e7b4159-08cd-49b2-a02a-7d7b567b3e68.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/44715a5a-31e8-46f5-b92d-1c5637c167cc.png)

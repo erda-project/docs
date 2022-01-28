@@ -4,25 +4,25 @@
 
 ## 新建大盘
 
-进入 **多云管理平台 > 运维大盘 > 新建运维大盘**。
+进入 **多云管理平台 > 自定义大盘 > 新建仪表盘**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/ebf5a67e-20e0-4d3d-912d-5102854243ef.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/0ca56ee3-b687-4edd-9502-a92c5b691826.png)
 
 点击编辑按钮进入编辑模式。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/877a7b35-4757-4abf-bb28-6f8b7fef1bc7.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/74691e29-a5ad-4ff7-869f-0f0f00afad91.png)
 
 ## 配置大盘
 
 此处以配置某应用的 CPU 使用率折线图为例，填写大盘标题（必填）和大盘描述如下：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/ad3b4116-30bd-46d9-9862-614432ef9a23.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/61105d8f-da1e-450c-9f7b-3d4bba0e101a.png)
 
 ### 新建图表
 
 点击 **+** 新增图表，进入配置图表界面。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/10d94739-fa65-4b4f-9443-b4393a55052b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/94c11ab0-8858-4c46-ac98-50211bb3d51d.png)
 
 * **图表类型**
   目前大盘支持折线图、面积图等八种图表类型。此处以折线图为例。

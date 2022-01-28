@@ -111,13 +111,13 @@ ruby 版本需要 2.2.0 以上
 
 - lstdc++ 库问题，解决方式如下:
 ```
-//将 libstdc++.6.0.9.tbd 文件放入一下目录中
+//将 libstdc++.6.0.9.tbd 文件放入以下目录中
 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib
 ```
 
 - xcrun 工具生成 ipa 包问题
 ```
-// 将 PackageApplication 放入一下目录中
+// 将 PackageApplication 放入以下目录中
 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin
 ```
 

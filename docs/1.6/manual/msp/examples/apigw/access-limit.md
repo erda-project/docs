@@ -4,8 +4,8 @@
 
 具体操作路径如下：
 
-- 全局策略：进入 **微服务平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情 > 全局策略 > 安全策略 > IP 拦截**。
-- 具体 API 策略：进入 **微服务平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情** 后选择对应的 API，点击 **策略 > 安全策略 > IP 拦截**。
+- 全局策略：进入 **微服务治理平台 > 选择项目 > 服务治理 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情 > 全局策略 > 安全策略 > IP 拦截**。
+- 具体 API 策略：进入 **微服务治理平台 > 选择项目 > 服务治理 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情** 后选择对应的 API，点击 **策略 > 安全策略 > IP 拦截**。
 
 ## 示例一
 
@@ -16,7 +16,7 @@
 
 则配置示意如下：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/11/03ba96e8-192f-4eeb-83d6-43ae191e52f3.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/49f8e961-45eb-4ce6-84e0-9fe7238e4982.png)
 
 ## 示例二
 
@@ -27,7 +27,7 @@
 
 则配置示意如下：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/11/102fef6a-aff3-4a11-98d8-464a944a25e5.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/0f135f1f-4f2e-4d20-942b-196f4754ba15.png)
 
 ## 示例三
 
@@ -38,5 +38,5 @@
 
 则配置示意如下：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/11/a44e524f-6b99-4472-8248-bb0e8d189063.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/276e5df8-f418-4dc9-8849-5a095b44663f.png)
 

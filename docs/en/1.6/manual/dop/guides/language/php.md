@@ -16,8 +16,8 @@ If a composer.json file is detected in the root directory, the dependencies will
 
 PHP action needs to specify two paths:
 
-* **context**: The PHP code path to be added to the container
-* **index_path**: The entry path of PHP, that is, the relative code path
+* **context**: The PHP code path to be added to the container.
+* **index_path**: The entry path of PHP, that is, the relative code path.
 
 An example of pipeline.yml is as follows:
 

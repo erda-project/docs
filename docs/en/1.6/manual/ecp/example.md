@@ -4,7 +4,7 @@ With the advent of 5G and IoT era, the number of Internet smart terminal devices
 
 The following is a typical application scenario of store:
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/28/d063036a-3666-4408-9bc3-2574c9d52096.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/bee41c9e-3161-46ba-a67e-e006eff754e3.png)
 
 Edge applications usually have problems such as scattered computing resources, complex network situations and resource constraints. Although the business is relatively simple, it is not easy to maintain an application with a large number of edge nodes. The traditional way is to assign staff to the site at each stage to deal with installation, upgrade and troubleshooting of the application.
 

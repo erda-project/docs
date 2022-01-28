@@ -46,7 +46,7 @@ module.exports = [
         children: [
           'cmp/examples/set-labels',
           'cmp/examples/check-env',
-          // 'cmp/examples/check-workload',
+          'cmp/examples/check-workload',
         ]
       },
       'cmp/concept',
@@ -61,12 +61,12 @@ module.exports = [
         title: 'Guides',
         collapsable: true,
         children: [
-          // 'cmp/guide/cluster-overview',
+          'cmp/guide/cluster-overview',
           {
             title: 'Resource Management',
             collapsable: true,
             children: [
-              // 'cmp/guide/cluster/k8s-dashboard',
+              'cmp/guide/cluster/k8s-dashboard',
               'cmp/guide/cluster/management',
               // 'cmp/guide/cluster/autoscaling',
               'cmp/guide/cluster/cluster-node-labels',
@@ -80,7 +80,7 @@ module.exports = [
               'cmp/guide/alert/report',
               'cmp/guide/alert/alarm-statistics',
               'cmp/guide/alert/alarm-strategy',
-              // 'cmp/guide/alert/alarm-list',
+              'cmp/guide/alert/alarm-list',
               'cmp/guide/alert/alarm-custom',
             ]
           },
@@ -111,9 +111,9 @@ module.exports = [
         title: 'Concepts',
         collapsable: true,
         children: [
-          // ['dop/concepts/agile-info', '高效协同'],
+          ['dop/concepts/agile-info', 'Efficient Collaboration'],
           ['dop/concepts/iac', 'IaC'],
-          // ['dop/concepts/pipeline', 'pipeline.yml'],
+          ['dop/concepts/pipeline', 'pipeline.yml'],
           ['dop/concepts/erda-yaml', 'erda.yml'],
           // ['dop/concepts/artifact', '制品'],
           ['dop/concepts/gitflow', 'Gitflow'],
@@ -139,7 +139,7 @@ module.exports = [
             children: [
               'dop/guides/collaboration/milestone',
               'dop/guides/collaboration/backlog-and-iteration',
-              // 'dop/guides/collaboration/issue',
+              'dop/guides/collaboration/issue',
               // 'dop/guides/collaboration/issue-requirement-and-task',
               'dop/guides/collaboration/issue-bug',
               // 'dop/guides/collaboration/issue-dashboard',
@@ -170,7 +170,7 @@ module.exports = [
             collapsable: true,
             children: [
               'dop/guides/language/java',
-              // 'dop/guides/language/javascript',
+              'dop/guides/language/javascript',
               'dop/guides/language/php',
               'dop/guides/language/go',
             ]
@@ -184,10 +184,10 @@ module.exports = [
               // 'dop/guides/deploy/addon-out-of-box',
               // 'dop/guides/deploy/addon-custom',
               'dop/guides/deploy/deploy-by-cicd-pipeline',
-              // 'dop/guides/deploy/config',
+              'dop/guides/deploy/config',
               // 'dop/guides/deploy/config-center',
-              // 'dop/guides/deploy/db-migration',
-              // 'dop/guides/deploy/management',
+              'dop/guides/deploy/db-migration',
+              'dop/guides/deploy/management',
               // 'dop/guides/deploy/metrics_logs',
               'dop/guides/deploy/resource-management',
               // 'dop/guides/deploy/block-deploy',

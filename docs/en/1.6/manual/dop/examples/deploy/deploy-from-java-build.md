@@ -14,7 +14,7 @@ stages:
         - java-build:
             version: "1.0"
             params:
-              # Execute custom packaging commands and you can fill in any linux commands.
+              # To execute custom packaging commands, you can fill in any Linux commands.
               build_cmd:
                 - mvn package
                 - echo "build success"
@@ -29,7 +29,7 @@ stages:
                 Service name in dice.yml:
                   image: registry.erda.cloud/erda/terminus-openjdk:v11.0.6
                   copys:
-                    # Copy the jar package packaged by java-build
+                    # Copy the JAR package packaged by java-build
                     - ${java-build:OUTPUT:buildPath}/target/jar package name:/target/jar package name
                     # Copy erda monitoring files
                     - ${java-build:OUTPUT:buildPath}/spot-agent:/
@@ -54,7 +54,7 @@ stages:
         - java-build:
             version: "1.0"
             params:
-              # Execute custom packaging commands and you can fill in any linux commands.
+              # To execute custom packaging commands, you can fill in any Linux commands.
               build_cmd:
                 - ./gradlew bootJar
                 - echo "build success"
@@ -98,7 +98,7 @@ stages:
         - java-build:
             version: "1.0"
             params:
-              # Execute custom packaging commands and you can fill in any linux commands.
+              # To execute custom packaging commands, you can fill in any Linux commands.
               build_cmd:
                 - mvn clean package
                 - echo "build success"
@@ -129,19 +129,19 @@ The parameters are as follows:
 
 **Java-Build JAR Package**
 
-* `params:build_cmd`: Declare various build commands or pre-execute installation commands.
-* `params:jdk_version`: Declare specific version of JDK, currently with only 8 and 11 supported.
-* `params:workdir`: Declare build commands executed in a specific directory.
-* `java-build`: Allow users to customize build commands to achieve high customization and release JAR package.
+* `params:build_cmd`: Declares various building commands or pre-execute installation commands.
+* `params:jdk_version`: Declares specific version of JDK, currently with only 8 and 11 supported.
+* `params:workdir`: Declares building commands executed in a specific directory.
+* `java-build`: Allows users to customize building commands to achieve high customization and release JAR package.
 
 **Release**
 
-* `params:services`: Declare the building process of multiple services, similar to the declaration of `dockerfile`.
-* `params:services[]: service name in dice_yaml`: The `service` name in corresponding `erda.yml`, declare each of them.
+* `params:services`: Declares the building process of multiple services, similar to the declaration of `dockerfile`.
+* `params:services[]: service name in dice_yaml`: The `service` name in corresponding `erda.yml`, declares each of them.
 * `params:services[]: service name in dice_yaml: image`: Equal to the `FROM image` in `dockerfile`, and users can declare their own runtime environment.
 * `params:services[]: service name in dice_yaml: copys[]`: Equal to `copy` in `dockerfile`, and users can copy files to their own runtime environment.
 * `params:services[]: service name in dice_ yaml: cmd`: Equal to `cmd` in `dockerfile`, and users can declare their own startup commands.
-* `release`: Allow users to achieve highly customized building via `pipeline.yml`, rather than write `dockerfile` in the root directory of the project.
+* `release`: Allows users to achieve highly customized building via `pipeline.yml`, rather than write `dockerfile` in the root directory of the project.
 
 ::: tip Tips
 `${java-build:OUTPUT:buildPath}` is the build path of `java-build`.

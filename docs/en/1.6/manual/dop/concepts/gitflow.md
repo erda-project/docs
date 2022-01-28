@@ -4,7 +4,7 @@ Gitflow, the Git workflow first published and made popular by Vincent Driessen a
 
 An example of standard Gitflow is as follows:
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/02/63182c72-d730-4690-8d09-bc1d8959a137.png)
+<img src="https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/02/63182c72-d730-4690-8d09-bc1d8959a137.png" style="zoom:50%;" />
 
 The overall flow of Gitflow is as follows:
 1. A develop branch is created from master.
@@ -17,7 +17,7 @@ The overall flow of Gitflow is as follows:
 
 ## Develop/Master Branch
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/02/5ba6cca2-d6ac-42b0-839a-22550cc963ee.png)
+<img src="https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/02/5ba6cca2-d6ac-42b0-839a-22550cc963ee.png" style="zoom:80%;" />
 
 Gitflow uses two branches to record the history of the project. The master branch stores the official release history, and the develop branch serves as an integration branch for features. The develop branch interacts with each feature branch as the completed feature is integrated into develop, and new branch is branched off of develop for new features.
 
@@ -25,7 +25,7 @@ It's also convenient to tag commits in the master branch with a version number a
 
 ## Feature Branch
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/02/b7400cec-f674-4814-9821-d8574ab4591d.png)
+<img src="https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/02/b7400cec-f674-4814-9821-d8574ab4591d.png" style="zoom:80%;" />
 
 Each new feature should reside in its own branch.
 
@@ -33,7 +33,7 @@ Feature branches are generally created off to the latest develop branch. When a 
 
 ## Release Branch
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/02/7d73a92b-a5f4-4687-86e2-b16456ab8235.png)
+<img src="https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/02/7d73a92b-a5f4-4687-86e2-b16456ab8235.png" style="zoom:80%;" />
 
 Once develop has acquired enough features (or a predetermined release date is approaching), it is time for a release. Fork a release branch off of develop, which indicates the end of this release cycle and starts the next release cycle. Then no new features can be added after this point.
 
@@ -45,7 +45,7 @@ Once it's ready to ship, the release branch gets merged into master and tagged w
 
 ## Hotfix Branch
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/02/ce4125be-7826-4fd0-987b-d5db9a51c705.png)
+<img src="https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/02/ce4125be-7826-4fd0-987b-d5db9a51c705.png" style="zoom:80%;" />
 
 Hotfix branches are used to quickly patch production releases. When a bug occurs, a hotfix branch is forked off of main. As soon as the fix is complete, it should be merged into both master and develop, and master should be tagged with an updated version number.
 

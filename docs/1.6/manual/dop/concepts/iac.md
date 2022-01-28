@@ -22,10 +22,10 @@ Erda 是以应用为中心的企业级一站式数字化 PaaS 平台，DOP（即
 
 erda.yml 部分内容示意如下：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/5decdb97-f37a-470e-92d2-97fef36cc782.png)
+<img src="https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/5decdb97-f37a-470e-92d2-97fef36cc782.png" style="zoom:50%;" />
 
 用于 CI 的 pipeline.yml 部分内容示意如下：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/482070a2-55d0-40d5-8379-931b3479daf4.png)
+<img src="https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/482070a2-55d0-40d5-8379-931b3479daf4.png" style="zoom:50%;" />
 
 若您的应用是一个标品，IaC 可简单化该应用的交付。您只需将代码仓库完整地推送至新应用代码仓库中，随后执行流水线，如此一个完整的应用便已交付至新的客户环境中。后续开发者可在新应用中进行定制化开发，当应用的基础设施变更时，将变更提交代码进行版本控制管理。

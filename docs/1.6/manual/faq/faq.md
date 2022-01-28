@@ -4,41 +4,40 @@
 
 扩缩容服务无需调整 erda.yml，直接在部署中心操作即可。具体请参见 [扩缩容](../dop/guides/deploy/management.html#扩缩容)。
 
-1. 进入 **DevOps 平台 > 我的应用 > 部署中心**，选择 **服务扩容**。
+1. 进入 **我的应用 > 部署中心**，选择 **服务扩容**。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/ad22311b-d268-44d5-9878-241520f0446d.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/ef752e97-fd41-4790-a80c-22013105adbd.png)
 
 2. 根据需要进行服务资源调整。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/01f349c7-10de-4d34-a06e-608c1d40e567.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/829f261f-9a7f-4c33-aeae-583570ef0bd7.png)
 
 ## 2. 服务是否提供内部调用的地址？
 
-进入 **DevOps 平台 > 我的应用 > 部署中心** 可查看服务的内部地址。
+进入 **我的应用 > 部署中心** 可查看服务的内部地址。
 
 服务的重新部署或流水线的重新构建均不会影响该内部地址。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/af0fde2f-0df6-4d3f-9e7f-0cf339d29f52.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/b2a119ec-a715-41b1-b105-8dde6b027ede.png)
 
 ## 3. 如何查看错误日志？
 
-1. 进入 **DevOps 平台 > 我的应用 > 部署中心**，点击容器日志，此时显示的是标准输出（stdout）日志。具体请参见 [服务日志](../dop/guides/deploy/metrics_logs.html#服务日志)。
+1. 进入 **我的应用 > 部署中心**，点击容器日志，此时显示的是标准输出（stdout）日志。具体请参见 [服务日志](../dop/guides/deploy/metrics_logs.html#服务日志)。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/f89f3bb7-ae07-4411-86ee-0e8a62933313.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/0a8aa165-8c74-41b7-8707-58bd0930eabe.png)
 
 2. 点击顶部切换开关，查看标准错误（stderr）日志。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/a806e6b4-9522-444d-9fab-78e681554a38.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/398019e2-c1a8-4d6f-8d26-6cf76766f8f5.png)
 
 ## 4. 如何查看已停止的容器实例？
 
-1. 进入 **DevOps 平台 > 我的应用 > 部署中心**，选择 **已停止** 查看对应容器实例。
+1. 进入 **我的应用 > 部署中心**，选择 **已停止** 查看对应容器实例。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/c58bdb73-fb0e-40ea-ac67-e9d03bfe0d2c.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/e7591f37-0bb2-408e-95f9-41ce4e9e0973.png)
 
-2. 状态栏中标注了容器停止的原因（如 OOM 退出，此处将标注为 OOMKilled）。操作栏中可查看容器运行时的资源使用情况以及对应日志。
+2. 状态栏将标注容器停止的原因（如 OOM 退出，将标注为 OOMKilled）。操作栏中可查看容器运行时的资源使用情况以及对应日志。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/b98f1dc8-e6b6-4f6f-bd73-88c81d97e943.png)
 
 ## 5. 如何复用 Addon？
 
@@ -54,23 +53,23 @@ addons:
 
 失败原因一般为使用了请求头中的 `Host`，建议使用 `X-Forwarded-Host ` 进行替代，或者开启 API 网关的域名透传，步骤如下：
 
-1. 进入 **微服务治理平台 > API 网关 > 流量入口管理**，选择对应流量入口详情，点击 **全局策略**。
+1. 进入 **微服务治理平台 > 服务治理 > API 网关 > 流量入口管理**，选择对应流量入口详情，点击 **全局策略**。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/f774f429-247c-4325-b6cc-f34d21b71819.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/ee4fae36-7e5a-4062-abd9-14835754b799.png)
 
 2. 进入 **业务策略 > 流量接收转发**，启用规则后开启 **入口域名透传**。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/68491a06-8cf6-463f-bf2d-d73f6aa5f8bb.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/4039b9b0-0487-48e4-aa54-6188c100a79c.png)
 
 ## 7. 如何对特定域名或 API 控制 HTTPS 强制跳转？
 
-1. 进入 **微服务治理平台 > API 网关 > 流量入口管理**，点击对应流量入口详情，选择 **全局策略** 或 **策略**。（全局策略对该流量入口下所有 API 生效，具体 API 策略仅对该 API 生效。）
+1. 进入 **微服务治理平台 > 服务治理 > API 网关 > 流量入口管理**，点击对应流量入口详情，选择 **全局策略** 或 **策略**。（全局策略对该流量入口下所有 API 生效，具体 API 策略仅对该 API 生效。）
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/ecf1223c-1b3e-46e3-bed4-eadc0b4606aa.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/61c2afda-2767-4708-b764-29160551507f.png)
 
 2. 进入 **业务策略 > 流量接收转发**，启用规则后开启 **强制跳转HTTPS**。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/36df5992-764a-464c-9caf-481b1bf321f8.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/72e33da2-433d-4b52-af67-922457842a73.png)
 
 ::: tip 提示
 

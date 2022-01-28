@@ -60,7 +60,8 @@ Pipeline 支持 UI、OpenAPI、CLI 等多种交互方式，同时支持水平扩
 - AOP 扩展点机制（借鉴 Spring），暴露代码关键节点，便于开发同学在不修改核心代码的前提下定制流水线行为。
 
 目前多数功能均通过扩展点机制实现，例如自动化测试报告嵌套生成、队列弹出前检查、接口测试 Cookie 保持等。
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/15a5d020-19d3-492a-9797-10aebd7902ca.png)
+
+<img src="https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/15a5d020-19d3-492a-9797-10aebd7902ca.png" style="zoom:50%;" />
 
 ### 引擎层
 - 流程推进器（Reconciler）
@@ -142,7 +143,7 @@ type ActionExecutor interface {
 
 当前平台支持多种 ActionExecutor：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/71b5b9dd-b11e-4fbf-85fe-1aa66cb27bcf.png)
+<img src="https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/71b5b9dd-b11e-4fbf-85fe-1aa66cb27bcf.png" style="zoom:50%;" />
 
 ## 用户接入层 pipeline.yaml
 [pipeline.yaml](../guides/cicd-pipeline/pipeline-yml-config.html) 是 IaC 的实践，平台通过 YAML 格式描述流水线定义，基于 Stage 语法简化编排复杂度。

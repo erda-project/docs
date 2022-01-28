@@ -1,6 +1,6 @@
 # Set Labels for Nodes
 
-Go to **Cloud Management > Resource Management > Clusters > Select Cluster > Node List**, and click the **+** icon in the column of **Node**.
+Go to **Cloud Management > Container Resource > Node**, and click the **+** icon in the column of **Node**.
 
 ## Scenario 1: Divide Machine Resource Pools by Environment
 
@@ -20,6 +20,8 @@ Take the DevOps platform as an example. It runs scheduling as follows without br
 
 In the cloud management platform, set environment labels for nodes, allowing Erda to schedule deployments of the corresponding environment to the node. As shown in the figure below, select environment label in category and then select an environment.
 
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/12/d7a10c11-bb30-44f6-bf56-770ec2e6a3bc.png)
+
 Labels of four environments can be set for one node to indicate that the node is shared by the service deployment of the four environments.
 
 :::tip Tips
@@ -33,6 +35,8 @@ For the actual K8s label value corresponding to the specific label, see [Node Ta
 It is recommended to schedule pipeline tasks to machines without business service deployed. It may affect the stability of the business if pipeline tasks run on machines with business services deployed as they are mostly IO-intensive tasks.
 
 Set labels for nodes in cloud management platform for pipeline task scheduling. As shown in the figure below, select job label in category and then select job type.
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/12/8e55a0f2-f9a2-4dab-9420-702e78c04749.png)
 
 :::tip Tips
 

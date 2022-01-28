@@ -25,18 +25,18 @@
 #### 指标
 描述告警需读取的 Metric Event 指标，可从下拉列表中自行选择，仅支持单选。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/268e74a3-7758-4780-9a35-1a1d81a9ffdb.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/3dc4a230-417e-4c96-bfbd-3fdef162ac77.png)
 
 #### 过滤规则
 描述如何过滤告警数据，创建完成的过滤规则将以 JSON 形式保存在数据库中。告警数据匹配时，对应值将从 Metric 的 Tag 中获取。
 
 #### 分组规则
-描述告警指标的分组维度，该值从 Metric 的 Tag 中读取，为选填字段。
+描述告警指标的分组维度，该值从 Metric 的 Tag 中读取。
 
 #### 字段规则
 根据所选指标的不同，字段规则可选的字段也有所不同。别名即该字段的别称，聚合规则描述在时间窗口内数据如何聚合，操作字段描述时间窗口结束后聚合结果和预期值的比较方式，默认阈值为指标字段计算的预期阈值。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/569e1e3c-0e44-467d-a6a8-ffe5126eef4a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/a513a09a-ef03-4010-9d1a-1f4552e98889.png)
 
 ### 消息模版
 
@@ -49,9 +49,9 @@
 #### 消息内容规则
 自定义告警模版，用于发送告警所显示的内容。模版样例中的占位符字段从 Metric 中获取，可参照该样例填写。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/587367b9-1dec-48ca-bb8a-af86299c330f.png)
+<img src="http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/0da7b6fe-e97e-4d8a-b05d-364d5ab5e9eb.png" style="zoom:50%;" />
 
 完成自定义告警配置后，即可在告警策略中选择该规则使用。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/c7f57581-0f7b-40cc-a91d-a7a8a207113b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/d6c2d10c-a849-4b71-a5ec-f53fe1d1863b.png)
 

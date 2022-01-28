@@ -20,9 +20,9 @@ For O&M engineers, they can log in to the machines to operate by SSH without mai
 
 The cloud management platform of Erda helps O&M engineers or DevOps engineers achieve enterprise-level SRE O&M based on the following concepts:
 
-1. Erda provides four environments for each project: development, testing, staging and production. Any environment corresponds to a Kubernetes namespace thus combines O&M of Kubernetes and project business.
-2. When deploying services to environments on Erda, the platform will match resources according to the [environment tags](./guide/cluster/cluster-node-labels.md#支持宿主机基于环境隔离), so the resource pools of each environment can be managed based on the environment tags.
-3. The platform provides various built-in [templates of alarm rules](./guide/alert/alarm-strategy.md#监控告警事项), which meet monitoring requirements for most scenarios, and supports [custom alarms](./guide/alert/alarm-custom.md) and [dashboard](./guide/alert/dashboard.md) for professional O&M personnels.
+1. Erda provides four environments for each project: development, testing, staging and production. Each environment corresponds to a Kubernetes namespace thus combines O&M of Kubernetes and project business.
+2. When deploying services to environments on Erda, the platform will match resources according to the [environment tags](./guide/cluster/cluster-node-labels.md#Host-Isolation-Based-on-Environment), so the resource pools of each environment can be managed based on the environment tags.
+3. The platform provides various built-in [templates of alarm rules](./guide/alert/alarm-strategy.md#Alarm-Monitoring), which meet monitoring requirements for most scenarios, and supports [custom alarms](./guide/alert/alarm-custom.md) and [dashboard](./guide/alert/dashboard.md) for professional O&M personnels.
 
 
 

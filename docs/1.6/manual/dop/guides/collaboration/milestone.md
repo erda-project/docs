@@ -4,12 +4,12 @@
 
 进入 **DevOps 平台 > 我的项目 > 项目协同 > 里程碑**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/55220cad-8655-4e99-8274-94446cb2cbbb.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/4a0247c5-ccaf-46b9-86b5-3040404eb2d4.png)
 
 点击右上角 **创建里程碑**，根据页面提示输入里程碑名称、详情、处理人、优先级、复杂度、截止日期、标签以及自定义字段等信息。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/d8c32946-dbea-40ef-8989-62175f9d3109.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/1de2d00a-5be7-4b86-adfc-758ce68cb4c8.png)
 
 您可以通过年份、标签、优先级和处理人过滤筛选里程碑，也可以输入标题进行模糊匹配。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/0b11a506-4e9c-4671-86db-30ddc3eceab7.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/20307b4c-a7bf-4d5e-9044-a93573130494.png)

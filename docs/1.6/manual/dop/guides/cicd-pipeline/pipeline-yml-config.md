@@ -209,15 +209,15 @@ stages:
             - echo "hello world"
 ```
 
-提交合并请求将触发 check run。
+提交合并请求将触发 Check run。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/9bdbb705-35e4-4bab-bb6a-5622df894ec8.png)
 
-check run 将查看流水线结果，若流水线运行失败则 check run 失败。
+Check run 将查看流水线结果，若流水线运行失败则 Check run 失败。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/460e8019-0b9c-480d-b925-539662be6d8d.png)
 
-流水线运行成功则 check run 成功。
+流水线运行成功则 Check run 成功。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/9af6c5c1-689b-4cc4-ad81-261d28706b24.png)
 

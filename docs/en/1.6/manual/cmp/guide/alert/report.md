@@ -8,11 +8,11 @@ With a task report created, the system will automatically collect the cluster da
 
 1. Go to **Cloud Management > O&M Report > New Report Task**.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/03/23c611a8-d5a0-4054-89ce-9df6a332d4d2.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/904ec02a-faf8-4b92-9ae4-d46845ace9dc.png)
 
 2. Fill in the information needed.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/03/c937fb39-6ac5-485a-8f36-d8f789f253ee.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/047fbd51-1d92-4c06-b9f5-6519ad2cf4a7.png)
 
    * **Report Name**: Fill in the report name, such as "O&M daily report-XX".
    * **Report Type**: Only daily and weekly reports are supported.
@@ -29,10 +29,10 @@ With a task report created, the system will automatically collect the cluster da
 
 3. Finish the steps above and a new report task will be added to the list.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/03/d06d9c3c-5c4d-4161-9ac7-52f9b96a6ea7.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/dfcc29b9-b5d8-4200-9f59-ae9aca3778f9.png)
 
 ## View Historical Reports
 
 Click a report task in the list to enter the historical report page for details.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/03/b58ecf7c-2741-4221-97e7-40d4c373fa8d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/c2f87afa-2077-4b1d-b861-eff82a2e7527.png)

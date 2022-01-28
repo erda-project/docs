@@ -4,8 +4,8 @@
 
 具体操作路径如下：
 
-- 全局策略：进入 **微服务平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情 > 全局策略 > 业务策略 > 自定义 Nginx 配置**。
-- 具体 API 策略：进入 **微服务平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情** 后选择对应的 API，点击 **策略 > 业务策略 > 自定义 Nginx 配置**。
+- 全局策略：进入 **微服务治理平台 > 选择项目 > 服务治理 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情 > 全局策略 > 业务策略 > 自定义 Nginx 配置**。
+- 具体 API 策略：进入 **微服务治理平台 > 选择项目 > 服务治理 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情** 后选择对应的 API，点击 **策略 > 业务策略 > 自定义 Nginx 配置**。
 
 ## 自定义 Nginx 配置是什么
 
@@ -27,7 +27,7 @@
 more_set_headers Strict-Transport-Security "max-age=86400";
 ```
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/12/c5c26249-a8c3-430a-ab1f-0c42dc241e74.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/eae7178b-0148-4ae5-947c-55854bf3c85e.png)
 
 
 ### 示例二
@@ -44,4 +44,4 @@ proxy_set_header X-From-Where "XXX";
 proxy_set_header Accept-Encoding "";
 ```
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/12/986903e7-52a0-4e2e-bfcd-bdeef58790bd.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/844ddbb6-b742-4673-8a7c-85b19b67261d.png)

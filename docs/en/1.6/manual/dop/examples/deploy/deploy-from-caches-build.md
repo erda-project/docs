@@ -69,7 +69,7 @@ stages:
 
 `Caches` is an array object that can define multiple `path` and `key`.
 
-* `caches[]:path`: Specify the directory for caching and subsequent builds will put the cache file back into the original directory. `path` can only be an absolute path (begin with ``/``), or build the path `${}` (also an absolute path) in `erda`.
+* `caches[]:path`: Specifies the directory for caching and subsequent builds will put the cache file back into the original directory. `path` can only be an absolute path (begins with ``/``), or build the path `${}` (also an absolute path) in `erda`.
 * `caches[]:key`: When no `key` is specified, the system will automatically generate it. When a cache conflict occurs, user should customize `key`, which must start with <code v-pre>{{basePath}}</code> and end with <code v-pre>{{endPath}}</code>, while the middle name can be customized.
 
 As the cache is stored on `nfs` at the address of `/appId/projectId/hash(path)` by default, the same application in the same project may have conflicts.

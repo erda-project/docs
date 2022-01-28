@@ -14,14 +14,14 @@ The following table shows the resource requirements of dependencies and componen
 
 | Component | CPU Request/Pod | Memory Request/Pod | Storage Capacity/Pod | Replica | Anti-affinity |
 |:---|:---|:---|:---|:---|:---|
-| Cassandra | 2 | 4 GB | 1000 GB | 3 | hard |
-| Elasticsearch | 2 | 4 GB | 1000 GB | 3 | hard |
+| Cassandra | 2 | 4 GB | 1,000 GB | 3 | hard |
+| Elasticsearch | 2 | 4 GB | 1,000 GB | 3 | hard |
 | etcd | 1 | 2 GB | 32 GB | 3 | hard |
 | Zookeeper | 0.1 | 256 MB | - | 3 | hard |
 | Kafka | 2 | 4 GB | 100 GB | 3 | hard |
 | KMS | 0.5 | 1 GB | - | 2 | soft |
 | MySQL | 0.5 | 0.5 GB | 100 GB | 1 | - |
-| Registry | 0.5 | 0.5 GB | 1000 GB | 1 | - |
+| Registry | 0.5 | 0.5 GB | 1,000 GB | 1 | - |
 | Sonar | 0.75 | 1.5 GB | - | 1 | - |
 | redis-operator | 0.1 | 10 MB | - | 1 | - |
 | redis-sentinel | 0.05 | 64 MB | - | 3 | soft |
@@ -35,21 +35,21 @@ According to the table above, the total resource amount of the `request` in the 
 
 * CPU: 36
 * Memory: 72 GB
-* Storage: 8000 GB
+* Storage: 8,000 GB
 
 The recommended node configuration for high-availability deployment is as follows (for minimum resource requirements):
 
 | Node | Minimum CPU Configuration | Minimum Memory Configuration | Minimum Storage Configuration | Remarks |
 |:---|:---|:---|:---|---|
-| 3 | 12 | 24 GB | 3000 GB | Set as configuration for single node |
-| 4 | 10 | 20 GB | 2000 GB | A total of 7 pods for Cassandra, Elasticsearch and Registry (each requires 1000 GB), and at least 2000 GB for one node |
-| 5 | 8 | 16 GB | 2000 GB | A total of 7 pods for Cassandra, Elasticsearch and Registry (each requires 1000 GB), and at least 2000 GB for one node |
-| 6 | 8 | 16 GB | 2000 GB | 1. A total of 7 pods for Cassandra, Elasticsearch and Registry (each requires 1000 GB), and at least 2000 GB for one node<br> 2. Erda components can be deployed separately from dependent components, with 4 nodes for dependent components and 2 nodes for component deployment |
+| 3 | 12 | 24 GB | 3,000 GB | Set as configuration for single node |
+| 4 | 10 | 20 GB | 2,000 GB | A total of 7 pods for Cassandra, Elasticsearch and Registry (each requires 1,000 GB), and at least 2,000 GB for one node |
+| 5 | 8 | 16 GB | 2,000 GB | A total of 7 pods for Cassandra, Elasticsearch and Registry (each requires 1,000 GB), and at least 2,000 GB for one node |
+| 6 | 8 | 16 GB | 2,000 GB | 1. A total of 7 pods for Cassandra, Elasticsearch and Registry (each requires 1,000 GB), and at least 2,000 GB for one node<br> 2. Erda components can be deployed separately from dependent components, with 4 nodes for dependent components and 2 nodes for component deployment |
 
 Please note the following:
 * Cassandra, Elasticsearch, etcd, Kafka, Zookeeper and other components (clusters of three nodes) and Pod Anti-affinity are hard constraints, so at least 3 nodes are required.
-* For a three-node cluster, at least one is for Cassandra, Elasticsearch and Registry thus at least 3000 GB of storage is required for one node.
-* If the local volume provided by volume-provisioner of Erda is used for storage, it is recommended to adopt [RAID](https://en.wikipedia.org/wiki/RAID) or [LVM](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)) of multiple physical disks for the file system where the /data directory is located (one node quires 3000 GB for storage), to avoid IO competition among components such as Cassandra, Elasticsearch and etcd with single disk.
+* For a three-node cluster, at least one is for Cassandra, Elasticsearch and Registry thus at least 3,000 GB of storage is required for one node.
+* If the local volume provided by volume-provisioner of Erda is used for storage, it is recommended to adopt [RAID](https://en.wikipedia.org/wiki/RAID) or [LVM](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux)) of multiple physical disks for the file system where the /data directory is located (one node requires 3,000 GB for storage), to avoid IO competition among components such as Cassandra, Elasticsearch and etcd with single disk.
 
 
 ## Classification Scheduling
@@ -69,7 +69,7 @@ Before deployment, run the steps below to define the node range of Erda componen
 
 :::tip Tips
 
-Please see [Node Requirements](comp-schedule.md#节点需求说明) select the appropriate node for each component.
+Please see the [Node Requirements](comp-schedule.md#Node-Requirements) to select the appropriate node for each component.
 
 :::
 
@@ -83,7 +83,7 @@ Please see [Node Requirements](comp-schedule.md#节点需求说明) select the a
    kubectl label node <node_name>  dice/lb="" --overwrite
    ```
 
-* Step 2: Set the range of nodes to deploy Erda components and dependent components by node labels, and run the following commands on each node to set the label `dice/platform`:
+* Step 2: Set the range of nodes to deploy Erda components and dependent components by node labels, and run the following command on each node to set the label `dice/platform`:
 
    ```bash
    kubectl label node <node_name> dice/platform="" --overwrite
@@ -122,7 +122,7 @@ Please see [Node Requirements](comp-schedule.md#节点需求说明) select the a
 
 ## Reasonable Use of Storage to Avoid IO Competition
 
-When deploying Erda, the storage volume of stateful services (such as dependent components and stateful services in Erda Pipeline) adopts the StorageClass named dice-local-volume provided by volume-provisioner, the dependent component of Erda by default. Based on the file system in a specific directory (such as /data), volume-provisioner creates PV (for example, /data/pvc-6a7bf08c-00cd-4464-899e-3a82beca8ca8) for storage in a way similar to [sparse file](https://en.wikipedia.org/wiki/Sparse_file) by dice-local-volume.
+When deploying Erda, the storage volume of stateful services (such as dependent components and stateful services in Erda pipeline) adopts the StorageClass named dice-local-volume provided by volume-provisioner, the dependent component of Erda by default. Based on the file system in a specific directory (such as /data), volume-provisioner creates PV (for example, /data/pvc-6a7bf08c-00cd-4464-899e-3a82beca8ca8) for storage in a way similar to [sparse file](https://en.wikipedia.org/wiki/Sparse_file) by dice-local-volume.
 
 It is not designed for scenarios of high-concurrency and massive IO. If the bottom layer of the file system where the /data directory is located is from the same hard disk device (or a device constructed from different partitions of the same hard disk), then IO competition occurs among pods in the file system that effects the stability and QoS of Erda components.
 

@@ -6,7 +6,7 @@ Please provide the Erda namespace deployed, such as erda-system.
 
 :::
 
-1. Run the following commands to uninstall Erda and its dependencies.
+1. Run the following command to uninstall Erda and its dependencies.
 
    ```shell
    helm uninstall erda -n erda-system
@@ -19,7 +19,7 @@ Please provide the Erda namespace deployed, such as erda-system.
    kubectl delete crd erdas.erda.terminus.io
    ```
 
-3. Uninstalling Erda will not clean up `pvc` resources by default. If necessary, run the following commands to manually clean up.
+3. Uninstalling Erda will not clean up `pvc` resources by default. If necessary, run the following command to manually clean up.
 
    ```shell
    kubectl delete pvc -n erda-system `kubectl get pvc -n erda-system | grep erda | awk '{print $1}'`

@@ -110,7 +110,7 @@ allprojects {
 
 ### Upload Maven settings.xml
 
-Go to **DevOps Platform > Applications > Select Application > Settings > Pipelines > Variable Configuration > Select Environment**.
+Go to **My Application > Select Application > Settings > Pipelines > Variable Configuration > Select Environment**.
 
 Click **Add Variable**, select the type as **File** and enable encryption, then upload settings.xml and define the variable name as `MAVEN_SETTING_FILE`.
 
@@ -200,7 +200,7 @@ on:
 
 ### Configure Password of Nexus Private Server
 
-Go to **DevOps Platform > Applications > Select Application > Settings > Pipelines > Variable Configuration > Select Environment**.
+Go to **My Application > Select Application > Settings > Pipelines > Variable Configuration > Select Environment**.
 
 Click **Add Variable**, select the type as **Value** and enable encryption, then configure the following variables:
 
@@ -363,7 +363,7 @@ The directory of `/root/.m2/repository` is the address of the Maven local reposi
 
 If you use the runtime container provided by the platform, Arthas is already installed. The installation path is `/arthas-boot.jar`, which can be started via java -jar arthas-boot.jar in the root directory.
 
-For more information on Arthas, see [ Arthas Documentation](https://alibaba.github.io/arthas/).
+For more information on Arthas, see [ Arthas Documentation](https://arthas.aliyun.com/doc/en/).
 
 ### Greys
 
@@ -375,9 +375,9 @@ For more information on Greys, see [Greys Documentation](https://github.com/oldm
 
 The platform provides VPNs for local and remote connection to services running on the platform.
 
-To enable remote debugging, go to **DevOps Platform > Applications > Select Application > Settings > Pipelines > Variable Configuration**, and add variable configuration for JAVA_OPTS as follows:
+To enable remote debugging, go to **My Application > Select Application > Settings > Pipelines > Variable Configuration**, and add variable configuration for JAVA_OPTS as follows:
 
-JDK 9 and above:
+JDK 9 and later:
 
 ```bash
 JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
@@ -389,9 +389,9 @@ JDK 5～8:
 JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
 ```
 
-In addition, if a local IDE is needed, go to **DevOps Platform > Joined Applications > Select Application > Deployments > Overview > Container List** to find the container IP, and configure in the IDE as follows:
+In addition, if a local IDE is needed, go to **My Application > Select Application > Deployments > Overview > Container List** to find the container IP, and configure in the IDE as follows:
 
-JDK 9 and above:
+JDK 9 and later:
 
 ![](//terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/b72accdc-3e6f-4053-bc18-a4b48e1007bd.png)
 

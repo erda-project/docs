@@ -25,8 +25,8 @@
 
 具体操作路径如下：
 
-- 全局策略：进入 **微服务平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情 > 全局策略 > 安全策略 > 服务负载保护**。
-- 具体 API 策略：进入 **微服务平台 > 项目列表 > 选择项目 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情** 后选择对应的 API，点击 **策略 > 安全策略 > 服务负载保护**。
+- 全局策略：进入 **微服务治理平台 > 选择项目 > 服务治理 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情 > 全局策略 > 安全策略 > 服务负载保护**。
+- 具体 API 策略：进入 **微服务治理平台 > 选择项目 > 服务治理 > API 网关 > 流量入口管理**，选择对应的流量入口，点击 **详情** 后选择对应的 API，点击 **策略 > 安全策略 > 服务负载保护**。
 
 ::: tip 提示
 
@@ -44,7 +44,7 @@
 
 则配置示意如下：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/12/e78bd432-dde4-4fcc-b01b-f7060e00e8fc.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/46ea36ed-b250-472c-8168-392aa6c634d8.png)
 
 ### 示例二
 
@@ -57,13 +57,13 @@
 
 1. 选择该 URL 对应的 API 路由配置，点击 **策略**。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/12/943e43d5-80e7-4721-8ec7-4207e875c3c9.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/2b266b65-e899-467a-a768-3e5af13df6ee.png)
 
 2. 关闭 **使用全局策略**。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/12/a5067e0a-da56-4416-a5de-5b14dc147a67.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/2d57ac96-9023-473c-89d7-ead7777e1f86.png)
 
 3. 配置该 API 的专属策略，点击 **提交**。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/12/b5731472-ea8b-471a-8fdf-d8162e856f4d.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/49e141cf-99a1-41f4-88f0-afb26cbacd80.png)
 

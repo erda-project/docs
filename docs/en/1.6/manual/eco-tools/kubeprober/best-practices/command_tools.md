@@ -1,6 +1,6 @@
 # Command Line Tools
 
-Kubeprober uses kubectl + kubectl-probe plug-in to complete all operations.
+Kubeprober uses kubectl and kubectl-probe plug-in to complete all operations.
 
 ```shell script
 Usage:

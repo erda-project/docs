@@ -17,19 +17,19 @@ The following configuration does not contain the resources required to run Kuber
 
 ## Installation Requirements
 
-- Kubernetes 1.16～1.20 (install [the Ingress Controller](https://kubernetes.io/zh/docs/concepts/services-networking/ingress-controllers/) component)
-- Docker 19.03 and above
-- CentOS 7.4 and above
-- Helm 3 and above
+- Kubernetes 1.16～1.20 (install the [Ingress Controller](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/) component)
+- Docker 19.03 and later
+- CentOS 7.4 and later
+- Helm 3 and later
 - Domain name (optional, configure by Kubernetes Ingress to access Erda platform, such as **.erda.io*)
 
 ## Preparations
 
 1. Perform the following operations in the Kubernetes cluster (skip the step if you have already done):
 
-   * Confirm that there is a kubeconfig file under the `~/.kube/` path of the Master node, and you can run `kubectl` to access the cluster.
+   * Confirm that there is a kubeconfig file under the `~/.kube/` path of the master node, and you can run `kubectl` to access the cluster.
 
-   * Confirm that Helm has been installed under the Master node (here take version 3.5.2 as an example).
+   * Confirm that Helm has been installed under the master node (here take version 3.5.2 as an example).
 
       ```shell
       # Download the Helm installation package
@@ -58,7 +58,7 @@ The following configuration does not contain the resources required to run Kuber
    systemctl restart docker
    ```
 
-3. Download the Erda [installation package](https://github.com/erda-project/erda/releases) on the Kubernetes Master node and unzip it.
+3. Download the Erda [installation package](https://github.com/erda-project/erda/releases) on the Kubernetes master node and unzip it.
 
    ```shell
    tar -xzvf erda-linux.tar.gz
@@ -71,7 +71,7 @@ The following configuration does not contain the resources required to run Kuber
 
 4. Set NFS as network shared storage on each node.
 
-   * If you already have network shared storage (such as Alibaba Cloud), please run the following command to set it on each node:
+   * If you already have network shared storage (such as Alibaba Cloud), please run the following commands to set it on each node:
 
       ```shell
       mount -t <storage_type> <your-share-storage-node-ip>:<your-share-storage-dir> /netdata

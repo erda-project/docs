@@ -4,8 +4,8 @@ You can configure it via API policies of endpoints.
 
 The path is as follows:
 
-- Global strategy: Go to **Microservice Platform > Project List > Select Project > API Gateway > Endpoints**, select an endpoint, and click **Details > Global Strategy > Business Strategy > Traffic Receiving and Forwarding**.
-- Strategy for a specific API: Go to **Microservice Platform > Project List > Select Project > API Gateway > Endpoints**, select an endpoint, click **Details**, select an API, and click **Strategy > Business Strategy > Traffic Receiving and Forwarding**.
+- Global strategy: Go to **Microservice Platform > Select Project > Service Management > API Gateway > Endpoints**, select an endpoint, and click **Details > Global Strategy > Business Strategy > Traffic Receiving and Forwarding**.
+- Strategy for a specific API: Go to **Microservice Platform > Select Project > Service Management > API Gateway > Endpoints**, select an endpoint, click **Details**, select an API, and click **Strategy > Business Strategy > Traffic Receiving and Forwarding**.
 
 ## Example 1
 
@@ -16,7 +16,7 @@ If the requirement is:
 
 The configuration is as follows, and it will take effect immediately after clicking **Submit**.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/15291409-e12b-4bd3-ba16-1381a89f7a41.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/2c4f7c53-9b61-4aea-828a-e91568f4f85e.png)
 
 :::warning Warning
 
@@ -35,5 +35,5 @@ If the back-end response time is too long, it can be optimized in the following 
 
 If the requirement is to allow client requester to upload files within 500 MB, the configuration is as follows, and it will take effect immediately after clicking **Submit**.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/c02cbbfe-3ef6-4f04-b7b9-d45ab39556d5.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/6847a91f-7b42-4803-ade0-0d9f6b1d5dfb.png)
 

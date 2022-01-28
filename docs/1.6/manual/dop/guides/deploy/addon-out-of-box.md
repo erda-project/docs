@@ -15,7 +15,7 @@ MySQL 不提供生产级别支持，建议仅在开发和测试环境使用。
 开箱即用的扩展服务（Addon）使用入口即创建入口。
 :::
 
-进入 **DevOps 平台 > 我的项目 > 应用列表 > 应用详情 > 代码浏览**，打开 erda.yml，进入编辑模式，选择开箱即用的 Addon。
+进入 **我的应用 > 代码仓库 > 代码浏览**，打开 erda.yml，进入编辑模式，选择开箱即用的 Addon。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/903bae9e-8716-4d8e-84c0-b033a64b04a9.png)
 
@@ -23,7 +23,7 @@ MySQL 不提供生产级别支持，建议仅在开发和测试环境使用。
 
 如下图所示，选择实例时有以下两类可选：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/e2996bbb-b16b-4a6b-a1df-2c22ed1a8f5a.png)
+<img src="https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/e2996bbb-b16b-4a6b-a1df-2c22ed1a8f5a.png" style="zoom:50%;" />
 
 * **有实例标签**：代表该项目中已发起的扩展服务实例（例如该项目中其他应用已申请创建的实例）。
 

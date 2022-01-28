@@ -101,13 +101,14 @@ git push erda feature/demo
 
 3. 流水线任务执行过程中，可实时查看流水线各步骤的执行状态，点击日志可查看对应节点执行状况的日志信息。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/5f882932-c71f-4cfa-b1ca-78be91a8c26b.png)
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/b737cfd7-192f-4379-94a3-3a73a18c285b.png)
 
 ## 查看部署结果
 
 通过流水线构建源码并完成部署后，可在部署中心查看已成功部署的应用实例 Runtime。进入 Runtime 可进一步进行 [应用管理](../../guides/deploy/management.html) 相关操作，例如配置域名、服务实例扩缩容等。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/8d4a963d-14f6-45a3-a132-fc5987d9e78d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/6fc364a0-d4c4-4b5e-9f7b-4803b6ced9b9.png)
 
 ::: tip 提示
 

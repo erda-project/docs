@@ -28,7 +28,7 @@ git clone https://github.com/bzdgn/docker-spring-boot-java-web-service-example.g
 
 Erda has a built-in Git code repository based on the Git protocol, that allows you to complete the entire process from development to deployment without relying on external repositories (such as GitLab).
 
-Go to **DevOps Platform > Applications > Select Application > Files > Source > Repo Address** to view the address of remote repository.
+Go to **My Application > Select Application > Files > Source > Repo Address** to view the address of remote repository.
 
 ```bash
 git remote add erda http://dice.dev.terminus.io/wb/erda-test/java-demo
@@ -38,7 +38,7 @@ git push -u erda --tags
 
 After code pushing, you can view the code information in the code repository.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/07/be9b50ce-11c2-466c-b670-ff625dbf7626.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/abb187e8-0e37-4489-9dbb-be13cf225c56.png)
 
 ## Define Pipeline
 
@@ -87,9 +87,9 @@ stages:
         # The working directory for packaging, usually the path of the root pom.xml.
         # ${git-checkout} means to reference the output from the previous stage process, or use an alias if there is one.
         workdir: ${git-checkout}
-        # The packaged artifact is generally a jar and fill in the relative path compared to workdir. The file is required, otherwise an error will occur.
+        # The packaged artifact is generally a JAR file and fill in the relative path compared to workdir. The file is required, otherwise an error will occur.
         target: ./target/docker-java-app-example.jar
-        # Run the container required by target (such as jar). For example, the packaged artifact here is the fat jar of spring-boot, so spring-boot container is used.
+        # Run the container required by target (such as JAR). For example, the packaged artifact here is the fat JAR of spring-boot, so spring-boot container is used.
         container_type: spring-boot
 
 - stage:
@@ -147,10 +147,11 @@ The prefix of the branch committed to the remote repository is `feature/*`, whic
 2. It is pending for execution after analysis. Click the execution icon in the upper right corner to run it.
 3. During the process, you can view the status of each step in real time and click the log icon to check the execution information of the corresponding node.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/07/0160109f-c65c-4bf8-8bef-9d91edfb07a5.png)
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/73d040a0-e0a2-4bc8-aa9d-bdc2952669b5.png)
 
 ## View Deployment Results
 
 After building and deployment, you can view the runtime of application instance successfully deployed in **Deployments**. Click the runtime for more operations of [application management](../../guides/deploy/management.html), such as domain configuration and instance scaling.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/07/8aeb3af4-5320-46ac-898b-bb5fbbf2a444.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/26610388-23e4-456d-a53f-8cb6877c3c30.png)
