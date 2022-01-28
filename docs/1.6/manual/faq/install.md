@@ -8,7 +8,7 @@
 
 您可以退出该账号，并另行注册一个新账号，使用新账号登录后将跳转至个人工作台，点击页面左上方 **创建组织** 开始体验 Erda。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/16/227b6df6-2613-4c01-9952-b91d770b0468.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/7da51780-8666-4a69-a268-64c56249227d.png)
 
 
 ## 2. 基于 Docker Compose 部署后，在 CenOS 环境下执行安装脚本时出现错误提示 `invalid IP address in add-host: "host-gateway"` 怎么办？
@@ -38,16 +38,18 @@
 
 1. 进入 **管理中心 > 组织设置 > 组织信息** 查看组织标识，例如此处的标识为 `erda`。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/27/53f03992-8eee-4f2c-a3b0-0a23df3cb22c.png)
 
-   随后在 Kubernetes 节点中确认 `dice/org-<企业标识>=true` 标签是否正确。
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/a8382a63-b8d9-46d2-9e98-24a174468ece.png)
 
-   ```shell
-   kubectl get no --show-labels | grep org
-   ```
+随后在 Kubernetes 节点中确认 `dice/org-<企业标识>=true` 标签是否正确。
 
-4. 确认标签存在后，进入 **多云管理 > 资源管理 > 集群管理**，确认导入的集群标识是否与 Erda 安装时指定的 `erda.clusterName` 一致。若不一致，您需要下线该集群，并重新添加。
-5. 经前两步排查，若仍无数据显示，请排查 `erda-telegraf` 组件日志。
+```shell
+kubectl get no --show-labels | grep org
+```
+
+2. 确认标签存在后，进入 **多云管理平台 > 集群资源 > 集群**，确认导入的集群标识是否与 Erda 安装时指定的 `erda.clusterName` 一致。若不一致，您需要下线该集群，并重新添加。
+
+3. 经前两步排查，若仍无数据显示，请排查 `erda-telegraf` 组件日志。
 
 ## 6. 访问 Erda 会强制跳转 HTTPS 怎么办？
 
@@ -96,7 +98,7 @@ Erda 通过节点标签来采集调度节点的可用资源，未正确设置标
 1. 请确认导入的集群是否在集群总览中显示，如未显示请参见 [集群总览中未显示已添加的集群怎么办](install.md#完成-erda-安装后-集群总览中未显示已添加的集群怎么办) 。
 2. 为保证应用的正常构建发布，环境标签（`workspace-*`）、`stateless-service`、`pack-job` 是必需的。其余标签可参见 [节点标签](../cmp/guide/cluster/cluster-node-labels.md) 按需设置。您可以通过 **多云管理平台 > 集群总览 > 设置标签** 设置或查看标签。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/02/4f801c18-c0df-40b9-bb32-9f80af63f1b2.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/d1c17330-84db-4c24-a170-cb71b8423f54.png)
 
 ## 11. 构建流水线打包时推送镜像失败怎么办？
 

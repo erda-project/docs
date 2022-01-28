@@ -13,7 +13,7 @@ The [values.yaml](https://github.com/erda-project/erda-release/blob/master/erda-
 | Parameter | Description | Default Value |
 |-----|:---|:----|
 | **Global** |  |  |
-| global.size | The deployment mode (`demo` and `prod`are supported), and the high-availability mode is set as `prod` | - |
+| global.size | The deployment mode (`demo` and `prod` are supported), and the high-availability mode is set as `prod` | - |
 | global.image.repository | Set the image repository address and users who cannot access the external network need to modify the configuration to a private repository on the internal network and upload the image required for Erda deployment to the private repository before deployment | "registry.erda.cloud/erda" |
 | global.image.imagePullPolicy | Set image pull policy | "IfNotPresent" |
 | global.image.imagePullSecrets | Setting not required if image is not pulled from private repository, otherwise it needs to be set as secrets to access the private image repository | - |
@@ -31,7 +31,7 @@ The [values.yaml](https://github.com/erda-project/erda-release/blob/master/erda-
 | elasticsearch.capacity | Set the single-node storage capacity of Elasticsearch, which is scalable according to the actual cluster and business volume | "1000Gi" |
 | elasticsearch.storageClassName | Set the Kubernetes StorageClass object corresponding to the storage volume | "dice-local-volume" |
 | elasticsearch.numberOfMasters | When deploying an Elasticsearch cluster in high-availability mode, the number of Elasticsearch instances is generally set over half of the cluster node number to avoid split-brain in the Elasticsearch cluster | 2 |
-| elasticsearch.javaOpts | Set the environment variable JAVA_OPTS of Elasticsearch (java heap size is recommended to be set as 0.75 * resources.limits.memory)  | "-Xms6144m -Xmx6144m" |
+| elasticsearch.javaOpts | Set the environment variable JAVA_OPTS of Elasticsearch (Java heap size is recommended to be set as 0.75 * resources.limits.memory)  | "-Xms6144m -Xmx6144m" |
 | elasticsearch.resources.requests.cpu | Set the CPU request value of the Elasticsearch instance pod | "2" |
 | elasticsearch.resources.requests.memory | Set the memory request value of the Elasticsearch instance pod | "4Gi" |
 | elasticsearch.resources.limits.cpu | Set the CPU limit value of the Elasticsearch instance pod | "4" |
@@ -39,10 +39,10 @@ The [values.yaml](https://github.com/erda-project/erda-release/blob/master/erda-
 | **etcd** |  |  |
 | etcd.storageClassName | Set the Kubernetes StorageClass object corresponding to the storage volume | "dice-local-volume" |
 | etcd.capacity | Set the single-node storage capacity of etcd, which is scalable according to the actual cluster and business volume | "32Gi" |
-| etcd.resources.requests.cpu | Set the CPU request value of etcd instance pod | "1" |
-| etcd.resources.requests.memory | Set the memory request value of etcd instance pod | "2Gi" |
-| etcd.resources.limits.cpu | Set the CPU limit value of etcd instance pod | "4" |
-| etcd.resources.limits.memory | Set the memory limit value of etcd instance pod | "8Gi" |
+| etcd.resources.requests.cpu | Set the CPU request value of the etcd instance pod | "1" |
+| etcd.resources.requests.memory | Set the memory request value of the etcd instance pod | "2Gi" |
+| etcd.resources.limits.cpu | Set the CPU limit value of the etcd instance pod | "4" |
+| etcd.resources.limits.memory | Set the memory limit value of the etcd instance pod | "8Gi" |
 | **Zookeeper** |  |  |
 | zookeeper.storageClassName | Set the Kubernetes StorageClass object corresponding to the storage volume | "dice-local-volume" |
 | zookeeper.capacity | Set the single-node storage capacity of Zookeeper, which is scalable according to the actual cluster and business volume | "32Gi" |
@@ -53,7 +53,7 @@ The [values.yaml](https://github.com/erda-project/erda-release/blob/master/erda-
 | **Kafka** |  |  |
 | kafka.storageClassName | Set the Kubernetes StorageClass object corresponding to the storage volume | "dice-local-volume" |
 | kafka.capacity | Set the single-node storage capacity of Kafka, which is scalable according to the actual cluster and business volume | "32Gi" |
-| kafka.javaOpts | Set the environment variable JAVA_OPTS of Kafka (java heap size is recommended to be set as 0.75 * resources.limits.memory)  | "-Xms6144m -Xmx6144m" |
+| kafka.javaOpts | Set the environment variable JAVA_OPTS of Kafka (Java heap size is recommended to be set as 0.75 * resources.limits.memory)  | "-Xms6144m -Xmx6144m" |
 | kafka.resources.requests.cpu | Set the CPU request value of the Kafka instance pod | "2" |
 | kafka.resources.requests.memory | Set the memory request value of the Kafka instance pod | "4Gi" |
 | kafka.resources.limits.cpu | Set the CPU limit value of the Kafka instance pod | "4" |
@@ -66,10 +66,10 @@ The [values.yaml](https://github.com/erda-project/erda-release/blob/master/erda-
 | kms.resources.limits.memory | Set the memory limit value of the KMS instance pod | "2Gi" |
 | **Redis** |  |  |
 | redis.redisFailover.redis.replicas | Set the number of Redis replicas for active/passive switch among Redis instances | 2 |
-| redis.redisFailover.redis.resources.requests.cpu | Set the CPU request value of Redis pod | "150m" |
-| redis.redisFailover.redis.resources.requests.memory | Set the memory request value of Redis pod | "1Gi" |
-| redis.redisFailover.redis.resources.limits.cpu | Set the CPU limit value of Redis pod | "300m" |
-| redis.redisFailover.redis.resources.limits.memory | Set the memory limit value of Redis pod | "2Gi" |
+| redis.redisFailover.redis.resources.requests.cpu | Set the CPU request value of the Redis pod | "150m" |
+| redis.redisFailover.redis.resources.requests.memory | Set the memory request value of the Redis pod | "1Gi" |
+| redis.redisFailover.redis.resources.limits.cpu | Set the CPU limit value of the Redis pod | "300m" |
+| redis.redisFailover.redis.resources.limits.memory | Set the memory limit value of the Redis pod | "2Gi" |
 | redis.redisFailover.sentinel.replicas | Set the number of Redis Sentinel replicas | 3 |
 | **Registry** |  |  |
 | registry.storageClassName | Set the Kubernetes StorageClass object corresponding to the storage volume | "dice-local-volume" |
@@ -204,7 +204,7 @@ The [values.yaml](https://github.com/erda-project/erda-release/blob/master/erda-
 | erda.component.analyzerTracingTask.resources.max_cpu | The CPU limit value of the erda analyzerTracingTask component instance pod | "1" |
 | erda.component.analyzerTracingTask.resources.max_mem | The memory limit value of the erda analyzerTracingTask component instance pod | "2048Mi" |
 | erda.component.actionRunnerScheduler.resources.cpu | The CPU request value of the erda actionRunnerScheduler component instance pod  | "100m" |
-| erda.component.actionRunnerScheduler.resources.mem | The memory request value of erda actionRunnerScheduler component instance pod | "128Mi" |
+| erda.component.actionRunnerScheduler.resources.mem | The memory request value of the erda actionRunnerScheduler component instance pod | "128Mi" |
 | erda.component.actionRunnerScheduler.resources.max_cpu | The CPU limit value of the erda actionRunnerScheduler component instance pod | "300m" |
 | erda.component.actionRunnerScheduler.resources.max_mem | The memory limit value of the erda actionRunnerScheduler component instance pod | - |
 | erda.component.clusterAgent.resources.cpu | The CPU request value of the erda clusterAgent component instance pod  | "100m" |
@@ -220,7 +220,7 @@ The [values.yaml](https://github.com/erda-project/erda-release/blob/master/erda-
 | erda.component.dicehub.resources.max_cpu | The CPU limit value of the erda dicehub component instance pod | "150m" |
 | erda.component.dicehub.resources.max_mem | The memory limit value of the erda dicehub component instance pod | "1024Mi" |
 | erda.component.dop.resources.cpu | The CPU request value of the erda dop component instance pod | "100m" |
-| erda.component.dop.resources.mem | The memory request value of erda dop component instance pod | "128Mi" |
+| erda.component.dop.resources.mem | The memory request value of the erda dop component instance pod | "128Mi" |
 | erda.component.dop.resources.max_cpu | The CPU limit value of the erda dop component instance pod | "1" |
 | erda.component.dop.resources.max_mem | The memory limit value of the erda dop component instance pod | "2048Mi" |
 | erda.component.eventbox.resources.cpu | The CPU request value of the erda eventbox component instance pod | "100m" |
@@ -322,7 +322,7 @@ The specific parameters are as follows:
 | mysql.custom.user | Connect to the user name of MySQL database provided by the user |
 | mysql.custom.password | Connect to the password corresponding to the user name of MySQL database provided by the user |
 
-## How to Save the Private Configuration
+## How to Save Private Configuration
 
 Using the parameter configuration in the `values.yaml` file to deploy Helm Chart is the easiest way, but it cannot meet all situations. You can adjust parameter configuration in the following ways:
 * **Option 1 (recommended)**: Add modified parameters to the customized `values.yaml` file and run `-f` to specify the file when install or upgrade Helm.

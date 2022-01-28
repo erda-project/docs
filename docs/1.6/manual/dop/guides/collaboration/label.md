@@ -12,18 +12,19 @@
 
 * 点击标签上的 **x** 可删除该标签。
 
-  ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/245226fa-4dde-4aa0-8ba2-5fc1ad984135.png)
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/a61704f5-5800-4f88-bddf-4541a2adbc18.png)
 
 ## 标签使用
 
 进入事项编辑页面，可为事项设置标签，单个事项可设置多个标签。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/b5cdcd9a-f8de-4d6d-b198-6f72d916ae27.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/7096e32d-9fc6-4bc5-803e-4be85fef9dcc.png)
 
 事项列表页中可查看各事项拥有的标签。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/ef57b65e-5e8b-42af-82d9-0c401897e744.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/24ada2b7-0296-4860-a85b-c8934009a676.png)
 
 可根据标签筛选事项，便于快速定位、过滤事项。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/f60d0949-e881-41f6-b46b-071ef329270c.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/76ec2ef2-2443-4264-b677-a84b04bcf8fc.png)

@@ -15,7 +15,7 @@
 
 ## Operations
 
-Run the following command to install Erda to the Namespace `erda-system` and wait for all Erda components to be ready.
+Run the following command to install Erda to the namespace `erda-system` and wait for all Erda components to be ready.
 
 ```shell
 helm install erda erda/erda -n erda-system --create-namespace

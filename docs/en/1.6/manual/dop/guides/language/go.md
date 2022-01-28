@@ -7,7 +7,7 @@ Erda supports building capabilities through a unified task plugin mechanism, and
 Go 1.14 is supported.
 
 ## Dependency Management
-Go Modules are supported for dependency management. Detect from packages of go vendor and go mod first, otherwise the code will be put in GOPATH for building.
+Go modules are supported for dependency management. Detect from packages of go vendor and go mod first, otherwise the code will be put in GOPATH for building.
 
 ## Building and Packaging
 * **Required parameters of Go Action**

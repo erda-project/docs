@@ -4,7 +4,7 @@
 
 进入 **DevOps 平台 > 我的项目 > 项目协同 > 缺陷**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/c1db8c68-e881-46cf-8a24-d2149d80af0a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/cd649d8f-4870-4618-9065-932a5d2fdae2.png)
 
 1. 由测试工程师提交缺陷并指派给开发工程师。
 2. 开发工程师进行重复提交、已解决、不修复的状态变更，备注 PR 链接、问题原因和解决方案，将事项转回测试工程师。
@@ -24,7 +24,7 @@
 - 将需求或任务事项转为缺陷。
 - 批量导入。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/c10e5d83-ec86-43c6-a0a6-3478dabbccc4.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/92b2912e-3a52-4c4a-ab45-0fde27262fde.png)
 
 具体内容如下：
 * 缺陷标题、内容、添加备注、活动日志

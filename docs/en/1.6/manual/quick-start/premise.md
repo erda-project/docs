@@ -2,7 +2,9 @@
 
 ## Basic
 
-Erda is designed as three levels, which are organization, project and application, to achieve isolation of organization tenant and management of project, application, resource and user. For project and application, it distinguishes access and operation permissions of different members to project and application according to their roles.
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/076c3c42-5ba0-41b2-a580-b936b76dee52.png)
+
+Erda is designed as three levels, which are organization, project and application, to achieve isolation of organization tenants and management of projects, applications, resources and users. For project and application, it distinguishes access and operation permissions of different members to project and application according to their roles.
 
 ### Organization
 Erda manages projects, members and resources via organization. At present, all resource objects and functions are associated and defined on the organization ID for tenant isolation. It is recommended to set one tenant as an organization. Assuming that a R&D team wants to realize management of R&D and O&M via Erda, then the process is as follows:
@@ -19,11 +21,11 @@ Project is the main object of R&D and O&M, which is a collection of multiple app
 Application is the smallest unit of R&D and O&M, which provides DevOps tools such as code repository and pipeline. All development and deployment in Erda are achieved based on applications.
 
 ### Cluster
-Cluster is a set of physical machines or virtual machines, composed of Kubernetes and Docker, mainly for resource management and service deployment and operation.
+Cluster is a set of physical machines or virtual machines, composed of Kubernetes and Docker, mainly for resource management and service deployment and operations.
 
 The network of all nodes (hosts) in a cluster is interconnected but that among clusters is isolated. Each cluster is composed of three types of nodes (hosts), namely master node, LB node and worker node.
 
-* The master node works for high availability, usually with 3 node.
+* The master node works for high availability, usually with 3 nodes.
 * The LB node is the endpoint of cluster, generally with 2 nodes (make sure that users can access the IP address of LB external network).
 * The worker node is for application service deployment and the number of nodes can be set as needed.
 
@@ -32,6 +34,8 @@ In addition to Kubernetes and Docker, you need to install agent program provided
 Cluster is an organizational resource and needs to be added to the organization for use. The number of clusters is unrestricted. For example, create two clusters as one for development and testing and the other for production and deployment.
 
 ## Advanced
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/66b897c6-b408-45c0-bc5f-ec5ced2ae53f.png)
 
 ### Environment
 
@@ -59,6 +63,8 @@ It is a Linux Container and also a Docker container. One service process general
 
 ## Roles and Permissions
 
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/55dccab9-e1f8-4dff-9a26-6260b3093f01.png)
+
 ### For Platform
 
 | Role | Menu | Permission |
@@ -77,7 +83,7 @@ It is a Linux Container and also a Docker container. One service process general
 | O&M Engineer | Cloud Management Platform | Full permissions to cloud management platform |
 | Edge O&M Engineer | Edge Computing Platform | Full permissions to edge computing platform |
 | Data Manager | DevOps Platform<br/>Microservice Platform<br/>Fast Data Platform | Access to DevOps platform, microservice platform and fast data platform, with its permissions depending on the roles in projects or applications |
-| Reporter | DevOps Platform | Access to the DevOps platform, which is only a reporter in the project |
+| Reporter | DevOps Platform | Access to DevOps platform, which is only a reporter in the project |
 
 For more information, please go to **Org Center > Settings > Org Members > Roles and Permissions**.
 
@@ -105,4 +111,4 @@ For more information, please go to **DevOps Platform > Joined Projects > Setting
 | Developer | Code repository, pipeline, API design, deployments, code quality and artifact management | No permissions to application setting<br/>No management permissions in testing, staging or production environment |
 | QA | Code repository, pipeline, API design, deployments, code quality and artifact management | No permissions to application setting<br/>No management permissions in development environment |
 
-For more information, please go to **DevOps Platform> Joined Apps > Settings > App Members > Roles and Permissions**.
+For more information, please go to **My Application > Settings > App Members > Roles and Permissions**.

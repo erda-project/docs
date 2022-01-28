@@ -4,13 +4,13 @@
 
 请按照以下步骤创建项目：
 
-1. 进入 **管理中心 > 项目管理**。
+1. 进入 **管理中心 > 项目列表**。
 
-2. 点击 **添加项目**。
+2. 点击 **新建项目**。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/9c0754ff-0be7-4a30-84b9-d7fc22aa1fa8.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/24/e5b45f1f-c9f7-4698-a163-215ecccd32b4.png)
 
-3. 选择 **微服务治理项目**，并根据界面提示输入项目名称、项目标识等信息。
+3. 选择 **监控项目**，并根据界面提示输入项目名称、项目标识等信息。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/241bb07e-e297-4996-a612-7b79c71d695c.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/24/ef0f6a59-6434-4ee0-87cc-26abd7cf8222.png)
 

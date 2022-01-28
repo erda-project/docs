@@ -2,7 +2,7 @@
 
 平台通过让开发者声明的方式，描述微服务运行的整体环境，并将该声明转化为环境搭建的过程。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/25d12ec9-1904-4ff0-9df2-5d2c2164f701.png)
+<img src="https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/25d12ec9-1904-4ff0-9df2-5d2c2164f701.png" style="zoom:50%;" />
 
 YAML 文件的声明可分为以下两部分：
 

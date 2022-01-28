@@ -1,6 +1,6 @@
 # Overview
 
-## What is Kubeprober
+## What Is Kubeprober
 
 Kubeprober is a diagnostic tool for large-scale Kubernetes clusters, to prove if cluster functions are available, with the following characteristics:
 
@@ -21,11 +21,15 @@ Different from the monitoring system, Kubeprober verifies that whether the clust
 * Check whether the cloud resource expires.
 * ...
 
+## Demo
+
+![](https://static.erda.cloud/images/kc-cn.gif)
+
 ## Concepts
 
 ### Cluster
 
-Different from Kubernetes clusters, the cluster in Kubeprober refers to the diagnosed object, and uses probe-agent component deployed in each Kubernetes cluster to report information, which is stored in CRD that manages clusters, including cluster name, Kubernetes version, number of node, related probe, diagnosis results, heartime and more.
+Different from Kubernetes clusters, the cluster in Kubeprober refers to the diagnosed object, and uses probe-agent component deployed in each Kubernetes cluster to report information, which is stored in CRD that manages clusters, including cluster name, Kubernetes version, number of nodes, related probes, diagnosis results, heartime and more.
 
 ### Probe
 

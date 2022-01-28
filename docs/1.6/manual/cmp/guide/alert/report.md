@@ -8,11 +8,11 @@
 
 1. 进入 **多云管理平台 > 运维报告 > 新建报告任务**。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/b98920bb-6462-455d-9f0a-3a666c492f0c.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/a3c6d092-1b31-4857-ae51-71a6ab879e8c.png)
 
 2. 根据界面提示，完成信息填写。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/c9f272f7-9d4c-4d7a-8f3f-9071898ff630.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/c41d35af-5fdf-46bf-a048-4601675ef719.png)
 
    * **报告名称**：填写合适的报告名称，例如运维日报-XX群。
    * **报告类型**：仅支持日报、周报。
@@ -29,10 +29,10 @@
 
 3. 完成任务创建后，列表中将新增一条报告任务并默认处于激活状态。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/0002f61b-b5da-452f-bf1c-ede596c85694.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/14599170-8272-4fa3-abdb-89bf45148567.png)
 
 ## 查看历史报告
 
 您可以点击列表中的任一报告任务，进入历史报告页面查看详情。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/c2cb8b84-4ce2-448e-aa10-dc04d4c17604.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/c13585de-4984-4e82-a947-5415b0d92fb2.png)

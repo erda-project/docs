@@ -56,9 +56,9 @@ git commit -m "initialize"
 
 Erda has a built-in Git code repository based on the Git protocol, that allows you to complete the entire process from development to deployment without relying on external repositories (such as GitLab).
 
-Go to **DevOps Platform > Applications > Select Application > Files > Source > Repo Address** to view the address of remote repository.
+Go to **My Application > Select Application > Files > Source > Repo Address** to view the address of remote repository.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/07/278adcdf-9548-4568-840f-65aa6f40531d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/eddd5859-52bd-451c-9c52-00641fa9f8fd.png)
 
 ```bash
 git remote add erda https://erda-org.erda.cloud/wb/base-project/go-web
@@ -146,19 +146,19 @@ git push erda
 
 ## Run Pipeline
 
-1. On the **Pipelines** page, click **Add Pipeline** on the upper right corner.
+1. On the **Pipeline** page, click **Add Pipeline** on the upper right corner.
 2. The pipeline is pending for execution after analysis. Click the execution icon in the upper right corner to run it.
 3. During the process, you can view the status of each step in real time and click the log icon to check the execution information of the corresponding node.
 
 ## View Deployment Results
 
-After building and deployment, you can view the runtime of application instance successfully deployed in Deployments.
+After building and deployment, you can view the runtime of application instance successfully deployed in **Deployments**.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/07/8aeb3af4-5320-46ac-898b-bb5fbbf2a444.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/b53ae3d1-be0b-4721-9e53-240a5d25457a.png)
 
 Click **master** for application management, such as domain configuration and instance scaling.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/07/a54d507d-b98e-43ab-89af-b0d52ea094c6.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/b26505f2-40fa-492c-bc58-2564956af1a7.png)
 
 Type the IP address of the instance in the browser and add the port 8080 to see "Hello, World!".
 

@@ -1,15 +1,15 @@
 # Artifact Deployment
 ## Deploy Artifact
 
-Go to **DevOps Platform > Joined Projects > Applications > Deployments**, and select the environment, branch and artifact ID to complete the deployment.
+Go to **My Application > Deployments**, and select the environment, branch and artifact ID to complete deployment.
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/18064590-548f-445c-91dd-b2051fb3ab47.png)
 
 :::tip Tips
 You can get the artifact ID in artifact management.
 :::
 
 After deployment, click the artifact card to view the endpoint, microservice, dynamic and log information of the artifact.
-
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/10/f78bcc53-f672-4550-b134-1c3c92b5907f.png)
 
 ## Modify Deployment
 
@@ -21,11 +21,11 @@ Select the target artifact in the deployments and click update, delete or restar
 
 * **Restart**: Redeploy the artifact.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/10/005b75fa-2394-4ab3-bfa5-d3ec970c308f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/86dbec37-f7da-4a2b-a9b8-0e16658f6b30.png)
 
 ## Cross-Cluster Deployment
 
 Add `cross_cluster: "true"` to `params` in the release action of the pipeline file to deploy the pipeline-generated artifacts across clusters.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/10/c397f69f-53f5-452f-ac1e-902795a8988c.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/fbb991d3-e2ce-4386-b994-e31945ca7875.png)
 

@@ -56,7 +56,7 @@ The configuration information includes K8sVersion, ClusterConfig and ExtraInfo. 
 ClusterConfig is used to store the K8s information collected by the probe-agent from the managed cluster, including the api-server intranet address, the token required for authentication, CA, cert, key and the namespace where the probe-agent is located. The RBAC permissions of the reported ApiServer authentication information are determined by the kubeprober ServiceAcount deployed under the kuberprober ns of the managed cluster. Modify the corresponding ClusterRole for more permissions.
 
 ### ExtraInfo
-ExtraInfo is used to store the characteristic configuration of each cluster. By adding, modifying or deleting the ExtraInfo environment variable in the cluster, the probe-master will synchronizes the latest variable to the ConfigMap named extra-config, then the variables can be used in the corresponding probe diagnosis. An example is as follows:
+ExtraInfo is used to store the characteristic configuration of each cluster. By adding, modifying or deleting the ExtraInfo environment variable in the cluster, the probe-master will synchronize the latest variable to the ConfigMap named extra-config, then the variables can be used in the corresponding probe diagnosis. An example is as follows:
 ```yaml
   extraInfo:
   - name: LOGIN_USER

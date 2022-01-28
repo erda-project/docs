@@ -6,12 +6,12 @@ This installation method is only suitable for trial environment where you can ge
 
 ## Prerequisites
 
-- Docker version: 20.10.0 and above
+- Docker version: 20.10.0 and later
 - Node configuration: 4 core, 8 GB
 
 ## Install via Script
 
-1. Run the following commands:
+1. Run the following command:
 
    ```shell
    /bin/bash -c "$(curl -fsSL https://static.erda.cloud/quick-start/quick-start.sh)"

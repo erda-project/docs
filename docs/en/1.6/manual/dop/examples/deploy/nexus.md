@@ -4,7 +4,7 @@
 
 ### Upload Maven settings.xml to the Platform
 
-Go to **DevOps Platform > Applications > Select Application > Settings > Pipelines > Variable Configuration > Select Environment**.
+Go to **My Application > Select Application > Settings > Pipelines > Variable Configuration > Select Environment**.
 
 Click **Add Variable**, select the type as **File** and enable encryption, then upload settings.xml and define the variable name as `MAVEN_SETTING_FILE`.
 
@@ -96,7 +96,7 @@ on:
 
 ### Configure Password of Nexus Private Server
 
-Go to **DevOps Platform > Applications > Select Application > Settings > Pipelines > Variable Configuration > Select Environment**.
+Go to **My Application > Select Application > Settings > Pipelines > Variable Configuration > Select Environment**.
 
 Click **Add Variable**, select the type as **Value** and enable encryption, then configure the following variables:
 

@@ -4,10 +4,10 @@ You can configure it via API policies of endpoints to manage the forwarding requ
 
 The path is as follows:
 
-- Global strategy: Go to **Microservice Platform > Project List > Select Project > API Gateway > Endpoints**, select an endpoint, and click **Details > Global Strategy > Business Strategy > Custom Nginx Configuration**.
-- Strategy for a specific API: Go to **Microservice Platform > Project List > Select Project > API Gateway > Endpoints**, select an endpoint, click **Details**, select an API, and click **Strategy > Business Strategy > Custom Nginx Configuration**.
+- Global strategy: Go to **Microservice Platform > Select Project > Service Management > API Gateway > Endpoints**, select an endpoint, and click **Details > Global Strategy > Business Strategy > Custom Nginx Configuration**.
+- Strategy for a specific API: Go to **Microservice Platform > Select Project > Service Management > API Gateway > Endpoints**, select an endpoint, click **Details**, select an API, and click **Strategy > Business Strategy > Custom Nginx Configuration**.
 
-## What Custom Nginx Configuration is
+## What Is Custom Nginx Configuration
 
 The native Nginx parts configured here will be converted into the configuration in the Nginx location block corresponding to the API.
 
@@ -21,13 +21,13 @@ For more information on Nginx configuration items, see [Nginx Directives](https:
 
 ### Example 1
 
-If the requirement is to configure the [HSTS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Strict-Transport-Security) response header to support force HTTPS, and it is not allowed to ignore insecure certificates, then the configuration is as follows:
+If the requirement is to configure the [HSTS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) response header to support force HTTPS, and it is not allowed to ignore insecure certificates, then the configuration is as follows:
 
 ```bash
 more_set_headers Strict-Transport-Security "max-age=86400";
 ```
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/2915f44b-2a3c-4b14-ad60-fda4635016b8.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/ccf3e08d-d14d-4c6a-94dc-288c26e87032.png)
 
 
 ### Example 2
@@ -44,4 +44,4 @@ proxy_set_header X-From-Where "XXX";
 proxy_set_header Accept-Encoding "";
 ```
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/a13646cf-b4f9-413f-bf5f-da0106f84dad.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/83bff368-cc8f-443f-933b-c4dbefb4592d.png)

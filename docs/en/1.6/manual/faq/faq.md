@@ -2,43 +2,42 @@
 
 ## 1. How to achieve scaling for services?
 
-Scaling can be done in the Deployments without modifying the erda.yml. For details, see [Scaling](../dop/guides/deploy/management.html#扩缩容).
+Scaling can be done in Deployments without modifying the erda.yml. For details, see [Scaling](../dop/guides/deploy/management.html#scaling).
 
-1. Go to **DevOps Platform > Joined Apps > Deployments** and select **Scale out**.
+1. Go to **My Application > Deployments** and select **Scale out**.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/21/43fc1232-15a0-4b70-972b-79904589ab02.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/4ab42ffb-9b93-43f4-beb2-aa5b2a0f88a3.png)
 
 2. Adjust service resources as needed.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/21/cb957d08-4812-4553-89ec-9bf9bb4ec3b5.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/cd926580-c89c-4109-ab6c-b3632f658937.png)
 
 ## 2. Does the service provide an address for internal calls?
 
-Go to **DevOps Platform > Joined Apps > Deployments** to view the internal address of the service.
+Go to **My Application > Deployments** to view the internal address of the service.
 
 Neither service redeployment nor pipeline rebuilding will affect the internal address.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/21/c68f011b-7503-4128-825d-5e762fe7f123.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/bab77d74-272f-402b-a0ec-77501c2c784b.png)
 
 ## 3. How to view the error log?
 
-1. Go to **DevOps Platform > Joined Apps > Deployments** to view the container log, which shows the standard output (stdout) log. For details, see [Service Log](../dop/guides/deploy/metrics_logs.html#服务日志).
+1. Go to **My Application > Deployments** to view the container log, which shows the standard output (stdout) log. For details, see [Service Log](../dop/guides/deploy/metrics_logs.html#service-log).
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/21/97ba4886-0c09-4231-a055-319f34f665f4.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/830cecf3-bbf8-4259-adc3-a53ac082207d.png)
 
 2. Click the switch button to view the standard error (stderr) log.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/21/eaf294f2-0572-4f3e-9a76-0c738f24b495.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/f1bd0b02-f4a4-469c-b07e-67599af6d919.png)
 
 ## 4. How to view the stopped container instances?
 
-1. Go to **DevOps Platform > Joined Apps > Deployments** and select **Stopped** to view the corresponding container instance.
+1. Go to **My Application > Deployments** and select **Stopped** to view the corresponding container instance.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/21/86bebd63-d492-4a49-9f62-db06ea23b998.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/509dfb92-8fd4-4988-8cc9-911ebb210566.png)
 
 2. The status bar shows the reason why the container stopped (such as OOM exit, which will be displayed as OOMKilled here). The operate bar allows you to view the resource usage and logs of the container when it is running.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/21/31f09b57-2af0-4ede-a3fe-3547f7b11fa0.png)
 
 ## 5. How to reuse addon?
 
@@ -52,25 +51,25 @@ addons:
 
 ## 6. What should I do if the page redirection fails when using API gateway for forwarding?
 
-The failure is usually due to the use of the `Host` in the request header. It is recommended to use `X-Forwarded-Host` instead, or to enable the domain name passthrough of the API gateway as follows:
+The failure is usually due to the use of `Host` in the request header. It is recommended to use `X-Forwarded-Host` instead, or to enable the domain name passthrough of the API gateway as follows:
 
-1. Go to **Microservice Platform > API Gateway > Endpoints**, select an endpoint and click **Global Strategy**.
+1. Go to **Microservice Platform > Service Management > API Gateway > Endpoints**, select an endpoint and click **Global Strategy**.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/21/f4d4487c-4e92-4744-8d65-99e7cda08593.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/381c58c3-22eb-4d40-9747-4565a1b4f38c.png)
 
-2. Go to **Business Strategy > Traffic Receiving and Forwarding**, enable the rule and turn on **Entry Domain Name Passthrough**.
+2. Go to **Business Strategy > Traffic Receiving and Forwarding**, enable the rule and turn on **Domain Name Passthrough**.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/21/491dd2b5-112e-4195-92f5-36b660ed4c99.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/dd0ee5ed-f4b9-4d14-b0dc-6dfddd888a14.png)
 
 ## 7. How to achieve force redirection to HTTPS for a specific domain name or API?
 
-1. Go to **Microservice Platform > API Gateway > Endpoints**, select an endpoint and click **Global Strategy** or **Strategy**. ( The global strategy is effective for all APIs in the endpoint, and the specific API strategy is only effective for this API.)
+1. Go to **Microservice Platform > Service Management > API Gateway > Endpoints**, select an endpoint and click **Global Strategy** or **Strategy**. (The global strategy is effective for all APIs in the endpoint, and the specific API strategy is only effective for this API.)
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/21/f7f02b36-482e-4497-9a46-6eeccf000648.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/6c128d95-60bc-48b2-80a3-581046a317bf.png)
 
 2. Go to **Business Strategy > Traffic Receiving and Forwarding**, enable the rule and turn on **Force Jump to HTTPS**.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/21/877f0b16-bf97-4a9e-b57b-8d7429e3e1bf.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/dd3fbcb3-6ab2-4749-ac51-901bfd3782a5.png)
 
 :::tip Tips
 
@@ -104,7 +103,7 @@ When an application deployed on Erda needs to call an external interface (such a
 curl ifconfig.me
 ```
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/21/d7c726a3-3550-4ffb-a584-ceb6e5786fde.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/9022111b-1c4d-4450-9be3-9bcab01c985c.png)
 
 ## 10. Does the platform support Java 11?
 
@@ -115,10 +114,16 @@ The configuration in pipeline.yml is as follows:
 ```
 - java:
     params:
-      build_type: maven # Building type, and maven is used here
+      build_type: maven # Building type, and Maven is used here
       workdir: ${git-checkout} # The working directory for packaging, usually the path of the root pom.xml
       options: -am -pl user # Maven packaging parameters, for example, to package the user module, use the command `mvn clean package -am -pl user`, here the command `mvn clean package` is omitted and just fill in the parameters
       target: ./user/target/user.jar # The packaged artifact is generally a jar and fill in the relative path compared to workdir. The file is required, otherwise an error will occur.
       container_type: spring-boot # Run the container required by target (such as jar). For example, the packaged artifact here is the fat jar of spring-boot, so spring-boot container is used
-      #container_version: v1.8.0.181 # Optional: v1.8.0.181, v11.0.6, default: v1.8.0.181
+      #container_version: v1.8.0.181 # Optional: v1.8.0.181, v11.0.6, default v1.8.0.181
 ```
+
+## 11. What if a prompt occurs indicating that the parameter `ClusterName` is missing when creating a pipeline?
+
+It means that there are no clusters available in the current environment.
+
+Clusters are necessary for pipeline execution. Please go to **DevOps Platform > Projects > Settings > Project Information > Edit > Cluster Resources** to specify a cluster and set quotas for the current environment.

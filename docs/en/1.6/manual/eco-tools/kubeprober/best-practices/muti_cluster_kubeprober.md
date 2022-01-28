@@ -141,8 +141,8 @@ kubectl probe status -c erda-cloud
 In addition to timing diagnosis, Kubeprober also supports one-time diagnosis, to check whether the system functions are available after system change. It is for probe associated with the current cluster by default, and specified probe as well.
 
 ```shell script
-kubectl probe once -c erda-cloud                    #diagnose attached probe
-kubectl probe once -c erda-cloud -p k8s,host     #diagnose specified probe
+kubectl probe once -c erda-cloud                    #Diagnose the attached probe
+kubectl probe once -c erda-cloud -p k8s,host     #Diagnose a specific probe
 ```
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/08/51d83f8f-cc53-466d-a6ca-444a8ac63b7d.png)The historical records of one-time diagnosis will be saved and can be viewed by the following command:
 

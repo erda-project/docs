@@ -1,15 +1,15 @@
 # 制品部署
 ## 部署制品
 
-进入 **DevOps 平台 > 项目 > 应用 > 部署中心**，选择对应环境、分支和制品 ID，即可完成部署。
+进入 **我的应用 > 部署中心**，选择对应环境、分支和制品 ID，即可完成部署。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/3b24b392-b938-4914-a570-37b86d479ca9.png)
 
 :::tip 提示
 制品 ID 可在制品管理中查看。
 :::
 
 完成部署后，点击制品卡片，可查看制品的终端、微服务、动态和日志信息。
-
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/d4ac420c-fe43-4c2a-8514-17ac02339acb.png)
 
 ## 修改部署
 
@@ -21,11 +21,11 @@
 
 * **重启**：重新部署该制品。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/ced8ac9b-2634-4912-8675-4745d1620700.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/1e87174c-73a2-4f22-9d57-6331988848fc.png)
 
 ## 跨集群部署
 
 在流水线文件中 Relese Action 部分的 `params` 添加 `cross_cluster: "true"`，则流水线生成的制品可跨集群部署。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/13f6a8d4-59d8-4159-a2f3-7eca15aefdc0.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/a615715f-7491-4195-aadd-1dfe51607446.png)
 

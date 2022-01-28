@@ -32,17 +32,17 @@ Erda 提供多种快速安装的方式：
 
 ### 加入组织
 
-* 若您使用的是自建 Erda 平台，请登录 admin 账号，根据界面提示创建组织。
+* 若您使用的是自建 Erda 平台，请登录 Admin 账号，根据界面提示创建组织。
 
-  ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/045ecd84-fe19-47ef-975c-13c7e4c922c2.png)
+  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/b9277c2c-f0d6-402c-9c94-e129a0eecfe9.png)
 
   ::: tip 提示
-  若无 admin 账号，请联系平台管理员处理。
+  若无 Admin 账号，请联系平台管理员处理。
   :::
 
 * 若您使用的是 erda.cloud，作为新用户，您可以登录个人账号自行创建组织。
 
-  ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/16/227b6df6-2613-4c01-9952-b91d770b0468.png)
+  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/7da51780-8666-4a69-a268-64c56249227d.png)
 
   您也可以选择浏览公开组织，查看具体项目信息。
 
@@ -51,9 +51,9 @@ Erda 提供多种快速安装的方式：
 创建项目需由组织管理员操作。请确认您的账号拥有组织管理员权限，或联系组织管理员处理。
 :::
 
-请进入 **管理中心 > 项目管理 > 添加项目**，进行项目创建。
+请进入 **管理中心 > 项目列表 > 添加项目**，进行项目创建。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/a9a867d9-7887-41e9-93a5-abbd995f9bf0.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/33775c73-1ef5-410d-af22-70f80886258f.png)
 
 :::tip 提示
 若您没有可选集群，请参见 [集群管理](../cmp/guide/cluster/management.html) 完成集群添加。
@@ -97,31 +97,29 @@ Erda 提供多种快速安装的方式：
 
 1. 分析和抽象客户需求，进入 **DevOps 平台 > 项目协同 > 需求 > 新建需求**，将需求录入协同。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/3bbfefc3-83f1-487f-8533-625aeeb9b4ac.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/75cc8084-405a-44d5-9ae4-eb04f9d7c6ad.png)
 
    通常情况下，产品经理（PD）会将该需求内容补充完整，包括详细的需要描述、验收标准等。
 
 2. 需求最初列于 **待处理** 中，迭代开始前将通过评审确定是否放入 **迭代** 进行开发。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/23e895de-6792-43b2-bae2-e3b2ab448bb6.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/c3ccf6ee-d80f-4e6d-98b0-0d8bf49db0c1.png)
 
    本案例假设该需求已通过评审，纳入 1.0 迭代开发。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/3a68c406-27e3-4f2e-95d5-f793cfa71236.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/b3cf5a12-3e50-4d07-8043-fdc442fab394.png)
 
 3. 团队领导（TL）组织团队进行架构设计和任务拆解，拆解的任务即需求的关联事项，可通过需求跟踪进展。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/80fc2c09-4f27-47ad-8d24-3698069173aa.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/9d4ee8db-ad47-4af7-8b4e-d35c8915bc78.png)
 
-   开发人员可基于不同视角查看各自的任务，也可评论进度或提出异议。
+   任务、缺陷中的 **关联合并请求** 能够将研发和协同更紧密地结合起来，具体请参见 [事项关联](../dop/guides/collaboration/issue.html#事项关联)。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/c02b4611-d450-4481-970b-e38c03cfbba3.png)任务、缺陷中的 **关联合并请求** 能够将研发和协同更紧密地结合起来，具体请参见 [事项关联](../dop/guides/collaboration/issue.html#事项关联)。
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/f1ae3c1b-4e75-4e18-a1a9-a22102413314.png)
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/ada01064-4e6b-4ce5-8a5a-759840f3d92e.png)
+   项目管理者还可以通过效能度量分析协同的效率和瓶颈。
 
-   项目管理者还可以通过数据统计分析协同的效率和瓶颈。
-
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/4b42149a-2032-4595-a322-fe79cb345aac.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/8c8402eb-571d-4483-9af4-872a32d9566f.png)
 
 ### 研发实现
 
@@ -136,9 +134,9 @@ Erda 提供多种快速安装的方式：
 
 针对该设计，您需要完成以下操作：
 
-1. 进入 **DevOps 平台 > 应用列表 > 新建应用**， 创建两个应用。关于应用的更多信息，请参见 [应用管理](../dop/guides/deploy/management.html)。
+1. 进入 **DevOps 平台 > 集成部署 > 应用 > 新建应用**， 创建两个应用。关于应用的更多信息，请参见 [应用管理](../dop/guides/deploy/management.html)。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/2baf5bfc-ec6d-479e-840d-bb7c6d117103.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/c522d0a1-81b0-4a23-972e-f5692244d108.png)
 
 2. 完成代码推送后，创建 pipeline.yml。pipeline.yml 是用于描述 CI/CD 自动化过程的文件，具体请参见 [pipeline.yml](../dop/guides/reference/pipeline.html)。
 
@@ -175,17 +173,17 @@ Erda 提供多种快速安装的方式：
      git push
      ```
 
-     ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/5db86449-3e11-406d-b431-3d087c96c556.png)
+     ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/d444cb1b-437e-49f6-8e29-c54471ce4c1b.png)
 
      您也可以通过 UI 界面直接操作，省去本地推送步骤。
 
-     ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/30fae0b9-24e2-4196-a1c6-e8f46dcc9067.png)
+     ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/86c2f2dc-3d15-408a-9cf0-bf020a7f91e3.png)
 
    * 完成 CD 部分：
 
      ```yaml
      version: "1.1"
-  
+      
      stages:
        - stage:
            - git-checkout:
@@ -273,42 +271,40 @@ Erda 提供多种快速安装的方式：
 
 针对该设计，您需要完成以下操作：
 
-1. 进入 **DevOps 平台 > 测试管理 > 测试用例 > 自动化测试**，创建场景目录 **文章**。
+1. 进入 **DevOps 平台 > 测试管理 > 自动化测试**，创建场景目录 **文章**。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/63668924-fec1-4233-b6ef-ef6cf3998baa.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/0d39436b-6f82-4388-acda-49a1e73b89e4.png)
 
 2. 创建单个场景 **文章阅读数**。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/bb971b58-7c9e-4979-afb1-60b828967550.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/45f593e4-16ad-4601-94a7-5bede1fb7648.png)
 
 3. 在场景中添加步骤进行场景编排，所添加的每个步骤为具体的接口调用，通过配置接口参数以及断言推进自动化的实现。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/38a6d071-30ab-4ddc-84ae-6a8ba4df40c0.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/280e00c1-03f6-458a-b4ec-7d5b2fcd1a8a.png)
 
 软件上线后，可通过全链路追踪、日志分析、告警等功能及时发现问题或故障，并辅助定位原因。具体请参见 [微服务治理场景示例](../msp/examples/apm/service-dashboard.html)，本文仅针对主要功能以及使用场景进行简单的阐述和引导。
 
 进入微服务治理平台，即可查看整个项目的全局拓扑。
 
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/4389d93e-d2aa-4766-8964-b5e17d27f0cb.png)
+
 :::tip 提示
 
 您可通过以下方式进入微服务治理页面：
 
-1. 点击左上角九宫格，选择 **微服务治理平台**，随后搜索项目进入。
+1. 在左侧菜单栏选择 **微服务治理平台**，随后搜索项目进入。
 2. 在应用部署详情中点击 **应用监控** 插件进入。
 
 :::
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/01b0bf8a-070f-4a6e-b6c4-57688cb4b20e.png)
-
 全局拓扑可作为项目上线后日常运维工作的入口。通过拓扑图能够清晰查看项目内部的流量走向及负载情况，点击红色的错误率即可快速跳转至链路追踪列表，迅速定位问题。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/09/28/dd313204-e551-4ff9-a77e-8471b2518434.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/8e12e03a-75f1-4a4a-ab5d-6e3b8f8ff42e.png)
 
 通过错误分析可快速明确堆栈异常，并向上追溯至错误的来源。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/a0b6155b-e74a-45ff-bafe-413b27b91dfa.png)
-
 每个节点即代表一个微服务，点击节点了解该微服务详情，通过详细分析可进一步查看该微服务的具体数据。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/979ad75e-a5f1-45ca-b67b-69997df65013.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/f0745486-5e9d-4c39-b118-50baa40a3826.png)
 

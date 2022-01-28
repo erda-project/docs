@@ -1,6 +1,6 @@
 # Deploy Based on Docker Image
 
-Deploy based on Docker Image is essentially the same as [Deploy Based on Git Source Code](deploy-from-git.html). The difference is that the former does not require source code to build image.
+Deploy based on Docker image is essentially the same as [Deploy Based on Git Source Code](deploy-from-git.html). The difference is that the former does not require source code to build image.
 
 Before you begin, please confirm that you have finished [project and application creation](../../../quick-start/newbie.html#join-a-project).
 
@@ -102,13 +102,14 @@ The prefix of the branch committed to the remote repository is `feature/*`, whic
 
 3. During the process, you can view the status of each step in real time and click the log icon to check the execution information of the corresponding node.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/07/0160109f-c65c-4bf8-8bef-9d91edfb07a5.png)
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/73d040a0-e0a2-4bc8-aa9d-bdc2952669b5.png)
 
 ## View Deployment Results
 
 After building and deployment, you can view the runtime of application instance successfully deployed in **Deployments**. Click the runtime for more operations of [application management](../../guides/deploy/management.html), such as domain configuration and instance scaling.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/07/8aeb3af4-5320-46ac-898b-bb5fbbf2a444.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/26610388-23e4-456d-a53f-8cb6877c3c30.png)
 
 :::tip Tips
 

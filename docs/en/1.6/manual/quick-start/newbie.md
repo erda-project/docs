@@ -34,7 +34,7 @@ If you have already joined a project, skip this chapter.
 
 * For self-built platform, log in to the admin account and create an organization.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/094cf21e-1755-4aff-9644-89667483fd3b.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/39ce743f-2299-41f3-98e0-333e02d80996.png)
 
    ::: tip Tips
    If you do not have an admin account, please contact the platform admin.
@@ -42,7 +42,7 @@ If you have already joined a project, skip this chapter.
 
 * For erda.cloud, log in to your account as a new user to create an organization.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/b642bd0d-81d1-4dd7-967f-c58109248cd7.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/947e1f4d-7451-4992-9396-1d6b8b8ba17c.png)
 
    Or choose public organizations to view detailed project information.
 
@@ -53,7 +53,7 @@ Only the organization admin can create projects. Please confirm that you have th
 
 Please go to **Org Center > Projects > Add Project** to create a project.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/ce2ef4eb-e9a5-4fd3-9093-3c75b11e1f33.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/44715a5a-31e8-46f5-b92d-1c5637c167cc.png)
 
 :::tip Tips
 If you have no cluster, see [Cluster Management](../cmp/guide/cluster/management.html) to add one.
@@ -97,31 +97,29 @@ For this case, complete the following steps:
 
 1. Analyze and abstract requirements. Go to **DevOps Platform > Joined Projects > Project > Project Collaboration > Requirement > Create Requirement** to add a requirement.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/9f50fccd-282e-436a-b167-08f20e9d66d3.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/35f286fc-975f-41ac-ba72-ae8df0aa0df0.png)
 
    Generally, the product manager will complete the requirement information including its detailed description and acceptance criteria, etc.
 
 2. The requirement is listed in **Backlog** initially and will be determined whether to be moved to **Iteration** by a review.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/bec7cef5-f5c7-42a9-928c-90c1a23631be.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/bbfa6a61-b809-4bad-8c20-0b82c889fa6e.png)
 
    Assuming that the requirement has been reviewed and included in the 1.0 iteration.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/4efefd3a-1226-43c8-93b9-1794eb923101.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/e2236f81-11f3-4bed-b883-6959be0efb38.png)
 
 3. The team leader will split the requirement into multiple tasks, which are related issues to the requirement.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/9165a92d-373a-4704-bcf7-d4661ae9096a.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/05dd7fab-9743-41b2-878c-b6a251de012f.png)
 
-   Developers can view their tasks from different perspectives, leave a comment or give an opinion.
+   **Relate to Merge Request** in tasks and bugs connect R&D and collaboration closer. For details, see [Relation](../dop/guides/collaboration/issue.html#Relation).
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/c706cfbe-18da-4af7-8cc2-7fc01b4dfd00.png)**Relate to Merge Request** in tasks and bugs connect R&D and collaboration closer. For details, see [Relation](../dop/guides/collaboration/issue.html#事项关联).
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/58172383-b139-49d9-abf3-3a82df286abf.png)
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/c2db2ce9-f7d7-4fb5-8a21-54d662c5f931.png)
+   The project manager can see the efficiency and bottlenecks of collaboration by efficiency measure.
 
-   The project manager can see the efficiency and bottlenecks of collaboration by statistics.
-
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/0f02224e-6cb6-46b0-81d3-6e8f886d1d05.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/07266b60-0721-4bf1-90ad-774addd1e8ee.png)
 
 ### Development
 
@@ -136,9 +134,9 @@ Assuming that the team leader has finished the architecture design as follows:
 
 For this design, complete the following steps:
 
-1. Go to **DevOps Platform > Joined Apps > Add Application** to create two applications. For more information on applications, see [Application Management](../dop/guides/deploy/management.html).
+1. Go to **DevOps Platform > Integrated Development > App > Add Application** to create two applications. For more information on applications, see [Application Management](../dop/guides/deploy/management.html).
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/a638a187-a714-4edc-b5ef-08c681d68387.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/71ab030f-b6ac-4f74-b9b9-23fede3f507e.png)
 
 2. After code pushing, create a pipeline.yml, which describes the CI/CD automation process. For details, see [pipeline.yml](../dop/guides/reference/pipeline.html).
 
@@ -175,17 +173,17 @@ For this design, complete the following steps:
       git push
       ```
 
-      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/bb4b7a01-1d95-48a1-b1a2-03142285f3bc.png)
+      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/ce2ede9f-4777-4635-ba2e-6a4f27f3cc0e.png)
 
       Or just operate by the graphic interface without local pushing.
 
-      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/3fd33688-9158-4eec-87ea-7dac101ca6d2.png)
+      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/0d4f86fe-923c-4906-8f4c-f71900769ff1.png)
 
    * Complete the CD part:
 
       ```yaml
       version: "1.1"
-   
+      
       stages:
         - stage:
             - git-checkout:
@@ -273,35 +271,40 @@ Assuming that the functions are designed as follows:
 
 For this design, complete the following steps:
 
-1. Go to **DevOps Platform > Test > Test Cases > Automated Testing** and create a scene catalog named **Article**.
+1. Go to **DevOps Platform > Test > Automated Testing** and create a scene set named **Article**.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/287b12cd-1b27-41aa-a8e6-ca37bb3a49a1.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/b8652d6b-2135-46f7-9def-191e762d3136.png)
 
 2. Create a scene named **Reads**.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/709348a6-d02e-4b9a-903d-ed48ba76cded.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/66654e89-ba46-4d42-8188-55f8a672132f.png)
 
 3. Add steps in the scene for orchestration.
+
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/3466e515-cde4-4f10-93e4-95aac5c3b106.png)
 
 
 When the software is released online, you can find and locate problems by tracing, log analysis and alarms, etc. For details, see [Examples of Microservice Governance](../msp/examples/apm/service-dashboard.html). This article only introduces the main features and application scenes briefly.
 
 Go to the microservice platform to view the global topology of the project.
 
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/ec23ac45-c703-4030-b157-38db54efcad3.png)
+
 :::tip Tips
 
 You can enter the microservice platform in the following ways:
 
-1. Click the jiugongge in the upper left corner and select **Microservice Platform**.
+1. Select **Microservice Platform** in the left menu bar.
 2. Click **Application Monitoring** in deployments.
 
 :::
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/a36bc164-7cec-4082-95c4-00a32c12f4cd.png)
-
 The global topology can be considered as the entry for daily O&M after the project goes online, from which you can see the traffic and loading. Click the red one to quickly go to the tracing list and locate the problem.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/01/52a9bb61-b78e-449c-ab59-5e4f122698f5.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/0fbbb80c-c20d-4484-b5c1-582f217f99b7.png)
 
 You can quickly find the exceptions and trace back to the cause in error analysis.
 
+Each node represents a microservice and click the node for details. 
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/12/2cf71a65-45a3-4cdb-8e23-d7f22c0006f2.png)

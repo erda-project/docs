@@ -2,7 +2,7 @@
 
 ## Add Cluster
 
-After preparations such as [organization creation](../../../quick-start/newbie.html#加入组织), you should add a cluster for further use.
+After preparations such as [organization creation](../../../quick-start/newbie.html#Join-an-Organization), you should add a cluster for further use.
 
 You can add clusters in the following ways:
 
@@ -18,13 +18,15 @@ Erda supports one-click creation of the following clusters:
 * Alibaba Cloud Container Service for Kubernetes cluster (dedicated)
 * Self-built cluster
 
-For Alibaba Cloud Container Service for Kubernetes cluster, go to **Cloud Management > Resource Management > Cloud Resource > Cloud Account** to add an Alibaba Cloud account (including the permissions of Alibaba Cloud Container Service) before creating a cluster, for Alibaba Cloud Container Service purchasing and environment building.
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/12/ed0f1741-ed39-4e38-9e4d-a0e1b33e55e4.png)
 
-For self-built clusters, provide the information of existing IT resource to create a cluster.
+For Alibaba Cloud Container Service for Kubernetes cluster, go to **Cloud Management > Cluster Resource > Cloud Source** to add an Alibaba Cloud account (including the permissions of Alibaba Cloud Container Service) before creating a cluster, for Alibaba Cloud Container Service purchasing and environment building.
+
+For self-built clusters, provide the information of the existing IT resources to create a cluster.
 
 ### Import Existing Cluster
 
-The imported cluster should meet some requirements. For details, see [Installation Requirements](../../../install/helm-install/premise.md#安装要求). Before importing, configure the cluster as required. For details, see [Preparations](../../../install/helm-install/premise.md#准备工作).
+The imported cluster should meet some requirements. For details, see [Installation Requirements](../../../install/helm-install/premise.md#Installation-Requirements). Before importing, configure the cluster as required. For details, see [Preparations](../../../install/helm-install/premise.md#Preparations).
 
 Erda supports importing self-built Kubernetes clusters in the following ways:
 
@@ -38,7 +40,9 @@ After importing the cluster, Erda will initialize it and deploy Erda components 
 
 :::
 
-Go to **Cloud Management > Resource Management > Clusters > Add Cluster > Kubernetes (import an existing Erda Kubernetes cluster)** to operate.
+Go to **Cloud Management > Cluster Resource > Clusters > Add Cluster > Kubernetes (import an existing Erda Kubernetes cluster)** to operate.
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/12/ed789de9-88fd-43de-8493-c0903f1fbea6.png)
 
 * **KubeConfig and Service Account**: Applicable to clusters with open API server ports.
 * **Cluster Agent**: Applicable to clusters without open API server ports.
@@ -51,9 +55,9 @@ The cluster is available only after it is bound to a specific project. Go to **O
 
 You can check the running status of the cluster in the following ways:
 
-* Go to **Cloud Management > Cluster Overview**.Ideally, you can view the cluster information and machine list, etc.
+* Go to **Cloud Management > Cluster Overview**. Ideally, you can view the cluster information and machine list, etc.
 
-* Go to **Cloud Management > Resource Management > Clusters**.Ideally, you can view the basic information of the cluster, such as its type and version.
+* Go to **Cloud Management > Cluster Resource > Clusters**. Ideally, you can view the basic information of the cluster, such as its type and version.
 
 * Check by [CI/CD](../../../dop/guides/deploy/deploy-by-cicd-pipeline.md) process.
 
@@ -74,7 +78,7 @@ The upgrade is mainly for the edge cluster managed by the central cluster, to ke
 * Only upgrade edge clusters of lower versions.
 
 ## Offline
-The platform supports cluster offline and release. Go to **Cloud Management > Resource Management > Clusters > Operation** to get cluster offline.
+The platform supports cluster offline and release. Go to **Cloud Management > Cluster Resource > Clusters > Operation** to get cluster offline.
 
 Please finish the following before get the cluster offline:
 

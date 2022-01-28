@@ -4,11 +4,15 @@ You need to pay attention to the overall status of cluster as it works, or set a
 
 Go to **Cloud Management > O&M Alarm > Alarm Strategy > New Strategy**. The platform provides multiple built-in alarm strategies and you can select from **Type Template** as needed.
 
-You can also customize the alarm rules according to the actual situation, select the appropriate threshold and related aggregation functions.
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/12/ad7977ee-7db0-43ba-bde2-42f4b3491064.png)
+
+You can also customize the alarm rules according to the actual situation, and select the appropriate threshold and related aggregation functions.
 
 ## Node
 
 For machine nodes, you need to focus on their resource usage, node status, etc.
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/12/96e0e0f7-d712-4b57-9017-412167bf4b1a.png)
 
 ### Status
 
@@ -22,13 +26,13 @@ In general, the CPU usage should not be higher than 95% within 5 minutes.
 
 ### Memory
 
-For the machine, you only need to pay attention to the memory usage.
+For machines, you only need to pay attention to the memory usage.
 
 In general, the memory usage should not be higher than 80%.
 
 ### Disk
 
-Disk as a physical resource also affects user processes. For example, users cannot write to the database application if the disk if full, or create new files if the node is full.
+Disk as a physical resource also affects user processes. For example, users cannot write to the database application if the disk is full, or create new files if the node is full.
 
 In general, the disk usage should not be higher than 86% and the disk inode usage should not be higher than 85%.
 
@@ -48,6 +52,8 @@ In addition to the situation of machine nodes, you also need to pay attention to
 
 The status of Kubernetes system components is particularly important. The platform will collect information such as events of component exit, thus it is recommended to enable alarm strategies related to Kubernetes.
 
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/12/2d694b42-ff51-4409-bf39-a626ff21aa1a.png)
+
 ### Resource Usage
 
-The resource usage of component instance will affect the component stability. For example, insufficient memory leads to OOM, insufficient CPU leads to slow processing. The default configuration provided by the platform is relatively conservative, and you can adjust the threshold according to the actual situation.
+The resource usage of component instance will affect the component stability. For example, insufficient memory leads to OOM, and insufficient CPU leads to slow processing. The default configuration provided by the platform is relatively conservative, and you can adjust the threshold according to the actual situation.

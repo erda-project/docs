@@ -56,9 +56,9 @@ git commit -m "initialize"
 
 平台基于标准的 Git 协议内置 Git 代码仓库，您无需依赖于外部仓库（例如 GitLab 等）即可完成从源码开发到部署的全流程。
 
-进入 **DevOps 平台 > 我的应用 > 选择应用 > 代码仓库 > 代码浏览 > 仓库地址**，查看平台远程仓库服务器地址。
+进入 **我的应用 > 选择应用 > 代码仓库 > 代码浏览 > 仓库地址**，查看平台远程仓库服务器地址。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/d8be2930-db24-40f2-8b62-97c140c2cc41.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/95a60bb7-869e-47a4-996d-84f07ea3e3ce.png)
 
 ```bash
 git remote add erda https://erda-org.erda.cloud/wb/base-project/go-web
@@ -154,11 +154,11 @@ git push erda
 
 通过流水线构建源码并完成部署后，可在部署中心查看已成功部署的应用实例 Runtime。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/73570275-0bfb-46e9-920f-5a628c431360.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/8a7e7936-e37d-41f0-bf90-67cf86d581e9.png)
 
 点击 **master** 进入应用管理，可进一步进行配置域名、服务实例扩缩容等操作。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/eafe8179-6751-434a-bf50-a8cd6a566f11.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/6f4df3f0-f65b-4b29-9517-b2e3e37875ed.png)
 
 复制实例 IP 地址至浏览器，加上应用服务的端口 8080 即可看到“Hello,World!”。
 

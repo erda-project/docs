@@ -25,7 +25,7 @@ Erda provides two service tags, `dice/service-stateless=true` and `dice/service-
 
 * The stateless service corresponds to the runtime service in deployments, so hosts that run applications should be tagged as service-stateless.
 
-* The stateful service corresponds to the middleware addon. The addon has various built-in middleware, such as MySQL, Elasticsearch and RocketMQ, and most of them are stateful applications involving data storage, which need to be distinguished from other applications. If the project uses the addon of Erda, then the specified host should be tagged as service-stateful.
+* The stateful service corresponds to the addon, which has various built-in types, such as MySQL, Elasticsearch and RocketMQ, and most of them are stateful applications involving data storage, that need to be distinguished from other applications. If the project uses the addon of Erda, then the specified host should be tagged as service-stateful.
 
 ## Set Runnable Tasks for Host
 

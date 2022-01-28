@@ -6,17 +6,17 @@
 
   全局策略配置对所有 API 生效。
 
-  ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/09/6a9ad5bb-d3aa-465c-a960-758ccf20fd84.png)
+  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/1ab68433-66dc-43c4-8ef9-418bff992977.png)
 
 - 具体 API 策略配置
 
   对指定 API 进行配置，策略仅对该 API 生效。
 
-  ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/09/6b3809e3-2ee2-4eb9-af35-c60c69e92e71.png)
+  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/683c8fe4-c1cf-46da-9d21-93db7d4c64b1.png)
 
 配置 API 策略时，可以选择某个策略继承全局策略的配置，也可以选择使用自己的独立配置。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/09/cbfa8a4c-fd8e-4eed-82c7-1c590678ca2c.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/d37dd1e4-8139-4d86-b832-fecd1ac98d21.png)
 
 ::: tip 提示
 开启 **使用全局策略** 后，页面将展示全局配置的内容，配置需确认并提交后方可生效。
@@ -24,7 +24,7 @@
 
 ## 流量接收转发
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/09/207721d0-0a2e-4ac6-b143-d05c3406ee57.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/f09fab52-52a6-45c7-9a47-c3021c59aaff.png)
 
 * **强制跳转 HTTPS**
 
@@ -63,7 +63,7 @@
 
 ## 跨域访问
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/10/c4b5133d-15cf-4691-8031-d6cf4bfad083.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/484c05a4-f13a-444f-bba8-9082ed927472.png)
 
 | 配置项           | 含义                                                         |
 | :--------------- | :----------------------------------------------------------- |
@@ -85,7 +85,7 @@
 
 ## 自定义 Nginx 配置
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/10/1989e546-427b-458d-bfa7-528728e79e29.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/bd116c73-1acd-4d7b-9585-aa46a0808edf.png)
 
 平台支持 Nginx 所有 Location 区块下的指令配置，具体请参见 [Nginx 官方文档](http://nginx.org/en/docs/dirindex.html)。
 
@@ -113,7 +113,7 @@ proxy_set_header hello world;
 
 ## IP 拦截
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/10/18bd5489-9974-4cbe-bf57-3cc28dff68ac.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/7d7daea0-a433-4c79-99df-a2a6cb852e79.png)
 
 * **用户 IP 来源**
 
@@ -131,7 +131,7 @@ proxy_set_header hello world;
 
 ## 服务负载保护
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/10/262c5469-3599-4710-88a1-8cf20e4f54f7.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/755fe840-7bf6-43eb-892c-733d610e5f0e.png)
 
 * **最大吞吐**
 
@@ -163,7 +163,7 @@ proxy_set_header hello world;
 
 ## 跨站防护（CSRF 校验）
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/10/014dec60-2857-4f4a-87f2-5c5a97b640e7.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/fbea5df7-4ba3-48c1-8bbf-247901fd4cf6.png)
 
 用户在访问恶意站点时会触发恶意脚本。跨站攻击能够在用户无感知的情况下，发起修改用户信息的请求。由于浏览器记录了用户 Cookie，该请求便可以顺利通过认证，进行恶意篡改。具体示意如下：
 

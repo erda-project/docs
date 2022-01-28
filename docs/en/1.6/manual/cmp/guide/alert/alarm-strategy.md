@@ -16,7 +16,7 @@ The platform supports monitoring of the following:
 - Machine disk
 - Machine disk inode
 - Machine disk IO
-- Machine Load 5
+- Machine load 5
 - Netdisk
 - Netdisk usage
 - Machine status
@@ -64,13 +64,10 @@ The platform supports monitoring of the following:
 - Redis instance memory usage
 
 ## Create New Strategy
-Go to **Cloud Management > O&M Alarm > Alarm Strategy > New Strategy**, and select the cluster, alarm rules, silence period and notification group.
+Go to **Cloud Management > O&M Alarm > Alarm Strategy > New Strategy**, and select alarm rules, silence period and notification group.
 
 ### Alarm Name
 Fill in the name, which cannot be repeated, to distinguish from others.
-
-### Alarm Cluster
-Multiple clusters can be selected.
 
 ### Alarm Rule
 You can set multiple alarm rules and an alarm will be triggered when one of the rules is met. Select rules in the following ways:
@@ -78,10 +75,13 @@ You can set multiple alarm rules and an alarm will be triggered when one of the 
 
    All the alarm rules in the selected template will be added. For example, if you select the machine template, then the alarm rules of the template will be added as follows:
 
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/b64c39d0-0978-4c3c-8721-c443c17669fe.png)
+
 * Select **Add Rule**
 
-   An alarm rule will be added randomly, then you can modify it by selecting in the drop-down list as needed, which contains alarm rules of all templates.
+   Select a rule in the drop-down list as needed, which contains alarm rules of all templates.
 
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/284b61e6-157b-4c00-868a-252fbaf99596.png)
 
 ### Silence Period
 To avoid frequent alarms, you can set the silence period, that is the interval between alarms triggered by the same rule. It supports silence periods of 5 minutes, 10 minutes, 15 minutes, 30 minutes, 60 minutes and 3 hours.
@@ -92,4 +92,6 @@ The silence period policy works with the silence period, with the following poli
 - **Doubled**: If you set a silence period of 5 minutes and the silence period policy is doubled, the alarm interval triggered by the same rule will be doubled from 5 minutes to 10 minutes, 20 minutes and so on.
 
 ### Select Group
-Go to **Org Center > Settings > Notification Management >Notification Group** to select the group to receive the alarm.
+Select a group to receive the alarm, and select level and notification method.
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/b6fdb612-19c7-4b37-a94d-024ce4b5cc10.png)

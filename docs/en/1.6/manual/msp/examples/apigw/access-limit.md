@@ -4,8 +4,8 @@ You can configure it via API policies of endpoints to restrict access based on t
 
 The path is as follows:
 
-- Global strategy: Go to **Microservice Platform > Project List > Select Project > API Gateway > Endpoints**, select an endpoint, and click **Details > Global Strategy > Security Strategy > IP Blocking**.
-- Strategy for a specific API: Go to **Microservice Platform > Project List > Select Project > API Gateway > Endpoints**, select an endpoint, click **Details**, select an API, and click **Strategy > Security Strategy > IP Blocking**.
+- Global strategy: Go to **Microservice Platform > Select Project > Service Management > API Gateway > Endpoints**, select an endpoint, and click **Details > Global Strategy > Security Strategy > IP Blocking**.
+- Strategy for a specific API: Go to **Microservice Platform > Select Project > Service Management > API Gateway > Endpoints**, select an endpoint, click **Details**, select an API, and click **Strategy > Security Strategy > IP Blocking**.
 
 ## Example 1
 
@@ -16,7 +16,7 @@ If the requirement is:
 
 The configuration is as follows:
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/07cd517c-2a31-41bc-a7f8-8c8cc7f25f30.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/d2a9393e-b3f6-431f-8e91-492684664d7a.png)
 
 ## Example 2
 
@@ -27,7 +27,7 @@ If the requirement is:
 
 The configuration is as follows:
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/99e8dc8e-5d63-4576-a588-c93533ffa619.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/b4bd9b27-5312-4bed-ae8b-b541846d71e8.png)
 
 ## Example 3
 
@@ -38,5 +38,5 @@ If the requirement is:
 
 The configuration is as follows:
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/bfbc08db-5276-4a4f-9865-598448f6fb09.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/8417461a-40fa-4cac-b2d2-d703ecf13314.png)
 

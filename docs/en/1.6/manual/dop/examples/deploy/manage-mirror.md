@@ -18,7 +18,7 @@ Use Dockerfile action to customize Dockerfile for packaging and create image for
 The parameters are as follows:
 
 * **workdir**: Run command in a specific directory.
-* **path dockerfile**: relative path.
+* **path dockerfile**: Relative path.
 * **build_args Dockerfile build args**: The key-value pair filled in here will be rendered as ARG in the Dockerfile.
 
 ## Push Image by Docker Push
@@ -84,7 +84,7 @@ Push to the platform repository:
             - echo "http://mirrors.aliyun.com/alpine/v3.6/main/" > /etc/apk/repositories && echo "http://mirrors.aliyun.com/alpine/v3.6/community/" >> /etc/apk/repositories
             # Go to the code root directory
             - cd ${git-checkout}
-            # Set the name of the repo. Here uses dockerRegisterAddr, imageName and tagName of erda to fill in
+            # Set the name of the repo.
             - repo=""$BP_DOCKER_ARTIFACT_REGISTRY"/"$DICE_PROJECT_APPLICATION":"imageName"-"tagName""
             # Build image
             - docker build -t $repo .
@@ -95,7 +95,7 @@ Push to the platform repository:
             - echo "image="$repo"" >> $METAFILE
             # Set an alias
             - docker tag $repo xxx/xx/xx:tag
-            # Push to the tag address and if login is required, docker login --username= --password= registerAddr
+            # Push to the tag address and if login is required, run docker login --username= --password= registerAddr
             - docker push xxx/xx/xx:tag
 ```
 
@@ -112,13 +112,13 @@ Pull the image from the platform repository and push it to the external reposito
             - echo "http://mirrors.aliyun.com/alpine/v3.6/main/" > /etc/apk/repositories && echo "http://mirrors.aliyun.com/alpine/v3.6/community/" >> /etc/apk/repositories
             # Go to the code root directory
             - cd ${git-checkout}
-            # If login is required, please docker login --username= --password= registerAddr
+            # If login is required, run docker login --username= --password= registerAddr
             - docker pull xxx/xxx/xx1:tag
             # Use the image output parameters of the front node, output parameters of the node ${{ outputs.xxx.image }} xxx
             # - docker tag ${{ outputs.xxx.image }} xxx/xx/xx:tag
             # Self-defined image name
             - docker tag xxx/xxx/xx1:tag xxx/xx/xx:tag
-            # Push to a new address and if login is required, docker login --username= --password= registerAddr
+            # Push to a new address and if login is required, run docker login --username= --password= registerAddr
             - docker push xxx/xx/xx:tag
 ```
 The example above uses `docker command` to push and pull image package. Use `$BP_DOCKER_ARTIFACT_REGISTRY` to get the repository address of Erda without login, and run `docker` and `linux` for other commands.

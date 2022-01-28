@@ -52,9 +52,9 @@ services:
 
 ## 应用设置
 
-进入 **DevOps 平台 > 项目 > 应用 > 应用设置 > 部署中心 > 参数设置**。
+进入 **我的应用 > 应用设置 > 部署中心 > 参数设置**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/6b7f27a7-61e1-4185-86fd-78358908fa3f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/0ffae8fa-55c0-47d8-87c4-2a3f4541bb13.png)
 
 对于值类型的配置，将在容器内作为环境变量存在，可通过 env 命令查看。
 

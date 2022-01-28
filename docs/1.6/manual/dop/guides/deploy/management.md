@@ -4,9 +4,9 @@
 
 ### 成员管理
 
-请进入 **DevOps 平台 > 项目 > 应用 > 应用设置 > 通用设置 > 应用成员** 操作。
+请进入 **我的应用 > 应用设置 > 通用设置 > 应用成员** 操作。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/c986059a-280f-49d6-96b7-0fca8990f606.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/2e6a5c85-a5c4-4cb0-a72a-1f1808f1eb22.png)
 
 应用角色分为：
 * 应用所有者
@@ -16,7 +16,7 @@
 * 运维工程师
 * 访客
 
-您可进入 **DevOps 平台 > 项目 > 应用 > 应用设置 > 通用设置 > 应用成员 > 应用成员管理 > 角色权限说明** 查看应用角色及对应权限。
+您可进入 **我的应用 > 应用设置 > 通用设置 > 应用成员 > 角色权限说明** 查看应用角色及对应权限。
 
 ### 通知管理
 
@@ -24,13 +24,13 @@
 设置通知管理前，请先创建通知组。
 :::
 
-进入 **DevOps 平台 > 项目 > 应用 > 应用设置 > 通知组** 新建通知组。
+进入 **我的应用 > 应用设置 > 通知管理 > 通知组** 新建通知组。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/04a2503c-9c3c-495e-9e19-bb667f2e296d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/585c66de-bbee-4adb-8f25-f89fdfae6971.png)
 
-进入 **DevOps 平台 > 我的项目 > 应用列表 > 应用设置 > 通知管理** 新建通知。
+进入 **我的应用 > 应用设置 > 通知管理 > 通知** 新建通知。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/200ce676-8a54-4eb9-b9c5-375eb4dad395.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/ed8a23f0-b58b-47eb-b743-76fbe196cb86.png)
 
 平台支持如下事项通知：
 * 代码推送
@@ -48,7 +48,7 @@
 
 ### 查看企业域名资源
 
-请进入 **多云管理平台 > 资源管理 > 域名管理** 查看。
+请进入 **多云管理平台 > 应用资源 > 域名** 查看。
 
 ### 基于微服务网关实现域名路由（推荐）
 
@@ -170,13 +170,13 @@ services:
     ...
 ```
 
-完成上述操作后，执行源码部署使配置生效。部署成功后进入 **DevOps 平台 > 项目 > 应用 > 部署中心 > 部署总览** 配置域名。
+完成上述操作后，执行源码部署使配置生效。部署成功后进入 **我的应用 > 部署中心** 配置域名。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/b36cdfc3-488c-4fe6-804e-2f22dfe7bf61.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/606d2fce-15ed-485e-b50d-3a85b90b887f.png)
 
 可使用集群提供的泛域名，或配置自定义域名。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/8cdc9338-4f43-41f8-b884-ed1c49da7880.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/4a27e051-e917-4865-ba61-1ca17e542b1e.png)
 
 
 ## 扩缩容
@@ -208,9 +208,9 @@ services:
     ...
 ```
 
-若仅需临时扩缩容（即不涉及源码部署），可进入 **DevOps 平台 > 项目 > 应用 > 部署中心 > 部署总览** 调整。
+若仅需临时扩缩容（即不涉及源码部署），可进入 **我的应用 > 部署中心** 调整。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/42e3d7be-a35c-4350-abca-3569a004e6a6.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/ef752e97-fd41-4790-a80c-22013105adbd.png)
 
 完成调整后将提示重启 Runtime。
 
@@ -220,13 +220,13 @@ services:
 
 ## 版本回滚
 
-进入 **DevOps 平台 > 我的项目 > 应用列表 > 部署中心 > 部署总览**。
+进入 **我的应用 > 部署中心**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/452cb795-5283-4a02-bc88-f1c6f94013a8.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/affb21dc-e824-43a4-b465-23dd5356f7e6.png)
 
 若回滚失败，将提示具体原因：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/c79089fd-54ae-4a89-8443-a2d78a9d7588.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/160ddf00-8223-49f7-b471-9dd3f21fddd0.png)
 
 ### 回滚记录
 
@@ -234,7 +234,7 @@ services:
 * 生产环境（PROD）保留最近 10 次成功记录可回滚。
 * 其他环境仅保留当前记录（即无法进行回滚）。
 
-回滚策略可自定义，请进入 **管理中心 > 项目管理 > 项目 > 回滚点设置** 操作。
+回滚策略可自定义，请进入 **管理中心 > 项目列表 > 高级设置 > 回滚点设置** 操作。
 
 ### 回滚过程
 
