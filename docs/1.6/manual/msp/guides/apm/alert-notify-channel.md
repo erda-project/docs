@@ -14,7 +14,7 @@
     2.4 输入短信签名、短信模板 Code（可在阿里云短信服务中申请，通过后方可使用）。提交至阿里云的短信模板可适当调整，但需确保模板内容中包含 ${content} 或 ${message} 变量。  
     2.5 点击 **确定** 保存配置并启用该通知渠道。  
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/24/fc5a8e55-cb82-4b98-a5d9-f3cdc31d5f78.png)  
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/8cab3166-9f20-4207-81fb-7b982e57f3e3.png)  
 
 3. **进入 微服务治理平台 > 告警中心 > 通知组管理**，创建支持短信通知方式的通知组。
   
@@ -48,7 +48,7 @@
     2.3 输入 AccessKeyId、AccessKeySecret 和语音模板 ID（可在阿里云权限控制模块申请）。 
     2.4 点击 **确定** 保存配置并启用该通知渠道。  
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/24/26cb9360-1759-4926-82a2-07acbd61c680.png)  
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/ae2996f1-0920-4e26-b055-481faaf5f746.png)  
 
 3. **进入 微服务治理平台 > 告警中心 > 通知组管理**，创建支持电话通知方式的通知组。
   
@@ -82,7 +82,7 @@
     2.3 输入 AgentId、AppKey 和 AppSecret（可在 **钉钉开放平台 > 应用开发 > 企业内部开发** 中获取）。  
     2.4 点击 **确定** 保存配置并启用该通知渠道。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/24/489c6e40-96a3-4de5-91a9-0466653acc75.png)  
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/ea7801bf-746e-430b-9a40-587eebed64f6.png)  
 
 3. 进入 **微服务治理平台 > 告警中心 > 通知组管理**，创建支持钉钉工作通知方式的通知组。
   
@@ -98,9 +98,8 @@
     4.1 点击 **新建策略** 或编辑现有的告警策略。  
     4.2 通知对象选择方才创建的通知组，并选择钉钉工作通知方式。   
     4.3 点击 **保存**。
-    
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/24/3ce8c387-c8b2-4cad-9c7c-b3c687af4aee.png)  
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/52f73910-ba5f-4c00-b709-e0a8027e2535.png)  
 
 告警触发时，告警消息将以钉钉工作通知形式发送至通知对象。 
 
@@ -117,7 +116,7 @@
     2.3 输入服务器地址、服务器端口、发件箱用户名及发件箱密码，并选择是否使用 SSL（可在各邮箱平台设置开启 SMTP）。  
     2.4 点击 **确定** 保存配置并启用该通知渠道。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/24/32f07edc-796e-4324-903c-8fca2f38a8cf.png)  
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/237d5c6b-3a7d-42c9-a484-760266be3459.png)  
 
 3. 进入 **微服务治理平台 > 告警中心 > 通知组管理**，创建支持邮箱通知方式的通知组。
   
@@ -134,6 +133,6 @@
     4.2 通知对象选择方才创建的通知组，并选择邮箱通知方式。   
     4.3 点击 **保存**。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/24/b51328ee-de3c-419c-8e10-0733c3d20575.png)  
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/c5d8483f-17ea-4488-ac1e-0b3f2ccf5e60.png)  
 
 告警触发时，告警消息将以邮件形式发送至通知对象。 

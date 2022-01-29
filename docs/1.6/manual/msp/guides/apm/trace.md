@@ -4,11 +4,11 @@
 
 全链路追踪能够分布式地抓取多个节点的业务记录，并通过统一的请求 ID 将一次请求过程中的各个节点记录串联起来，方便排查请求过程中的业务瓶颈或异常点。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/9d4a6a36-a076-4fb5-ba0b-7b5caa4bcb54.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/6e37cc0b-3db0-41e6-99fc-8519702aaddd.png)
 
-点击 **查看详情** 可查看具体的链路信息。
+点击可查看具体的链路信息。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/d3277e55-a36d-4369-8133-a282be4cb9d9.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/f0c02fbf-7b9b-46e2-a36a-6e08aabee1da.png)
 
 * **Trace**：一次调用的完整记录，由多个 Span 组成。
 * **Span**：一次调用中的某个节点或步骤，类似于一层堆栈信息。Span 之间存在父子或并列关系以表明 Span 在整个调用中的生命周期。

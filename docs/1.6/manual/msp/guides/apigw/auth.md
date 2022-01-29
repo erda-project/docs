@@ -6,7 +6,7 @@
 
 如需开放 API 鉴权，创建流量入口时需选择 **面向合作伙伴开放 API** 场景。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/8a7820df-5777-4f44-a94e-b35daca555e7.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/5ac9fdae-9494-43e5-9399-2f61b3c2bde4.png)
 
 **调用方认证方式**
 
@@ -26,24 +26,24 @@
 
 您可以在创建流量入口时完成调用者授权，也可以在后续通过流量入口编辑操作完成。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/e8233c1c-7380-43b5-8379-8886089647dd.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/520a9eae-ea46-43fe-a0fe-e6ac5a8900d8.png)
 
 ### 调用量控制
 
 您可以在创建流量入口时完成调用量控制，也可以在后续通过流量入口编辑操作完成。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/5b9e4789-eba3-4457-8b4c-5f2dd2c3dfae.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/a954e069-0188-463c-b126-ab47c33a2f1e.png)
 
 ## 调用方凭证管理
 
 选择对应调用方后，点击 **凭证**。
 
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/962516e6-b89d-420c-8af4-838c862d1ec1.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/febb1840-5479-4595-beec-493bc55f107e.png)
 
 调用方需根据流量入口的认证方式，选择正确的凭证。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/ad08bc3b-10c8-48f8-9a5a-5e98fa0337db.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/df953d25-5378-4125-9374-75e4cc49a8d8.png)
 
 ## 签名认证算法
 

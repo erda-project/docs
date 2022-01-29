@@ -4,7 +4,7 @@
 
 进入 **微服务平台 > 项目列表 > 选择项目 > 日志分析 > 分析规则**，点击 **创建分析规则**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/fd6fe782-6aa0-4dea-be09-fe7ccd4e4909.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/1ca1bc36-095c-4db9-9ebf-1b18ffd8a59d.png)
 
 - **选择模版**：模版是一组内置的提取规则，可通过模版自动导入示例配置。
 - **指标名称**：自定义的指标名称。

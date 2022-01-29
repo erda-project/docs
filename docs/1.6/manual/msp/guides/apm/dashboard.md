@@ -8,8 +8,6 @@
 * 可视化效果耗时耗力，毫无扩展性。
 * 无法应对频繁的需求变化。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/cadd5b5a-1b6b-4164-804b-be63c228226f.png)
-
 大盘系统就是用来解决这一问题，前端和后端的底层实现都能够统一用一种方式来实现，并且能够提供给用户自定义图表页面的功能。
 
 使用大盘后，您的收益：
@@ -30,14 +28,14 @@
 
 ### 进入仪表盘
 
-进入 **微服务平台 > 项目列表 > 选择项目 > 查询分析 > 仪表盘**。
+进入 **微服务平台 > 选择项目 > 诊断分析 > 自定义大盘**。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/bd483be6-8232-407e-ace5-9440c0288f94.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/770277e8-d8d7-4e3d-adb5-3b60e2f0294b.png)
 
 ### 编辑仪表盘
 点击新建运维大盘，进入编辑模式，点击右上 **+** 号，选择 [图表类型](#图表类型) 为柱状图。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/be026bcd-9e03-4304-9dc4-285e1a083f41.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/7574f534-88f2-4cf6-82a6-f7788551234d.png)
 
 ### 编辑图表
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/bca7731c-4fc9-4352-9dcf-8ab3e222ec89.png)

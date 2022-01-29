@@ -26,17 +26,17 @@
 
 在 Erda 的注册中心和配置中心，租户将自动关联所属的项目环境，因此用户无需选择指定的 Nacos Namespace 即可查看项目环境下的服务注册列表等信息。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/3ff5c09e-532f-48df-af19-98adcf613379.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/cb9136b2-b79c-4bf1-819a-74ef281b3f25.png)
 
-进入 **微服务平台 > 组件信息**，可查看 Nacos NamespaceId 对应的服务参数（即自动注入的环境变量）。
+进入 **微服务平台 > 环境设置 > 组件信息**，可查看 Nacos NamespaceId 对应的服务参数（即自动注入的环境变量）。
 
 注册中心对应的服务参数为 `NACOS_TENANT_ID`。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/018ddd49-90c6-49fb-9c2f-faee275c5471.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/05ac5e5e-9b74-4512-8b22-d7ccc4d1f294.png)
 
 配置中心对应的服务参数为 `CONFIGCENTER_TENANT_NAME`。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/24ba538f-b24f-4579-a763-e0addcbce45f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/3f9d85c9-c472-4bef-b48d-81022551e637.png)
 
 
 ### 注册中心
@@ -57,7 +57,7 @@ Spring Cloud 框架的微服务注册发现机制。由于 Spring Cloud 框架�
 
 配置中心的 Key/Value 配置项可合并形成一份 application.yml，动态下发配置。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/30981eb1-414a-4650-89ff-70a6a1162f2b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/dd3f232f-51a1-4576-a691-4a7286a5c4fc.png)
 
 对应至 Nacos，每个应用配置即为一个独立的 Data 配置项。
 
