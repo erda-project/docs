@@ -2,7 +2,7 @@
 
 创建告警策略时，您可以选择自定义告警策略，或选择系统内置的告警规则。平台提供多个告警规则类型模板。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/ba6a8364-6dc6-4bbe-9e0e-1267869d2fc1.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/f08a5592-90e2-4870-8ad6-407d2771ec01.png)
 
 ## 主动监控
 

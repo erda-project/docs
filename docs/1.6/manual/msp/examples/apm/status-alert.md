@@ -8,21 +8,21 @@
 
 进入 **微服务治理平台 > 项目列表 > 选择项目 > 应用监控 > 主动监控**，添加主动监控。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/fc8fe6e5-3e66-4a9f-b8ac-797892bb0ba0.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/9adff13d-7265-4f3b-b323-c25bd5f8a2f1.png)
 
 ## 查看主动监控详情
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/373d364c-820f-421b-8c5d-f30a4569b08c.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/e1c9ab25-b2c4-4595-b4b8-9a217ac3bf17.png)
 
 ## 配置自定义告警规则
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/c932c083-7093-44e2-9270-e8e1252cd254.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/9d6f0479-ea89-484b-9226-3bbe58562888.png)
 
 ### 配置字段规则
 
 此时可根据所需规则自定义配置告警。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/f100761d-1bc9-4fd6-9b77-bfa597e88e7a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/7da574b4-b49b-4c9d-8ab6-cc178efd66e0.png)
 
 ### 配置消息模板
 

@@ -26,20 +26,20 @@
 
 该模式下调用方仅需在请求上添加一个参数 `appKey` 或者请求头 `X-App-Key`，即可用于认证识别。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/17/86b58008-2bca-4d45-a12c-a3cf26f4b9e7.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/7e59de42-a583-4aff-b1d5-1254104f08ef.png)
 
 （可选）在创建流量入口的过程中，一并创建调用方（或之后通过编辑流量入口进行配置）并授权。授权后，调用方将拥有流量入口下所有接口的调用权限。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/17/f1c64c8e-c2ea-413f-be7d-2986b47c916d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/4b53a56e-90fa-4ae1-9326-c19010263d0c.png)
 
 （可选）对调用方设置调用量限制。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/17/ba590271-e90f-4c43-85b2-23ff8c9f114a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/f490f6ca-1ead-4e7f-b4cc-f6432f81e4c8.png)
 
 若仅将 *example.erda.cloud/example* 授权给调用方，点击流量入口详情中对应 API 的 **授权** 按钮进行操作。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/17/8887142f-9377-4260-889b-820019e71519.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/8e96f797-9312-4be7-9dd3-bd88216576f3.png)
 
 将 *example.erda.cloud/special* 设置为无需认证即可访问。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/17/96954ef0-101a-4c56-a738-2b65b80da9b1.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/5ebeb6da-b2e0-4a89-81a3-862b1a2a9fa0.png)

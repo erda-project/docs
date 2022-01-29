@@ -2,7 +2,7 @@
 
 完成日志分析部署后，部署在业务集群中的 Filebeat 组件将采集日志并上报至 monitor-collector，最终存储在 Elasticsearch。您可以进入 **微服务平台 > 项目列表 > 选择项目 > 日志分析 > 日志查询** 查看。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/1a4717e3-341e-443d-974f-30e4b50c7098.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/6481081b-a37a-48f2-a4c5-83eb6fdd98d3.png)
 
 ## 查询条件
 
@@ -103,7 +103,7 @@
 - 展示符合查询条件的数据，以及在某一特征标签上不同值的分布情况。
 - 点击某个标签，可快速添加至查询条件进行查询。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/26/7026942d-1c9b-423c-9635-5d42be217a58.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/98ce0cde-3381-4dc3-a557-077a91c3c602.png)
 
 ## 日志列表
 
@@ -140,7 +140,7 @@
 
 点击弹出上下文浏览页面。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/25/5e908902-ea49-4f64-a94f-b9a12eb519d6.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/63283cf1-2d46-4411-901a-edf2f5111f14.png)
 
 上下文浏览页面顶部默认展示 `application_name`、`service_name`、`pod_name` 三个过滤标签，表示默认浏览同一个 K8s Pod 层面某条关键日志前后的日志，列表中标记为 0 的日志即方才点击的关键日志。在该页面您还可以进行自定义显示字段、自定义高亮内容等操作。
 
@@ -154,7 +154,7 @@
 
 点击弹出实时 Tail 页面。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/25/eb8d9c3b-ae05-4cf8-a5e6-c33e1679f54f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/c14d25df-8dbb-4064-ba03-5bc7389b831f.png)
 
 实时 Tail 页面支持灵活的输入条件，可输入查询语句，点击右侧的 **开始** 按钮即可自动刷新，重新加载符合条件的日志。
 

@@ -28,7 +28,7 @@ Application Performance Management，即应用性能管理，用于实时监控�
 
 即可进入 APM 相关页面。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/4a836763-cfd8-4891-b129-a37d491437f1.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/a6b300ee-7f87-4084-9518-33c4b29c531a.png)
 
 ### Trace
 

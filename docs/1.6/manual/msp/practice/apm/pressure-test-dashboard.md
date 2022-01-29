@@ -8,7 +8,7 @@
 
 下文将以 apm-demo-api 为例，介绍如何通过 Erda 在性能压测场景下配置监控大盘。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/a10084e8-8128-43c7-845b-c902fc0f8331.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/781b37e9-efbe-4e86-9866-2fa86ae0ec91.png)
 
 ## 慢 SQL 大盘配置
 
@@ -60,5 +60,5 @@
 
 如需基于 Pod Name 筛选，可在部署中心查看 Pod Name。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/9f022976-4855-4ec2-a549-af4e8510d773.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/6ef1fa61-b4c4-4255-b9db-adbe7acab6c2.png)
 
