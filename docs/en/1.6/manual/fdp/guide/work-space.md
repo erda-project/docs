@@ -8,7 +8,7 @@ Follow the steps below:
 
 2. Click **Default Workspace** to see the list of existing workspaces, then click **Open Space Management**.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/17/4a37315b-ae79-4ca6-a4f1-d27e5784d9fa.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/5169b5e2-19f6-4a26-af2a-140ddc2335dd.png)
 
 3. Create, edit, or delete workspaces as needed.
 

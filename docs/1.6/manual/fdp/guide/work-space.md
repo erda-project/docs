@@ -8,7 +8,7 @@
 
 2. 点击 **默认空间** 弹出目前已有的工作空间列表，点击 **打开空间管理**。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/fa3ac816-c90f-4401-af11-332f34cc946f.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/0d41a2ec-c45c-42eb-8d77-682bb1756585.png)
 
 3. 根据需要新建、编辑或删除工作空间。
 
