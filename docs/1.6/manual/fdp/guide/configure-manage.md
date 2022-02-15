@@ -4,21 +4,21 @@
 
 平台支持配置三种标签，分别用于数据源、数据模型和工作流，便于分类标记筛选。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/29/d990987d-ad2c-415e-98af-e020cc96201e.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/b1fee9fd-4f89-4d53-8998-e35ba3a2c953.png)
 
 进入 **数据集成 > 标签管理**，点击 **新建标签**，输入标签名称，选择所属模块及对应颜色。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/30/527dcbff-4c27-4513-a9f8-3b9f6cafb0b3.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/7e453039-b3d0-4c8d-9b19-b38cf25153e3.png)
 
 ## 质量规则
 
 平台支持配置应用于数据模型的质量规则，通过规则客观得到质量分数，从而监控数据质量。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/29/072d3369-8b9e-4976-9333-e4f37731bc72.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/867cbd2e-d852-4390-941c-6a4cb2e2bc40.png)
 
 进入 **数据治理 > 质量规则**，点击 **新增规则**，输入规则名称、规则内容并选择规则类型。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/29/f8824f87-1e3f-4fee-a5e0-7ef232ac853d.png)
+<img src="http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/d7209fb6-b798-41a4-95d8-710941b1eb49.png" style="zoom:50%;" />
 
 ## 队列管理
 
@@ -26,7 +26,7 @@
 
 进入 **数据集成 > 队列管理**，点击 **新建** 创建队列。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/30/d5c54cbe-22e1-45b7-bec7-e5c7ec932de4.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/9e1634e2-0e39-445a-a55a-6291dd504f67.png)
 
 * **CPU/内存**
 
