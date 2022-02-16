@@ -439,16 +439,16 @@ module.exports = [
     title: 'Fast Data',
     collapsable: true,
     children: [
-  //     {
-  //       title: 'Examples',
-  //       collapsable: true,
-  //       children: [
-  //         'fdp/example/integration',
-  //         'fdp/example/develop',
-  //         'fdp/example/service',
-  //         'fdp/example/om',
-  //       ]
-  //     },
+      {
+        title: 'Examples',
+        collapsable: true,
+        children: [
+          'fdp/example/integration',
+          'fdp/example/develop',
+          'fdp/example/service',
+          'fdp/example/om',
+        ]
+      },
       'fdp/concept',
   //     ['fdp/best-practice', 'Best Practices'],
       {
@@ -458,15 +458,15 @@ module.exports = [
           'fdp/guide/work-space',
           'fdp/guide/data-map',
           'fdp/guide/data-om',
-          // 'fdp/guide/data-source',
-          // 'fdp/guide/source-data',
-          // 'fdp/guide/data-develop',
-          // 'fdp/guide/workflow',
-          // 'fdp/guide/data-standard',
+          'fdp/guide/data-source',
+          'fdp/guide/source-data',
+          'fdp/guide/data-develop',
+          'fdp/guide/workflow',
+          'fdp/guide/data-standard',
           'fdp/guide/notification-manage',
           'fdp/guide/configure-manage',
           'fdp/guide/data-service',
-          // 'fdp/guide/data-permission',
+          'fdp/guide/data-permission',
           'fdp/guide/algorithm-model',
         ]
       },
