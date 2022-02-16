@@ -450,7 +450,7 @@ module.exports = [
         ]
       },
       'fdp/concept',
-  //     ['fdp/best-practice', 'Best Practices'],
+      ['fdp/best-practice', 'Best Practices'],
       {
         title: 'Guides',
         collapsable: true,
