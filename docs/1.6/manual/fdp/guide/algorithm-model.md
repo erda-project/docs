@@ -8,4 +8,4 @@
 
 3. 计算结果表将以 API 形式对外提供服务，也可在工作流中进行配置，具体请参见 [工作流管理](workflow.md)。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/29/eede1085-2f65-44fb-85a2-a6ce71e1b5e2.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/0907d3f6-2417-407c-b8d9-7cf6c5f434eb.png)

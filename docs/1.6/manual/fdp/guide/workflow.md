@@ -5,7 +5,8 @@
 ## 创建工作流
 
 进入 **数据集成 > 工作流管理**，创建文件夹（可选）后在文件夹下添加工作流，根据需要配置工作流信息。
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/21/2bc217c0-83aa-4c1d-885f-567d1b348375.png)
+
+<img src="http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/686be2d2-d2ea-4062-9200-3372ef7a5479.png" style="zoom:50%;" />
 
 - **周期**：可选单次任务、周期任务和实时任务，其中单次任务和周期任务属于离线任务计算。
 
@@ -33,7 +34,7 @@
 
 选择数据集成节点。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/49aad63a-f315-4de2-b27c-9186dbcb8a9e.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/e78008e6-fb57-43bc-8ff2-d896ecf39d57.png)
 
 ### 编辑集成节点
 
@@ -41,7 +42,7 @@
 
 2. 点击 **+** 创建系统内部 Cassandra 模型名称。　　
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/7d36cae6-71da-4998-b30a-d434ad949bd1.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/e3e67f5f-bced-44e1-a524-0f31f2affc29.png)
 
 3) 选择所需字段后，点击 **>** 添加至 Cassandra 模型。
 
@@ -49,7 +50,7 @@
 
 5. 点击 **添加** 可自行添加字段，添加的字段需设置默认值。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/c012975c-166f-4da9-9b54-b4c2bffe2826.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/1451e418-d91b-4057-974a-6e381b327200.png)
 
 6. 在编辑模型字段或添加字段时，可添加质量规则。
 
@@ -61,7 +62,7 @@
 
 选择数据清洗节点。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/9f1a4e56-5438-4a9c-a21a-7ced1c936345.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/bec197db-fc23-4a24-b96a-3e9d96cde28f.png)
 
 ### 编辑清洗节点
 
@@ -78,7 +79,7 @@
 
 选择数据萃取节点。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/c3584b90-d956-4d8d-bff4-4cb422b397df.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/66b61b71-d28f-440c-8dac-7fb526fe3a88.png)
 
 ### 编辑萃取节点
 
@@ -88,7 +89,7 @@
 4. 在模型中选择用户所需字段，点击箭头图标同步至萃取表。
 6. 可根据需要编辑或新增字段。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/30/48b06b1d-ed2d-4935-8568-d261785d152f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/7ab83d27-cd06-4cad-b7ed-5ad0c32cd7c2.png)
 
 ## 数据导出
 
@@ -96,7 +97,7 @@
 
 ### 创建导出节点
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/7e2188f2-4f4f-4857-94b3-0c739f523e8d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/310ef226-8dae-45e8-8ab5-47e9040f16cc.png)
 
 ### 编辑导出节点
 
@@ -104,7 +105,7 @@
 2. 选择数据源（EXTERNAL 类型）。
 3. 选择该数据源下的数据模型（需提前创建，且导出的字段名、数量和顺序需保持一致）。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/b1e9886e-6c1d-46be-a0cf-5cf61db6d9ed.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/be7cf156-5a92-4046-b35e-cbdb5d2cf66f.png)
 
 ## ONE ID
 
@@ -119,7 +120,7 @@ One ID 是针对用户所选字段的每一条数据加密后生成的唯一性 
 
 One ID 旨在解决多系统或多数据来源下，无法判断用户是否为同一用户的问题。合理使用该功能，可通过关键字段查找不同数据源中的相同用户，并且对比信息异同。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/404d113f-c7bd-4787-a75e-b25654fd83f4.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/9ad1be64-6e4b-4687-adca-aa839858536d.png)
 
 1. 创建工作流并创建所需节点。
 
@@ -156,7 +157,7 @@ One ID 的生成结果可在 **数据集成 > 即席查询** 中查询。
 
 选择标签计算节点。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/71d33d4a-7766-49e8-95ad-691cc91050f9.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/5338b8a7-6c49-4320-9c07-81a70af51f68.png)
 
 ### 编辑标签节点
 
@@ -166,38 +167,38 @@ One ID 的生成结果可在 **数据集成 > 即席查询** 中查询。
 
 3. 点击 **确定** 保存配置。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/01d0af00-594b-42b6-8dd8-a2e6341019c0.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/2a1edacb-ae28-4e0d-87ea-1d8e2d77c9c7.png)
 
 ## 数据注销
 
 若您不希望系统保留数据，可通过数据注销清除留存于系统内部的数据。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/4e95fb16-3e40-474a-af3f-2ab5d24f9368.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/2c9f726d-ca13-4e3b-997e-1bac65987377.png)
 
 ## Python 执行
 
 您可通过 Python 进行机器学习，并通过日志查看运行结果。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/07929184-88bf-4181-b6c2-945ac9429aaf.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/953aa8f5-00cd-41a9-b970-5f6c8b35e8a7.png)
 
 ## 群组计算
 
 您可在标签计算的基础上，通过群组计算划分人群。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/5b0fcbf1-97ed-4669-b1f3-184940dfca39.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/205657aa-3312-4181-a10d-e67647d70521.png)
 
 ## 工作流明细
 
 您可进入 **数据集成 > 工作流管理** 查看工作流明细。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/24/73269ce5-2b22-4926-8713-2e1efe32a0c9.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/8b8217f4-bfcd-47a0-bd8b-96fd2b2fe183.png)
 
 ## 工作流导入导出
 
 如需导出工作流，勾选工作流目录或工作流后，点击 **批量导出**。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/057fdd8d-a0ed-4ce1-a777-80e5366058a7.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/aec0e5ce-bb8d-4ab3-9c80-ad2dbe802698.png)
 
 如需导入工作流，点击 **批量导入 > 上传** 后，在本地选择后缀为 .workflow 的文件即可。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/c8dd11b0-0520-485f-bcca-80d66ab49289.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/af42a997-6cb7-4dfd-ac62-bf67dbaab80e.png)

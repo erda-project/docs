@@ -8,4 +8,4 @@ Used to upload and manage algorithm models.
 
 3. The calculation result table can provide services in the form of API, and it can also be configured in the workflow. For details, see [Workflow Management](workflow.md).
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/17/b79f22a9-87f7-47ad-9e19-3eb8bafe9849.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/51d63280-b284-41d7-981b-4e929e052694.png)

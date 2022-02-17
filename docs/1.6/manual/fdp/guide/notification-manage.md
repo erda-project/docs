@@ -4,7 +4,7 @@
 
 进入 **数据集成 > 任务运维 > 通知管理**，点击 **新增通知** 填写信息。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/30/8b8a3d87-415d-48f4-83f6-a91b4d93232d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/d24bdd46-4682-4161-b4a5-6f8ad935ab32.png)
 
 * **通知项**：工作流运行失败，工作流开始运行，工作流运行成功。
 
@@ -14,4 +14,4 @@
 
 已发出的通知可在 **数据集成 > 任务运维 > 通知明细** 中查看。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/30/298622ed-51b8-4f23-92ce-75d0a52386af.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/b54aa24b-6f77-4d0e-bc8c-bfcd41a25ed0.png)

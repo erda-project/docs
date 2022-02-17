@@ -8,6 +8,8 @@
 
 2. 完成基础信息填写（包括 API 名称、路径、请求方式等）、参数配置（API 数据源、数据模型、字段等）以及相关值配置。
 
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/16/9ae7c17a-8737-4a5f-a586-f2aa99be09aa.png)
+
    <table>
    	<tr>
    	    <th>参数</th>
@@ -82,16 +84,19 @@
 
 7. 完成创建后，可在 API 管理页面进行发布、编辑等操作。
 
-
-![](https://intranetproxy.alipay.com/skylark/lark/0/2021/gif/329178/1629787666535-51ec567a-f6b2-4aeb-9323-ecf9cf0f365d.gif)
-
 ## 调用方管理
 
 1. 进入 **数据服务 > 调用方管理**，点击 **新增调用方**。
+
 2. 输入调用方名称，点击 **确定**。
+
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/16/f0b74ae2-6511-4832-8757-02e5961cd3d3.png)
+
 3. 完成创建后，可在调用方管理页面进行授权、编辑等操作。
+
 4. 点击 **授权**，勾选需授权的 API，点击 **确认**，或在调用方详情中点击 **添加**，进行 API 授权。
+
 5. 通过授权 AccessKey 和 SecretKey 控制 API 的访问权限。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2021/gif/329178/1629787701216-06093c39-cab2-4398-b901-5af802b0e163.gif)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/16/cf1a04af-9e2c-4e43-84ef-5dc28c9195c8.png)
 

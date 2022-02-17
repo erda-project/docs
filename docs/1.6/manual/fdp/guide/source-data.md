@@ -21,17 +21,19 @@
    * **数据模型标签**：为数据模型配置标签，用于分类数据模型。
    * **描述**：选填，对当前数据模型进行业务描述。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/9e85f508-8605-4092-b9ce-9bf6bf056d22.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/8db7ba9e-4a64-4c39-bd5a-8c257f4b6797.png)
 
 完成数据模型创建后，源模型管理页面将展示该数据模型。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/740eee3f-bb6b-4360-acd7-3a4168f0bd99.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/992b4e21-90d0-4a2a-a9ec-da03e54d5258.png)
 
 2. 点击已创建的数据模型，编辑字段（仅可编辑非 MySQL 类型数据，MySQL 类型的数据字段可通过数据源探知进行同步）。平台支持两种编辑模式：自定义模式和 SQL 编译模式。
 
    * **自定义模式**
 
-     选择 **自定义模式**，点击 **新增字段** 后配置字段，点击 **确定** 保存配置。![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/3642f9e2-5f73-44de-933f-6d1e56522c9b.png)
+     选择 **自定义模式**，点击 **新增字段** 后配置字段，点击 **确定** 保存配置。
+
+     ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/91bd03f8-a120-4dc6-8cd3-4ac1d9144a48.png)
 
      如需添加索引，点击下方 **新增索引** 进行配置。
 
@@ -40,7 +42,7 @@
      SQL 模式中可定义源数据模型表结构。
 
      选择 **SQL 模式**，在编辑框中输入语句后点击 **执行**。若执行结果为成功则表示创建成功，若失败可通过日志查看 SQL 报错信息进行错误排查。示例如下：
-
+   
      ```
      create table if not exists member (
      ID id ,
@@ -57,7 +59,7 @@
 
 批量打标用于对选择的数据模型批量添加数据模型标签。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/21/b206b15b-5a11-4d64-ac90-08bdeda55195.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/84cd724e-72df-423a-9db9-49e947e5b019.png)
 
 ## 查询数据模型
 
@@ -65,7 +67,7 @@
 
 2. 填写数据源名称、数据模型名称、数据模型标签及创建时间等搜索条件进行查询。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/991488ca-41ae-4ec5-8669-ed34789b455d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/41bf95e4-a4c1-4ad9-8c06-e77863bea9e3.png)
 
 ## 即席查询
 
@@ -73,22 +75,22 @@
 
 进入 **数据集成 > 即席查询**，选择模型类型和模型名称，点击复制查询语句后再点击 **执行** 进行查询。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/c502c385-ba88-4242-a468-e3557a31db60.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/07248140-8308-4df9-8237-a5c38b07a0b5.png)
 
 若查询的模型非本人创建，将出现无权限的提示，如下图所示：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/cbf1c3a3-c61f-4c1b-85b5-623e79f6c103.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/722b54d4-f540-4cf1-a1e7-59d7194899ec.png)
 
 如需申请权限，请进入 **数据治理 > 工作流表**，输入需申请的模型名称，点击图标申请授权。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/97caba8b-17a3-46ae-a709-4cca85ab142f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/8a81ecfb-fdbd-4c0d-95d5-e1e5e430bbc6.png)
 
 提交的申请可在 **数据权限 > 我发起的** 页面查看。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/e532a58d-5883-40af-b630-bc802b463115.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/2795d51c-4fae-40dd-af3d-eec03ac9c02c.png)
 
 ## 配置字段
 
 您可对数据模型中的字段进行脱敏或加密设置。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/67c81a6d-97be-4241-a0c3-0483d16a504f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/15/17addd2f-9041-400b-bb50-c74f37f81964.png)
