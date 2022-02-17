@@ -2,29 +2,42 @@
 
 集群总览相当于飞机的总控台，您可通过该界面查看组织中集群、机器的运行状况，也可对机器设置标签或执行下线。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/4741baa2-e841-4f8f-b586-a94574dbb489.png)
+![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/dad30a66-7a7b-48d3-b73f-4942c4c12e8a.png)
 
 * **分组**
 
   默认情况下，机器将按照集群维度进行分组，您也可以自行选择以内存或 CPU 核数分组。
 
-  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/0ad4d05b-be67-42ea-b91b-c5a493ab0c3b.png)
+  ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/c90a9a2b-d4ef-4ee5-890e-4607102b0516.png)
 
 * **过滤**
 
   平台提供多种过滤条件，便于您快速找到目标机器。在 **过滤** 中选择对应条件或直接输入文本信息，即可实现搜索。
 
-  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/7d4ee126-f505-4d4c-883e-51cbfe061c24.png)
+  ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/0fcad82b-5b75-4f35-9f86-e8e21ebab499.png)
 
 * **着色**
 
   平台支持根据不同条件对机器进行着色。例如，若您希望一览所有机器的系统负载情况，可在 **着色** 中选择 **系统负载**。
 
-  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/ad20cf9e-3aa0-4db6-ac7e-3fdf830fce98.png)
+  ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/d319869e-f691-4f5c-af5c-688b683f923e.png)
+
+## 集群状态
+
+集群概览提供集群维度下的运行状况总览。
+
+![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/5a8bed64-453e-4336-aeab-e504783d0d73.png)
+
+- **集群中间件状态**：Erda 使用的相关中间件状态，若无则代表中间件无异常。
+- **集群组件状态**：Erda 自身组件的状态。
+- **Kubernetes 状态**：Kubernetes 相关组件的状态，若无则代表组件无异常。
+- **集群节点状态**：物理机节点的状态。
+
+## 机器状态
 
 您可以在此查看所有机器的各项信息。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/e046146b-6484-46f2-a20a-578876982414.png)
+![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/9f6150b9-8764-4682-ad92-f79b37354cad.png)
 
 * **机器列表**：展示各机器的基本信息。
   * IP：当前机器 IP，点击进入机器概览界面。
@@ -37,10 +50,13 @@
   * 操作：可对机器设置标签或执行下线。
 
 * **机器告警**：展示所有机器的告警情况。
+* **资源统计**：统计所有机器的资源状况。
+* **服务列表**：展示当前所有机器上运行的服务。
+* **任务列表**：展示当前所有机器上运行的任务。
 
 您也可以点击机器 IP，查看单个机器的具体信息。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/41d358a3-43cc-45ff-bf0e-f52f073d070f.png)
+![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/aef17ef8-f32d-4662-8ee8-e7030566341d.png)
 
 * **机器概览**：以多图表形式展示特定时间段内机器的运行状况。
   * CPU 使用率：CPU 使用率走势图。

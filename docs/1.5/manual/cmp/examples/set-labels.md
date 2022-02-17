@@ -1,6 +1,6 @@
 # 为节点设置调度标签
 
-进入 **多云管理平台 > 容器资源 > 节点**，点击列表 **节点** 栏中的 **+** 图标。
+进入 **多云管理平台 > 资源管理 > 集群管理 > 选择集群 > 节点列表**，点击列表 **节点** 栏中的 **+** 图标。
 
 ## 场景一：按环境划分机器资源池
 
@@ -20,7 +20,7 @@ Erda 将部署环境分为四类：
 
 在多云管理平台中，您可以为节点设置对应的环境标签，从而允许 Erda 将对应环境的部署调度至该节点上。如下图所示，在分类中选择环境标签后，选择对应环境即可。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/07/26e12fe8-9a09-4cd1-ac2e-34976315786a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/09/29/66c7dc3f-ce36-4045-a959-2ecabbef2266.png)
 
 一个节点可同时设置四个环境的标签，以此表明该机器由四个环境的服务部署共用。
 
@@ -37,7 +37,7 @@ Erda 将部署环境分为四类：
 
 您可在多云管理平台中，为节点设置对应的任务标签，以控制流水线任务的调度。如下图所示，在分类中选择任务标签后，再选择具体任务类型即可。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/07/357b7995-a682-41da-a35f-c7f6a17db944.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/09/29/7f54d364-c2b9-4cca-9bd8-4dd4242ec367.png)
 
 ::: tip 提示
 
