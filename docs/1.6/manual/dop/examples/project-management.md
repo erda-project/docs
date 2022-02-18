@@ -15,19 +15,19 @@
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/05/a235ef6c-c1b2-40ca-a500-dfb55b02c81c.png)
 
 ## 需求设计
-进入 **Devops 平台 > 我的项目 > 选择项目 > 项目协同**，新建为期一周、名为“迭代-1.0”的迭代。后续创建的需求、缺陷和任务都将纳入该迭代中。
+进入 **Devops 平台 > 项目 > 选择项目 > 项目协同**，新建为期一周、名为“迭代-1.0”的迭代。后续创建的需求、缺陷和任务都将纳入该迭代中。
 
 关于迭代、需求、任务、缺陷等更多信息，请参见 [高效协同](../concepts/agile-info.md)。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/4a474094-a373-490e-9eb0-67c62c694643.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/ece93e75-e8e6-4671-89ba-acb0f6b99389.png)
 
 由产品经理新建“用户系统”的需求，纳入“迭代-1.0”，并将需求描述、设计稿等信息补充完整。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/1a637e68-fcf7-46a0-a41c-25c14b082bcd.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/35016b5e-45b5-45ce-aa93-a2e2d89a34bb.png)
 
 完成需求创建后，创建“用户系统需求评审”的任务，并将其关联“用户系统”需求（下文创建的所有相关事项均将关联该需求），随后组织相关开发及测试同学进行线上或线下评审，讨论该需求的合理性、复杂性、工作量等事宜。评审信息可同步在该任务的描述或备注中，便于后续查看。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/b84d959a-8029-4f9e-9928-fb1acd7bcac2.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/e5dd2f5e-a44e-4a6a-8bd2-5bb79e7d1537.png)
 
 ## 开发
 完成需求设计后，将进入开发实现和测试用例设计、评审阶段。
@@ -37,12 +37,12 @@
 
 由测试工程师新建“用户系统测试用例编写”和“用户系统测试用例评审”的任务，指派给相关测试工程师，同时编写测试用例，具体请参见 [测试用例](../best-practices/manual-test.md#测试用例)。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/ffaae1f0-1bae-44e7-9e1c-73f60a3e6e55.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/8c1854e2-b4ac-464d-bf91-087df6e4a143.png)
 
 ### API 设计
-由后端开发工程师进入 **Devops 平台 > 我的应用 > 选择应用 > API 设计**，遵循 API First 原则，通过 [API 设计](../guides/api/api-design.md) 功能定义开发工作中涉及的 API。
+由后端开发工程师进入 **我的应用 > API 设计**，遵循 API First 原则，通过 [API 设计](../guides/api/api-design.md) 功能定义开发工作中涉及的 API。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/24903e4d-edc9-44a3-9ddc-deca00fd2520.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/4a4a6cb3-bc25-4d7b-8bcc-22297edd58ea.png)
 
 ### 开发实现
 前后端开发工程师在完成具体开发工作后，将代码合入主干分支，通过 CI/CD 将主干分支部署至测试环境。
@@ -62,12 +62,12 @@
 3. 测试通过则标记缺陷状态为已关闭，转回给相关开发工程师。
 4. 直至测试用例通过率为 100%，则标记该测试任务为已完成。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/20ad675a-4232-4af6-b2bd-e6c59be4957f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/d3948eec-fccc-4913-9ef3-eb9900ee3683.png)
 
 ### 缺陷跟踪
 在 **缺陷** 页面将过滤条件设置为“迭代-1.0”，即可查看当前迭代所有缺陷的状态及相关信息。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/af54a9ea-cd3a-4f08-af6e-f17bee8fb2c0.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/99f1ee91-ab85-4809-84a4-6ed918a35bf2.png)
 
 开发工程师将按照如下流程对名下缺陷进行流转。当缺陷标记为已解决转给测试工程师时，可在缺陷单中关联修复该问题的 MR，便于后续追踪。
 
@@ -78,20 +78,20 @@
 
 若线上新版本出现严重问题，可在平台中一键回滚至之前版本。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/a10d16bb-046b-48b4-8250-3a1cb1b73dfb.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/62f60d47-a0d0-468a-b2db-b1c31fca1444.png)
 
 ## 简单监控
-应用上线后，可进入 **Devops 平台 > 我的应用 > 选择应用 > 部署中心 > 服务插件 > 应用监控**，通过平台的应用监控功能查看新版本是否正常工作，具体请参见 [全局拓扑](../../msp/guides/apm/topology.md)。
+应用上线后，可进入 **Devops 平台 > 应用中心 > 环境部署 > 服务插件 > 应用监控**，通过平台的应用监控功能查看新版本是否正常工作，具体请参见 [全局拓扑](../../msp/guides/apm/topology.md)。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/5675c9f0-ca3c-49cf-886c-35867feb019a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/3a59904a-edb3-4823-b5ff-f7c686bcc742.png)
 
 
 ## 迭代质量
-项目经理可进入 **Devops 平台 > 我的项目 > 选择项目 > 项目大盘**，查看缺陷分布情况、修复进度、修复工作量等信息。
+项目经理可进入 **Devops 平台 > 项目 > 选择项目 > 效能度量**，查看缺陷分布情况、趋势等信息。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/36a80c29-0f88-4c2c-9a4c-362575c8d355.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/c9540d55-0c39-4da3-b433-c1714a82ce90.png)
 
 也可在 **项目协同 > 迭代** 页面查看迭代整体进度，或通过不同的看板查看当前迭代事项的具体完成情况，便于及时调整工作安排以保证该迭代的交付时间和质量。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/ed0d9b19-8211-40c6-b6b6-75fab2ae8744.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/b50f292f-1833-4d25-95d9-294963b78a0d.png)
 

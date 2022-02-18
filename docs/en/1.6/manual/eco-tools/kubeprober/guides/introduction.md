@@ -21,10 +21,6 @@ Different from the monitoring system, Kubeprober verifies that whether the clust
 * Check whether the cloud resource expires.
 * ...
 
-## Demo
-
-![](https://static.erda.cloud/images/kc-cn.gif)
-
 ## Concepts
 
 ### Cluster

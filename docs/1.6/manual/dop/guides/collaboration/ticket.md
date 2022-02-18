@@ -4,7 +4,7 @@
 
 进入 **DevOps 平台 > 项目 > 工单**。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/9d47320e-4706-4aa5-b474-25329e103eca.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/acdd1fcc-0662-448b-90b2-bdffab8f42cb.png)
 
 点击右上角 **新建工单**，根据界面提示输入工单名称、详情、处理人、优先级、复杂度、截止日期、标签以及自定义字段等信息。
 

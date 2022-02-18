@@ -76,7 +76,7 @@ module.exports = [
             title: ' O&M Alarms',
             collapsable: true,
             children: [
-              // 'cmp/guide/alert/dashboard',
+              'cmp/guide/alert/dashboard',
               'cmp/guide/alert/report',
               'cmp/guide/alert/alarm-statistics',
               'cmp/guide/alert/alarm-strategy',
@@ -96,7 +96,7 @@ module.exports = [
         title: 'Examples',
         collapsable: true,
         children: [
-          // ['dop/examples/project-management', '业务项目管理'],
+          'dop/examples/project-management',
           'dop/examples/deploy/deploy-from-git',
           'dop/examples/deploy/deploy-from-image',
           'dop/examples/deploy/deploy-from-go-build',
@@ -137,10 +137,9 @@ module.exports = [
             title: 'Collaboration',
             collapsable: true,
             children: [
-              'dop/guides/collaboration/milestone',
               'dop/guides/collaboration/backlog-and-iteration',
               'dop/guides/collaboration/issue',
-              // 'dop/guides/collaboration/issue-requirement-and-task',
+              'dop/guides/collaboration/issue-requirement-and-task',
               'dop/guides/collaboration/issue-bug',
               // 'dop/guides/collaboration/issue-dashboard',
               'dop/guides/collaboration/issue-customize-and-workflow',

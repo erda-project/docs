@@ -2,9 +2,9 @@
 
 缺陷是测试工程师在执行测试用例时发现的系统问题。
 
-进入 **DevOps 平台 > 我的项目 > 项目协同 > 缺陷**。
+进入 **DevOps 平台 > 项目 > 项目协同 > 缺陷**。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/cd649d8f-4870-4618-9065-932a5d2fdae2.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/c6caa023-a947-457e-8e92-191ccd6aef08.png)
 
 1. 由测试工程师提交缺陷并指派给开发工程师。
 2. 开发工程师进行重复提交、已解决、不修复的状态变更，备注 PR 链接、问题原因和解决方案，将事项转回测试工程师。
@@ -24,7 +24,7 @@
 - 将需求或任务事项转为缺陷。
 - 批量导入。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/92b2912e-3a52-4c4a-ab45-0fde27262fde.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/0b4e0115-1449-46d8-abc5-e402ee4d618e.png)
 
 具体内容如下：
 * 缺陷标题、内容、添加备注、活动日志

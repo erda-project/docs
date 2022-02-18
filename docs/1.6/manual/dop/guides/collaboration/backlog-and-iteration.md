@@ -1,26 +1,26 @@
-# 待处理&迭代
+# 待规划&迭代
 
-## 待处理
+## 待规划
 
-进入 **DevOps 平台 > 我的项目 > 项目协同 > 待处理**，您可以在此对待处理事项进行管理。
+进入 **DevOps 平台 > 项目 > 项目协同 > 待规划**，您可以在此对待规划事项进行管理。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/e8b5e1e0-e84a-4407-9a81-0964c45fe383.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/a294c030-5979-4902-94c3-b8fb789ceb80.png)
 
 您可以通过鼠标拖拽，将左侧的待处理事项拖拽至右侧的对应迭代中。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/a2c5183b-7691-4f16-9bd5-aaf2e8e180e5.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/c9597b59-976c-4993-9a36-c81e2ce33bd4.png)
 
 点击右上角导出按钮即可导出 Excel 列表。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/a8395300-20b5-4aec-a429-451707c54e15.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/a1b14088-648d-44bf-8b3b-4d0cf04209b3.png)
 
 ## 迭代
 
-进入 **DevOps 平台 > 我的项目 > 项目协同 > 迭代**，您可以在此管理迭代，包括新建和归档迭代。
+进入 **DevOps 平台 > 项目 > 项目协同 > 迭代**，您可以在此管理迭代，包括新建和归档迭代。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/151ae9f2-d6b9-4163-b104-567bfee89f93.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/5c12c848-0d73-44e6-8919-ea1a0992fb8b.png)
 
 点击对应迭代名称，可查看该迭代下的全部事项。关于事项更多信息，请参见 [事项](issue.md)。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/1c46aff4-7b7e-46dc-bf38-176481cf2f03.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/aa493c08-272d-4f25-9c29-43ced5350f0a.png)
 
