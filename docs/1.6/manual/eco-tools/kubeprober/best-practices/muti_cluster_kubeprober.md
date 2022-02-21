@@ -2,6 +2,9 @@
 
 Kubeprober 支持多集群管理，采用 Master/Agent 架构，选择一个集群部署 probe-master， 其余集群部署 Agent 组件。
 
+* 部署前请先克隆 [Kubeprober](https://github.com/erda-project/kubeprober) 的代码仓库。
+* 配置文件位于代码仓库的 deployment 目录下，请根据下文描述进行修改。
+
 ## 安装 Master
 Master 端仅有一个 probe-master 组件，其依赖于 Kubernetes 的 Webhook 进行资源的前置校验工作。使用 cert-manager 服务进行 Webhook 证书的自动签发前，需先部署 cert-manager 服务，待 cert-manager 的 Pod 全部成功启动后再安装后续组件。
 
