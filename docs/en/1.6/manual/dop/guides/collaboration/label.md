@@ -10,7 +10,7 @@ Go to **DevOps Platform > Projects > Settings > Label Setting**.
 * Click a label to edit its name or color.
 * Click **x ** on the label to delete it.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/a4d76e2c-dfa2-446e-ad9e-81ca365f7b19.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/6e7771e7-986e-416d-b0d8-2206bb5144e8.png)
 
 ## Label Use
 

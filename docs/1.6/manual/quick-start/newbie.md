@@ -111,11 +111,11 @@ Erda 提供多种快速安装的方式：
 
 3. 团队领导（TL）组织团队进行架构设计和任务拆解，拆解的任务即需求的关联事项，可通过需求跟踪进展。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/7da582bd-b960-42b2-bfde-901b4d3f435e.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/aab7b787-cb1b-45b8-9761-23d42d9da96b.png)
 
    任务、缺陷中的 **关联合并请求** 能够将研发和协同更紧密地结合起来，具体请参见 [事项关联](../dop/guides/collaboration/issue.html#事项关联)。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/97476e7a-0824-41a1-9e41-2d6accc560d3.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/7f0699c2-9939-4515-8b00-8bb46f2bc90f.png)
 
    项目管理者还可以通过效能度量分析协同的效率和瓶颈。
 
@@ -134,9 +134,9 @@ Erda 提供多种快速安装的方式：
 
 针对该设计，您需要完成以下操作：
 
-1. 进入 **DevOps 平台 > 集成部署 > 应用 > 新建应用**， 创建两个应用。关于应用的更多信息，请参见 [应用管理](../dop/guides/deploy/management.html)。
+1. 进入 **DevOps 平台 > 应用中心 > 应用 > 新建应用**， 创建两个应用。关于应用的更多信息，请参见 [应用管理](../dop/guides/deploy/management.html)。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/c522d0a1-81b0-4a23-972e-f5692244d108.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/62d6bedc-727f-46f2-a5a5-2a29965d1194.png)
 
 2. 完成代码推送后，创建 pipeline.yml。pipeline.yml 是用于描述 CI/CD 自动化过程的文件，具体请参见 [pipeline.yml](../dop/guides/reference/pipeline.html)。
 
@@ -173,11 +173,11 @@ Erda 提供多种快速安装的方式：
      git push
      ```
 
-     ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/d444cb1b-437e-49f6-8e29-c54471ce4c1b.png)
+     ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/42abaafd-01d5-40bc-a6e1-3cfc6996fc0c.png)
 
      您也可以通过 UI 界面直接操作，省去本地推送步骤。
 
-     ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/86c2f2dc-3d15-408a-9cf0-bf020a7f91e3.png)
+     ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/f949c3e1-fc03-4957-a6bb-5ba1e30c2055.png)
 
    * 完成 CD 部分：
 

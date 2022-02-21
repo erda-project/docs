@@ -34,7 +34,7 @@ echo-web 和 echo-service 通过 Erda 的微服务组件注册中心实现服务
 
 ## API 设计
 
-进入 **echo-web应用 > API 设计 > 新建文档**，选择分支 feature/api，名称为 echo-web。
+进入 **echo-web 应用 > API > 新建文档**，选择分支 feature/api，名称为 echo-web。
 
 ::: tip 提示
 echo-web 为 Service 名称，与 erda.yml 中的服务名称保持一致。
@@ -81,7 +81,7 @@ ContentResponse: 参数名称 “ContentResponse”, 类型 “Object”, 其参
 
   点击 **发布**，填写 API 名称为 Echo 应用 API，API ID 为 echo-web，发布版本为 1.0.0。
 
-  ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/b870b6db-49e0-4141-b287-ffd5682776a4.png)
+  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/31c3a8a1-c407-4274-8e17-bf8ed098c4e0.png)
 
 * echo service 应用 API
 
@@ -114,7 +114,7 @@ ContentResponse: 参数名称 “ContentResponse”, 类型 “Object”, 其参
 
   进入 **DevOps 平台 > API 管理 > API 集市** 查看、管理 API。
 
-  ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/37cbf61d-6207-4a39-a83c-43e3e2c4fb5c.png)
+  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/1ecc8874-4a74-4623-9ed8-0d722c83a85b.png)
 
   ::: tip 提示
 
@@ -312,7 +312,7 @@ pipeline.yml 中用于替换 JAR 包的名称需与 echo-service 应用 pom.xml 
 
 在代码仓库添加 erda.yml 文件并进行编辑，新增节点后按照图示填写配置：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/4ce0f4cd-80c7-4918-8f55-b9b202c48aed.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/dcf954ee-06ea-409c-9102-2ce06b606a78.png)
 
 ::: tip 提示
 
@@ -323,7 +323,7 @@ pipeline.yml 中用于替换 JAR 包的名称需与 echo-service 应用 pom.xml 
 
 完成应用开发后，可通过执行流水线任务实现应用的构建发布。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/735c99de-de61-4b6c-a75b-58913ccbb341.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/5852c35c-4637-4fc0-83e8-259bed8757ba.png)
 
 ### 服务注册与发现
 
@@ -513,15 +513,15 @@ class Content {
 
 编辑 echo-web 和 echo-service 两个应用的 erda.yml，增加 Addon 注册中心。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/9df5f745-1823-4efb-b41a-72c74a11e03f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/4f2ae201-e9e1-40ce-88a2-f486328c5726.png)
 
-完成以上代码后，再次执行 echo-web 和 echo-service 的流水线，随后即可在 **部署中心** 看到 **注册中心**。
+完成以上代码后，再次执行 echo-web 和 echo-service 的流水线，随后即可在 **环境部署** 看到 **注册中心**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/25b11751-5cda-449b-90c9-e131e2352908.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/32165e49-f12a-4ca7-9064-91e89c5f9fab.png)
 
-点击 **注册中心**，或进入 **微服务治理平台 > 项目列表 > bestpractice 开发**，查看 **HTTP 协议**。
+点击 **注册中心**，或进入 **微服务治理平台 > 服务治理 > 注册中心**，查看 **HTTP 协议**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/5150d487-23cd-4542-bbc7-2b34f81ef9c5.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/5bad536b-f9ff-44da-a9f7-b0181f649183.png)
 
 echo-service 和 echo-web 已分别完成服务的注册和发现。
 
@@ -534,7 +534,7 @@ echo-service 和 echo-web 已分别完成服务的注册和发现。
 * **关联关系**：选择项目名称为 bestpractice，应用名称为 echo-web。
 * **版本管理**：选择服务名称为 echo-web，部署分支未 feature/echo-web，关联实例为 echo-web-xxx.svc.cluster.local:8080。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/a90828cf-21b3-4b95-a5cc-f55d8d8390dc.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/6b8e97f3-53f6-40a8-ac88-9b748c72901e.png)
 
 ::: tip 提示
 
@@ -547,7 +547,7 @@ echo-service 和 echo-web 已分别完成服务的注册和发现。
 
 进入 **DevOps 平台 > API 管理 > 访问管理**，创建管理条目。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/abd158b3-80da-4722-acde-ed230888cf74.png)
+<img src="http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/4e31e380-a2a4-4315-8ace-bf0da87b1e02.png" style="zoom:50%;" />
 
 ::: tip 提示
 
@@ -562,7 +562,7 @@ echo-service 和 echo-web 已分别完成服务的注册和发现。
 
 完成审批后进入 **API 集市 > Echo 应用 API > 认证**，输入 ClientID 和 ClientSecret 后可选择任意 API 并点击测试。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/bb898f8f-f9e6-4328-a171-f0ced79dae30.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/9ebf049e-ebe2-4622-8dad-713464b7b103.png)
 
 ### 配置中心使用
 
@@ -610,7 +610,7 @@ public class ErrorController {
 
 在 erda.yml 的 Addon 部分增加配置中心：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/ef7d7eea-0545-406c-879b-521e48021d08.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/423c7c5f-cb5f-4c32-ab00-10fe1fb3adce.png)
 
 #### echo web 增加 API
 
@@ -652,9 +652,9 @@ class EchoError {
 
 再次执行两个应用的工作流完成更新部署。
 
-在 echo-service 应用的 **部署中心** 点击 **配置中心**，或进入 **微服务治理平台 > 项目列表 > bestpractice 开发 > 配置中心**，设置 echo.slowtime 的值：
+在 echo-service 应用的 **环境部署** 点击 **配置中心**，或进入 **微服务治理平台 > 服务治理 > 配置中心**，设置 echo.slowtime 的值：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/4ddefbfc-13cd-4a6c-ac2f-3a28ea6458cc.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/d5724b37-e65c-40f6-826e-d5e91bef9098.png)
 
 可逐步从小到大进行设置（例如 500、1000、1500），每次配置将被热加载实时生效，随后可在 API 测试界面上调用 /api/error API 进行访问。
 
@@ -675,23 +675,15 @@ class EchoError {
 
 ### 平台治理
 
-进入 **微服务治理平台 > 项目列表 > bestpractice > 开发 > 全局拓扑**，查看项目的微服务全景图，其中异常情况已用红色标明。
+进入 **微服务治理平台 > 服务总览 > 拓扑**，查看项目的微服务全景图，其中异常情况已用红色标明。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/591beb75-3b1e-44fb-ac13-15687fb09488.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/0bdf66a8-7257-48ed-8a1b-72f92a1e256a.png)
 
-#### 事务分析
+进入 **监控中心 > 服务监控 > 链路查询**，选择 **链路状态** 为 **错误**，可查看异常链路的信息。
 
-进入 **应用监控 > 服务列表 > echo web > 事务分析**，点击 **慢事务追踪** 中的 **/api/error**，可查看异常链路的信息。
-
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/8fe91b0c-9d99-4cca-853f-cc03189c38be.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/cb22a8a9-34b0-4cfb-80dc-ec888ac14cdd.png)
 
 由上图可以看出，echo-service 的 /echo/error 接口耗时 500+ 毫秒导致慢请求。
-
-#### 异常分析
-
-进入 **应用监控 > 服务列表 > echo service > 异常分析**，可查看程序异常的信息。
-
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/74df4ea4-2dff-44ad-919a-b1b500f37d9d.png)
 
 更多相关信息，请参见 [服务分析](../../msp/guides/apm/service-analysis.html)。
 

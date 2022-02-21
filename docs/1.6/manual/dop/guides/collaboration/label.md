@@ -13,7 +13,7 @@
 * 点击标签上的 **x** 可删除该标签。
 
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/a61704f5-5800-4f88-bddf-4541a2adbc18.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/c8edad3c-5e4a-4d9e-8216-0fdd582ac2ef.png)
 
 ## 标签使用
 
