@@ -4,25 +4,25 @@
 
 ## 新建大盘
 
-进入 **多云管理平台 > 自定义大盘 > 新建仪表盘**。
+进入 **多云管理平台 > 自定义大盘 > 新建自定义大盘**。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/0ca56ee3-b687-4edd-9502-a92c5b691826.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/18c3f6e0-8e89-42da-99d8-cfc43a0d762b.png)
 
 点击编辑按钮进入编辑模式。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/74691e29-a5ad-4ff7-869f-0f0f00afad91.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/0d237b3c-622b-4eca-8f71-1ebdff452c39.png)
 
 ## 配置大盘
 
 此处以配置某应用的 CPU 使用率折线图为例，填写大盘标题（必填）和大盘描述如下：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/61105d8f-da1e-450c-9f7b-3d4bba0e101a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/9e8a4898-ed58-44d6-9b61-6c75625b55b1.png)
 
 ### 新建图表
 
 点击 **+** 新增图表，进入配置图表界面。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/13/94c11ab0-8858-4c46-ac98-50211bb3d51d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/028f06fd-f308-4c28-a5d3-4b90b96fbb38.png)
 
 * **图表类型**
   目前大盘支持折线图、面积图等八种图表类型。此处以折线图为例。
@@ -47,7 +47,7 @@
 
 完成配置后，得到图表如下：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/257fc958-57be-4dcf-affa-ba0c89434107.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/c0b01d59-67d3-4e84-941d-dccd3eb2e16d.png)
 
 ### 调整图表
 
@@ -57,12 +57,12 @@
 
 点击右上角保存图表和大图。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/dda55ba1-7a65-41dc-a9e0-96a15f40f73b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/769e7197-29f6-4c75-8f95-774c675ddf85.png)
 
 ## 查看大盘
 
-进入 **多云管理平台 > 运维大盘 > 新建运维大盘**，即可查看已创建的大盘。
+进入 **多云管理平台 > 运维大盘**，即可查看已创建的大盘。
 
 您可以调整时间范围，查看任意时间段的数据。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/21/ddc92183-dfb9-4348-be93-fcc71d88ef7e.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/2710cc21-e95d-45cc-83d1-0797ee1203e3.png)

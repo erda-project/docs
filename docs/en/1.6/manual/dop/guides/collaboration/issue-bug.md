@@ -2,9 +2,9 @@
 
 Bugs are system problems discovered by test engineers when running test cases.
 
-Go to **DevOps Platform > Joined Projects > Project Collaboration > Bug**.
+Go to **DevOps Platform > Projects > Project Collaboration > Bug**.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/3bc8f8a8-b8fa-4bac-9046-5c4a87db8c04.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/cef370ab-7762-4eb3-a2ac-210cf6b8bf7a.png)
 
 1. The test engineer reports bugs and assigns to developers.
 2. The developer changes bug status to repeated, resolved or wontfix, adds remarks of PR link, cause and solution, then transfers it back to the test engineer.
@@ -24,7 +24,7 @@ A bug can be added in the following ways:
 - Convert a requirement or task into a bug.
 - Import in batches.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/18/dd8066ea-2475-4530-a057-1197d9800d9b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/3710fbdd-d9de-43b0-8d27-937f2302353a.png)
 
 The details are as follows:
 * Title, content, remark and activity log

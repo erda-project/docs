@@ -137,7 +137,6 @@ module.exports = [
             title: '协同',
             collapsable: true,
             children: [
-              'dop/guides/collaboration/milestone',
               'dop/guides/collaboration/backlog-and-iteration',
               'dop/guides/collaboration/issue',
               'dop/guides/collaboration/issue-requirement-and-task',

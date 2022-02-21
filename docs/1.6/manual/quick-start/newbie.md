@@ -97,29 +97,29 @@ Erda 提供多种快速安装的方式：
 
 1. 分析和抽象客户需求，进入 **DevOps 平台 > 项目协同 > 需求 > 新建需求**，将需求录入协同。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/75cc8084-405a-44d5-9ae4-eb04f9d7c6ad.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/16b4f8bc-4bf4-4251-9739-7b19922d43de.png)
 
    通常情况下，产品经理（PD）会将该需求内容补充完整，包括详细的需要描述、验收标准等。
 
-2. 需求最初列于 **待处理** 中，迭代开始前将通过评审确定是否放入 **迭代** 进行开发。
+2. 需求最初列于 **待规划** 中，迭代开始前将通过评审确定是否放入 **迭代** 进行开发。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/c3ccf6ee-d80f-4e6d-98b0-0d8bf49db0c1.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/ae7f004c-9e50-4792-98db-6f6be92c5435.png)
 
    本案例假设该需求已通过评审，纳入 1.0 迭代开发。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/b3cf5a12-3e50-4d07-8043-fdc442fab394.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/2d8d4f3a-785b-476f-a0f8-0265624206b2.png)
 
 3. 团队领导（TL）组织团队进行架构设计和任务拆解，拆解的任务即需求的关联事项，可通过需求跟踪进展。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/9d4ee8db-ad47-4af7-8b4e-d35c8915bc78.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/7da582bd-b960-42b2-bfde-901b4d3f435e.png)
 
    任务、缺陷中的 **关联合并请求** 能够将研发和协同更紧密地结合起来，具体请参见 [事项关联](../dop/guides/collaboration/issue.html#事项关联)。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/f1ae3c1b-4e75-4e18-a1a9-a22102413314.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/97476e7a-0824-41a1-9e41-2d6accc560d3.png)
 
    项目管理者还可以通过效能度量分析协同的效率和瓶颈。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/8c8402eb-571d-4483-9af4-872a32d9566f.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/2474262a-6aab-4814-bdc6-bf2e418c44ab.png)
 
 ### 研发实现
 
@@ -273,15 +273,15 @@ Erda 提供多种快速安装的方式：
 
 1. 进入 **DevOps 平台 > 测试管理 > 自动化测试**，创建场景目录 **文章**。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/0d39436b-6f82-4388-acda-49a1e73b89e4.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/2ff4ea0e-3152-46b0-acac-ba52b90ab2e2.png)
 
 2. 创建单个场景 **文章阅读数**。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/45f593e4-16ad-4601-94a7-5bede1fb7648.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/a5f6c32f-fb62-4d27-b7e9-db06122ae83c.png)
 
 3. 在场景中添加步骤进行场景编排，所添加的每个步骤为具体的接口调用，通过配置接口参数以及断言推进自动化的实现。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/280e00c1-03f6-458a-b4ec-7d5b2fcd1a8a.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/b9b00dcb-5c4a-4011-a526-ba8373ccd587.png)
 
 软件上线后，可通过全链路追踪、日志分析、告警等功能及时发现问题或故障，并辅助定位原因。具体请参见 [微服务治理场景示例](../msp/examples/apm/service-dashboard.html)，本文仅针对主要功能以及使用场景进行简单的阐述和引导。
 
@@ -303,6 +303,8 @@ Erda 提供多种快速安装的方式：
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/10/8e12e03a-75f1-4a4a-ab5d-6e3b8f8ff42e.png)
 
 通过错误分析可快速明确堆栈异常，并向上追溯至错误的来源。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/16/96e3bcef-7a33-4a15-a5a4-a6b24ce36546.png)
 
 每个节点即代表一个微服务，点击节点了解该微服务详情，通过详细分析可进一步查看该微服务的具体数据。
 

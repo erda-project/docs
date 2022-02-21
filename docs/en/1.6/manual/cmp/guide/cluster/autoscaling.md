@@ -11,8 +11,6 @@ You can add machines in the following two ways for insufficient cluster resource
 For Alibaba Cloud Container Service for Kubernetes, please add machines by the following steps:
 1. Scale on Alibaba Cloud: Go to **Alibaba Cloud Container Service for Kubernetes (ACK) > Node Management > Node**, and click **Cluster Scaling**.
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/17/2e05301c-d98d-440a-abe5-134b3cecde73.png)
-
 2. Add machine on Erda: Go to **Cloud Management > Cluster Resource > Clusters > Add Machine**, and add the node scaled by Alibaba Cloud Container Service for Kubernetes (ACK).
 
    Please note the following when adding machines:
@@ -26,8 +24,6 @@ For Alibaba Cloud Container Service for Kubernetes, please add machines by the f
    :::
 
 If you have purchased cloud host ECS, go to **Alibaba Cloud Container Service for Kubernetes (ACK) > Node Management > Node > Add Existing Node** to add ECS.
-
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/17/bdfdb003-bb94-4bed-95f0-5c32fd518bc7.png)
 
 ### Other Clusters
 For other clusters, add machines directly on Erda.

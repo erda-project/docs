@@ -20,11 +20,11 @@
   
 * **示例**
   
-  ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/0efb02a1-a851-4888-ae36-0e1df0f6bb51.png)
+  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/cf4c20bd-ccec-45dc-a1ce-c7d544a84df6.png)
 
-进入 **DevOps 平台 > 我的项目 > 项目协同 > 需求**。
+进入 **DevOps 平台 > 项目 > 项目协同 > 需求**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/7e250b2a-2521-4b6d-8ddf-45aeea41bd97.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/ce6a7025-5caf-4554-9820-1b4ff626247f.png)
 
 1. 由产品经理设计、评审、创建需求，随后指派给开发工程师。
 2. 开发工程师将需求拆解为若干个任务完成，待测试工程师测试、验收过后，将需求状态变更为已完成。
@@ -37,7 +37,7 @@
 - 将任务或缺陷事项转为需求。
 - 批量导入。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/b6a465e4-7df1-451c-902f-efada2bf5330.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/8766555e-f3b8-4f0e-a862-f1d32915ee58.png)
 
 具体内容如下：
 
@@ -54,16 +54,16 @@
 
 开发工程师将需求拆分为若干个功能点，每个功能点对应一个任务。
 
-进入 **DevOps 平台 > 我的项目 > 项目协同 > 任务**。
+进入 **DevOps 平台 > 项目 > 项目协同 > 任务**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/deefa090-c0d0-41f5-baec-89bdc400d529.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/edad5c65-8b17-4888-aae6-72535e71a173.png)
 
 1. 开发工程师将需求拆解为若干个任务。
 2. 完成任务的过程中，测试工程师将创建测试用例。
 3. 测试工程师对任务功能点进行测试。
 4. 验收通过后更改任务状态为已完成。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/2126bfc9-b333-4483-a194-1146ad9448cd.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/e4c14bf5-3f60-4dd7-974f-1ffc67187fd1.png)
 
 * 任务开发过程中，测试工程师将进行测试相关工作的准备。关于测试更多信息，请参见 [功能测试](../qa-and-testing/function-test.md) 和 [自动化测试](../qa-and-testing/auto-test-getting-started.md)。
 * 根据迭代需求和任务看板，进行每日站立会议。单次会议控制在 15 分钟左右，需人人发言。
@@ -71,4 +71,4 @@
 * 任务预计工作量指完成整个任务所需工作量的预估，单位可以是人天、人时，相关单位会自动进行转换，例如 7 人天将自动转换为 1 人周。
   实际工作量根据当天实际情况输入后，系统将自动计算该任务剩余工作量，帮助任务处理者及时判断剩余工作量，便于后续的合理投入和安排。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/5240638e-cd02-4bbd-b25c-bb187e39d291.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/e473a410-0768-49e9-9bee-6d13a85a228c.png)

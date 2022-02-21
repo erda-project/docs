@@ -95,31 +95,31 @@ If you are an individual developer, it is also recommended that you read this ch
 
 For this case, complete the following steps:
 
-1. Analyze and abstract requirements. Go to **DevOps Platform > Joined Projects > Project > Project Collaboration > Requirement > Create Requirement** to add a requirement.
+1. Analyze and abstract requirements. Go to **DevOps Platform > Projects > Project Collaboration > Requirement > New Requirement** to add a requirement.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/35f286fc-975f-41ac-ba72-ae8df0aa0df0.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/9798144e-d58d-4c9d-9a5c-f5f09cacc8dc.png)
 
    Generally, the product manager will complete the requirement information including its detailed description and acceptance criteria, etc.
 
 2. The requirement is listed in **Backlog** initially and will be determined whether to be moved to **Iteration** by a review.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/bbfa6a61-b809-4bad-8c20-0b82c889fa6e.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/cfcea212-e884-4df8-bc5d-171be06f9bc3.png)
 
    Assuming that the requirement has been reviewed and included in the 1.0 iteration.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/e2236f81-11f3-4bed-b883-6959be0efb38.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/9fe62fac-dcc4-4a3d-b9d2-12709bf8ec7f.png)
 
 3. The team leader will split the requirement into multiple tasks, which are related issues to the requirement.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/05dd7fab-9743-41b2-878c-b6a251de012f.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/7d9bde09-be98-4fe9-884d-de2c9c8e5bbd.png)
 
    **Relate to Merge Request** in tasks and bugs connect R&D and collaboration closer. For details, see [Relation](../dop/guides/collaboration/issue.html#Relation).
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/58172383-b139-49d9-abf3-3a82df286abf.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/c94b59b5-8b9f-4b46-a723-2cc66ee122b7.png)
 
    The project manager can see the efficiency and bottlenecks of collaboration by efficiency measure.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/07266b60-0721-4bf1-90ad-774addd1e8ee.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/d43f63bf-ec33-4eb5-8faf-001bc48f1670.png)
 
 ### Development
 
@@ -271,17 +271,17 @@ Assuming that the functions are designed as follows:
 
 For this design, complete the following steps:
 
-1. Go to **DevOps Platform > Test > Automated Testing** and create a scene set named **Article**.
+1. Go to **DevOps Platform > Test Managent > Auto Test** and create a scene set named **Article**.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/b8652d6b-2135-46f7-9def-191e762d3136.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/a238ca94-db09-4421-9f97-2a227ba2792e.png)
 
 2. Create a scene named **Reads**.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/66654e89-ba46-4d42-8188-55f8a672132f.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/8645f928-5191-466e-8da5-2ccc03d30b08.png)
 
 3. Add steps in the scene for orchestration.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/3466e515-cde4-4f10-93e4-95aac5c3b106.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/e858a24d-6351-40cb-8afb-f04b62344507.png)
 
 
 When the software is released online, you can find and locate problems by tracing, log analysis and alarms, etc. For details, see [Examples of Microservice Governance](../msp/examples/apm/service-dashboard.html). This article only introduces the main features and application scenes briefly.
@@ -304,6 +304,8 @@ The global topology can be considered as the entry for daily O&M after the proje
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/11/0fbbb80c-c20d-4484-b5c1-582f217f99b7.png)
 
 You can quickly find the exceptions and trace back to the cause in error analysis.
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/16/61335817-eaa5-4dc9-892c-4c70875a6eee.png)
 
 Each node represents a microservice and click the node for details. 
 
