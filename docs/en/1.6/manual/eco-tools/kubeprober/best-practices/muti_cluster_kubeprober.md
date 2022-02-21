@@ -2,6 +2,9 @@
 
 Kubeprober supports multi-cluster management and adopts the master/agent architecture with one cluster for probe-master deployment and others for agent.
 
+* Before deployment, please clone the code repository of [Kubeprober](https://github.com/erda-project/kubeprober). 
+* Change configurations in the deployment directory described as follow.
+
 ## Install on Master
 The master has only one probe-master component, which relies on the Kubernetes webhook for resource pre-checking. Deploy cert-manager service first and run it for auto issue of webhook certificates, then install other components after all pods of cert-manager are successfully started.
 
