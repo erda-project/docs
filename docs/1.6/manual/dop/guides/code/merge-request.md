@@ -2,13 +2,13 @@
 
 内置代码仓库支持合并请求操作。关于 Git 工作流更多信息，请参见 [Gitflow 设计理念](../../concepts/gitflow.md)。
 
-进入 **DevOps 平台 > 我的应用 > 选择应用 > 代码仓库 > 合并请求**。
+进入 **我的应用 > 选择应用 > 合并请求**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/49bf76fb-408c-4bed-a4f4-048053b4fb66.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/8cf05a41-bc4f-46f7-8ea6-4ef3e82b7337.png)
 
 点击右上角 **新建合并请求** 创建新的合并请求。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/96cb6ae4-1f3d-4cd4-9190-3818101d17fe.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/f6d7f74b-8636-4f44-b107-939747cdc812.png)
 
 在默认分支 `.gitlab/merge_request_templates` 目录下添加模板 md 文件。
 

@@ -14,14 +14,14 @@
 
 测试空间名称建议以项目名称+版本号的方式命名，可通过复制旧版本的测试空间快速创建新版本的测试空间，以复制原有的测试用例。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/8d158793-d90b-4b7a-b483-7ecf259fe5a4.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/829f11e3-a986-4ccc-b12c-7098559e386c.png)
 
 ### 创建场景集
 场景集一般以业务场景为导向，并按照具体模块进行划分。不同的场景集之间可通过拖拽的方式进行编排。
 
 若场景集下的场景均依赖于公共数据，则建议将数据预置的场景作为场景集的第一个场景，将数据清理的场景置于最后，从而降低各场景重复执行数据预置带来的时间成本。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/6d1ded1b-3267-4234-827e-d4763f96a9e0.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/d2c416bc-7240-4fb4-8706-1e439e2809bc.png)
 
 ### 创建单场景
 场景名称的定义需简洁、易懂，便于他人了解场景信息，降低学习成本。以下格式可供参考：

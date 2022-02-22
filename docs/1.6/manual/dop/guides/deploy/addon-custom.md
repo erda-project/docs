@@ -7,13 +7,13 @@
 
 ## 设置入口
 
-进入 **DevOps 平台 > 我的项目 > 项目详情 > 扩展服务**，点击右上角 **添加服务**，其中 **三方服务** 需选择 **Custom**。
+进入 **DevOps 平台 > 项目 > 应用中心 > 环境部署 > Addons**，点击右上角 **添加服务**，其中 **三方服务** 需选择 **Custom**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/24cab9f9-c42d-4645-bb18-56e779593c28.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/13be9e0b-1983-4a7c-90f5-0c210e748bd6.png)
 
-填写业务配置，红框为必填项。
+填写业务配置。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/7ebb4615-c02e-4f03-bd0e-f2c0aec0ea94.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/250afbbf-af0f-4386-bcf9-be4fa174f10a.png)
 
 :::tip 提示
 
