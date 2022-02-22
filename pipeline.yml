@@ -1,19 +1,24 @@
 version: "1.1"
-cron: 0 0 0 * * ?
-cron_compensator:
-  enable: false
-  latest_first: true
-  stop_if_latter_executed: true
+
+on:
+  push:
+    branches:
+      - master
+      - release/*
+    tags:
+      - v*
+
 stages:
   - stage:
       - git-checkout:
-          alias: git-checkout
-          description: 代码仓库克隆
           version: "1.0"
+  - stage:
+      - extract-repo-version:
+          params:
+            git_dir: ${{ dirs.git-checkout }}
   - stage:
       - js-build:
           alias: js-build
-          description: 针对 nodejs 工程的编译打包任务
           version: "1.0"
           params:
             build_cmd:
@@ -28,8 +33,8 @@ stages:
   - stage:
       - release:
           alias: release
-          description: 用于打包完成时，向dicehub 提交完整可部署的dice.yml。用户若没在pipeline.yml里定义该action，CI会自动在pipeline.yml里插入该action
           params:
+            tag_version: ${{ outputs.extract-repo-version.version }}
             dice_yml: ${git-checkout}/dice.yml
             services:
               doc:
@@ -38,9 +43,3 @@ stages:
                   - ${js-build}/dest:/usr/share/nginx/html/
                   - ${js-build}/nginx.conf.template:/etc/nginx/conf.d/
                 image: registry.cn-hangzhou.aliyuncs.com/dice-third-party/terminus-nginx:0.2
-  - stage:
-      - dice:
-          alias: dice
-          description: 用于 Erda 平台部署应用服务
-          params:
-            release_id: ${release:OUTPUT:releaseID}
