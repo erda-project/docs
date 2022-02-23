@@ -46,15 +46,16 @@ services:
 
 :::tip 提示
 
-此处 services 下的 web 关键字仅为示例，web 为 service 名称。
+1. 此处 services 下的 web 关键字仅为示例，web 为 service 名称。
+2. env 存在优先级，请参考 [优先级](./config.html#优先级)
 
 :::
 
-## 应用设置
+## 应用配置
 
-进入 **我的应用 > 应用设置 > 部署中心 > 参数设置**。
+进入 **应用中心 > 配置 > 选择环境/全局 > 选择应用**。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/0ffae8fa-55c0-47d8-87c4-2a3f4541bb13.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/4684a35a-2926-4758-b706-48503ec14186.png)
 
 对于值类型的配置，将在容器内作为环境变量存在，可通过 env 命令查看。
 
