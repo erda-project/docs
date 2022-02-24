@@ -11,11 +11,11 @@
 
 在流水线文件中添加 Sonar Action（任务类型 > 测试管理 > Sonar 代码质量检查）。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/9b851e6c-bce0-41f4-b8d5-02c1bba92bd4.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/3ba92f2b-761d-460f-9f63-b19098d54831.png)
 
 执行流水线后可进入 **DevOps 平台 > 项目 > 应用 > 代码质量** 查看质量报告和问题列表。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/4ee56727-0e1d-445a-b1da-be76111f04ae.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/04bf3ffb-58cd-4861-8d5e-2a5b39c5a22e.png)
 
 * **代码缺陷**：代码中存在的 Bug。
 
@@ -29,8 +29,8 @@
 
 问题列表展示检测出的问题，可根据类型、优先级、名称进行过滤。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/0dd696be-0ebd-4c46-97de-0191d23b9d32.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/c408b1cf-d765-47aa-9822-0d4e9c8ef842.png)
 
 问题详情页提供链接可快速跳转至代码所在文件。您可在该页面评论问题或关联事项。问题解决后可点击 **关闭** 按钮关闭问题。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/fc6ce561-139d-412f-ac67-db3dd7add5d2.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/556506b3-fd7e-41db-80a6-48800d9865fc.png)
