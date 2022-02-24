@@ -194,13 +194,14 @@ module.exports = [
             ]
           },
           {
-            title: 'CI/CD 流水线',
+            title: '流水线',
             collapsable: true,
             children: [
               'dop/guides/cicd-pipeline/pipeline-yml-config',
               'dop/guides/cicd-pipeline/pipeline-yml-graph',
               'dop/guides/cicd-pipeline/pipeline-execution',
               'dop/guides/cicd-pipeline/pipeline-customize-and-extension',
+              'dop/guides/cicd-pipeline/project-pipeline',
             ]
           },
           {
