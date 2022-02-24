@@ -1,6 +1,6 @@
 # 日志查询
 
-完成日志分析部署后，部署在业务集群中的 Filebeat 组件将采集日志并上报至 monitor-collector，最终存储在 Elasticsearch。您可以进入 **微服务平台 > 项目列表 > 选择项目 > 日志分析 > 日志查询** 查看。
+完成日志分析部署后，部署在业务集群中的 Filebeat 组件将采集日志并上报至 monitor-collector，最终存储在 Elasticsearch。您可以进入 **微服务治理平台 > 诊断分析 > 日志分析 > 日志查询** 查看。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/6481081b-a37a-48f2-a4c5-83eb6fdd98d3.png)
 
@@ -94,7 +94,7 @@
 
 日志数据统计柱状图用于展示符合上方查询条件的数据在指定时间段内的分布情况。您可以在此查看数据分布特征，并通过鼠标滑选范围快速更改查询时间区段，从而聚焦关注时间段内的日志情况。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/26/8ad36e8f-607c-44bb-bdba-27db7993dc95.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/be897512-61c4-4259-922b-084c1ffd59d2.png)
 
 ## 标签数据
 

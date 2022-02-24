@@ -10,7 +10,7 @@
 * 按业务结构划分：模块—子模块—功能
 * 按开发团队划分：团队—业务—功能
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/fec999f8-999a-47e9-9871-fa626809d504.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/f1da2f46-c64e-41f9-b138-5bff88015b30.png)
 
 ### 添加测试用例
 
@@ -34,7 +34,7 @@
 
 平台支持直接添加测试用例或导入本地已编写完成的 Excel 和 Xmind 的文件。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/76d6aff8-682d-4452-af1b-01cd06b2f2d1.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/e5207b25-ccd4-46d6-8e4e-bf8a104c8863.png)
 
 ## 测试计划
 
@@ -51,19 +51,19 @@
 - **版本功能测试**
   测试根据版本测试计划进行功能测试，执行过程中若发现用例缺失需及时补充，用例执行失败则创建缺陷跟踪。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/cf36b02f-0bb3-4fa0-ace6-8b40bb38bebe.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/ac1faad6-8a7b-479d-abc6-c982f2fcff4b.png)
 
 ### 执行测试计划
 
 测试计划的负责人和参与人根据测试计划中分配的测试用例执行测试。测试过程中记录用例的执行结果，若用例执行失败或阻塞可选择关联缺陷，便于缺陷解决后迅速定位至具体用例继续执行计划。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/a7c461e6-3475-4039-a2f3-0dfbd64cf700.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/af2fb253-d483-458b-845d-adf35dfdf19c.png)
 
 ## 缺陷管理
 
 测试过程中发现的缺陷可在 **项目协同 > 缺陷** 中进行管理，同时可通过标签管理统计项目中各模块的缺陷数据。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/29085bce-b1ad-4065-9bf3-c9534c3be81e.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/c6caa023-a947-457e-8e92-191ccd6aef08.png)
 
 为缩短缺陷修复的时间，降低缺陷带来的负面影响，建议遵循创建缺陷的规范如下：
 - 缺陷需注明环境、访问链接、账号、测试数据、重现步骤、预期结果、实际结果和截图（即可根据描述快速定位问题）。
@@ -84,4 +84,4 @@
 
 在测试过程中，可通过测试报告跟踪测试进度，查看测试计划中用例执行结果分布及个人用例执行情况，从而识别整体测试风险。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/6fda8b1d-caa5-44dc-8209-137b7fd42887.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/d4db92cc-a83b-423c-bfed-f9f18fa1931f.png)

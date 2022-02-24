@@ -23,26 +23,25 @@
 
 其中，timestamp 字段默认会自动从日志的 timestamp 转换过来，并不需要用户再次从日志中提取，因此，我们仅需要从日志中提取出异常类型的内容作为指标的字段即可。 参考 [日志分析规则](../../guides/log/rules.md) 的指导，我们创建如下图所示分析规则：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/c0de8fc4-9c3f-454a-8c05-d7ce5ac76cde.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/0256c3a3-e9a4-4bec-a7cc-b29bcf8c04d1.png)
 
-- ①：指标名称，命名为 exception，表示转换成的指标就叫做这个命名，中文英文都可以，之后在创建运维大盘和创建告警规则时我们都将需要通过这个名字找到对应的指标
-- ②：日志筛选，我们设置了项目名称和环境两个筛选条件，表示我们只关心 `log-demo` 项目的 `prod` 环境产生的异常日志
-- ③：指标提取表达式，我们设置为 `([^\s]+Exception):`，如下图所示对一条异常日志的示例可以看出，这个表达式可以匹配出异常类型的部分（当然，这个表达式约束条件比较少，可能会匹配到非预期的内容，但这里作为示例，我们不过分追求准确性）
+- 指标名称：命名为 exception，表示转换成的指标就叫做这个命名，中文英文都可以，之后在创建运维大盘和创建告警规则时我们都将需要通过这个名字找到对应的指标
+- 日志筛选：我们设置了项目名称和环境两个筛选条件，表示我们只关心 `log-demo` 项目的 `prod` 环境产生的异常日志
+- 指标提取表达式：我们设置为 `([^\s]+Exception):`，如下图所示对一条异常日志的示例可以看出，这个表达式可以匹配出异常类型的部分（当然，这个表达式约束条件比较少，可能会匹配到非预期的内容，但这里作为示例，我们不过分追求准确性）
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/f98d1d2e-d597-4270-8d09-e95a3a793f77.png)
 
-- ④：我们将提取的指标命名为 `type`
-- ⑤：给指标取个更容易理解的别名 `异常类型`
+- 提取结果：我们将提取的指标命名为 `type`，给指标取个更容易理解的别名 `异常类型`
 
 填好后，点击页面最下面的确定按钮，完成日志分析规则的创建。
 
 ## 创建运维大盘
 
-第二步我们前往 **查询分析 >  仪表盘** 菜单，创建一个大盘，这个大盘只需要包含一个能按照时间纬度分别展示各种类型异常发生的次数的时序图表。
+第二步我们前往 **诊断分析 >  自定义大盘**，创建一个大盘，这个大盘只需要包含一个能按照时间纬度分别展示各种类型异常发生的次数的时序图表。
 
 按如下图所示操作进入大盘图表编辑页面：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/12/9193e45c-0f80-42a9-88dc-7eacd553e08c.gif)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/379a75cc-24b7-4b62-b354-11bc8226babc.png)
 
 然后配置图表：
 
@@ -63,14 +62,14 @@
 
 确认后回到大盘页面，我们可以继续调整图表位置和大小，最后保存大盘，如下图所示：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/12/141124f7-45af-4abb-8183-107b91b6fe9e.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/57a7b8ed-d57d-425d-b275-2adde6594ba4.png)
 
 ## 配置告警
 
 ### 创建通知组
 如果没有可用的通知组，需要先到 **DevOps平台 > 项目 > 项目设置 > 通知管理** 页面创建通知组，如下图所示：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/13/c6e17b18-2156-4836-b6c1-c916f2b44bc9.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/965f3e82-b902-4839-ab1e-10a881154a53.png)
 
 需要说明的是，由于我们的需求是通知到邮箱，因此 `通知到` 这里选择了 `成员` 的方式，你也可以选择其他方式，如 `钉钉地址`。
 
@@ -79,7 +78,7 @@
 
 首先设置触发规则定义部分，如下图所示：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/13/cdeaeba1-d143-4063-bf81-00b68ea5a13f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/d553243c-fe20-474a-a855-bde3dcd480c0.png)
 
 - ①：名称，可以设置为任意能让你容易理解规则含义的标题，这里设置为 `5分钟异常发生超10次`
 - ②：周期，单位是分钟，我们设置为 5
@@ -90,7 +89,7 @@
 
 然后，设置下方的 `消息模版定义` 部分：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/13/cbe24367-c9e5-40c4-8cb1-ad135fbb4c1c.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/47ea6ebf-a737-4d4d-ab0e-926ed54f23d2.png)
 
 - ①：通知方式，根据我们的需求，这里选择邮箱
 - ②：消息标题， `【{{application_name}}项目异常告警】`
@@ -112,15 +111,12 @@
 ### 创建告警策略
 完成自定义告警规则后，我们还需要再创建告警策略：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/13/7e9260e5-9e68-490e-97e2-7c51f1cc5f4c.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/a39fa8f9-86e5-46ee-a287-e0fa648396b1.png)
 
-- ①：告警名称，管理告警策略时方便识别的命名，设置为 `异常次数告警`
-- ②：应用，选择关注的应用，这里设置的示例应用 `log-analytics-demo`
-- ③：告警规则，选择我们刚才创建的告警规则 `5分钟异常发生超10次`
-- ④：我们可以再次调整规则的相关数值
-- ⑤：沉默周期，设置为 5 分钟内不再重复告警
-- ⑥：选择我们刚才创建的群组 `异常告警通知组`
-- ⑦：通知方式，根据我们的需求，选择 `邮箱`
-- ⑧：点击确定，完成新建策略
+- 告警名称：管理告警策略时方便识别的命名，设置为 `异常次数告警`
+- 告警规则：选择我们刚才创建的告警规则 `5分钟异常发生超10次`
+- 沉默周期：设置为 5 分钟内不再重复告警
+- 通知对象：选择我们刚才创建的群组 `异常告警通知组`
+- 通知方式：根据我们的需求，选择 `邮箱`
 
 到这里我们就完成了整个告警的配置，尝试触发一些异常，即可收到告警通知。

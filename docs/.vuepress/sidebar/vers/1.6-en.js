@@ -182,7 +182,7 @@ module.exports = [
               'dop/guides/deploy/deploy-from-artifact',
               // 'dop/guides/deploy/addon-out-of-box',
               // 'dop/guides/deploy/addon-custom',
-              'dop/guides/deploy/deploy-by-cicd-pipeline',
+              // 'dop/guides/deploy/deploy-by-cicd-pipeline',
               'dop/guides/deploy/config',
               // 'dop/guides/deploy/config-center',
               'dop/guides/deploy/db-migration',

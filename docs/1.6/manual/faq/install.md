@@ -2,7 +2,7 @@
 
 ## 1. 基于 Docker Compose 部署后，首次注册账号并登录，跳转至错误页面怎么办？
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/02/784c84c0-b323-45fb-8fde-3193d841d2f7.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/df3ee91c-7091-404a-a27e-fe145ff985da.png)
 
 该页面地址为 `sysAdmin/orgs`，即超级管理员页面。该模块暂未开源（敬请期待）。Erda 将首次注册的账号默认为超级管理员，因此自动尝试跳转至该页面。
 

@@ -17,7 +17,7 @@
 
 您可以配置容器资源使用的告警策略。一旦资源水位达到阈值即可触发告警，方便及时处理。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/4359c21b-4870-411e-9838-48226c14a21b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/655d03d2-07c6-4b26-a7f3-ec72240c61b3.png)
 目前内置的资源告警配置包含以下选项：
 
 - 应用实例 CPU 使用异常

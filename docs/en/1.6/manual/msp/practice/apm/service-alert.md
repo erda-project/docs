@@ -16,7 +16,7 @@ For these two types of issues, you can take preventive measures based on the ala
 ## Resource Bottleneck
 
 You can configure alarm strategies for container resources. Once the resource reaches the threshold, an alarm will be triggered.
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/6597020a-4db4-40af-8626-46602bf303bf.png)Currently the built-in resource alarm configuration includes the following options:
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/57afdd9f-8904-43e3-b406-bd3d2e949604.png)Currently the built-in resource alarm configuration includes the following options:
 
 - CPU usage exception of application instance
    - Default: An alarm will be triggered when the average CPU usage is greater than or equal to 90% for one minute.

@@ -27,7 +27,7 @@ root_from_repo
     └── other_dirs
 ```
 
-进入 **DevOps 平台 > 我的应用 > 选择应用 > API 设计**，通过目录树控件可展开应用下所有分支，打开任意文档开始编辑。若仓库当前暂无文档，可在有权限的分支下新建文档。
+进入 **我的应用 > 选择应用 > API 设计**，通过目录树控件可展开应用下所有分支，打开任意文档开始编辑。若仓库当前暂无文档，可在有权限的分支下新建文档。
 
 同一时间下，平台仅允许一名用户对同一篇文档进行编辑。若他人正在编辑某一篇文档，打开该文档将提示文档已被锁定。
 
@@ -65,7 +65,7 @@ root_from_repo
 
 在左侧目录栏中选择 **API 概况**，填写 API 名称（建议与文件名保持一致）、版本名称以及文档描述信息。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/955fa5c6-f3aa-438a-947f-3e34ed9f7e4a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/6bdca3a7-841d-46cb-8755-70bdba725e3b.png)
 
 ### 定义数据模型
 
@@ -73,7 +73,7 @@ root_from_repo
 
 在左侧目录栏中选择 **数据类型**，根据提示添加数据类型，并填写参数名称、类型、描述等基本信息。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/bec6fe96-237a-4073-b616-69eda187120c.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/7f2d04b7-0fe9-4295-9b43-262df3a23d5c.png)
 
 编辑数据结构时，可导入 `.erda/migrations` 目录中定义的库表字段，示例如下：
 
@@ -112,8 +112,6 @@ ADD COLUMN age INT NOT NULL ;
 ```
 编辑数据结构时，点击 **导入参数** 即可直接引用库表字段。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/07/3fb4a0b0-6df2-4d39-8c26-fd438cf0e6cd.png)
-
 :::tip 提示
 设计 API 文档时引用库表字段，仅可引用与文档同名模块下的库表字段。
 :::
@@ -126,7 +124,7 @@ ADD COLUMN age INT NOT NULL ;
 
 接口也被称为 Operation，URL + HTTP Method 即可确定一个接口。选择接口的 Summary Tab，填写接口名称、分组、描述等信息。接口名称为选填项，若选择填写，需保证该名称在文档中的唯一性。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/e3116213-d4a5-4075-a704-cbb1514f48c8.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/f0ac3151-1315-4652-a1db-237e7ef2e040.png)
 
 #### 编写 Params、Headers
 
@@ -144,7 +142,7 @@ GET 和 HEAD Method 均无 Request Body。对于有 Request Body 的方法，可
 
 定义接口的参数（Params、Headers、Body、Response 以及任意子字段）时，可自定义参数类型。若被引用类型的父类型为 Object，则可以在其基础上继续添加参数。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/fe0ef856-6d2d-4633-9c97-545143847e85.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/7f0bf54f-f742-4ada-b390-b5c3b077fdb4.png)
 
 #### 导入参数
 
@@ -156,4 +154,4 @@ GET 和 HEAD Method 均无 Request Body。对于有 Request Body 的方法，可
 
 填写 API 名称、ID 和语义化版本号，将文档发布至集市，随后即可在集市中查看和管理已发布的文档。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/d40a8ecf-d6b3-4d16-b0e2-5d9bc8a2aca8.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/0aaec284-9226-470b-be75-a4e2d92b9cb6.png)

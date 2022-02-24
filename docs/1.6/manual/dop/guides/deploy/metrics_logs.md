@@ -34,29 +34,29 @@
 
 成功部署应用后，可进入应用的 Runtime 界面，点击查看日志按钮。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/d6159cd6-8de2-4637-8117-c53aef4eda6d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/caa48190-876e-4e5b-b4ee-8bdd81b7abdd.png)
 
 默认显示服务的标准输出日志。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/cf3d68f0-18b0-4674-8695-3a387307021d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/2eafc16c-5509-4406-aa32-cf92718856a0.png)
 
 点击如下按钮，可切换查看标准输出和错误输出的日志。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/a41b4375-9ea4-4fb7-8bd6-aa523ef9d4ac.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/9db959e9-2b69-4c21-8b4c-0e6f7a17d7d0.png)
 
 如需通过本地的文本工具处理或查看日志，或需将某段时间的日志发送至他人以协助排查问题，可点击 **下载日志** 按钮下载日志至本地。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/f2afbd57-a232-4feb-9a3f-de164affeede.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/8e11a7b6-bbb5-4300-8fd2-0440c7acded3.png)
 
 ## 服务基础监控
 
 通过日志可得知服务已正常运行，但无法明确实际的资源使用情况，此时需查看容器的监控指标。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/bd5ee7f8-77f5-4a7f-96a0-924fec531807.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/ddedd0a5-4687-43ed-9cfb-2bf76c495050.png)
 
 容器监控提供如下指标图表：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/a60425c3-f8e3-4e2a-834a-94b3461e5c1b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/fac12299-ae51-4d22-9a5a-418dd039745a.png)
 
 * **内存**：两条曲线分别表示内存使用量和百分比。
 * **CPU**：表示占一核 CPU 的百分比。

@@ -3,7 +3,7 @@
 ## 编辑流水线
 进入 **DevOps 平台 > 我的应用 > 选择应用 > 流水线 > 选择分支**，点击编辑图标并切换至文本编辑模式。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/86d13308-677c-4c5e-9772-b68871864b30.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/e873a42e-7605-4d52-95ff-db79b73f091d.png)
 
 ## 编写 pipeline.yml
 
@@ -211,13 +211,9 @@ stages:
 
 提交合并请求将触发 Check run。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/9bdbb705-35e4-4bab-bb6a-5622df894ec8.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/87ccaf76-1b0e-4cdb-b5a0-0a9f9c49bf08.png)
 
-Check run 将查看流水线结果，若流水线运行失败则 Check run 失败。
+Check run 将查看流水线结果，若流水线运行失败则 Check run 失败。流水线运行成功则 Check run 成功。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/460e8019-0b9c-480d-b925-539662be6d8d.png)
-
-流水线运行成功则 Check run 成功。
-
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/9af6c5c1-689b-4cc4-ad81-261d28706b24.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/7ac7fd55-6011-4060-896b-4eae784e9515.png)
 

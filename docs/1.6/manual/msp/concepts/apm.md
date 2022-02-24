@@ -22,9 +22,9 @@ Erda 提供通用的底层能力，包括通用的监控查询语言、数据分
 
 Application Performance Management，即应用性能管理，用于实时监控企业的应用系统。Erda 集成了 APM 功能，以代码零入侵、自动接入的方式，提供针对企业应用实时监控的解决方案。
 
-您可进入 **应用 > 部署中心** ，点击 **应用监控** 插件。
+您可进入 **DevOps 平台 > 项目 > 应用中心  > 环境部署** ，选择 Runtime 后点击 **应用监控** 插件。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/b1386723-088b-4097-9a3e-359d780f1b9c.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/bc430f49-fb58-41ce-8c45-ac7285a23016.png)
 
 即可进入 APM 相关页面。
 

@@ -3,13 +3,13 @@
 
 进入 **DevOps 平台 > 我的项目 > 项目详情 > 测试管理 > 测试用例**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/b6a65d2b-2dab-4bce-9c67-8b8a69ef7439.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/baad58ab-ff75-4d45-a432-3f878e361627.png)
 
 ### 测试用例详情
 
 点击列表里的测试用例， 可以看到测试详情， 我们可以查看和编辑标题， 描述， 前置条件， 优先级， 测试步骤及结果
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/27c898ac-91e4-40f6-9b25-6a3413d03b93.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/1a632f33-269e-49ce-8d08-77c6af3bcefa.png)
 
 ### 测试用例导入导出
 
@@ -24,14 +24,14 @@
 
 导入和导出是异步进行的， 因为有时会有较大的文件， 在这里可以打开导入导出记录列表， 可以下载文件，查看7天内的记录结果
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/cc68f4b9-3727-410d-b446-17df1e866ca7.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/d37d3103-4981-4911-b8c5-ee5e6b6dfc54.png)
 
 ## 测试计划创建
 测试计划是为一个验收目的而进行的一次测试过程，其中包含了测试用例、执行人、结果等内容，具体的测试用例可以通过新建或者从其他计划中引用，最后测试责任者把测试用例分配给对应的执行人。
 
 进入 **DevOps 平台 > 我的项目 > 项目详情 > 测试管理 > 执行计划**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/9d82f3d4-4022-4330-9657-cc53482bcbae.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/37c73896-e04f-41d7-b116-088cfaf52ed7.png)
 
 ## 测试执行
 执行者按照具体测试计划中具体测试用例步骤执行相关用例，结果和测试用例结果对比，最终在执行结果上选择对应的结果。
@@ -41,12 +41,12 @@
 
 执行者根据测试结果改变测试用例的状态， 如测试用例结果符合预期， 将状态置为已通过
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/8dfe60e6-543d-4916-ace5-b68eb7a26ee1.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/8cd0c9e4-bfa8-49b3-9097-961893dd675e.png)
 
 ## 测试报告分析
 测试报告包含测试报告详情、测试进度、各执行人执行进展以及测试通过率等信息，通过测试报告可以有效直观反映出本次测试的质量和总体进展。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/574b06f7-f79a-4896-9dd5-6787949928fa.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/a7fe467c-b560-4421-b85b-a238829eba78.png)
 
 ## 测试结果导出
 测试报告支持线上导出，通过点击测试报告详情页面上导出按钮，可快速便捷导出测试报告。

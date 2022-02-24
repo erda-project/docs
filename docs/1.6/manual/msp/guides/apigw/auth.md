@@ -69,7 +69,8 @@ Authorization: hmac appkey="wsK8t77fvAAs3i7878NSkC0j95ib3oVu", algorithm="hmac-s
 
   即凭证中的 App Key 字段（如下图所示），需与 HMAC 以 ASCII 空格 ` ` 分隔。
 
-  ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/2d4f4ddf-c67b-4e7c-89bb-113080955a3b.png)
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/f9e03585-7162-4799-a915-e72fa786307b.png)
 
 * **algorithm="hmac-sha256"**
 

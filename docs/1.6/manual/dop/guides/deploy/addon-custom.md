@@ -23,9 +23,9 @@
 
 ## 使用入口
 
-进入 **DevOps 平台 > 我的项目 > 应用列表 > 应用详情 > 代码浏览**，打开 erda.yml，进入编辑模式，选择此前创建的 Addon。
+进入 **我的应用 > 代码**，打开 erda.yml，进入编辑模式，选择此前创建的 Addon。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/06b83bf3-b12e-4e1d-8761-6e236f824eb4.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/fb74ddd6-1755-4956-b4ca-5a3a6351fc05.png)
 
 完成编辑后，重新构建和部署流水线，使配置生效。
 

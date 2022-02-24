@@ -38,8 +38,8 @@
 
 若仅将 *example.erda.cloud/example* 授权给调用方，点击流量入口详情中对应 API 的 **授权** 按钮进行操作。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/8e96f797-9312-4be7-9dd3-bd88216576f3.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/87164613-8cf4-46d2-9d29-f9328069c9ba.png)
 
 将 *example.erda.cloud/special* 设置为无需认证即可访问。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/5ebeb6da-b2e0-4a89-81a3-862b1a2a9fa0.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/35fa3ebb-ec82-45e7-91e7-b0c717b7fe64.png)

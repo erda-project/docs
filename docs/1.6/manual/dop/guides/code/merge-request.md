@@ -12,7 +12,7 @@
 
 在默认分支 `.gitlab/merge_request_templates` 目录下添加模板 md 文件。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/fd0954be-0faa-4e05-8d63-ec915fc71250.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/4f6bd025-e1ee-4053-b1cb-4eaaf37fa97b.png)
 
 :::tip 提示
 
@@ -22,12 +22,12 @@
 
 完成模板添加后，即可在新建合并请求时选择模板。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/b9c474d7-5c93-4f22-9b64-f00b55074110.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/9e1d4493-a44a-4665-99e2-701e51439f79.png)
 
 完成合并请求添加后，点击该合并请求，可查看合并请求信息以及对比结果，您可在对比结果中查看评论、提交和变更。 点击右上角按钮，合并或关闭请求。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/bd2ca145-a456-41e6-a252-e0a03a1b4e17.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/ae343681-b1a0-4cb4-8ba1-c3a4286b3607.png)
 
 查看变更内容时，鼠标悬浮位置将出现对话按钮，点击按钮可添加评论。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/0a55d3e6-cde0-4d19-a92d-39ebeb4d4111.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/11971b23-f077-4415-85ef-687e618c438b.png)
