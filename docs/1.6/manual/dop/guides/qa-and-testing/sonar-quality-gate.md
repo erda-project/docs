@@ -8,7 +8,7 @@
 
 平台支持在流水线中快速嵌入 Sonar Action 节点进行代码质量扫描，建议通过流水线图形化编排的方式添加，如下图所示：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/16d109f4-84dc-4d72-bda6-b91e05dd4c5e.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/59efaa31-f6df-4906-840d-c3bea37d41d2.png)
 
 移动鼠标至参数后的图标可查看具体说明：
 
@@ -23,7 +23,7 @@
 
 关于门禁指标配置更多信息，请参见 [Sonar 官方文档](https://docs.sonarqube.org/latest/user-guide/metric-definitions/)。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/a793c421-3a59-4055-967c-828f5b1f7d1b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/5b8d41cd-e40d-4658-8ea7-066aff70834a.png)
 
 上图示例已添加两个自定义门禁指标：
 
@@ -36,7 +36,7 @@
 
 平台内置 60 余种门禁规则，请进入 **DevOps 平台 > 项目 > 项目设置 > 代码质量门禁** 操作。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/c4d80b7c-68cf-4958-be4d-042ce9550d51.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/ece70481-5760-4d73-8f51-4461c47a7b91.png)
 
 ## 查看扫描报告
 
@@ -46,4 +46,4 @@
 
 进入 **DevOps 平台 > 项目 > 应用 > 代码质量 > 问题列表** 可查看具体问题。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/4ba081ed-ff9c-4fe4-bc29-0132976d5732.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/22ff8f2e-1406-4958-8186-6797fcaf00e9.png)
