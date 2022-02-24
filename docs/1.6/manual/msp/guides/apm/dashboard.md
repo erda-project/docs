@@ -1,4 +1,4 @@
-# 仪表盘
+# 自定义大盘
 
 在可配置大盘还没诞生时，每个需要展示数据的页面都需要定制化开发，但需求经常会变化，但这样就带来了沟通的成本与时间的损耗，显而易见这样的方式并不灵活，想要随时定制图表的话就无法满足了。
 
@@ -26,19 +26,19 @@
 ## 操作
 运维大盘是大盘系统的一部分，也称为仪表盘，可以为运维人员与开发人员快速搭配出大盘以监控各种资源的实时情况以供排查分析使用。
 
-### 进入仪表盘
+### 进入自定义大盘
 
-进入 **微服务平台 > 选择项目 > 诊断分析 > 自定义大盘**。
+进入 **微服务治理平台 > 诊断分析 > 自定义大盘**。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/770277e8-d8d7-4e3d-adb5-3b60e2f0294b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/be27c612-affb-4ece-9f35-27eeb172325b.png)
 
-### 编辑仪表盘
-点击新建运维大盘，进入编辑模式，点击右上 **+** 号，选择 [图表类型](#图表类型) 为柱状图。
+### 编辑自定义大盘
+点击 **新建自定义大盘**，进入编辑模式，点击右上 **+** 号，选择 [图表类型](#图表类型) 为柱状图。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/7574f534-88f2-4cf6-82a6-f7788551234d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/ef4388cc-12df-4a2d-a10f-bb7656b69a5b.png)
 
 ### 编辑图表
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/bca7731c-4fc9-4352-9dcf-8ab3e222ec89.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/7c7af703-68de-4a9f-82fd-ed1a4b0586ff.png)
 
 左侧通用项目可以输入图表的名称、简介等。
 
@@ -56,7 +56,7 @@
 
 点击添加好的标签，选择字段配置，可设定自定义别名
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/a38ff092-8628-4aa4-9888-155f8137878a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/6b40b5a9-c49b-48ad-96d8-90e1bffa485b.png)
 
 #### 值（SELECT）
 指标下的数据，也就是字段，可多选，添加请求次数与请求耗时平均值。添加后点击生成的标签，可对字段进行聚合操作，或设置别名。具体请参见 [应用指标 ](#应用指标)。
@@ -66,18 +66,18 @@
 如果您不确定多个值是否为一种单位，建议一个图表一个值，单位不一致可能会导致图表无法正常显示。
 
 :::
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/f4c091b5-f65b-42b4-b167-cb776db10326.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/90d09866-74a4-44e9-9d0f-4a3ed6e543bb.png)
 
 #### 结果筛选器（WHERE）
 可对字段进行条件过滤，包含常用的比较运算符，也可选择自定义函数表达式。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/4f9b8c10-1ffc-4415-8396-eede2bfe5528.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/424f9459-0dcf-415e-a671-3ad4b0ea07a2.png)
 
 #### 结果排序（ORDER BY）
 
 对查询的字段进行排序，如果查询的字段为聚合方式，那排序的字段也要选择对应的聚合方式。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/7b61fef0-55d2-492f-9097-a5308340770f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/33ea1be7-ed0b-4f2f-a9d3-3ff42bb7db65.png)
 
 #### 结果截取（LIMIT）
 截取查询结果的数据条数，如果查询带有排序则按排序顺序截取,若不填则显示所有查询结果。
@@ -85,11 +85,9 @@
 #### 固定图表时间范围
 限定数据产生的时间范围，不受全局时间范围自定义配置影响。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/a1726c7e-931b-44d8-be8c-14e859bf7d53.png)
-
 如需自定义时间范围，可不填，由大盘全局时间范围控制，也就是如下全局时间范围自定义配置。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/3456aca0-01f5-4b15-b744-e4f37573802b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/d1174410-3c3e-4406-a1c5-ae62f43a06fc.png)
 
 ### 保存与调整
 右下角确认保存返回大盘编辑器，查看大盘预览，鼠标悬浮到柱状图上，可以显示详细信息：
@@ -108,7 +106,7 @@
 
 系统提供了一些内置面板，如服务分析-事务分析下的图表。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/11/17/c0945407-8f70-4b3f-8d2f-072b0097334a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/0028b9a8-5724-4de1-9153-714e948b74be.png)
 
 其使用方法也是类似的，若想对某一图表操作，只需点开图表右上方。
 
@@ -187,7 +185,7 @@
 * 表格<br>
   • 可用自定义表达式配置，满足更多复杂查询。
 
-  ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/3be51d68-9678-4b7e-952d-1b67d3c26b4e.png)
+  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/e8d58f91-6249-4083-a470-8e3292494d4f.png)
 
 ### 聚合方式
 不同的类型，有不同的聚合可以选择。
@@ -287,7 +285,7 @@ LIMIT 100;
 表达式支持基本的四则运算，支持一些内置的处理函数。
 
 ### 表达式配置
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/e1378d3a-63b9-4686-904a-360ae2510d71.png)![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/8e5df1e4-4715-433f-a6c1-23ed7e4d2c19.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/728badac-3763-4518-b41b-10a728d5fa2d.png)![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/02aeead9-2c53-44b5-8a1c-2669bb3ac8f8.png)
 #### 过滤表达式
 字符串类型的字段支持：
 * 等于，=

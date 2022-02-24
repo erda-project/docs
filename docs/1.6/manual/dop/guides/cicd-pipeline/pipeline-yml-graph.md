@@ -5,7 +5,7 @@
 ## 编辑流水线
 进入 **DevOps 平台 > 我的应用 > 选择应用 > 流水线 > 选择分支**，点击编辑图标。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/edcab80d-ad2f-4012-b18e-4e26d41817a3.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/dc363e87-fcfc-4287-8390-9d1bf5bd40ed.png)
 
 ## 添加节点
 添加节点前，请参见 [pipeline.yml](../reference/pipeline.md) 了解流水线基本构成元素。
@@ -25,7 +25,7 @@
 ## 查看图形化流水线
 完成制品信息配置后，可在界面上查看可视化的流水线。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/9ae1cf97-159b-4b89-8e27-c34b647d7d14.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/8645d969-8bb5-4f46-98f6-10d38d614783.png)
 
 图形化编辑可让您直观地感受整个流水线的执行流程。关于如何执行流水线，请参见 [流水线运行](pipeline-execution.md)。
 

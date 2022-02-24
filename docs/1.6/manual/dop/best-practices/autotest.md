@@ -14,14 +14,14 @@
 
 测试空间名称建议以项目名称+版本号的方式命名，可通过复制旧版本的测试空间快速创建新版本的测试空间，以复制原有的测试用例。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/8d158793-d90b-4b7a-b483-7ecf259fe5a4.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/829f11e3-a986-4ccc-b12c-7098559e386c.png)
 
 ### 创建场景集
 场景集一般以业务场景为导向，并按照具体模块进行划分。不同的场景集之间可通过拖拽的方式进行编排。
 
 若场景集下的场景均依赖于公共数据，则建议将数据预置的场景作为场景集的第一个场景，将数据清理的场景置于最后，从而降低各场景重复执行数据预置带来的时间成本。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/6d1ded1b-3267-4234-827e-d4763f96a9e0.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/d2c416bc-7240-4fb4-8706-1e439e2809bc.png)
 
 ### 创建单场景
 场景名称的定义需简洁、易懂，便于他人了解场景信息，降低学习成本。以下格式可供参考：
@@ -33,7 +33,7 @@
 
 不同步骤之间也可通过拖拽的方式进行编排，以更改步骤的执行顺序及执行方式（并行或串行）。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/e05aa325-4ff7-4de5-998e-84488270b456.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/1c46627f-8799-45ec-a154-f43c10975280.png)
 
 #### 数据准备和数据清理
 环境和测试数据是影响自动化稳定性的两大因素。测试数据的管理将直接影响用例的维护成本。
@@ -55,14 +55,14 @@
 
 Erda 通过数据银行中配置单的方式实现数据准备和数据清理。配置单中可添加 MySQL 或 Redis 脚本，示例如下：
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/6dd25127-3610-4605-82bd-220d53b8a13e.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/08dcdbee-8f6f-48c9-9f63-2d36ce3d0b81.png)
 
 #### 接口请求
 - 接口入参中的请求参数不建议设为固定值，尤其是依赖外部数据的参数。尽量使用全局变量以保证在不同测试环境下可重复执行。例如新增项目接口时，入参需企业 ID、集群名称等数据，建议对这些参数使用全局参数管理。
 - 请求入参中的名称或者编码不建议设为固定值，尤其是有名称重复性校验的业务。为保障用例可重复执行，参数名称后建议添加 Random 参数。
 - 每个测试场景均为一个完整的流程，包括数据准备、测试执行、数据清理等步骤，以实现场景内部闭环，保障测试场景执行后无数据残留。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/7e2a602c-8b12-455b-b013-c9ce458c65f7.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/b54d93db-3c52-4d0a-bb0e-69f98a5f2eaa.png)
 
 #### 接口校验
 接口校验目前支持状态码、响应头以及 Response Body 校验。下列为常用的接口校验项：
@@ -75,7 +75,7 @@ Erda 通过数据银行中配置单的方式实现数据准备和数据清理。
 ## 配置环境
 完成自动化测试工程搭建后，全局参数需通过新增环境配置维护，以支撑接口自动化用例调试和测试计划执行。一般情况下可根据不同环境或业务域划分创建全局环境变量。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/1122c0fb-85d3-42b6-8585-d33bdc10d170.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/3b4f4b33-8ac4-474e-a350-564f3d863ae1.png)
 
 ### 环境域名
 不同的环境可通过域名进行区分。参数配置中可对环境域名进行配置，支持 HTTP/HTTPS 协议。
@@ -94,19 +94,19 @@ Erda 通过数据银行中配置单的方式实现数据准备和数据清理。
 ### 单接口调试
 完成接口步骤添加后，点击 **保存并执行** 选择环境开始调试。执行结束后即可查看接口返回值及断言是否正确。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/f6ba482f-31ac-4f49-8759-c1e97f84d1f8.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/5eba88dd-20fe-4cd3-ad45-cd1c5135c335.png)
 
 ### 场景调试
 场景调试需重点关注上下文接口及对应出入参的调试。
 
 完成单接口调试后，点击场景中的 **执行** 选择环境开始调试。执行结束后可通过执行明细查看执行结果。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/dc62f8f4-14db-4e3e-935d-717aaaf0c2fc.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/3303ffc2-65f6-459e-bb3f-81465a483cf6.png)
 
 - 场景入参：场景中支持添加场景入参，其值分为引用值和调试值。单场景调试使用调试值，测试计划执行则使用引用值。
 - 前置接口出参：场景中的后续步骤可引用之前步骤的出参作为入参以串联接口间的业务场景。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/c56bcc1e-9675-467f-83be-7511cbb1c418.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/af58d103-c681-4d9d-be80-3e44b75a5019.png)
 
 ## 执行测试
 完成场景调试后，可在执行计划中编排测试场景集用于整体执行测试，也可接入持续集成进行持续测试。
@@ -114,19 +114,19 @@ Erda 通过数据银行中配置单的方式实现数据准备和数据清理。
 ### 执行测试计划
 测试过程中可根据项目的版本或业务域、模块划分测试计划。冒烟测试、回归测试或集成测试以测试计划为单位执行。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/79267f57-a26b-4ebe-8b77-b03b803dc21c.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/f95bb349-d4cc-4e2c-ac80-ca44d6a803b1.png)
 
 测试计划中可加入多个场景集以及场景集的编排。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/91485b86-cb1f-4de0-9e5c-70849e8c953d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/02cdcfa1-1535-479f-b86d-618b6573772a.png)
 
 ### CI/CD
 自动化测试最大的价值之一是在持续集成中进行持续测试。实际项目实施中，应用通过流水线构建部署后，可通过在流水线中添加 **自动化测试计划执行** 的 Action，将自动化测试加入 CI/CD 流程中。应用构建部署完成后即可进行自动化测试，以便快速发现迭代缺陷。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/362bb12b-571f-4c92-8f64-84f74d69938e.png)
+<img src="http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/e829119f-1e44-460f-982e-77381fe6bcfc.png" style="zoom:50%;" />
 
 ## 查看测试报告
 手动及 CI/CD 触发的测试计划执行，均可通过执行明细查看详细信息。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/4ac2c956-290c-4de5-88df-7a27bfe527ce.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/438eeb2a-517a-4491-a3ec-fdfa35ba36ba.png)
 

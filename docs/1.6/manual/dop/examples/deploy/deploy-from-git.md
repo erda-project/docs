@@ -28,7 +28,7 @@ git clone https://github.com/bzdgn/docker-spring-boot-java-web-service-example.g
 
 平台基于标准的 Git 协议内置 Git 代码仓库，您无需依赖于外部仓库（例如 GitLab 等）即可完成从源码开发到部署的全流程。
 
-进入 **我的应用 > 选择应用 > 代码仓库 > 代码浏览 > 仓库地址**，查看平台远程仓库服务器地址。
+进入 **我的应用 > 选择应用 > 代码 > 仓库地址**，查看平台远程仓库服务器地址。
 
 ```bash
 git remote add erda http://dice.dev.terminus.io/wb/erda-test/java-demo
@@ -36,9 +36,9 @@ git push -u erda --all
 git push -u erda --tags
 ```
 
-完成代码推送后，即可在代码仓库中查看代码信息。
+完成代码推送后，即可查看代码信息。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/4475e14c-8f79-4a95-a500-e6d8e7acb944.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/0f686df6-52d5-46ef-af77-845dadd54695.png)
 
 ## 定义流水线
 
@@ -147,10 +147,10 @@ git push erda feature/demo
 3. 流水线任务执行过程中，可实时查看流水线各步骤的执行状态，点击日志可查看对应节点执行状况的日志信息。
 
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/b737cfd7-192f-4379-94a3-3a73a18c285b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/f096a438-7b62-4ef5-be98-4f642e9dbfa1.png)
 
 ## 查看部署结果
 
-通过流水线构建源码并完成部署后，可在部署中心查看已成功部署的应用实例 Runtime。进入 Runtime 可进一步进行 [应用管理](../../guides/deploy/management.html) 相关操作，例如配置域名、服务实例扩缩容等。
+通过流水线构建源码并完成部署后，可在环境部署查看已成功部署的应用实例 Runtime。进入 Runtime 可进一步进行 [应用管理](../../guides/deploy/management.html) 相关操作，例如配置域名、服务实例扩缩容等。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/6fc364a0-d4c4-4b5e-9f7b-4803b6ced9b9.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/b696439a-85d2-4ccc-80d1-9cce74ebcdbf.png)

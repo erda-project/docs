@@ -56,9 +56,9 @@ git commit -m "initialize"
 
 Erda has a built-in Git code repository based on the Git protocol, that allows you to complete the entire process from development to deployment without relying on external repositories (such as GitLab).
 
-Go to **My Application > Select Application > Files > Source > Repo Address** to view the address of remote repository.
+Go to **My Application > Select Application > Source > Repo Address** to view the address of remote repository.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/eddd5859-52bd-451c-9c52-00641fa9f8fd.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/949e705b-98d2-4697-8a77-5861c94d607a.png)
 
 ```bash
 git remote add erda https://erda-org.erda.cloud/wb/base-project/go-web
@@ -152,13 +152,9 @@ git push erda
 
 ## View Deployment Results
 
-After building and deployment, you can view the runtime of application instance successfully deployed in **Deployments**.
+After building and deployment, you can view the runtime of application instance successfully deployed in **Environments**. Click the runtime for more operations of [application management](../../guides/deploy/management.html), such as domain configuration and instance scaling.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/b53ae3d1-be0b-4721-9e53-240a5d25457a.png)
-
-Click **master** for application management, such as domain configuration and instance scaling.
-
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/b26505f2-40fa-492c-bc58-2564956af1a7.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/bc98297a-156f-435a-b022-1397c739e001.png)
 
 Type the IP address of the instance in the browser and add the port 8080 to see "Hello, World!".
 

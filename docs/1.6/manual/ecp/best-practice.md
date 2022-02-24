@@ -22,7 +22,7 @@ Erda 边缘计算平台默认使用镜像来发布应用，镜像可以是任意
 
 1. 增加一个容器推送的节点。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/18/2255fb58-b6d2-4e51-aae0-cc965337d7b4.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/2e141878-d1bd-46f7-bdd3-7546de3591c8.png)
 
 2. 切换至代码编辑模式，增加如下参数：
 

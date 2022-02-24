@@ -8,9 +8,9 @@ Please follow the steps below to create a project:
 
 2. Click **Add Project**.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/4ade4bec-a3e5-4407-b019-33f3bd9ccfac.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/b7fb1a1b-eaf6-48a0-8cb7-216c973d14c1.png)
 
 3. Select **Monitor Project**, and enter the project name, identifier and other information according to the prompts.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/1a3d4490-a131-48c0-8f42-c774eadb1650.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/fca52abe-73af-4b68-ac39-552600547e98.png)
 

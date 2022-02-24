@@ -8,7 +8,7 @@ Erda 支持在部署详情中为当前应用的指定服务直接绑定域名。
 
 如下图所示，为应用服务绑定两个域名，*www.erda.cloud* 和 *about.erda.cloud*，并通过 API 网关管理域名流量。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/4ce90ea3-fb98-44b9-b142-b146b99f12bd.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/8183f6d0-fd15-4113-a938-d7dcbe17d134.png)
 
 ## 第一步：通过 YAML 配置文件为应用添加 API 网关扩展服务
 
@@ -45,7 +45,7 @@ addons:
 
 ## 第二步：找到域名对应流量入口进行流量管理
 
-点击该 API 网关扩展服务进入 **微服务平台 > API 网关 > 流量入口管理**。
+点击该 API 网关扩展服务进入 **微服务治理平台 > API 网关 > 流量入口管理**。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/489c553f-db5b-4585-8d6d-7b452f395695.png)
 

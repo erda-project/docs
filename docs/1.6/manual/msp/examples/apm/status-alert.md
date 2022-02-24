@@ -6,7 +6,7 @@
 
 此处以 Redis 1s 慢请求为例。
 
-进入 **微服务治理平台 > 项目列表 > 选择项目 > 应用监控 > 主动监控**，添加主动监控。
+进入 **微服务治理平台 > 监控中心 > 主动监控**，添加主动监控。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/9adff13d-7265-4f3b-b323-c25bd5f8a2f1.png)
 
@@ -26,12 +26,12 @@
 
 ### 配置消息模板
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/35d1a77a-424f-4c5b-be81-c175961a07bf.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/f800754f-9468-492a-a45e-f9341bb46855.png)
 
 ## 配置告警策略
 
 完成自定义告警配置后，另需配置告警策略。您可在此选择此前配置的自定义告警规则。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/a890bdbb-a6ec-4ca6-a08b-ead112989b13.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/2cc49f72-0056-471c-b321-fe2c5ec1b19a.png)
 
 完成上述操作后，若有告警触发，监控系统将根据自定义的消息模板，发送告警消息通知至钉钉群组中。

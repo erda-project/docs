@@ -111,11 +111,11 @@ For this case, complete the following steps:
 
 3. The team leader will split the requirement into multiple tasks, which are related issues to the requirement.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/7d9bde09-be98-4fe9-884d-de2c9c8e5bbd.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/2fb4abd7-ad18-4c40-98fc-16034dea5306.png)
 
    **Relate to Merge Request** in tasks and bugs connect R&D and collaboration closer. For details, see [Relation](../dop/guides/collaboration/issue.html#Relation).
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/17/c94b59b5-8b9f-4b46-a723-2cc66ee122b7.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/d1870bfc-362e-480d-a6c2-ac8586b57968.png)
 
    The project manager can see the efficiency and bottlenecks of collaboration by efficiency measure.
 
@@ -134,9 +134,9 @@ Assuming that the team leader has finished the architecture design as follows:
 
 For this design, complete the following steps:
 
-1. Go to **DevOps Platform > Integrated Development > App > Add Application** to create two applications. For more information on applications, see [Application Management](../dop/guides/deploy/management.html).
+1. Go to **DevOps Platform > App Center > App > Add Application** to create two applications. For more information on applications, see [Application Management](../dop/guides/deploy/management.html).
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/71ab030f-b6ac-4f74-b9b9-23fede3f507e.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/3c447722-ad03-4c4f-93d0-c07d74fa7d1e.png)
 
 2. After code pushing, create a pipeline.yml, which describes the CI/CD automation process. For details, see [pipeline.yml](../dop/guides/reference/pipeline.html).
 
@@ -173,11 +173,11 @@ For this design, complete the following steps:
       git push
       ```
 
-      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/ce2ede9f-4777-4635-ba2e-6a4f27f3cc0e.png)
+      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/809056e5-0b97-4f6f-aa95-1a042f5b68b0.png)
 
       Or just operate by the graphic interface without local pushing.
 
-      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/0d4f86fe-923c-4906-8f4c-f71900769ff1.png)
+      ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/c56c8aa7-0302-47a3-86fb-14ae9ed877c7.png)
 
    * Complete the CD part:
 

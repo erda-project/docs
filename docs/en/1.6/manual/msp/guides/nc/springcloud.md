@@ -1,30 +1,30 @@
-# Spring Cloud 微服务注册发现
+# Spring Cloud Microservice Registration and Discovery
 
 
-## 本地开发应用
-### 前提条件
+## Local Application Development
+### Prerequisites
 
-着手开发前，请确认已完成以下工作：
+Before you start, please confirm that you have done the following:
 
-* 下载 [Maven](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/EDAS/App-develop/apache-maven-3.6.0-bin.tar.gz) 并设置环境变量。
-* 下载最新版本 [Nacos Server](https://github.com/alibaba/nacos/releases)。
-* 按照以下步骤启动 Nacos Server。
-  1. 解压 Nacos Server 压缩包。
-  2. 进入 `nacos/bin` 目录，启动 Nacos Server。
+* Download [Maven](https://aliware-images.oss-cn-hangzhou.aliyuncs.com/EDAS/App-develop/apache-maven-3.6.0-bin.tar.gz) and set environment variables.
+* Download the latest [Nacos Server](https://github.com/alibaba/nacos/releases).
+* Follow the steps below to start Nacos server.
+   1. Unzip the Nacos server package.
+   2. Go to the `nacos/bin` directory and start Nacos server.
 
-:::tip 提示
-* Linux/Unix/Mac 系统：sh startup.sh -m standalone
-* Windows 系统：双击运行 startup.cmd
+:::tip Tips
+* Linux/Unix/Mac system: sh startup.sh -m standalone
+* Windows system: double-click the file startup.cmd
 
 :::
 
 
-### 创建服务提供者
-在本地创建服务提供者应用工程，添加依赖，开启服务注册与发现功能，并将注册中心指定为 Nacos Server。
+### Create a Service Provider
+Create an application project of service provider locally, add dependencies, enable service registration and discovery, and specify the register as Nacos server.
 
-1. 创建名为 nacos-service-provider 的 Maven 工程。
+1. Create a Maven project named nacos-service-provider.
 
-2. 在 pom.xml 文件中添加依赖，此处以 Spring Boot 2.1.4.RELEASE 和 Spring Cloud Greenwich.SR1 为例：
+2. Add dependencies in the pom.xml file. Here takes Spring Boot 2.1.4.RELEASE and Spring Cloud Greenwich.SR1 as examples:
 
    ```xml
        <parent>
@@ -61,17 +61,17 @@
 
    ```
 
-   * 使用版本为 Spring Cloud Greenwich，则对应 Spring Cloud Alibaba 版本为 2.1.1.RELEASE。
-   * 使用版本为 Spring Cloud Finchley 版本，则对应 Spring Cloud Alibaba 版本为 2.0.1.RELEASE。
-   * 使用版本为 Spring Cloud Edgware 版本，则对应 Spring Cloud Alibaba 版本为 1.5.1.RELEASE。
+   * For Spring Cloud Greenwich, the corresponding Spring Cloud Alibaba version is 2.1.1.RELEASE.
+   * For Spring Cloud Finchley, the corresponding Spring Cloud Alibaba version is 2.0.1.RELEASE.
+   * For Spring Cloud Edgware, the corresponding Spring Cloud Alibaba version is 1.5.1.RELEASE.
 
-   :::tip 提示
-   Spring Cloud Edgware 版本的生命周期已结束，不建议使用该版本开发应用。
+   :::tip Tips
+   The life cycle of the Spring Cloud Edgware version has ended, and it is not recommended to use this version to develop applications.
    :::
 
-3. 在 `src/main/java` 下创建 `package: io.terminus.erda.trial.demo.hellospringcloud`。
+3. Create `package: io.terminus.erda.trial.demo.hellospringcloud` under the path `src/main/java`.
 
-   在 `package: io.terminus.erda.trial.demo.hellospringcloud` 中创建服务提供者的启动类 `ProviderApplication`，并添加如下代码：
+   Create the startup class `ProviderApplication` of the service provider in `package: io.terminus.erda.trial.demo.hellospringcloud`, and add the following code:
 
    ```java
    package io.terminus.erda.trial.demo.hellospringcloud;
@@ -93,11 +93,11 @@
    }
    ```
 
-   :::tip 提示
-   `@EnableDiscoveryClient` 注解表明此应用需开启服务注册与发现功能。
+   :::tip Tips
+   The annotation `@EnableDiscoveryClient` indicates that this application needs to enable service registration and discovery.
    :::
 
-   在 `package: io.terminus.erda.trial.demo.hellospringcloud` 中创建 `EchoController`，指定 URL mapping 为 `{/echo/{String}}`，指定 HTTP 方法为 GET，方法参数从 URL 路径中获得，回显收到的参数。
+Create `EchoController` in `package: io.terminus.erda.trial.demo.hellospringcloud`, specify URL mapping as `{/echo/{String}}`, specify HTTP method as GET, obtain method parameter from the URL path and echo the received parameters.
 
    ```java
    package io.terminus.erda.trial.demo.hellospringcloud;
@@ -119,7 +119,7 @@
    }
    ```
 
-4. 在 `src/main/resources` 路径下创建文件 `application.yml`，并添加如下配置，指定 Nacos Server 的地址。
+4. Create `application.yml` under the path `src/main/resources` and add the following configuration to specify the address of Nacos server.
 
    ```yaml
    spring:
@@ -131,22 +131,22 @@
            namespace: ${NACOS_TENANT_ID:}
    ```
 
-   :::tip 提示
-   127.0.0.1 为 Nacos Server 的地址。若 Nacos Server 部署在另外一台机器，则需修改为对应的 IP 地址。
+   :::tip Tips
+   127.0.0.1 is the address of the Nacos server. If the Nacos server is deployed on another machine, change it to the actual IP address.
    :::
 
-5. 验证结果。
+5. Verify the results.
 
-6. 执行 `nacos-service-provider` 中 `ProviderApplication` 的 `main` 函数，启动应用。
+6. Run the `main` function of `ProviderApplication` of `nacos-service-provider` to start the application.
 
-  7. 登录本地启动的 Nacos Server 控制台 *http://127.0.0.1:8848/nacos*（本地 Nacos 控制台的默认用户名和密码同为 nacos）。
+7. Log in to the locally started Nacos server console *http://127.0.0.1:8848/nacos* (the default user name and password of the local Nacos console are both nacos).
 
-  8. 在左侧导航栏选择 **服务管理 > 服务列表**，列表中已包含 service-provider，且可在详情中查看具体信息。
+8. In the left navigation bar, select **Service Management > Service List**, which already contains service-provider, and you can view detailed information as needed.
 
-### 创建服务消费者
-1. 创建名为 nacos-service-consumer 的 Maven 工程。
+### Create a Service Consumer
+1. Create a Maven project named nacos-service-consumer.
 
-2. 在 pom.xml 中添加依赖。
+2. Add dependencies in pom.xml.
 
    ```xml
        <parent>
@@ -187,11 +187,11 @@
 
    ```
 
-3. 在 `src/main/java` 下创建 `package: io.terminus.erda.trial.demo.hellospringcloud`。
+3. Create `package: io.terminus.erda.trial.demo.hellospringcloud` under the path `src/main/java`.
 
-4. 在 `package: io.terminus.erda.trial.demo.hellospringcloud` 中配置 `RestTemplate` 和 `FeignClient`。
+4. Configure `RestTemplate` and `FeignClient` in `package: io.terminus.erda.trial.demo.hellospringcloud`.
 
-   在 `package: io.terminus.erda.trial.demo.hellospringcloud` 中创建一个接口类 `EchoService `，添加 `@FeignClient` 注解，并配置对应的 HTTP URL 地址及 HTTP 方法。
+   Create an interface class `EchoService` in `package: io.terminus.erda.trial.demo.hellospringcloud`, add `@FeignClient` annotation and configure the corresponding HTTP URL and HTTP method.
 
    ```java
    package io.terminus.erda.trial.demo.hellospringcloud;
@@ -211,11 +211,11 @@
    }
    ```
 
-   在 `package: io.terminus.erda.trial.demo.hellospringcloud` 中创建启动类 `ConsumerApplication` 并添加相关配置。
+   Create a startup class `ConsumerApplication` in `package: io.terminus.erda.trial.demo.hellospringcloud` and add the relevant configuration.
 
-   * 使用 `@EnableDiscoveryClient` 注解启用服务注册与发现。
-   * 使用 `@EnableFeignClients` 注解激活 `FeignClient`。
-   * 添加 `@LoadBalanced` 注解将 `RestTemplate` 与服务发现集成。
+   * Use the `@EnableDiscoveryClient` annotation to enable service registration and discovery.
+   * Use the `@EnableFeignClients` annotation to activate `FeignClient`.
+   * Add `@LoadBalanced` annotation to integrate `RestTemplate` with service discovery.
 
    ```java
    package io.terminus.erda.trial.demo.hellospringcloud;
@@ -248,43 +248,44 @@
    }
    ```
 
-5. 在 `package: io.terminus.erda.trial.demo.hellospringcloud` 中创建类 `TestController` 以演示和验证服务发现功能。
+5. Create a class `TestController` in `package: io.terminus.erda.trial.demo.hellospringcloud` to demonstrate and verify the service discovery function.
 
    ```java
    package io.terminus.erda.trial.demo.hellospringcloud;
-
+   
    import org.springframework.beans.factory.annotation.Autowired;
    import org.springframework.web.bind.annotation.PathVariable;
    import org.springframework.web.bind.annotation.RequestMapping;
    import org.springframework.web.bind.annotation.RequestMethod;
    import org.springframework.web.bind.annotation.RestController;
    import org.springframework.web.client.RestTemplate;
-
+   
    /**
     * @author edas
     */
    @RestController
    public class TestController {
-
+   
        @Autowired
        private RestTemplate restTemplate;
        @Autowired
        private EchoService echoService;
-
+   
        @RequestMapping(value = "/echo-rest/{str}", method = RequestMethod.GET)
        public String rest(@PathVariable String str) {
            return restTemplate.getForObject("http://service-provider/echo/" + str,
                    String.class);
        }
-
+   
        @RequestMapping(value = "/echo-feign/{str}", method = RequestMethod.GET)
        public String feign(@PathVariable String str) {
            return echoService.echo(str);
        }
-
+   
    }
 
-6. 在 `src/main/resources` 路径下创建文件 application.yml，并添加如下配置，指定 Nacos Server 的地址。
+
+6. Create application.yml under the path `src/main/resources` and add the following configuration to specify the address of Nacos server.
 
    ```yaml
    spring:
@@ -296,34 +297,34 @@
            namespace: ${NACOS_TENANT_ID:}
    ```
 
-   :::tip
-   127.0.0.1:8848 为 Nacos Server 的地址。若 Nacos Server 部署在另外一台机器，则需修改为对应的地址。
+   :::tip Tips
+   127.0.0.1:8848 is the address of the Nacos server. If the Nacos server is deployed on another machine, change it to the actual IP address.
    :::
 
-7. 验证结果。
-  1. 执行 `nacos-service-consumer` 中 `ConsumerApplication` 的 `main` 函数，启动应用。
-  2. 登录本地启动的 Nacos Server 控制台 *http://127.0.0.1:8848/nacos*（本地 Nacos 控制台的默认用户名和密码同为 nacos）。
-  3. 在左侧导航栏选择 **服务管理 > 服务列表**，列表中已包含 service-consumer，且可在详情中查看具体信息。
+7. Verify the results.
+1. Run the `main` function of `ConsumerApplication` of `nacos-service-consumer` to start the application.
+2. Log in to the locally started Nacos server console *http://127.0.0.1:8848/nacos* (the default user name and password of the local Nacos console are both nacos).
+3. In the left navigation bar, select **Service Management > Service List**, which already contains service-consumer and you can view detailed information as needed.
 
-### 本地测试
-在本地测试消费者对提供者的服务调用结果。
+### Local Testing
+Test the result of the consumer's service call to the provider locally.
 
-- Linux/Unix/Mac 系统
+- Linux/Unix/Mac system
 
-  请执行以下命令：
+   Please run the following commands:
 
-  ```bash
-  curl http://127.0.0.1:18082/echo-rest/rest-rest
-  curl http://127.0.0.1:18082/echo-feign/feign-rest
-  ```
+   ```bash
+   curl http://127.0.0.1:18082/echo-rest/rest-rest
+   curl http://127.0.0.1:18082/echo-feign/feign-rest
+   ```
 
-- Windows 系统
+- Windows system
 
-  在浏览器中输入 *http://127.0.0.1:18082/echo-rest/rest-rest* 以及 *http://127.0.0.1:18082/echo-feign/feign-rest*。
+   In your browser, enter *http://127.0.0.1:18082/echo-rest/rest-rest* and *http://127.0.0.1:18082/echo-feign/feign-rest*.
 
-## 部署应用至 Erda
+## Deploy the Application to Erda
 
-部署应用至 Erda 时，需注意如下配置中的环境变量将被自动注入。
+When deploying an application to Erda, please note that the environment variables in the following configuration will be automatically injected.
 
 ```yaml
 spring:
@@ -345,15 +346,15 @@ spring:
         namespace: ${NACOS_TENANT_ID:}
 ```
 
-修改 erda.yml，添加注册中心 v2.0 的依赖。
+Modify erda.yml and add the dependency of register v2.0.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/077606d3-b8a6-4947-821e-3038819f156c.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/2c3557b8-5783-4eb4-8ef1-a471dfbd6c12.png)
 
-完成服务部署后，Erda 将自动注入两个环境变量：
+After the service is deployed, Erda will automatically inject two environment variables:
 
 * NACOS_ADDRESS
 * NACOS_TENANT_ID
 
-点击注册中心，即可查看注册完成的服务。
+Click on the registration center to view the registered services.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/2d23a7fc-d709-4e84-b5ae-e217c9f4e525.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/147d1638-a9ea-4cba-b209-ae063d202146.png)

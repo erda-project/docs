@@ -60,5 +60,5 @@
 
 如需基于 Pod Name 筛选，可在部署中心查看 Pod Name。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/6ef1fa61-b4c4-4255-b9db-adbe7acab6c2.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/6bcbaf74-9209-4c95-af78-25521b2dbd7f.png)
 

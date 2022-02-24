@@ -7,12 +7,12 @@
 
 开启封网后，组织内对应环境下的所有应用均无法升级或发布。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/e11c8642-cddc-4346-a469-83b21e13f1c7.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/514081aa-4c06-4c91-834f-58691637e09a.png)
 
 ## 解封申请
-进入 **DevOps 平台 > 我的项目 > 申请部署** 提出申请。
+进入 **DevOps 平台 > 项目 > 申请部署** 提出申请。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/9e5d24fd-b937-4c2b-b852-4ecb7e59e62a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/5a3789b9-9bab-4e16-8a4c-63bd7f339cc4.png)
 
 ## 申请审批
 进入 **管理中心 > 审批管理**，企业管理员可对申请进行审批。

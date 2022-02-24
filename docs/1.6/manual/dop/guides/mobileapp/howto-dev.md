@@ -25,7 +25,7 @@
 申请订阅模块库后，需要企业管理员在后台同意后才能够使用“一键复制”功能。
 :::
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/0bdbdd88-8db4-4e83-a3ec-7c75a584e6de.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/527d8408-0f38-468b-b3b8-8129ce238fd4.png)
 
 ## 证书准备
 
@@ -45,7 +45,7 @@ cd android && ./gradlew clean assembleRelease -DRelease-keystore=((RELEASE_CERT_
 关于如何运行这个命令，将会在 [构建出第一个 APP](#构建出第一个-app) 提及。
 :::
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/397bb2f6-2dfc-4023-8091-363de64c1af0.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/788ff862-21b8-438d-a9f8-53fa706b6321.png)
 
 ## 监控集成
 
@@ -87,7 +87,7 @@ cd android && ./gradlew clean assembleRelease -Dak=((AK)) -Dai=((AI))
 
 请进入 **DevOps 平台 > 我的项目 > 应用列表 > 应用设置 > 更多设置 > 版本推送** 操作。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/7c00c422-319a-49e1-9c66-3a6a3727c47e.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/0249dea7-edec-47a6-8f74-9b5a5fe288cb.png)
 
 ## 构建出第一个 APP
 
@@ -165,7 +165,8 @@ stages:
 
 3. 流水线任务执行过程中，可实时查看流水线各步骤的执行状态，点击日志可查看对应节点执行状况的日志信息。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/5f882932-c71f-4cfa-b1ca-78be91a8c26b.png)
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/f096a438-7b62-4ef5-be98-4f642e9dbfa1.png)
 
 ### 查看构建结果
 
@@ -173,7 +174,7 @@ stages:
 
 进入 **DevOps 平台 > 我的发布 > APP > 版本内容** 操作。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/1a656383-94ac-4a7c-9b47-67204e187a48.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/969474f4-a344-48e7-8872-a9e343781b8c.png)
 
 ## 持续运营
 
@@ -182,12 +183,8 @@ stages:
 ### 版本管理
 持续集成后的版本信息可以在我的发布中进行预览，包括已上架和未上架的版本信息的同时，还可以管理版本的上、下架。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/19814436-6516-448f-8efb-84c692ac7710.png)
-
 ### 灰度分发
 设置灰度值为 10%，则有 10% 用户会默认下载最新版本，90% 用户下载旧版本
 
 ### 安全管理
 注册用户的基本信息，提供了基本预览功能，可以通过此处的 “拉黑”、“数据擦出”功能，实现对用户安全简单高效的管理。
-
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/6212a64b-212e-41b1-966b-238d4273a113.png)

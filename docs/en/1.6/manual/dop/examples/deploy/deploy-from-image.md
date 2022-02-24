@@ -103,13 +103,13 @@ The prefix of the branch committed to the remote repository is `feature/*`, whic
 3. During the process, you can view the status of each step in real time and click the log icon to check the execution information of the corresponding node.
 
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/73d040a0-e0a2-4bc8-aa9d-bdc2952669b5.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/d1fa0a55-bd1a-4cbb-9256-8fa6ad9602da.png)
 
 ## View Deployment Results
 
 After building and deployment, you can view the runtime of application instance successfully deployed in **Deployments**. Click the runtime for more operations of [application management](../../guides/deploy/management.html), such as domain configuration and instance scaling.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/26610388-23e4-456d-a53f-8cb6877c3c30.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/97bf3730-127c-43ba-b8c4-b8b3f021eaf4.png)
 
 :::tip Tips
 

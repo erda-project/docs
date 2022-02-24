@@ -82,11 +82,11 @@ public class HelloConfigCenterController {
 
 若 erda.yml 引用了配置中心，服务部署成功后，服务插件中将出现配置中心的控制台入口。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/c69af722-5cc2-4cb7-8043-4cf558aacdb1.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/3b1c5ff4-981c-4888-969d-3293b7021634.png)
 
 进入配置中心控制台，即可对配置项进行修改、删除等操作。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/43c9de68-d23f-4283-8cfd-6becdc6f163f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/a4aa8e10-676f-446f-b28a-fd7ca0644983.png)
 
 ## 本地连线上配置中心
 

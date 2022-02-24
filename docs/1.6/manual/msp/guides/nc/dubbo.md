@@ -318,7 +318,7 @@ dubbo:
 
 修改 erda.yml，添加注册中心 v2.0 的依赖。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/9adda3d8-fde7-4ae7-b483-f148323dae48.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/077606d3-b8a6-4947-821e-3038819f156c.png)
 
 完成服务部署后，Erda 将自动注入两个环境变量：
 * NACOS_ADDRESS
@@ -326,7 +326,7 @@ dubbo:
 
 点击注册中心，即可查看注册完成的服务。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/c7b55337-e018-472d-8804-4ee6507efa66.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/2d23a7fc-d709-4e84-b5ae-e217c9f4e525.png)
 
 ## 本地连线上注册中心
 
