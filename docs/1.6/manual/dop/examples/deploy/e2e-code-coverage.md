@@ -16,7 +16,7 @@
 
 使用 [示例源码](https://github.com/erda-project/jacoco-code-coverage.git) 创建一个应用，并通过流水线部署该应用至测试环境。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/f950088a-64c3-4b64-be57-f1352d785c53.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/25/9f32adb4-c59d-4261-997c-cbb4d9177da8.png)
 
 在该项目中，erda.yml 中引入了 sourcecov addon 用于对该应用开启代码覆盖率收集。
 
@@ -49,9 +49,9 @@ addons:
 
 ## 检查部署情况
 
-进入 **应用 > 部署中心**，等待应用  ss-amp-demo和 addon sourcecov 部署完成。
+进入 **应用中心 > 环境部署**，等待应用 ss-amp-demo 和 addon sourcecov 部署完成。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/94a25cd7-35ef-425e-9e3e-09a31cc99e23.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/25/6ded1989-96b4-4ffe-a9ee-bf9ad04c497a.png)
 
 ## 执行覆盖率收集计划
 
@@ -59,16 +59,16 @@ addons:
 
 点击 **开始** 按钮，系统将进入执行计划的数据准备阶段，此时您可以同时执行自动化或手动测试用例对应用进行测试。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/05b44520-5d31-4236-92b3-ce68ef6ffc13.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/25/38f32891-5a16-49f9-8110-e13b2f436cc1.png)
 
 ## 结束收集计划
 
 测试结束后刷新该页面，可点击 **结束** 按钮（若该按钮不可点击，表明系统尚未完成数据准备，请继续等待）。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/9ad3a643-60a7-424d-9f66-70d26ba37d46.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/25/b701cc7b-7b05-4993-a58f-3aa96489f8d8.png)
 
 ## 查看覆盖率
 
 点击 **结束** 按钮后，系统开始分析覆盖率数据，等待一段时间后刷新页面，即可查看集成测试的覆盖率数据，并通过点击执行记录中的 **下载报告** 按钮，下载 JaCoCo HTML 格式的覆盖率报告。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/acc96ac1-a700-430d-94b7-a884c908bad6.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/25/996fe5e0-153f-4dd8-83b7-33b4f1b4ff67.png)
