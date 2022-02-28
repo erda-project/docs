@@ -126,7 +126,8 @@ module.exports = [
           'dop/best-practices/microservice-springcloud',
           'dop/best-practices/api-drive-develop',
           'dop/best-practices/autotest',
-          'dop/best-practices/manual-test'
+          'dop/best-practices/manual-test',
+          'dop/best-practices/release'
         ]
       },
       {
@@ -179,7 +180,7 @@ module.exports = [
             title: '部署和管理',
             collapsable: true,
             children: [
-              'dop/guides/deploy/artifact-and-build',
+              'dop/guides/deploy/release',
               'dop/guides/deploy/deploy-from-artifact',
               'dop/guides/deploy/addon-out-of-box',
               'dop/guides/deploy/addon-custom',
