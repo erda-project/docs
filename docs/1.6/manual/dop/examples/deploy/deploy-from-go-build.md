@@ -97,14 +97,14 @@ stages:
       - golang:
           alias: go-demo
           params:
-            command: go build -o web-server main.go
+            command: go build -o go-web main.go
             context: ${git-checkout}
             service: web-server
   - stage:
       - release:
           alias: release
           params:
-            dice_yml: ${git-checkout}/dice.yml
+            dice_yml: ${git-checkout}/erda.yml
             image:
               go-demo: ${go-demo:OUTPUT:image}
   - stage:
@@ -140,7 +140,7 @@ services:
 
 ```bash
 git add .
-git commit -m "add pipeline.yml and dice.yml"
+git commit -m "add pipeline.yml and erda.yml"
 git push erda
 ```
 
