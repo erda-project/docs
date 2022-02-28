@@ -149,6 +149,7 @@ git push erda feature/demo
 
 3. 流水线任务执行过程中，可实时查看流水线各步骤的执行状态，点击日志可查看对应节点执行状况的日志信息。
 
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/f096a438-7b62-4ef5-be98-4f642e9dbfa1.png)
 
 ## 查看部署结果
