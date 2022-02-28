@@ -30,11 +30,11 @@ Erda 每天会进行垃圾回收，将创建时间在一个月以前且当前未
 
 在 **DevOps 平台 > 某项目 > 应用中心 > 制品** 的制品管理页面上，可以看到本项目下所有非临时制品并对它们进行管理。
 
-![制品管理页面](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/61f36417-1404-4eb8-aadb-a0f8cebc9f3f.png)
+![制品管理页面](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/e0112765-b1ab-40c0-ae2c-50bb10caf4fb.png)
 
 临时制品只能在创建该制品的流水线上，通过 Release Action 的超链接查看。
 
-![通过超链接查看临时制品](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/95a88bc8-e87e-4779-b8ae-c8f5bfe74b72.png)
+![通过超链接查看临时制品](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/96bc7a77-17f8-4123-8138-68429d68359f.png)
 
 **正式制品和非正式制品**
 
@@ -69,11 +69,11 @@ Erda 每天会进行垃圾回收，将创建时间在一个月以前且当前未
 
 在 **DevOps平台 > 某项目 > 应用中心 > 制品 > 项目制品** 页面上，点击右上角的新建制品按钮，会弹出下拉列表，其中就包含两种创建项目制品的方式。
 
-![创建项目制品的两种方式](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/25/2d0cc9f7-0571-48fe-98b3-8c5e52ffc03f.png)
+![创建项目制品的两种方式](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/d073662a-2e4f-4426-aaa0-0989bad8466f.png)
 
 第一种方式，"**选择应用创建**"。
 
-![选择应用创建制品](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/25/6716e8d6-190e-4246-ac40-150c9b5c1ce8.png)
+![选择应用创建制品](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/6f1ed1ef-1ec9-4527-829b-bb7ad12e95fc.png)
 
 输入版本。版本是项目制品在项目维度下的唯一标识，不能与项目维度下的其他项目制品版本重复，且必须由英文、数字、下划线（ _ ）、中划线（ - ）和/或点（ . ）组成。
 
@@ -89,7 +89,7 @@ Erda 每天会进行垃圾回收，将创建时间在一个月以前且当前未
 
 点击上传 zip 文件，选择本地的制品包。
 
-![上传制品](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/25/8ba50de4-25bb-4784-a3c4-f62c088e0ac7.png)
+![上传制品](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/4e643be5-d490-4cd2-849c-c0ced3a93773.png)
 
 Erda 会自动解析制品包中项目制品的版本信息和依赖的应用制品信息。
 
@@ -103,9 +103,9 @@ Erda 会自动解析制品包中项目制品的版本信息和依赖的应用制
 
 在应用制品或项目制品列表的操作列中，点击三个小点，可以看到制品的操作有：删除、下载、编辑、转正、查看引用制品。其中，删除和转正操作也可以在应用制品或项目制品的非正式页面通过勾选制品后在下面的批量操作栏进行。
 
-![制品的操作](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/25/e74f3a90-36e1-493d-a9b8-2fe0d04d3d9e.png)
+![制品的操作](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/537761b0-ffce-415d-b5ca-8fdfbf60f2d6.png)
 
-![批量操作](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/25/4aa5da9f-2944-430d-bb81-bc8e989f42ef.png)
+![批量操作](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/98af2305-de3f-44fa-9883-a4a2b43055dd.png)
 
 ### 删除制品
 
