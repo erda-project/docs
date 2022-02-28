@@ -104,7 +104,7 @@ module.exports = [
           'dop/examples/deploy/deploy-from-caches-build',
           'dop/examples/deploy/nexus',
           ['dop/examples/deploy/manage-mirror', '如何管理镜像'],
-          // 'dop/examples/deploy/e2e-code-coverage',
+          'dop/examples/deploy/e2e-code-coverage',
         ]
       },
       {
@@ -208,13 +208,13 @@ module.exports = [
             title: '质量保障和测试',
             collapsable: true,
             children: [
-              // 'dop/guides/qa-and-testing/sonar-report',
-              // 'dop/guides/qa-and-testing/sonar-quality-gate',
-              // 'dop/guides/qa-and-testing/unit-test',
+              'dop/guides/qa-and-testing/sonar-report',
+              'dop/guides/qa-and-testing/sonar-quality-gate',
+              'dop/guides/qa-and-testing/unit-test',
               'dop/guides/qa-and-testing/auto-test-getting-started',
               'dop/guides/qa-and-testing/test-dashboard',
-              // 'dop/guides/qa-and-testing/testing-in-cicd-pipeline',
-              // 'dop/guides/qa-and-testing/e2e-code-coverage',
+              'dop/guides/qa-and-testing/testing-in-cicd-pipeline',
+              'dop/guides/qa-and-testing/e2e-code-coverage',
               'dop/guides/qa-and-testing/function-test',
               'dop/guides/qa-and-testing/project-test-report',
             ]
