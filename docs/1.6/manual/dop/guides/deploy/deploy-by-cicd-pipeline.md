@@ -154,4 +154,47 @@ git push erda feature/demo
 
 ## 查看部署结果
 
-通过流水线构建源码并完成部署后，可在部署中心查看已成功部署的应用实例 Runtime。进入 Runtime 可进一步进行 [应用管理](../guides/deploy/management.html) 相关操作，例如配置域名、服务实例扩缩容等。
+通过流水线构建源码并完成部署后，可在环境部署查看已成功部署的应用实例 Runtime。进入 Runtime 可进一步进行 [应用管理](../guides/deploy/management.html) 相关操作，例如配置域名、服务实例扩缩容等。
+
+## 通过流水线部署项目/应用制品
+
+项目/应用制品可通过流水线触发部署，pipeline.yml 示例参考如下，更多信息请参见 [pipeline.yml](../guides/reference/pipeline.html)。
+
+:::tip 提示
+release_name 为制品版本名称。
+:::
+
+1. 项目制品部署
+
+```yaml
+version: "1.1"
+stages:
+- stage:
+  - dice:
+      params:
+        release_name: 1.0.0
+        type: project
+```
+
+2. 应用制品部署
+
+```yaml
+version: "1.1"
+stages:
+- stage:
+  - dice:
+      params:
+        release_name: 1.0+20220221201012
+        application_name: java-demo
+        type: application
+```
+
+触发流水线后，可前往 **应用中心 > 环境部署** 查看部署详情。
+
+
+## 跨集群部署
+
+在流水线文件中 Relese Action 部分的 `params` 添加 `cross_cluster: "true"`，则流水线生成的制品可跨集群部署。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/8d1c7690-9618-462b-ae6e-2d2174a76332.png)
+
