@@ -10,7 +10,7 @@
 
 ## 准备示范代码
 
-示范代码是一个基于 Spring Boot Web Service 的简单 Web 服务，代码托管于 [GitHub](https://github.com/bzdgn/docker-spring-boot-java-web-service-example.git) 。
+示范代码是一个基于 Spring Boot Web Service 的简单 Web 服务，代码托管于 [GitHub](https://github.com/bzdgn/docker-spring-boot-java-web-service-example.git)。
 
 :::tip 提示
 
