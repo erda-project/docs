@@ -46,7 +46,7 @@ git commit -m "initialize"
 
 将 Erda 平台的代码仓库地址添加到本地并推送。可以在 **DevOps > 项目 > base-project > 应用中心 > 应用 > go-web** 页面上，点击右上角的仓库地址按钮查看该代码仓库的地址、账号和口令。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/ce433206-97e9-456f-95c8-f9b669aa0d38.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/68bd9aa1-9f1c-4914-b69f-1b2ea193310c.png)
 
 ```bash
 git remote add erda <your-url>
@@ -115,17 +115,17 @@ git push erda
 
 在 go-web 应用页面中，点击上方流水线标签，进入应用流水线页面。可以看到在 master 分支下有一个默认流水线，这就是刚才创建的 `pipeline.yml` 文件解析后的流水线。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/b47d647a-f556-4676-8de8-805618745f6f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/04622e37-309d-452e-884e-b7199154d877.png)
 
 点击右上角的新建流水线按钮，Erda 会为该流水线创建一条流水线实例，点击执行按钮（下图中红圈标注处）开始执行该流水线实例。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/1a6678ac-9fc8-48e7-a129-3846c3b1a447.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/434c3dcd-0a0d-40d2-8410-44953488677c.png)
 
 流水线执行过程中，可实时查看流水线各步骤的执行状态，点击日志图表可查看对应节点执行状况的日志信息。
 
 流水线执行成功后，点击 release action 上的超链接，可以进入制品详情页面查看制品信息。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/f5acc3dc-a402-4ac1-b9cd-bd72c0981e32.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/203c45fe-72e9-4be1-bf46-54d4dd9d1afd.png)
 
 ## 交付制品
 
@@ -151,16 +151,16 @@ git push --set-upstream erda release/1.0
 
 此时在流水线页面中就可以看到 feature/1.0 分支，按照和上面同样的步骤执行该分支下的流水线。执行成功后获得的制品为非临时制品。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/22ce3fb5-26ca-4ea8-936b-607113821298.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/a4498006-f3af-4544-8204-ce76b6a6e642.png)
 
 ### 正式发布
 
 通过测试后需要发布正式制品。点击 Release Action 上的超链接，跳转至制品详情页面，点击转正式按钮，在弹出的确认对话框中点击确定即成功转为正式制品。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/f513eb9a-19cf-4192-a939-65a17c0c2171.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/fa05cbf0-a9ae-4d17-a6fc-fc606b208cae.png)
 
 或者在 **DevOps > 项目 > base-project > 应用中心 > 制品** 中通过筛选或搜索找到刚才创建的制品，在操作栏中点击转为正式版。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/5c58a9bf-feb0-4187-b591-13dea7f930ee.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/b12f0fb8-57cf-4fd8-8458-3ab55e54e169.png)
 
 正式制品一经创建就不能修改，包括删除、编辑、转正。
