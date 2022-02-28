@@ -1,8 +1,8 @@
 # 部署管理
 
-进行部署前，请确认已经准备好了制品，请参考 [制品管理](./release.html)。  
+着手部署前，请确认已完成制品创建，具体请参见 [制品](./release.html)。  
 
-进入项目，在 **应用中心 > 环境部署 > 部署** 选择对应的环境，可以进行部署管理。
+进入 **应用中心 > 环境部署 > 部署** 后选择对应的环境，即可进行部署管理操作。
 
 ## 创建部署
 
@@ -19,26 +19,26 @@
 * 制品中涉及的自定义 Addon 是否已经部署
 * 制品中涉及的 Addon 及版本当前平台是否支持
 * 部署涉及的应用在该环境是否处于部署中的状态
-  :::
+:::
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/d76f3d83-848f-4cbb-be09-cc6c601e948e.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/e5140066-dcbf-440c-86d4-2e8a3a2393e6.png)
 
 ## 开始部署
 
-在部署记录列可以查看已经创建的部署，点击 **开始部署** ，将按照制品中的分组编排依次执行部署。
+在部署记录中可查看已创建的部署。点击 **开始部署**，即根据制品中的分组编排依次执行部署。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/d01e82cc-b937-4af8-aa3e-3325f89ce3d1.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/a19f3d1d-9ca6-43f3-82ad-817c62cc30df.png)
 
 您可以点击查看详细部署进度以及本次部署应用相关的配置信息。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/92bd476e-7e85-4a2e-839b-2c60f3bad97b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/147d9172-7266-44c5-903f-02756b5d839b.png)
 
 ## 重新部署
 
 :::tip 提示 
-已经部署成功的部署单无法执行重新部署操作，需要创建新的部署单。
+已成功部署的部署单无法执行重新部署操作，需创建新的部署单。
 :::
 
-如果部署过程中存在失败或者触发了取消部署，您可以点击 **重新部署** ，将从 **当前失败的批次** 重新部署。
+若部署过程中存在失败或者触发了取消部署，可点击 **重新部署**，从 **当前失败的批次** 重新部署。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/d57696d3-9e33-4d99-aa1a-6d4c559f9eac.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/f21c698a-fd90-4a5e-a89e-b012074f2a21.png)
