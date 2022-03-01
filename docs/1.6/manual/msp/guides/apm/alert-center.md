@@ -6,7 +6,7 @@
 
 告警中心的首页为告警总览页，在该页面展示用户选择的时间段内的告警和通知的统计分析数据，如图所示：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/25/e168d92d-9826-465c-ab37-5b3bcc26b738.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/01/a5c59a3d-d4d4-47a0-88c0-fba6ac0fe02a.png)
 
 在告警总览页中用户可以看到默认一小时内的未恢复告警数、告警事件、通知成功与失败数量等。
 * 告警事件<br>
@@ -33,7 +33,7 @@
   
 告警持续事件分析气泡图展示了对应时间段内告警平均持续时间的触发的告警事件次数。如图所示：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/7463c35d-4758-4927-ba10-ea14c4c53027.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/01/0c84c411-4786-4896-9ee3-d88201c2f3b2.png)
 
 ## 告警列表
 在告警列表页中分为事件和通知两个tab页分别代表通过告警策略触发的告警事件和发送的告警通知
@@ -41,30 +41,30 @@
 * 事件<br>
 在事件tab页中用户可以通过左上角的筛选器和名称搜索框来筛选告警事件。如图所示：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/83920b3a-e13c-4a82-91aa-30958ff76256.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/01/53e50bb9-4a9c-4290-9895-5dc15b9afb3e.png)
 
 在事件列表中展示了告警事件的名称、所属策略、事件触发次数、告警级别、状态、事件来源和最后触发时间。用户在该页面可以清楚的看到告警策略的触发情况。如图所示：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/7c6ad7e1-8a44-40d4-a6f6-e6f568f4e001.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/01/0853caf1-99be-4ce7-a60b-8a998ba85617.png)
 
 用户可以通过点击事件列表中任意一条记录知道该事件告警的详情，在事件详情页中可以看到告警的名称，事件的状态（告警/恢复），在事件概览中可以看到该告警事件的关联告警规则、告警策略、
 事件来源、关联对象、触发次数。在监控数据的曲线图中可以看到触发该告警事件的告警指标的平均值。在事件详情的事件历史中可以看到该告警事件的历史列表，
 其中触发值表示触发该告警指标的值和用户设置的告警规则的阈值。在标签中可以看到该告警事件的其他key和其对应的value。在右上角的更多操作中，可以选择暂停告警和屏蔽告警。如图所示：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/9c9fec8d-96b8-4872-8c76-999bd2bcbaab.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/01/669c2672-31ad-4f57-b68f-2448071bc2c4.png)
 
 * 通知<br>
 在通知的tab页中用户可以通过左上角的筛选器和名称搜索框筛选通知。如图所示：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/5088e2ea-1ec7-4021-9ce4-6c45ca6586a7.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/01/82f4d2ec-20b1-4786-ac34-5f4bf1744cec.png)
 
 通知列表中可以看到发送通知的名称、状态、通知渠道、关联策略、发送事件，可以根据发送时间进行排序。如图所示：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/d1802c4e-7f08-4475-823d-a010e2f738d3.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/01/4ec92569-49da-4665-b199-526984834bf9.png)
 
 点击通知列表中的任意一条通知可以进到该通知的通知详情页，在详情页中包含了告警策略名称、通知方式、发送状态、发送时间、关联通知组、关联告警规则和通知的详细内容。如图所示：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/99f7fac3-2d28-4f05-a2de-d07529d8e60a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/01/bb08ca0f-0e6d-402c-9b19-59e3b8952c52.png)
 
 ## 告警配置
 在告警配置页中包含了告警策略，规则管理，通知组管理。
@@ -72,14 +72,14 @@
 * 告警策略<br>
 在告警策略tab页中是对告警策略的增删改查操作，在原先告警策略展示列表的基础上用户可以根据告警策略的名称进行搜索，对于告警策略的启用和停用在状态那一栏进行修改。如图所示：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/b3baae12-369a-479c-9584-d3d66be8be5e.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/01/cc2c0d45-b93e-4eb7-94c8-253588f31f56.png)
 
 * 规则管理<br>
 在规则管理的tab页中用户可以创建自定义告警规则，在原有页面的基础上用户可以根据自定义告警规则的名称进行搜索，在状态栏那可以对自定义规则进行启用、停用操作。如图所示：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/d4af396b-9f7f-4cad-8243-aab0b76c7935.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/01/7dd1519d-0130-44a9-99a6-5292d81f3865.png)
 
 * 通知组管理<br>
 在通知组管理tab页中用户可以创建在该项目下对应环境中的通知组，在原有的基础上用户可以根据通知组名称进行搜索。如图所示：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/7f6c1b50-a126-4157-8d79-3942dd14d3ef.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/01/aa8714c9-10f7-410d-bc80-c074abcfe5fe.png)
