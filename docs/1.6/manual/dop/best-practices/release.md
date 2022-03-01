@@ -164,3 +164,57 @@ git push --set-upstream erda release/1.0
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/b12f0fb8-57cf-4fd8-8458-3ab55e54e169.png)
 
 正式制品一经创建就不能修改，包括删除、编辑、转正。
+
+## 部署
+
+制品制作完成后，您可以进入 **应用中心 > 环境部署 > 部署**，选择对应的环境，实施部署。
+
+### 资源配额
+
+在执行部署操作前，您需要确认该项目目标环境下的资源配额是否满足本次部署的要求。  
+
+请进入 **DevOps > 项目 > 项目设置 > 项目配额** 查看配额。更多资源管理相关的内容，请参考 [资源管理](../guides/deploy/resource-management.html)。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/dbc2bac6-108e-4402-bef7-cea1e40384b3.png)
+
+### Addon 部署
+
+[自定义类型的 Addon](../guides/deploy/addon-custom.html) 需要在部署前准备完成。
+
+请进入 **DevOps > 项目 > 应用中心 > 环境部署 > Addons**, 点击添加服务，选择 `Custom` 并配置所需信息。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/13be9e0b-1983-4a7c-90f5-0c210e748bd6.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/250afbbf-af0f-4386-bcf9-be4fa174f10a.png)
+
+### 部署配置
+
+请进入 **DevOps > 项目 > 应用中心 > 环境部署 > 配置**，修改您部署所需要的配置。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/8a6c030a-5f82-44b4-b064-1edf26a3ad62.png)
+
+:::tip 提示
+部署完成后再次对配置修改，需要重启服务或重新部署才可以生效。
+Erda 提供了多种配置对方式，请参考 [配置](../guides/deploy/config.html)。
+:::
+
+### 实施部署
+
+在资源以及配置准备就绪后，您可以进入 **DevOps > 项目 > 应用中心 > 环境部署 > 部署** 实施部署操作。
+
+选择对应的环境，选择您期望部署的制品并创建部署。
+
+:::tip 提示
+创建部署时会对制品在当前环境的部署行为进行前置校验，请按照提示修改。
+:::
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/e5140066-dcbf-440c-86d4-2e8a3a2393e6.png)
+
+点击开始部署后，会按照制品中的分组编排依次执行部署操作。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/a19f3d1d-9ca6-43f3-82ad-817c62cc30df.png)
+
+部署过程中您可以点击部署记录查看当前部署的进度。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/147d9172-7266-44c5-903f-02756b5d839b.png)
+
+等待部署完成即可，更多部署操作请参考 [部署管理](../guides/deploy/deploy-order.html)。
