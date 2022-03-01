@@ -1,4 +1,4 @@
-# 通过 CI/CD 流水线一键部署
+# 通过流水线部署
 
 着手源码部署前，请确认已完成 [项目和应用创建](../../../quick-start/newbie.html#加入项目)。
 
@@ -164,30 +164,30 @@ git push erda feature/demo
 release_name 为制品版本名称。
 :::
 
-1. 项目制品部署
+* 项目制品部署
 
-```yaml
-version: "1.1"
-stages:
-- stage:
-  - dice:
-      params:
-        release_name: 1.0.0
-        type: project
-```
+  ```yaml
+  version: "1.1"
+  stages:
+  - stage:
+    - dice:
+        params:
+          release_name: 1.0.0
+          type: project
+  ```
 
-2. 应用制品部署
+* 应用制品部署
 
-```yaml
-version: "1.1"
-stages:
-- stage:
-  - dice:
-      params:
-        release_name: 1.0+20220221201012
-        application_name: java-demo
-        type: application
-```
+  ```yaml
+  version: "1.1"
+  stages:
+  - stage:
+    - dice:
+        params:
+          release_name: 1.0+20220221201012
+          application_name: java-demo
+          type: application
+  ```
 
 触发流水线后，可前往 **应用中心 > 环境部署** 查看部署详情。
 
