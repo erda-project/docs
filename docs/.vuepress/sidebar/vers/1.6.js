@@ -349,6 +349,13 @@ module.exports = [
           //     ]
           // },
           {
+            title: "告警中心",
+            collapsable: true,
+            children: [
+              'msp/guides/apm/alert-center',
+            ]
+          },
+          {
             title: '应用监控',
             collapsable: true,
             children: [
