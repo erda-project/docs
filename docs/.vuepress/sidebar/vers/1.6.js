@@ -180,7 +180,7 @@ module.exports = [
             title: '部署和管理',
             collapsable: true,
             children: [
-              'dop/guides/deploy/artifact-and-build',
+              'dop/guides/deploy/release',
               'dop/guides/deploy/resource-management',
               'dop/guides/deploy/addon-out-of-box',
               'dop/guides/deploy/addon-custom',
