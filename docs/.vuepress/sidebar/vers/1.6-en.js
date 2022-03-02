@@ -68,7 +68,7 @@ module.exports = [
             children: [
               'cmp/guide/cluster/k8s-dashboard',
               'cmp/guide/cluster/management',
-              // 'cmp/guide/cluster/autoscaling',
+              'cmp/guide/cluster/autoscaling',
               'cmp/guide/cluster/cluster-node-labels',
             ]
           },
@@ -119,16 +119,16 @@ module.exports = [
           ['dop/concepts/gitflow', 'Gitflow'],
         ]
       },
-  //     {
-  //       title: 'Best Practices',
-  //       collapsable: true,
-  //       children: [
-  //         'dop/best-practices/microservice-springcloud',
-  //         'dop/best-practices/api-drive-develop',
-  //         'dop/best-practices/autotest',
-  //         'dop/best-practices/manual-test'
-  //       ]
-  //     },
+      {
+        title: 'Best Practices',
+        collapsable: true,
+        children: [
+          'dop/best-practices/microservice-springcloud',
+          'dop/best-practices/api-drive-develop',
+          // 'dop/best-practices/autotest',
+          // 'dop/best-practices/manual-test'
+        ]
+      },
       {
         title: 'Guides',
         collapsable: true,
@@ -141,22 +141,23 @@ module.exports = [
               'dop/guides/collaboration/issue',
               'dop/guides/collaboration/issue-requirement-and-task',
               'dop/guides/collaboration/issue-bug',
-              // 'dop/guides/collaboration/issue-dashboard',
+              'dop/guides/collaboration/issue-dashboard',
+              'dop/guides/collaboration/issue-gantt-chart',
               'dop/guides/collaboration/issue-customize-and-workflow',
               'dop/guides/collaboration/ticket',
               'dop/guides/collaboration/label',
               'dop/guides/collaboration/notification',
             ]
           },
-  //         {
-  //           title: 'Code',
-  //           collapsable: true,
-  //           children: [
-  //             'dop/guides/code/code-hosting',
-  //             'dop/guides/code/branch-and-tag',
-  //             'dop/guides/code/merge-request',
-  //           ]
-  //         },
+          {
+            title: 'Code',
+            collapsable: true,
+            children: [
+              'dop/guides/code/code-hosting',
+              'dop/guides/code/branch-and-tag',
+              // 'dop/guides/code/merge-request',
+            ]
+          },
   //         {
   //           title: 'API',
   //           collapsable: true,
@@ -182,7 +183,7 @@ module.exports = [
               'dop/guides/deploy/deploy-from-artifact',
               // 'dop/guides/deploy/addon-out-of-box',
               // 'dop/guides/deploy/addon-custom',
-              'dop/guides/deploy/deploy-by-cicd-pipeline',
+              // 'dop/guides/deploy/deploy-by-cicd-pipeline',
               'dop/guides/deploy/config',
               // 'dop/guides/deploy/config-center',
               'dop/guides/deploy/db-migration',
@@ -192,16 +193,17 @@ module.exports = [
               // 'dop/guides/deploy/block-deploy',
             ]
           },
-  //         {
-  //           title: 'CI/CD Pipeline',
-  //           collapsable: true,
-  //           children: [
-  //             'dop/guides/cicd-pipeline/pipeline-yml-config',
-  //             'dop/guides/cicd-pipeline/pipeline-yml-graph',
-  //             'dop/guides/cicd-pipeline/pipeline-execution',
-  //             'dop/guides/cicd-pipeline/pipeline-customize-and-extension',
-  //           ]
-  //         },
+          {
+            title: 'CI/CD Pipeline',
+            collapsable: true,
+            children: [
+              // 'dop/guides/cicd-pipeline/pipeline-yml-config',
+              // 'dop/guides/cicd-pipeline/pipeline-yml-graph',
+              // 'dop/guides/cicd-pipeline/pipeline-execution',
+              'dop/guides/cicd-pipeline/project-pipeline',
+              'dop/guides/cicd-pipeline/pipeline-customize-and-extension',
+            ]
+          },
   //         {
   //           title: 'Quality Assurance and Testing',
   //           collapsable: true,

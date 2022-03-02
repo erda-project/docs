@@ -29,7 +29,7 @@ root_from_repo
     └── other_dirs
 ```
 
-进入 **DevOps 平台 > 我的应用 > 选择应用 > API 设计**，通过目录树控件可展开应用下所有分支，打开任意文档开始编辑。若仓库当前暂无文档，可在有权限的分支下新建文档。
+进入 **我的应用 > 选择应用 > API 设计**，通过目录树控件可展开应用下所有分支，打开任意文档开始编辑。若仓库当前暂无文档，可在有权限的分支下新建文档。
 
 同一时间下，平台仅允许一名用户对同一篇文档进行编辑。若他人正在编辑某一篇文档，打开该文档将提示文档已被锁定。
 
@@ -67,7 +67,7 @@ root_from_repo
 
 在左侧目录栏中选择 **API 概况**，填写 API 名称（建议与文件名保持一致）、版本名称以及文档描述信息。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/955fa5c6-f3aa-438a-947f-3e34ed9f7e4a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/6bdca3a7-841d-46cb-8755-70bdba725e3b.png)
 
 #### 定义数据模型
 
@@ -75,7 +75,7 @@ root_from_repo
 
 在左侧目录栏中选择 **数据类型**，根据提示添加数据类型，并填写参数名称、类型、描述等基本信息。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/bec6fe96-237a-4073-b616-69eda187120c.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/7f2d04b7-0fe9-4295-9b43-262df3a23d5c.png)
 
 编辑数据结构时，可导入 `.erda/migrations` 目录中定义的库表字段，示例如下：
 
@@ -118,8 +118,6 @@ ADD COLUMN age INT NOT NULL ;
 
 编辑数据结构时，点击 **导入参数** 即可直接引用库表字段。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/07/3fb4a0b0-6df2-4d39-8c26-fd438cf0e6cd.png)
-
 :::tip 提示
 设计 API 文档时引用库表字段，仅可引用与文档同名模块下的库表字段。
 :::
@@ -132,7 +130,7 @@ ADD COLUMN age INT NOT NULL ;
 
 接口也被称为 Operation，URL + HTTP Method 即可确定一个接口。选择接口的 Summary Tab，填写接口名称、分组、描述等信息。接口名称为选填项，若选择填写，需保证该名称在文档中的唯一性。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/e3116213-d4a5-4075-a704-cbb1514f48c8.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/f0ac3151-1315-4652-a1db-237e7ef2e040.png)
 
 ##### 编写 Params、Headers
 
@@ -150,7 +148,7 @@ GET 和 HEAD Method 均无 Request Body。对于有 Request Body 的方法，可
 
 定义接口的参数（Params、Headers、Body、Response 以及任意子字段）时，可自定义参数类型。若被引用类型的父类型为 Object，则可以在其基础上继续添加参数。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/fe0ef856-6d2d-4633-9c97-545143847e85.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/7f0bf54f-f742-4ada-b390-b5c3b077fdb4.png)
 
 ##### 导入参数
 
@@ -162,7 +160,7 @@ GET 和 HEAD Method 均无 Request Body。对于有 Request Body 的方法，可
 
 填写 API 名称、ID 和语义化版本号，将文档发布至集市，随后即可在集市中查看和管理已发布的文档。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/d40a8ecf-d6b3-4d16-b0e2-5d9bc8a2aca8.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/0aaec284-9226-470b-be75-a4e2d92b9cb6.png)
 
 
 ## API 集市
@@ -242,7 +240,7 @@ stages:
 
 进入 **DevOps 平台 > API 管理 > API 集市**，点击列表中的任一条目进入该 API 文档的预览页面，在此可查看文档具体信息，包括每一个接口的描述细节，同时支持版本切换、接口搜索、文档下载等操作。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/34f45f91-aa45-40da-a05a-15185f36a036.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/e8362354-858e-449d-9d65-2ef378b6658f.png)
 
 ### 管理文档
 
@@ -264,7 +262,7 @@ stages:
 
 如需对目标 API 资源及其关联实例进行访问管理，请先创建一个访问管理条目，点击 **创建** 按钮进行操作。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/bf408a13-fc08-4279-b819-a8f6fd6edca9.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/aaf32327-13f9-4045-ad40-54fdd8d28dfe.png)
 
 - API 名称：API 资源名称。
 - API 版本：API 版本名称，对应 Major 版本号。
@@ -281,11 +279,11 @@ stages:
 
 API 使用者可在 API 集市页或 API 资源详情页对 API 资源提出申请调用。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/e36db9aa-1be3-4d49-9d87-deb0baec407f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/37334bd0-848b-4c0e-af64-54fde139fcae.png)
 
 审批流程进入 API 访问管理后台，管理人员在客户端列表对调用申请进行审批。若授权方式为自动授权，申请人将自动获得授权，否则需管理人员手动授权。对已授权的客户端，可撤销授权或删除申请。若已提前配置 SLA，可更换 SLA 为该客户端设置特定的访问级别。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/570feb8e-0bf0-4d44-b184-1277691991ec.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/27e3dfe7-55a1-415c-b76b-6bcc68bcfb87.png)
 
 ### 配置 API 策略
 
@@ -298,11 +296,11 @@ SLA（service-level agreement），即服务级别协议。API 访问管理人�
 
 若 API 管理人员对该 API 进行访问管理，则用户可在 API 集市页或预览页对该 API 提出申请调用，随后进入 **API 管理 > 我的访问 > 客户端详情** 查看申请情况。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/703fa43b-1df8-4552-bad6-114dc356b9f0.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/19f56e4e-b4e2-4f90-91ce-186ea0ece6a8.png)
 
 审批通过后，进入 API 资源预览页，通过客户端 ID 和密钥进行认证，随后即可在平台对接口进行调用测试。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/303c1bb4-9841-4305-8b21-dea35b20a285.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/cc1c901b-d9d1-4eac-86f2-5c0a884a93d1.png)
 
 用户开发自己的应用程序时，可用该客户端 ID 和密钥访问服务。
 

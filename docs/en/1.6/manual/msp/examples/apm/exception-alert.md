@@ -4,9 +4,9 @@
 
 If you want to receive alarms when exception of frequent requests occurs, try the built-in alarm strategies of Erda monitoring, which provides out-of-the-box alarm rules of application error, application transaction and more.
 
-Go to **Microservice Platform > Project List > Select Project > Alarm Management > Alarm Strategy > New Strategy**, and configure as needed.
+Go to **Microservice Platform > Alert Center > Alert Config > Alarm Strategy > New Strategy**, and configure as needed.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/97c13340-ea94-430b-aa7a-a50c418b33ce.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/736afbdb-e316-4401-bfb3-aad494b58554.png)
 
 ## Diagnosis
 
@@ -16,7 +16,7 @@ You can use Erda monitoring for exception diagnosis in the following ways.
 
 The most direct way is to view the log. Find the corresponding log by container log for troubleshooting.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/b3838369-4b17-44e2-9d12-0ef27064b9fa.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/57f13ea6-2b9c-4735-ac6b-29c6806f8142.png)
 
 ### Diagnose Exceptions via Error Analysis
 

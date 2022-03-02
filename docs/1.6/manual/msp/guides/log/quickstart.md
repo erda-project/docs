@@ -8,7 +8,7 @@
 
 * 以可视化方式添加日志分析 Addon
 
-  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/3f09f9ec-d1fa-4e0c-816d-f3d71fd3eaf2.png)
+  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/88972d9f-0a3e-4c8c-8be1-0d68190913cf.png)
 
 * 以代码方式添加日志分析 Addon
 
@@ -32,7 +32,7 @@
 
 编辑并保存 erda.yml 后，需重建应用对应分支的流水线并执行部署。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/0c987917-6293-49cf-9274-a99b1bb67151.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/66df4464-76ba-4228-9049-4a12749e8141.png)
 
 流水线执行成功后，将在所部署的集群中部署日志分析的必要组件，包括：
 
@@ -44,7 +44,7 @@
 
 ## 进入日志分析模块查看数据
 
-完成部署后，应用容器的日志将被收集并写入日志分析的 Elasticsearch 中，您可进入 **微服务平台 > 日志分析 > 日志查询** 查看。
+完成部署后，应用容器的日志将被收集并写入日志分析的 Elasticsearch 中，您可进入 **微服务治理平台 > 诊断分析 > 日志分析 > 日志查询** 查看。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/d3add27b-c3bc-4013-901b-26812c388da3.png)
 

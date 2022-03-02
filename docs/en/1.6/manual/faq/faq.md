@@ -4,9 +4,9 @@
 
 Scaling can be done in Deployments without modifying the erda.yml. For details, see [Scaling](../dop/guides/deploy/management.html#scaling).
 
-1. Go to **My Application > Deployments** and select **Scale out**.
+1. Go to **DevOps Platform > Projects > App Center > Environments**, select a runtime and click **Scale out**.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/4ab42ffb-9b93-43f4-beb2-aa5b2a0f88a3.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/cae20b46-3ae5-4c5a-9e8e-8c1960117077.png)
 
 2. Adjust service resources as needed.
 
@@ -14,27 +14,27 @@ Scaling can be done in Deployments without modifying the erda.yml. For details, 
 
 ## 2. Does the service provide an address for internal calls?
 
-Go to **My Application > Deployments** to view the internal address of the service.
+Go to **DevOps Platform > Projects > App Center > Environments** and select a runtime to view the internal address of the service.
 
 Neither service redeployment nor pipeline rebuilding will affect the internal address.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/bab77d74-272f-402b-a0ec-77501c2c784b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/deb3143d-58e4-4545-9c74-1babf904c11c.png)
 
 ## 3. How to view the error log?
 
-1. Go to **My Application > Deployments** to view the container log, which shows the standard output (stdout) log. For details, see [Service Log](../dop/guides/deploy/metrics_logs.html#service-log).
+1. Go to **DevOps Platform > Projects > App Center > Environments** and select a runtime to view the container log, which shows the standard output (stdout) log. For details, see [Service Log](../dop/guides/deploy/metrics_logs.html#service-log).
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/830cecf3-bbf8-4259-adc3-a53ac082207d.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/fd8b519f-3aa0-43ae-9525-7043e3b93867.png)
 
 2. Click the switch button to view the standard error (stderr) log.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/f1bd0b02-f4a4-469c-b07e-67599af6d919.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/922f2cd1-5d1e-43ee-8d2c-d99e3f6f68cb.png)
 
 ## 4. How to view the stopped container instances?
 
-1. Go to **My Application > Deployments** and select **Stopped** to view the corresponding container instance.
+1. Go to **DevOps Platform > Projects > App Center > Environments**, select a runtime and select **Stopped** to view the corresponding container instance.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/509dfb92-8fd4-4988-8cc9-911ebb210566.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/48e5aa5f-216b-4373-89a6-0fc8c69dbfed.png)
 
 2. The status bar shows the reason why the container stopped (such as OOM exit, which will be displayed as OOMKilled here). The operate bar allows you to view the resource usage and logs of the container when it is running.
 
@@ -126,4 +126,4 @@ The configuration in pipeline.yml is as follows:
 
 It means that there are no clusters available in the current environment.
 
-Clusters are necessary for pipeline execution. Please go to **DevOps Platform > Projects > Settings > Project Information > Edit > Cluster Resources** to specify a cluster and set quotas for the current environment.
+Clusters are necessary for pipeline execution. Please go to **DevOps Platform > Projects > Settings > Project Information > Edit** to specify a cluster and set quotas for the current environment.

@@ -8,30 +8,30 @@ Take slow request of Redis as an example.
 
 Go to **Microservice Platform > Project List > Select Project > Application Monitoring > Active Monitoring** and add monitoring.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/440936aa-3f3a-45c4-ba11-adde8c1ee4ea.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/73ecb7cb-a2e0-4b38-9f5a-cceb8c8b2e0d.png)
 
 ## View Active Monitoring Details
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/719faada-7c85-459b-ad34-aee53494e7df.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/6aad5d27-6d7e-4401-a3dc-507e5184233a.png)
 
 ## Configure Custom Alarm Rules
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/5ce6d1a6-5a2c-4eb1-a9d6-6371eacb6c07.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/8ff2b682-0e5d-4c68-bfce-315240394e1e.png)
 
 ### Configure Field Rules
 
 Customize the rules as needed.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/68c40db9-307b-439f-a0d8-edd45f9cface.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/2a520e8a-2feb-4881-bb1c-29ccb9a62670.png)
 
 ### Configure Message Template
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/c52a03d4-7576-4d83-9244-52bd6630c030.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/ed879b91-4f3a-41da-b285-8dbc97b0c974.png)
 
 ## Configure Alarm Strategy
 
 Configure an alarm strategy after custom alarm configuration. You can choose the custom alarm rules configured before.
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/14/c2eff490-c68c-464e-90ce-2dba88340cab.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/fd243f5d-ce4c-4bbb-bf13-779569eb3809.png)
 
 When finish the operations above, the system will send an alarm notification to the DingTalk group according the message template if an alarm is triggered.

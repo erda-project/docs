@@ -126,7 +126,8 @@ module.exports = [
           'dop/best-practices/microservice-springcloud',
           'dop/best-practices/api-drive-develop',
           'dop/best-practices/autotest',
-          'dop/best-practices/manual-test'
+          'dop/best-practices/manual-test',
+          'dop/best-practices/release'
         ]
       },
       {
@@ -179,17 +180,17 @@ module.exports = [
             title: '部署和管理',
             collapsable: true,
             children: [
-              'dop/guides/deploy/artifact-and-build',
-              'dop/guides/deploy/deploy-from-artifact',
+              'dop/guides/deploy/release',
+              'dop/guides/deploy/resource-management',
               'dop/guides/deploy/addon-out-of-box',
               'dop/guides/deploy/addon-custom',
-              'dop/guides/deploy/deploy-by-cicd-pipeline',
               'dop/guides/deploy/config',
               'dop/guides/deploy/config-center',
+              'dop/guides/deploy/deploy-order',
+              'dop/guides/deploy/deploy-by-cicd-pipeline',
               'dop/guides/deploy/db-migration',
-              'dop/guides/deploy/management',
               'dop/guides/deploy/metrics_logs',
-              'dop/guides/deploy/resource-management',
+              'dop/guides/deploy/management',
               'dop/guides/deploy/block-deploy',
             ]
           },
@@ -348,11 +349,18 @@ module.exports = [
           //     ]
           // },
           {
+            title: "告警中心",
+            collapsable: true,
+            children: [
+              'msp/guides/apm/alert-center',
+            ]
+          },
+          {
             title: '应用监控',
             collapsable: true,
             children: [
               'msp/guides/apm/service-list',
-              'msp/guides/apm/service-analysis',
+              // 'msp/guides/apm/service-analysis',
               'msp/guides/apm/browser-monitor',
               'msp/guides/apm/browser-monitor-config',
               'msp/guides/apm/trace',

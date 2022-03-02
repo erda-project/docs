@@ -118,7 +118,7 @@ envs:
 
 **策略调度说明**
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/10f541ea-fb31-4c45-a5aa-19b370b4dbdf.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/81aee7e0-dcdc-418f-8cbe-be248be55185.png)
 如图，策略目前只关心几个点
 
 1. 是否是定时的记录(非定时任务不会被策略调度)
@@ -630,7 +630,7 @@ master:
 maven.profile = prod
 ```
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/97e81d9b-744d-461e-8e9c-73e2f3e70639.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/d7b75bcf-eddd-4790-8d2a-35d7e55f48f6.png)
 
 :::
 
@@ -652,7 +652,7 @@ stages:
 ...
 ```
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/f6f14910-5c87-4d77-9a84-22795918bf68.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/2b25fce7-7d5a-4f57-811a-f299124f1a3b.png)
 
 :::
 

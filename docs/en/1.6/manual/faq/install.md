@@ -2,7 +2,7 @@
 
 ## 1. What if it goes to the error page when registering an account and logging in for the first time after deployment based on Docker Compose?
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/21/20a6100f-ec01-4e7d-bbe5-5310cf132ecc.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/19693130-d38b-4a11-ac5a-2c3bd39b9e65.png)
 
 The address of this page is `sysAdmin/orgs`, that is, the organization administrator page, which is not open source yet (coming soon). Erda takes the account registered for the first time as the organization administrator by default, so it automatically turns to this page.
 

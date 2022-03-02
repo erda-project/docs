@@ -27,13 +27,13 @@ API First 原则即优先设计和完成 API，随后再安排其他事项，其
 API 提供者的工作流程主要包括：设计 > 发布 > 自测 > 缺陷修复。
 
 ### API 设计
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/09/17/b89cce49-3ca3-4e6b-b49f-1a67df1879ad.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/78e94e60-baf6-40d6-9155-769f826f4f32.png)
 
 平台基于 OpenAPI 3.0 标准协议，并通过可视化界面支持 API 编辑，同时实践 RESTful 规范，从而轻松完成 API 设计。
 
 平台遵循配置即代码的 GitOps 理念，在可视化编辑的同时，API 文档将自动保存至 Git 仓库，便于后续跟踪修改，并支持快速回滚。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/09/17/c1838049-7a87-4eb7-a8b5-c6340a0ecddd.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/f2bdc088-afd0-453e-9281-0291bb830899.png)
 
 ### API 发布并自测
 完成 API 开发后，您可将 API 直接 [发布至集市](../../msp/practice/apigw/apim.html#发布到集市)，随后创建 [访问管理](../../msp/practice/apigw/apim.html#访问管理) 并进行 API 测试。
@@ -43,14 +43,14 @@ API 调用方的工作流程主要包括：查阅 > 调用 > 联调 > 缺陷修�
 
 调用方可进入 **DevOps 平台 > API 管理 > API 集市** 查看已发布的 API 文档，点击 **申请调用** 获取客户端的 ClientID 和 ClientSecret，随后完成调用端编码。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/09/17/0aa945ea-c895-4357-bc29-6b8bd703af32.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/7e083cc7-253e-4abd-b707-db3042613b9d.png)
 
 若联调测试过程中 API 调用报错，需注意 API 定义是否发生变化，可通过 Git History 进行排查 。
 
 ## API 自动化测试
 测试工程师通过 API 完成接口测试的流程主要包括：查阅 > 设计接口测试场景 > 执行测试 > 提交缺陷。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/09/17/6160b9ba-06dc-4beb-bfa5-16280853313b.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/80418f0c-1a8f-4487-b117-a842943e5f09.png)
 
 设计测试用例场景时可直接搜索 API 市场，获取接口定义。
 
@@ -83,7 +83,7 @@ major.minor.patch 版本中 minor 和 patch 版本提升时，所有的 API 必�
 
   通过 API 网关对公网开放，并在网关上对调用者设置 **认证通过+授权许可** 进行管控。
 
-  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/09/17/d2640856-da28-4d99-886d-3531a086cb18.png)
+  <img src="http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/ae75dfda-a1fe-4c2e-bfaf-b771867b7ad5.png" style="zoom:50%;" />
 
   推荐使用 ClientID 和 ClientSecret 签名方式，并配置每秒请求次数的调用量限制，以保证安全稳定。
 
@@ -97,4 +97,4 @@ major.minor.patch 版本中 minor 和 patch 版本提升时，所有的 API 必�
 
   后端服务需避免配置域名直接对公网开放。测试 API 可使用内部地址而非公网域名。
 
-  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/09/17/9439ec5b-adfe-470e-b461-a7671d7c4d79.png)
+  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/0cfbf65c-be8a-440d-bdca-69882636ea2c.png)

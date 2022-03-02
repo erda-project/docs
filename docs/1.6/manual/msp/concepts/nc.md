@@ -28,7 +28,7 @@
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/cb9136b2-b79c-4bf1-819a-74ef281b3f25.png)
 
-进入 **微服务平台 > 环境设置 > 组件信息**，可查看 Nacos NamespaceId 对应的服务参数（即自动注入的环境变量）。
+进入 **微服务治理平台 > 环境设置 > 组件信息**，可查看 Nacos NamespaceId 对应的服务参数（即自动注入的环境变量）。
 
 注册中心对应的服务参数为 `NACOS_TENANT_ID`。
 
@@ -57,7 +57,7 @@ Spring Cloud 框架的微服务注册发现机制。由于 Spring Cloud 框架�
 
 配置中心的 Key/Value 配置项可合并形成一份 application.yml，动态下发配置。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/dd3f232f-51a1-4576-a691-4a7286a5c4fc.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/f0b8a3f6-d139-4102-bb18-3e0c1b87bb89.png)
 
 对应至 Nacos，每个应用配置即为一个独立的 Data 配置项。
 

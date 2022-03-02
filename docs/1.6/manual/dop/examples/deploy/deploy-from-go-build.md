@@ -56,9 +56,9 @@ git commit -m "initialize"
 
 平台基于标准的 Git 协议内置 Git 代码仓库，您无需依赖于外部仓库（例如 GitLab 等）即可完成从源码开发到部署的全流程。
 
-进入 **我的应用 > 选择应用 > 代码仓库 > 代码浏览 > 仓库地址**，查看平台远程仓库服务器地址。
+进入 **我的应用 > 选择应用 > 代码 > 仓库地址**，查看平台远程仓库服务器地址。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/95a60bb7-869e-47a4-996d-84f07ea3e3ce.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/647972ef-6846-43f9-a7c7-e18ac73f7d1e.png)
 
 ```bash
 git remote add erda https://erda-org.erda.cloud/wb/base-project/go-web
@@ -97,14 +97,14 @@ stages:
       - golang:
           alias: go-demo
           params:
-            command: go build -o web-server main.go
+            command: go build -o go-web main.go
             context: ${git-checkout}
             service: web-server
   - stage:
       - release:
           alias: release
           params:
-            dice_yml: ${git-checkout}/dice.yml
+            dice_yml: ${git-checkout}/erda.yml
             image:
               go-demo: ${go-demo:OUTPUT:image}
   - stage:
@@ -140,7 +140,7 @@ services:
 
 ```bash
 git add .
-git commit -m "add pipeline.yml and dice.yml"
+git commit -m "add pipeline.yml and erda.yml"
 git push erda
 ```
 
@@ -152,13 +152,9 @@ git push erda
 
 ## 查看部署结果
 
-通过流水线构建源码并完成部署后，可在部署中心查看已成功部署的应用实例 Runtime。
+通过流水线构建源码并完成部署后，可在环境部署查看已成功部署的应用实例 Runtime。进入 Runtime 可进一步进行 [应用管理](../../guides/deploy/management.html) 相关操作，例如配置域名、服务实例扩缩容等。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/8a7e7936-e37d-41f0-bf90-67cf86d581e9.png)
-
-点击 **master** 进入应用管理，可进一步进行配置域名、服务实例扩缩容等操作。
-
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/14/6f4df3f0-f65b-4b29-9517-b2e3e37875ed.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/2769e8a4-680c-4db3-a8fc-867ce4830b8d.png)
 
 复制实例 IP 地址至浏览器，加上应用服务的端口 8080 即可看到“Hello,World!”。
 

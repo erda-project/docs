@@ -208,9 +208,9 @@ services:
     ...
 ```
 
-若仅需临时扩缩容（即不涉及源码部署），可进入 **我的应用 > 部署中心** 调整。
+若仅需临时扩缩容（即不涉及源码部署），可进入 **DevOps 平台 > 项目 > 应用中心 > 环境部署** 调整。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/ef752e97-fd41-4790-a80c-22013105adbd.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/31c56142-ebf6-490d-9152-6d8b1729198d.png)
 
 完成调整后将提示重启 Runtime。
 

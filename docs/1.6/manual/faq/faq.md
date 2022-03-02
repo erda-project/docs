@@ -4,9 +4,9 @@
 
 扩缩容服务无需调整 erda.yml，直接在部署中心操作即可。具体请参见 [扩缩容](../dop/guides/deploy/management.html#扩缩容)。
 
-1. 进入 **我的应用 > 部署中心**，选择 **服务扩容**。
+1. 进入 **DevOps 平台 > 项目 > 应用中心 > 环境部署**，选择 Runtime 后点击 **服务扩容**。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/ef752e97-fd41-4790-a80c-22013105adbd.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/31c56142-ebf6-490d-9152-6d8b1729198d.png)
 
 2. 根据需要进行服务资源调整。
 
@@ -14,27 +14,27 @@
 
 ## 2. 服务是否提供内部调用的地址？
 
-进入 **我的应用 > 部署中心** 可查看服务的内部地址。
+进入 **DevOps 平台 > 项目 > 应用中心 > 环境部署**，选择 Runtime 后可查看服务的内部地址。
 
 服务的重新部署或流水线的重新构建均不会影响该内部地址。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/b2a119ec-a715-41b1-b105-8dde6b027ede.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/6057160d-bf47-440d-9e89-d1dd6d704e01.png)
 
 ## 3. 如何查看错误日志？
 
-1. 进入 **我的应用 > 部署中心**，点击容器日志，此时显示的是标准输出（stdout）日志。具体请参见 [服务日志](../dop/guides/deploy/metrics_logs.html#服务日志)。
+1. 进入 **DevOps 平台 > 项目 > 应用中心 > 环境部署**，选择 Runtime 后点击容器日志，此时显示的是标准输出（stdout）日志。具体请参见 [服务日志](../dop/guides/deploy/metrics_logs.html#服务日志)。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/0a8aa165-8c74-41b7-8707-58bd0930eabe.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/caa48190-876e-4e5b-b4ee-8bdd81b7abdd.png)
 
 2. 点击顶部切换开关，查看标准错误（stderr）日志。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/398019e2-c1a8-4d6f-8d26-6cf76766f8f5.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/9325bf20-ff2e-4d41-b456-1482c3f5de54.png)
 
 ## 4. 如何查看已停止的容器实例？
 
-1. 进入 **我的应用 > 部署中心**，选择 **已停止** 查看对应容器实例。
+1. 进入 **DevOps 平台 > 项目 > 应用中心 > 环境部署**，选择 Runtime，选择 **已停止** 查看对应容器实例。
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/19/e7591f37-0bb2-408e-95f9-41ce4e9e0973.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/8ba73010-a1e5-41d6-801e-6d41ee98056a.png)
 
 2. 状态栏将标注容器停止的原因（如 OOM 退出，将标注为 OOMKilled）。操作栏中可查看容器运行时的资源使用情况以及对应日志。
 
@@ -126,4 +126,4 @@ pipeline.yml 中的配置如下:
 
 该提示代表当前环境下无可用的集群。
 
-集群是流水线执行的必要条件，请进入 **DevOps 平台 > 项目 > 项目设置 > 项目信息 > 编辑 > 集群资源** 为当前环境指定集群并设置配额。
+集群是流水线执行的必要条件，请进入 **DevOps 平台 > 项目 > 项目设置 > 项目信息 > 编辑** 为当前环境指定集群并设置配额。

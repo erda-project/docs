@@ -1,4 +1,4 @@
-# 通过 CI/CD 流水线一键部署
+# 通过流水线部署
 
 着手源码部署前，请确认已完成 [项目和应用创建](../../../quick-start/newbie.html#加入项目)。
 
@@ -28,7 +28,7 @@ git clone https://github.com/bzdgn/docker-spring-boot-java-web-service-example.g
 
 平台基于标准的 Git 协议内置 Git 代码仓库，您无需依赖于外部仓库（例如 GitLab 等）即可完成从源码开发到部署的全流程。
 
-进入 **DevOps 平台 > 我的应用 > 选择应用 > 代码仓库 > 代码浏览 > 仓库地址**，查看平台远程仓库服务器地址。
+进入 **我的应用 > 选择应用 > 代码 > 仓库地址**，查看平台远程仓库服务器地址。
 
 ```bash
 git remote add erda http://dice.dev.terminus.io/wb/erda-test/java-demo
@@ -38,7 +38,7 @@ git push -u erda --tags
 
 完成代码推送后，即可在代码仓库中查看代码信息。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/0acc79b4-1758-4b19-ba8d-b3552c7cecdb.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/0f686df6-52d5-46ef-af77-845dadd54695.png)
 
 ## 定义流水线
 
@@ -149,8 +149,52 @@ git push erda feature/demo
 
 3. 流水线任务执行过程中，可实时查看流水线各步骤的执行状态，点击日志可查看对应节点执行状况的日志信息。
 
-   ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/5f882932-c71f-4cfa-b1ca-78be91a8c26b.png)
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/f096a438-7b62-4ef5-be98-4f642e9dbfa1.png)
 
 ## 查看部署结果
 
-通过流水线构建源码并完成部署后，可在部署中心查看已成功部署的应用实例 Runtime。进入 Runtime 可进一步进行 [应用管理](../guides/deploy/management.html) 相关操作，例如配置域名、服务实例扩缩容等。
+通过流水线构建源码并完成部署后，可在环境部署查看已成功部署的应用实例 Runtime。进入 Runtime 可进一步进行 [应用管理](../guides/deploy/management.html) 相关操作，例如配置域名、服务实例扩缩容等。
+
+## 通过流水线部署项目/应用制品
+
+项目/应用制品可通过流水线触发部署，pipeline.yml 示例参考如下，更多信息请参见 [pipeline.yml](../guides/reference/pipeline.html)。
+
+:::tip 提示
+release_name 为制品版本名称。
+:::
+
+* 项目制品部署
+
+  ```yaml
+  version: "1.1"
+  stages:
+  - stage:
+    - dice:
+        params:
+          release_name: 1.0.0
+          type: project
+  ```
+
+* 应用制品部署
+
+  ```yaml
+  version: "1.1"
+  stages:
+  - stage:
+    - dice:
+        params:
+          release_name: 1.0+20220221201012
+          application_name: java-demo
+          type: application
+  ```
+
+触发流水线后，可前往 **应用中心 > 环境部署** 查看部署详情。
+
+
+## 跨集群部署
+
+在流水线文件中 Relese Action 部分的 `params` 添加 `cross_cluster: "true"`，则流水线生成的制品可跨集群部署。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/8d1c7690-9618-462b-ae6e-2d2174a76332.png)
+

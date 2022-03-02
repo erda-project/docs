@@ -4,9 +4,9 @@
 
 内置代码仓库提供分支管理功能。
 
-进入 **DevOps 平台 > 我的应用 > 选择应用 > 代码仓库 > 分支管理**。应用仓库默认以第一个推送上来的分支作为默认分支。默认分支是创建合并请求的默认目标分支，可点击 **...** 修改默认分支。
+进入 **我的应用 > 选择应用 > 分支**。应用仓库默认以第一个推送上来的分支作为默认分支。默认分支是创建合并请求的默认目标分支，可点击 **...** 修改默认分支。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/5f8a2db7-5e0d-48c0-9822-3f44e1f2123f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/3d8befcf-2fc1-48a6-acff-3ca770ed9506.png)
 
 ## 删除分支
 
@@ -16,11 +16,11 @@
 
 点击 **对比** 可比较两个分支的差异。您可选择 **基于源** 或 **对比分支** 进行对比。当前页面下可查看分支的提交历史。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/9f9c9307-f362-4ded-ab6a-2c6e8e23e08a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/465203c1-5874-449d-a4dd-1b932cdcdaf7.png)
 
 也可查看不同文件的内容差异。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/7f4cab4a-ec3e-4945-bd3a-772176ac8cc4.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/55ef2a8f-ffcb-4962-91ac-a54e578ad5fd.png)
 
 ## 项目分支规则
 
@@ -30,7 +30,7 @@
 
 请进入 **DevOps 平台 > 项目 > 项目设置 > 代码仓库 > 分支规则** 设置环境。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/57c1237c-ba53-4333-a797-736a4d3bb1a5.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/73a94c84-87ca-4284-b769-1e25e925ad20.png)
 
 ## 应用分支规则
 
@@ -39,19 +39,19 @@
 * 持续集成：该分支代码发生变化时触发持续集成。
 * 分支保护：分支保护开启后，仅应用所有者、应用研发主管方可操作，其他成员需通过 MR 提交代码。
 
-请进入 **DevOps 平台 > 我的应用 > 选择应用 > 应用设置 > 代码仓库 > 分支规则** 创建规则。
+请进入 **我的应用 > 选择应用 > 设置 > 代码仓库 > 分支规则** 创建规则。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/9555b13d-530c-43dc-8e18-47f1f84a5f7d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/a00b8644-c279-4fa5-b5f9-f8bade0ba52b.png)
 
 ## 标签管理
 
 内置代码仓库支持标签管理，在标签管理页可下载源代码压缩包。
 
-进入 **DevOps 平台 > 我的应用 > 选择应用 > 代码仓库 > 分支管理**。
+进入 **我的应用 > 选择应用 > 分支 > 标签**。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/b8b34de9-b50d-4bae-b7bf-d515ba579701.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/82862ffa-be54-40b5-8843-7380e2ec324b.png)
 
 点击右上角 **添加标签** 即可添加标签，基于 Branch 或 commit SHA 进行设置。
 
-![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/4803e91d-7d3c-44b3-b3c1-f0df3c5a1b73.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/b0c3e42f-ecc5-4ba4-a745-e95792aaf9a2.png)
 

@@ -110,7 +110,7 @@ allprojects {
 
 ### Upload Maven settings.xml
 
-Go to **My Application > Select Application > Settings > Pipelines > Variable Configuration > Select Environment**.
+Go to **My Application > Select Application > Setting > Pipeline > Variable Configuration > Select Environment**.
 
 Click **Add Variable**, select the type as **File** and enable encryption, then upload settings.xml and define the variable name as `MAVEN_SETTING_FILE`.
 
@@ -200,7 +200,7 @@ on:
 
 ### Configure Password of Nexus Private Server
 
-Go to **My Application > Select Application > Settings > Pipelines > Variable Configuration > Select Environment**.
+Go to **My Application > Select Application > Setting > Pipeline > Variable Configuration > Select Environment**.
 
 Click **Add Variable**, select the type as **Value** and enable encryption, then configure the following variables:
 
@@ -375,7 +375,7 @@ For more information on Greys, see [Greys Documentation](https://github.com/oldm
 
 The platform provides VPNs for local and remote connection to services running on the platform.
 
-To enable remote debugging, go to **My Application > Select Application > Settings > Pipelines > Variable Configuration**, and add variable configuration for JAVA_OPTS as follows:
+To enable remote debugging, go to **My Application > Select Application > Setting > Pipeline > Variable Configuration**, and add variable configuration for JAVA_OPTS as follows:
 
 JDK 9 and later:
 
@@ -389,7 +389,7 @@ JDK 5～8:
 JAVA_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
 ```
 
-In addition, if a local IDE is needed, go to **My Application > Select Application > Deployments > Overview > Container List** to find the container IP, and configure in the IDE as follows:
+In addition, if a local IDE is needed, go to **DevOps Platform > App Center > Environments** to find the container IP, and configure in the IDE as follows:
 
 JDK 9 and later:
 
