@@ -353,6 +353,11 @@ module.exports = [
             collapsable: true,
             children: [
               'msp/guides/apm/alert-center',
+              'msp/guides/apm/alert-config',
+              'msp/guides/apm/alert-history',
+              'msp/guides/apm/alert-index',
+              'msp/guides/apm/alert-custom',
+              'msp/guides/apm/alert-notify-channel',
             ]
           },
           {
@@ -365,11 +370,6 @@ module.exports = [
               'msp/guides/apm/browser-monitor-config',
               'msp/guides/apm/trace',
               'msp/guides/apm/checker',
-              'msp/guides/apm/alert-config',
-              'msp/guides/apm/alert-history',
-              'msp/guides/apm/alert-index',
-              'msp/guides/apm/alert-custom',
-              'msp/guides/apm/alert-notify-channel',
               'msp/guides/apm/dashboard',
               'msp/guides/apm/dashboard-advanced',
             ]
