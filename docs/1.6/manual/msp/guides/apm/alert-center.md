@@ -55,7 +55,7 @@
 在该页面的事件历史中用户可以直观的看到该告警事件的历史记录，触发值字段展示了用户配置的告警规则指标的阈值和该告警事件产生时该指标的值，持续事件为该告警事件触发的持续事件
 当告警恢复时该持续事件会被置为0，在指标这个字段中可以看到该告警事件触发时相关tag的值。如图所示：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/04/42367af0-6d5d-4df4-bd6f-a42416490b72.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/07/6c73a166-7ce3-492c-887b-aa0ef9a6a8d3.png)
 
 在该页面中的右上角的更多操作的下拉框中用户可以根据需要选择暂停告警和屏蔽告警
 
@@ -101,7 +101,7 @@
   
 具体告警策略的新建如图所示：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/04/64a91dba-71dd-447f-9e1a-d6194f7bbdd5.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/07/9e1626a6-b833-4139-af5c-437245929fca.png)
 
 * 规则管理<br>
 监控系统采集的指标多而广，有系统自带的各类监控指标，也有用户通过Monitor SDK采集的自定义指标，用户若是希望针对某些特定的指标定义告警规则或是
@@ -112,13 +112,13 @@
 * 分组规则：对字段进行分组，各组分别按照告警规则进行计算
 * 字段规则：可选择多个字段，将计算结果与定义的阈值进行判断，若符合条件则触发告警
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/04/68156f1b-48e1-4a5d-862e-d5739fc5186a.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/07/538b1266-edf6-48e6-a35d-d2be177d9352.png)
 * 通知方式：可选择钉钉、邮箱、站内信、短信等多种通知方式
 * 消息标题：用户自定义告警发送的消息标题模版
 * 消息内容：用户自定义告警发送的消息内容模版
 
 在消息标题和消息内容中可用花括号引用对应指标的字段，例如{{project_name}},可引用的字段包括project_name、application_name、runtime_name、service_name、host_ip、cluster_name 等。
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/04/3eabf82c-fb07-40e4-9426-714b2ed7163f.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/07/d9fecbe1-a571-429d-bf27-aca0e6413011.png)
 
 完成自定义告警配置，即定义了一个告警规则的模版，用户可以在告警策略中选择已定义的告警规则模版，关联通知组等，进一步配置具体信息，完成配置之后
 若对应指标满足配置条件则可以触发告警，根据自定义的消息内容模版发出对应的告警通知。
@@ -127,6 +127,6 @@
 在创建告警策略时用户需要先创建接受告警通知的通知组，可以根据自身需要选择通知到不同的对象，根据通知到的对象的不同需要填写对应的url或者选择对应的角色
 可选择的通知到的有成员、钉钉地址、外部API、外部用户、成员角色。如图所示：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/04/148cd747-18a9-4252-9282-b55691fbebb5.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/07/a7748976-ed8c-4465-8869-f58693ef7abd.png)
 
 用户创建好通知组后可在告警策略中引用该通知组，当触发告警时，该通知组会收到对应告警策略发送的告警通知消息。
