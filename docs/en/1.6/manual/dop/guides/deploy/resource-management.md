@@ -14,7 +14,7 @@ As organization admin, go to **Org Center > Projects > Project info** to configu
 
 ## Resource Summary
 
-Go to **DevOps Platform > Joined Projects > O&M > Resource Summary** to view the resource summary, including the number of instances, CPU and memory. Click the indicator to sort application resources in ascending or descending order.
+Go to **DevOps Platform > Projects > Resource Summary** to view the resource summary, including the number of instances, CPU and memory. Click the indicator to sort application resources in ascending or descending order.
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/857bfbda-9475-4632-894d-6bd2ab78ce1e.png)
 

@@ -81,7 +81,7 @@
 
   4. 点击 **提交**，完成项目制品创建。
 
-  ![1](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/01/e766b065-1d06-43ac-9219-11b07f5d81bd.png)
+  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/01/e766b065-1d06-43ac-9219-11b07f5d81bd.png)
 
 * **选择文件创建**
 
