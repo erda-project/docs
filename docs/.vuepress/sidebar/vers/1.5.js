@@ -352,8 +352,7 @@ module.exports = [
             collapsable: true,
             children: [
               'msp/guides/apm/service-list',
-              'msp/guides/apm/service-overview',
-              'msp/guides/apm/service-monitor',
+              'msp/guides/apm/service-analysis',
               'msp/guides/apm/browser-monitor',
               'msp/guides/apm/browser-monitor-config',
               'msp/guides/apm/trace',
