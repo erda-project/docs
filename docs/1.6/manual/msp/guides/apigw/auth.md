@@ -106,12 +106,6 @@ Authorization: hmac appkey="wsK8t77fvAAs3i7878NSkC0j95ib3oVu", algorithm="hmac-s
     env LANG=eng TZ=GMT date  '+%a, %d %b %Y %T %Z'
     ```
 
-  * Java 代码生成：
-
-    ```java
-    System.out.println(DateTimeFormatter.RFC_1123_DATE_TIME.format(ZonedDateTime.now(ZoneOffset.UTC)));
-    ```
-
   ::: tip 提示
   若 Date 请求头时间与服务器时间的绝对差值大于 5 分钟，将被认为请求重放而拒绝请求。
   :::
@@ -119,12 +113,6 @@ Authorization: hmac appkey="wsK8t77fvAAs3i7878NSkC0j95ib3oVu", algorithm="hmac-s
 * **Authorization 请求头**
 
   请求头的构造，请参见 [Authorization 请求头构成](./auth.md#authorization-请求头构成)。此处将介绍如何生成签名。
-
-  待签名字符串的生成规则如下：
-
-  1. 若非 `request-line`，拼接小写的请求头 `key`，并跟上 ASCII 字符 `:` 和 ASCII 空格 ` `。
-  2. 若非 `request-line`，拼接请求头 `value`，若是 `request-line`，拼接 HTTP request line。
-  3. 若非 `request-line`，最后拼接 ASCII 换行符 `\n`。
 
   例如，对于以下请求：
 
@@ -159,20 +147,6 @@ Authorization: hmac appkey="wsK8t77fvAAs3i7878NSkC0j95ib3oVu", algorithm="hmac-s
   openssl dgst -sha256 -hmac "qdWre3pJxitNm9NOBRH3EpWeVYepnt3f" -binary | base64
   ```
 
-  使用 Java 代码生成签名：
-
-  ```java
-  import org.apache.commons.codec.binary.Base64;
-  import org.apache.commons.codec.digest.HmacAlgorithms;
-  import org.apache.commons.codec.digest.HmacUtils;
-  // ...
-  String digest =
-      new String(
-          Base64.encodeBase64String(
-              new HmacUtils(HmacAlgorithms.HMAC_SHA_256, "qdWre3pJxitNm9NOBRH3EpWeVYepnt3f")
-                  .hmac("date: Thu, 22 Jun 2017 21:12:36 GMT\nhost: hmac.com\nGET /requests?name=bob HTTP/1.1")));
-  ```
-
 2. 存在请求 Body
 
 * **必须请求头**
@@ -186,12 +160,13 @@ Authorization: hmac appkey="wsK8t77fvAAs3i7878NSkC0j95ib3oVu", algorithm="hmac-s
 
 * **Digest 请求头**
 
-  需使用 SHA-256 对请求 Body 进行签名，例如 Body 为 `{"name": "bob"}`，则对应的 Digest 请求头为 `Digest: SHA-256=956ba28434677d7d825157df180ef8123067cd58277c73f2c0f5e461a2830b52`，其中 Digest 请求头的 `value` 需以 `SHA-256=` 开头。
+  需使用 SHA-256 对请求 Body 进行签名，例如 Body 为 `{"name": "bob"}`，则对应的 Digest 请求头为 `Digest: SHA-256=lWuihDRnfX2CUVffGA74EjBnzVgnfHPywPXkYaKDC1I=`，
+  其中 Digest 请求头的 `value` 需以 `SHA-256=` 开头。
 
   使用 Unix 命令生成：
 
   ```bash
-  echo -n '{"name": "bob"}' | openssl dgst -sha256
+  echo -n '{"name": "bob"}' | openssl dgst -sha256 -binary | base64
   ```
 
   请求限制：请求 Body 大小不超过 10 m。
@@ -205,7 +180,7 @@ Authorization: hmac appkey="wsK8t77fvAAs3i7878NSkC0j95ib3oVu", algorithm="hmac-s
         -H 'Host: hmac.com' \
         -H 'Date: Thu, 22 Jun 2017 21:12:36 GMT' \
         -H 'Digest: SHA-256=956ba28434677d7d825157df180ef8123067cd58277c73f2c0f5e461a2830b52' \
-        -H 'Authorization: hmac appkey="wsK8t77fvAAs3i7878NSkC0j95ib3oVu", algorithm="hmac-sha256", headers="date host request-line digest", signature="CZSUv+kxWHN/vPEbwARg4r+NN3Vnb9+Aaq5XOQiENJA="'
+        -H 'Authorization: hmac appkey="wsK8t77fvAAs3i7878NSkC0j95ib3oVu", algorithm="hmac-sha256", headers="date request-line digest", signature="CZSUv+kxWHN/vPEbwARg4r+NN3Vnb9+Aaq5XOQiENJA="'
         -d '{"name": "bob"}'
   ```
 
@@ -213,12 +188,192 @@ Authorization: hmac appkey="wsK8t77fvAAs3i7878NSkC0j95ib3oVu", algorithm="hmac-s
 
   ```json
   date: Thu, 22 Jun 2017 21:12:36 GMT
-  host: hmac.com
   GET /requests?name=bob HTTP/1.1
-  digest: SHA-256=956ba28434677d7d825157df180ef8123067cd58277c73f2c0f5e461a2830b52
+  digest: SHA-256=lWuihDRnfX2CUVffGA74EjBnzVgnfHPywPXkYaKDC1I=
   ```
 
   生成签名的方式请参见 [不存在请求 Body](./auth.md#签名算法)。
+
+#### 示例代码（Java 语言实现带 Body 的 Post 请求客户端 Hmac 认证）
+> 注意：仅包含生成必要请求参数的示例代码，不包含发起 http 请求的示例代码
+```java
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.digest.HmacAlgorithms;
+import org.apache.commons.codec.digest.HmacUtils;
+
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
+public class HmacTest {
+
+    private static final String APP_KEY = "000f9e29249a4618baf52f22392344bb";
+    private static final String APP_SECRET = "ae854c899eff4c178fda3e1e53ff577c";
+    
+    public static void main(String[] args) {
+        String requestBody = "{\"logisticNo\":\"packNo123\",\"shippingLines\":[{\"orderLineId\":123456,\"remark\":\"备注信息\",\"shippingQty\":1,\"skuId\":10001}],\"carrierName\":\"FEDEX_GROUND\",\"carrierCode\":\"FEDEX_GROUND\",\"tradeOrderId\":104037,\"shippingAt\":1644854400000}";
+
+        // generate date
+        // 注意：日期小于 10 时，使用 RFC_1123_DATE_TIME 格式化后的字符串会因省略十位的 0 而被认为错误
+        DateTimeFormatter timeFormatter = DateTimeFormatter
+                .ofPattern("EEE, dd MMM yyyy HH:mm:ss z", Locale.ENGLISH)
+                .withZone(ZoneId.of("GMT"));
+        String date = timeFormatter.format(ZonedDateTime.now(ZoneOffset.UTC));
+
+        // generate digest
+        MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+        messageDigest.update(requestBody.getBytes(StandardCharsets.UTF_8));
+        String digest = "SHA-256=" + Base64.encodeBase64String(messageDigest.digest());
+
+        // generate signature 
+        String signStrFormat = "date: %s\n%s %s HTTP/1.1\ndigest: %s";
+        String signStr = String.format(signStrFormat, date, "POST", "/api/open/shipping", digest);
+        String signature = Base64.encodeBase64String(new HmacUtils(HmacAlgorithms.HMAC_SHA_256, APP_SECRET).hmac(signStr));
+
+        // generate Authorization
+        String authorizationFormat = "hmac appkey=\"%s\", algorithm=\"hmac-sha256\", headers=\"date request-line digest\", signature=\"%s\"";
+        String authorization = String.format(authorizationFormat, APP_KEY, signature);
+
+        System.out.println("signStr: \n" + signStr);
+        System.out.println("Date: " + date);
+        System.out.println("Digest: " + digest);
+        System.out.println("Authorization: " + authorization);
+        
+        // 发起 http 请求时, 将上述打印的 Date, Digest, Authorization 设置到请求头
+    }
+}
+```
+
+#### 示例代码（Go 语言实现带 Body 的 Post 请求客户端 Hmac 认证）
+> 注意：包含计算各必要参数和发起 http 请求的完整示例代码
+```go
+package main
+
+import (
+	"bytes"
+	"crypto/hmac"
+	"crypto/sha256"
+	"encoding/base64"
+	"fmt"
+	"io/ioutil"
+	"log"
+	"net/http"
+	"time"
+)
+
+func main() {
+	const (
+		body   = `{"name": "bob"}`
+		appKey = "088ed68d41504123b76d0812f328b560"
+		appSec = "01c28076047a46a9a3d46d9082f2a716"
+		host   = "https://go-http-demo-auth.daily.terminus.io"
+		uri    = "/envs"
+	)
+
+	request, err := http.NewRequest(http.MethodPost, host+uri, bytes.NewBufferString(body))
+	if err != nil {
+		log.Fatalf("failed to NewRequest: %v", err)
+	}
+	if err = hmacRequest(request, appKey, appSec); err != nil {
+		log.Fatalf("failed to hmacRequest: %v", err)
+	}
+	response, err := http.DefaultClient.Do(request)
+	if err != nil {
+		log.Fatalf("failed to Do: %v", err)
+	}
+	data, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		log.Fatalf("failed to ReadAll: %v", err)
+	}
+	fmt.Printf("response body: %s", string(data))
+}
+
+// digest 实现对 Body 的摘要算法
+// 注意：计算签名时，要从 binary 以 Base64 方法编码为 string
+func digest(data []byte) (string, error) {
+	h := sha256.New()
+	if _, err := h.Write(data); err != nil {
+		return "", err
+	}
+	return "SHA-256=" + base64.StdEncoding.EncodeToString(h.Sum(nil)), nil
+}
+
+// date 获取计算签名所需的日志，注意 Location 是 Europe/London 时间，时间格式是 RFC1123
+func date() (string, error) {
+	location, err := time.LoadLocation("Europe/London")
+	if err != nil {
+		return "", err
+	}
+	return time.Now().In(location).Format(time.RFC1123), nil
+}
+
+// signature 根据给定的 date, method, reqeustLine, digest 和 appSecret 生成签名
+func signature(date, method, requestLine, digest, appSecret string) (signString, sign string, err error) {
+	signString = fmt.Sprintf("date: %s\n%s %s HTTP/1.1\ndigest: %s", date, method, requestLine, digest)
+	h := hmac.New(sha256.New, []byte(appSecret))
+	if _, err := h.Write([]byte(signString)); err != nil {
+		return signString, "", err
+	}
+	sign = base64.StdEncoding.EncodeToString(h.Sum(nil))
+	return signString, sign, nil
+}
+
+// authorization 构造请求头 Authorization 的值
+func authorization(appKey, sign string) string {
+	const authorizationPat = `Authorization: hmac appkey="%s", algorithm="hmac-sha256", headers="date request-line digest", signature="%s"`
+	return fmt.Sprintf(authorizationPat, appKey, sign)
+}
+
+// hmacRequest 将计算出的 date, digest, signature 等放入 *http.Request 的 headers
+func hmacRequest(r *http.Request, appKey, appSecret string) error {
+	body, err := r.GetBody()
+	if err != nil {
+		return err
+	}
+	// read body
+	data, err := ioutil.ReadAll(body)
+	if err != nil {
+		return err
+	}
+
+	// make digest
+	digest, err := digest(data)
+	if err != nil {
+		return err
+	}
+	fmt.Printf("digest: %s\n", digest)
+
+	// make date
+	date, err := date()
+	if err != nil {
+		return err
+	}
+	fmt.Printf("date: %s\n", date)
+
+	// make signature
+	signString, sign, err := signature(date, r.Method, r.URL.RequestURI(), digest, appSecret)
+	if err != nil {
+		log.Fatalf("failed to sinature: %v", err)
+	}
+	fmt.Printf("signString: %s\n", signString)
+	fmt.Printf("sign: %s\n", sign)
+
+	// make auth
+	author := authorization(appKey, sign)
+	fmt.Printf("authorization: %s\n", author)
+
+	// set headers
+	r.Header.Set("date", date)
+	r.Header.Set("digest", digest)
+	r.Header.Set("Authorization", author)
+
+	return nil
+}
+```
 
 ### 参数签名认证
 
