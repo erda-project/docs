@@ -167,6 +167,17 @@ module.exports = [
             ]
           },
           {
+            title: '流水线',
+            collapsable: true,
+            children: [
+              'dop/guides/cicd-pipeline/pipeline-yml-config',
+              'dop/guides/cicd-pipeline/pipeline-yml-graph',
+              'dop/guides/cicd-pipeline/pipeline-execution',
+              'dop/guides/cicd-pipeline/project-pipeline',
+              'dop/guides/cicd-pipeline/pipeline-customize-and-extension',
+            ]
+          },
+          {
             title: '开发语言',
             collapsable: true,
             children: [
@@ -177,7 +188,7 @@ module.exports = [
             ]
           },
           {
-            title: '部署和管理',
+            title: '制品和部署',
             collapsable: true,
             children: [
               'dop/guides/deploy/release',
@@ -190,19 +201,8 @@ module.exports = [
               'dop/guides/deploy/deploy-by-cicd-pipeline',
               'dop/guides/deploy/db-migration',
               'dop/guides/deploy/metrics_logs',
-              'dop/guides/deploy/management',
               'dop/guides/deploy/block-deploy',
-            ]
-          },
-          {
-            title: '流水线',
-            collapsable: true,
-            children: [
-              'dop/guides/cicd-pipeline/pipeline-yml-config',
-              'dop/guides/cicd-pipeline/pipeline-yml-graph',
-              'dop/guides/cicd-pipeline/pipeline-execution',
-              'dop/guides/cicd-pipeline/pipeline-customize-and-extension',
-              'dop/guides/cicd-pipeline/project-pipeline',
+              'dop/guides/deploy/management',
             ]
           },
           {
