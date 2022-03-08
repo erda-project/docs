@@ -42,6 +42,12 @@ stages:
               release_id: ${release:OUTPUT:releaseID}
 ```
 
+:::tip 提示
+
+如需指定 maven setting.xml 文件，可通过修改 `build_cmd` 为 `mvn package -s setting.xml` 实现。
+
+:::
+
 ## Gradle 构建
 ```yaml
 version: "1.1"
