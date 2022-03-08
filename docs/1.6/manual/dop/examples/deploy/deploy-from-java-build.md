@@ -42,9 +42,9 @@ stages:
               release_id: ${release:OUTPUT:releaseID}
 ```
 
-:::tip Tips
+:::tip 提示
 
-如果想指定maven setting.xml文件，可以将`build_cmd`改成`mvn package -s setting.xml`来实现
+如需指定 maven setting.xml 文件，可通过修改 `build_cmd` 为 `mvn package -s setting.xml` 实现。
 
 :::
 
