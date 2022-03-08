@@ -211,11 +211,12 @@ import java.util.Locale;
 
 public class HmacTest {
 
-    private static final String APP_KEY = "000f9e29249a4618baf52f22392344bb";
-    private static final String APP_SECRET = "ae854c899eff4c178fda3e1e53ff577c";
+    private static final String APP_KEY = "088ed68d41504123b76d0812f328b560";
+    private static final String APP_SECRET = "01c28076047a46a9a3d46d9082f2a716";
+    private static final String URI = "/requests?name=bob";
     
     public static void main(String[] args) {
-        String requestBody = "{\"logisticNo\":\"packNo123\",\"shippingLines\":[{\"orderLineId\":123456,\"remark\":\"备注信息\",\"shippingQty\":1,\"skuId\":10001}],\"carrierName\":\"FEDEX_GROUND\",\"carrierCode\":\"FEDEX_GROUND\",\"tradeOrderId\":104037,\"shippingAt\":1644854400000}";
+        String requestBody = "{\"name\": \"bob\"}";
 
         // generate date
         // 注意：日期小于 10 时，使用 RFC_1123_DATE_TIME 格式化后的字符串会因省略十位的 0 而被认为错误
@@ -231,7 +232,7 @@ public class HmacTest {
 
         // generate signature 
         String signStrFormat = "date: %s\n%s %s HTTP/1.1\ndigest: %s";
-        String signStr = String.format(signStrFormat, date, "POST", "/api/open/shipping", digest);
+        String signStr = String.format(signStrFormat, date, "POST", URI, digest);
         String signature = Base64.encodeBase64String(new HmacUtils(HmacAlgorithms.HMAC_SHA_256, APP_SECRET).hmac(signStr));
 
         // generate Authorization
@@ -271,7 +272,7 @@ func main() {
 		appKey = "088ed68d41504123b76d0812f328b560"
 		appSec = "01c28076047a46a9a3d46d9082f2a716"
 		host   = "https://go-http-demo-auth.daily.terminus.io"
-		uri    = "/envs"
+		uri    = "/requests?name=bob"
 	)
 
 	request, err := http.NewRequest(http.MethodPost, host+uri, bytes.NewBufferString(body))
