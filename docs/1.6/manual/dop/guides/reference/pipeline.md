@@ -752,7 +752,29 @@ timestamp_ns_hour：1小时前时间戳格式：1586913750801408626，单位是 
 date：当前日期、格式：2020-01-01   
 date_day：1天前日期、格式：2020-01-01   
 datetime：当前时间、格式：2020-01-01 15:04:05   
-datetime_hour：1小时前时间、格式：2020-01-01 14:04:05   
+datetime_hour：1小时前时间、格式：2020-01-01 14:04:05
+
+除此之外还支持还见的日期格式化：
+- ${{ random.datetime_custom_ANSIC }}: `Tue Mar  8 16:33:06 2022`
+- ${{ random.datetime_custom_UnixDate }}: `Tue Mar  8 16:33:06 CST 2022`
+- ${{ random.datetime_custom_RubyDate }}: `Tue Mar 08 16:33:06 +0800 2022`
+- ${{ random.datetime_custom_RFC822 }}: `08 Mar 22 16:33 CST`
+- ${{ random.datetime_custom_RFC822Z }}: `08 Mar 22 16:33 +0800`
+- ${{ random.datetime_custom_RFC850 }}: `Tuesday, 08-Mar-22 16:33:06 CST`
+- ${{ random.datetime_custom_RFC1123 }}: `Tue, 08 Mar 2022 16:33:06 CST`
+- ${{ random.datetime_custom_RFC1123Z }}: `Tue, 08 Mar 2022 16:33:06 +0800`
+- ${{ random.datetime_custom_RFC3339 }}: `2022-03-08T16:33:06+08:00`
+- ${{ random.datetime_custom_RFC3339Nano }}: `2022-03-08T16:33:06.629310528+08:00`
+- ${{ random.datetime_custom_Kitchen }}: `4:33PM`
+- ${{ random.datetime_custom_Stamp }}: `Mar  8 16:33:06`
+- ${{ random.datetime_custom_StampMilli }}: `Mar  8 16:33:06.629`
+- ${{ random.datetime_custom_StampMicro }}: `Mar  8 16:33:06.629326`
+- ${{ random.datetime_custom_StampNano }}: `Mar  8 16:33:06.629330204`
+
+以及自定义日期格式化：
+- ${{ random.datetime_custom_20060102150405 }}: `20220308163306`
+
+表达式是 "datetime_custom_" 拼接 Go 语言风格的日期格式模板。
 
 ```yaml
 version: "1.1"
