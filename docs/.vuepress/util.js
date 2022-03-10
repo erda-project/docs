@@ -6,10 +6,10 @@ const context = requireContext(path.resolve(__dirname, './sidebar/vers'), false,
 const versLimit = 2;
 const getVers = () => {
   return context.keys()
-    .map(a => Math.floor(100 * a.slice(0, -'.js'.length)))
+    .filter(a => !a.includes('-en'))
+    .map(a => a.slice(0, 3))
     .sort((a, b) => b - a)
-    .slice(0, versLimit)
-    .map(v => v / 100);
+    .slice(0, versLimit);
 }
 const getContentByVer = ver => context(`${ver}.js`);
 
