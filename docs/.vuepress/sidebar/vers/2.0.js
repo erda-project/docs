@@ -126,7 +126,8 @@ module.exports = [
           'dop/best-practices/microservice-springcloud',
           'dop/best-practices/api-drive-develop',
           'dop/best-practices/autotest',
-          'dop/best-practices/manual-test'
+          'dop/best-practices/manual-test',
+          'dop/best-practices/release'
         ]
       },
       {
@@ -137,7 +138,6 @@ module.exports = [
             title: '协同',
             collapsable: true,
             children: [
-              'dop/guides/collaboration/milestone',
               'dop/guides/collaboration/backlog-and-iteration',
               'dop/guides/collaboration/issue',
               'dop/guides/collaboration/issue-requirement-and-task',
@@ -167,6 +167,17 @@ module.exports = [
             ]
           },
           {
+            title: '流水线',
+            collapsable: true,
+            children: [
+              'dop/guides/cicd-pipeline/pipeline-yml-config',
+              'dop/guides/cicd-pipeline/pipeline-yml-graph',
+              'dop/guides/cicd-pipeline/pipeline-execution',
+              'dop/guides/cicd-pipeline/project-pipeline',
+              'dop/guides/cicd-pipeline/pipeline-customize-and-extension',
+            ]
+          },
+          {
             title: '开发语言',
             collapsable: true,
             children: [
@@ -177,31 +188,21 @@ module.exports = [
             ]
           },
           {
-            title: '部署和管理',
+            title: '制品和部署',
             collapsable: true,
             children: [
-              'dop/guides/deploy/artifact-and-build',
-              'dop/guides/deploy/deploy-from-artifact',
+              'dop/guides/deploy/release',
+              'dop/guides/deploy/resource-management',
               'dop/guides/deploy/addon-out-of-box',
               'dop/guides/deploy/addon-custom',
-              'dop/guides/deploy/deploy-by-cicd-pipeline',
               'dop/guides/deploy/config',
               'dop/guides/deploy/config-center',
+              'dop/guides/deploy/deploy-order',
+              'dop/guides/deploy/deploy-by-cicd-pipeline',
               'dop/guides/deploy/db-migration',
-              'dop/guides/deploy/management',
               'dop/guides/deploy/metrics_logs',
-              'dop/guides/deploy/resource-management',
               'dop/guides/deploy/block-deploy',
-            ]
-          },
-          {
-            title: 'CI/CD 流水线',
-            collapsable: true,
-            children: [
-              'dop/guides/cicd-pipeline/pipeline-yml-config',
-              'dop/guides/cicd-pipeline/pipeline-yml-graph',
-              'dop/guides/cicd-pipeline/pipeline-execution',
-              'dop/guides/cicd-pipeline/pipeline-customize-and-extension',
+              'dop/guides/deploy/management',
             ]
           },
           {
@@ -337,8 +338,8 @@ module.exports = [
         collapsable: true,
         children: [
           ['msp/guides/platform/msp-project', '创建项目'],
-          ['msp/guides/platform/msp-overview', '平台总览'],
-          ['msp/guides/platform/msp-project-list', '项目列表'],
+          // ['msp/guides/platform/msp-overview', '平台总览'],
+          // ['msp/guides/platform/msp-project-list', '项目列表'],
           'msp/guides/apm/topology',
           // {
           //     title: '微服务环境',
@@ -348,20 +349,28 @@ module.exports = [
           //     ]
           // },
           {
-            title: '应用监控',
+            title: "告警中心",
             collapsable: true,
             children: [
-              'msp/guides/apm/service-list',
-              'msp/guides/apm/service-analysis',
-              'msp/guides/apm/browser-monitor',
-              'msp/guides/apm/browser-monitor-config',
-              'msp/guides/apm/trace',
-              'msp/guides/apm/checker',
+              'msp/guides/apm/alert-center',
               'msp/guides/apm/alert-config',
               'msp/guides/apm/alert-history',
               'msp/guides/apm/alert-index',
               'msp/guides/apm/alert-custom',
               'msp/guides/apm/alert-notify-channel',
+            ]
+          },
+          {
+            title: '应用监控',
+            collapsable: true,
+            children: [
+              'msp/guides/apm/service-list',
+              'msp/guides/apm/service-overview',
+              'msp/guides/apm/service-monitor',
+              'msp/guides/apm/browser-monitor',
+              'msp/guides/apm/browser-monitor-config',
+              'msp/guides/apm/trace',
+              'msp/guides/apm/checker',
               'msp/guides/apm/dashboard',
               'msp/guides/apm/dashboard-advanced',
             ]

@@ -1,24 +1,24 @@
-# Command Line Tool
+# 命令行工具
 
-CLI is a command line tool provided by Erda for developers, which allows you to easily build applications on terminal devices.
+CLI 是 Erda 为开发者提供的命令行工具，您可以通过该工具在终端设备上轻松构建 Erda 应用。
 
-## Download and Install
+## 下载安装
 
 ### macOS
 
 ```bash
-wget -O /usr/local/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/mac/erda-1.5 && chmod +x /usr/local/bin/erda-cli
+wget -O /usr/local/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/mac/erda-1.6 && chmod +x /usr/local/bin/erda-cli
 ```
 
 ### Linux
 
 ```bash
-wget -O /usr/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/linux/erda-1.5 && chmod +x /usr/bin/erda-cli
+wget -O /usr/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/linux/erda-1.6 && chmod +x /usr/bin/erda-cli
 ```
 
-## Operations
+## 使用操作
 
-After installation, you can list all available Erda commands via `erda-cli help`, and then view detailed usage via `help` of the subcommands.
+完成安装后，您可以通过 `erda-cli help` 命令列出所有可用的 Erda Command，再通过子命令的 `help` 信息查看详细用法。
 
 ```bash
 $ erda-cli help
@@ -51,19 +51,19 @@ Flags:
 Use "erda-cli [command] --help" for more information about a command.
 ```
 
-### Login
+### 登录
 
-Most subcommands of CLI need to be executed after logging in, and a few can be executed without logging in, such as commands related to `migrate`.
+CLI 的多数子命令需在登陆后执行，有少数命令无需登录也可执行，例如 `migrate` 相关命令。
 
-The login-related parameters are as follows:
+登录相关参数如下：
 
-1. `--host` specifies the address of Erda you need to log in to. If not specified, get the platform address via `git remote get-url origin`.
-2. `-u`, `--username` specifies the login username.
-3. `-p`, `--password` specifies the login password.
+1. `--host` 指定需要登录的 Erda 平台地址，若未指定且在代码目录则通过 `git remote get-url origin` 获取平台地址。
+2. `-u`，`--username ` 指定登录用户名。
+3. `-p`，`--password` 指定登录密码。
 
-:::tip Tips
+::: tip 提示
 
-The session will be saved after successful login, and you need to login again if the session expires.
+登录成功后将保存 Session，Session 过期则需重新登录。
 
 :::
 
@@ -80,12 +80,12 @@ DockerImage:
 
 ### erda-cli build
 
-You can build applications on Erda with the `build` command.
+您可以通过 `build` 命令构建 Erda 上的应用。
 
-:::tip Tips
+::: tip 提示
 
-* Please create an application on Erda first and write pipeline.yml and erda.yml.
-* It is not recommended for 1.5 or later versions.
+* 请先在 Erda 上创建应用并编写 pipeline.yml 和 erda.yml。
+* 1.5 以及上版本不推荐使用。
 
 :::
 
@@ -96,11 +96,11 @@ $ erda-cli build --host=https://erda.cloud -u 'YourName' -p 'YourPassword'
 
 ### erda-cli status
 
-You can build applications on Erda with the `status` command.
+您可以通过 `status` 命令构建 Erda 上的应用。
 
-:::tip Tips
+::: tip 提示
 
-It is not recommended for 1.5 or later versions.
+1.5 以及上版本不推荐使用。
 
 :::
 
@@ -114,7 +114,7 @@ PIPELINEID   TASKID     TASKNAME   TASKSTATUS   STARTEDAT
 
 ### erda-cli ext
 
-You can list all extensions on Erda with the `ext` command.
+您可以通过 `ext` 命令罗列 Erda 上所有的 Extension。
 
 ```shell
 erda-cli ext --host=https://erda.cloud -u 'YourName' -p 'YourPassword'
@@ -127,14 +127,14 @@ kafka                         addon    message                   true     2021-1
 
 ### erda-cli ext pull
 
-You can get the extension on Erda with the `ext pull` command.
+您可以通过 `ext pull` 命令获取 Erda 上的 Extension。
 
 ```shell
 $ erda-cli ext pull --host=https://erda.cloud -u 'YourName' -p 'YourPassword' git-checkout@1.0 -o git-checkout
 ✔ extension pull success
 ```
 
-The parameters are as follows:
+参数说明如下：
 
 ```
 Flags:
@@ -143,14 +143,14 @@ Flags:
 
 ### erda-cli ext push
 
-You can update the extension on Erda with the `ext push` command. This operation needs to be performed by admin.
+您可以通过 `ext push` 命令更新 Erda 上的 Extension。该操作需由平台管理员执行。
 
 ```shell
 $ erda-cli ext push --host=https://erda.cloud -u 'YourName' -p 'YourPassword' -d git-checkout
 ✔ extension git-checkout push success
 ```
 
-The parameters are as follows:
+参数说明如下：
 
 ```shell
 Flags:
@@ -162,7 +162,7 @@ Flags:
 
 ### erda-cli migrate
 
-You can manage data changes in a MySQL database with the `migrate` command.
+您可以通过 `migrate` 命令管理 MySQL 数据库中的数据变更。
 
 ```shell
 $ erda-cli migrate -h

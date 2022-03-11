@@ -7,13 +7,13 @@ CLI 是 Erda 为开发者提供的命令行工具，您可以通过该工具在�
 ### macOS
 
 ```bash
-wget -O /usr/local/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/mac/erda-1.4 && chmod +x /usr/local/bin/erda-cli
+wget -O /usr/local/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/mac/erda-1.5 && chmod +x /usr/local/bin/erda-cli
 ```
 
 ### Linux
 
 ```bash
-wget -O /usr/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/linux/erda-1.4 && chmod +x /usr/bin/erda-cli
+wget -O /usr/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/linux/erda-1.5 && chmod +x /usr/bin/erda-cli
 ```
 
 ## 使用操作
