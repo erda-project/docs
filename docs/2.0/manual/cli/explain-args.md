@@ -1,71 +1,28 @@
-# 命令行工具
+# CLI 命令
 
-CLI 是 Erda 为开发者提供的命令行工具，您可以通过该工具在终端设备上轻松构建 Erda 应用。
+### 命令说明
 
-## 下载安装
+`--interactive` 布尔类型，指定 CLI 是否采用交互式，默认值为 `true`。
 
-### macOS
+`--remote` 字符串类型，指定 CLI 用于获取 Erda 代码仓库的 remote 名称，默认值 `origin`。在未指定 Erda 地址的情况下，如果 CLI 的工作目录是 Erda 应用的代码仓库，则会根据 remote 名称获取 git 地址并解析出组织（org）、项目（project）、应用（application） 信息。
 
-```bash
-wget -O /usr/local/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/mac/erda-1.6 && chmod +x /usr/local/bin/erda-cli
+`--host` 字符串类型，指定 CLI 访问的 Erda 地址。CLI 本质上是访问了 Erda 的 openapi 地址，所有如果设置的是 https://erda.cloud，CLI 会转换成访问 https://openapi.erda.cloud。
+
+`--username` 用户名，指定 CLI 访问 Erda 平台的登陆用户。
+
+`--password` 密码，指定 CLI 访问 Erda 平台的登陆密码。
+
+全部参数如下：
+
+```shell
+Global Flags:
+      --host string       Erda host to visit (e.g. https://erda.cloud)
+      --interactive       if true, interactive with user (default true)
+  -p, --password string   Erda password to authenticate
+  -r, --remote string     the remote for Erda repo (default "origin")
+  -u, --username string   Erda username to authenticate
+  -V, --verbose           if true, enable verbose mode
 ```
-
-### Linux
-
-```bash
-wget -O /usr/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/linux/erda-1.6 && chmod +x /usr/bin/erda-cli
-```
-
-## 使用操作
-
-完成安装后，您可以通过 `erda-cli help` 命令列出所有可用的 Erda Command，再通过子命令的 `help` 信息查看详细用法。
-
-```bash
-$ erda-cli help
-
-    _/_/_/_/       _/_/_/        _/_/_/          _/_/
-   _/             _/    _/      _/    _/      _/    _/
-  _/_/_/         _/_/_/        _/    _/      _/_/_/_/
- _/             _/    _/      _/    _/      _/    _/
-_/_/_/_/       _/    _/      _/_/_/        _/    _/
-
-Usage:
-  erda-cli [command]
-
-Available Commands:
-  build       Create an pipeline and run it
-  completion  generate the autocompletion script for the specified shell
-  ext         Extensions operation sets,including search, pull, push, retag
-  help        Help about any command
-  migrate     Erda MySQL Migrate
-  status      Show build status
-  version     Show dice version info
-
-Flags:
-  -h, --help              help for erda-cli
-      --host string       dice host to visit, format: <org>.<wildcard domain>, eg: https://terminus-org.app.terminus.io
-  -p, --password string   dice password to authenticate
-  -u, --username string   dice username to authenticate
-  -V, --verbose           enable verbose mode
-
-Use "erda-cli [command] --help" for more information about a command.
-```
-
-### 登录
-
-CLI 的多数子命令需在登陆后执行，有少数命令无需登录也可执行，例如 `migrate` 相关命令。
-
-登录相关参数如下：
-
-1. `--host` 指定需要登录的 Erda 平台地址，若未指定且在代码目录则通过 `git remote get-url origin` 获取平台地址。
-2. `-u`，`--username ` 指定登录用户名。
-3. `-p`，`--password` 指定登录密码。
-
-::: tip 提示
-
-登录成功后将保存 Session，Session 过期则需重新登录。
-
-:::
 
 ### erda-cli version
 
@@ -78,38 +35,133 @@ CommitID: 02583bd49fc57841bdcb05b02486e27dd868cf00
 DockerImage:
 ```
 
+### erda-cli clone
+
+您可以通过 `clone` 命令克隆 Erda 平台上的项目。
+
+```shell
+$ erda-cli clone https://erda.cloud/trial/dop/projects/599
+  Application 'echo-service' cloning ...
+  Application 'echo-service' cloned.
+  Application 'echo-web' cloning ...
+  Application 'echo-web' cloned.
+✔ Project 'bestpractice' and your applications cloned.
+```
+
+参数说明如下：
+
+```shell
+ Args:
+   url               project url
+ Flags:
+       --cloneApps   if false, don't clone applications in the project (default true)
+```
+
+### erda-cli push
+
+您可以通过 `push` 命令推送应用到 Erda 平台。
+
+ ```shell
+ $ erda-cli push https://erda.cloud/trial/dop/projects/599 --application new-app
+   Application 'new-app' pushed.
+ ✔ Project 'bestpractice' pushed to server https://openapi.erda.cloud.
+ ```
+
+参数说明如下：
+
+```shell
+Args:
+  url                         project url
+Flags:
+      --all                   if true, push all applications
+      --application strings   applications to push
+      --configfile string     config file contains applications
+      --force                 if true, git push with --force flag
+  -h, --help                  help for push
+```
+
+### erda-cli create
+
+您可以通过 `create` 命令在构建 Erda 上创建项目。
+
+```shell
+$ erda-cli create --host https://erda.cloud --org erda -n demo-project -d 'demo project' --init-package project_package_20220310194452.zip
+Enter your erda username: <Your Username>
+Enter your erda password: <Your Password>
+  Devops project demo-project creating...
+  Devops project demo-project created.
+  Msp tenant demo-project creating...
+  Msp tenant demo-project created.
+  Project package importing...
+  Project package importing...
+  Project package imported.
+✔ Project 'demo-project' created.
+```
+
+参数说明如下：
+
+```shell
+Flags:
+  -d, --description string    description of the project
+      --init-package string   package for init the project
+  -n, --name string           the name of the project
+      --org string            the name of an organization
+      --wait-import int       minutes wait for package to be import (default 1)
+```
+
 ### erda-cli build
 
 您可以通过 `build` 命令构建 Erda 上的应用。
 
-::: tip 提示
-
-* 请先在 Erda 上创建应用并编写 pipeline.yml 和 erda.yml。
-* 1.5 以及上版本不推荐使用。
-
-:::
-
 ```shell
-$ erda-cli build --host=https://erda.cloud -u 'YourName' -p 'YourPassword'
+$ erda-cli build <path-to/pipeline.yml> --host=https://erda.cloud -u 'YourName' -p 'YourPassword'
 ✔ building for branch: feature/echo-web, pipelineID: 12639533, you can view building status via `erda-cli status -i <pipelineID>`
 ```
 
-### erda-cli status
-
-您可以通过 `status` 命令构建 Erda 上的应用。
-
-::: tip 提示
-
-1.5 以及上版本不推荐使用。
-
-:::
+参数说明如下：
 
 ```shell
-$ erda-cli status -i 12639533
-pipeline progress (currentStage/totalStages): 4/4
+ Flags:
+      --branch string   branch to create pipeline, default is current branch
+  -h, --help            help for build
+  -w, --watch           watch the status
+```
 
-PIPELINEID   TASKID     TASKNAME   TASKSTATUS   STARTEDAT
-12639533     10169335   dice       Running      2021-11-22 13:38:46
+`--watch` 可以持续观察应用的构建过程。
+
+### erda-cli view
+
+您可以通过 `view` 命令构建 Erda 上的应用。
+
+```shell
+$ erda-cli view -i 12639533
+✹ Stage 0
+    ✔ Success task: git-checkout
+✹ Stage 1
+    ✔ Success task: java
+✹ Stage 2
+    ✔ Success task: release
+✹ Stage 3
+    ☕ Run task: dice
+    ✔ Success task: dice
+
+build succ, time elapsed: 00:02:15
+Pipeline progress (current/total): 4/4
+PIPELINEID   TASKID     TASKNAME       TASKSTATUS   STARTEDAT
+12918029     10940839   git-checkout   Success      2021-12-20 15:46:09
+12918029     10940840   java           Success      2021-12-20 15:46:35
+12918029     10940854   release        Success      2021-12-20 15:46:53
+12918029     10940877   dice           Success      2021-12-20 15:46:58
+```
+
+参数说明如下：
+
+```
+Flags:
+  -b, --branch string     specify branch to show pipeline status, default is current branch
+  -h, --help              help for view
+  -i, --pipelineID uint   specify pipeline id to show pipeline status
+  -w, --watch             watch the status
 ```
 
 ### erda-cli ext
@@ -173,7 +225,7 @@ Usage:
   erda-cli migrate [command]
 
 Examples:
-erda-cli migrate --mysql-host localhost --mysql-username root --mysql-password my_password --database erda
+  $ erda-cli migrate --mysql-host localhost --mysql-username root --mysql-password my_password --database erda
 
 Available Commands:
   lint        Erda MySQL Migration lint
@@ -196,4 +248,14 @@ Flags:
       --skip-mig                [Migrate] skip doing pre-migration and real migration
       --skip-pre-mig            [Migrate] skip doing pre-migration
       --skip-sandbox            [Migrate] skip doing migration in sandbox
+
+Global Flags:
+      --host string       Erda host to visit (e.g. https://erda.cloud)
+      --interactive       if true, interactive with user (default true)
+  -p, --password string   Erda password to authenticate
+      --remote string     the remote for Erda repo (default "origin")
+  -u, --username string   Erda username to authenticate
+  -V, --verbose           if true, enable verbose mode
+
+Use "erda-cli migrate [command] --help" for more information about a command.
 ```
