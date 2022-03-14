@@ -10,9 +10,18 @@
 
 ## 服务列表
 
+进入微服务平台，选择项目后将默认进入服务总览的服务列表，此处展示当前环境下所有接入服务，以及该服务近一小时内的关键请求指标。
+
 点击任一服务名称，可进入对应的 [服务监控](service-monitor.md) 页面。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/02/9214e9c3-71eb-4405-97f5-deed51eb4250.png)
+
+在服务列表页，您可查看当前环境下的高流量服务排行、低流量服务排行、慢响应服务排行和不健康服务排行，点击其中任一服务可进入服务监控页。
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/b320a4e3-dc30-45fe-a63e-80688577ed92.png)
+
+您还可以查看当前环境下的全部服务、不健康服务和无流量服务。服务以列表形式呈现，展示其名称、吞吐量、延迟和错误率，将鼠标悬停于对应服务可查看具体数据。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/fbb2a81c-2f4e-4bca-bd6d-1eb62795fc29.png)
 
 服务排行展示以下四类服务的 Top 5：
 
