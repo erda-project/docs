@@ -22,7 +22,7 @@ Java 5 版本以后，JDK 提供了 instrument 包，能够实现一些非常酷
 
 #### 支持的插件列表
 - agent-app-insight-common
-- agent-cpu-plugin
+- [agent-cpu-plugin](#agent-cpu-plugin)
 - agent-dubbo-2.7.x-plugin
 - agent-dubbo-plugin
 - agent-feign-plugin
@@ -42,7 +42,7 @@ Java 5 版本以后，JDK 提供了 instrument 包，能够实现一些非常酷
 - agent-okhttp-4.x-plugins
 - agent-redisson-3.x-plugin
 - agent-rocketmq-4.x-plugin
-- agent-sdk-plugin
+- [agent-sdk-plugin](#agent-sdk-plugin)
 - agent-jetty-servlet-plugin
 - agent-tomcat-servlet-plugin
 - agent-sharding-sphere-4.x-plugin
@@ -54,13 +54,12 @@ Java 5 版本以后，JDK 提供了 instrument 包，能够实现一些非常酷
 
 #### 插件详解
 
-##### agent-cpu-plugin 详解
+##### agent-cpu-plugin
 cpu 插件用来采集 jvm 当前进程 cpu 使用率，最终数据通过计算 jvm 所有线程使用 cpu 的时间得出。默认开启，每 20 秒采集一次。
 
 注意： cpu 如果使用了 intel 酷睿多线程技术，可能会出现 cpu 使用率是实际物理核数 2 倍的情况，即： 2c， 使用率达到 400 %
 
-
-##### agent-sdk-plugin 详解
+##### agent-sdk-plugin
 在 Java Agent 里面，我们提供了手动开启的函数埋点功能，可以在开启后，自动拦截函数的调用时间，并展示在链路详情的 span 事件中。
 
 ###### 使用方式
