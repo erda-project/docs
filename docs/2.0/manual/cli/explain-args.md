@@ -1,18 +1,18 @@
 # CLI 命令
 
-### 命令说明
+## 命令说明
 
-`--interactive` 布尔类型，指定 CLI 是否采用交互式，默认值为 `true`。
+`--interactive`：布尔类型，指定 CLI 是否采用交互式，默认值为 `true`。
 
-`--remote` 字符串类型，指定 CLI 用于获取 Erda 代码仓库的 remote 名称，默认值 `origin`。在未指定 Erda 地址的情况下，如果 CLI 的工作目录是 Erda 应用的代码仓库，则会根据 remote 名称获取 git 地址并解析出组织（org）、项目（project）、应用（application） 信息。
+`--remote`：字符串类型，指定 CLI 用于获取 Erda 代码仓库的 Remote 名称，默认值为 `origin`。在未指定 Erda 地址的情况下，若 CLI 的工作目录为 Erda 应用的代码仓库，则将根据 Remote 名称获取 Git 地址并解析出组织（Org）、项目（Project）和应用（Application）信息。
 
-`--host` 字符串类型，指定 CLI 访问的 Erda 地址。CLI 本质上是访问了 Erda 的 openapi 地址，所有如果设置的是 https://erda.cloud，CLI 会转换成访问 https://openapi.erda.cloud。
+`--host`：字符串类型，指定 CLI 访问的 Erda 地址。CLI 本质为访问 Erda 的 OpenAPI 地址，因此若设置为 *https://erda.cloud*，CLI 将转换为访问 *https://openapi.erda.cloud*。
 
-`--username` 用户名，指定 CLI 访问 Erda 平台的登陆用户。
+`--username`：用户名，指定 CLI 访问 Erda 平台的登陆用户。
 
-`--password` 密码，指定 CLI 访问 Erda 平台的登陆密码。
+`--password`：密码，指定 CLI 访问 Erda 平台的登陆密码。
 
-全部参数如下：
+全部参数示意如下：
 
 ```shell
 Global Flags:
@@ -24,7 +24,7 @@ Global Flags:
   -V, --verbose           if true, enable verbose mode
 ```
 
-### erda-cli version
+## erda-cli version
 
 ```bash
 $ erda-cli version
@@ -35,7 +35,7 @@ CommitID: 02583bd49fc57841bdcb05b02486e27dd868cf00
 DockerImage:
 ```
 
-### erda-cli clone
+## erda-cli clone
 
 您可以通过 `clone` 命令克隆 Erda 平台上的项目。
 
@@ -57,9 +57,9 @@ $ erda-cli clone https://erda.cloud/trial/dop/projects/599
        --cloneApps   if false, don't clone applications in the project (default true)
 ```
 
-### erda-cli push
+## erda-cli push
 
-您可以通过 `push` 命令推送应用到 Erda 平台。
+您可以通过 `push` 命令将应用推送至 Erda 平台。
 
  ```shell
  $ erda-cli push https://erda.cloud/trial/dop/projects/599 --application new-app
@@ -80,9 +80,9 @@ Flags:
   -h, --help                  help for push
 ```
 
-### erda-cli create
+## erda-cli create
 
-您可以通过 `create` 命令在构建 Erda 上创建项目。
+您可以通过 `create` 命令在 Erda 上创建项目。
 
 ```shell
 $ erda-cli create --host https://erda.cloud --org erda -n demo-project -d 'demo project' --init-package project_package_20220310194452.zip
@@ -109,7 +109,7 @@ Flags:
       --wait-import int       minutes wait for package to be import (default 1)
 ```
 
-### erda-cli build
+## erda-cli build
 
 您可以通过 `build` 命令构建 Erda 上的应用。
 
@@ -127,9 +127,9 @@ $ erda-cli build <path-to/pipeline.yml> --host=https://erda.cloud -u 'YourName' 
   -w, --watch           watch the status
 ```
 
-`--watch` 可以持续观察应用的构建过程。
+`--watch` 可持续观察应用的构建过程。
 
-### erda-cli view
+## erda-cli view
 
 您可以通过 `view` 命令构建 Erda 上的应用。
 
@@ -164,7 +164,7 @@ Flags:
   -w, --watch             watch the status
 ```
 
-### erda-cli ext
+## erda-cli ext
 
 您可以通过 `ext` 命令罗列 Erda 上所有的 Extension。
 
@@ -177,7 +177,7 @@ terminus-elasticsearch        addon    search                    true     2021-1
 kafka                         addon    message                   true     2021-11-18 01:12:57
 ```
 
-### erda-cli ext pull
+## erda-cli ext pull
 
 您可以通过 `ext pull` 命令获取 Erda 上的 Extension。
 
@@ -193,7 +193,7 @@ Flags:
   -o, --output string   which directory to export to
 ```
 
-### erda-cli ext push
+## erda-cli ext push
 
 您可以通过 `ext push` 命令更新 Erda 上的 Extension。该操作需由平台管理员执行。
 
@@ -212,7 +212,7 @@ Flags:
   -r, --registry string   new registry
 ```
 
-### erda-cli migrate
+## erda-cli migrate
 
 您可以通过 `migrate` 命令管理 MySQL 数据库中的数据变更。
 

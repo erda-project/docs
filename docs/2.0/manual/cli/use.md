@@ -2,21 +2,19 @@
 
 ## 登录
 
-CLI 有少数命令无需登录也可执行，例如 `migrate` 相关命令。
+CLI 有少数命令无需登录即可执行，例如 `migrate` 相关命令。但多数子命令需在登陆后执行，登录相关参数如下：
 
-CLI 的多数子命令需在登陆后执行，登录相关参数如下：
-
-1. `--host` 指定需要登录的 Erda 平台地址。
+1. `--host` 指定需登录的 Erda 平台地址。
 2. `-u`，`--username ` 指定登录用户名。
 3. `-p`，`--password` 指定登录密码。
 
 ::: tip 提示
 
-当前目录为代码目录，CLI 则会通过 `git remote get-url <remote-name>` 尝试获取平台地址、企业名称、项目ID、应用ID，其中 remote-name 可以通过 `--remote` 指定，默认是  `origin`。
+当前目录为代码目录，CLI 将通过 `git remote get-url <remote-name>` 尝试获取平台地址、企业名称、项目 ID、应用 ID，其中 remote-name 可通过 `--remote` 指定，默认为  `origin`。
 
 :::
 
-如果您未通过登录参数指定登陆信息，则需要通过交互方式填写。
+若您未通过登录参数指定登录信息，则需通过交互方式填写。
 
 ```shell
 $ erda-cli clone https://erda.cloud/trial/dop/projects/599
@@ -39,13 +37,13 @@ ORGID    NAME         DESCRIPTION
 
 ::: warning 警告
 
-请您先在 Erda 的 Web 界面上创建项目和应用，并提交代码。
+请先在 Erda 的 Web 界面完成项目和应用创建，并提交代码。
 
-本文假设创建的组织名称为 trial，项目的名称为 bestpractice，应用名称为 echo-service。
+本文假设创建的组织名称为 trial，项目名称为 bestpractice，应用名称为 echo-service。
 
 :::
 
-克隆项目到本地 ：
+克隆项目至本地：
 
 ```shell
 $ erda-cli clone https://erda.cloud/trial/dop/projects/599
@@ -80,9 +78,9 @@ PIPELINEID   TASKID     TASKNAME       TASKSTATUS   STARTEDAT
 
 #### 基于工程包
 
-可以基于标准产品的项目制品生产项目工程包，用于在实施环境快速创建项目。
+您可基于标准产品的项目制品生产项目工程包，用于在实施环境中快速创建项目。
 
-* 在标准项目中创建流水线
+* 在标准项目中创建流水线。
 
   ```yaml
   version: "1.1"
@@ -99,9 +97,9 @@ PIPELINEID   TASKID     TASKNAME       TASKSTATUS   STARTEDAT
                   version: "1.0"
   ```
 
-​		其中 artifacts 描述了工程包关联的制品。运行流水线完成工程包制作，然后通过下载链接获取。
+​		其中 artifacts 描述工程包关联的制品。运行流水线完成工程包制作，随后通过下载链接获取。
 
-* 工程包中结构如下：
+* 工程包的结构如下：
 
   ```shell
   .
@@ -120,16 +118,16 @@ PIPELINEID   TASKID     TASKNAME       TASKSTATUS   STARTEDAT
   ├── values.yml
   ```
 
-  工程包中包含：
+  工程包包含：
 
     1. 应用列表
     2. 应用代码
     3. 项目制品
     4. 环境配置，包括 Custom Addon、集群及配额
 
-* 填写配置
+* 填写配置。
 
-  工程包中的 `values.yml` 文件需要填写新项目需要的具体配置：
+  请在工程包的 `values.yml` 文件中填写新项目所需的具体配置：
 
   ```yaml
   values.DEV.addons.oss.config.OSS_ACCESS_KEY_ID: ""
@@ -150,7 +148,7 @@ PIPELINEID   TASKID     TASKNAME       TASKSTATUS   STARTEDAT
   values.PROD.cluster.quota.memoryQuota: 0
   ```
 
-* 使用工程包初始化项目
+* 使用工程包初始化项目。
 
   ```shell
   $ erda-cli create --host https://erda.cloud --org erda -n demo-project -d 'demo project' --init-package project_package_20220310194452.zip
@@ -166,19 +164,19 @@ PIPELINEID   TASKID     TASKNAME       TASKSTATUS   STARTEDAT
   ✔ Project 'demo-project' created.
   ```
 
-  其中 project_package_20220310194452.zip 是项目工程包。
+  其中 project_package_20220310194452.zip 为项目工程包。
 
-  初始化过程会完成：
+  初始化过程将完成以下内容：
 
     1. 项目创建
     1. 监控租户创建
-    1. 工程包导入：创建应用、推送代码、创建 Custom Addon、导入制品
+    1. 工程包导入，包括创建应用、推送代码、创建 Custom Addon、导入制品
 
 ### 项目工程
 
 #### 项目克隆
 
-使用 `clone` 命令将 Erda 上的项目克隆到本地，进而可以在本地项目空间中进行操作：
+通过 `clone` 命令将 Erda 上的项目克隆至本地，从而可在本地项目空间中进行后续操作。
 
 ```shell
 $ erda-cli clone https://erda.cloud/trial/dop/projects/599
@@ -189,9 +187,9 @@ $ erda-cli clone https://erda.cloud/trial/dop/projects/599
 ✔ Project 'bestpractice' and your applications cloned.
 ```
 
-默认 `--cloneApps` 选项为 `true`，会将项目中各个应用及代码也克隆到本地。
+默认 `--cloneApps` 选项为 `true`，将项目中各个应用及代码同样克隆至本地。
 
-完成克隆后，会在本地以项目名称创建目录，项目目录即为项目空间，其下有隐藏文件记录项目信息。
+完成克隆后，将在本地以项目名称创建目录，项目目录即为项目空间，其下有隐藏文件记录项目信息。
 
 ```yaml
 $ cd bestpractice/
@@ -213,11 +211,11 @@ applications:
       desc: "web server supplies apis"
 ```
 
-在项目空间中执行 CLI 命令，默认会加载项目及应用的信息。
+在项目空间中执行 CLI 命令，默认将加载项目及应用的信息。
 
 #### 项目推送
 
-可以将本地项目空间中的应用及代码推送到任一 Erda 平台上的项目里，方便快速的部署和二次开发。
+您可将本地项目空间中的应用及代码推送至 Erda 平台上的任一项目中，便于快速部署和二次开发。
 
 ```shell
 $ erda-cli push https://one.gts.terminus.io/trial/dop/projects/127 --application echo-web --application echo-service

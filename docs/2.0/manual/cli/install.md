@@ -66,7 +66,7 @@ Flags:
 Use "erda-cli [command] --help" for more information about a command.
 ```
 ### 自动补全
-可以使用 `erda-cli completion -h` 命令查看如何配置多种终端的自动补全。
+您可以通过 `erda-cli completion -h` 命令查看如何配置多种终端的自动补全。
 ```shell
 $ erda-cli completion -h
 Generate the autocompletion script for erda-cli for the specified shell.
@@ -79,7 +79,7 @@ Available Commands:
   powershell  generate the autocompletion script for powershell
   zsh         generate the autocompletion script for zsh
 ```
-例如在 Mac 上可以参考 help 信息配置 zsh 的自动补全。
+例如，在 Mac 上可参考 help 信息配置 zsh 的自动补全。
 ```shell
 $ erda-cli completion zsh -h
 Generate the autocompletion script for the zsh shell.
@@ -93,7 +93,7 @@ $ erda-cli completion zsh > "${fpath[1]}/_erda-cli"
 $ erda-cli completion zsh > /usr/local/share/zsh/site-functions/_erda-cli
 You will need to start a new shell for this setup to take effect.
 ```
-配置后的使用效果：
+配置后的使用效果如下：
 ```shell
 $ erda-cli c[tab]
 clone       -- clone project or application from Erda
