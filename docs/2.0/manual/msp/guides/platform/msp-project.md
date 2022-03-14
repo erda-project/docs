@@ -39,7 +39,7 @@
 
 ## 研发项目接入
 
-执行以下操作前，请确保您已完成了研发项目、erda.yaml，以及部署流水线的创建，详情可参考 [通过 CI/CD 流水线一键部署](dop/guides/deploy/deploy-by-cicd-pipeline)。
+执行以下操作前，请确保您已完成了研发项目、erda.yaml，以及部署流水线的创建，详情可参考 [通过 CI/CD 流水线一键部署](../../../dop/guides/deploy/deploy-by-cicd-pipeline)。
 
 
 ### 添加 monitor addon
