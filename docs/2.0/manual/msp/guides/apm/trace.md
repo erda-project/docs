@@ -14,9 +14,7 @@
 
 一条调用链可视为一个由多个 Span 组成的有向无环图（DAG 图）。
 ```
-一个 tracer 过程中，各 span 的关系如下：·
-
-
+一个 tracer 过程中，各 span 的关系如下：
         [Span A]  ←←←(the root span)
             |
      +------+------+
@@ -34,10 +32,7 @@
 某些情况下，下方这类基于时间轴的时序图能够更好地展示调用链。
 ```
 上述 tracer 与 span 的时间轴关系如下：
-
-
 ––|–––––––|–––––––|–––––––|–––––––|–––––––|–––––––|–––––––|–> time
-
  [Span A···················································]
    [Span B··············································]
       [Span D··········································]
@@ -59,7 +54,6 @@
 ```
     [-Parent Span---------]
          [-Child Span----]
-
     [-Parent Span--------------]
          [-Child Span A----]
           [-Child Span B----]
@@ -67,26 +61,33 @@
          [-Child Span D---------------]
          [-Child Span E----]
 ```
-**FollowsFrom** 引用: 一些父级节点不以任何方式依然他们子节点的执行结果，这种情况下，我们说这些子 span 和父 span 之间是"FollowsFrom"的因果关系。"FollowsFrom"关系可以被分为很多不同的子类型，未来版本的 OpenTracing 中将正式的区分这些类型。
+**FollowsFrom** 引用: 一些父级节点不以任何方式依然他们子节点的执行结果，这种情况下，我们说这些子 span 和父 span 之间是"FollowsFrom"的因果关系。"FollowsFrom"关系可以被分为很多不同的子类型。
 
 下面都是合理的表述一个"FollowFrom"关系的父子节点关系的时序图。
 ```
     [-Parent Span-]  [-Child Span-]
-
-
     [-Parent Span--]
      [-Child Span-]
-
-
     [-Parent Span-]
                 [-Child Span-]
 ```
 
 ### 实践
 
+数据接入请查看： [Agent 使用指导](java-agent-guide.md)
+
 对于 Java 服务而言，Erda 采用 Agent 自动探针的方式采集链路信息。您只需通过 Erda 提供的流水线 Action 进行服务部署，即可自行集成 Agent。自动采集后的追踪数据可通过链路查询查看。 
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/29/6e37cc0b-3db0-41e6-99fc-8519702aaddd.png)
+
+已支持的组合查询方式：
+- 持续时间
+- 链路状态
+- 过滤规则：
+    - 服务名
+    - 追踪ID
+    - Rpc Method
+    - HTTP Path
 
 点击可查看具体的链路信息。
 
@@ -94,7 +95,7 @@
 
 :::tip 提示
 
-点击链路图中的 Span 节点可查看调用过程中的关键信息。
+点击链路图中的 Span 节点可查看调用过程中的关键信息: 属性，事件以及关联服务。属性：span 的 tags,fields; 事件： 记录一些 span 事件，如：耗时；关联服务： 快速查看当前 span 采集的服务相关核心指标数据
 
 :::
 

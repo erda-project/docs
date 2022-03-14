@@ -364,6 +364,7 @@ module.exports = [
             title: '应用监控',
             collapsable: true,
             children: [
+              'msp/guides/apm/java-agent-guide',
               'msp/guides/apm/service-list',
               'msp/guides/apm/service-overview',
               'msp/guides/apm/service-monitor',
