@@ -2,6 +2,7 @@ node_modules
 .temp
 dest/
 */.DS_Store
+**/.DS_Store
 *.iml
 _book
 .idea/
