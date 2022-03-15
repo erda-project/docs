@@ -478,6 +478,8 @@ module.exports = [
     title: 'CLI',
     collapsable: true,
     children: [
+      'cli/install',
+      'cli/use',
       'cli/explain-args'
     ]
   },
