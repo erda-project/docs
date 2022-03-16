@@ -17,4 +17,12 @@
    /bin/bash -c "$(curl -fsSL https://static.erda.cloud/quick-start/quick-start.sh)"
    ```
 
+2. 添加 hosts
+
+> 该操作是可选的，当您将 Erda 安装在远程服务器上，并想从本地访问时，您需要执行该操作。
+
+```shell
+echo "<your_server_ip> erda.local one.erda.local collector.erda.local openapi.erda.local" | sudo tee -a /etc/hosts
+```
+
 2. 访问 [*http://erda.local*](http://erda.local) 快速体验 Erda。
