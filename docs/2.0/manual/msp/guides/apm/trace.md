@@ -41,37 +41,45 @@
 ```
 
 * **Trace**：一个 Trace 代表一个潜在的、分布式的、存在并行数据或并行执行轨迹（潜在的分布式、并行）的系统。一个 Trace 可视为有多个 Span 的有向无环图（DAG）。
+
 * **Span**：一个 Span 代表系统中具有开始时间和执行时长的逻辑运行单元。Span 之间通过嵌套或者顺序排列建立逻辑因果关系。一次调用中的某个节点或步骤类似于一层堆栈信息。Span 之间存在父子或并列关系以表明 Span 在整个调用中的生命周期。
+
 * **Operation Name**：每个 Span 均有一个操作名称，简单且具有高可读性（例如一个 RPC 方法名称，一个函数名称，或一个大型计算过程中的子任务或阶段）。Span 的操作名称应为一个抽象且通用的标识，是一个明确的、具有统计意义的名称。更具体的子类型描述，请使用 Tags。
+
 * **Inter-Span References**：一个 Span 可与一个或多个 Span 存在因果关系。Erda 遵循 OpenTracing 定义的两种关系：ChildOf 和 FollowsFrom。这两种引用类型代表了子节点和父节点间的直接因果关系。
-        
-**ChildOf 引用**：一个 Span 可能是一个父级 Span 的孩子，即 ChildOf 关系。在 ChildOf 引用关系下，父级 Span 某种程度上取决于子 Span。以下这些情况即构成 ChildOf 关系：
-
-一个 RPC 调用的服务端的 Span，和 RPC 服务客户端的 Span 构成 ChildOf 关系。
-一个 SQL insert 操作的 Span，和 ORM save 方法的 Span 构成 ChildOf 关系。
-许多可并行工作（或分布式工作）的 Span 均有可能为一个父级 Span 的子项，它将合并所有子 Span 的执行结果，并在指定期限内返回。
-以下为合理表述 ChildOf 关系的父子节点关系的时序图：
-```
-    [-Parent Span---------]
-         [-Child Span----]
-    [-Parent Span--------------]
-         [-Child Span A----]
-          [-Child Span B----]
-        [-Child Span C----]
-         [-Child Span D---------------]
-         [-Child Span E----]
-```
-**FollowsFrom 引用**: 一些父级节点不以任何方式依赖于其子节点的执行结果。在此情况下，这些子 Span 和父 Span 之间即为 FollowsFrom 的因果关系。FollowsFrom 关系可分为众多不同的子类型。
-
-以下为合理表述 FollowFrom 关系的父子节点关系的时序图：
-```
-    [-Parent Span-]  [-Child Span-]
-    [-Parent Span--]
-     [-Child Span-]
-    [-Parent Span-]
-                [-Child Span-]
-```
-
+  
+  * **ChildOf 引用**：一个 Span 可能是一个父级 Span 的孩子，即 ChildOf 关系。在 ChildOf 引用关系下，父级 Span 某种程度上取决于子 Span。以下这些情况即构成 ChildOf 关系：
+  
+    * 一个 RPC 调用的服务端的 Span，和 RPC 服务客户端的 Span 构成 ChildOf 关系。
+  
+    * 一个 SQL insert 操作的 Span，和 ORM save 方法的 Span 构成 ChildOf 关系。
+  
+    * 许多可并行工作（或分布式工作）的 Span 均有可能为一个父级 Span 的子项，它将合并所有子 Span 的执行结果，并在指定期限内返回。
+  
+    以下为合理表述 ChildOf 关系的父子节点关系的时序图：
+  
+    ```
+        [-Parent Span---------]
+             [-Child Span----]
+        [-Parent Span--------------]
+             [-Child Span A----]
+              [-Child Span B----]
+            [-Child Span C----]
+             [-Child Span D---------------]
+             [-Child Span E----]
+    ```
+  
+  * **FollowsFrom 引用**: 一些父级节点不以任何方式依赖于其子节点的执行结果。在此情况下，这些子 Span 和父 Span 之间即为 FollowsFrom 的因果关系。FollowsFrom 关系可分为众多不同的子类型。
+  
+    以下为合理表述 FollowFrom 关系的父子节点关系的时序图：
+  
+    ```
+        [-Parent Span-]  [-Child Span-]
+        [-Parent Span--]
+         [-Child Span-]
+        [-Parent Span-]
+                    [-Child Span-]
+    ```
 ### 实践
 
 数据接入请参见 [Agent 使用指导](java-agent-guide.md)。
