@@ -127,7 +127,7 @@ PIPELINEID   TASKID     TASKNAME       TASKSTATUS   STARTEDAT
 
 * 填写配置。
 
-  请在工程包的 `values.yml` 文件中填写新项目所需的具体配置：
+  请在工程包的 values.yml 文件中填写新项目所需的具体配置：
 
   ```yaml
   values.DEV.addons.oss.config.OSS_ACCESS_KEY_ID: ""
