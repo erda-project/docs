@@ -45,7 +45,7 @@
 该步骤为可选项。通过流水线部署的应用将自动添加 Monitor Addon。
 :::
 
-1. 编辑 erda.yaml，添加 Monitor Addon
+编辑 erda.yaml，添加 Monitor Addon。
 
 您可通过可视化的图形编辑模式添加：
 
@@ -65,11 +65,16 @@
 
 1. 进入 **应用 > 流水线**，新建流水线并点击执行。 
    
-流水线部署过程中，将执行 Monitor Addon 指定的特定逻辑：
-- 向微服务治理平台注册项目。
-- 向微服务治理平台申请授权 Token。
-- 在打包的镜像中添加采集 SDK。
-- 将授权 Token 注入至部署应用的环境变量。
+   流水线部署过程中，将执行 Monitor Addon 指定的特定逻辑：
+   
+   - 向微服务治理平台注册项目。
+   
+   - 向微服务治理平台申请授权 Token。
+   
+   - 在打包的镜像中添加采集 SDK。
+   
+   - 将授权 Token 注入至部署应用的环境变量。
+   
 
 2. 等待流水线执行成功后，进入微服务治理平台首页，即可查看方才部署的项目，点击进入管理。
 
@@ -82,6 +87,7 @@
 
 1. 进入 **管理中心 > 项目列表**。
    
+
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/24/e5b45f1f-c9f7-4698-a163-215ecccd32b4.png)
 
 2. 点击 **新建项目**。
@@ -127,24 +133,26 @@
 
 1. 引入 opentracing-spring-jaeger-cloud-starter 依赖。
 
-```xml
-<dependency>
-    <groupId>io.opentracing.contrib</groupId>
-    <artifactId>opentracing-spring-jaeger-cloud-starter</artifactId>
-    <version>3.3.1</version>
-</dependency>
-```
+   ```xml
+   <dependency>
+       <groupId>io.opentracing.contrib</groupId>
+       <artifactId>opentracing-spring-jaeger-cloud-starter</artifactId>
+       <version>3.3.1</version>
+   </dependency>
+   ```
 
 2. 在 application.yml 中配置 Jaeger。
 
-```yaml
-opentracing:
-  jaeger:
-    service-name: <your_service_name>
-    http-sender:
-      url: https://collector.daily.terminus.io/api/jaeger/traces
-    log-spans: true
-    tags:
-      erda.env.id: <your_env_id>
-      erda.env.token: <your_token>
-```
+   ```yaml
+   opentracing:
+     jaeger:
+       service-name: <your_service_name>
+       http-sender:
+         url: https://collector.daily.terminus.io/api/jaeger/traces
+       log-spans: true
+       tags:
+         erda.env.id: <your_env_id>
+         erda.env.token: <your_token>
+   ```
+
+   

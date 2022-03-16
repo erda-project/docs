@@ -160,17 +160,16 @@ Authorization: hmac appkey="wsK8t77fvAAs3i7878NSkC0j95ib3oVu", algorithm="hmac-s
 
 * **Digest 请求头**
 
-  需使用 SHA-256 对请求 Body 进行签名，例如 Body 为 `{"name": "bob"}`，则对应的 Digest 请求头为 `Digest: SHA-256=lWuihDRnfX2CUVffGA74EjBnzVgnfHPywPXkYaKDC1I=`，
-  其中 Digest 请求头的 `value` 需以 `SHA-256=` 开头。
-
+  需使用 SHA-256 对请求 Body 进行签名，例如 Body 为 `{"name": "bob"}`，则对应的 Digest 请求头为 `Digest: SHA-256=lWuihDRnfX2CUVffGA74EjBnzVgnfHPywPXkYaKDC1I=`，其中 Digest 请求头的 `value` 需以 `SHA-256=` 开头。
+  
   使用 Unix 命令生成：
-
+  
   ```bash
   echo -n '{"name": "bob"}' | openssl dgst -sha256 -binary | base64
   ```
-
+  
   请求限制：请求 Body 大小不超过 10 m。
-
+  
 * **Authorization 请求头**
 
   区别于不存在 Body 的情况，Headers 部分必须带上 Digest，示例如下：
@@ -194,8 +193,14 @@ Authorization: hmac appkey="wsK8t77fvAAs3i7878NSkC0j95ib3oVu", algorithm="hmac-s
 
   生成签名的方式请参见 [不存在请求 Body](./auth.md#签名算法)。
 
-#### 示例代码（Java 语言实现带 Body 的 Post 请求客户端 Hmac 认证）
-> 注意：仅包含生成必要请求参数的示例代码，不包含发起 http 请求的示例代码
+#### 代码示例 1：Java 语言实现带 Body 的 Post 请求客户端 HMAC 认证
+
+:::tip 提示
+
+该示例仅包含生成必要请求参数的代码，不包含发起 HTTP 请求的代码。
+
+:::
+
 ```java
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.digest.HmacAlgorithms;
@@ -249,8 +254,14 @@ public class HmacTest {
 }
 ```
 
-#### 示例代码（Go 语言实现带 Body 的 Post 请求客户端 Hmac 认证）
-> 注意：包含计算各必要参数和发起 http 请求的完整示例代码
+#### 代码示例 2：Go 语言实现带 Body 的 Post 请求客户端 HMAC 认证
+
+:::tip 提示
+
+该示例包含计算各必要参数和发起 HTTP 请求的完整代码。
+
+:::
+
 ```go
 package main
 

@@ -368,12 +368,11 @@ options:
 
 ## 变量引用
 ### 平台级变量
-在 erda.yml 的 `.services[serviceName].endpoints[i].domain` 字段的值中，可以引用平台级变量。
-引用语法为 `${platform.Key}`.
-目前支持的平台级变量有
-- `platform.DICE_PROJECT_NAME`
+在 erda.yml 的 `.services[serviceName].endpoints[i].domain` 字段值中，可引用平台级变量，引用语法为 `${platform.Key}`。
 
-示例：
+目前支持的平台级变量有 `platform.DICE_PROJECT_NAME`。
+
+示例如下：
 ```yaml
 version: "2.0"
 services:
@@ -383,13 +382,12 @@ services:
 ```
 
 ### values 变量
-在 erda.yml 的 `.values` 字段为各环境配置键值对，在所有字段的值中都可以引用它们。
+在 erda.yml 的 `.values` 字段中为各环境配置键值对，可在所有字段的值中进行引用。
 
 ### envs 变量
-环境变量的值之间可以引用其他环境变量的值。
-引用语法为 `${env.Key}`.
+环境变量的值之间可引用其他环境变量的值，引用语法为 `${env.Key}`。
 
-示例：
+示例如下：
 ```yaml
 version: "2.0"
 
@@ -398,8 +396,13 @@ envs:
   DOMAIN: ${env.PROJECT_APP}.my-site.com // 引用别处定义的环境变量
 ```
 
-注意，开发者可以在 erda.yml 的服务级和全局、部署配置、Addon 等场景配置环境变量，它们之间可以互相引用（但不能出现循环引用）。
-开发者可以引用自定义的环境变量，也可以引用平台定义的环境变量。
+:::tip 提示
+
+开发者可在 erda.yml 的服务级和全局、部署配置、Addon 等场景配置环境变量，变量之间可互相引用（但不允许出现循环引用）。
+
+开发者可引用自定义的环境变量，也可引用平台定义的环境变量。
+
+:::
 
 ## 示例
 

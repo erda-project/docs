@@ -1,6 +1,6 @@
 # Java Agent 使用
 
-请从以下路径获取源码：https://github.com/erda-project/erda-java-extensions 。
+请参见 [GitHub 源码](https://github.com/erda-project/erda-java-extensions) 获取源码。
 
 ## Agent 介绍
 自 Java 5 版本之后，JDK 提供 Instrument 包以实现一些炫酷的功能，市面上部份 APM 工具即以此进行增强。该功能对于业务开发者而言相对偏门，但您可能已在无意中有所涉及，例如 JetBrains IDEA Debug 功能和 SkyWalking Java 探针实现。Erda 受到 SkyWalking 探针技术的启发，在此基础上实现一套 Erda 原生的 Java Agent，用于监控部署在 Erda 上的众多 Java 服务。

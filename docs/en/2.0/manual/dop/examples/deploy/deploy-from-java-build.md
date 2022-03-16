@@ -42,7 +42,14 @@ stages:
               release_id: ${release:OUTPUT:releaseID}
 ```
 
+:::tip Tips
+
+To specify the maven setting.xml file, change `build_cmd` to `mvn package -s setting.xml`.
+
+:::
+
 ## Gradle
+
 ```yaml
 version: "1.1"
 stages:
