@@ -25,4 +25,4 @@
 echo "<your_server_ip> erda.local one.erda.local collector.erda.local openapi.erda.local" | sudo tee -a /etc/hosts
 ```
 
-2. 访问 [*http://erda.local*](http://erda.local) 快速体验 Erda。
+3. 访问 [*http://erda.local*](http://erda.local) 快速体验 Erda。
