@@ -1,8 +1,8 @@
-# CLI 安装
+# CLI Installation
 
-CLI 是 Erda 为开发者提供的命令行工具，您可以通过该工具在终端设备上轻松构建 Erda 应用。
+CLI is a command-line tool provided by Erda for developers, which allows you to easily build applications on terminal devices.
 
-## 下载安装
+## Download and Install
 
 ### macOS
 
@@ -16,9 +16,9 @@ wget -O /usr/local/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.co
 wget -O /usr/bin/erda-cli https://erda-release.oss-cn-hangzhou.aliyuncs.com/cli/linux/erda-2.1-alpha && chmod +x /usr/bin/erda-cli
 ```
 
-## 安装验证
+## Verification
 
-完成安装后，您可以通过 `erda-cli version` 查看版本信息。
+After installation, you can view the version information via `erda-cli version`.
 
 ```shell
 $ erda-cli version
@@ -28,7 +28,7 @@ GoVersion: go version go1.16.5 darwin/arm64
 CommitID: 389d769e76e600e4b9993db26c279c21e91f8297
 ```
 
-您可以通过 `erda-cli help` 命令列出所有可用的 Erda Command，再通过子命令的 `help` 信息查看详细用法。
+You can list all available Erda commands via `erda-cli help`, and then view detailed usage via `help` of the subcommands.
 
 ```shell
 $ erda-cli help
@@ -65,8 +65,8 @@ Flags:
 
 Use "erda-cli [command] --help" for more information about a command.
 ```
-### 自动补全
-您可以通过 `erda-cli completion -h` 命令查看如何配置多种终端的自动补全。
+### Autocomplete
+You can see how to configure autocomplete for multiple terminals with the `erda-cli completion -h` command.
 ```shell
 $ erda-cli completion -h
 Generate the autocompletion script for erda-cli for the specified shell.
@@ -79,7 +79,7 @@ Available Commands:
   powershell  generate the autocompletion script for powershell
   zsh         generate the autocompletion script for zsh
 ```
-例如，在 Mac 上可参考 help 信息配置 zsh 的自动补全。
+For example, on a Mac, you can configure the autocomplete of zsh with the help information.
 ```shell
 $ erda-cli completion zsh -h
 Generate the autocompletion script for the zsh shell.
@@ -93,7 +93,7 @@ $ erda-cli completion zsh > "${fpath[1]}/_erda-cli"
 $ erda-cli completion zsh > /usr/local/share/zsh/site-functions/_erda-cli
 You will need to start a new shell for this setup to take effect.
 ```
-配置后的使用效果如下：
+After configuration, it is as follows:
 ```shell
 $ erda-cli c[tab]
 clone       -- clone project or application from Erda
