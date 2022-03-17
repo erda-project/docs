@@ -359,34 +359,23 @@ module.exports = [
         title: 'Guides',
         collapsable: true,
         children: [
-          ['msp/guides/platform/msp-project', 'Add Projects'],
-  //         ['msp/guides/platform/msp-overview', '平台总览'],
-  //         ['msp/guides/platform/msp-project-list', '项目列表'],
-  //         'msp/guides/apm/topology',
-  //         // {
-  //         //     title: '微服务环境',
-  //         //     collapsable: true,
-  //         //     children: [
-
-  //         //     ]
-  //         // },
-  //         {
-  //           title: 'Application Monitoring',
-  //           collapsable: true,
-  //           children: [
-  //             'msp/guides/apm/service-analysis',
-  //             'msp/guides/apm/browser-monitor',
-  //             'msp/guides/apm/browser-monitor-config',
-  //             'msp/guides/apm/trace',
-  //             'msp/guides/apm/checker',
-  //             'msp/guides/apm/alert-config',
-  //             'msp/guides/apm/alert-history',
-  //             'msp/guides/apm/alert-index',
-  //             'msp/guides/apm/alert-custom',
-  //             'msp/guides/apm/dashboard',
-  //             'msp/guides/apm/dashboard-advanced',
-  //           ]
-  //         },
+          ['msp/guides/platform/msp-project', 'Project Access'],
+          {
+            title: 'Application Monitoring',
+            collapsable: true,
+            children: [
+              'msp/guides/apm/apm-overview',
+              'msp/guides/apm/java-agent-guide',
+              // 'msp/guides/apm/service-overview',
+              // 'msp/guides/apm/service-monitor',
+              // 'msp/guides/apm/browser-monitor',
+              'msp/guides/apm/browser-monitor-config',
+              'msp/guides/apm/trace',
+              // 'msp/guides/apm/checker',
+              // 'msp/guides/apm/dashboard',
+              // 'msp/guides/apm/dashboard-advanced',
+            ]
+          },
   //         {
   //           title: 'Log Analysis',
   //           collapsable: true,
