@@ -359,17 +359,7 @@ module.exports = [
         title: 'Guides',
         collapsable: true,
         children: [
-          ['msp/guides/platform/msp-project', 'Add Projects'],
-  //         ['msp/guides/platform/msp-overview', '平台总览'],
-  //         ['msp/guides/platform/msp-project-list', '项目列表'],
-  //         'msp/guides/apm/topology',
-  //         // {
-  //         //     title: '微服务环境',
-  //         //     collapsable: true,
-  //         //     children: [
-
-  //         //     ]
-  //         // },
+          ['msp/guides/platform/msp-project', 'Project Access'],
   //         {
   //           title: 'Application Monitoring',
   //           collapsable: true,
