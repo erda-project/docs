@@ -1,11 +1,5 @@
 module.exports = [
-  {
-    title: '关于 Erda',
-    collapsable: true,
-    children: [
-      'about/intro'
-    ]
-  },
+  'about/intro'
   {
     title: '安装配置',
     collapsable: true,
