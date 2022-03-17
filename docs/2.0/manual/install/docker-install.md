@@ -18,11 +18,13 @@
    ```
 
 2. 添加 hosts
-
-> 当您将 Erda 安装在远程服务器上，并想从本地访问时，您需要在本地机器执行该操作。
-
-```shell
-echo "<your_server_ip> erda.local one.erda.local collector.erda.local openapi.erda.local" | sudo tee -a /etc/hosts
-```
+   
+   :::tip 提示
+   若您将 Erda 安装在远程服务器上，并希望从本地访问，您需要在本地机器执行该操作。
+   :::
+   
+   ```shell
+   echo "<your_server_ip> erda.local one.erda.local collector.erda.local openapi.erda.local" | sudo tee -a /etc/hosts
+   ```
 
 3. 访问 [*http://erda.local*](http://erda.local) 快速体验 Erda。
