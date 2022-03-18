@@ -1,5 +1,5 @@
 module.exports = [
-  'about/intro'
+  'about/intro',
   {
     title: '安装配置',
     collapsable: true,
