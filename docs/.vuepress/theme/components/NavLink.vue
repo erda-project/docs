@@ -56,7 +56,7 @@ export default {
         const [empty, first] = this.pathname.split("/");
         const vers = this.$themeConfig.nav.find(
           (nav) => nav.text === "版本"
-        ).items;
+        ).items.filter(v => v.version && !v.version.includes('next'));
         // 如果当前链接不以版本开头，使用第一个版本
         const _ver = versionRE.test(this.pathname) ? first : vers[0].version;
         return link.replace("{version}", _ver);
