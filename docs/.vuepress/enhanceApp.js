@@ -24,7 +24,7 @@ export default ({
     }
 
     const nav = siteData.themeConfig.nav;
-    const vers = nav[nav.length - 1].items.filter(v => v.version).map(v => v.version);
+    const vers = nav[nav.length - 1].items.filter(v => v.version && !v.version.includes('next')).map(v => v.version);
     // latest 路径自动转向 最新版本
     router.beforeEach((to, from, next) => {
       let [, ver, ...rest] = to.path.split('/');

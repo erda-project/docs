@@ -24,7 +24,7 @@ export default {
 
   mounted() {
     const [empty, ver] = window ? window.location.pathname.split(this.$localePath + "/") : [];
-    const vers = this.$themeConfig.nav.find(nav => nav.text === "版本").items;
+    const vers = this.$themeConfig.nav.find(nav => nav.text === "版本").items.filter(v => v.version && !v.version.includes('next'));
     this.home = versionRE.test(ver) ? ver : vers[0].link;
   },
 

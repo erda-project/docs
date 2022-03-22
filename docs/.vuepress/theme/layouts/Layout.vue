@@ -104,7 +104,7 @@ export default {
     this.$router.afterEach(() => {
       this.isSidebarOpen = false;
     });
-    const vers = this.$themeConfig.nav.find((nav) => nav.text === "版本").items;
+    const vers = this.$themeConfig.nav.find((nav) => nav.text === "版本").items.filter(v => v.version && !v.version.includes('next'));
     const isUnderVersion = versionRE.test(window.location.pathname);
     const showNotify =
       isUnderVersion &&
