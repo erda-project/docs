@@ -175,6 +175,7 @@ stages:
       version: "1.0"
       params:
         build_cmd:
+           - "rm -rf /usr/share/maven/conf/setting.xml"
            - "mvn clean deploy  -e -B -U --settings ((MAVEN_SETTING_FILE)) -Dmaven.test.skip"
         jdk_version: 8
         workdir: ${git-checkout}
