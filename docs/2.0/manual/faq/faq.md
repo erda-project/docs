@@ -127,3 +127,24 @@ pipeline.yml 中的配置如下:
 该提示代表当前环境下无可用的集群。
 
 集群是流水线执行的必要条件，请进入 **DevOps 平台 > 项目 > 项目设置 > 项目信息 > 编辑** 为当前环境指定集群并设置配额。
+
+## 12. 如何配置全局私有 Maven 仓库？
+
+默认情况下，Erda 采用 maven.aliyun.com 作为 Maven 仓库地址，您可以通过如下方式进行修改：
+
+1. 编辑 configmap。
+
+```shell
+kubectl edit cm dice-addons-info -n erda-system 
+```
+
+2. 添加 Maven 仓库信息。
+
+```yaml
+NEXUS_ADDR: # 仓库内部地址，构建任务在 Master 集群中会使用该地址
+NEXUS_PUBLIC_URL: # 仓库外部地址，构建任务在 Worker 集群中会使用该地址
+NEXUS_USERNAME: # (可选) 仓库用户名
+NEXUS_PASSWORD:  # (可选) 仓库密码
+```
+
+3. 等待组件重启完成。
