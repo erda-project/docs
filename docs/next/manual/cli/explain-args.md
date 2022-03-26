@@ -51,11 +51,134 @@ $ erda-cli clone https://erda.cloud/trial/dop/projects/599
 参数说明如下：
 
 ```shell
- Args:
+Args:
    url               project url
- Flags:
+Flags:
        --cloneApps   if false, don't clone applications in the project (default true)
 ```
+
+## erda-cli issue
+您可以通过 `issue` 命令列出项目协同中的待办事项。
+```shell
+// 进入项目空间
+$ cd bestpractice
+
+$ erda-cli issue
+ISSUEID   FINISHDATE   STATE    ISSUENAME
+298064    2022-03-31   待处理   实现公司统一单点登录
+298068    2022-03-30   待处理   移动端登陆认证
+298067    2022-03-28   待处理   用户身份统一认证
+```
+
+参数说明如下：
+
+```shell
+Flags:
+      --bug             if true, list bugs
+      --no-headers      if true, don't print headers (default print headers)
+      --page-size int   the number of page size (default 10)
+      --requirement     if true, list requirements
+      --task            if true, list tasks
+```
+
+您可以通过 `--bug` 指定事项类型为缺陷，`--requirement` 指定事项类型为需求，`--task` 指定事项类型为任务。
+
+## erda-cli issue fix
+
+您可以通过 `issue fix` 命令创建代码分支来解决项目协同中的待办事项。
+
+```shell
+$ erda-cli issue fix 298067 --application echo-service --branch feature/auth
+[INFO] No base branch set, use branch 'master'.
+[INFO] Switched to a new branch 'feature/auth'
+[INFO] [feature/auth f7add11] init branch 'feature/auth'
+[INFO] remote:
+remote: Create a pipeline request for 'feature/auth' on Erda by visiting:
+remote:      https://erda.cloud/trial/dop/projects/599/pipelines/list
+remote:
+To https://erda.cloud/trial/dop/bestpractice/echo-service
+ * [new branch]      feature/auth -> feature/auth
+Branch 'feature/auth' set up to track remote branch 'feature/auth' from 'origin'.
+[INFO] Branch 'feature/auth' created in application 'echo-service' to fix issue '298067'.
+```
+
+该命令会在应用 `echo-service` 目录中创建 Git 分支 `feature/auth`并提交到 Erda 代码仓库，同事在事项 298067 增加评论关联代码分支用于跟踪。
+
+参数说明如下：
+
+```shell
+Args:
+      issue-id               id of issue to fix
+Flags:
+      --application string   name of the application
+      --base-branch string   branch as base to create from
+      --branch string        branch to create and checkout
+```
+
+您可以通过 `--application` 指定创建代码分支的应用（如果当前工作目录已经是应用目录，可参略），通过 `--bracnh` 指定代码分支名称，通过 `--base-branch` 指定基础分支（默认为 master 分支）。
+
+## erda-cli issue open
+
+您可以通过 `issue open` 命令在浏览器中打开事项的页面。
+
+```shell
+$ erda-cli issue open 298067
+✔ Open issue '298067' in browser.
+```
+
+参数说明如下：
+
+```shell
+Args:
+      issue-id               id of issue to open
+```
+
+## erda-cli issue close
+
+您可以通过 `issue close` 命令关闭事项。
+
+```shell
+$ erda-cli issue close 298067 --man-hour=2h
+✔ Issue '298067' closed.
+```
+
+参数说明如下：
+
+```shell
+Flags:
+      --man-hour string   time for work, in format of 2m/2h/2d/2w
+```
+
+您可以通过 `--man-hour` 指定使用的工时。
+
+## erda-cli mr create
+
+您可以通过 `mr create` 命令创建合并请求。
+
+```shell
+$ erda-cli mr create --from=feature/auth --to=master --title='auth service' --description='all auth handle by the same service'
+[INFO] source branch feature/auth, target branch master
+[INFO] Merge request created.
+[INFO] To https://erda.cloud/trial/dop/projects/599/apps/7097/repo/mr/open/1
+```
+
+参数说明如下：
+
+```shell
+Flags:
+      --application string   name of the application
+      --description string   desc of merge request
+      --from string          branch contains source code
+      --issue-id uint        relate issue id
+      --open                 if true, open merge request page in browser
+      --remove               if true, remove merge source branch (default true)
+      --title string         title of merge request
+      --to string            branch contains base code
+```
+
+您可以通过 `--title` 指定合并请求的标题，通过 `--description` 描述合并请求的内容。
+
+您可以通过 `--from` 指定合并请求的源代码分支，`--to` 指定目标代码分支，`--application` 指定应用（如果工作空间是应用目录，无需指定）。
 
 ## erda-cli push
 
