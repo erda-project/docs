@@ -31,9 +31,9 @@ ORGID    NAME         DESCRIPTION
 
 :::
 
-## 应用部署
+## 本地研发
 
-### 代码准备
+### 项目准备
 
 ::: warning 警告
 
@@ -52,14 +52,55 @@ $ erda-cli clone https://erda.cloud/trial/dop/projects/599
   Application 'echo-web' cloning ...
   Application 'echo-web' cloned.
 ✔ Project 'bestpractice' and your applications cloned.
+
+# 进入项目工作空间
+$ cd bestpractice
 ```
+
+### 事项处理
+
+列出待完成的需求：
+
+```shell
+$ erda-cli issue --requirement
+ISSUEID   FINISHDATE   STATE    ISSUENAME
+298064    2022-03-31   待处理   实现公司统一单点登录
+```
+
+列出待完成的任务：
+
+```shell
+$ erda-cli issue --task
+ISSUEID   FINISHDATE   STATE    ISSUENAME
+298068    2022-03-30   待处理   移动端登陆认证
+298067    2022-03-28   待处理   用户身份统一认证
+```
+
+创建代码分支解决事项:
+
+```shell
+$ erda-cli issue fix 298067 --application echo-service --branch feature/auth
+[INFO] No base branch set, use branch 'master'.
+[INFO] Switched to a new branch 'feature/auth'
+[INFO] [feature/auth f7add11] init branch 'feature/auth'
+[INFO] remote:
+remote: Create a pipeline request for 'feature/auth' on Erda by visiting:
+remote:      https://erda.cloud/trial/dop/projects/599/pipelines/list
+remote:
+To https://erda.cloud/trial/dop/bestpractice/echo-service
+ * [new branch]      feature/auth -> feature/auth
+Branch 'feature/auth' set up to track remote branch 'feature/auth' from 'origin'.
+[INFO] Branch 'feature/auth' created in application 'echo-service' to fix issue '298067'.
+```
+
+应用 `echo-service` 中创建了分支 `feature/auth` 用于解决 298067 号任务。此后，需要在新特性分支中进行代码编写。
 
 ### 应用构建
 
 执行流水线并查看构建状态。
 
 ```shell
-$ cd bestpractice/echo-service
+$ cd echo-service
 $ erda-cli  build pipeline.yml
 ✔ run pipeline: pipeline.yml for branch: master, pipelineID: 14174832, you can view building status via `erda-cli view -i 14174832`
 
@@ -70,6 +111,17 @@ PIPELINEID   TASKID     TASKNAME       TASKSTATUS   STARTEDAT
 14174832     14411988   java-build     Running      2022-03-11 15:38:36
 14174832     0          release        Analyzed     0001-01-01 00:00:00
 14174832     0          dice           Analyzed     0001-01-01 00:00:00
+```
+
+### 分支合并
+
+完成编码和构建后可以提交合并请求：
+
+```shell
+$ erda-cli mr create --from=feature/auth --to=master --title='auth service' --description='all auth handle by the same service'
+[INFO] source branch feature/auth, target branch master
+[INFO] Merge request created.
+[INFO] To https://erda.cloud/trial/dop/projects/599/apps/7097/repo/mr/open/1
 ```
 
 ## 项目初始化
@@ -219,7 +271,7 @@ applications:
 
 ```shell
 $ erda-cli push https://one.gts.terminus.io/trial/dop/projects/127 --application echo-web --application echo-service
-  Application 'xxx' pushed.
+  Application 'echo-web' pushed.
 ✔ Project 'bestpractice' pushed to server https://openapi.erda.cloud.
 ```
 
