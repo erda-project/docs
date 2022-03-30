@@ -136,6 +136,16 @@ $ erda-cli create --[tab]
 --wait-import   -- minutes wait for package to be import
 ```
 
+### 配置
+
+因 CLI 会调用 Git 命令完成代码相关的操作，建议如下设置：
+
+```shell
+git config --global user.name <YOUR_USERNAME>
+git config --global user.email <YOUR_EMAIL>
+git config --global credential.helper store
+```
+
 # 容器镜像安装
 
 CLI 支持通过容器镜像方式进行安装使用。
@@ -161,7 +171,7 @@ DockerImage: registry.erda.cloud/erda/cli:2.1-alpha-20220323162540-affb910
 
 内测版本：对应于 Erda 的版本 v2.1.x，镜像版本为 2.1-alpha，即`registry.erda.cloud/erda/cli:2.1-alpha`。
 
-### 使用配置
+### 配置
 
 CLI 的很多命令运行时会依赖在本地 session 文件、本地工作空间等，因此一般需要挂载多个文件到运行容器。
 
@@ -171,8 +181,18 @@ docker run --rm -it -v ${HOME}:/root -e workspace=${PWD} -e home=${HOME} registr
 
 其中通过 `-e` 参数传递 HOME 目录、当前目录，通过 `-v` 参数挂住 HOME 目录。
 
-#### 简短命令
+- 基于容器的命令较长，可以用 `alias` 简短命令:
 
 ```bash
 alias erda-cli='docker run --rm -it -v ${HOME}:/root -e workspace=${PWD} -e home=${HOME} registry.erda.cloud/erda/cli:2.1-alpha'
 ```
+
+- 因 CLI 会调用 Git 命令完成代码相关的操作，建议如下设置：
+
+```shell
+git config --global user.name <YOUR_USERNAME>
+git config --global user.email <YOUR_EMAIL>
+git config --global credential.helper store
+```
+
+# 
