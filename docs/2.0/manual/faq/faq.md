@@ -134,17 +134,17 @@ pipeline.yml 中的配置如下:
 
 1. 编辑 configmap。
 
-```shell
-kubectl edit cm dice-addons-info -n erda-system 
-```
+   ```shell
+   kubectl edit cm dice-addons-info -n erda-system 
+   ```
 
 2. 添加 Maven 仓库信息。
 
-```yaml
-NEXUS_ADDR: # 仓库内部地址，构建任务在 Master 集群中会使用该地址
-NEXUS_PUBLIC_URL: # 仓库外部地址，构建任务在 Worker 集群中会使用该地址
-NEXUS_USERNAME: # (可选) 仓库用户名
-NEXUS_PASSWORD:  # (可选) 仓库密码
-```
+   ```yaml
+   NEXUS_ADDR: # 仓库内部地址，构建任务在 Master 集群中会使用该地址
+   NEXUS_PUBLIC_URL: # 仓库外部地址，构建任务在 Worker 集群中会使用该地址
+   NEXUS_USERNAME: # (可选) 仓库用户名
+   NEXUS_PASSWORD:  # (可选) 仓库密码
+   ```
 
 3. 等待组件重启完成。

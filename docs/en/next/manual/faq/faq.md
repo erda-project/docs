@@ -127,3 +127,24 @@ The configuration in pipeline.yml is as follows:
 It means that there are no clusters available in the current environment.
 
 Clusters are necessary for pipeline execution. Please go to **DevOps Platform > Projects > Settings > Project Information > Edit** to specify a cluster and set quotas for the current environment.
+
+## 12. How to configure a global private Maven repository?
+
+By default, Erda adopts maven.aliyun.com as the Maven repository address, and you can change it as follows:
+
+1. Edit configmap.
+
+   ```shell
+   kubectl edit cm dice-addons-info -n erda-system 
+   ```
+
+2. Add Maven repository information.
+
+   ```yaml
+   NEXUS_ADDR: # The internal address of the repository, which will be used by the build task in the master cluster
+   NEXUS_PUBLIC_URL: # The external address of the repository, which will be used by the build task in the worker cluster
+   NEXUS_USERNAME: # (Optional) Repository username
+   NEXUS_PASSWORD:  # (Optional) Repository password
+   ```
+
+3. Wait till the component restarts.
