@@ -81,11 +81,11 @@ Flags:
       --task            if true, list tasks
 ```
 
-您可以通过 `--bug` 指定事项类型为缺陷，`--requirement` 指定事项类型为需求，`--task` 指定事项类型为任务。
+您可以通过 `--bug` 指定事项类型为缺陷，通过 `--requirement` 指定事项类型为需求，通过 `--task` 指定事项类型为任务。
 
 ## erda-cli issue fix
 
-您可以通过 `issue fix` 命令创建代码分支来解决项目协同中的待办事项。
+您可以通过 `issue fix` 命令创建代码分支以处理项目协同中的待办事项。
 
 ```shell
 $ erda-cli issue fix 298067 --application echo-service --branch feature/auth
@@ -102,7 +102,7 @@ Branch 'feature/auth' set up to track remote branch 'feature/auth' from 'origin'
 [INFO] Branch 'feature/auth' created in application 'echo-service' to fix issue '298067'.
 ```
 
-该命令会在应用 `echo-service` 目录中创建 Git 分支 `feature/auth`并提交到 Erda 代码仓库，同事在事项 298067 增加评论关联代码分支用于跟踪。
+该命令将在应用的 `echo-service` 目录下创建 Git 分支 `feature/auth` 并提交至 Erda 代码仓库，同时在事项 298067 中添加评论，关联代码分支便于跟踪。
 
 参数说明如下：
 
@@ -115,11 +115,11 @@ Flags:
       --branch string        branch to create and checkout
 ```
 
-您可以通过 `--application` 指定创建代码分支的应用（如果当前工作目录已经是应用目录，可参略），通过 `--bracnh` 指定代码分支名称，通过 `--base-branch` 指定基础分支（默认为 master 分支）。
+您可以通过 `--application` 指定创建代码分支的应用（若当前工作目录已是应用目录，可忽略），通过 `--branch` 指定代码分支名称，通过 `--base-branch` 指定基础分支（默认为 Master 分支）。
 
 ## erda-cli issue open
 
-您可以通过 `issue open` 命令在浏览器中打开事项的页面。
+您可以通过 `issue open` 命令在浏览器中打开具体事项的页面。
 
 ```shell
 $ erda-cli issue open 298067
@@ -176,9 +176,7 @@ Flags:
       --to string            branch contains base code
 ```
 
-您可以通过 `--title` 指定合并请求的标题，通过 `--description` 描述合并请求的内容。
-
-您可以通过 `--from` 指定合并请求的源代码分支，`--to` 指定目标代码分支，`--application` 指定应用（如果工作空间是应用目录，无需指定）。
+您可以通过 `--title` 指定合并请求的标题，通过 `--description` 描述合并请求的内容，通过 `--from` 指定合并请求的源代码分支，通过 `--to` 指定目标代码分支，通过 `--application` 指定应用（若当前工作空间为应用目录，则无需指定）。
 
 ## erda-cli push
 

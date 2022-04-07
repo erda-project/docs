@@ -76,7 +76,7 @@ ISSUEID   FINISHDATE   STATE    ISSUENAME
 298067    2022-03-28   待处理   用户身份统一认证
 ```
 
-创建代码分支解决事项:
+创建代码分支处理事项：
 
 ```shell
 $ erda-cli issue fix 298067 --application echo-service --branch feature/auth
@@ -93,7 +93,7 @@ Branch 'feature/auth' set up to track remote branch 'feature/auth' from 'origin'
 [INFO] Branch 'feature/auth' created in application 'echo-service' to fix issue '298067'.
 ```
 
-应用 `echo-service` 中创建了分支 `feature/auth` 用于解决 298067 号任务。此后，需要在新特性分支中进行代码编写。
+在应用 `echo-service` 中创建分支 `feature/auth` 用于处理任务 298067。随后需在新特性分支中进行代码编写。
 
 ### 应用构建
 
@@ -115,7 +115,7 @@ PIPELINEID   TASKID     TASKNAME       TASKSTATUS   STARTEDAT
 
 ### 分支合并
 
-完成编码和构建后可以提交合并请求：
+完成编码和构建后提交合并请求：
 
 ```shell
 $ erda-cli mr create --from=feature/auth --to=master --title='auth service' --description='all auth handle by the same service'

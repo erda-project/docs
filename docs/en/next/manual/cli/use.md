@@ -27,13 +27,13 @@ ORGID    NAME         DESCRIPTION
 
 :::tip Tips
 
-The session will be saved after successful login. You need to login again if the session expires.
+The session will be saved after successful login, and you need to login again if the session expires.
 
 :::
 
-## Application Deployment
+## Local Development
 
-### Code Preparation
+### Project Preparation
 
 :::warning Warning
 
@@ -52,14 +52,55 @@ $ erda-cli clone https://erda.cloud/trial/dop/projects/599
   Application 'echo-web' cloning ...
   Application 'echo-web' cloned.
 ✔ Project 'bestpractice' and your applications cloned.
+
+# Enter project space
+$ cd bestpractice
 ```
+
+### Issue Processing
+
+List requirements:
+
+```shell
+$ erda-cli issue --requirement
+ISSUEID   FINISHDATE   STATE    ISSUENAME
+298064    2022-03-31   Pending  Achieve single sign-on in the enterprise
+```
+
+List tasks:
+
+```shell
+$ erda-cli issue --task
+ISSUEID   FINISHDATE   STATE    ISSUENAME
+298068    2022-03-30   Pending  Mobile login authentication
+298067    2022-03-28   Pending  User identity authentication
+```
+
+Create branches for issues:
+
+```shell
+$ erda-cli issue fix 298067 --application echo-service --branch feature/auth
+[INFO] No base branch set, use branch 'master'.
+[INFO] Switched to a new branch 'feature/auth'
+[INFO] [feature/auth f7add11] init branch 'feature/auth'
+[INFO] remote:
+remote: Create a pipeline request for 'feature/auth' on Erda by visiting:
+remote:      https://erda.cloud/trial/dop/projects/599/pipelines/list
+remote:
+To https://erda.cloud/trial/dop/bestpractice/echo-service
+ * [new branch]      feature/auth -> feature/auth
+Branch 'feature/auth' set up to track remote branch 'feature/auth' from 'origin'.
+[INFO] Branch 'feature/auth' created in application 'echo-service' to fix issue '298067'.
+```
+
+Create a branch `feature/auth` in the application `echo-service` for issue 298067. Then write code in the new feature branch.
 
 ### Application Building
 
 Execute the pipeline and view the build status.
 
 ```shell
-$ cd bestpractice/echo-service
+$ cd echo-service
 $ erda-cli  build pipeline.yml
 ✔ run pipeline: pipeline.yml for branch: master, pipelineID: 14174832, you can view building status via `erda-cli view -i 14174832`
 
@@ -70,6 +111,17 @@ PIPELINEID   TASKID     TASKNAME       TASKSTATUS   STARTEDAT
 14174832     14411988   java-build     Running      2022-03-11 15:38:36
 14174832     0          release        Analyzed     0001-01-01 00:00:00
 14174832     0          dice           Analyzed     0001-01-01 00:00:00
+```
+
+### Branch Merge
+
+Commit a merge request after coding and building:
+
+```shell
+$ erda-cli mr create --from=feature/auth --to=master --title='auth service' --description='all auth handle by the same service'
+[INFO] source branch feature/auth, target branch master
+[INFO] Merge request created.
+[INFO] To https://erda.cloud/trial/dop/projects/599/apps/7097/repo/mr/open/1
 ```
 
 ## Project Initialization
@@ -97,7 +149,7 @@ You can produce project engineering packages based on the project artifacts of s
                    version: "1.0"
    ```
 
-	The artifacts describe the artifacts associated with the project package. Run the pipeline to complete the project package, and get it through the download link.
+The artifacts describe the artifacts associated with the project package. Run the pipeline to complete the project package, and get it through the download link.
 
 * The structure of the project package is as follows:
 
@@ -219,7 +271,7 @@ You can push applications and code from your local project space to any project 
 
 ```shell
 $ erda-cli push https://one.gts.terminus.io/trial/dop/projects/127 --application echo-web --application echo-service
-  Application 'xxx' pushed.
+  Application 'echo-web' pushed.
 ✔ Project 'bestpractice' pushed to server https://openapi.erda.cloud.
 ```
 
