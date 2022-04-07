@@ -27,6 +27,26 @@
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/d11df522-3e90-4ddb-a0f4-fe27f0c8294e.png)
 
+## 事项包含
+
+在协同工作时，一个大的需求往往会被拆解为多个子任务，为了清楚地表述这种关系，我们引入了需求与任务的包含关系，即一个需求可以包含多个任务。需求可根据包含任务的状态，计算需求的完成度。
+
+可以在需求页面快速创建包含任务
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/07/fc478f7e-86e4-4399-a1b1-d15596234d4c.png)
+
+或者包含已创建的任务
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/07/eb4133d7-07c3-4a06-8fcd-ede486bdfcd0.png)
+
+在包含任务的列表中，我们可以解除包含关系。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/07/1451906c-9f02-4bcc-83e4-82690bd76304.png)
+
+::: tip
+包含关系与[事项关联关系](#事项关联)并无冲突，着重于需求与任务的单向关系
+:::
+
 ## 事项关联
 
 - **关联 MR**
@@ -37,7 +57,7 @@
 
 - **关联事项**
 
-  为方便事项协作，您可在事项中关联其他事项。需求可根据关联事项的状态，自动计算需求的完成度。
+  为方便事项协作，您可在事项中关联其他事项。
 
   您可以关联已有事项，也可创建并关联已有事项。查看关联事项时，可快速修改关联事项的处理人或解除关联。
 

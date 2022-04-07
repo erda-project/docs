@@ -6,3 +6,5 @@ dest/
 *.iml
 _book
 .idea/
+
+.history
