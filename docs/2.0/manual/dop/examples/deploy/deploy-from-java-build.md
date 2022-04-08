@@ -24,9 +24,9 @@ stages:
     - stage:
         - release:
             params:
-              dice_yml: ${git-checkout}/dice.yml
+              dice_yml: ${git-checkout}/erda.yml
               services:
-                dice.yml中的服务名:
+                erda.yml中的服务名:
                   image: registry.erda.cloud/erda/terminus-openjdk:v11.0.6
                   copys:
                     # 拷贝 java-build 打包出来的 jar 包
@@ -69,16 +69,16 @@ stages:
     - stage:
         - release:
             params:
-              dice_yml: ${git-checkout}/dice.yml
+              dice_yml: ${git-checkout}/erda.yml
               services:
                 # 多个
-                dice.yml中的服务名:
+                erda.yml中的服务名:
                   image: registry.erda.cloud/erda/terminus-openjdk:v11.0.6
                   copys:
                     - ${java-build:OUTPUT:buildPath}/build/jar包的路径/jar包的名称:/target/jar包的名称
                     - ${java-build:OUTPUT:buildPath}/spot-agent:/
                   cmd: java ${java-build:OUTPUT:JAVA_OPTS} -jar /target/jar包的名称
-                dice.yml中的服务名1:
+                erda.yml中的服务名1:
                   image: registry.erda.cloud/erda/terminus-openjdk:v11.0.6
                   copys:
                     - ${java-build:OUTPUT:buildPath}/build/jar包的路径/jar包的名称:/target/jar包的名称
@@ -114,7 +114,7 @@ stages:
     - stage:
         - release:
             params:
-              dice_yml: ${git-checkout}/dice.yml
+              dice_yml: ${git-checkout}/erda.yml
               services:
                 dice_yml中的服务名称:
                   image: tomcat:jdk8-openjdk-slim

@@ -104,7 +104,7 @@ stages:
       - release:
           alias: release
           params:
-            dice_yml: ${git-checkout}/dice.yml
+            dice_yml: ${git-checkout}/erda.yml
             image:
               go-demo: ${go-demo:OUTPUT:image}
   - stage:

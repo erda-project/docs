@@ -45,7 +45,7 @@ stages:
 - stage:
   - release:
       params:
-        dice_yml: ${git-checkout}/dice.yml
+        dice_yml: ${git-checkout}/erda.yml
 
 - stage:
   - dice:
@@ -83,7 +83,7 @@ services:
 
 ```bash
 git add .
-git commit -m "add pipeline.yml and dice.yml"
+git commit -m "add pipeline.yml and erda.yml"
 git push erda feature/demo
 ```
 

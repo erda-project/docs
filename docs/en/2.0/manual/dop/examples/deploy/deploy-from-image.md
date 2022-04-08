@@ -46,7 +46,7 @@ stages:
 - stage:
   - release:
       params:
-        dice_yml: ${git-checkout}/dice.yml
+        dice_yml: ${git-checkout}/erda.yml
 
 - stage:
   - dice:
