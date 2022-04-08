@@ -24,9 +24,9 @@ stages:
     - stage:
         - release:
             params:
-              dice_yml: ${git-checkout}/dice.yml
+              dice_yml: ${git-checkout}/erda.yml
               services:
-                Service name in dice.yml:
+                Service name in erda.yml:
                   image: registry.erda.cloud/erda/terminus-openjdk:v11.0.6
                   copys:
                     # Copy the JAR package packaged by java-build
@@ -70,16 +70,16 @@ stages:
     - stage:
         - release:
             params:
-              dice_yml: ${git-checkout}/dice.yml
+              dice_yml: ${git-checkout}/erda.yml
               services:
                 # Multiple
-                Service name in dice.yml:
+                Service name in erda.yml:
                   image: registry.erda.cloud/erda/terminus-openjdk:v11.0.6
                   copys:
                     - ${java-build:OUTPUT:buildPath}/build/jar package path/jar package name:/target/jar package name
                     - ${java-build:OUTPUT:buildPath}/spot-agent:/
                   cmd: java ${java-build:OUTPUT:JAVA_OPTS} -jar /target/jar package name
-                Service name in dice.yml:
+                Service name in erda.yml:
                   image: registry.erda.cloud/erda/terminus-openjdk:v11.0.6
                   copys:
                     - ${java-build:OUTPUT:buildPath}/build/jar package path/jar package name:/target/jar package name
@@ -115,9 +115,9 @@ stages:
     - stage:
         - release:
             params:
-              dice_yml: ${git-checkout}/dice.yml
+              dice_yml: ${git-checkout}/erda.yml
               services:
-                Service name in dice.yml:
+                Service name in erda.yml:
                   image: tomcat:jdk8-openjdk-slim
                   copys:
                     - ${java-build:OUTPUT:buildPath}/target/war package name.war:/usr/local/tomcat/webapps
