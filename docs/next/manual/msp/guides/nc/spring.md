@@ -10,7 +10,7 @@
 
  :::
 
-## erda.yml 中引用配置中心 Addon
+## dice.yml 中引用配置中心 Addon
 
 
 ```yaml
@@ -80,7 +80,7 @@ public class HelloConfigCenterController {
 
 ## 配置中心控制台中修改动态配置
 
-若 erda.yml 引用了配置中心，服务部署成功后，服务插件中将出现配置中心的控制台入口。
+若 dice.yml 引用了配置中心，服务部署成功后，服务插件中将出现配置中心的控制台入口。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/3b1c5ff4-981c-4888-969d-3293b7021634.png)
 

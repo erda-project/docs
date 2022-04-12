@@ -12,7 +12,7 @@
 
 配置中心底层基于 [Nacos](https://nacos.io/zh-cn/docs/what-is-nacos.html) 实现。Nacos 是阿里巴巴的一款开源中间件，具体使用方法请见下文。
 
-## erda.yml 中引用配置中心 Addon
+## dice.yml 中引用配置中心 Addon
 
 
 ```yaml
@@ -82,7 +82,7 @@ public class HelloConfigCenterController {
 
 ## 配置中心控制台中修改动态配置
 
-若 erda.yml 引用了配置中心，服务部署成功后，服务插件中将出现配置中心的控制台入口。
+若 dice.yml 引用了配置中心，服务部署成功后，服务插件中将出现配置中心的控制台入口。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/bdbdb2dd-2879-4e08-ae25-d1d0d050b088.png)
 

@@ -1,8 +1,8 @@
 # Cross-Domain Access to API
 
-## Configure erda.yml
+## Configure dice.yml
 
-You can configure cross-domain access restrictions through erda.yml. For details, see [Use erda.yml to Manage Configuration](./config.md).
+You can configure cross-domain access restrictions through dice.yml. For details, see [Use dice.yml to Manage Configuration](./config.md).
 
 ```yaml
 policies:
@@ -30,7 +30,7 @@ The path is as follows:
 
 :::tip Tips
 
-If you have finished the configuration by erda.yml, the former will overwrite the configuration here.
+If you have finished the configuration by dice.yml, the former will overwrite the configuration here.
 
 :::
 
@@ -45,7 +45,7 @@ The configuration is as follows:
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/84c6d01b-b78f-4aa0-9b07-2fae807ab77a.png)
 
-If you use erda.yml, the configuration is as follows:
+If you use dice.yml, the configuration is as follows:
 
 ```yaml
 policies:

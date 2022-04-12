@@ -1,6 +1,6 @@
-# Use erda.yml to Manage Configuration
+# Use dice.yml to Manage Configuration
 
-You can realize the microservice function by specifying endpoints for the service via erda.yml, to forward different paths of a domain name to different services in the same project and environment.
+You can realize the microservice function by specifying endpoints for the service via dice.yml, to forward different paths of a domain name to different services in the same project and environment.
 
 An examples is as follows:
 

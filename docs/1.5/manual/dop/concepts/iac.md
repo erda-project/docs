@@ -12,7 +12,7 @@ Docker 的出现使得镜像交付成为大多数应用软件事实上的交付�
 ## Erda 如何实现 IaC
 Erda 是以应用为中心的企业级一站式数字化 PaaS 平台，DOP（即 DevOps Platform）是以应用为中心的一站式 DevOps 平台。
 
-在此，您可以通过 pipeline.yml 定义应用的 CI/CD 全流程，而 pipeline.yml 即该应用基础设施的一部分。同时，您需要以一个声明式的 erda.yml 描述应用微服务架构，包括微服务之间的依赖关系、对中间件的依赖等。
+在此，您可以通过 pipeline.yml 定义应用的 CI/CD 全流程，而 pipeline.yml 即该应用基础设施的一部分。同时，您需要以一个声明式的 dice.yml 描述应用微服务架构，包括微服务之间的依赖关系、对中间件的依赖等。
 
 平台在设计之初已对应用做了抽象，使其可以被部署在任意平台（包括 K8s、DC/OS 等），并对开发者屏蔽了具体实现细节。因此，当应用部署在 Erda PaaS 平台上时，这两个文件是必不可少的。
 
@@ -20,7 +20,7 @@ Erda 是以应用为中心的企业级一站式数字化 PaaS 平台，DOP（即
 
 当这些 Infrastructure 都被作为 Code 提交之后，Erda 平台便可根据这些配置，进行持续集成和持续交付，最终自动把应用完整部署起来。
 
-erda.yml 部分内容示意如下：
+dice.yml 部分内容示意如下：
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/5decdb97-f37a-470e-92d2-97fef36cc782.png)
 

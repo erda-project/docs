@@ -316,7 +316,7 @@ dubbo:
 ```
 
 
-修改 erda.yml，添加注册中心 v2.0 的依赖。
+修改 dice.yml，添加注册中心 v2.0 的依赖。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/19/9adda3d8-fde7-4ae7-b483-f148323dae48.png)
 

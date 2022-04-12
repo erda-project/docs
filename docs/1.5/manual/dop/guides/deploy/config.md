@@ -15,7 +15,7 @@ Erda 平台提供两种配置：
 
 运行时可通过以下两种方式配置：
 
-* 通过 erda.yml 的 envs 关键字配置。
+* 通过 dice.yml 的 envs 关键字配置。
 * 通过应用设置控制台界面配置。
 
 :::tip 提示
@@ -24,7 +24,7 @@ Erda 平台提供两种配置：
 
 :::
 
-## erda.yml envs 关键字
+## dice.yml envs 关键字
 
 ### 通过全局 envs 配置
 
@@ -65,10 +65,10 @@ services:
 应用服务的优先级按如下顺序由高到低排列：
 
 1. 平台环境变量，例如 `SELF_HOST`、`<被发现者服务名大写>_HOST`、`<被发现者服务名大写>_PORT`、`ERDA_*`
-2. erda.yml service 级 envs
+2. dice.yml service 级 envs
 3. Addon 环境变量，例如 `MYSQL_HOST`、`REDIS_PORT`
 4. 应用设置中的环境级配置
-5. erda.yml 全局 envs
+5. dice.yml 全局 envs
 
 ## 蓝绿部署配置
 

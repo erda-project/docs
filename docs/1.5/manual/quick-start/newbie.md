@@ -207,7 +207,7 @@ Erda 提供多种快速安装的方式：
        - stage:
            - release:
                params:
-                 erda_yaml: ${git-checkout}/erda.yml
+                 dice_yml: ${git-checkout}/dice.yml
                  image:
                    service: ${buildpack:OUTPUT:image-service}
                    web: ${buildpack:OUTPUT:image-web}
@@ -217,7 +217,7 @@ Erda 提供多种快速安装的方式：
                  release_id: ${release:OUTPUT:releaseID}
      ```
 
-     由上可见新增了 release 和 deploy 两个步骤，并且出现了新文件 erda.yml。关于 erda.yml 更多信息，请参见 [erda.yml](../dop/guides/reference/erda-yaml.html)。
+     由上可见新增了 release 和 deploy 两个步骤，并且出现了新文件 dice.yml。关于 dice.yml 更多信息，请参见 [dice.yml](../dop/guides/reference/dice-yaml.html)。
 
      将文件补充完整后提交代码。
 
@@ -256,9 +256,9 @@ Erda 提供多种快速安装的方式：
            version: "3.2.12"
      ```
 
-     erda.yml 最终需通过 Docker 镜像部署，但上文的 erda.yml 并未填写镜像。
+     dice.yml 最终需通过 Docker 镜像部署，但上文的 dice.yml 并未填写镜像。
 
-     通过 pipeline.yml 示例可以发现，镜像是在 CI 过程中编译而成的：通过 Buildpack 将代码编译打包为 Docker 镜像，经 Release 将镜像自动塞入 erda.yml，并基于生成后的 erda.yml 完成部署。
+     通过 pipeline.yml 示例可以发现，镜像是在 CI 过程中编译而成的：通过 Buildpack 将代码编译打包为 Docker 镜像，经 Release 将镜像自动塞入 dice.yml，并基于生成后的 dice.yml 完成部署。
 
 3. 待流水线执行完成后，即可在部署中心查看已发布的实例。运维管理相关的操作（例如重启、回滚、查看日志等），请参见 [应用管理](../dop/guides/deploy/management.html)。
 

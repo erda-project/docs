@@ -1,8 +1,8 @@
 # Configure Traffic Limiting for Load Shifting
 
-## Configure erda.yml
+## Configure dice.yml
 
-You can configure traffic limiting of load shifting through erda.yml. For details, see [Use erda.yml to Manage Configuration](./config.md).
+You can configure traffic limiting of load shifting through dice.yml. For details, see [Use dice.yml to Manage Configuration](./config.md).
 
 ```yaml
       policies:
@@ -30,7 +30,7 @@ The path is as follows:
 
 :::tip Tips
 
-If you have finished the configuration by erda.yml, the former will overwrite the configuration here.
+If you have finished the configuration by dice.yml, the former will overwrite the configuration here.
 
 :::
 

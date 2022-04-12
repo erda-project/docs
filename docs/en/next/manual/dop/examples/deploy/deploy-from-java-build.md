@@ -144,7 +144,7 @@ The parameters are as follows:
 **Release**
 
 * `params:services`: Declares the building process of multiple services, similar to the declaration of `dockerfile`.
-* `params:services[]: service name in dice_yaml`: The `service` name in corresponding `erda.yml`, declares each of them.
+* `params:services[]: service name in dice_yaml`: The `service` name in corresponding `dice.yml`, declares each of them.
 * `params:services[]: service name in dice_yaml: image`: Equal to the `FROM image` in `dockerfile`, and users can declare their own runtime environment.
 * `params:services[]: service name in dice_yaml: copys[]`: Equal to `copy` in `dockerfile`, and users can copy files to their own runtime environment.
 * `params:services[]: service name in dice_ yaml: cmd`: Equal to `cmd` in `dockerfile`, and users can declare their own startup commands.

@@ -18,7 +18,7 @@
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/10/26/ae31392a-4dc0-40b7-a64f-dd9d635c7fa7.png)
 
-在该项目中，erda.yml 中引入了 sourcecov addon 用于对该应用开启代码覆盖率收集。
+在该项目中，dice.yml 中引入了 sourcecov addon 用于对该应用开启代码覆盖率收集。
 
 示例如下：
 ```yaml

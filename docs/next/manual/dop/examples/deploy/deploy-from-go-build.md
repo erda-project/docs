@@ -67,7 +67,7 @@ git push -u erda --tags
 ```
 
 ## 定义流水线
-为该示范代码工程添加平台配置文件 pipeline.yml 和 erda.yml。
+为该示范代码工程添加平台配置文件 pipeline.yml 和 dice.yml。
 
 ### pipeline.yml
 
@@ -104,7 +104,7 @@ stages:
       - release:
           alias: release
           params:
-            dice_yml: ${git-checkout}/erda.yml
+            dice_yml: ${git-checkout}/dice.yml
             image:
               go-demo: ${go-demo:OUTPUT:image}
   - stage:
@@ -114,11 +114,11 @@ stages:
             release_id: ${release:OUTPUT:releaseID}
 ```
 
-### erda.yml
+### dice.yml
 
-erda.yml 用于描述应用所需的资源大小、副本数量等。
+dice.yml 用于描述应用所需的资源大小、副本数量等。
 
-该示例工程对应的 erda.yml 参考如下，更多信息请参见 [erda.yml](../../guides/reference/erda-yaml.html)。
+该示例工程对应的 dice.yml 参考如下，更多信息请参见 [dice.yml](../../guides/reference/dice-yaml.html)。
 
 ```yml
 version: "2.0"
@@ -140,7 +140,7 @@ services:
 
 ```bash
 git add .
-git commit -m "add pipeline.yml and erda.yml"
+git commit -m "add pipeline.yml and dice.yml"
 git push erda
 ```
 

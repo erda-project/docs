@@ -23,7 +23,7 @@
 
 进入 **DevOps 平台 > 项目 > 应用 > 制品管理**，可根据分支或关键字搜索制品。
 
-选择制品后可查看制品信息，包括所属集群、分支、应用、创建人、操作人、创建时间、提交 ID、erda.yml。
+选择制品后可查看制品信息，包括所属集群、分支、应用、创建人、操作人、创建时间、提交 ID、dice.yml。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/d17563cc-b4bc-4004-b070-9712f19c7e75.png)
 
@@ -35,7 +35,7 @@
 
 ## 删除制品
 
-制品的 erda.yml 定义了制品引用的 Docker Image 信息，制品过期时间由环境变量 RELEASE_MAX_TIME_RESERVED 决定，默认为 3 天。
+制品的 dice.yml 定义了制品引用的 Docker Image 信息，制品过期时间由环境变量 RELEASE_MAX_TIME_RESERVED 决定，默认为 3 天。
 
 集群将于每天零点搜索已过期且 Version 为空的未部署制品，删除制品存储的 Image 信息。若该制品下的 Image 未被其他制品使用，则删除 Image Manifest，删除成功后再删除制品。
 

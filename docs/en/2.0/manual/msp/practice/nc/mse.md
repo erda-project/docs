@@ -12,9 +12,9 @@ Get the access address and port of the Nacos cloud service first. For example, t
 kubectl patch cm dice-addons-info --patch '{"data":{"MS_NACOS_HOST":"mse-id-xxx","MS_NACOS_PORT":"8848"}}'
 ```
 
-Once the above configuration is completed, add addon of the registration or configuration center in erda.yml, then it will not deploy Nacos in the cluster but use the corresponding cloud services directly. The functions of the registration center and configuration center on the platform are exactly the same as those of self-built Nacos.
+Once the above configuration is completed, add addon of the registration or configuration center in dice.yml, then it will not deploy Nacos in the cluster but use the corresponding cloud services directly. The functions of the registration center and configuration center on the platform are exactly the same as those of self-built Nacos.
 
-With the example of erda.yml configuration, it does not matter whether you are using the Nacos cloud service or self-built Nacos.
+With the example of dice.yml configuration, it does not matter whether you are using the Nacos cloud service or self-built Nacos.
 
 ```yaml
 addons:

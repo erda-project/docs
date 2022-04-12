@@ -12,9 +12,9 @@
 kubectl patch cm dice-addons-info --patch '{"data":{"MS_NACOS_HOST":"mse-id-xxx","MS_NACOS_PORT":"8848"}}'
 ```
 
-完成如上配置后，在 erda.yml 中添加注册中心或配置中心的扩展服务，则部署时将不会在集群内部署 Nacos，而是直接使用对应的云服务。平台上注册中心和配置中心的功能使用，同自建 Nacos 完全一致。
+完成如上配置后，在 dice.yml 中添加注册中心或配置中心的扩展服务，则部署时将不会在集群内部署 Nacos，而是直接使用对应的云服务。平台上注册中心和配置中心的功能使用，同自建 Nacos 完全一致。
 
-使用 erda.yml 配置示例，您将无需关心使用的是云服务 Nacos 抑或自建 Nacos。
+使用 dice.yml 配置示例，您将无需关心使用的是云服务 Nacos 抑或自建 Nacos。
 
 ```yaml
 addons:

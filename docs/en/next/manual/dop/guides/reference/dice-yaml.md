@@ -1,8 +1,8 @@
-# erda.yml
+# dice.yml
 
-The erda.yml file, written in YAML syntax, is a description file for microservice application deployment, consisting of basic service information and service orchestration relationships, including information such as the microservice's Docker image, resource requirements (CPU, Memory, etc.), dependencies, environment variables, and addon.
+The dice.yml file, written in YAML syntax, is a description file for microservice application deployment, consisting of basic service information and service orchestration relationships, including information such as the microservice's Docker image, resource requirements (CPU, Memory, etc.), dependencies, environment variables, and addon.
 
-A complex microservice application can be deployed and orchestrated by Erda in one click by simply writing an erda.yml description file.
+A complex microservice application can be deployed and orchestrated by Erda in one click by simply writing an dice.yml description file.
 
 ## Global Structure
 
@@ -22,7 +22,7 @@ services: {}
 addons: {}
 ```
 
-The global structure of the erda.yml file defines 5 items of the global configuration, as described below.
+The global structure of the dice.yml file defines 5 items of the global configuration, as described below.
 
 ### version
 
@@ -30,7 +30,7 @@ The value of version is currently defined as 2.0 and can be configured as `versi
 
 ### values
 
-values are used to set variables in different environments so that the configuration of each environment can be set in an erda.yml file in the following format:
+values are used to set variables in different environments so that the configuration of each environment can be set in an dice.yml file in the following format:
 
 ```yaml
 values:
@@ -86,7 +86,7 @@ See the example below:
 
 ```yaml
 services:
-  # serviceA is the name of the custom service A, not a configuration item in erda.yml.
+  # serviceA is the name of the custom service A, not a configuration item in dice.yml.
   serviceA:
     resources:
       cpu: 0.1
@@ -100,7 +100,7 @@ services:
     envs:
       ADDON_PLATFORM_ADDR: addon
 
-  # serviceB is the name of the custom service B, not a configuration item in erda.yml.
+  # serviceB is the name of the custom service B, not a configuration item in dice.yml.
   serviceB:
     ...
 ```
@@ -128,7 +128,7 @@ addons:
 
 ## Configuration Items
 
-erda.yml has a set of built-in configuration items used to define the entire microservice application. These configuration items are the basis for writing erda.yml, which are global configuration items, service configuration items, and addon configuration items.
+dice.yml has a set of built-in configuration items used to define the entire microservice application. These configuration items are the basis for writing dice.yml, which are global configuration items, service configuration items, and addon configuration items.
 
 ### Global Configuration Items
 
@@ -368,7 +368,7 @@ options:
 
 ## Variable Reference
 ### Platform-Level Variable
-Platform-level variables can be referenced in the field value of `.services[serviceName].endpoints[i].domain` in the erda.yml with the syntax `${platform.Key}`.
+Platform-level variables can be referenced in the field value of `.services[serviceName].endpoints[i].domain` in the dice.yml with the syntax `${platform.Key}`.
 
 Currently the platform-level variable `platform.DICE_PROJECT_NAME` is supported.
 
@@ -382,7 +382,7 @@ services:
 ```
 
 ### Values Variable
-Configure key-value pairs for each environment in the `.values` field of erda.yml, which can be referenced in the values of all fields.
+Configure key-value pairs for each environment in the `.values` field of dice.yml, which can be referenced in the values of all fields.
 
 ### Envs Variable
 The value of an environment variable can reference the value of another environment variable, with the syntax `${env.Key}`.
@@ -398,7 +398,7 @@ envs:
 
 :::tip Tips
 
-Developers can configure environment variables in service level and global, deployment configuration, addon, and other scenarios in erda.yml, and variables can be referenced to each other (but circular references are not allowed).
+Developers can configure environment variables in service level and global, deployment configuration, addon, and other scenarios in dice.yml, and variables can be referenced to each other (but circular references are not allowed).
 
 Developers can reference custom environment variables or platform-defined environment variables.
 

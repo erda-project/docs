@@ -2,7 +2,7 @@
 
 ## 1. 如何对服务进行扩缩容？
 
-扩缩容服务无需调整 erda.yml，直接在部署中心操作即可。具体请参见 [扩缩容](../dop/guides/deploy/management.html#扩缩容)。
+扩缩容服务无需调整 dice.yml，直接在部署中心操作即可。具体请参见 [扩缩容](../dop/guides/deploy/management.html#扩缩容)。
 
 1. 进入 **DevOps 平台 > 我的应用 > 部署中心**，选择 **服务扩容**。
 
@@ -42,7 +42,7 @@
 
 ## 5. 如何复用 Addon？
 
-基于 Addon 的名称进行复用，例如 erda.yml 中有如下描述，则 `redis-abc` 即该 Addon 的名称：
+基于 Addon 的名称进行复用，例如 dice.yml 中有如下描述，则 `redis-abc` 即该 Addon 的名称：
 
 ```yaml
 addons:
@@ -80,7 +80,7 @@ addons:
 
 ## 8. 如何在容器中使用存储？
 
-* 场景一：多个容器需共享某些特定文件（如支付证书）时，一个应用的多个实例将共享一块存储，对支付证书进行存取。erda.yml 中的配置参考如下：
+* 场景一：多个容器需共享某些特定文件（如支付证书）时，一个应用的多个实例将共享一块存储，对支付证书进行存取。dice.yml 中的配置参考如下：
 
   ```yaml
   volumes:
@@ -88,7 +88,7 @@ addons:
     path: /data/cert
   ```
 
-* 场景二：部署一个需持久化存储的服务时（如 Oracle），可在 erda.yml 中声明一块 Local 类型的 Volumes，则该 Pod 重启后将再次分配到当前宿主机上。
+* 场景二：部署一个需持久化存储的服务时（如 Oracle），可在 dice.yml 中声明一块 Local 类型的 Volumes，则该 Pod 重启后将再次分配到当前宿主机上。
 
   ```yaml
   volumes:

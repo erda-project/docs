@@ -102,8 +102,8 @@ Click the button below to switch between visualized editing and text editing.
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/628839e3-9934-4908-a9e0-69538146a7c4.png)
 
-## erda.yml
+## dice.yml
 
-The erda.yml file, written in YAML syntax, is a description file for microservice application deployment. For details, see [erda.yml](../reference/erda-yaml.md).
+The dice.yml file, written in YAML syntax, is a description file for microservice application deployment. For details, see [dice.yml](../reference/dice-yaml.md).
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/0ce099b1-239b-48be-b49a-4b9575806cb5.png)

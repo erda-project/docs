@@ -84,7 +84,7 @@ DockerImage:
 
 ::: tip 提示
 
-* 请先在 Erda 上创建应用并编写 pipeline.yml 和 erda.yml。
+* 请先在 Erda 上创建应用并编写 pipeline.yml 和 dice.yml。
 * 1.5 以及上版本不推荐使用。
 
 :::

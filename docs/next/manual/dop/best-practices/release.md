@@ -79,7 +79,7 @@ stages:
       - release:
           alias: release
           params:
-            dice_yml: ${git-checkout}/erda.yml
+            dice_yml: ${git-checkout}/dice.yml
             image:
               go-demo: ${go-demo:OUTPUT:image}
   - stage:
@@ -90,9 +90,9 @@ stages:
 
 ```
 
-erda.yml 文件用于描述应用所需的资源大小、副本数量等，更多信息请参见 [erda.yml](../guides/reference/erda-yaml.html)。
+dice.yml 文件用于描述应用所需的资源大小、副本数量等，更多信息请参见 [dice.yml](../guides/reference/dice-yaml.html)。
 
-在本地的 go-web 文件夹中创建 erda.yml 文件，写入以下内容：
+在本地的 go-web 文件夹中创建 dice.yml 文件，写入以下内容：
 
 ```bash
 version: "2.0"
@@ -113,7 +113,7 @@ services:
 
 ```bash
 git add .
-git commit -m "add pipeline.yml and erda.yml"
+git commit -m "add pipeline.yml and dice.yml"
 git push erda
 ```
 

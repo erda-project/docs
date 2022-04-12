@@ -42,7 +42,7 @@ For example, to run the application of example on a specified host, the steps ar
 
 1. Set custom tag `dice/location-example=true` for the specified host.
 
-2. Set `erda.yml` of the application, and configure `deployments` field as follows:
+2. Set `dice.yml` of the application, and configure `deployments` field as follows:
 
    ```yaml
    deployments:

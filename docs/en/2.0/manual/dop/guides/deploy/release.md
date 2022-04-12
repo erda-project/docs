@@ -94,7 +94,7 @@ Go to **DevOps Platform > Projects > App Center > Artifact > Project Release**, 
    :::tip Tips
 
    * The application corresponding to the application artifact referenced in the uploaded project artifact must exist in the project, otherwise, the upload will fail.
-   * If there is no application artifact referenced by the uploaded project artifact in this project, the platform will automatically create an application artifact based on the artifact package. If an application artifact with the same version already exists, it will be referenced directly rather than create a new one. If the erda.yml of the application artifact in the artifact package is different from that of the existing application artifact with the same name, the former will be ignored.
+   * If there is no application artifact referenced by the uploaded project artifact in this project, the platform will automatically create an application artifact based on the artifact package. If an application artifact with the same version already exists, it will be referenced directly rather than create a new one. If the dice.yml of the application artifact in the artifact package is different from that of the existing application artifact with the same name, the former will be ignored.
 
    :::
 

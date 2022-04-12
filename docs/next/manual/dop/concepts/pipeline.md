@@ -17,7 +17,7 @@ Pipeline 的由来需从应用构建开始说起。Pipeline 的前身是 Packer 
 Erda 最初是端点内部使用的 PaaS 平台。自 2017 年开始，Erda 已管理公司所有的研发项目。项目下各个应用均无法脱离 “代码 > 编译 > 镜像制作 > 部署”的标准流程。Packer 便由此诞生，成为专门负责打包的组件。用户需提供 Dockerfile，学习成本相对较高。
 
 ### CI
-随着 CI/CD（持续集成、持续交付）概念的深入人心，平台推出了 Packer 的升级版 CI 。同时，基础设施即代码（IaC）的理念也在此得到了实践，通过 erda.yaml 1.0 语法同时声明应用的微服务架构和构建过程。
+随着 CI/CD（持续集成、持续交付）概念的深入人心，平台推出了 Packer 的升级版 CI 。同时，基础设施即代码（IaC）的理念也在此得到了实践，通过 dice.yml 1.0 语法同时声明应用的微服务架构和构建过程。
 
 在用户体验上，平台不再直接暴露 Dockerfile，而是将最佳实践以 BuildPack 大礼包的方式提供给使用者。使用者无需声明应用的开发语言和构建方式，即可通过 BuildPack 的自动探测和识别，完成 CI/CD 流程。
 
@@ -176,7 +176,7 @@ stages:
       commands: # 支持直接执行命令
       - sleep 5
       - echo hello world
-      - cat ${{ dirs.git-checkout }}/erda.yml # 这里通过 ${{ dirs.git-checkout }} 语法来引用文件
+      - cat ${{ dirs.git-checkout }}/dice.yml # 这里通过 ${{ dirs.git-checkout }} 语法来引用文件
 ```
 
 ## 以 Pipeline 为技术底座

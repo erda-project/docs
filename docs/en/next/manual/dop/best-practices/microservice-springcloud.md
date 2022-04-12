@@ -37,7 +37,7 @@ echo-web and echo-web realize registration and discovery of service interfaces t
 Go to **Application of echo-web > API > New Document**, select the branch of feature/api and name it echo-web.
 
 ::: tip Tips
-echo-web is the service name, which is consistent with that in erda.yml.
+echo-web is the service name, which is consistent with that in dice.yml.
 :::
 
 ### Data Type
@@ -255,7 +255,7 @@ public class DefaultController {
 
 :::tip Tips
 
-The health check API, used in erda.yml, is provided to Kubernetes for liveness and readiness check. It is necessary to ensure that the service is healthy and available when it returns 200.
+The health check API, used in dice.yml, is provided to Kubernetes for liveness and readiness check. It is necessary to ensure that the service is healthy and available when it returns 200.
 
 :::
 
@@ -284,7 +284,7 @@ Go to the application of echo-service to add a new pipeline, select the java-boo
 
 ```yaml
 ...
-              Service name in erda.yml:
+              Service name in dice.yml:
                 cmd: java -jar /target/jar package name
                 copys:
                   - ${java-build:OUTPUT:buildPath}/target/jar package name:/target/jar package name
@@ -304,19 +304,19 @@ Modify the template as follows:
 
 :::tip Tips
 
-The name used to replace the JAR package in pipeline.yml needs to be consistent with the build.finalName of pom.xml in echo-service application, and the name used to replace the service in erda.yml should be the same with that in erda.yml.
+The name used to replace the JAR package in pipeline.yml needs to be consistent with the build.finalName of pom.xml in echo-service application, and the name used to replace the service in dice.yml should be the same with that in dice.yml.
 
 :::
 
-#### erda.yml
+#### dice.yml
 
-Add an erda.yml file in the code repository, add a node and configure as shown below:
+Add an dice.yml file in the code repository, add a node and configure as shown below:
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/18/57606e39-2168-4b86-b3d4-ab232eb7300b.png)
 
 :::tip Tips
 
-* The service name in erda.yml should be consistent with that in pipeline.yml.
+* The service name in dice.yml should be consistent with that in pipeline.yml.
 * The health check port needs to be consistent with the port that the application listens to. The Tomcat server built in the Spring Boot framework listens to port 8080 by default.
 
 :::
@@ -509,9 +509,9 @@ class Content {
 }
 ```
 
-#### erda.yml
+#### dice.yml
 
-Edit erda.yml of echo-web and echo-service, and add an addon of registration center.
+Edit dice.yml of echo-web and echo-service, and add an addon of registration center.
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/d53f3746-f9d0-419d-800d-9bff8a8ceee2.png)
 
@@ -608,7 +608,7 @@ public class ErrorController {
 
 The annotations @RefreshScope and @Value achieve configuration hot loading of echo.slowtime.
 
-Add an addon of configuration center in erda.yml:
+Add an addon of configuration center in dice.yml:
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/e802cb04-3a95-47dc-bf66-ffee82e78108.png)
 

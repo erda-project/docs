@@ -186,7 +186,7 @@ API 是服务对外提供能力的入口，API 集市可聚合服务的能力，
 | version |  API 资源版本，需遵循 X.Y.Z 的格式，未填写时自动生成             | 否       |
 | spec_path |  API 描述文档的路径，eg:${git-checkout}/swagger.json              | 是       |
 | runtime_id |  runtime_id 值，eg:${dice:OUTPUT:runtimeID}              | 是       |
-| service_name |  服务名称，需与 erda.yml 中的名称保持一致          | 是       |
+| service_name |  服务名称，需与 dice.yml 中的名称保持一致          | 是       |
 
 示例如下：
 
