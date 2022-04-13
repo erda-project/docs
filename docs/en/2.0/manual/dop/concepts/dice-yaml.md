@@ -1,4 +1,4 @@
-# erda.yml
+# dice.yml
 
 The platform describes the overall environment in which the microservice runs by declaration of developers, and transforms the declaration into the process of environment building.
 
@@ -13,4 +13,4 @@ You may question that K8s YAML is also declarative, but why not use K8s YAML? K8
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/9e186d95-90fb-4562-abda-911f5e786d7d.png)
 
-By erda.yml, develops can run the deployment process verified on the central platform in the environment of customer without modification.
+By dice.yml, develops can run the deployment process verified on the central platform in the environment of customer without modification.

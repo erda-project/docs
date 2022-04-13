@@ -41,7 +41,7 @@ Erda 设计了自定义标签 location-xx，以支持用户将指定的应用运
 
 1. 为指定的宿主机设置自定义标签 `dice/location-example=true`。
 
-2. 设置应用的 `erda.yml`，配置 `deployments` 字段如下：
+2. 设置应用的 `dice.yml`，配置 `deployments` 字段如下：
 
    ```yaml
    deployments:

@@ -21,7 +21,7 @@ SonarQube（Sonar）是一个开源的代码质量管理系统。 提供重复�
 ## 准备一个可用的 SonarQube 服务
 首先你需要有一个可用的 SonarQube 服务，以开启使用教程。你可以选择其他供应商提供的 SonarQube 服务，也可以选择自建服务。当然 SonarQube 官方也提供了 SaaS 服务的可选项，你可以在其 [官网](https://sonarcloud.io/) 方便的获取一个立刻能够使用的实例。
 
-这个章节，我们简单罗列了几种常见的搭建方案。当然如果你急着想要看到 Erda 是如何与 SonarQube 并肩保障你程序质量的话，我们也提供了一种“快速”的方案，我们称之为「临时 Sonar 实例」的方案，它借由 Erda 一键发布应用的能力，通过简单的 pipeline.yml 和 erda.yml 就可以把 Sonar 当作一个应用快速弹起了。
+这个章节，我们简单罗列了几种常见的搭建方案。当然如果你急着想要看到 Erda 是如何与 SonarQube 并肩保障你程序质量的话，我们也提供了一种“快速”的方案，我们称之为「临时 Sonar 实例」的方案，它借由 Erda 一键发布应用的能力，通过简单的 pipeline.yml 和 dice.yml 就可以把 Sonar 当作一个应用快速弹起了。
 
 ::: Warning
 这种「临时 Sonar 实例」不可用于真实使用场景，只用于文档读者快速进入后续教程之便。
@@ -47,7 +47,7 @@ SonarCloud 是一sonar官方提供的代码检测平台，当是开源项目时�
 #### 新建应用
 想要快速构建一个sonar服务，需要在项目下新建一个应用用来部署自建的sonar，比如新建一个叫做`sonarqube`的应用，这只是为了快速开始，不建议生产环境使用
 ![新建应用](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/29/91b408d9-e279-42db-9542-7fdba9a3db74.png)
-建好应用之后， 我们需要编写`pipeline.yml`和`erda.yml`帮助我们快速的部署sonar服务，其中`pipeline.yml`帮助我们快速输出sonarQube服务制品【 [更多关于流水线](../../../dop/concepts/pipeline.html) 】,`erda.yml`让我们以声明的方式运行服务【 [更多关于erda.yml](../../../dop/concepts/erda.html) 】
+建好应用之后， 我们需要编写`pipeline.yml`和`dice.yml`帮助我们快速的部署sonar服务，其中`pipeline.yml`帮助我们快速输出sonarQube服务制品【 [更多关于流水线](../../../dop/concepts/pipeline.html) 】,`dice.yml`让我们以声明的方式运行服务【 [更多关于dice.yml](../../../dop/concepts/erda.html) 】
 
 ::: tip
 你也可以直接使用我们准备好的例子，免去从零调试的麻烦，代码仓库: [代码示例](https://github.com/chengjoey/erda-sonarqube)
@@ -65,7 +65,7 @@ stages:
       - release:
           alias: release
           params:
-            dice_yml: ${{ dirs.git-checkout }}/erda.yml
+            dice_yml: ${{ dirs.git-checkout }}/dice.yml
   - stage:
       - dice:
           alias: dice
@@ -74,8 +74,8 @@ stages:
             release_id: ${{ outputs.release.releaseID }}
 ```
 
-#### 编写erda.yml
-在上面的流水线里已经能成功输出制品，现在我们需要用erda.yml来描述sonar的部署。
+#### 编写dice.yml
+在上面的流水线里已经能成功输出制品，现在我们需要用dice.yml来描述sonar的部署。
 可以到[sonar官方](https://hub.docker.com/_/sonarqube)选择一个版本，然后将`image`进行替换，当然也可以直接使用我们做好的8.9.6版本。
 ```yaml
 version: '2.0'

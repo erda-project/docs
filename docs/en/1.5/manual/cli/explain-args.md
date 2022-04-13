@@ -84,7 +84,7 @@ You can build applications on Erda with the `build` command.
 
 :::tip Tips
 
-* Please create an application on Erda first and write pipeline.yml and erda.yml.
+* Please create an application on Erda first and write pipeline.yml and dice.yml.
 * It is not recommended for 1.5 or later versions.
 
 :::

@@ -114,7 +114,7 @@ module.exports = [
           ['dop/concepts/agile-info', 'Efficient Collaboration'],
           ['dop/concepts/iac', 'IaC'],
           ['dop/concepts/pipeline', 'pipeline.yml'],
-          ['dop/concepts/erda-yaml', 'erda.yml'],
+          ['dop/concepts/dice-yaml', 'dice.yml'],
           // ['dop/concepts/artifact', '制品'],
           ['dop/concepts/gitflow', 'Gitflow'],
         ]
@@ -239,7 +239,7 @@ module.exports = [
             collapsable: true,
             children: [
               // ['dop/guides/reference/pipeline', 'pipeline.yml'],
-              ['dop/guides/reference/erda-yaml', 'erda.yml'],
+              ['dop/guides/reference/dice-yaml', 'dice.yml'],
             ]
           },
         ]

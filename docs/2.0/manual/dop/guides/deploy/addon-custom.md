@@ -23,7 +23,7 @@
 
 ## 使用入口
 
-进入 **我的应用 > 代码**，打开 erda.yml，进入编辑模式，选择此前创建的 Addon。
+进入 **我的应用 > 代码**，打开 dice.yml，进入编辑模式，选择此前创建的 Addon。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/24/fb74ddd6-1755-4956-b4ca-5a3a6351fc05.png)
 

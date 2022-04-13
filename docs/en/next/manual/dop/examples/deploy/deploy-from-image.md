@@ -6,7 +6,7 @@ Before you begin, please confirm that you have finished [project and application
 
 :::tip Tips
 
-pipeline.yml and erda.yml are still required for deployment based on Docker image (the image name will be written directly into the erda.yml file), so a Git repository will be provided for storing the two YAML files.
+pipeline.yml and dice.yml are still required for deployment based on Docker image (the image name will be written directly into the dice.yml file), so a Git repository will be provided for storing the two YAML files.
 
 Assuming that the project is named erda-test and the application is named java-demo. The Git repository address below will contain these two names.
 
@@ -25,7 +25,7 @@ nginx:latest
 The pipeline will be triggered for automated deployment and consists of three stages as follows:
 
 1. Git pull of two YAML files.
-2. Artifact release via erda.yml.
+2. Artifact release via dice.yml.
 3. Artifact deployment.
 
 The three stages can be executed as the following actions:
@@ -54,9 +54,9 @@ stages:
         release_id: ${release:OUTPUT:releaseID}
 ```
 
-#### erda.yml
+#### dice.yml
 
-An example of erda.yml is as follows. Configurations such as port, CPU, memory resources and health check need to be modified. For details, see [erda.yml](../../guides/reference/erda-yaml.html).
+An example of dice.yml is as follows. Configurations such as port, CPU, memory resources and health check need to be modified. For details, see [dice.yml](../../guides/reference/dice-yaml.html).
 
 ```yaml{4}
 version: "2.0"

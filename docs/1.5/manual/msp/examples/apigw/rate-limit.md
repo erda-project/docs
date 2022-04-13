@@ -1,8 +1,8 @@
 # 配置削峰填谷的限流
 
-## erda.yml 配置
+## dice.yml 配置
 
-您可以通过 erda.yml 配置削峰填谷的限流，具体请参见 [使用 erda.yml 管理配置](./config.md)。
+您可以通过 dice.yml 配置削峰填谷的限流，具体请参见 [使用 dice.yml 管理配置](./config.md)。
 
 ```yaml
       policies:
@@ -30,7 +30,7 @@
 
 ::: tip 提示
 
-如果您已通过 erda.yml 完成了配置，前者将覆盖此处配置。
+如果您已通过 dice.yml 完成了配置，前者将覆盖此处配置。
 
 :::
 

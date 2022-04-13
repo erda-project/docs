@@ -346,7 +346,7 @@ spring:
         namespace: ${NACOS_TENANT_ID:}
 ```
 
-Modify erda.yml and add the dependency of register v2.0.
+Modify dice.yml and add the dependency of register v2.0.
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/21/2c3557b8-5783-4eb4-8ef1-a471dfbd6c12.png)
 

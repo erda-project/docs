@@ -2,7 +2,7 @@
 
 ## 1. How to achieve scaling for services?
 
-Scaling can be done in the Deployments without modifying the erda.yml. For details, see [Scaling](../dop/guides/deploy/management.html#扩缩容).
+Scaling can be done in the Deployments without modifying the dice.yml. For details, see [Scaling](../dop/guides/deploy/management.html#扩缩容).
 
 1. Go to **DevOps Platform > Joined Apps > Deployments** and select **Scale out**.
 
@@ -42,7 +42,7 @@ Neither service redeployment nor pipeline rebuilding will affect the internal ad
 
 ## 5. How to reuse addon?
 
-Reuse an addon based on its name. See the example of erda.yml below, in which `redis-abc` is the addon name.
+Reuse an addon based on its name. See the example of dice.yml below, in which `redis-abc` is the addon name.
 
 ```yaml
 addons:
@@ -80,7 +80,7 @@ If port 80 has been configured to force redirect to HTTPS on an external load ba
 
 ## 8. How to use storage in containers?
 
-* Scenario 1: When multiple containers need to share certain files (such as payment certificates), several instances of an application will share a storage to access the payment certificates. The configuration in erda.yml is as follows:
+* Scenario 1: When multiple containers need to share certain files (such as payment certificates), several instances of an application will share a storage to access the payment certificates. The configuration in dice.yml is as follows:
 
    ```yaml
    volumes:
@@ -88,7 +88,7 @@ If port 80 has been configured to force redirect to HTTPS on an external load ba
      path: /data/cert
    ```
 
-* Scenario 2: When deploying a service that requires persistent storage (such as Oracle), you can declare a local volume in erda.yml, and the pod will be allocated to the current host again after restarting.
+* Scenario 2: When deploying a service that requires persistent storage (such as Oracle), you can declare a local volume in dice.yml, and the pod will be allocated to the current host again after restarting.
 
    ```yaml
    volumes:

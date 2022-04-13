@@ -23,7 +23,7 @@
 
 ## 使用入口
 
-进入 **DevOps 平台 > 我的项目 > 应用列表 > 应用详情 > 代码浏览**，打开 erda.yml，进入编辑模式，选择此前创建的 Addon。
+进入 **DevOps 平台 > 我的项目 > 应用列表 > 应用详情 > 代码浏览**，打开 dice.yml，进入编辑模式，选择此前创建的 Addon。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/06b83bf3-b12e-4e1d-8761-6e236f824eb4.png)
 

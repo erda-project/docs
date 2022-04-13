@@ -2,9 +2,9 @@
 
 日志分析服务可收集应用的日志进行存储，并提供全文搜索和日志统计等功能。
 
-## 编辑 erda.yml 添加日志分析 Addon
+## 编辑 dice.yml 添加日志分析 Addon
 
-日志分析以 Addon 的形式提供，因此需编辑应用的 erda.yml 文件添加日志分析的 Addon，并重建流水线进行部署。
+日志分析以 Addon 的形式提供，因此需编辑应用的 dice.yml 文件添加日志分析的 Addon，并重建流水线进行部署。
 
 * 以可视化方式添加日志分析 Addon
 
@@ -30,7 +30,7 @@
 
 ## 重建流水线执行部署
 
-编辑并保存 erda.yml 后，需重建应用对应分支的流水线并执行部署。
+编辑并保存 dice.yml 后，需重建应用对应分支的流水线并执行部署。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/23/66df4464-76ba-4228-9049-4a12749e8141.png)
 

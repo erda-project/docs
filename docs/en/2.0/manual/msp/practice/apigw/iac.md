@@ -2,7 +2,7 @@
 
 Although the gateway management provides an interactive UI to configure various routing and strategies, similar routing strategy configuration in multi-environment scenarios will generate a lot of tedious and repetitive operations and is prone to omissions. For example, an API is configured in the development environment, but not in the production environment.
 
-Based on the IaC (Infrastructure as Code) concept, the routing strategy configuration of the gateway is also part of the infrastructure and can be managed based on GitOps. The platform supports gateway routing configuration from a service perspective based on erda.yml. The following will explain in details with a case.
+Based on the IaC (Infrastructure as Code) concept, the routing strategy configuration of the gateway is also part of the infrastructure and can be managed based on GitOps. The platform supports gateway routing configuration from a service perspective based on dice.yml. The following will explain in details with a case.
 
 ## Case Structure
 
@@ -53,7 +53,7 @@ The overall structure of this case: Project > Application (Code Repository) > Se
 
 Limit the access times per second of the resource API of the business site in the production environment to 100.
 
-Examples of erda.yml for application repositories of user, ACL and resource are as follows (omitting configuration items such as service health check, memory and CPU resource limit).
+Examples of dice.yml for application repositories of user, ACL and resource are as follows (omitting configuration items such as service health check, memory and CPU resource limit).
 
 ## User
 

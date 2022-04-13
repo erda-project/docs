@@ -67,7 +67,7 @@ git push -u erda --tags
 ```
 
 ## Define Pipeline
-Add configuration files, pipeline.yml and erda.yml, to the project.
+Add configuration files, pipeline.yml and dice.yml, to the project.
 
 ### pipeline.yml
 
@@ -114,11 +114,11 @@ stages:
             release_id: ${release:OUTPUT:releaseID}
 ```
 
-### erda.yml
+### dice.yml
 
-erda.yml is used to describe configurations such as resources and number of replicas required by the application.
+dice.yml is used to describe configurations such as resources and number of replicas required by the application.
 
-An example of erda.yml for this project is as follows. For more information, see [erda.yml](../../guides/reference/erda-yaml.html).
+An example of dice.yml for this project is as follows. For more information, see [dice.yml](../../guides/reference/dice-yaml.html).
 
 ```yml
 version: "2.0"

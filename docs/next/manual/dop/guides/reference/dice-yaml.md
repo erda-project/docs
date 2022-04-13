@@ -1,8 +1,8 @@
-# erda.yml
+# dice.yml
 
-erda.yml 文件采用 YAML 语法编写，是一个微服务应用部署的描述文件，由服务基本信息和服务编排关系两部分组成，包含微服务的 Docker 镜像、资源需求（CPU 和 Memory 等）、微服务之间的依赖关系、环境变量以及 Addon 等信息。
+dice.yml 文件采用 YAML 语法编写，是一个微服务应用部署的描述文件，由服务基本信息和服务编排关系两部分组成，包含微服务的 Docker 镜像、资源需求（CPU 和 Memory 等）、微服务之间的依赖关系、环境变量以及 Addon 等信息。
 
-一个复杂的微服务应用仅需编写一个有效的 erda.yml 描述文件，即可由 Erda 一键部署和编排。
+一个复杂的微服务应用仅需编写一个有效的 dice.yml 描述文件，即可由 Erda 一键部署和编排。
 
 ## 全局结构
 
@@ -22,7 +22,7 @@ services: {}
 addons: {}
 ```
 
-erda.yml 文件的全局结构定义了 5 项全局配置，具体说明如下。
+dice.yml 文件的全局结构定义了 5 项全局配置，具体说明如下。
 
 ### version
 
@@ -30,7 +30,7 @@ version 的值目前定义为 2.0，仅需配置为 `version: "2.0"` 即可。
 
 ### values
 
-values 用于设置不同环境中的变量，从而在一份 erda.yml 文件中维护各个环境下的配置，其格式为：
+values 用于设置不同环境中的变量，从而在一份 dice.yml 文件中维护各个环境下的配置，其格式为：
 
 ```yaml
 values:
@@ -86,7 +86,7 @@ services 定义一组具体的 service 集合，即整个应用需编排部署�
 
 ```yaml
 services:
-  # serviceA 是自定义的服务 A 的名字，不是 erda.yml 的配置项。
+  # serviceA 是自定义的服务 A 的名字，不是 dice.yml 的配置项。
   serviceA:
     resources:
       cpu: 0.1
@@ -100,7 +100,7 @@ services:
     envs:
       ADDON_PLATFORM_ADDR: addon
 
-  # serviceB 是自定义的服务 B 的名字，不是 erda.yml 的配置项。
+  # serviceB 是自定义的服务 B 的名字，不是 dice.yml 的配置项。
   serviceB:
     ...
 ```
@@ -128,7 +128,7 @@ addons:
 
 ## 配置项
 
-erda.yml 内置一套配置项用于定义整个微服务应用，这些配置项是编写 erda.yml 的基础。配置项分为全局配置项、service 配置项、addon 配置项。
+dice.yml 内置一套配置项用于定义整个微服务应用，这些配置项是编写 dice.yml 的基础。配置项分为全局配置项、service 配置项、addon 配置项。
 
 ### 全局配置项
 
@@ -365,6 +365,44 @@ options:
   version: 5.7.23
   create_dbs: blog,blog2
 ```
+
+## 变量引用
+### 平台级变量
+在 dice.yml 的 `.services[serviceName].endpoints[i].domain` 字段值中，可引用平台级变量，引用语法为 `${platform.Key}`。
+
+目前支持的平台级变量有 `platform.DICE_PROJECT_NAME`。
+
+示例如下：
+```yaml
+version: "2.0"
+services:
+  user-center:
+    endpoints:
+    - domain: hello-${platform.DICE_PROJECT_NAME}.*
+```
+
+### values 变量
+在 dice.yml 的 `.values` 字段中为各环境配置键值对，可在所有字段的值中进行引用。
+
+### envs 变量
+环境变量的值之间可引用其他环境变量的值，引用语法为 `${env.Key}`。
+
+示例如下：
+```yaml
+version: "2.0"
+
+envs:
+  PROJECT_APP: ${env.DICE_PROJECT_NAME}/${env.DICE_APPLICATION_NAME} // 引用平台定义的环境变量
+  DOMAIN: ${env.PROJECT_APP}.my-site.com // 引用别处定义的环境变量
+```
+
+:::tip 提示
+
+开发者可在 dice.yml 的服务级和全局、部署配置、Addon 等场景配置环境变量，变量之间可互相引用（但不允许出现循环引用）。
+
+开发者可引用自定义的环境变量，也可引用平台定义的环境变量。
+
+:::
 
 ## 示例
 

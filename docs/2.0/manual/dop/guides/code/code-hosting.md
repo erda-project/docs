@@ -102,8 +102,8 @@ Erda 代码托管支持系统内置 Git 仓库和外置通用 Git 仓库，可�
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/4623bb5d-a3bf-4260-9398-5c2742ebcf06.png)
 
-## erda.yml
+## dice.yml
 
-erda.yml 文件采用 YAML 语法编写，是一个微服务应用部署的描述文件。关于 erda.yml 更多信息，请参见 [erda.yml](../reference/erda-yaml.md )。
+dice.yml 文件采用 YAML 语法编写，是一个微服务应用部署的描述文件。关于 dice.yml 更多信息，请参见 [dice.yml](../reference/dice-yaml.md )。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/70ee61b3-5d94-4d9e-a720-0fef4de7af59.png)

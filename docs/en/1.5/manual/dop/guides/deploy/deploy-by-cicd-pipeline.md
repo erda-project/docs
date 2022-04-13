@@ -42,7 +42,7 @@ After code pushing, you can view the code information in the code repository.
 
 ## Define Pipeline
 
-Add configuration files, pipeline.yml and erda.yml, to the project.
+Add configuration files, pipeline.yml and dice.yml, to the project.
 
 ### pipeline.yml
 
@@ -105,11 +105,11 @@ stages:
         release_id: ${release:OUTPUT:releaseID}
 ```
 
-### erda.yml
+### dice.yml
 
-erda.yml is a configuration file that describes the service architecture of an application, the configuration of resources such as CPU and memory and the dependency of service plugins.
+dice.yml is a configuration file that describes the service architecture of an application, the configuration of resources such as CPU and memory and the dependency of service plugins.
 
-An example of erda.yml for this project is as follows. For more information, see [erda.yml](../guides/reference/erda-yaml.html).
+An example of dice.yml for this project is as follows. For more information, see [dice.yml](../guides/reference/dice-yaml.html).
 
 ```yaml
 version: "2.0"
@@ -131,7 +131,7 @@ Commit the two YAML files to the code repository of the platform.
 
 ```bash
 git add .
-git commit -m "add pipeline.yml and erda.yml"
+git commit -m "add pipeline.yml and dice.yml"
 git push erda feature/demo
 ```
 

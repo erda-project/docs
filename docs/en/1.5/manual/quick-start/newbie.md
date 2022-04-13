@@ -207,7 +207,7 @@ For this design, complete the following steps:
         - stage:
             - release:
                 params:
-                  erda_yaml: ${git-checkout}/erda.yml
+                  dice_yml: ${git-checkout}/dice.yml
                   image:
                     service: ${buildpack:OUTPUT:image-service}
                     web: ${buildpack:OUTPUT:image-web}
@@ -217,7 +217,7 @@ For this design, complete the following steps:
                   release_id: ${release:OUTPUT:releaseID}
       ```
 
-      Two new steps of release and deploy are added above as well as a new file erda.yml. For details, see [erda.yml](../dop/guides/reference/erda-yaml.html).
+      Two new steps of release and deploy are added above as well as a new file dice.yml. For details, see [dice.yml](../dop/guides/reference/dice-yaml.html).
 
       Complete the file and submit the code.
 
@@ -256,9 +256,9 @@ For this design, complete the following steps:
             version: "3.2.12"
       ```
 
-      erda.yml needs to be deployed through a Docker image, which is missed above.
+      dice.yml needs to be deployed through a Docker image, which is missed above.
 
-      From the example of pipeline.yml, it can be found that the image is compiled during the CI process, as the code is compiled and packaged into a Docker image by buildpack, which is automatically inserted into erda.yml by release and be deployed based on the generated erda.yml.
+      From the example of pipeline.yml, it can be found that the image is compiled during the CI process, as the code is compiled and packaged into a Docker image by buildpack, which is automatically inserted into dice.yml by release and be deployed based on the generated dice.yml.
 
 3. Once the pipeline is executed successfully, you can view the released instances in deployments. For more information on O&M (such as restart, roll back, view logs), see [Application Management](../dop/guides/deploy/management.html).
 

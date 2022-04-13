@@ -143,7 +143,7 @@ stages:
 **Release 配合使用**
 
 * `params:services`：声明多个服务的构建过程，类似 `dockerfile` 文件的声明。
-* `params:services[]:dice_yaml中的服务名称`：对应 `erda.yml` 中 `services` 服务名称，若有多个即声明多个
+* `params:services[]:dice_yaml中的服务名称`：对应 `dice.yml` 中 `services` 服务名称，若有多个即声明多个
 * `params:services[]:dice_yaml中的服务名称:image`：等于 `dockerfile` 中的 `FROM image`，用户可声明自己的运行环境。
 * `params:services[]:dice_yaml中的服务名称:copys[]`：等于 `dockerfile` 中的 `copy`，用户可将文件拷贝至自己的运行环境。
 * `params:services[]:dice_yaml中的服务名称:cmd`：等于 `dockerfile` 中的 `cmd`，用户可声明自己的服务启动命令。

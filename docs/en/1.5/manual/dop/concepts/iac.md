@@ -12,7 +12,7 @@ At the same time, the popularity of the PaaS platform makes developers even need
 ## How Erda Implements IaC
 Erda is an application-centric enterprise-level one-stop digital PaaS platform, and DOP is an application-centric one-stop DevOps platform.
 
-Here, you can define the entire CI/CD process of the application by pipeline.yml, which is a part of the application infrastructure. Also, you can describe the microservice architecture with a declarative erda.yml, including the dependencies among microservices and the dependencies of middleware.
+Here, you can define the entire CI/CD process of the application by pipeline.yml, which is a part of the application infrastructure. Also, you can describe the microservice architecture with a declarative dice.yml, including the dependencies among microservices and the dependencies of middleware.
 
 The platform abstracts applications at the beginning, to make it deployable on any platform (including K8s, DC/OS, etc.) and shields some details from developers. Thus the two files are necessary when deploy applications on Erda.
 
@@ -20,7 +20,7 @@ In addition, the platform supports defining API description files in the .erda d
 
 After committing these infrastructures as code, the platform will run continuous integration and continuous delivery based on these configurations, and deploy the application automatically.
 
-Part of erda.yml is as follows:
+Part of dice.yml is as follows:
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/5decdb97-f37a-470e-92d2-97fef36cc782.png)
 

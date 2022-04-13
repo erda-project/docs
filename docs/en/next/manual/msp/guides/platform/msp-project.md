@@ -37,7 +37,7 @@ You can choose the monitoring project for the following situations:
 
 ## DevOps Project Access
 
-Before you start, please make sure you have created a DevOps project, erda.yaml, and pipeline for deployment. For details, see [Deploy via Pipeline](../../../dop/guides/deploy/deploy-by-cicd-pipeline).
+Before you start, please make sure you have created a DevOps project, dice.yml, and pipeline for deployment. For details, see [Deploy via Pipeline](../../../dop/guides/deploy/deploy-by-cicd-pipeline).
 
 ### Add Monitor Addon
 
@@ -45,13 +45,13 @@ Before you start, please make sure you have created a DevOps project, erda.yaml,
 This step is optional. Applications deployed through the pipeline will have the monitor addon added automatically.
 :::
 
-Edit erda.yaml to add the monitor addon.
+Edit dice.yml to add the monitor addon.
 
 You can add by the graphic editing mode:
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/17/3cda3da3-f0f3-4773-961a-9882da381978.png)
 
-Or edit erda.yaml in text mode:
+Or edit dice.yml in text mode:
 
 ```yaml
   addons:

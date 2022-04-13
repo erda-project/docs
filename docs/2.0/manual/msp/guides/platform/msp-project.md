@@ -37,7 +37,7 @@
 
 ## 研发项目接入
 
-执行以下操作前，请确认您已完成研发项目、erda.yaml 以及部署流水线创建，具体请参见 [通过流水线部署](../../../dop/guides/deploy/deploy-by-cicd-pipeline)。
+执行以下操作前，请确认您已完成研发项目、dice.yml 以及部署流水线创建，具体请参见 [通过流水线部署](../../../dop/guides/deploy/deploy-by-cicd-pipeline)。
 
 ### 添加 Monitor Addon
 
@@ -45,13 +45,13 @@
 该步骤为可选项。通过流水线部署的应用将自动添加 Monitor Addon。
 :::
 
-编辑 erda.yaml，添加 Monitor Addon。
+编辑 dice.yml，添加 Monitor Addon。
 
 您可通过可视化的图形编辑模式添加：
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/15/0f58aadd-eb11-4671-804c-a9dbae56d4be.png)
 
-也可选择以文本模式编辑 erda.yaml：
+也可选择以文本模式编辑 dice.yml：
 
 ```yaml
   addons:

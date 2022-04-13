@@ -52,7 +52,7 @@
 
 ### 基于微服务网关实现域名路由（推荐）
 
-通过 erda.yml 为服务指定 Endpoints 即可实现微服务网关功能，将一个域名的不同路径转发给相同项目和环境下的不同服务。
+通过 dice.yml 为服务指定 Endpoints 即可实现微服务网关功能，将一个域名的不同路径转发给相同项目和环境下的不同服务。
 
 具体示例如下：
 
@@ -147,7 +147,7 @@ Endpoints 由以下属性组成：
 该模式下域名绑定在单个服务上，无法将不同路径转发给不同服务。其优势在于，端口协议可支持 HTTP、HTTPS、gRPC、gRPCs、FastCGI，通过 `port` 的 `protocol` 指定协议即可。
 :::
 
-调整 erda.yml 配置，暴露服务端口。
+调整 dice.yml 配置，暴露服务端口。
 
 
 ```yaml{12-13}
@@ -181,7 +181,7 @@ services:
 
 ## 扩缩容
 
-可调整 erda.yml 配置对服务进行扩缩容。
+可调整 dice.yml 配置对服务进行扩缩容。
 
 修改 `services.serviceA.deployments.replicas`，调整服务的实例数量，随后执行源码部署使配置生效。
 
@@ -251,5 +251,5 @@ services:
 
 若未通过健康检查，其产生的历史容器状态为 Error，exit-code 为 137、143 等。
 
-请进入 **代码仓库 > erda.yml > health_check** 配置健康检查。
+请进入 **代码仓库 > dice.yml > health_check** 配置健康检查。
 

@@ -17,7 +17,7 @@ It starts with application building, and is developed from Packer and CI.
 Erda is a PaaS platform used internally by Terminus originally. Since 2017, Erda has managed all R&D projects of the company. Each application under projects follows the standard process of "code > compile > image > deploy". Packer is developed as a component responsible for packaging. User needs to provide Dockerfile with pretty high learning cost.
 
 ### CI
-With the popularity of CI/CD (continuous integration and continuous delivery) concept, the platform releases an upgraded version of Packer, that is CI. Meanwhile, the concept of Infrastructure as Code (IaC) is also implemented here, to declare the microservice architecture and building process of application with erda.yaml.
+With the popularity of CI/CD (continuous integration and continuous delivery) concept, the platform releases an upgraded version of Packer, that is CI. Meanwhile, the concept of Infrastructure as Code (IaC) is also implemented here, to declare the microservice architecture and building process of application with dice.yml.
 
 For user experience, the platform shields Dockerfile and provides best practices in the form of BuildPack. Users can run the CI/CD process by the automatic detection and identification of BuildPack.
 
@@ -176,7 +176,7 @@ stages:
       commands: # Support executing commands directly
       - sleep 5
       - echo hello world
-      - cat ${{ dirs.git-checkout }}/erda.yml # Here the file is referenced by the ${{ dirs.git-checkout }} syntax
+      - cat ${{ dirs.git-checkout }}/dice.yml # Here the file is referenced by the ${{ dirs.git-checkout }} syntax
 ```
 
 ## Pipeline as Technical Base

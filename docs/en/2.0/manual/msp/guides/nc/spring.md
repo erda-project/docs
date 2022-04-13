@@ -10,7 +10,7 @@ Based on the configuration center, it supports other languages and frameworks th
 
 :::
 
-## Reference Configuration Center Addon in erda.yml
+## Reference Configuration Center Addon in dice.yml
 
 
 ```yaml
@@ -80,7 +80,7 @@ public class HelloConfigCenterController {
 
 ## Modify Dynamic Configuration in Configuration Center Console
 
-If erda.yml references the configuration center, the console entry for the configuration center will appear in the service plugin after the service is successfully deployed.
+If dice.yml references the configuration center, the console entry for the configuration center will appear in the service plugin after the service is successfully deployed.
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/22/acad3d06-24cd-4532-82a0-62306548c777.png)
 

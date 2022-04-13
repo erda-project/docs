@@ -6,7 +6,7 @@
 
 ## Java 应用添加 sourcecov addon
 
-进入 **DevOps 平台 > 项目 > 应用中心 > 应用 > 代码** 编辑 erda.yml。
+进入 **DevOps 平台 > 项目 > 应用中心 > 应用 > 代码** 编辑 dice.yml。
 
 图形编辑模式下，在搜索栏输入 **sourcecov**，选择 **通用能力** 中的 **集成测试覆盖率统计**。
 
@@ -22,7 +22,7 @@
 
 ## 多个应用添加 sourcecov addon
 
-多个应用的 erda.yml 图形编辑页面中可新建多个 sourcecov，但部署执行后，仅有一个应用拥有 sourcecov 的服务插件，其他应用应引用同一个 sourcecov 的实例，而非新建，如下所示：
+多个应用的 dice.yml 图形编辑页面中可新建多个 sourcecov，但部署执行后，仅有一个应用拥有 sourcecov 的服务插件，其他应用应引用同一个 sourcecov 的实例，而非新建，如下所示：
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/25/424795f7-b2be-4acb-9716-7dac75ba09a4.png)
 

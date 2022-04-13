@@ -37,7 +37,7 @@ echo-web 和 echo-service 通过 Erda 的微服务组件注册中心实现服务
 进入 **echo-web应用 > API 设计 > 新建文档**，选择分支 feature/api，名称为 echo-web。
 
 ::: tip 提示
-echo-web 为 Service 名称，与 erda.yml 中的服务名称保持一致。
+echo-web 为 Service 名称，与 dice.yml 中的服务名称保持一致。
 :::
 
 ### 数据类型
@@ -255,7 +255,7 @@ public class DefaultController {
 
 ::: tip 提示
 
-健康检查 API 用于 erda.yml 中，提供给 Kubernetes 进行 liveness 和 readiness 检查，需保证其返回 200 时服务健康可用。
+健康检查 API 用于 dice.yml 中，提供给 Kubernetes 进行 liveness 和 readiness 检查，需保证其返回 200 时服务健康可用。
 
 :::
 
@@ -284,7 +284,7 @@ git push -u erda --tags
 
 ```yaml
 ...
-              erda.yml中的服务名:
+              dice.yml中的服务名:
                 cmd: java -jar /target/jar包的名称
                 copys:
                   - ${java-build:OUTPUT:buildPath}/target/jar包的名称:/target/jar包的名称
@@ -304,19 +304,19 @@ git push -u erda --tags
 
 ::: tip 提示
 
-pipeline.yml 中用于替换 JAR 包的名称需与 echo-service 应用 pom.xml 的 build.finalName 保持一致，用于替换 erda.yml 中的服务名需与 erda.yml 保持一致。
+pipeline.yml 中用于替换 JAR 包的名称需与 echo-service 应用 pom.xml 的 build.finalName 保持一致，用于替换 dice.yml 中的服务名需与 dice.yml 保持一致。
 
 :::
 
-#### erda.yml
+#### dice.yml
 
-在代码仓库添加 erda.yml 文件并进行编辑，新增节点后按照图示填写配置：
+在代码仓库添加 dice.yml 文件并进行编辑，新增节点后按照图示填写配置：
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/4ce0f4cd-80c7-4918-8f55-b9b202c48aed.png)
 
 ::: tip 提示
 
-* erda.yml 中的服务名需与 pipeline.yml 保持一致。
+* dice.yml 中的服务名需与 pipeline.yml 保持一致。
 * 健康检查端口需与应用监听的端口保持一致，Spring Boot 框架内置的 Tomcat 服务器默认监听 8080 端口。
 
 :::
@@ -509,9 +509,9 @@ class Content {
 }
 ```
 
-#### erda.yml
+#### dice.yml
 
-编辑 echo-web 和 echo-service 两个应用的 erda.yml，增加 Addon 注册中心。
+编辑 echo-web 和 echo-service 两个应用的 dice.yml，增加 Addon 注册中心。
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/9df5f745-1823-4efb-b41a-72c74a11e03f.png)
 
@@ -608,7 +608,7 @@ public class ErrorController {
 
 其中注解 @RefreshScope 和 @Value 实现配置 echo.slowtime 热加载。
 
-在 erda.yml 的 Addon 部分增加配置中心：
+在 dice.yml 的 Addon 部分增加配置中心：
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/22/ef7d7eea-0545-406c-879b-521e48021d08.png)
 

@@ -1,8 +1,8 @@
 # 跨域访问 API
 
-## erda.yml 配置
+## dice.yml 配置
 
-您可以通过 erda.yml 配置跨域访问限制，具体请参见 [使用 erda.yml 管理配置](./config.md)。
+您可以通过 dice.yml 配置跨域访问限制，具体请参见 [使用 dice.yml 管理配置](./config.md)。
 
 ```yaml
 policies:
@@ -30,7 +30,7 @@ cors:
 
 ::: tip 提示
 
-如果您已通过 erda.yml 完成了配置，前者将覆盖此处配置。
+如果您已通过 dice.yml 完成了配置，前者将覆盖此处配置。
 
 :::
 
@@ -45,7 +45,7 @@ cors:
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/c7004b82-9a5d-4081-8ad4-202d32771901.png)
 
-若使用 erda.yml 配置，则配置信息如下：
+若使用 dice.yml 配置，则配置信息如下：
 
 ```yaml
 policies:

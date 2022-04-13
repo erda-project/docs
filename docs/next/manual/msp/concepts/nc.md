@@ -8,7 +8,7 @@
 
 ![](https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/03/1d3e3e52-ae2b-402d-afa7-6c320e4440cf.jpeg)
 
-对于平台侧创建 Nacos 租户的流程，业务是无需感知的。业务应用的 erda.yml 通过 Addon 扩展机制申明注册中心或配置中心，随后部署应用，自动创建租户，同时将租户 ID 以环境变量的方式自动注入应用服务的容器中。
+对于平台侧创建 Nacos 租户的流程，业务是无需感知的。业务应用的 dice.yml 通过 Addon 扩展机制申明注册中心或配置中心，随后部署应用，自动创建租户，同时将租户 ID 以环境变量的方式自动注入应用服务的容器中。
 
 注册中心的功能主要包括 Dubbo 微服务框架注册发现和 Spring Cloud 微服务框架注册发现，配置中心的功能主要为 Spring Cloud 配置热更新机制。
 
