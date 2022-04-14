@@ -88,10 +88,12 @@ addons:
     plan: "redis:basic"
 ```
 
-且在 Addons 页面添加了**同名的**第三方实现的类似中间件，
+且在 Addons 页面添加了**同名的**第三方实现的类似中间件。
 
-![**同名的**第三方实现的类似中间件](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/13/45b6a021-14b6-45b2-a7be-e716c1dd1536.png)
+![**同名的**第三方实现的类似中间件](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/14/05469600-608a-44ce-873a-367b382776d2.png)
 
 **新**部署服务时，服务将优先引用这些**同名的**类似中间件。
 
-注意：当服务的 Runtime 已存在，想要从 Erda 中间件切换到第三方类似中间件（或从第三方类似中间件切换到 Erda 中间件），应当先删除 Runtime，添加（或删除）**同名的**类似第三方中间件，然后重新部署。
+:::tip 提示
+当服务的 Runtime 已存在，想要从 Erda 中间件切换到第三方类似中间件（或从第三方类似中间件切换到 Erda 中间件），应当先删除 Runtime，添加（或删除）**同名的**类似第三方中间件，然后重新部署。
+:::
