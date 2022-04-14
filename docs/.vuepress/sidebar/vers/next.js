@@ -34,7 +34,6 @@ module.exports = [
     title: '多云管理',
     collapsable: true,
     children: [
-      'cmp/concept',
       {
         title: '最佳实践',
         collapsable: true,
@@ -71,24 +70,13 @@ module.exports = [
           },
         ]
       },
+      'cmp/concept',
     ]
   },
   {
     title: 'DevOps',
     collapsable: true,
     children: [
-      {
-        title: '设计理念',
-        collapsable: true,
-        children: [
-          ['dop/concepts/agile-info', '高效协同'],
-          ['dop/concepts/iac', 'IaC'],
-          ['dop/concepts/pipeline', 'pipeline.yml'],
-          ['dop/concepts/dice-yaml', 'dice.yml'],
-          // ['dop/concepts/artifact', '制品'],
-          ['dop/concepts/gitflow', 'Gitflow'],
-        ]
-      },
       {
         title: '最佳实践',
         collapsable: true,
@@ -215,21 +203,24 @@ module.exports = [
           },
         ]
       },
+      {
+        title: '设计理念',
+        collapsable: true,
+        children: [
+          ['dop/concepts/agile-info', '高效协同'],
+          ['dop/concepts/iac', 'IaC'],
+          ['dop/concepts/pipeline', 'pipeline.yml'],
+          ['dop/concepts/dice-yaml', 'dice.yml'],
+          // ['dop/concepts/artifact', '制品'],
+          ['dop/concepts/gitflow', 'Gitflow'],
+        ]
+      },
     ]
   },
   {
     title: '微服务治理',
     collapsable: true,
     children: [
-      {
-        title: '设计理念',
-        collapsable: true,
-        children: [
-          'msp/concepts/apm',
-          'msp/concepts/apigw',
-          'msp/concepts/nc',
-        ]
-      },
       {
         title: '最佳实践',
         collapsable: true,
@@ -329,13 +320,21 @@ module.exports = [
           },
         ]
       },
+      {
+        title: '设计理念',
+        collapsable: true,
+        children: [
+          'msp/concepts/apm',
+          'msp/concepts/apigw',
+          'msp/concepts/nc',
+        ]
+      },
     ]
   },
   {
     title: '边缘计算',
     collapsable: true,
     children: [
-      'ecp/concept',
       'ecp/best-practice',
       {
         title: '使用指南',
@@ -346,13 +345,13 @@ module.exports = [
           ['ecp/application', '应用管理'],
         ]
       },
+      'ecp/concept',
     ]
   },
   {
     title: '快数据',
     collapsable: true,
     children: [
-      'fdp/concept',
       ['fdp/best-practice', '最佳实践'],
       {
         title: '使用指南',
@@ -373,6 +372,7 @@ module.exports = [
           'fdp/guide/algorithm-model',
         ]
       },
+      'fdp/concept',
     ]
   },
   {
@@ -402,15 +402,6 @@ module.exports = [
             ]
           },
           {
-            title: '设计理念',
-            collapsable: true,
-            children: [
-              ['eco-tools/kubeprober/concepts/arch', '系统架构'],
-              ['eco-tools/kubeprober/concepts/cluster_crd', 'Cluster CRD'],
-              ['eco-tools/kubeprober/concepts/prober_crd', 'Prober CRD'],
-            ]
-          },
-          {
             title: '使用指南',
             collapsable: true,
             children: [
@@ -420,6 +411,15 @@ module.exports = [
               ['eco-tools/kubeprober/best-practices/custom_prober', '自定义 Prober'],
               ['eco-tools/kubeprober/best-practices/alert', '告警'],
               ['eco-tools/kubeprober/best-practices/command_tools', '使用命令行工具'],
+            ]
+          },
+          {
+            title: '设计理念',
+            collapsable: true,
+            children: [
+              ['eco-tools/kubeprober/concepts/arch', '系统架构'],
+              ['eco-tools/kubeprober/concepts/cluster_crd', 'Cluster CRD'],
+              ['eco-tools/kubeprober/concepts/prober_crd', 'Prober CRD'],
             ]
           },
         ]
