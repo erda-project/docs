@@ -50,5 +50,5 @@ stages:
           params:
             release_name: ${{ outputs.release-fetch.release_name }}
             workspace: TEST
-            application_name: dcos
+            application_name: docs
             type: application
