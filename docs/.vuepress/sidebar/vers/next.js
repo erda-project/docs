@@ -34,15 +34,6 @@ module.exports = [
     title: '多云管理',
     collapsable: true,
     children: [
-      {
-        title: '场景示例',
-        collapsable: true,
-        children: [
-          'cmp/examples/set-labels',
-          'cmp/examples/check-env',
-          'cmp/examples/check-workload',
-        ]
-      },
       'cmp/concept',
       {
         title: '最佳实践',
@@ -86,21 +77,6 @@ module.exports = [
     title: 'DevOps',
     collapsable: true,
     children: [
-      {
-        title: '场景示例',
-        collapsable: true,
-        children: [
-          ['dop/examples/project-management', '业务项目管理'],
-          'dop/examples/deploy/deploy-from-git',
-          'dop/examples/deploy/deploy-from-image',
-          'dop/examples/deploy/deploy-from-go-build',
-          'dop/examples/deploy/deploy-from-java-build',
-          'dop/examples/deploy/deploy-from-caches-build',
-          'dop/examples/deploy/nexus',
-          ['dop/examples/deploy/manage-mirror', '如何管理镜像'],
-          'dop/examples/deploy/e2e-code-coverage',
-        ]
-      },
       {
         title: '设计理念',
         collapsable: true,
@@ -246,44 +222,6 @@ module.exports = [
     collapsable: true,
     children: [
       {
-        title: '场景示例',
-        collapsable: true,
-        children: [
-          {
-            title: '应用监控',
-            collapsable: true,
-            children: [
-              'msp/examples/apm/service-dashboard',
-              'msp/examples/apm/exception-alert',
-              'msp/examples/apm/status-alert',
-            ],
-          },
-          {
-            title: '日志分析',
-            collapsable: true,
-            children: [
-              'msp/examples/log/java-log-rule',
-              // 'msp/examples/log/log-alert',
-              // 'msp/examples/log/log-dashboard',
-            ],
-          },
-          {
-            title: 'API 网关',
-            collapsable: true,
-            children: [
-              'msp/examples/apigw/config',
-              'msp/examples/apigw/hijack',
-              'msp/examples/apigw/timeout',
-              'msp/examples/apigw/rate-limit',
-              'msp/examples/apigw/custom-header',
-              'msp/examples/apigw/access-limit',
-              'msp/examples/apigw/cors',
-              'msp/examples/apigw/openapi',
-            ],
-          },
-        ]
-      },
-      {
         title: '设计理念',
         collapsable: true,
         children: [
@@ -397,7 +335,6 @@ module.exports = [
     title: '边缘计算',
     collapsable: true,
     children: [
-      'ecp/example',
       'ecp/concept',
       'ecp/best-practice',
       {
@@ -415,16 +352,6 @@ module.exports = [
     title: '快数据',
     collapsable: true,
     children: [
-      {
-        title: '场景示例',
-        collapsable: true,
-        children: [
-          'fdp/example/integration',
-          'fdp/example/develop',
-          'fdp/example/service',
-          'fdp/example/om',
-        ]
-      },
       'fdp/concept',
       ['fdp/best-practice', '最佳实践'],
       {
