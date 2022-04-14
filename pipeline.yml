@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - master
-      - release/*
-    tags:
-      - v*
 
 stages:
   - stage:
@@ -18,7 +15,6 @@ stages:
             git_dir: ${{ dirs.git-checkout }}
   - stage:
       - js-build:
-          alias: js-build
           version: "1.0"
           params:
             build_cmd:
@@ -27,12 +23,11 @@ stages:
             workdir: ${git-checkout}
           resources:
             cpu: 1
-            mem: 2048
+            mem: 4096
           caches:
             - path: ${git-checkout}/node_modules
   - stage:
       - release:
-          alias: release
           params:
             tag_version: ${{ outputs.extract-repo-version.version }}
             dice_yml: ${git-checkout}/dice.yml
@@ -43,3 +38,17 @@ stages:
                   - ${js-build}/dest:/usr/share/nginx/html/
                   - ${js-build}/nginx.conf.template:/etc/nginx/conf.d/
                 image: registry.cn-hangzhou.aliyuncs.com/dice-third-party/terminus-nginx:0.2
+  - stage:
+      # TODO: bad practice, because release action not output release_name
+      - release-fetch:
+          params:
+            application_name: docs
+            branch: ${{ outputs.git-checkout.branch }}
+            check_commit: ${{ outputs.git-checkout.commit }}
+  - stage:
+      - dice:
+          params:
+            release_name: ${{ outputs.release-fetch.release_name }}
+            workspace: TEST
+            application_name: dcos
+            type: application
