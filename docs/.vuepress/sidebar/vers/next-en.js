@@ -41,16 +41,6 @@ module.exports = [
     collapsable: true,
     children: [
       {
-        title: 'Examples',
-        collapsable: true,
-        children: [
-          'cmp/examples/set-labels',
-          'cmp/examples/check-env',
-          'cmp/examples/check-workload',
-        ]
-      },
-      'cmp/concept',
-      {
         title: 'Best Practices',
         collapsable: true,
         children: [
@@ -86,39 +76,13 @@ module.exports = [
           },
         ]
       },
+      'cmp/concept',
     ]
   },
   {
     title: 'DevOps',
     collapsable: true,
     children: [
-      {
-        title: 'Examples',
-        collapsable: true,
-        children: [
-          'dop/examples/project-management',
-          'dop/examples/deploy/deploy-from-git',
-          'dop/examples/deploy/deploy-from-image',
-          'dop/examples/deploy/deploy-from-go-build',
-          'dop/examples/deploy/deploy-from-java-build',
-          'dop/examples/deploy/deploy-from-caches-build',
-          'dop/examples/deploy/nexus',
-          'dop/examples/deploy/manage-mirror',
-          // 'dop/examples/deploy/e2e-code-coverage',
-        ]
-      },
-      {
-        title: 'Concepts',
-        collapsable: true,
-        children: [
-          ['dop/concepts/agile-info', 'Efficient Collaboration'],
-          ['dop/concepts/iac', 'IaC'],
-          ['dop/concepts/pipeline', 'pipeline.yml'],
-          ['dop/concepts/dice-yaml', 'dice.yml'],
-          // ['dop/concepts/artifact', '制品'],
-          ['dop/concepts/gitflow', 'Gitflow'],
-        ]
-      },
       {
         title: 'Best Practices',
         collapsable: true,
@@ -244,81 +208,24 @@ module.exports = [
           },
         ]
       },
+      {
+        title: 'Concepts',
+        collapsable: true,
+        children: [
+          ['dop/concepts/agile-info', 'Efficient Collaboration'],
+          ['dop/concepts/iac', 'IaC'],
+          ['dop/concepts/pipeline', 'pipeline.yml'],
+          ['dop/concepts/dice-yaml', 'dice.yml'],
+          // ['dop/concepts/artifact', '制品'],
+          ['dop/concepts/gitflow', 'Gitflow'],
+        ]
+      },
     ]
   },
   {
     title: 'Microservice',
     collapsable: true,
     children: [
-      {
-        title: 'Examples',
-        collapsable: true,
-        children: [
-          {
-            title: 'Application Monitoring',
-            collapsable: true,
-            children: [
-              // 'msp/examples/apm/service-dashboard',
-              'msp/examples/apm/exception-alert',
-              'msp/examples/apm/status-alert',
-            ],
-          },
-  //         {
-  //           title: 'Log Analysis',
-  //           collapsable: true,
-  //           children: [
-  //             'msp/examples/log/java-log-rule',
-  //             // 'msp/examples/log/log-alert',
-  //             // 'msp/examples/log/log-dashboard',
-  //           ],
-  //         },
-          {
-            title: 'API Gateway',
-            collapsable: true,
-            children: [
-              // 'msp/examples/apigw/config',
-              // 'msp/examples/apigw/hijack',
-              'msp/examples/apigw/timeout',
-              // 'msp/examples/apigw/rate-limit',
-              'msp/examples/apigw/custom-header',
-              'msp/examples/apigw/access-limit',
-              // 'msp/examples/apigw/cors',
-              // 'msp/examples/apigw/openapi',
-            ],
-          },
-        ]
-      },
-  //     {
-  //       title: 'Concepts',
-  //       collapsable: true,
-  //       children: [
-  //         {
-  //           title: 'Application Monotoring',
-  //           collapsable: true,
-  //           children: [
-  //             'msp/concepts/apm/observability',
-  //             'msp/concepts/apm/arch',
-  //             'msp/concepts/apm/concept',
-  //           ],
-  //         },
-  //         {
-  //           title: 'API Gateway',
-  //           collapsable: true,
-  //           children: [
-  //             'msp/concepts/apigw/arch',
-  //             'msp/concepts/apigw/core',
-  //           ],
-  //         },
-  //         {
-  //           title: 'Registration Center & Configuration Center',
-  //           collapsable: true,
-  //           children: [
-  //             'msp/concepts/nc/arch',
-  //             'msp/concepts/nc/core',
-  //           ],
-  //         },
-  //       ]
-  //     },
       {
         title: 'Best Practices',
         collapsable: true,
@@ -406,14 +313,43 @@ module.exports = [
   //         },
         ]
       },
+  //     {
+  //       title: 'Concepts',
+  //       collapsable: true,
+  //       children: [
+  //         {
+  //           title: 'Application Monotoring',
+  //           collapsable: true,
+  //           children: [
+  //             'msp/concepts/apm/observability',
+  //             'msp/concepts/apm/arch',
+  //             'msp/concepts/apm/concept',
+  //           ],
+  //         },
+  //         {
+  //           title: 'API Gateway',
+  //           collapsable: true,
+  //           children: [
+  //             'msp/concepts/apigw/arch',
+  //             'msp/concepts/apigw/core',
+  //           ],
+  //         },
+  //         {
+  //           title: 'Registration Center & Configuration Center',
+  //           collapsable: true,
+  //           children: [
+  //             'msp/concepts/nc/arch',
+  //             'msp/concepts/nc/core',
+  //           ],
+  //         },
+  //       ]
+  //     },
     ]
   },
   {
     title: 'Edge Computing',
     collapsable: true,
     children: [
-      'ecp/example',
-      'ecp/concept',
       'ecp/best-practice',
   //     {
   //       title: 'Guides',
@@ -424,23 +360,13 @@ module.exports = [
   //         ['ecp/application', '应用管理'],
   //       ]
   //     },
+      'ecp/concept',
     ]
   },
   {
     title: 'Fast Data',
     collapsable: true,
     children: [
-      {
-        title: 'Examples',
-        collapsable: true,
-        children: [
-          'fdp/example/integration',
-          'fdp/example/develop',
-          'fdp/example/service',
-          'fdp/example/om',
-        ]
-      },
-      'fdp/concept',
       ['fdp/best-practice', 'Best Practices'],
       {
         title: 'Guides',
@@ -461,6 +387,7 @@ module.exports = [
           'fdp/guide/algorithm-model',
         ]
       },
+      'fdp/concept',
     ]
   },
   {
