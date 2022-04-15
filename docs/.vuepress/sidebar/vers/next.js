@@ -1,5 +1,11 @@
 module.exports = [
-  'about/intro',
+  {
+    title: '产品概述',
+    collapsable: true,
+    children: [
+      'about/intro'
+    ]
+  },
   {
     title: '安装配置',
     collapsable: true,
