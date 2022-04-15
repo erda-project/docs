@@ -8,11 +8,13 @@
 
 应用制品包含部署一个应用所需的全部内容，包括镜像、依赖的 Addon 以及各类配置信息。
 
-项目制品中包含一个或多个部署模式，每个部署模式由一个或多个应用制品按照一定的分组顺序组成。部署模式之间可以有依赖关系。部署项目制品时，可以选择您定义的部署模式，平台将根据您定义的部署顺序部署这些模式中的应用制品。被依赖的模式将被优先部署，同一个分组内的应用制品将被同时部署。例如，下面是一个由 10 个应用制品组成的项目制品。
+项目制品包含一个或多个部署模式，每个部署模式由一个或多个应用制品按照特定的分组顺序组成。部署模式之间可存在依赖关系。部署项目制品时，可选择您定义的部署模式，平台将根据既定顺序部署模式中的应用制品。被依赖的模式将优先部署，同一分组内的应用制品将同时部署。
+
+例如，下图是一个由 10 个应用制品组成的项目制品。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/13/a2a95250-bc5f-4b9f-9879-2a03bd5b66a3.png)
 
-其中，modeA、modeB 和 modeC 是自定义的部署模式，modeA 和 modeB 都依赖 modeC，这表示部署该项目制品时，若选择了 modeA 或 modeB 进行部署，平台会优先部署 modeC，然后部署 modeA 或 modeB。
+其中，modeA、modeB 和 modeC 为自定义的部署模式，modeA 和 modeB 依赖于 modeC，则部署该项目制品时，若选择部署 modeA 或 modeB，平台将优先部署 modeC，随后部署 modeA 或 modeB。
 
 ### 临时制品和非临时制品
 
@@ -77,7 +79,7 @@
 
 :::tip 提示
 
-目前这种方式暂时不支持添加自定义模式，使用这种方式创建的项目制品会包含一个名为`default`的部署模式，该部署模式中包含页面上选择的应用制品组。
+目前该方式暂不支持添加自定义模式。使用该方式创建的项目制品将包含一个名为 `default` 的部署模式，模式中包含您选择的应用制品组。 
 
 :::
 
@@ -91,108 +93,109 @@
 
   4. 点击 **提交**，完成项目制品创建。
 
-  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/01/e766b065-1d06-43ac-9219-11b07f5d81bd.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/01/e766b065-1d06-43ac-9219-11b07f5d81bd.png)
 
 * **选择文件创建**
 
-  该方式用于满足将项目制品从某一项目导入至另一项目的场景。若选择文件创建，需提前下载项目制品包（ZIP 格式）至本地（具体请参见 [下载制品](#下载制品)），随后在目标项目中上传该文件。
 
-  平台将自动解析文件中项目制品的版本及依赖的应用制品信息。
+该方式用于满足将项目制品从某一项目导入至另一项目的场景。若选择文件创建，需提前下载项目制品包（ZIP 格式）至本地（具体请参见 [下载制品](#下载制品)），随后在目标项目中上传该文件。
 
-  ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/4e643be5-d490-4cd2-849c-c0ced3a93773.png)
+平台将自动解析文件中项目制品的版本及依赖的应用制品信息。
 
-  :::tip 提示
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/4e643be5-d490-4cd2-849c-c0ced3a93773.png)
 
-  * 上传的项目制品中引用的应用制品，其对应应用必须存在于本项目中，否则将上传失败。
-  * 若本项目中不存在上传的项目制品引用的应用制品，则平台将根据制品包的内容自动创建应用制品。若已存在相同版本的应用制品，则取消创建，直接引用该应用制品。若制品包中应用制品的 dice.yml 与已存在的同名应用制品的 dice.yml 不同，则制品包中的 dice.yml 将被忽略。
+:::tip 提示
 
-  :::
+* 上传的项目制品中引用的应用制品，其对应应用必须存在于本项目中，否则将上传失败。
+* 若本项目中不存在上传的项目制品引用的应用制品，则平台将根据制品包的内容自动创建应用制品。若已存在相同版本的应用制品，则取消创建，直接引用该应用制品。若制品包中应用制品的 dice.yml 与已存在的同名应用制品的 dice.yml 不同，则制品包中的 dice.yml 将被忽略。
+
+:::
 
 
 * **通过 Project Artifacts Action 创建**
 
-在您的流水线中添加 项目打包发布制品 Action。
+1. 在流水线中添加项目打包发布制品 Action。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/13/7830e1e8-a21e-491c-af27-3718484e9688.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/15/e5dd7b7d-ce02-448b-981b-fdf73bed1ec8.png)
 
-用代码编辑模式编辑此 Action。
+2. 通过代码编辑模式编辑该 Action。
 
-Project Artifacts Action 的 yaml 描述有两种形式
+   Project Artifacts Action 的 YAML 描述有两种形式：
 
-1. 不指定模式
+   * 未指定模式
 
-```yaml
-version: "1.1"
-stages:
-  - stage:
-      - project-artifacts:
-          alias: project-artifacts
-          description: 应用制品发布到项目制品
-          version: "1.0"
-          params:
-            changeLog: auto compose from applications // 项目制品的内容
-            groups:                                   // 应用制品分组，由一个应用描述列表组成
-              - applications:                         // 应用列表
-                  - branch: release/1.0               // 应用制品分支, 选择该分支下最新的发布到项目
-                    name: applicationA                // 应用名称
-                  - releaseID: a9af810ebd884107a3b9a  // 指定的应用制品 ID, 优先级高于 branch
-              - applications:
-                  - branch: release/1.0
-                    name: applicationB
-                  - branch: master
-                    name: applicationC
-            version: 1.0.0+${{ random.date }}         // 项目 release 的版本号
-```
+   ```yaml
+   version: "1.1"
+   stages:
+     - stage:
+         - project-artifacts:
+             alias: project-artifacts
+             description: 应用制品发布到项目制品
+             version: "1.0"
+             params:
+               changeLog: auto compose from applications // 项目制品的内容
+               groups:                                   // 应用制品分组，由一个应用描述列表组成
+                 - applications:                         // 应用列表
+                     - branch: release/1.0               // 应用制品分支, 选择该分支下最新的发布到项目
+                       name: applicationA                // 应用名称
+                     - releaseID: a9af810ebd884107a3b9a  // 指定的应用制品 ID, 优先级高于 branch
+                 - applications:
+                     - branch: release/1.0
+                       name: applicationB
+                     - branch: master
+                       name: applicationC
+               version: 1.0.0+${{ random.date }}         // 项目 release 的版本号
+   ```
 
-通过这种方式创建的项目制品中会包含一个名为`default`的部署模式，其中包含您在`groups`字段中指定的所有应用制品。上面的 yaml 描述对应这样的项目制品：
+   通过该方式创建的项目制品将包含一个名为 `default` 的部署模式，其中包含您在 `groups` 字段中指定的所有应用制品。 上述 YAML 描述的项目制品如下：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/13/eb4a654f-7a0f-4791-a398-85024feffb06.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/13/eb4a654f-7a0f-4791-a398-85024feffb06.png)
 
-2. 指定模式
+   * 指定模式
 
-```yaml
-version: "1.1"
-stages:
-  - stage:
-      - project-artifacts:
-          alias: project-artifacts
-          description: 应用制品发布到项目制品
-          version: "1.0"
-          params:
-            changeLog: auto compose from applications // 项目制品的内容
-            modes:                                    // 部署模式，优先级高于 groups
-              modeA: 
-                dependOn:                             // 依赖模式
-                  - modeB
-                expose: true                          // 是否展示
-                groups:
-                  - applications:                         
-                      - branch: release/1.0               
-                        name: applicationA 
-                      - releaseID: a9af810ebd884107a3b9a
-                  - applications:
-                      - branch: release/1.0
-                        name: applicationB
-              modeB:
-                expose: false
-                groups:
-                  - applications:
-                      - branch: release/1.0
-                        name: applicationC
-              modeC:
-                expose: true
-                groups:
-                  - applications:
-                      - branch: master
-                        name: applicaitonD
-            version: 1.0.0+${{ random.date }}         // 项目 release 的版本号
-```
+   ```yaml
+   version: "1.1"
+   stages:
+     - stage:
+         - project-artifacts:
+             alias: project-artifacts
+             description: 应用制品发布到项目制品
+             version: "1.0"
+             params:
+               changeLog: auto compose from applications // 项目制品的内容
+               modes:                                    // 部署模式，优先级高于 groups
+                 modeA: 
+                   dependOn:                             // 依赖模式
+                     - modeB
+                   expose: true                          // 是否展示
+                   groups:
+                     - applications:                         
+                         - branch: release/1.0               
+                           name: applicationA 
+                         - releaseID: a9af810ebd884107a3b9a
+                     - applications:
+                         - branch: release/1.0
+                           name: applicationB
+                 modeB:
+                   expose: false
+                   groups:
+                     - applications:
+                         - branch: release/1.0
+                           name: applicationC
+                 modeC:
+                   expose: true
+                   groups:
+                     - applications:
+                         - branch: master
+                           name: applicaitonD
+               version: 1.0.0+${{ random.date }}         // 项目 release 的版本号
+   ```
 
-通过这种方式，您可以指定模式名称，并在每个模式中自定义分组。这种方式的优先级要高于第一种方式，也就是说，如果在 action 的 yaml 描述中既指定了 `groups` 字段又指定了 `modes` 字段，则只有 `modes` 字段会生效， `groups` 字段会被忽略。上面的 yaml 描述对应这样的项目制品：
+   您可以通过该方式指定模式名称，并在各模式中自定义分组。该方式的优先级高于第一种方式，即，若 Action 的 YAML 描述中同时指定了 `groups` 字段和 `modes` 字段，则仅有 `modes` 字段生效，`groups` 字段将被忽略。上述 YAML 描述的项目制品如下：
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/13/ae48abd3-b680-4fcf-8571-e7fb57393eea.png)
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/13/ae48abd3-b680-4fcf-8571-e7fb57393eea.png)
 
-其中 modeB 指定了 `expose: false`，这表示该模式不能在项目制品详情页面中被展示出来，部署时也不能被选择。只有选择 modeA 时，modeB 才会被部署。
+   其中 modeB 指定 `expose: false`，表示该模式无法在项目制品详情页中展示，部署时亦不可选择。仅在选择 modeA 时，modeB 才会被部署。
 
 ## 制品操作
 
@@ -250,6 +253,6 @@ stages:
 
 ## 制品部署
 
-制品部署有两种方式，分别是通过流水线部署和通过部署单部署（具体请参见[通过流水线部署](./deploy-by-cicd-pipeline.html)、[通过部署单部署](./deploy-order.html)）
+制品部署支持两种方式，分别为通过流水线部署和通过部署单部署（具体请参见 [通过流水线部署](./deploy-by-cicd-pipeline.html)、[通过部署单部署](./deploy-order.html)）。
 
-目前通过流水线部署暂时不支持部署项目制品时选择模式，只支持部署项目制品中的 default 模式。
+目前通过流水线部署的方式暂不支持在部署项目制品时选择模式，仅支持部署项目制品中的 `default` 模式。

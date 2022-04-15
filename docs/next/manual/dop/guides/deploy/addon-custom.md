@@ -57,25 +57,24 @@ spring:
 
 ## 部署时平滑切换类似中间件
 
-开发者在开发阶段，使用的中间件往往是便捷而低成本的 Erda 开箱即用中间件，而在交付的时候，又希望在不修改制品的情况下平滑切换到更稳定的第三方类似中间件，此时就可以使用 "部署时平滑切换类似中间件" 的功能。
+在开发阶段，开发者多使用便捷且低成本的 Erda 开箱即用中间件，在交付阶段则希望在不修改制品的情况下平滑切换至更稳定的第三方类似中间件，此时即可使用“部署时平滑切换类似中间件”的功能。
 
-类似中间件是指对同一功能的中间件的不同实现。如当用户想使用 MySQL 时，可以选择使用第三方 Addon `Alicloud-RDS`，也可以选择 Erda 开箱即用的 `erda mysql`。这里的 `Alicloud-RDS` 和 `erda mysql` 都是对 MySQL 的实现，它们的关系就是类似中间件。
+类似中间件是对同一功能中间件的不同实现。若您需使用 MySQL，可选择第三方 Addon Alicloud-RDS，也可选择 Erda 开箱即用的 erda mysql。此处的 Alicloud-RDS 和 erda mysql 均是对 MySQL 的实现，两者的关系即类似中间件。
 
-用户使用定义了 Erda 开箱即用的 Addon 的制品进行部署时，如果项目下有**同名的**第三方实现的类似中间件，被部署的服务会优先引用这个第三方实现的类似中间件。
+在使用定义了 Erda 开箱即用的 Addon 部署制品时，若项目下存在同名的第三方实现的类似中间件，则被部署的服务将优先引用该类似中间件。
 
-Erda 平台支持的类似中间件有：
+Erda 支持以下类似中间件：
 
-| 中间件类型         | 第三方实现           | Erda 实现                 |
-|:--------------|-----------------|-------------------------|
-| MySQL         | 	alicloud-rds   | 	erda mysql             |
-| ElasticSearch | 	alicloud-es    | 	terminus-elasticsearch |
-| RocketMQ      | 	alicloud-ons   | 	erda rocketmq          |
-| Redis         | 	alicloud-redis | 	erda redis             |
+| 中间件类型    | 第三方实现     | Erda 实现              |
+| :------------ | -------------- | ---------------------- |
+| MySQL         | alicloud-rds   | erda mysql             |
+| Elasticsearch | alicloud-es    | terminus-elasticsearch |
+| RocketMQ      | alicloud-ons   | erda rocketmq          |
+| Redis         | alicloud-redis | erda redis             |
 
-### 用法示例
+### 示例
 
-用户在 dice.yml 或制品中定义 Addons，
-> dice.yml
+您可在 dice.yml 或制品中定义 Addon。dice.yml 的示例如下：
 ```yaml
 addons:
   demo-mysql:
@@ -88,12 +87,12 @@ addons:
     plan: "redis:basic"
 ```
 
-且在 Addons 页面添加了**同名的**第三方实现的类似中间件。
+在 Addons 页面则添加了同名的第三方实现的类似中间件。
 
 ![**同名的**第三方实现的类似中间件](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/14/05469600-608a-44ce-873a-367b382776d2.png)
 
-**新**部署服务时，服务将优先引用这些**同名的**类似中间件。
+服务部署时将优先引用此类同名的类似中间件。
 
 :::tip 提示
-当服务的 Runtime 已存在，想要从 Erda 中间件切换到第三方类似中间件（或从第三方类似中间件切换到 Erda 中间件），应当先删除 Runtime，添加（或删除）**同名的**类似第三方中间件，然后重新部署。
+服务的 Runtime 已存在的情况下，如需从 Erda 中间件切换至第三方类似中间件（或从第三方类似中间件切换至 Erda 中间件），应先删除 Runtime，添加（或删除）同名的第三方类似中间件，再重新部署。
 :::

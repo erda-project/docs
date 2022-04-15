@@ -26,11 +26,11 @@
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/02/28/e5140066-dcbf-440c-86d4-2e8a3a2393e6.png)
 
-若选择的制品为项目制品，则还需要选择部署模式。选择模式后，平台会对您当前选择的模式中包含的应用进行上述检查。
+若选择的制品为项目制品，则还需要选择部署模式。选择模式后，平台将对模式中包含的应用进行上述检查。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/13/1696b2f0-c448-43d3-a9ef-ecc0ce461a9d.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/14/24211a94-9320-4b14-b835-aa3958f0f83b.png)
 
-部署项目制品时，平台会自动在部署的所有服务中添加环境变量 `ERDA_DEAPLOY_MODES`，其值为部署时勾选的模式，用英文逗号分隔。例如，部署时勾选了 modeA 和 modeB，则部署成功的所有服务中都会被自动注入环境变量 `ERDA_DEPLOY_MODES=modeA,modeB`。
+部署项目制品时，平台将自动在部署的所有服务中添加环境变量 `ERDA_DEAPLOY_MODES`，其值为部署时勾选的模式，以英文逗号分隔。例如，部署时勾选了 modeA 和 modeB，则部署成功的所有服务都将自动注入环境变量 `ERDA_DEPLOY_MODES=modeA,modeB`。
 
 ## 开始部署
 
