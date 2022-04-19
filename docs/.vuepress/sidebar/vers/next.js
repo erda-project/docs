@@ -176,6 +176,7 @@ module.exports = [
             children: [
               'dop/guides/qa-and-testing/sonar-report',
               'dop/guides/qa-and-testing/sonar-quality-gate',
+              'dop/guides/qa-and-testing/deploy-sonarqube',
               'dop/guides/qa-and-testing/unit-test',
               'dop/guides/qa-and-testing/auto-test-getting-started',
               'dop/guides/qa-and-testing/test-dashboard',

@@ -29,22 +29,22 @@
 
 ## 事项包含
 
-在协同工作时，一个大的需求往往会被拆解为多个子任务，为了清楚地表述这种关系，我们引入了需求与任务的包含关系，即一个需求可以包含多个任务。需求可根据包含任务的状态，计算需求的完成度。
+在项目协同中，一个大的需求往往被拆解为多个子任务。为清楚地展示两者间的关系，平台引入需求与任务的包含关系，即一个需求可以包含多个任务，并能够根据其包含任务的状态，计算需求的完成进度。
 
-可以在需求页面快速创建包含任务
+您可以在需求页面快速创建包含任务。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/07/fc478f7e-86e4-4399-a1b1-d15596234d4c.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/19/dc6a5d93-1679-43c8-94d4-22d75d9c69e4.png)
 
-或者包含已创建的任务
+或者包含已创建的任务。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/07/eb4133d7-07c3-4a06-8fcd-ede486bdfcd0.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/19/ea27b997-af6e-4507-b51d-cda2ac7f7769.png)
 
-在包含任务的列表中，我们可以解除包含关系。
+您也可以根据需要解除两者间的包含关系。
 
-![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/07/1451906c-9f02-4bcc-83e4-82690bd76304.png)
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/19/4e48b1b8-9521-44c2-b976-52f255053925.png)
 
-::: tip
-包含关系与[事项关联关系](#事项关联)并无冲突，着重于需求与任务的单向关系
+::: tip 提示
+事项包含关系与 [事项关联关系](#事项关联) 并无冲突，前者着重于需求与任务之间的单向关系。
 :::
 
 ## 事项关联
