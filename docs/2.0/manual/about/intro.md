@@ -1,6 +1,10 @@
 
 # 关于 Erda
 
+<ClientOnly>
+  <video-player title="About Erda" src="https://static.erda.cloud/site/video/erda.mp4"></video-player>
+</ClientOnly>
+
 ## Erda 是什么
 
 Erda 是新一代数字化云原生 PaaS 平台，其核心包含三大模块：应用（微服务）研发治理平台、快数据治理平台和混合云管理平台。

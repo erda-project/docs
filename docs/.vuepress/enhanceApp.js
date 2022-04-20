@@ -12,6 +12,9 @@ export default ({
         containerClassName: "global-notify",
       });
     })
+    import('./components/VideoPlayer').then(function (m) {
+      Vue.component('video-player', m.default)
+    })
 
     // 页面加载后自动滚动到hash位置
     const hash = document.location.hash;
