@@ -20,7 +20,7 @@ SonarQube（Sonar）是一个开源的代码质量管理系统，提供重复代
 若您对如何管理项目资源存在疑问，建议优先阅读以下文档：
 
 1. [管理配额](../../../dop/guides/deploy/resource-management.html#管理配额)
-2. [节点标签](./../../cmp/guide/cluster/cluster-node-labels.html#节点标签)
+2. [节点标签](../../../cmp/guide/cluster/cluster-node-labels.html)
 
 ## 准备一个可用的 SonarQube 服务
 
