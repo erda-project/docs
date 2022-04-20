@@ -20,7 +20,7 @@ SonarQube（Sonar）是一个开源的代码质量管理系统，提供重复代
 若您对如何管理项目资源存在疑问，建议优先阅读以下文档：
 
 1. [管理配额](../../../dop/guides/deploy/resource-management.html#管理配额)
-2. [节点标签](./../../cmp/guide/cluster/cluster-node-labels.html#节点标签)
+2. [节点标签](../../../cmp/guide/cluster/cluster-node-labels.html)
 
 ## 准备一个可用的 SonarQube 服务
 
@@ -28,8 +28,10 @@ SonarQube（Sonar）是一个开源的代码质量管理系统，提供重复代
 
 本章节为您罗列了几种常见的搭建方案。若您急于了解 Erda 如何与 SonarQube 并肩保障程序质量，此处另提供一种快速的方案，即“临时 Sonar 实例”。该方案借由 Erda 一键发布应用的能力，通过简单的 pipeline.yml 和 dice.yml 即可将 Sonar 作为一个应用快速弹起。
 
-::: Warning 警告
+::: warning 警告
+
 此类“临时 Sonar 实例”不可用于真实应用场景，仅供快速入门参考。
+
 :::
 
 您可以根据实际需要，有选择性地阅读以下内容：
