@@ -7,33 +7,39 @@ module.exports = [
     ]
   },
   {
-    title: 'Install',
+    title: 'Installation and Quick Start',
     collapsable: true,
     children: [
-      'install/docker-install',
       {
-        title: 'Deploy via Helm',
+        title: 'Installation',
         collapsable: true,
         children: [
-          'install/helm-install/introduction',
-          "install/helm-install/premise",
-          "install/helm-install/helm-install-demo",
-          "install/helm-install/helm-install-prod",
-          'install/helm-install/high-availability',
-          'install/helm-install/comp-schedule',
-          'install/helm-install/configuration',
-          'install/helm-install/upgrade',
-          'install/helm-install/uninstall'
+          'install/docker-install',
+          {
+            title: 'Deploy via Helm',
+            collapsable: true,
+            children: [
+              'install/helm-install/introduction',
+              'install/helm-install/premise',
+              'install/helm-install/helm-install-demo',
+              'install/helm-install/helm-install-prod',
+              'install/helm-install/high-availability',
+              'install/helm-install/comp-schedule',
+              'install/helm-install/configuration',
+              'install/helm-install/upgrade',
+              'install/helm-install/uninstall'
+            ]
+          },
         ]
       },
-    ]
-  },
-  {
-    title: 'Quick Start',
-    collapsable: true,
-    children: [
-      'quick-start/premise',
-      'quick-start/newbie'
+      {
+        title: 'Quick Start',
+        collapsable: true,
+        children: [
+          'quick-start/premise',
+          'quick-start/newbie'
+        ]
+      },
     ]
   },
   {
