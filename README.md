@@ -1,7 +1,7 @@
 ## Erda 用户文档
 
 ## 文档开发
-*提前安装好 node >= 6*
+*提前安装好 node >= 12*
 
 ```bash
 npm i # 如果已安装过依赖，可跳过
@@ -11,11 +11,21 @@ npm run dev
 如果某个改动导致页面白屏，可能是js报错了，需要重启一下服务再尝试。
 
 ### 文档结构
-项目配置放在.vuepress目录中，导航菜单配置在nav目录下，侧边栏菜单配置在sidebar目录下，其他基本不用修改。
+```
+docs
+  - .vuepress 项目配置
+    - nav     导航菜单配置
+    - sidebar 侧边栏菜单配置
+    - ...     其他前端文件，基本不用修改
+  - 2.0       2.0版本文档
+  - next      下个版本文档
+  - en
+    - 2.0 英文版2.0文档
+```
 
 vuepress会把除`.vuepress`目录以外的目录下，所有的markdown、vue文件，按照同样的目录结构转为html文件。
-每个目录下的README.md会作为index.html。
-推荐每个目录都有一个README.md文件，避免用户访问某一个路径时出现404的问题。
+每个目录下的 README.md 会作为 index.html。
+推荐每个目录都有一个 README.md 文件，避免用户访问某一个路径时出现404的问题。
 
 ### 导航菜单配置
 在`.vuepress/nav/zh.js`中修改
@@ -129,6 +139,12 @@ footer: Copyright © 2012-present terminus
 :::
 ```
 
+* 视频，注意必须用 ClientOnly 包一下
+```
+<ClientOnly>
+  <video-player title="测试视频" src="https://static.erda.cloud/site/video/erda.mp4"></video-player>
+</ClientOnly>
+```
 * 代码块的行高亮和显示行号
 * 自定义组件
 
@@ -148,7 +164,7 @@ footer: Copyright © 2012-present terminus
 4. **不要使用类似`<project>`这样用尖括号包裹的占位符，如果需要使用请用代码块包裹起来**
 
 ## 发布版本
-注意，目前只会保留最近三个版本的文档
-1. 复制一份旧版本目录并改名（比如复制1.2目录 -> 1.3目录）
+注意，目前只会保留最近三个版本的文档，next 目录为当前迭代中的文档，每个迭代完成后，从 next 目录 release 出新版本文档
+1. 复制一份 next 目录并改名为新版本
 2. `.vuepress/sidebar/vers` 目录下增加新版的左侧菜单配置
 3. 移动旧版本目录到 `archive` 目录下，避免影响打包速度，因为 vuepress 会扫描 `docs` 目录下所有文件
