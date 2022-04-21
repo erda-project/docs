@@ -1,5 +1,8 @@
-
 # 关于 Erda
+
+<ClientOnly>
+  <video-player title="About Erda" src="https://static.erda.cloud/site/video/erda-v2.mp4"></video-player>
+</ClientOnly>
 
 ## Erda 是什么
 
