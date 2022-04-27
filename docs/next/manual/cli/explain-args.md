@@ -380,3 +380,215 @@ Global Flags:
 
 Use "erda-cli migrate [command] --help" for more information about a command.
 ```
+
+
+## erda-cli config
+
+您可以通过 `config` 命令在 Erda 上为指定组织下的指定项目 设置/更新/查询/删除 指定 Workspace 支持的功能。这些功能当前包括：开启ECI，未来可以支持更多的功能，如自动扩缩容 HPA/VPA 等。
+
+命令使用及参数说明如下：
+
+```shell
+$ erda-cli config  --help 
+Config Project workspace configurations operation,including set, get, update, delete
+
+Usage:
+  erda-cli config [command]
+
+Examples:
+  erda-cli config
+
+Available Commands:
+  delete      delete project workspace config
+  get         get project workspace config
+  set         set project workspace config
+  update      update project workspace config
+```
+
+### erda-cli config set
+set 用于 设置 指定组织下的指定项目的指定 Workspace 支持的功能, 如开启 ECI.
+用法如下：
+
+```shell
+$ erda-cli  config set  --help 
+set project workspace config
+
+Usage:
+  erda-cli config set <feature> [flags]
+
+Examples:
+  $ erda-cli config set HPA=enable --org xxx --project yyy --workspace DEV
+```
+
+其中， feature 是 `key=value` 的格式设置，如果同时设置多个，中间请用逗号隔开，如 `key1=value1,key2=value2`.
+
+例如： 为 erda-demo 组织的 testeci 项目的 DEV workspace 设置功能 ECI 为 enable，则命令可以如下:
+
+```shell
+$ erda-cli config set ECI=enable --host=https://erda.cloud -u 'YourName' -p 'YourPassword' --org erda-demo --project testeci  --workspace DEV
+✔ config set success 
+```
+
+### erda-cli config get
+get 用于 获取 指定组织下的指定项目的指定 Workspace 支持的功能信息.
+用法如下：
+
+```shell
+$ erda-cli  config get  --help 
+get project workspace config
+
+Usage:
+  erda-cli config get  [flags]
+
+Examples:
+  $ erda-cli config get --org xxx --project yyy --workspace DEV
+```
+
+例如： 获取 erda-demo 组织的 testeci 项目的 DEV workspace 当前的功能详情，则命令可以如下:
+
+```shell
+$ erda-cli  config  get --host --host=https://erda.cloud  -u 'YourName' -p 'YourPassword' --org erda-demo --project testeci  --workspace DEV
+[INFO] Configs get result: {"ECI":"enable"}
+✔ config get success
+```
+
+
+### erda-cli config update
+update 用于 更新 指定组织下的指定项目的指定 Workspace 支持的功能，例如关闭 ECI.
+用法如下：
+
+```shell
+$ erda-cli  config update  --help 
+update project workspace config
+
+Usage:
+  erda-cli config update <feature> [flags]
+
+Examples:
+  $ erda-cli config update ECI=disable --org xxx --project yyy --workspace DEV
+```
+
+其中， feature 是 `key=value` 的格式设置，如果同时设置多个，中间请用逗号隔开，如 `key1=value1,key2=value2`.
+
+例如： 为 erda-demo 组织的 testeci 项目的 DEV workspace 更新功能 ECI 为 disable，则命令可以如下:
+
+```shell
+$ erda-cli config update ECI=disable --host=https://erda.cloud -u 'YourName' -p 'YourPassword' --org erda-demo --project testeci  --workspace DEV
+✔ config set success 
+```
+
+
+### erda-cli config delete
+delete 用于 删除 指定组织下的指定项目指定 Workspace 支持的所有功能. 如果不指定 workspace, 则表示删除指定组织下的指定项目的所有 workspace 已设置的信息。
+delete 不支持删除功能列表中某个具体的一项，例如功能列表支持 ECI 和 HPA，不支持删除 HPA 保留 ECI 的功能，此种情况请使用 update 命令，将需要删除的 HPA 设置为 disable 即可.
+
+用法如下：
+
+```shell
+$ erda-cli  config delete  --help 
+delete project workspace config
+
+Usage:
+  erda-cli config delete  [flags]
+
+Examples:
+  $ erda-cli config delete --org xxx --project yyy  --workspace DEV 
+  $ erda-cli config delete --org xxx --project yyy
+```
+
+例如： 删除 erda-demo 组织的 testeci 项目的 DEV workspace 的所有功能，则命令可以如下:
+
+```shell
+$ erda-cli config delete --host=https://erda.cloud -u 'YourName' -p 'YourPassword' --org erda-demo --project testeci  --workspace DEV
+✔ config delete success
+```
+
+
+## erda-cli project-deployment
+
+您可以通过 `project-deployment` 命令对 Erda 上指定组织下的指定项目指定 workspace 下的已部署的所有应用实例（及其 addon 组件）进行 停止/启动 操作:
+* 停止: 表示将已部署的所有应用实例（及其 addon 组件）的副本数（Pod 数量）设置为 0，对应的 Pod 都删除，但 Pod 所属的控制器如 StatefulSet、Deployment、CRD 等保留，仅副本数设置为 0
+* 启动: 表示将已部署且已停止的所有应用实例（及其 addon 组件）的副本数（Pod 数量）由 0 恢复到停止前的状态。
+
+通过 `project-deployment stop` 命令可以快速释放集群资源，通过 `project-deployment start` 可以快速恢复之前的部署实例及其 addons 到 stop 之前的状态。
+
+命令使用及参数说明如下：
+
+```shell
+$ erda-cli project-deployment  --help 
+Project workspace deployment operation, including stop, start
+
+Usage:
+  erda-cli project-deployment [command]
+
+Examples:
+  dice project-deployment
+
+Available Commands:
+  start       start project's runtimes and addons
+  stop        stop project's runtimes and addons
+```
+
+### erda-cli project-deployment stop
+stop 用于 停止 指定组织下的指定项目指定 Workspace 下已部署的所有应用实例（及其 addon 组件）的副本数（Pod 数量）设置为 0，对应的 Pod 都删除，但 Pod 所属的控制器如 StatefulSet、Deployment、CRD 等保留，仅副本数设置为 0
+
+用法如下：
+
+```shell
+$ erda-cli project-deployment stop --help 
+stop project's runtimes and addons
+
+Usage:
+  erda-cli project-deployment stop  [flags]
+
+Examples:
+  $ erda-cli project-deployment stop --org xxx  --project yyy --workspace DEV
+```
+
+例如： 停止 erda-demo 组织的 testeci 项目的 DEV workspace 的所有应用实例及其 addons，则命令可以如下:
+
+```shell
+$ erda-cli project-deployment stop --host=https://erda.cloud -u 'YourName' -p 'YourPassword' --org erda-demo --project testeci  --workspace DEV
+[INFO] Project's applications IDs to stop is:[6 5]
+[INFO] Begin to stop project's runtimes for runtime IDs:[186]
+[INFO] Waitting 1 minutes for project's runtimes to Terminating        
+✔ project-deployment stop project's runtimes success
+[INFO] No addons found for project to stop
+✔ project-deployment stop project's addons success
+```
+**注意**：
+* addons 和 runtimes 的停止有顺序依赖，先停止 runtimes，并等待 1 分钟确保 runtime 对应的 Pod 都已删除，然后才会停止 addons，这个执行过程可以在命令执行输出中看到处理顺序
+* 目前不支持 6.8.9 和 6.8.22 版本以上的 elasticsearch 的 addon 的停止
+
+### erda-cli project-deployment start
+satrt 用于 重新启动 指定组织下的指定项目指定 Workspace 下已部署的所有应用实例（及其 addon 组件），对应的所有应用实例（及其 addon 组件）的副本数（Pod 数量）由 0 恢复到停止前的状态。
+
+用法如下：
+
+```shell
+$ erda-cli project-deployment start --help 
+start project's runtimes and addons
+
+Usage:
+  erda-cli project-deployment start  [flags]
+
+Examples:
+  $ erda-cli project-deployment start --org xxx --project yyy --workspace DEV
+```
+
+例如： 启动 erda-demo 组织的 testeci 项目的 DEV workspace 的所有应用实例及其 addons，则命令可以如下:
+
+```shell
+$ erda-cli project-deployment start --host=https://erda.cloud -u 'YourName' -p 'YourPassword' --org erda-demo --project testeci  --workspace DEV
+[INFO] Project's applications IDs to start is:[6 5]
+[INFO] Begin to start project's addons for addon IDs:[o35a6a94a48b749f59b0258de68825727 s3746b6adfbce415ab4ca74c0b0f28fbe]
+[INFO] Successed to start all addons: [o35a6a94a48b749f59b0258de68825727 s3746b6adfbce415ab4ca74c0b0f28fbe]
+[INFO] Waitting 3 minutes for project's addons to Running
+✔ project-deployment start project's addons success
+[INFO] Begin to start project's runtimes for runtime IDs:[186]
+✔ project-deployment start project's runtimes success
+```
+
+**注意**：
+* addons 和 runtimes 的启动有顺序依赖，先启动 addons，并等待 3 分钟确保 addons 对应的 Pod 都已创建运行，然后才会启动 runtimes，这个执行过程可以在命令执行输出中看到处理顺序
+* 目前不支持 6.8.9 和 6.8.22 版本以上的 elasticsearch 的 addon 的启动
