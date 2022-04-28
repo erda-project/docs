@@ -8,7 +8,13 @@ Artifacts can be classified from different dimensions.
 
 An application artifact contains everything you need to deploy an application, including images, dependent addons, and various configuration information.
 
-A project artifact consists of one or more application artifacts in a certain deployment order. When deploying a project artifact, the platform will deploy the application artifacts referenced in that artifact in batches according to the deployment order you define.
+A project artifact contains one or more deployment modes, each consisting of one or more application artifacts in a specific grouping order. These deployment modes can depend on each other. When deploying a project artifact, you can select the deployment mode you define and the platform will deploy the application artifacts in the given order. The modes that are depended on will be deployed first, and application artifacts within the same group will be deployed simultaneously.
+
+For example, the figure below shows a project artifact consisting of ten application artifacts.
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/13/a2a95250-bc5f-4b9f-9879-2a03bd5b66a3.png)
+
+modeA, modeB and modeC are custom deployment modes, and modeA and modeB depend on modeC, so if you choose to deploy modeA or modeB when deploying this project artifact, the platform will deploy modeC first and then deploy modeA or modeB.
 
 ### Temporary and Non-Temporary
 
@@ -63,40 +69,133 @@ The pipeline will match the branch rules according to the branch and select the 
 
 ### Create Project Artifact
 
-Project artifacts can be created by selecting application artifacts or uploading files.
+Project artifacts can be created by selecting application artifacts, by uploading files and by project artifact addon.
 
-Go to **DevOps Platform > Projects > App Center > Artifact > Project Release**, click **New Artifact** in the upper right corner, and select the creation method.
+Go to **DevOps Platform > Projects > App Center > Artifact > Project Artifacts**, click **Add** in the upper right corner and select the creation method.
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/07/ad36510f-df45-4f7f-9694-04e660d46f25.png)
 
-* **Select Application Artifacts**
+* **Select App Artifact**
 
-   1. Enter the version. The version is a unique identifier of the project artifact under the project, and cannot be duplicated with others, composed of English letters, numbers, underscores (_), hyphens (-), and periods (.).
+:::tip Tips
 
-   2. Select application artifacts (which need to be created in advance under the application of this project). You can group application artifacts. During deployment, application artifacts in the same group are not sequential, and that in different groups are deployed according to the numbering order.
+Custom mode is currently not supported for this method. Project artifacts created using this method will contain a deployment mode named `default`, which contains the application artifact group you selected.
 
-      For example, if application artifact A depends on application artifact B, then you can set B as the first group and A as the second, so that B will be deployed before A. In addition, artifacts under the same application cannot be selected repeatedly.
+:::
 
-   3. Fill in the content. It is a description of the project artifact, which can be a changelog or remarks, and supports markdown syntax.
+1. Enter the version. The version is a unique identifier of the project artifact under the project, and cannot be duplicated with others, composed of English letters, numbers, underscores (_), hyphens (-), and periods (.) .
 
-   4. Click **Submit** to complete the project artifact creation.
+2. Select application artifacts (which need to be created in advance under the application of this project). You can group application artifacts. During deployment, application artifacts in the same group are not sequential, and that in different groups are deployed according to the numbering order.
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/07/367eed49-8dc2-4467-81c2-59fa09ad7a5d.png)
+   For example, if application artifact A depends on application artifact B, then you can set B as the first group and A as the second, so that B will be deployed before A. In addition, artifacts under the same application cannot be selected repeatedly.
 
-* **Upload Files**
+3. Fill in the content. It is a description of the project artifact, which can be a changelog or remarks, and supports markdown syntax.
 
-   This method is used to meet the scenario of importing project artifacts from one project to another. If you choose to upload a file, you need to download the project artifact package (in ZIP format) to the local (see [Download](#Download) for details) in advance, and then upload the file to the target project.
+4. Click **Submit** to complete the project artifact creation.
 
-   The platform will automatically resolve the version of the project artifact and the information of related application artifacts.
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/07/367eed49-8dc2-4467-81c2-59fa09ad7a5d.png)
 
-   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/07/774560a5-17b1-42f4-a8d2-d45df69aa0b8.png)
+* **Upload File**
 
-   :::tip Tips
 
-   * The application corresponding to the application artifact referenced in the uploaded project artifact must exist in the project, otherwise, the upload will fail.
-   * If there is no application artifact referenced by the uploaded project artifact in this project, the platform will automatically create an application artifact based on the artifact package. If an application artifact with the same version already exists, it will be referenced directly rather than create a new one. If the dice.yml of the application artifact in the artifact package is different from that of the existing application artifact with the same name, the former will be ignored.
+This method is used to meet the scenario of importing project artifacts from one project to another. If you choose to upload a file, you need to download the project artifact package (in ZIP format) to the local (see [Download](#下载制品) for details) in advance, and then upload the file in the target project.
 
-   :::
+The platform will automatically resolve the version of the project artifact and the information of related application artifacts.
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/03/07/774560a5-17b1-42f4-a8d2-d45df69aa0b8.png)
+
+:::tip Tips
+
+* The application corresponding to the application artifact referenced in the uploaded project artifact must exist in the project, otherwise the upload will fail.
+* If there is no application artifact referenced by the uploaded project artifact in this project, the platform will automatically create an application artifact based on the artifact package. If an application artifact with the same version already exists, it will be referenced directly rather than create a new one. If the dice.yml of the application artifact in the artifact package is different from that of the existing application artifact with the same name, the former will be ignored.
+
+:::
+
+
+* **Create via Project Artifacts Action**
+
+1. Add an action for artifact packaging and releasing in the pipeline.
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/28/b6ab9949-e140-4ac7-87c6-756d338fc2fc.png)
+
+2. Edit the action in code edit mode.
+
+   There are two ways of YAML description for project artifacts action:
+
+   * Mode not specified
+
+   ```yaml
+   version: "1.1"
+   stages:
+     - stage:
+         - project-artifacts:
+             alias: project-artifacts
+             description: release application artifact to project artifact
+             version: "1.0"
+             params:
+               changeLog: auto compose from applications // project artifact content
+               groups:                                   // application artifact group, consisting of an application description list
+                 - applications:                         // application list
+                     - branch: release/1.0               // applicaiton artifact branch and choose the lastest for release
+                       name: applicationA                // application name
+                     - releaseID: a9af810ebd884107a3b9a  // specified application artifact ID, with a higher priority than branch
+                 - applications:
+                     - branch: release/1.0
+                       name: applicationB
+                     - branch: master
+                       name: applicationC
+               version: 1.0.0+${{ random.date }}         // project release version
+   ```
+
+   Project artifacts created in this way will contain a deployment mode named `default`, which contains all the application artifacts you specify in the `groups` field. The project artifact described in the YAML above is as follows:
+
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/13/eb4a654f-7a0f-4791-a398-85024feffb06.png)
+
+   * Mode specified
+
+   ```yaml
+   version: "1.1"
+   stages:
+     - stage:
+         - project-artifacts:
+             alias: project-artifacts
+             description: release application artifact to project artifact
+             version: "1.0"
+             params:
+               changeLog: auto compose from applications // project artifact content
+               modes:                                    // deployment mode, with a higher priority than groups
+                 modeA:
+                   dependOn:                             // dependency mode
+                     - modeB
+                   expose: true                          // display or not
+                   groups:
+                     - applications:                         
+                         - branch: release/1.0               
+                           name: applicationA
+                         - releaseID: a9af810ebd884107a3b9a
+                     - applications:
+                         - branch: release/1.0
+                           name: applicationB
+                 modeB:
+                   expose: false
+                   groups:
+                     - applications:
+                         - branch: release/1.0
+                           name: applicationC
+                 modeC:
+                   expose: true
+                   groups:
+                     - applications:
+                         - branch: master
+                           name: applicaitonD
+               version: 1.0.0+${{ random.date }}         // project release version
+   ```
+
+   This allows you to specify the mode name and customize the group in each mode, which has a higher priority than the first method, that is, if both the `groups` and `modes` fields are specified in the YAML description of the action, only the `modes` field will take effect and the `groups` field will be ignored. The project artifact described in the YAML above is as follows:
+
+   ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/04/13/ae48abd3-b680-4fcf-8571-e7fb57393eea.png)
+
+   modeB specifies `expose: false`, indicating that the mode cannot be displayed in the project artifact details page and cannot be selected during deployment. Only when modeA is selected will modeB be deployed.
 
 ## Operations
 
@@ -135,7 +234,7 @@ Click **Download** and you will get a ZIP file containing information about the 
 For non-temporary and informal artifacts only.
 
 * **Application artifact**: Version and content are editable.
-* **Project artifact**: Version, application artifact, and content are editable.
+* **Project artifact**: Version, application artifact and content are editable.
 
 ### Convert to Formal
 
@@ -149,4 +248,11 @@ If a project artifact is converted to formal, its referenced informal applicatio
 
 For project artifacts only.
 
-When you click **Referenced Releases**, the page will jump to application artifact and show all application artifacts referenced by the project artifact.
+When you click **View Referenced Releases**, the page will jump to application artifact and show all application artifacts referenced by the project artifact.
+
+
+## Artifact Deployment
+
+There are two ways for artifact deployment, one by pipeline and the other by deployment sheet (see [Deploy via Pipeline](./deploy-by-cicd-pipeline.html) and [Deploy via Deployment Order](./deploy-order.html) for details).
+
+Currently, deployment via pipeline does not support mode selection for project artifact, but only the `default` mode in project artifact is supported.
