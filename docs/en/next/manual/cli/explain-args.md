@@ -380,3 +380,209 @@ Global Flags:
 
 Use "erda-cli migrate [command] --help" for more information about a command.
 ```
+
+
+## erda-cli config
+
+You can set, update, query or delete features supported by a specified workspace on Erda for a specified project under a specified organization with the `config` command, including enabling ECI, and more features are coming soon, such as automatic scaling of HPA/VPA, etc.
+
+```shell
+$ erda-cli config  --help
+Config Project workspace configurations operation,including set, get, update, delete
+
+Usage:
+  erda-cli config [command]
+
+Examples:
+  erda-cli config
+
+Available Commands:
+  delete      delete project workspace config
+  get         get project workspace config
+  set         set project workspace config
+  update      update project workspace config
+```
+
+### erda-cli config set
+You can set features supported by a specified workspace for a specified project under a specified organization with the `set` command, such as enabling ECI.
+
+```shell
+$ erda-cli  config set  --help
+set project workspace config
+
+Usage:
+  erda-cli config set <feature> [flags]
+
+Examples:
+  $ erda-cli config set HPA=enable --org xxx --project yyy --workspace DEV
+```
+
+feature is set in the format of `key=value`, and separated with commas if there are more than one, such as `key1=value1,key2=value2`.
+
+To enable ECI for the dev workspace of the testeci project under the erda-demo organization, the command is as follows:
+
+```shell
+$ erda-cli config set ECI=enable --host=https://erda.cloud -u 'YourName' -p 'YourPassword' --org erda-demo --project testeci  --workspace DEV
+✔ config set success
+```
+
+### erda-cli config get
+You can obtain information about features supported by a specified workspace for a specified project under a specified organization with the `get` command.
+
+```shell
+$ erda-cli  config get  --help
+get project workspace config
+
+Usage:
+  erda-cli config get  [flags]
+
+Examples:
+  $ erda-cli config get --org xxx --project yyy --workspace DEV
+```
+
+To get the current function details of the dev workspace for the testeci project under the erda-demo organization, the command is as follows:
+
+```shell
+$ erda-cli  config  get --host --host=https://erda.cloud  -u 'YourName' -p 'YourPassword' --org erda-demo --project testeci  --workspace DEV
+[INFO] Configs get result: {"ECI":"enable"}
+✔ config get success
+```
+
+
+### erda-cli config update
+You can update features supported by a specified workspace for a specified project under a specified organization with the `update` command, such as disabling ECI.
+
+```shell
+$ erda-cli  config update  --help
+update project workspace config
+
+Usage:
+  erda-cli config update <feature> [flags]
+
+Examples:
+  $ erda-cli config update ECI=disable --org xxx --project yyy --workspace DEV
+```
+
+feature is set in the format of `key=value`, and separated with commas if there are more than one, such as `key1=value1,key2=value2`.
+
+To disable ECI for the dev workspace of the testeci project under the erda-demo organization, the command is as follows:
+
+```shell
+$ erda-cli config update ECI=disable --host=https://erda.cloud -u 'YourName' -p 'YourPassword' --org erda-demo --project testeci  --workspace DEV
+✔ config set success
+```
+
+
+### erda-cli config delete
+You can remove all features supported by a specified workspace for a specified project under a specified organization with the `delete` command. If no workspace is specified, it means that the information set in all workspaces for a specified project under a specified organization will be deleted.
+
+The `delete` command cannot delete a specific item in the feature list. For example, if both ECI and HPA are supported, then you cannot delete only HPA and keep ECI. In such cases, use the `update` command to set the HPA to be deleted as disable.
+
+```shell
+$ erda-cli  config delete  --help
+delete project workspace config
+
+Usage:
+  erda-cli config delete  [flags]
+
+Examples:
+  $ erda-cli config delete --org xxx --project yyy  --workspace DEV
+  $ erda-cli config delete --org xxx --project yyy
+```
+
+To remove all functions of the dev workspace for the testeci project under the erda-demo organization, the command is as follows:
+
+```shell
+$ erda-cli config delete --host=https://erda.cloud -u 'YourName' -p 'YourPassword' --org erda-demo --project testeci  --workspace DEV
+✔ config delete success
+```
+
+
+## erda-cli project-deployment
+
+You can stop or start all application instances (and their addon components) deployed under a specified workspace for a specified project under a specified organization on Erda with the `project-deployment`.
+
+* **Stop**: Indicates that set the number of replicas (pods) of all deployed application instances (and their addon components) as 0, delete the corresponding pod, but keep the controller to which the pod belongs, such as StatefulSet, Deployment, CRD, etc.
+* **Start**: Indicates that restore the number of replicas (pods) of all deployed and stopped application instances (and their addon components) from 0 to their pre-stop state.
+
+The `project-deployment stop` command can allows you to quickly release cluster resources, and the `project-deployment start` allows you to quickly restore the deployed instance and its addon to their pre-stop state.
+
+```shell
+$ erda-cli project-deployment  --help
+Project workspace deployment operation, including stop, start
+
+Usage:
+  erda-cli project-deployment [command]
+
+Examples:
+  dice project-deployment
+
+Available Commands:
+  start       start project's runtimes and addons
+  stop        stop project's runtimes and addons
+```
+
+### erda-cli project-deployment stop
+You can use the `stop` command to stop all deployed application instances (and their addon components) under a specified workspace for a specified project under a specified organization and set the number of replicas (pods) as 0, delete the corresponding pod, but keep the controller to which the pod belongs, such as StatefulSet, Deployment, CRD, etc.
+
+```shell
+$ erda-cli project-deployment stop --help
+stop project's runtimes and addons
+
+Usage:
+  erda-cli project-deployment stop  [flags]
+
+Examples:
+  $ erda-cli project-deployment stop --org xxx  --project yyy --workspace DEV
+```
+
+To stop all application instances and its addon of the dev workspace for the testeci project under erda-demo organization, the command is as follows:
+
+```shell
+$ erda-cli project-deployment stop --host=https://erda.cloud -u 'YourName' -p 'YourPassword' --org erda-demo --project testeci  --workspace DEV
+[INFO] Project's applications IDs to stop is:[6 5]
+[INFO] Begin to stop project's runtimes for runtime IDs:[186]
+[INFO] Waitting 1 minutes for project's runtimes to Terminating        
+✔ project-deployment stop project's runtimes success
+[INFO] No addons found for project to stop
+✔ project-deployment stop project's addons success
+```
+:::tip Tips
+* The stop of addon and runtime has a sequential dependency. Stop runtime first and wait for a minute to ensure that the pod corresponding to the runtime is deleted, then stop addon. The execution process can be viewed in the command execution output.
+* Currently the addon of Elasticsearch from version 6.8.9 and 6.8.22 or later cannot be stopped.
+
+:::
+
+### erda-cli project-deployment start
+
+You can use the `start` command to restart all application instances (and their addon components) deployed under a specified workspace for a specified project under a specified organization, and restore the number of replicas (pods) of all corresponding application instances (and their addon components) from 0 to their pre-stop state.
+
+```shell
+$ erda-cli project-deployment start --help
+start project's runtimes and addons
+
+Usage:
+  erda-cli project-deployment start  [flags]
+
+Examples:
+  $ erda-cli project-deployment start --org xxx --project yyy --workspace DEV
+```
+
+To start all application instances and its addon of the dev workspace for the testeci project under erda-demo organization, the command is as follows:
+
+```shell
+$ erda-cli project-deployment start --host=https://erda.cloud -u 'YourName' -p 'YourPassword' --org erda-demo --project testeci  --workspace DEV
+[INFO] Project's applications IDs to start is:[6 5]
+[INFO] Begin to start project's addons for addon IDs:[o35a6a94a48b749f59b0258de68825727 s3746b6adfbce415ab4ca74c0b0f28fbe]
+[INFO] Successed to start all addons: [o35a6a94a48b749f59b0258de68825727 s3746b6adfbce415ab4ca74c0b0f28fbe]
+[INFO] Waitting 3 minutes for project's addons to Running
+✔ project-deployment start project's addons success
+[INFO] Begin to start project's runtimes for runtime IDs:[186]
+✔ project-deployment start project's runtimes success
+```
+
+:::tip Tips
+* The stop of addon and runtime has a sequential dependency. Stop runtime first and wait for a minute to ensure that the pod corresponding to the runtime is deleted, then stop addon. The execution process can be viewed in the command execution output.
+* Currently the addon of Elasticsearch from version 6.8.9 and 6.8.22 or later cannot be started.
+
+:::
