@@ -463,7 +463,7 @@ Examples:
   $ erda-cli config update ECI=disable --org xxx --project yyy --workspace DEV
 ```
 
-其中， feature 为 `key=value` 的格式设置，若同时设置多个，请用逗号隔开，例如 `key1=value1,key2=value2`.
+其中， feature 为 `key=value` 的格式设置，若同时设置多个，请用逗号隔开，例如 `key1=value1,key2=value2`。
 
 如需为 erda-demo 组织下 testeci 项目的 DEV Workspace 更新功能 ECI 为 disable，则命令如下：
 
@@ -500,7 +500,7 @@ $ erda-cli config delete --host=https://erda.cloud -u 'YourName' -p 'YourPasswor
 
 ## erda-cli project-deployment
 
-您可以通过 `project-deployment` 命令在 Erda 上对指定组织下指定项目的指定 Workspace 下已部署的所有应用实例（及其 Addon 组件）进行停止或启动操作：
+您可以通过 `project-deployment` 命令在 Erda 上对指定组织下指定项目的指定 Workspace 下已部署的所有应用实例（及其 Addon 组件）进行停止或启动操作。
 
 * **停止**：表示将已部署的所有应用实例（及其 Addon 组件）的副本数（Pod 数量）设置为 0，删除对应 Pod，但保留 Pod 所属的控制器如 StatefulSet、Deployment、CRD 等，仅设置副本数为 0。
 * **启动**：表示将已部署且已停止的所有应用实例（及其 Addon 组件）的副本数（Pod 数量）由 0 恢复至停止前的状态。
@@ -568,7 +568,7 @@ Examples:
   $ erda-cli project-deployment start --org xxx --project yyy --workspace DEV
 ```
 
-如需启动 erda-demo 组织的 testeci 项目的 DEV Workspace 的所有应用实例及其 Addon，则命令如下：
+如需启动 erda-demo 组织下 testeci 项目的 DEV Workspace 的所有应用实例及其 Addon，则命令如下：
 
 ```shell
 $ erda-cli project-deployment start --host=https://erda.cloud -u 'YourName' -p 'YourPassword' --org erda-demo --project testeci  --workspace DEV
