@@ -154,7 +154,7 @@ module.exports = [
               'dop/guides/deploy/release',
               'dop/guides/deploy/resource-management',
               // 'dop/guides/deploy/addon-out-of-box',
-              // 'dop/guides/deploy/addon-custom',
+              'dop/guides/deploy/addon-custom',
               // 'dop/guides/deploy/config',
               // 'dop/guides/deploy/config-center',
               // 'dop/guides/deploy/deploy-order',
