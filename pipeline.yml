@@ -14,41 +14,48 @@ stages:
           params:
             git_dir: ${{ dirs.git-checkout }}
   - stage:
-      - js-build:
+      - js:
           version: "1.0"
           params:
-            build_cmd:
-              - npm i
-              - npm run build
-            workdir: ${git-checkout}
+            workdir: ${{ dirs.git-checkout }}
+            dependency_cmd: npm i
+            build_cmd: npm run build
+            dest_dir: ./dest
+            container_type: spa
           resources:
             cpu: 1
             mem: 4096
           caches:
-            - path: ${git-checkout}/node_modules
+            - path: ${{ dirs.git-checkout }}/node_modules
+  - stage:
+      - custom-script:
+          alias: trans
+          commands:
+            - echo "FROM ${{ outputs.js.image }}" > Dockerfile
+  - stage:
+      - dockerfile:
+          alias: build-image
+          params:
+            workdir: ${{ dirs.trans }}
+            path: ${{ dirs.trans }}/Dockerfile
+            registry:
+              password: ${{ configs.docker_registry_password }}
+              url: ${{ configs.docker_registry }}
+              username: ${{ configs.docker_registry_username }}
+            image:
+              name: docs
+              tag: ${{ outputs.extract-repo-version.image_tag }}
   - stage:
       - release:
           params:
             tag_version: ${{ outputs.extract-repo-version.version }}
-            dice_yml: ${git-checkout}/dice.yml
-            services:
-              doc:
-                cmd: sed -i "s^server_name .*^^g" /etc/nginx/conf.d/nginx.conf.template && envsubst "`printf '$%s' $(bash -c "compgen -e")`" < /etc/nginx/conf.d/nginx.conf.template > /etc/nginx/conf.d/default.conf && /usr/local/openresty/bin/openresty -g 'daemon off;'
-                copys:
-                  - ${js-build}/dest:/usr/share/nginx/html/
-                  - ${js-build}/nginx.conf.template:/etc/nginx/conf.d/
-                image: registry.cn-hangzhou.aliyuncs.com/dice-third-party/terminus-nginx:0.2
-  - stage:
-      # TODO: bad practice, because release action not output release_name
-      - release-fetch:
-          params:
-            application_name: docs
-            branch: ${{ outputs.git-checkout.branch }}
-            check_commit: ${{ outputs.git-checkout.commit }}
+            dice_yml: ${{ dirs.git-checkout }}/dice.yml
+            image:
+              doc: ${{ outputs.build-image.image }}
   - stage:
       - dice:
           params:
-            release_name: ${{ outputs.release-fetch.release_name }}
+            release_name: ${{ outputs.extract-repo-version.version }}
             workspace: TEST
             application_name: docs
             type: application
