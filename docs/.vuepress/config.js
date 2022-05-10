@@ -94,8 +94,16 @@ module.exports = ctx => ({
   plugins: [
     ['@vuepress/search',
       {
-        test: ['^/1\.', '^/en/'],
+        // test: ['^/2\.', '^/en/'],
         searchMaxSuggestions: 10,
+        locales: { // seem to work for v2
+          '/en/': {
+            placeholder: 'Search',
+          },
+          '/': {
+            placeholder: '搜索',
+          },
+        },
       },
     ],
     ['@vuepress/back-to-top', true],
