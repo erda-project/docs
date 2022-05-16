@@ -51,6 +51,7 @@
     "vuepress": "1.8.2",
     "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-flowchart": "^1.4.3",
+    "vuepress-plugin-fulltext-search": "^2.2.1",
     "vuepress-plugin-img-lazy": "^1.0.4",
     "watchpack": "^2.2.0"
   },

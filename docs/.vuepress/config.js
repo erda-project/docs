@@ -92,20 +92,21 @@ module.exports = ctx => ({
   },
   // globalUIComponents: ['SideAnchor'],
   plugins: [
-    ['@vuepress/search',
-      {
-        // test: ['^/2\.', '^/en/'],
-        searchMaxSuggestions: 10,
-        locales: { // seem to work for v2
-          '/en/': {
-            placeholder: 'Search',
-          },
-          '/': {
-            placeholder: '搜索',
-          },
-        },
-      },
-    ],
+    // ['@vuepress/search',
+    //   {
+    //     // test: ['^/2\.', '^/en/'],
+    //     searchMaxSuggestions: 10,
+    //     locales: { // seem to work for v2
+    //       '/en/': {
+    //         placeholder: 'Search',
+    //       },
+    //       '/': {
+    //         placeholder: '搜索',
+    //       },
+    //     },
+    //   },
+    // ],
+    ['fulltext-search'],
     ['@vuepress/back-to-top', true],
     ['img-lazy'],
     ['vuepress-plugin-code-copy',
