@@ -1,4 +1,4 @@
-// const { fs, path } = require('@vuepress/shared-utils')
+const { fs, path } = require('@vuepress/shared-utils')
 const removeMd = require('remove-markdown')
 const { enPrefix } = require('./util');
 const dayjs = require('dayjs');
@@ -106,7 +106,12 @@ module.exports = ctx => ({
     //     },
     //   },
     // ],
-    ['fulltext-search'],
+    ['fulltext-search',
+      {
+        // provide the contents of a JavaScript file
+        hooks: fs.readFileSync(path.resolve(__dirname, './searchHooks.js')),
+      },
+    ],
     ['@vuepress/back-to-top', true],
     ['img-lazy'],
     ['vuepress-plugin-code-copy',
