@@ -124,6 +124,8 @@ $navbar-horizontal-padding = 1.5rem
     .search-box
       flex: 0 0 auto
       vertical-align top
+      input:focus
+        border-color: $activeColor
       .suggestion a .parent-page-title
         background-color: $activeColor
 
