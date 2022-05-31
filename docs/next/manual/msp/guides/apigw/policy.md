@@ -188,7 +188,7 @@ proxy_set_header hello world;
 | 校验失败的状态码   | CSRF 校验失败时返回的 HTTP 状态码                      |
 | 校验失败的应答     | CSRF 校验失败时返回的 HTTP 应答                        |
 
-## 基于第三方服务的的访问控制 SBAC (Server Based Access Control)
+## 基于第三方服务的访问控制 SBAC (Server Based Access Control)
 
 **基于第三方服务的的访问控制** **SBAC (Server Based Access Control)** 是一种接口访问控制方式，启用该策略后，请求经过 API 网关时，API 网关会先携带参数请求用户提供的 API，根据该 API 返回结果决定是否准许该请求到达后端服务。
 
