@@ -1,6 +1,6 @@
 # API 策略
 
- API 具体策略可通过流量入口进行配置，分为全局策略配置和具体 API 策略配置。
+API 具体策略可通过流量入口进行配置，分为全局策略配置和具体 API 策略配置。
 
 - 全局策略配置
 
@@ -18,8 +18,7 @@
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/01/20/d37dd1e4-8139-4d86-b832-fecd1ac98d21.png)
 
-::: tip 提示
-开启 **使用全局策略** 后，页面将展示全局配置的内容，配置需确认并提交后方可生效。
+::: tip 提示 开启 **使用全局策略** 后，页面将展示全局配置的内容，配置需确认并提交后方可生效。
 :::
 
 ## 流量接收转发
@@ -55,11 +54,11 @@
   当 HTTP 请求的 Body 大小超过限制时，会返回 HTTP 413 Request Entity Too Large 的错误。
 
 * **超时时间设置**
-  * 客户端请求超时：网关接收客户端请求的超时。
-  * 客户端应答超时：网关向客户端发送应答的超时。
-  * 后端建连超时：网关与后端服务建立连接的超时。
-  * 后端请求超时：网关向后端服务发送请求的超时。
-  * 后端应答超时：网关接收后端服务应答的超时。
+    * 客户端请求超时：网关接收客户端请求的超时。
+    * 客户端应答超时：网关向客户端发送应答的超时。
+    * 后端建连超时：网关与后端服务建立连接的超时。
+    * 后端请求超时：网关向后端服务发送请求的超时。
+    * 后端应答超时：网关接收后端服务应答的超时。
 
 ## 跨域访问
 
@@ -94,6 +93,7 @@
 ```bash
 add_header hello world;
 ```
+
 添加该配置后，客户端收到的 HTTP 应答头中会增加 `hello:world`。
 
 **示例二：增加给后端服务的 HTTP 请求头**
@@ -101,6 +101,7 @@ add_header hello world;
 ```bash
 proxy_set_header hello world;
 ```
+
 添加该配置后，后端服务收到的 HTTP 请求头中会增加 `hello:world`。
 
 :::tip 提示
@@ -120,8 +121,8 @@ proxy_set_header hello world;
   若客户端直连网关，或者 SLB 配置了 TCP 协议转发，使用对端 IP 地址即可识别用户 IP；若 SLB 配置了 HTTP/HTTPS 协议转发，请选择从请求头 `x-forwarded-for` 中获取用户 IP。
 
 * **IP 黑白名单**
-  * 黑名单模式：访问列表中 IP 时返回 403 状态码。
-  * 白名单模式：访问列表外 IP 时返回 403 状态码。
+    * 黑名单模式：访问列表中 IP 时返回 403 状态码。
+    * 白名单模式：访问列表外 IP 时返回 403 状态码。
 
 * **CC 防护**
 
@@ -143,13 +144,15 @@ proxy_set_header hello world;
 
   请求实际延后转发的时间，取决于当前排队队列长度，配置的最大额外延时即决定了队列的最大长度。
 
-  例如最大吞吐为 10 次/秒，最大额外延时为 500 毫秒，则实际队列长度为 10 * 0.5 = 5（次）。若在 100 毫秒内接连收到 7 个请求，因请求之间时间间隔均小于 100 毫秒，超过限定的吞吐速率，因此第 2～6 个请求均将进入排队队列，并依次添加 100 毫秒、200 毫秒、300 毫秒、400 毫秒、500 毫秒的延时，此时队列已满，第 7 个请求将被直接拒绝访问。
+  例如最大吞吐为 10 次/秒，最大额外延时为 500 毫秒，则实际队列长度为 10 * 0.5 = 5（次）。若在 100 毫秒内接连收到 7 个请求，因请求之间时间间隔均小于 100 毫秒，超过限定的吞吐速率，因此第 2～6 个请求均将进入排队队列，并依次添加 100 毫秒、200 毫秒、300 毫秒、400
+  毫秒、500 毫秒的延时，此时队列已满，第 7 个请求将被直接拒绝访问。
 
   :::warning 警告
 
-  1. 网关以毫秒为粒度计算吞吐、延时，因此若请求间隔小于 1 毫秒，即配置吞吐大于 1000 次/秒时，削峰填谷的计算会出现一定误差（给未超过最大吞吐的请求附加额外延时），可通过扩容网关节点降低误差，例如 10 个网关节点即可在 10000 次/秒的场景下确保削峰填谷的准确性。
-  2. 最大额外延时决定队列的最大长度，队列最大长度决定支持的瞬时并发值大小。上述示例中队列长度为 5，导致 100 毫秒内收到的第 7 个请求被拒绝访问。若 1 秒内的请求均在 100 毫秒内瞬发到来，则实际上 1 秒内仅能通过 6 个请求，与配置的 10 次/秒的预期不一致。配置最大额外延时为 1 秒，可确保网关的限流机制在任意场景下均可达到预期。
-  3. 在 Erda 1.3 版本之后，若用户将最大额外延时配置为 0，则网关不会为超过最大吞吐速率的请求附加额外延时，并且将瞬时并发上限设置为与最大吞吐一致（保障用户预期）。此类设置可在对延时相对敏感的业务场景下使用。请注意此时的限流已无法对流量进行削峰填谷，瞬时并发也有将后端服务击穿的风险。
+    1. 网关以毫秒为粒度计算吞吐、延时，因此若请求间隔小于 1 毫秒，即配置吞吐大于 1000 次/秒时，削峰填谷的计算会出现一定误差（给未超过最大吞吐的请求附加额外延时），可通过扩容网关节点降低误差，例如 10 个网关节点即可在 10000 次/秒的场景下确保削峰填谷的准确性。
+    2. 最大额外延时决定队列的最大长度，队列最大长度决定支持的瞬时并发值大小。上述示例中队列长度为 5，导致 100 毫秒内收到的第 7 个请求被拒绝访问。若 1 秒内的请求均在 100 毫秒内瞬发到来，则实际上 1 秒内仅能通过 6 个请求，与配置的 10 次/秒的预期不一致。配置最大额外延时为 1
+       秒，可确保网关的限流机制在任意场景下均可达到预期。
+    3. 在 Erda 1.3 版本之后，若用户将最大额外延时配置为 0，则网关不会为超过最大吞吐速率的请求附加额外延时，并且将瞬时并发上限设置为与最大吞吐一致（保障用户预期）。此类设置可在对延时相对敏感的业务场景下使用。请注意此时的限流已无法对流量进行削峰填谷，瞬时并发也有将后端服务击穿的风险。
 
   :::
 
@@ -185,5 +188,116 @@ proxy_set_header hello world;
 | 校验失败的状态码   | CSRF 校验失败时返回的 HTTP 状态码                      |
 | 校验失败的应答     | CSRF 校验失败时返回的 HTTP 应答                        |
 
+## 基于第三方服务的的访问控制 SBAC (Server Based Access Control)
 
+**基于第三方服务的的访问控制** **SBAC (Server Based Access Control)** 是一种接口访问控制方式，启用该策略后，请求经过 API 网关时，API 网关会先携带参数请求用户提供的 API，根据该 API 返回结果决定是否该请求到达后端服务。
 
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/05/31/265c6288-972a-4a25-9a59-ee260c06512e.png)
+
+| 配置项                | 含义                                                             |
+|:-------------------|:---------------------------------------------------------------|
+| Access Control API | 用于访问控制的 API. 网关携带特定参数请求该 API，若返回非 2xx 响应，则拦截请求                 |
+| HTTP 方法            | 要进行访问控制的方法，不填则对所有方法进行访问控制                                      |
+| 匹配规则               | 正则表达式的列表，要请求的 path 若能匹配到任意一个正则表达式，就要进行访问控制。不填则默认对该 path 进行访问控制 |
+| 携带请求头              | 网关请求访问控制服务 API 的请求体中要携带的原始请求头名称列表. '*' 表示携带所有请求头(最多 1000 个)    |
+| 携带 Cookie          | 网关请求访问控制服务 API 的请求体中携带的请求头列表中包含 Cookie                         |
+| 携带 Raw Body        | 网关请求访问控制服务 API 的请求体中携带原始的请求体                                   |
+
+注意，Access Control 服务和 API 需要开发者自行实现，开发者应当评估开启策略后请求这个 API 造成的开销。
+Access Control API 接口协议：
+```yaml
+openapi: 3.0.3
+info:
+  title: ServerBasedAccessControl
+  description: |-
+    ServerBasedAccessControl
+    基于服务的访问控制
+  version: 1.0.0
+paths:
+  "/{access-control-api}":
+    parameters:
+      - name: access-control-api
+        in: path
+        required: true
+        schema:
+          type: string
+          example: /access-contorl
+    post:
+      tags:
+        - sbac
+      summary: |-
+        Access Contorl
+        访问控制
+      requestBody:
+        $ref: "#/components/requestBodies/AccessControlServer"
+      responses:
+        "200":
+          description: |-
+            successful operation if the response status code is 2xx
+            响应码为 2xx 时表示请求成功
+          content:
+            "application/json":
+              schema:
+                type: object
+
+components:
+  requestBodies:
+    AccessControlServer:
+      content:
+        "application/json":
+          schema:
+            type: object
+            properties:
+              "path":
+                type: string
+                description: |-
+                  raw query.
+                  原始请求路径, 包含 query.
+                example: /api?a=A&b=B
+              "method":
+                type: string
+                description: |-
+                  http method in raw query. '*' means all headers(the max is 1000).
+                  原始请求方法. '*' 表示所有请求头(最多 1000 个).
+                example: GET
+              "headers":
+                type: object
+                additionalProperties:
+                  items:
+                    type: array
+                    items:
+                      type: string
+                description: |-
+                  the headers you want to check, it's value is a String array.
+                  要传递的请求头, 值是 String 类型二维数组.
+                example: {"Session-ID": ["xxx-yyy"], "UC-Token": ["aaa-bbb", "aaa-ccc"]}
+              "body":
+                type: object
+                description: |-
+                  the raw body in the request.
+                  要传递的原始请求体. 注意: 传递的是未经转义的原始请求体而非转义后的 String.
+                example: {"key-1": value-1, "key-2": value-2}
+            example: {"path": "/uniform/resource/identity?a=A&b=B", "method": "POST", "headers": {"Session-ID": ["xxx-yyy"], "UC-Token": ["aaa-bbb", "aaa-ccc"]}, "body": {"key-1": "value-1", "key-2": "value-2"}}
+      required: true
+```
+
+接口请求体示例:
+```json5
+{
+  "path": "/uniform/resource/identity?a=A&b=B",
+  "method": "POST",
+  "headers": {
+    "Session-ID": [
+      "xxx-yyy"
+    ],
+    "UC-Token": [
+      "aaa-bbb",
+      "aaa-ccc"
+    ]
+  },
+  "body": {
+    "key-1": "value-1",
+    "key-2": "value-2"
+  }
+}
+```
