@@ -190,7 +190,7 @@ proxy_set_header hello world;
 
 ## 基于第三方服务的访问控制 SBAC (Server Based Access Control)
 
-**基于第三方服务的的访问控制** **SBAC (Server Based Access Control)** 是一种接口访问控制方式，启用该策略后，请求经过 API 网关时，API 网关会先携带参数请求用户提供的 API，根据该 API 返回结果决定是否准许该请求到达后端服务。
+**基于第三方服务的访问控制** **SBAC (Server Based Access Control)** 是一种接口访问控制方式，启用该策略后，请求经过 API 网关时，API 网关会先携带参数请求用户提供的 API，根据该 API 返回结果决定是否准许该请求到达后端服务。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/05/31/265c6288-972a-4a25-9a59-ee260c06512e.png)
 
