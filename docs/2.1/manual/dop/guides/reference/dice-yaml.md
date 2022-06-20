@@ -365,7 +365,16 @@ options:
   version: 5.7.23
   create_dbs: blog,blog2
 ```
+定义应用级别的 addon，对于特殊应用不想使用项目定义的 addon，需要使用特殊版本的 addon，可以使用 shareScope 来声明作用域。
 
+```yaml
+addons:
+  mysql:
+    plan: mysql:basic
+    options:
+      version: 5.7.23
+      shareScope: APPLICATION
+```
 ## 变量引用
 ### 平台级变量
 在 dice.yml 的 `.services[serviceName].endpoints[i].domain` 字段值中，可引用平台级变量，引用语法为 `${platform.Key}`。
