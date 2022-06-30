@@ -135,7 +135,7 @@ By default, Erda adopts maven.aliyun.com as the Maven repository address, and yo
 1. Edit configmap.
 
    ```shell
-   kubectl edit cm dice-addons-info -n erda-system 
+   kubectl edit cm dice-addons-info -n erda-system
    ```
 
 2. Add Maven repository information.
@@ -148,3 +148,66 @@ By default, Erda adopts maven.aliyun.com as the Maven repository address, and yo
    ```
 
 3. Wait till the component restarts.
+
+## 13. Front-end project pipeline failure
+
+Generally, switch to the error log to check whether the cause of the error can be located. Common faults are as follows:
+
+1. Error log:
+
+```
+Happythread[babel:0] unable to send to worker! ...
+```
+
+Reason: Happypack uses multi-threaded compilation by default, and pipeline jobs running in containers limit build resources and do not support multi-core builds
+
+Solution: Set `threads: 1` or `ThreadPool({ size: 1 })` in Happypack configuration
+
+2. Error log:
+
+```
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+```
+
+Reason: The process is killed for memory overflow.
+
+Solution: The NPM script corresponding to the build_cmd configured by Action (`npm run build` by default) is used to set the memory size. If the memory limit is not set, the Node process has a memory limit of 1.4 GB.
+
+The following uses the memory as an example to describe how to use 4G memory for compilation
+
+```json
+"build": "webpack --config webpack.config.js"
+// 改为
+"build": "node --max_old_space_size=4096 ./node_modules/.bin/webpack --config webpack.config.js"
+```
+
+Also set the pipeline action resource size，`js-pack` action use 1Core 2G by default.
+
+```yml
+- js-pack:
+    params:
+      ...
+    resources:
+      cpu: 1
+      mem: 4096
+```
+
+3. Debug in container
+
+If you use 'js-pack' action, you can add the following configuration if you can't see the cause from the log
+
+```yml
+- js-pack:
+    params:
+      ...
+      preserve_time: 300 # preserve container for 300 seconds
+```
+
+After the error is occurred, the container will continue to run according to the length of the configuration time.
+At the top of the log, it will print content like `namespace: pipeline-102679155835278`, copy it.
+
+enter the ** cloud management platform > container resources > pods **, selects the cluster of the branch at page top , and then in the name space below, Paste, you should find the pipeline.
+
+Click the record, you can see the container of the pipeline. You can enter the container console, and then debug in container.
+

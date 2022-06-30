@@ -135,7 +135,7 @@ pipeline.yml 中的配置如下:
 1. 编辑 configmap。
 
    ```shell
-   kubectl edit cm dice-addons-info -n erda-system 
+   kubectl edit cm dice-addons-info -n erda-system
    ```
 
 2. 添加 Maven 仓库信息。
@@ -148,3 +148,64 @@ pipeline.yml 中的配置如下:
    ```
 
 3. 等待组件重启完成。
+
+## 13. 前端项目流水线失败
+
+一般先切换到错误日志中看是否能定位到错误原因，常见问题有如下几种：
+
+1. 出现错误日志：
+
+```
+Happythread[babel:0] unable to send to worker! ...
+```
+
+原因: happypack 默认会使用多线程编译，而流水线 Job 在容器中运行限制了构建资源，不支持多核构建
+
+解决方式：happypack 的配置里设置 `threads: 1` 或 `ThreadPool({ size: 1 })`
+
+2. 出现错误日志：
+
+```
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+```
+
+原因：内存溢出进程被 kill
+
+解决方式：action 配置的 build_cmd 对应的 npm script（默认为 npm run build），设置内存大小。不设置时 Node 进程内存限制为 1.4G，所以要手动设置内存大小。
+以如下配置为例，设置为使用 4G 内存进行编译。
+
+```json
+"build": "webpack --config webpack.config.js"
+// 改为
+"build": "node --max_old_space_size=4096 ./node_modules/.bin/webpack --config webpack.config.js"
+```
+
+同时要设置流水线 action 的资源大小，`js-pack` action 默认为 1Core 2G
+
+```yml
+- js-pack:
+    params:
+      ...
+    resources:
+      cpu: 1
+      mem: 4096
+```
+
+3. 容器内调试
+
+如果使用 `js-pack` action, 从日志看不出原因，可以加如下配置
+
+```yml
+- js-pack:
+    params:
+      ...
+      preserve_time: 300 # 保留 300 秒，即 5 分钟
+```
+
+在报错后，容器会按配置时间的长度继续运行。在日志顶部，会打印出类似 `NAMESPACE: pipeline-102679155835278` 这样的内容，复制。
+
+进入 **多云管理平台 > 容器资源 > Pods**，顶部选择分支对应的集群，然后在下方的命名空间里粘贴，应该可以查到该流水线。
+
+点击该流水线记录后可以看到该流水线的容器，通过操作可进入容器控制台，然后就可以进行调试了。
+
