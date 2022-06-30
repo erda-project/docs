@@ -52,7 +52,6 @@ helm install erda erda/erda -n erda-system --create-namespace
   ```shell
   $ kubectl get statefulset -n erda-system
   NAME                       READY   AGE
-  erda-cassandra-dc1-rack1   1/1     72s
   erda-elasticsearch         1/1     77s
   erda-etcd                  1/1     77s
   erda-kafka                 1/1     77s
