@@ -61,7 +61,7 @@
 
    ```shell
    tar -xzvf erda-linux.tar.gz
-   cd erda-release
+   cd release
    ```
 
    ::: tip 提示
@@ -83,6 +83,5 @@
     * 若无网络共享存储，请执行如下脚本。该脚本将协助安装 NFS 组件，在当前节点上创建 `/netdata` 文件夹并将其挂载到其余节点上。
 
       ```shell
-      cd erda-helm/
-      bash scripts/storage_prepare.sh
+      bash scripts/storage/nfs.sh
       ```
