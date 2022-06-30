@@ -143,7 +143,7 @@ type ActionExecutor interface {
 
 当前平台支持多种 ActionExecutor：
 
-<img src="https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/08/23/71b5b9dd-b11e-4fbf-85fe-1aa66cb27bcf.png" style="zoom:50%;" />
+<img src="http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/05/23/55f9212a-3601-4b40-887d-79a74c86aef3.png" style="zoom:50%;" />
 
 ## 用户接入层 pipeline.yaml
 [pipeline.yaml](../guides/cicd-pipeline/pipeline-yml-config.html) 是 IaC 的实践，平台通过 YAML 格式描述流水线定义，基于 Stage 语法简化编排复杂度。
