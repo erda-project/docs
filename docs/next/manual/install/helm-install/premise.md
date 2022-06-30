@@ -20,7 +20,7 @@
 - Kubernetes 1.16～1.20（安装 [Ingress Controller](https://kubernetes.io/zh/docs/concepts/services-networking/ingress-controllers/) 组件）
 - Docker 19.03 及以上
 - CentOS 7.4 及以上
-- Helm 3 及以上
+- Helm 3.8 及以上
 - 泛域名（可选，通过 Kubernetes Ingress 配置域名以访问 Erda 平台，例如 **.erda.io*）
 
 ## 准备工作
@@ -28,14 +28,14 @@
 1. 在 Kubernetes 集群中执行如下操作（如已具备则无需执行）：
 
     * 确认 Master 节点的 `~/.kube/` 路径下有 kubeconfig 文件，并且可以使用 `kubectl` 访问集群。
-    * 确认 Master 节点下已安装 Helm（以 3.5.2 版本为例）。
+    * 确认 Master 节点下已安装 Helm（以 v3.9.0 版本为例）。
 
       ```shell
       # 下载 Helm 安装包
-      wget https://get.helm.sh/helm-v3.5.2-linux-amd64.tar.gz
+      wget https://get.helm.sh/helm-v3.9.0-linux-amd64.tar.gz
       
       # 解压安装包
-      tar -xvf helm-v3.5.2-linux-amd64.tar.gz
+      tar -xvf helm-v3.9.0-linux-amd64.tar.gz
       
       # 安装 Helm 3，在解压后的目录 linux-amd64 中找到 Helm 二进制文件，然后将其移至所需的目标位置
       mv linux-amd64/helm /usr/local/bin/helm

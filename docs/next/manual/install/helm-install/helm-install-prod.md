@@ -93,7 +93,6 @@ helm install erda erda/erda -f custom_values.yaml -n erda-system --create-namesp
   ```
 
 - 验证 Erda 依赖
-    - **erda-cassandra-**：Erda 后端的 Cassandra 集群实例，由 Cassandra Operator 通过 CassandraCluster 对象创建。
     - **erda-elasticsearch**：Erda 后端的 Elasticsearch 集群实例。
     - **erda-etcd-***：Erda 后端的 etcd 集群节点实例。
     - **erda-zookeeper-***：Erda 后端的 Zookeeper 集群节点实例。
@@ -105,9 +104,6 @@ helm install erda erda/erda -f custom_values.yaml -n erda-system --create-namesp
   ```shell
   $ kubectl  get statefulset -n erda-system
   NAME                       READY   AGE
-  erda-cassandra-dc1-rack1   1/1     12h
-  erda-cassandra-dc1-rack2   1/1     12h
-  erda-cassandra-dc1-rack3   1/1     12h
   erda-elasticsearch         3/3     12h
   erda-etcd-0                1/1     12h
   erda-etcd-1                1/1     12h
