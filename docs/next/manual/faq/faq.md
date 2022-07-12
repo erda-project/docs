@@ -209,3 +209,18 @@ npm ERR! errno 137
 
 点击该流水线记录后可以看到该流水线的容器，通过操作可进入容器控制台，然后就可以进行调试了。
 
+
+
+## 14. 用户指定了 settings 文件后 nexus 下载 401 问题
+
+流水线 `Java工程编译打包` action 会配置默认的全局 settings.xml ，其中 server.id 为 terminus，[文件目录地址](https://github.com/erda-project/erda-actions/blob/master/actions/java-build/1.0/internal/pkg/build/execute.go#L115)
+
+如果用户重新指定的 settings.xml 中 server.id 和默认的一样， 就会导致用户名和密码被重新指定的 settings.xml 覆盖，从而导致下载失败。
+
+解决方案：
+
+1. 不使用默认的全局配置, 重新指定参数 -s 改为 -gs。
+
+   > 示例： mvn clean deploy -Dtrantor.deploy=true -Dmaven.test.skip=true -P test -U **-s** ((maven_setting)) 改为 mvn clean deploy -Dtrantor.deploy=true -Dmaven.test.skip=true -P test -U **-gs** ((maven_setting))
+
+2. 用户指定的 settings.xml 中的 server.id 改成非 terminus。
