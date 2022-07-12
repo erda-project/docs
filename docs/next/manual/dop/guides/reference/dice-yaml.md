@@ -321,6 +321,19 @@ health_check:
     duration: 120
 ```
 
+#### k8s_snippet
+配置 service 对 Kubernetes manifest 的 Patch 片段，目前支持 Container 层级的片段。
+
+示例如下：
+
+修改服务镜像的拉取策略由默认的 `IfNotPresent` 更改为 `Always`。
+
+```yaml
+k8s_snippet:
+  container:
+    imagePullPolicy: Always
+```
+
 ### addon 配置项
 
 addon 配置项用于描述一个具体的 addon 对象，包含 addon 的类型、规格以及附加参数等信息。
