@@ -362,7 +362,9 @@ stages:
 
 ### Arthas
 
-若使用平台提供的运行容器，则已安装 Arthas。其安装路径为 /arthas-boot.jar，可在根目录通过 `java -jar arthas-boot.jar` 启动。
+可以通过 `curl -sf https://arthas.aliyun.com/arthas-boot.jar -o /opt/arthas/arthas-boot.jar` 命令安装 arthas。
+
+安装成功后，根据安装目录，执行 `java -jar arthas-boot.jar` 命令启动。
 
 关于 Arthas 更多信息，请参见 [Arthas 用户文档](https://alibaba.github.io/arthas/)。
 
