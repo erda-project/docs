@@ -96,6 +96,7 @@ module.exports = [
           'dop/best-practices/microservice-springcloud',
           'dop/best-practices/api-drive-develop',
           'dop/best-practices/autotest',
+          'dop/best-practices/autoscaler-alicloud',
           'dop/best-practices/manual-test',
           'dop/best-practices/release'
         ]
@@ -174,6 +175,7 @@ module.exports = [
               'dop/guides/deploy/metrics_logs',
               'dop/guides/deploy/block-deploy',
               'dop/guides/deploy/management',
+              'dop/guides/deploy/autoscaler',
             ]
           },
           {
