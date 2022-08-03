@@ -47,9 +47,7 @@
 同一集群可以存在多个节点池，根据集群自动弹性伸缩中配置的 `节点池扩容顺序策略` 参数，会按照不同的策略选择节点池。
 
 :::tip 提示
-这里我们案例中采用的是默认的 `least-waste`策略，会从多个扩容节点池中，
-从中选择一个资源浪费最少的节点池进行扩容，其他扩容策略请参考 [配置自动伸缩](https://help.aliyun.com/document_detail/119099.html#section-3bg-2ko-inl)
-。
+这里我们案例中采用的是默认的 `least-waste`策略，会从多个扩容节点池中选择资源浪费最少的节点池进行扩容，其他扩容策略请参考 [配置自动伸缩](https://help.aliyun.com/document_detail/119099.html#section-3bg-2ko-inl)。
 :::
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2022/08/01/ce63a365-fc05-4c41-83e5-da646875c5e2.png)
