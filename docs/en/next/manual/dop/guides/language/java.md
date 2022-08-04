@@ -362,7 +362,9 @@ The directory of `/root/.m2/repository` is the address of the Maven local reposi
 
 ### Arthas
 
-If you use the runtime container provided by the platform, Arthas is already installed. The installation path is `/arthas-boot.jar`, which can be started via java -jar arthas-boot.jar in the root directory.
+Arthas can be installed via the `curl -sf https://arthas.aliyun.com/arthas-boot.jar -o arthas-boot.jar` command.
+
+After the installation is successful, according to the installation directory, execute the `java -jar arthas-boot.jar` command to start.
 
 For more information on Arthas, see [ Arthas Documentation](https://arthas.aliyun.com/doc/en/).
 
