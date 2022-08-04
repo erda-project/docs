@@ -362,7 +362,7 @@ stages:
 
 ### Arthas
 
-可以通过 `curl -sf https://arthas.aliyun.com/arthas-boot.jar -o /opt/arthas/arthas-boot.jar` 命令安装 arthas。
+可以通过 `curl -sf https://arthas.aliyun.com/arthas-boot.jar -o arthas-boot.jar` 命令安装 arthas。
 
 安装成功后，根据安装目录，执行 `java -jar arthas-boot.jar` 命令启动。
 
