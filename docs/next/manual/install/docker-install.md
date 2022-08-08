@@ -28,3 +28,7 @@
    ```
 
 3. 访问 [*http://erda.local*](http://erda.local) 快速体验 Erda。
+
+## 构建
+
+您可以通过 [erda-release/quick-start](https://github.com/erda-project/erda-release/tree/master/quick-start) 来构建 `docker-compose` 制品。
