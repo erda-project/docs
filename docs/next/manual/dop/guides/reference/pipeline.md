@@ -241,11 +241,11 @@ custom-script Action 运行时的镜像。
 默认使用的镜像可以在 [扩展市场-自定义脚本 Action](https://www.erda.cloud/market/Action/custom-script) 里看到。
 
 #### commands
+自定义命令可以是多个命令组成的列表， 也可以是多行命令组成的一个段落。
 
 ::: tip
-
-该字段仅在 Action 类型为 custom-script 时有效。
-
+在2.3版本往后，该字段在所有的action都会生效。
+且自定义命令将在action的主逻辑结束后被执行
 :::
 
 用户声明的命令列表。
@@ -258,6 +258,21 @@ commands:
 - cat /etc/hosts
 - sleep 10
 ```
+
+用户声明的命令段落。
+
+YAML 示例
+
+``` yaml
+commands: |-
+  import time  # 引入time模块
+  ticks = time.time()
+  print ("当前时间戳为:", ticks)
+```
+
+#### shell
+该字段可以指定执行`commands`的执行器，默认是`/bin/sh`。
+可以根据自定义命令的内容来修改执行器，例如如果是python代码，则可以指定为`python`。
 
 #### timeout
 
