@@ -34,7 +34,7 @@ erda:
   clusterName: "erda-prod"
 
 mysql:
-  enbaled: false
+  enabled: false
   custom:
     address: "rds.xxx.com"
     port: "3306"
