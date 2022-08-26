@@ -94,7 +94,7 @@ stages:
 - stage:
   - release:
       params:
-        dice_yml: ${git-checkout}/erda.yml
+        dice_yml: ${git-checkout}/dice.yml
         image:
           java-demo: ${java-demo:OUTPUT:image}
 
