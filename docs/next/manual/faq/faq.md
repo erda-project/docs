@@ -209,9 +209,13 @@ npm ERR! errno 137
 
 点击该流水线记录后可以看到该流水线的容器，通过操作可进入容器控制台，然后就可以进行调试了。
 
+## 14. 如何指定自定义 maven settings 文件
 
+1. 上传文件，参考 [DevOps-使用指南-开发语言-Java-上传 maven settings.xml](../dop/guides/language/java.md#上传-maven-settings-xml)
 
-## 14. 用户指定了 settings 文件后 nexus 下载 401 问题
+2. 配置流水线文件，参考 [DevOps-使用指南-开发语言-Java-上传 maven settings.xml](../dop/guides/language/java.md#配置流水线实现-jar-包上传)
+
+## 15. 用户指定了 maven settings 文件后 nexus 下载 401 问题
 
 流水线 `Java工程编译打包` action 会配置默认的全局 settings.xml ，其中 server.id 为 terminus，[文件目录地址](https://github.com/erda-project/erda-actions/blob/master/actions/java-build/1.0/internal/pkg/build/execute.go#L115)
 
