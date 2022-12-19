@@ -228,3 +228,56 @@ npm ERR! errno 137
    > 示例： mvn clean deploy -Dtrantor.deploy=true -Dmaven.test.skip=true -P test -U **-s** ((maven_setting)) 改为 mvn clean deploy -Dtrantor.deploy=true -Dmaven.test.skip=true -P test -U **-gs** ((maven_setting))
 
 2. 用户指定的 settings.xml 中的 server.id 改成非 terminus。
+
+
+## 15. Erda 基于 Hepa + Kong-Nginx 的限流为什么不准确？
+
+比如设置限流为 10/s， 但测试结果可能并不是 10/s,通常总是有些偏差。这样限流是否是成功的？
+对于这个问题。实际上， Erda 的限流并非精确限流，相对来说是一种粗粒度的限流，因此，如果测试限流的用例不经过合理的设计，实际测试的结果就与预期的限流数据不一致，但整体限流的功能是成功的，只是精确度方面的粒度不能保证。造成 Erda 不能细粒度精确控制限流的原因来自两个方面:
+* Erda 的限流采用均摊的方式，将限流请求数量均摊到后端每个 nginx-controller 实例（比如 限流为 10/s，后台 5 个 nginx-controller 实例，则每个实例中实际是配置限流 2/s）
+* Nginx 的限流插件的算法(这个是主要原因)
+
+下面详细分析说明一下。
+
+### 参与限流计算的参数
+计算限流的参数:
+* count: nginx-controller 的数量，至少是 1
+* tps: 原始页面设置的最大吞吐量数值（如 10/s）除以 count 数量，向上取整
+* burst: 原始页面设置的最大额外延时(如 2000ms) 与 tps 乘积 除以 1000，向上取整  
+
+### 第一个不精确限流的原因
+
+可以看到，到这里，tps 已经第一次不精确了。比如 nginx-controller 的数量为 3，原始从页面限流数量为 10/s，那么，到这里已经变成 4 * 3 =12/s （4 是因为 10/3 向上取整得到的） 
+
+### 配置示例 1 
+
+* 最大吞吐量: 2次/s
+* 最额外延迟: 1000ms
+* count: 2
+
+则每个 ingress-controller 中的 nginx 的配置文件中设置:  
+* tps = 1/s  也就是   "limit_req_zone 1 zone=server-guard-xxxxxxxxx:1m rate=1r/s"   (这一部分设置在 nginx 配置的 http 层)
+* burst = 1  也就是   "limit_req zone=server-guard-xxxxxxxxx burst=1;"    (这一部分设置在 nginx 配置的 server 层 的 location 中)
+
+### 配置示例 2 
+
+* 最大吞吐量：10次/s
+* 最额外延迟：1000ms
+* count： 2
+
+则每个 ingress-controller 中的 nginx 的配置文件中设置:  
+* tps = 5/s  也就是   "limit_req_zone 1 zone=server-guard-xxxxxxxxx:1m rate=5r/s"   (这一部分设置在 nginx 配置的 http 层)
+* burst = 5  也就是   "limit_req zone=server-guard-xxxxxxxxx burst=5;"    (这一部分设置在 nginx 配置的 server 层 的 location 中)
+
+## burst 的主要作用
+
+burst 主要作用是做一个缓存，把当前不能处理的请求先缓存起来，如果当前未处理的请求数量超过 burst 大小，则直接丢弃该请求。
+
+根据 nginx 的限流算法:  
+* 如果不设置 burst, 假设某个节点的 nginx 配置的是 10/s, 那么必须要求每 100ms 进入一个请求并处理, 才能保证 1s 内处理 10个请求, 否则就有请求被拒绝。比如 10 个请求都是在前 100ms 内到达, 那么只有第一个请求被处理, 而另外 9 个 都会拒绝。
+* 如果设置 burst, 例如 burst=5, nginx 配置的是 10/s, 那么每 100ms 处理一个请求并, 那么如果10 个请求都是在前 100ms 内到达（这1s内无其他请求进入）, 那么前 6 个请求被处理(1 + burst),后面 4 个请求被丢弃。这 6 个请求依然是每隔 100ms 处理一个。 
+* 如果设置 burst, 例如 burst=5, nginx 配置的是 10/s，那么如果有 10 个请求（编号 1~10 ）都是在前 100ms 内到达，后面每隔 100ms 进入2 个请求（比如从 150ms、250ms、350ms.... 各进入 2 个请求，这些请求继续从 11 开始标号，那么这 1s 内实际总共进来 28 个请求，对应编号 1~28），那么在 1s 内最多处理 10 个 请求，对应处理请求的编号为: 1,2,3,4,5,6,11,13,15,17, 还剩下 19,21,23,25,27 号请求在排队等处理，其他的请求都已经被拒绝。
+
+### 第二个不精确限流的原因
+
+可以看到，到这里，tps 再一次不精确了。因为，请求达到的时间、爆发量等都会造成请求虽然没达到限制，但仍然被拒绝处理的情况（比如配置 burst=5, nginx 配置的是 10/s 的情况，如果每秒只有 10 个请求进入，但 10 个请求都是在每秒的第一个 100ms 内进入，那么实际最多能处理 6 个 请求，而另外 4 个则拒绝。因此看起来反而是限制为 6/s 而不是设置看起来的 10/s。
