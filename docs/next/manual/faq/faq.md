@@ -230,7 +230,7 @@ npm ERR! errno 137
 2. 用户指定的 settings.xml 中的 server.id 改成非 terminus。
 
 
-## 15. Erda 基于 Hepa + Kong-Nginx 的限流为什么不准确？
+## 16. Erda 基于 Hepa + Kong-Nginx 的限流为什么不准确？
 
 比如设置限流为 10/s， 但测试结果可能并不是 10/s,通常总是有些偏差。这样限流是否是成功的？
 对于这个问题。实际上， Erda 的限流并非精确限流，相对来说是一种粗粒度的限流，因此，如果测试限流的用例不经过合理的设计，实际测试的结果就与预期的限流数据不一致，但整体限流的功能是成功的，只是精确度方面的粒度不能保证。造成 Erda 不能细粒度精确控制限流的原因来自两个方面:
@@ -239,17 +239,18 @@ npm ERR! errno 137
 
 下面详细分析说明一下。
 
-### 参与限流计算的参数
+### 16.1 参与限流计算的参数
 计算限流的参数:
 * count: nginx-controller 的数量，至少是 1
 * tps: 原始页面设置的最大吞吐量数值（如 10/s）除以 count 数量，向上取整
 * burst: 原始页面设置的最大额外延时(如 2000ms) 与 tps 乘积 除以 1000，向上取整  
 
-### 第一个不精确限流的原因
+### 16.2 第一个不精确限流的原因
 
 可以看到，到这里，tps 已经第一次不精确了。比如 nginx-controller 的数量为 3，原始从页面限流数量为 10/s，那么，到这里已经变成 4 * 3 =12/s （4 是因为 10/3 向上取整得到的） 
 
-### 配置示例 1 
+### 16.3 配置示例
+#### 16.3.1 配置示例 1 
 
 * 最大吞吐量: 2次/s
 * 最额外延迟: 1000ms
@@ -259,7 +260,7 @@ npm ERR! errno 137
 * tps = 1/s  也就是   "limit_req_zone 1 zone=server-guard-xxxxxxxxx:1m rate=1r/s"   (这一部分设置在 nginx 配置的 http 层)
 * burst = 1  也就是   "limit_req zone=server-guard-xxxxxxxxx burst=1;"    (这一部分设置在 nginx 配置的 server 层 的 location 中)
 
-### 配置示例 2 
+#### 16.3.2 配置示例 2 
 
 * 最大吞吐量：10次/s
 * 最额外延迟：1000ms
@@ -269,7 +270,7 @@ npm ERR! errno 137
 * tps = 5/s  也就是   "limit_req_zone 1 zone=server-guard-xxxxxxxxx:1m rate=5r/s"   (这一部分设置在 nginx 配置的 http 层)
 * burst = 5  也就是   "limit_req zone=server-guard-xxxxxxxxx burst=5;"    (这一部分设置在 nginx 配置的 server 层 的 location 中)
 
-## burst 的主要作用
+### 16.4 burst 的主要作用
 
 burst 主要作用是做一个缓存，把当前不能处理的请求先缓存起来，如果当前未处理的请求数量超过 burst 大小，则直接丢弃该请求。
 
