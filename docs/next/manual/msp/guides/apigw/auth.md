@@ -1,4 +1,4 @@
-# API 开放鉴权
+# 基于 Kong 网关的  API 开放鉴权
 
 ## 流量入口管理
 
@@ -13,7 +13,7 @@
 * **Key 认证**：通过请求参数中的 `appKey` 字段，或请求头中的 `X-App-Key` 识别调用方。
 * **HMAC 签名认证**：使用 HMAC 对请求行、请求头、请求 Body 进行加密，具备较高的安全性，因根据 HTTP 签名算法标准草案设计，同时具备一定的通用性，具体请参见 [HMAC 签名认证](./auth.md#hmac-签名认证-推荐)。
 * **参数签名认证**：通过请求参数中的 `appKey` 字段识别调用方，同时通过对参数进行签名的 `sign` 字段完成校验，具体请参见 [参数签名认证](./auth.md#参数签名认证)。
-* **OAuth2 认证**：基于 OAuth2 Client Credentials 模式，通过动态 Token 识别调用方，调用方可借助类似 `Spring Cloud Security` 的库实现。
+
 
 **调用方访问条件**
 
@@ -48,6 +48,26 @@
 ## 签名认证算法
 
 在平台提供的认证鉴权方式中，HMAC 签名认证和参数签名认证均可在识别出调用方的同时，对请求参数、Body 进行签名检查，从而进一步确保请求未被篡改或伪造。
+
+### Key-Auth 签名认证
+
+`key-auth` 插件实现了基于 API Key 进行认证鉴权的功能，支持从 HTTP 请求的 URL 参数或者请求头解析 API Key，同时验证该 API Key 是否有权限访问。
+
+#### 使用引导
+
+通过请求参数中的 appKey 字段，或请求头中的 X-App-Key 识别调用方。假如， appKey 为 `5575742f92814e23892fe53348dffb1d`
+
+* 从 HTTP 请求的 URL 参数
+
+```bash
+curl -v -XGET  'http://key-auth-mse.mse-test.terminus.io/test-mse/key-auth?appKey=5575742f92814e23892fe53348dffb1d'
+```
+
+* HTTP 请求的请求头解析 API Key
+```bash
+curl -v -XGET  -H "X-App-Key:5575742f92814e23892fe53348dffb1d"  http://key-auth-mse.mse-test.terminus.io/test-mse/key-auth
+```
+
 
 ### HMAC 签名认证（推荐）
 
