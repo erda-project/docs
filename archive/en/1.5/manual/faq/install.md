@@ -128,14 +128,12 @@ Erda supports deployment of dedicated and managed Kubernetes cluster. When using
 
 ## 14. How to configure SMTP mail server during deployment?
 
-Configure the following environment variables in the EventBox component of CRD erda:
+Configure the following environment variables in the EventBox component of CR erda:
 
 ```shell
-DICE_EMAIL_SMTP_DISPLAY_USER
-DICE_EMAIL_SMTP_HOST
-DICE_EMAIL_SMTP_PASSWORD
-DICE_EMAIL_SMTP_PORT
-DICE_EMAIL_SMTP_USERNAME
+NOTICE_CUSTOM_EMAIL_SENDER_HOST
+NOTICE_CUSTOM_EMAIL_SENDER_PASSWORD
+NOTICE_CUSTOM_EMAIL_SENDER_USERNAME
 ```
 
 ## 15. The Kubernetes cluster version is 1.16. What if an error `must include at least one of v1beta1` occurs when installing with Helm?
