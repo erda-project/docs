@@ -130,14 +130,12 @@ Erda 支持使用阿里云 ACK 专有版及托管版部署。使用托管版时�
 
 ## 14. 部署时如何配置 SMTP 邮件服务器？
 
-在 CRD erda 的 EventBox 组件配置如下环境变量：
+在 erda 自定义资源的 uc 组件中配置如下环境变量：
 
 ```shell
-DICE_EMAIL_SMTP_DISPLAY_USER
-DICE_EMAIL_SMTP_HOST
-DICE_EMAIL_SMTP_PASSWORD
-DICE_EMAIL_SMTP_PORT
-DICE_EMAIL_SMTP_USERNAME
+NOTICE_CUSTOM_EMAIL_SENDER_HOST
+NOTICE_CUSTOM_EMAIL_SENDER_PASSWORD
+NOTICE_CUSTOM_EMAIL_SENDER_USERNAME
 ```
 
 ## 15. Kubernetes 集群版本为 1.16，使用 Helm 安装时提示 `must include at least one of v1beta1` 怎么办？
