@@ -514,18 +514,70 @@ func hmacRequest(r *http.Request, appKey, appSecret string) error {
 
 所有参数（包括 `appKey`，但不包括签名参数 `sign` 自身）均按照字符序增序排列，随后在排列的参数串末尾加上 `appSecret`，对完整字符串进行 SHA512 签名，生成签名参数 `sign`。
 
+#### 上传插件
+由于 `para-sign-auth` 插件是自定义插件因此需要上传插件到对应网关实例的插件市场，具体步骤可以参看阿里云 MSE [上传插件官方文档](https://help.aliyun.com/document_detail/427030.html?spm=a2c4g.426926.0.0.29782894R9kXdO) .
+
+具体步骤如下:
+1. 登录 `MSE网关管理控制台`。
+2. 在左侧导航栏选择 `云原生网关` > `网关列表`。
+3. 在顶部菜单栏选择地域。
+4. 在 `网关列表` 页面，单击目标网关名称。
+5. 在 `网关详情` 页面左侧导航栏选择 `插件市场`。
+6. 在 `插件市场` 页面选择 `自定义`，单击 `创建插件`，填写插件参数信息，单击 `确定`，等待插件发布成功（此过程可能需要30秒左右）。
+
+上传插件具体需要填写的信息如下:
+
+| 项目         | 填写值                   | 说明                                    |
+|------------|-----------------------|---------------------------------------|
+| _插件名称_     | "para-sign-auth"      |  设置唯一名称。 |
+| _插件描述_     | "基于请求参数的签名认证。"        |  填写用途说明，会显示在创建完成后的插件卡片中。 |
+| _wasm 实现语言 | "Tinygo"              |  填写编写Wasm插件时使用的开发语言。 |
+| _wasm 文件   | /                     |  上传本地编译构建生成的插件二进制文件，文件名需要包含 ".wasm" 后缀。 |
+| _配置校验_     | 填写默认配置即可，见下面的配置校验填写内容 |  如果插件需要配置，可以在此处填写配置字段校验，用作启用插件时的配置校验，如无需配置留空即可。 |
+| _插件执行阶段  | "认证阶段"                |  阶段处理顺序：认证阶段 > 鉴权阶段 > 统计阶段 > 默认阶段，若不依赖其他插件执行顺序，填默认阶段即可。 |
+| _插件执行优先级   | "300"                 |  控制执行阶段内的优先级，数字约大优先级越高。若不依赖其他插件执行顺序，用默认值即可；若需定制，建议填10的整数倍，预留好空间。 |
+
+
+配置校验填写内容如下:
+
+```yaml
+# 配置必须字段的校验，如下例所示，要求插件配置必须存在 "_rules_"、"_match_route_"、“consumers” 字段
+_rules_:
+- _match_route_:
+  - route-erda-default
+  request_body_size_limit: 33554432
+  consumers:
+  - name: consumer-erda-default
+    key: 2bda943c-ba2b-11ec-ba07-00163e1250b5
+    secret: 2bda943c-ba2b-11ec-ba07-00163e1250b5
+```
+
+具体配置参考可见下图
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2023/04/18/mse-para-sign-auth_1.png)
+
+
+上传成功则在网关实例的插件市场页面能看到对应的自定义插件，如下图所示，启用即可:
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2023/04/18/mse-para-sign-auth_2.png)
 
 #### 配置字段  
 
 备注: **此部分为插件开发、运维人员需要关注的内容**。使用者仅需关注 《签名机制说明》部分。
 
-| 名称         | 数据类型                                  | 填写要求   | 默认值 | 描述  |
-|------------|---------------------------------------|--------|-----|-----|
-| consumers  | array of object                       | 必填 |   -  |   配置服务的调用者，用于对请求进行认证  |
+`_rules_` 中每一项的配置字段说明如下：
+
+| 名称         | 数据类型              | 填写要求   | 默认值 | 描述  |
+|------------|-------------------|--------|-----|-----|
+| _match_route_  | array of string   | 选填，`_match_route_`，`_match_domain_`中选填一项  | - | 配置要匹配的路由名称  |
+| _match_domain_ | array of string   | 选填，`_match_route_`，`_match_domain_`中选填一项  | - | 配置要匹配的域名  |
 | date_offset | number |     选填   |   300  |  配置允许的客户端最大时间偏移，单位为秒，未配置时，不做校验   |
 | request_body_size_limit | number |     选填   |   10485760  |  配置允许的请求 Body 的大小，默认 10mb   |
-| _rules_     | array of object                |    选填   |  -   |   配置特定路由或域名的访问权限列表，用于对请求进行鉴权  |
+| consumers  | array of object                       | 必填 |   -  |   配置服务的调用者，用于对请求进行认证  |
 
+注意：
+* 若不配置 `_rules_` 字段，则默认对当前网关实例的所有路由开启认证；
+* 对于通过认证鉴权的请求，请求的 header 会被添加一个 `X-Mse-Consumer` 字段，用以标识调用者的名称。
 
 `consumers` 中每一项的配置字段说明如下：
 
@@ -534,14 +586,6 @@ func hmacRequest(r *http.Request, appKey, appSecret string) error {
 | key        | string                                 | 选填  | - | 配置从请求的x-ca-key头中提取的key  |
 | secret     | string                                 | 必填  | - | 配置用于生成签名的secret  |
 | name       | string                                 | 必填  | - | 配置该consumer的名称  |
-
-`_rules_` 中每一项的配置字段说明如下：
-
-| 名称         | 数据类型              | 填写要求   | 默认值 | 描述  |
-|------------|-------------------|--------|-----|-----|
-| _match_route_  | array of string   | 选填，`_match_route_`，`_match_domain_`中选填一项  | - | 配置要匹配的路由名称  |
-| _match_domain_ | array of string   | 选填，`_match_route_`，`_match_domain_`中选填一项  | - | 配置要匹配的域名  |
-| allow          | array of string   | 必填  | - | 对于符合匹配条件的请求，配置允许访问的consumer名称  |
 
 注意：
 * 需要 `_rules_` 字段，且建议使用 `_match_route_` 规则配置。 如不配置  `_rules_` 字段会影响全局路由，对于 Erda 这种平台上多用户多项目的情况，全局配置场景不适用。
@@ -554,45 +598,34 @@ func hmacRequest(r *http.Request, appKey, appSecret string) error {
 对特定路由或域名开启
 
 ```yaml
-consumers: 
-- key: appKey-example-1
-  secret: appSecret-example-1
-  name: consumer-1
-- key: appKey-example-2
-  secret: appSecret-example-2
-  name: consumer-2
-request_body_size_limit: 10485760
-date_offset: 300
-# 使用 _rules_ 字段进行细粒度规则配置
 _rules_:
-# 按路由名称匹配生效
-- _match_route_:
-  - route-a
-  - route-b
-  allow:
-  - consumer-1
+# 规则一：按路由名称匹配生效
+  - _match_route_:
+    - route-a
+    - route-b
+    request_body_size_limit: 10485760
+    date_offset: 600
+    consumers:
+      - name: consumer-erda-default
+        key: 2bda943c-ba2b-11ec-ba07-00163e1250b5
+        secret: 2bda943c-ba2b-11ec-ba07-00163e1250b5
+# 规则二：按域名匹配生效        
+  - _match_domain_:
+    - "*.example.com"
+    - test.com
+    request_body_size_limit: 10485760
+    date_offset: 600
+    consumers:
+      - name: consumer-erda-default
+        key: 2bda943c-ba2b-11ec-ba07-00163e1250b5
+        secret: 2bda943c-ba2b-11ec-ba07-00163e1250b5
 ```
 
-每条匹配规则下的 `allow` 字段用于指定该匹配条件下允许访问的调用者列表；
+此例 `_match_route_` 中指定的 `route-a` 和 `route-b` 即在创建网关路由时填写的路由名称，当匹配到这两个路由时，将允许 `name` 为 `consumer-erda-default` 的调用者访问，其他调用者不允许访问；
 
-此例 `_match_route_` 中指定的 `route-a` 和 `route-b` 即在创建网关路由时填写的路由名称，当匹配到这两个路由时，将允许 `name` 为 `consumer-1` 的调用者访问，其他调用者不允许访问；
+此例 `_match_domain_` 中指定的 `*.example.com` 和 `test.com` 用于匹配请求的域名，当发现域名匹配时，将允许 `name` 为 `consumer-erda-default` 的调用者访问，其他调用者不允许访问；
 
-认证成功后，请求的 `header` 中会被添加一个 `X-Mse-Consumer` 字段，其值为调用方的名称，例如 `consumer-1`。
-
-网关实例级别开启
-以下配置将对网关实例级别开启 Para Sign Auth 认证
-
-```yaml
-consumers: 
-- key: appKey-example-1
-  secret: appSecret-example-1
-  name: consumer-1
-- key: appKey-example-2
-  secret: appSecret-example-2
-  name: consumer-2
-request_body_size_limit: 10485760
-date_offset: 300
-```
+认证成功后，请求的 `header` 中会被添加一个 `X-Mse-Consumer` 字段，其值为调用方的名称，例如 `consumer-erda-default`。
 
 
 #### 签名机制说明
