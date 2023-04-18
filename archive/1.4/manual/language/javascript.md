@@ -152,10 +152,10 @@ stages:
 
 - stage:
   - js:
-    params:
-      workdir: ${git-checkout}
-      build_cmd: npm run build
-      container_type: spa
+      params:
+        workdir: ${git-checkout}
+        build_cmd: npm run build
+        container_type: spa
 ```
 
 **常见打包问题请参考 [FAQ](/faq)**
@@ -172,12 +172,12 @@ stages:
 ```yaml
 - stage:
   - js:
-    caches:
+      caches:
       - path: ${git-checkout}/node_modules
-    params:
-      workdir: ${git-checkout}
-      build_cmd: npm run build
-      container_type: spa
+      params:
+        workdir: ${git-checkout}
+        build_cmd: npm run build
+        container_type: spa
 ```
 
 #### 说明:

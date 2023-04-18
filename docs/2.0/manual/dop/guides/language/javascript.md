@@ -137,10 +137,10 @@ stages:
 
 - stage:
   - js:
-    params:
-      workdir: ${git-checkout}
-      build_cmd: npm run build
-      container_type: spa
+      params:
+        workdir: ${git-checkout}
+        build_cmd: npm run build
+        container_type: spa
 ```
 
 
@@ -155,12 +155,12 @@ caches 加速：
 ```yaml
 - stage:
   - js:
-    caches:
+      caches:
       - path: ${git-checkout}/node_modules
-    params:
-      workdir: ${git-checkout}
-      build_cmd: npm run build
-      container_type: spa
+      params:
+        workdir: ${git-checkout}
+        build_cmd: npm run build
+        container_type: spa
 ```
 
 `${git-checkout}/node_modules`：${git-checkout} 为项目路径，node_modules 则是 npm 构建后生成的包路径，缓存后下一次将会加速。

@@ -135,10 +135,10 @@ stages:
 
 - stage:
   - js:
-    params:
-      workdir: ${git-checkout}
-      build_cmd: npm run build
-      container_type: spa
+      params:
+        workdir: ${git-checkout}
+        build_cmd: npm run build
+        container_type: spa
 ```
 
 
@@ -153,12 +153,12 @@ Caches acceleration:
 ```yaml
 - stage:
   - js:
-    caches:
+      caches:
       - path: ${git-checkout}/node_modules
-    params:
-      workdir: ${git-checkout}
-      build_cmd: npm run build
-      container_type: spa
+      params:
+        workdir: ${git-checkout}
+        build_cmd: npm run build
+        container_type: spa
 ```
 
 `${git-checkout}/node_modules`: ${git-checkout} is the project path, and node_modules is the package path generated after npm building, which will be accelerated next time after caching.
