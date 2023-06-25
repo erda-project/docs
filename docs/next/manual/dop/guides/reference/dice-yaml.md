@@ -492,3 +492,34 @@ addons:
   zk:
     plan: zookeeper:professional
 ```
+
+# 集成开发环境配置
+## IntelliJ 家族产品(以 IntelliJ IDEA 为例)
+
+> `Settings` -> `Language & Frameworks` -> `Schema and DTDs` -> `JSON Schema Mappings`
+
+![IntelliJ-IDEA_JSON-Schema](IntelliJ-IDEA_JSON-Schema.png)
+
+在列表栏创建 JSON Schema Mapping，在右侧栏 `Name` 为该 Mapping 命名(推荐为 `dice.yml`)，`Schema file or URL` 填写 `https://raw.githubusercontent.com/erda-project/erda/master/.erda/schemas/dice.yaml.json`，即 dice.yml JSON Schema 路径。在文件列表添加要应用该 JSON Schema 的文件，一般为 `dice.yml` 或 `erda.yml`，请根据实际路径填写。
+
+按以上说明配置后，在 IDEA 中编写 dice.yml 就可以获得 IDEA 补全、语法提示、高亮、语法检查等功能了。
+
+![IntelliJ-IDEA_dice-yml-lint](IntelliJ-IDEA_dice-yml-lint.png)
+
+## VS Code
+
+在 VS Code 设置文件VS添加如下配置：
+
+```json
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "erda.yml",
+                "dice.yml"
+            ],
+            "url": "https://raw.githubusercontent.com/erda-project/erda/master/.erda/schemas/dice.yaml.json"
+        }
+    ]
+}
+```
