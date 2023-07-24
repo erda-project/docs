@@ -24,6 +24,14 @@
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/4c7c2ad2-6c25-4696-9cc1-c44de92a4ffe.png)
 
+Erda 提供了从 R.E.D指标继续下钻分析的能力，用户可以在性能曲线通过拖拽的方式选中一个时间段，会进入到该时间段内的 http 调用分析的页面，用户可以在该页面去寻找响应时间排名前几个的 http 调用，然后针对响应时间慢的 http 调用继续进行分析。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2023/07/24/26ac5de4-1d79-47f9-8e83-203deddd0c4f.png)
+
+从R.E.D指标下钻到了 HTTP 调用，再到调用关联的 Trace 详情，用户就可以观察到具体是哪一个调用影响了响应时间，同时我们的 Span 处按照 Span 的发生时间，同时关联了主机，POD， JVM,  中间件，Log，Profile 等数据，从而使用户可以多方位，多角度来观测影响该 span 的各种因素，进而来锁定具体的问题发生时间点。
+
+![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2023/07/24/2097d4cf-c811-49b2-8c62-37cf33ae7efb.png)
+
 服务调用分析展示服务的高吞吐量接口、慢响应接口、错误接口、外部接口调用、慢响应 SQL 和异常类型的 Top 5 排行。
 
 ![](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2021/12/31/1ea6d3b3-8860-4be4-808e-1b24f3796cbf.png)

@@ -333,13 +333,6 @@ module.exports = [
               'msp/guides/nc/spring',
             ]
           },
-          {
-            title: '持续分析',
-            collapsable: true,
-            children: [
-              'msp/guides/profile/overview',
-            ]
-          },
         ]
       },
       {
