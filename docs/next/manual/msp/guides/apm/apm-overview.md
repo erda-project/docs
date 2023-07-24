@@ -18,5 +18,6 @@ Erda 应用性能监控（Application Performance Management，即 APM）旨在�
 - 诊断分析
   - [链路追踪](trace.md)
   - [日志分析](../log/query.md)
+  - [持续分析](profile.md)
   - 错误分析
   - [自定义大盘](dashboard.md)

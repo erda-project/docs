@@ -246,6 +246,8 @@ module.exports = [
             children: [
               'msp/practice/apm/service-alert',
               'msp/practice/apm/pressure-test-dashboard',
+              'msp/practice/apm/profile-cpu',
+              'msp/practice/apm/profile-memory',
             ],
           },
           {
@@ -300,6 +302,7 @@ module.exports = [
               'msp/guides/apm/browser-monitor',
               'msp/guides/apm/browser-monitor-config',
               'msp/guides/apm/trace',
+              'msp/guides/apm/profile',
               'msp/guides/apm/checker',
               'msp/guides/apm/dashboard',
               'msp/guides/apm/dashboard-advanced',
@@ -331,13 +334,6 @@ module.exports = [
               'msp/guides/nc/dubbo',
               'msp/guides/nc/springcloud',
               'msp/guides/nc/spring',
-            ]
-          },
-          {
-            title: '持续分析',
-            collapsable: true,
-            children: [
-              'msp/guides/profile/overview',
             ]
           },
         ]
