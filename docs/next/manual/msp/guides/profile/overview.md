@@ -89,9 +89,13 @@ compare 功能可以对比统一个服务不同时间段内的 profile 数据，
 
 |语言|分析类型|说明|
 |--|--|--|
-|Java|CPU|每个方法在 CPU 上执行所花费的时间。这包括在 JVM 中运行的代码（Java、Kotlin 等），但不包括 JVM 操作或从 JVM 内部调用的本机代码。|
-|Java|Allocations|每种方法分配的堆内存量。这包括后来释放的分配。|
-|Java|Lock|每个方法等待锁所花费的时间。|
+|Java|alloc_in_new_tlab_objects|从TLAB上分配对象的数量，jvm开启了TLAB后会从TLAB上分配，默认是开启的。|
+|Java|alloc_in_new_tlab_bytes|从TLAB上分配对象的大小，jvm开启了TLAB后会从TLAB上分配，默认是开启的。|
+|Java|itimer|每个方法加载的类数。|
+|Java|lock_count|每个方法等待锁所花费的时间。|
+|Java|lock_duration|锁对象的执行时间总和|
+|Java|alloc_outside_tlab_objects|从TLAB之外分配的对象的数量。|
+|Java|alloc_outside_tlab_bytes|从TLAB之外分配的对象的大小。|
 |Go|CPU Time|每个函数在 CPU 上执行所花费的时间。|
 |Go|Allocations|在分析期间每个函数在堆内存中分配的对象数，包括之后释放的分配。|
 |Go|Allocated Memory|在分析期间每个函数分配的堆内存数量，包括之后释放的分配。|
