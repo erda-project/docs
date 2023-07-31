@@ -103,6 +103,6 @@ compare 功能可以对比统一个服务不同时间段内的 profile 数据，
 |Go|Goroutines|当前有多少 goroutines 在同一个函数中运行的快照（on-CPU 和 off-CPU 等）。快照之间的 goroutines 增加表明程序正在泄漏 goroutines。|
 
 ## 最佳实践
-[使用持续分析排查 JAVA 应用 CPU 高的问题](../../practice/profile/profile-cpu.md)
+[使用持续分析排查 JAVA 应用 CPU 高的问题](../../practice/apm/profile-cpu.md)
 
-[使用持续分析排查 JAVA 应用内存泄露的问题](../../practice/profile/profile-memory.md)
+[使用持续分析排查 JAVA 应用内存泄露的问题](../../practice/apm/profile-memory.md)
