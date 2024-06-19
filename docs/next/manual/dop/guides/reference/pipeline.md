@@ -421,9 +421,19 @@ Action 条件执行
       if: ${{ ${{ outputs.script1.image }}==123 && ${{ outputs.script1.image }}==123 }}
 ```
 
-使用<code v-pre>${{ xxx }}</code>，中间 xxx 输入数学表达式(注意xxx前后有空格)，可以使用前置任务出参作为执行条件
+使用 `${{ xxx }}`，中间 xxx 输入数学表达式(注意xxx前后有空格)，可以使用前置任务出参作为执行条件
 
 目前 pipeline 执行的时候假如没有加入条件执行，那么当一个任务失败，下面的任务就会自动失败，而当下面的任务加上了条件执行，条件成立的话还是会继续执行
+
+示例: 当要部署的制品 Commit ID 与当前部署制品 Commit ID 不一致时，才执行部署任务
+
+```yaml
+if: ${{ '${{ outputs.current-release.commit-id }}' != '${{ outputs.pre-release.commit-id }}' }}
+```
+
+需要注意的是，因为 Git Commit 里包含数字和字母，因此需要**使用单引号包裹**后进行字符串比较。
+
+更多实现细节请参考 [govaluate.v3](https://github.com/Knetic/govaluate/blob/master/MANUAL.md) .
 
 **内置表达式**
 
