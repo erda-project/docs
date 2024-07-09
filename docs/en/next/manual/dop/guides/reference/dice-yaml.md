@@ -20,9 +20,27 @@ envs: {}
 services: {}
 
 addons: {}
+
+environments:
+  development:
+    envs: {}
+    services: {}
+    addons: {}
+  test:
+    envs: {}
+    services: {}
+    addons: {}
+  staging:
+    envs: {}
+    services: {}
+    addons: {}
+  production:
+    envs: {}
+    services: {}
+    addons: {}
 ```
 
-The global structure of the dice.yml file defines 5 items of the global configuration, as described below.
+The global structure of the dice.yml file defines 6 items of the global configuration, as described below.
 
 ### version
 
@@ -364,6 +382,39 @@ See the example below:
 options:
   version: 5.7.23
   create_dbs: blog,blog2
+```
+
+### environments
+The environments configuration item can be categorized into four workspace names: development, testing, staging, and production, representing the development, testing, pre-release, and production workspace, respectively.
+
+You can configure [envs](#envs), [services](#service), and [addons](#addon) for different workspace.
+
+See the example below:
+```yaml
+environments:
+  production:
+    envs:
+      EXAMPLE_ENV: prod
+  staging:
+    envs:
+      EXAMPLE_ENV: staging
+  test:
+    envs:
+      EXAMPLE_ENV: test
+    services:
+      example_demo:
+        image: registry.erda.cloud/erda/go-demo:1719970022481890617
+        resources:
+          cpu: 0.1
+          mem: 256
+  development:
+    envs:
+      EXAMPLE_ENV: dev
+    addons:
+      redis:
+        plan: redis:basic
+        options:
+          version: 6.2.10
 ```
 
 ## Variable Reference
