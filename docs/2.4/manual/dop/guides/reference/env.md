@@ -4,11 +4,6 @@
 
 | 变量名称                            | 说明            | 示例                             |
 |---------------------------------|---------------|--------------------------------|
-| `PIPELINE_CRON_EXPR`            | -             | -                              |
-| `PIPELINE_TYPE`                 | -             | -                              |
-| `PIPELINE_TRIGGER_MODE`         | -             | -                              |
-| `PIPELINE_STORAGE_URL`          | -             | -                              |
-| `PIPELINE_CRON_TRIGGER_TIME`    | -             | -                              |
 | `PIPELINE_TIME_BEGIN_TIMESTAMP` | 流水线开始时间戳      | 1707048002                     |
 | `PIPELINE_TASK_LOG_ID`          | 流水线Task日志ID   | pipeline-task-1486922756137087 |
 | `PIPELINE_TASK_NAME`            | 流水线Task名称     | uc-latest-release              |
@@ -22,11 +17,6 @@
 
 | 变量名称                       | 说明               | 示例                                         |
 |----------------------------|------------------|--------------------------------------------|
-| `DICE_INTERNAL_CLIENT`     | -                | -                                          |
-| `DICE_PROJECT_APPLICATION` | -                | -                                          |
-| `DICE_ENV`                 | -                | -                                          |
-| `DICE_OPERATOR_ID`         | -                | -                                          |
-| `DICE_OPERATOR_NAME`       | -                | -                                          |
 | `DICE_VERSION`             | erda版本           | 2.4                                        |
 | `DICE_MEM_REQUEST`         | 申请的内存大小          | 256                                        |
 | `DICE_MEM_LIMIT`           | 最大内存大小           | 256                                        |

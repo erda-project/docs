@@ -4,11 +4,6 @@
 
 | Env Name                        | Description                          | Example                        |
 |---------------------------------|--------------------------------------|--------------------------------|
-| `PIPELINE_CRON_EXPR`            | -                                    | -                              |
-| `PIPELINE_TYPE`                 | -                                    | -                              |
-| `PIPELINE_TRIGGER_MODE`         | -                                    | -                              |
-| `PIPELINE_STORAGE_URL`          | -                                    | -                              |
-| `PIPELINE_CRON_TRIGGER_TIME`    | -                                    | -                              |
 | `PIPELINE_TIME_BEGIN_TIMESTAMP` | pipeline begin timestamp             | 1707048002                     |
 | `PIPELINE_TASK_LOG_ID`          | pipeline task log id                 | pipeline-task-1486922756137087 |
 | `PIPELINE_TASK_NAME`            | pipeline task name                   | uc-latest-release              |
@@ -22,11 +17,6 @@
 
 | Env Name                   | Description                               | Example                                    |
 |----------------------------|-------------------------------------------|--------------------------------------------|
-| `DICE_INTERNAL_CLIENT`     | -                                         | -                                          |
-| `DICE_PROJECT_APPLICATION` | -                                         | -                                          |
-| `DICE_ENV`                 | -                                         | -                                          |
-| `DICE_OPERATOR_ID`         | -                                         | -                                          |
-| `DICE_OPERATOR_NAME`       | -                                         | -                                          |
 | `DICE_VERSION`             | erda version                              | 2.4                                        |
 | `DICE_MEM_REQUEST`         | requested memory size                     | 256                                        |
 | `DICE_MEM_LIMIT`           | maximum memory size                       | 256                                        |
