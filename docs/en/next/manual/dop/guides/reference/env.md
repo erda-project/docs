@@ -2,7 +2,7 @@
 
 ## Pipleline Envs
 
-| Env Name                        | description                          | example                        |
+| Env Name                        | Description                          | Example                        |
 |---------------------------------|--------------------------------------|--------------------------------|
 | `PIPELINE_CRON_EXPR`            | -                                    | -                              |
 | `PIPELINE_TYPE`                 | -                                    | -                              |
@@ -20,7 +20,7 @@
 
 ## Dice Envs
 
-| 变量名称                       | 说明                                        | 示例                                         |
+| Env Name                   | Description                               | Example                                    |
 |----------------------------|-------------------------------------------|--------------------------------------------|
 | `DICE_INTERNAL_CLIENT`     | -                                         | -                                          |
 | `DICE_PROJECT_APPLICATION` | -                                         | -                                          |
@@ -57,13 +57,13 @@
 
 ## Gittar环境变量
 
-| 变量名称             | 说明             | 示例 |
-|------------------|----------------|----|
-| `GITTAR_AUTHOR`  | author         | -  |
-| `GITTAR_BRANCH`  | branch         | -  |
-| `GITTAR_COMMIT`  | commit ID      | -  |
-| `GITTAR_MESSAGE` | commit message | -  |
-| `GITTAR_REPO`    | repositories   | -  |
+| Env Name         | Description    | Example |
+|------------------|----------------|---------|
+| `GITTAR_AUTHOR`  | author         | -       |
+| `GITTAR_BRANCH`  | branch         | -       |
+| `GITTAR_COMMIT`  | commit ID      | -       |
+| `GITTAR_MESSAGE` | commit message | -       |
+| `GITTAR_REPO`    | repositories   | -       |
 
 
 
