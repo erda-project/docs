@@ -2,7 +2,7 @@
 
 ## Common Environment Variables
 
-> The following environment variables are present during both pipeline execution and application runtime.
+> The following environment variables are present during both pipeline execution and application [runtime](../../../quick-start/premise.md#service-and-runtime).
 
 | Variable Name       | Description                          | Example           |
 |---------------------|--------------------------------------|-------------------|
@@ -38,7 +38,7 @@
 
 ## Application Runtime Environment Variables
 
-> The following environment variables are present during application runtime.
+> The following environment variables are present during application [runtime](../../../quick-start/premise.md#service-and-runtime)..
 
 | Variable Name           | Description                               | Example                               |
 |-------------------------|-------------------------------------------|---------------------------------------|

@@ -2,18 +2,18 @@
 
 ## 公共环境变量
 
-> 以下环境变量，流水线和应用运行时都会存在
+> 以下环境变量，[流水线](pipeline.md)和[Runtime](../../../quick-start/premise.md#服务和-runtime)都会存在
 
-| 变量名称                | 说明               | 示例                |
-|---------------------|------------------|-------------------|
-| `DICE_NAMESPACE`    | 当前应用所在的Namespace | project-1904-test |
-| `DICE_ROOT_DOMAIN`  | erda中心域名         | daily.terminus.io |
-| `DICE_CLUSTER_NAME` | 集群名称             | erda-jicheng      |
-| `DICE_PROTOCOL`     | 协议               | https             |
+| 变量名称                | 说明                | 示例                |
+|---------------------|-------------------|-------------------|
+| `DICE_NAMESPACE`    | 当前应用所在的 Namespace | project-1904-test |
+| `DICE_ROOT_DOMAIN`  | erda中心域名          | daily.terminus.io |
+| `DICE_CLUSTER_NAME` | 集群名称              | erda-jicheng      |
+| `DICE_PROTOCOL`     | 协议                | https             |
 
 ## 流水线环境变量
 
-> 以下环境变量，存在于流水线Action中
+> 以下环境变量，存在于[流水线](pipeline.md)Action中
 
 | 变量名称                            | 说明            | 示例                                                              |
 |---------------------------------|---------------|-----------------------------------------------------------------|
@@ -38,32 +38,32 @@
 
 ## 应用运行时环境变量
 
-> 以下环境变量，存在于应用运行时
+> 以下环境变量，存在于[Runtime](../../../quick-start/premise.md#服务和-runtime)
 
-| 变量名称                    | 说明               | 示例                                    |
-|-------------------------|------------------|---------------------------------------|
-| `POD_IP`                | Pod IP           | 10.16.3.194                           |
-| `SELF_PORT`             | Pod端口            | 25565                                 |
-| `SELF_PORT(n)`          | Pod开放的端口(n >= 0) | 25565                                 |
-| `SELF_HOST`             | Pod集群内部地址        | demo.demo-namespace.svc.cluster.local |
-| `TERMINUS_TA_ENABLE`    | 开启前端Ta监控         | true                                  |
-| `TERMINUS_AGENT_ENABLE` | 是否开启agent代理      | true                                  |
-| `DICE_RUNTIME`          | Runtime ID       | 19635                                 |
-| `DICE_MEM_REQUEST`      | 申请的内存大小          | 256                                   |
-| `DICE_MEM_LIMIT`        | 最大内存大小           | 256                                   |
-| `DICE_ORG_NAME`         | 组织名称             | erda-development                      |
-| `DICE_APPLICATION_ID`   | 应用ID             | 8766                                  |
-| `DICE_CPU_ORIGIN`       | CPU总大小           | 0.1                                   |
-| `DICE_CPU_REQUEST`      | 申请的CPU大小         | 0.05                                  |
-| `DICE_IS_EDGE`          | 是否为边缘集群？         | true                                  |
-| `DICE_PROJECT_ID`       | 项目ID             | 1904                                  |
-| `DICE_PROJECT_NAME`     | 项目名称             | erda-development                      |
-| `DICE_MEM_ORIGIN`       | 内存总大小            | 128                                   |
-| `DICE_APPLICATION_NAME` | 应用名称             | go-demo                               |
-| `DICE_WORKSPACE`        | 应用工作空间           | test                                  |
-| `DICE_CPU_LIMIT`        | 最大CPU数           | 0.1                                   |
-| `DICE_ORG_ID`           | 组织ID             | 633                                   |
-| `DICE_CLUSTER_TYPE`     | 集群类型             | kubernetes                            |
-| `DICE_HTTP_PORT`        | http端口           | 80                                    |
-| `DICE_USER_ID`          | 用户ID             | 22304                                 |
-| `DICE_SERVICE_NAME`     | service名称        | golang-check                          |
+| 变量名称                    | 说明                    | 示例                                    |
+|-------------------------|-----------------------|---------------------------------------|
+| `POD_IP`                | Pod IP                | 10.16.3.194                           |
+| `SELF_PORT`             | Pod端口                 | 25565                                 |
+| `SELF_PORT(n)`          | Pod开放的端口(n >= 0)      | 25565                                 |
+| `SELF_HOST`             | Pod集群内部地址             | demo.demo-namespace.svc.cluster.local |
+| `TERMINUS_TA_ENABLE`    | 开启前端Ta监控              | true                                  |
+| `TERMINUS_AGENT_ENABLE` | 是否开启JavaAgent等监控Agent | true                                  |
+| `DICE_RUNTIME`          | Runtime ID            | 19635                                 |
+| `DICE_MEM_REQUEST`      | 申请的内存大小               | 256                                   |
+| `DICE_MEM_LIMIT`        | 最大内存大小                | 256                                   |
+| `DICE_ORG_NAME`         | 组织名称                  | erda-development                      |
+| `DICE_APPLICATION_ID`   | 应用ID                  | 8766                                  |
+| `DICE_CPU_ORIGIN`       | CPU配置的原始值             | 0.1                                   |
+| `DICE_CPU_REQUEST`      | 申请的CPU大小              | 0.05                                  |
+| `DICE_IS_EDGE`          | 是否为边缘集群               | true                                  |
+| `DICE_PROJECT_ID`       | 项目ID                  | 1904                                  |
+| `DICE_PROJECT_NAME`     | 项目名称                  | erda-development                      |
+| `DICE_MEM_ORIGIN`       | 内存配置的原始值              | 128                                   |
+| `DICE_APPLICATION_NAME` | 应用名称                  | go-demo                               |
+| `DICE_WORKSPACE`        | 应用工作空间                | test                                  |
+| `DICE_CPU_LIMIT`        | 最大CPU数                | 0.1                                   |
+| `DICE_ORG_ID`           | 组织ID                  | 633                                   |
+| `DICE_CLUSTER_TYPE`     | 集群类型                  | kubernetes                            |
+| `DICE_HTTP_PORT`        | http端口                | 80                                    |
+| `DICE_USER_ID`          | 用户ID                  | 22304                                 |
+| `DICE_SERVICE_NAME`     | service名称             | golang-check                          |
