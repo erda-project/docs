@@ -20,9 +20,27 @@ envs: {}
 services: {}
 
 addons: {}
+
+environments:
+  development:
+    envs: {}
+    services: {}
+    addons: {}
+  test:
+    envs: {}
+    services: {}
+    addons: {}
+  staging:
+    envs: {}
+    services: {}
+    addons: {}
+  production:
+    envs: {}
+    services: {}
+    addons: {}
 ```
 
-dice.yml 文件的全局结构定义了 5 项全局配置，具体说明如下。
+dice.yml 文件的全局结构定义了 6 项全局配置，具体说明如下。
 
 ### version
 
@@ -377,6 +395,39 @@ options 定义 addon 的附加参数。
 options:
   version: 5.7.23
   create_dbs: blog,blog2
+```
+
+### environments 配置项
+environments 配置项可分为 development、test、staging 以及 production 四个 workspace 名称，分别代表开发环境、测试环境、预发环境和生产环境。
+
+针对于不同的运行环境可以单独配置[envs](#envs)、[services](#service-配置项)、[addons](#addon-配置项)。
+
+示例如下：
+```yaml
+environments:
+  production:
+    envs:
+      EXAMPLE_ENV: prod
+  staging:
+    envs:
+      EXAMPLE_ENV: staging
+  test:
+    envs:
+      EXAMPLE_ENV: test
+    services:
+      example_demo:
+        image: registry.erda.cloud/erda/go-demo:1719970022481890617
+        resources:
+          cpu: 0.1
+          mem: 256
+  development:
+    envs:
+      EXAMPLE_ENV: dev
+    addons:
+      redis:
+        plan: redis:basic
+        options:
+          version: 6.2.10
 ```
 
 ## 变量引用
