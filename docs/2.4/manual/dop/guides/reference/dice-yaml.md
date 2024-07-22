@@ -398,7 +398,7 @@ options:
 ```
 
 ### environments 配置项
-environments 配置项可分为 development、testing、staging 以及 production 四个 workspace 名称，分别代表开发环境、测试环境、预发环境和生产环境。
+environments 配置项可分为 development、test、staging 以及 production 四个 workspace 名称，分别代表开发环境、测试环境、预发环境和生产环境。
 
 针对于不同的运行环境可以单独配置[envs](#envs)、[services](#service-配置项)、[addons](#addon-配置项)。
 

@@ -385,7 +385,7 @@ options:
 ```
 
 ### environments
-The environments configuration item can be categorized into four workspace names: development, testing, staging, and production.
+The environments configuration item can be categorized into four workspace names: development, test, staging, and production.
 
 You can configure [envs](#envs), [services](#service), and [addons](#addon) for different workspace.
 
