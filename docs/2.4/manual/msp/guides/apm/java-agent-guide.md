@@ -27,7 +27,7 @@ Erda部署的应用默认会开启Java Agent，可以通过配置环境变量`TE
 services:
   showcase-front:
     envs:
-     TERMINUS_AGENT_ENABLE: false
+      TERMINUS_AGENT_ENABLE: false
     health_check:
       http:
         port: 7079
@@ -41,7 +41,7 @@ addons:
 
 在应用中设置环境变量
 
-![img](/Users/ceerdecy/Library/Application Support/typora-user-images/image-20241024174526938.png)
+![img](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2024/10/25/c0c18773-2f1a-4f77-b024-c5239eb10169.png)
 
 ### 插件
 
@@ -158,7 +158,7 @@ MSP_PLUGIN_{插件名称}_ENABLED=false
 services:
   showcase-front:
     envs:
-     MSP_PLUGIN_DUBBO_ENABLED: false
+      MSP_PLUGIN_DUBBO_ENABLED: false
     health_check:
       http:
         port: 7079
@@ -172,4 +172,4 @@ addons:
 
 在应用中设置环境变量
 
-![img](https://linkspub.alipay.com/links-files/629d72c46c6cae0481fe45ca/avue34822lthn3rg7l3vrdn603/Screen*20Shot*202022-07-27*20at*2011.31.32.png)
+![img](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2024/10/25/ee6a868b-e69b-4636-894f-f251acbf9699.png)

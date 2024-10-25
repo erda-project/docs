@@ -26,7 +26,7 @@ To inject application-level environment variables, you can add them in the `dice
 services:
   showcase-front:
     envs:
-     TERMINUS_AGENT_ENABLE: false
+      TERMINUS_AGENT_ENABLE: false
     health_check:
       http:
         port: 7079
@@ -157,7 +157,7 @@ To inject application-level environment variables, you can add them in the `dice
 services:
   showcase-front:
     envs:
-     MSP_PLUGIN_DUBBO_ENABLED: false
+      MSP_PLUGIN_DUBBO_ENABLED: false
     health_check:
       http:
         port: 7079
