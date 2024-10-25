@@ -15,6 +15,34 @@
 无侵入式开发可实现无感知接入 Agent。在 Erda 中，您只需通过 Pipeline 部署服务即可接入，无需其他操作。Pipeline 具体流程请参见 [基于 Git 源码部署](../../../dop/examples/deploy/deploy-from-git.md)。
 目前已支持 buildpack、buildpack-aliyun、java-build、java 等 action 的无缝构建。
 
+#### 关闭Agent
+
+Erda部署的应用默认会开启Java Agent，可以通过配置环境变量`TERMINUS_AGENT_ENABLE=false`来关闭。
+
+**Example: **
+
+注入应用级别的环境变量，可以在dice.yml中添加env
+
+```yaml
+services:
+  showcase-front:
+    envs:
+     TERMINUS_AGENT_ENABLE: false
+    health_check:
+      http:
+        port: 7079
+        path: /status
+        duration: 120
+
+addons:
+  zk:
+    plan: zookeeper:large
+```
+
+在应用中设置环境变量
+
+![img](/Users/ceerdecy/Library/Application Support/typora-user-images/image-20241024174526938.png)
+
 ### 插件
 
 #### 支持的插件列表
@@ -84,3 +112,64 @@ MSP_METHOD_INTERCEPT_POINTS = io.terminus.class1#method1,io.terminus.class2#meth
 ### 以下示例可拦截 io.terminus 包下的所有函数
 MSP_PACKAGE_INTERCEPT_POINTS = io.terminus
 ```
+
+#### 启用或关闭插件
+
+由于 java-agent 使用字节码注入等技术构建探针, 在插件更新时, 可能会遇到类名找不到等问题.
+
+此时可以先暂时关闭报错的插件
+
+```
+MSP_PLUGIN_{插件名称}_ENABLED=false
+```
+
+请使用表格中的环境变量, 替换上方的`{插件名称}`
+
+| 插件                | 对应环境变量名称       |
+| ------------------- | ---------------------- |
+| agent-sdk           | MONITORSDK             |
+| dubbo               | DUBBO                  |
+| dubbo-2.7.x         | DUBBO                  |
+| feign               | FEIGN                  |
+| trantor             | TRANTOR                |
+| jedis-2.x           | JEDIS                  |
+| redisson-3.x        | REDISSON               |
+| rocketmq-4.x        | ROCKETMQ               |
+| httpclient-4.x      | APACHE_HTTPCLIENT      |
+| http async client   | APACHE_HTTPASYNCCLIENT |
+| sharding-sphere-4.x | SHARDINGSPHERE         |
+| log4j2              | LOG4J2                 |
+| logback             | LOGBACK                |
+| logback-spring-boot | LOGBACK                |
+| mysql-5.x           | MYSQL                  |
+| mysql-8.x           | MYSQL                  |
+| okhttp 4.x          | OKHTTP                 |
+| lettuce-5.x         | LETTUCE                |
+| jetty-servlet       | JETTY                  |
+| tomcat-servlet      | TOMCAT                 |
+| resttemplate        | RESTTEMPLATE           |
+| concurrent-util-4.x | SPRING_CONCURRENTUTIL  |
+
+**Example: **
+
+注入应用级别的环境变量，可以在dice.yml中添加env
+
+```yaml
+services:
+  showcase-front:
+    envs:
+     MSP_PLUGIN_DUBBO_ENABLED: false
+    health_check:
+      http:
+        port: 7079
+        path: /status
+        duration: 120
+
+addons:
+  zk:
+    plan: zookeeper:large
+```
+
+在应用中设置环境变量
+
+![img](https://linkspub.alipay.com/links-files/629d72c46c6cae0481fe45ca/avue34822lthn3rg7l3vrdn603/Screen*20Shot*202022-07-27*20at*2011.31.32.png)
