@@ -211,3 +211,7 @@ enter the ** cloud management platform > container resources > pods **, selects 
 
 Click the record, you can see the container of the pipeline. You can enter the container console, and then debug in container.
 
+
+17. Environment Variables Not Taking Effect?
+
+Environment variables configured in Erda have a specific priority order. You can refer to [Environment Variable Priority]((../dop/guides/deploy/config.md#Priority) for configuration details.

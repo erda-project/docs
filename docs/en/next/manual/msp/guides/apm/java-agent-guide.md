@@ -14,6 +14,34 @@ Generally, the entry point for Java is the main method, while the entry point fo
 ### Access Method
 Non-intrusive development allows agent access without perception. In Erda, you only need to deploy services via pipeline for access. For details, see [Deploy Based on Git Source Code](../../../dop/examples/deploy/deploy-from-git.md). Actions such as buildpack, buildpack-aliyun, java-build and java are supported now.
 
+#### Turning off the Java Agent
+
+The application deployed in Erda will have Java Agent enabled by default. You can disable it by setting the environment variable `TERMINUS_AGENT_ENABLE=false`.
+
+**Example:**
+
+To inject application-level environment variables, you can add them in the `dice.yml` file under the `env` section.
+
+```yaml
+services:
+  showcase-front:
+    envs:
+      TERMINUS_AGENT_ENABLE: false
+    health_check:
+      http:
+        port: 7079
+        path: /status
+        duration: 120
+
+addons:
+  zk:
+    plan: zookeeper:large
+```
+
+Set environment variables in the application.
+
+![image-20241024175306208](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2024/10/24/e467ab6b-04c4-4e74-8b36-9e63a4e6ac73.png)
+
 ### Plugin
 
 #### Supported Plugins
@@ -83,3 +111,64 @@ If there are many classes under the package, using variables will increase the t
 ### The following example intercepts all functions under the io.terminus package
 MSP_PACKAGE_INTERCEPT_POINTS = io.terminus
 ```
+
+#### Enable or Disable Plugins
+
+Since the Java agent uses techniques such as bytecode injection to build probes, you may encounter issues like class not found errors when updating plugins.
+
+In such cases, you can temporarily disable the plugin causing the error:
+
+```
+MSP_PLUGIN_{PLUGIN_NAME}_ENABLED=false
+```
+
+Please use the environment variable from the table and replace `{PLUGIN_NAME}` with the relevant plugin name.
+
+| Plugins             | Env variables plugin name |
+| ------------------- | ------------------------- |
+| agent-sdk           | MONITORSDK                |
+| dubbo               | DUBBO                     |
+| dubbo-2.7.x         | DUBBO                     |
+| feign               | FEIGN                     |
+| trantor             | TRANTOR                   |
+| jedis-2.x           | JEDIS                     |
+| redisson-3.x        | REDISSON                  |
+| rocketmq-4.x        | ROCKETMQ                  |
+| httpclient-4.x      | APACHE_HTTPCLIENT         |
+| http async client   | APACHE_HTTPASYNCCLIENT    |
+| sharding-sphere-4.x | SHARDINGSPHERE            |
+| log4j2              | LOG4J2                    |
+| logback             | LOGBACK                   |
+| logback-spring-boot | LOGBACK                   |
+| mysql-5.x           | MYSQL                     |
+| mysql-8.x           | MYSQL                     |
+| okhttp 4.x          | OKHTTP                    |
+| lettuce-5.x         | LETTUCE                   |
+| jetty-servlet       | JETTY                     |
+| tomcat-servlet      | TOMCAT                    |
+| resttemplate        | RESTTEMPLATE              |
+| concurrent-util-4.x | SPRING_CONCURRENTUTIL     |
+
+**Example: **
+
+To inject application-level environment variables, you can add them in the `dice.yml` file under the `env` section.
+
+```yaml
+services:
+  showcase-front:
+    envs:
+      MSP_PLUGIN_DUBBO_ENABLED: false
+    health_check:
+      http:
+        port: 7079
+        path: /status
+        duration: 120
+
+addons:
+  zk:
+    plan: zookeeper:large
+```
+
+Set environment variables in the application.
+
+![img](http://terminus-paas.oss-cn-hangzhou.aliyuncs.com/paas-doc/2024/10/24/6815cae0-4561-4ae2-af34-900d63e61cbd.png)
