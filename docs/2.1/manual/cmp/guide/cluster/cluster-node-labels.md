@@ -23,8 +23,8 @@ Erda 为项目内置了 4 套环境，并对应设计了 4 个环境标签：
 
 Erda 设计了两类服务标签：`dice/stateless-service=true`、`dice/stateful-service=true`，分别用于调度无状态服务和有状态服务。
 
-* 无状态服务对应部署中心的 Runtime 服务，因此对运行项目应用的宿主机，均需设置 service-stateless 标签。
-* 有状态服务对应中间件 Addon。该 Addon 内置多种常规的中间件，例如 MySQL、Elasticsearch、RocketMQ 等，且大部分为有状态应用，涉及数据存储，因此需和普通项目应用作区分。若项目需使用 Erda 的 Addon，则需对指定的宿主机设置 service-stateful 标签。
+* 无状态服务对应部署中心的 Runtime 服务，因此对运行项目应用的宿主机，均需设置 stateless-service 标签。
+* 有状态服务对应中间件 Addon。该 Addon 内置多种常规的中间件，例如 MySQL、Elasticsearch、RocketMQ 等，且大部分为有状态应用，涉及数据存储，因此需和普通项目应用作区分。若项目需使用 Erda 的 Addon，则需对指定的宿主机设置 stateful-service 标签。
 
 ## 设置宿主机可运行的任务
 
@@ -61,8 +61,8 @@ Erda 设计了自定义标签 location-xx，以支持用户将指定的应用运
 
 - `dice/job=true`：用于调度流水线任务
 - `dice/bigdata-job=true`：用于调度大数据任务
-- `dice/service-stateless=true`：用于调度无状态服务标签，可用于部署 Runtime 服务
-- `dice/service-stateful=true`：用于调度有状态服务标签，可用于部署 Addon 服务
+- `dice/stateless-service=true`：用于调度无状态服务标签，可用于部署 Runtime 服务
+- `dice/stateful-service=true`：用于调度有状态服务标签，可用于部署 Addon 服务
 - `dice/workspace-xxx=true`：用于调度至指定环境，包括 workspace-dev、workspace-test、workspace-staging、workspace-prod，分别对应 Erda 部署的四个环境
 - `dice/location-cluster-service=true`：用于调度集群共用的服务组件，例如注册中心
 - `dice/location-xxx=true`：自定义标签，支持用户将指定的应用运行到指定节点
