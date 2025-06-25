@@ -21,11 +21,11 @@ All hosts that serve the project must have one or more environment tags, otherwi
 
 ## Set Runnable Services for Host
 
-Erda provides two service tags, `dice/service-stateless=true` and `dice/service-stateful=true`, for stateless services and stateful services scheduling.
+Erda provides two service tags, `dice/stateless-service=true` and `dice/stateful-service=true`, for stateless services and stateful services scheduling.
 
-* The stateless service corresponds to the runtime service in deployments, so hosts that run applications should be tagged as service-stateless.
+* The stateless service corresponds to the runtime service in deployments, so hosts that run applications should be tagged as stateless-service.
 
-* The stateful service corresponds to the addon, which has various built-in types, such as MySQL, Elasticsearch and RocketMQ, and most of them are stateful applications involving data storage, that need to be distinguished from other applications. If the project uses the addon of Erda, then the specified host should be tagged as service-stateful.
+* The stateful service corresponds to the addon, which has various built-in types, such as MySQL, Elasticsearch and RocketMQ, and most of them are stateful applications involving data storage, that need to be distinguished from other applications. If the project uses the addon of Erda, then the specified host should be tagged as stateful-service.
 
 ## Set Runnable Tasks for Host
 
@@ -62,11 +62,10 @@ For example, to run the application of example on a specified host, the steps ar
 
 - `dice/job=true`: For pipeline task scheduling.
 - `dice/bigdata-job=true`: For big data task scheduling.
-- `dice/service-stateless=true`: For stateless service tag scheduling, to deploy runtime services.
-- `dice/service-stateful=true`: For stateful service tag scheduling, to deploy addon services.
+- `dice/stateless-service=true`: For stateless service tag scheduling, to deploy runtime services.
+- `dice/stateful-service=true`: For stateful service tag scheduling, to deploy addon services.
 - `dice/workspace-xxx=true`: For scheduling to specified environment, including workspace-dev, workspace-test, workspace-staging and workspace-prod, corresponding to the four deployment environments on Erda.
 - `dice/location-cluster-service=true`: For service component scheduling such as registration center.
 - `dice/location-xxx=true`: Custom tag, to run specified application on specified node.
 - `dice/location=true`: Exclusive tag, nodes with this tag can only run applications corresponding to location-xxx.
 - `dice/platform=true`: To run Erda platform components.
-
